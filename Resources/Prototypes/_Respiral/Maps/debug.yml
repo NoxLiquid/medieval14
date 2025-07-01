@@ -9,8 +9,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationBiome
-          biome: Continental
-          mapLightColor: "#090303FF"
+          biome: Grasslands
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs

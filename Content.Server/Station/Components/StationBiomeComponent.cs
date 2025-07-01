@@ -18,5 +18,5 @@ public sealed partial class StationBiomeComponent : Component
     public int? Seed = null;
 
     [DataField]
-    public Color MapLightColor = Color.Black;
+    public Color MapLightColor = Color.FromHex("#D8B059FF");
 }
