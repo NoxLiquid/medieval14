@@ -1,0 +1,18 @@
+- type: gameMap
+  id: RespiralDev
+  mapName: Dev
+  mapPath: /Maps/_Respiral/Test/spiral_dev.yml
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    Dev:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationBiome
+          biome: Continental
+          mapLightColor: "#090303FF"
+        - type: StationNameSetup
+          mapNameTemplate: "Dev"
+        - type: StationJobs
+          availableJobs:
+            Captain: [ -1, -1 ]
