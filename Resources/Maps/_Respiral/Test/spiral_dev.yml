@@ -63,6 +63,7 @@ entities:
     - type: Shuttle
       dampingModifier: 0.25
     - type: ImplicitRoof
+      disabled: true
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier

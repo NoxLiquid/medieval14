@@ -68,7 +68,7 @@ public sealed class RoofOverlay : Overlay
                 {
                     var grid = _grids[i];
 
-                    if (!_entManager.TryGetComponent(grid.Owner, out ImplicitRoofComponent? roof))
+                    if (!_entManager.TryGetComponent(grid.Owner, out ImplicitRoofComponent? roof) || roof.Disabled) // Respiral-Edit
                         continue;
 
                     var gridMatrix = _xformSystem.GetWorldMatrix(grid.Owner);

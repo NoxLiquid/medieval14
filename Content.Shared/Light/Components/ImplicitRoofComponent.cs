@@ -10,4 +10,7 @@ public sealed partial class ImplicitRoofComponent : Component
 {
     [DataField, AutoNetworkedField]
     public Color Color = Color.Black;
+
+    [DataField, AutoNetworkedField] // Respiral-Add
+    public bool Disabled = false; // Respiral-Add
 }

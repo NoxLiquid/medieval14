@@ -18,5 +18,5 @@ public sealed partial class StationBiomeComponent : Component
     public int? Seed = null;
 
     [DataField]
-    public Color MapLightColor = Color.FromHex("#D8B059FF");
+    public Color MapLightColor = Color.FromHex("#D8B059FF"); // Respiral-Change
 }
