@@ -1,0 +1,18 @@
+- type: job
+  id: Pilligrim
+  name: job-name-pilligrim
+  description: job-description-Pilligrim
+  playTimeTracker: Jobpilligrim
+  startingGear: PilligrimGear
+  icon: "JobIconPilligrim"
+  supervisors: job-supervisors-everyone
+  access:
+  - Maintenance
+
+- type: startingGear
+  id: PilligrimGear
+  #equipment:
+  #  id: PassengerPDA
+  #  ears: ClothingHeadsetGrey
+
+#заменить до лучших времен - создания спрайтов одежки 

@@ -14,4 +14,4 @@
           mapNameTemplate: "Dev"
         - type: StationJobs
           availableJobs:
-            Captain: [ -1, -1 ]
+            Pilligrim: [ -1, -1 ]

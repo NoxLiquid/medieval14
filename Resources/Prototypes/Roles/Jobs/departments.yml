@@ -34,6 +34,15 @@
   - ServiceWorker
 
 - type: department
+  id: Commoner
+  name: department-Commoner
+  description: department-Commoner-description
+  color: "#6F4F28"
+  weight: -10
+  roles:
+  - Pilligrim
+  
+- type: department
   id: CentralCommand
   name: department-CentralCommand
   description: department-CentralCommand-description

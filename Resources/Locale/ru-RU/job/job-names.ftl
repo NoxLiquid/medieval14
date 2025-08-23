@@ -60,6 +60,7 @@ job-name-syndicate = синдикат
 job-name-unknown = неизвестно
 job-name-virologist = вирусолог
 job-name-zombie = зомби
+job-name-pilligrim = странник
 # Job titles
 job-title-visitor = посетитель
 job-title-cluwne = клувень
