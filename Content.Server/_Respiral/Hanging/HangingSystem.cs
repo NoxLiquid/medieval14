@@ -1,5 +1,5 @@
 using Content.Server.Hanging.Components;
-using Content.Shared.Buckle.Components; 
+using Content.Shared.Buckle.Components;
 using Content.Shared.Damage;
 using Robust.Shared.Timing;
 
@@ -20,7 +20,6 @@ public sealed class HangingSystem : EntitySystem
 
     private void OnStrapped(EntityUid uid, HangingComponent component, ref StrappedEvent args)
     {
-    
         component.HangingEntity = args.Buckle.Owner;
         component.IsActive = true;
         component.NextDamageTime = _timing.CurTime + TimeSpan.FromSeconds(component.DamageInterval);
