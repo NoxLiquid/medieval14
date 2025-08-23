@@ -7,13 +7,9 @@ namespace Content.Shared.Temperature.Components;
 [NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class HeatSourceComponent : Component
 {
-
-
     [DataField]
     public float DegreesPerSecond = 1f;
 
-   
     [DataField, AutoNetworkedField]
     public bool IsActive;
-
 }

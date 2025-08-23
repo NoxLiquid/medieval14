@@ -2,7 +2,7 @@
   id: Pilligrim
   name: job-name-pilligrim
   description: job-description-Pilligrim
-  playTimeTracker: Jobpilligrim
+  playTimeTracker: JobPilligrim
   startingGear: PilligrimGear
   icon: "JobIconPilligrim"
   supervisors: job-supervisors-everyone

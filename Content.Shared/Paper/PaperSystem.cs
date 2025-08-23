@@ -12,7 +12,7 @@ using Robust.Shared.Audio.Systems;
 using static Content.Shared.Paper.PaperComponent;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Shared.Illiteracy.Components;
+using Content.Shared.Illiteracy.Components; // Respiral-Illiteracy
 
 namespace Content.Shared.Paper;
 
@@ -75,7 +75,7 @@ public sealed class PaperSystem : EntitySystem
     private void BeforeUIOpen(Entity<PaperComponent> entity, ref BeforeActivatableUIOpenEvent args)
     {
         entity.Comp.Mode = PaperAction.Read;
-        UpdateUserInterface(entity, args.User);
+        UpdateUserInterface(entity, args.User); // Respiral-Illiteracy-Edit
     }
 
     private void OnExamined(Entity<PaperComponent> entity, ref ExaminedEvent args)
@@ -145,7 +145,7 @@ public sealed class PaperSystem : EntitySystem
 
                 entity.Comp.Mode = PaperAction.Write;
                 _uiSystem.OpenUi(entity.Owner, PaperUiKey.Key, args.User);
-                UpdateUserInterface(entity, args.User);
+                UpdateUserInterface(entity, args.User); // Respiral-Illiteracy-Edit
             }
             args.Handled = true;
             return;
@@ -168,7 +168,7 @@ public sealed class PaperSystem : EntitySystem
 
             _audio.PlayPredicted(stampComp.Sound, entity, args.User);
 
-            UpdateUserInterface(entity, args.User);
+            UpdateUserInterface(entity, args.User); // Respiral-Illiteracy-Edit
         }
     }
 
@@ -187,14 +187,17 @@ public sealed class PaperSystem : EntitySystem
         RaiseLocalEvent(args.Actor, ref ev);
         if (ev.Cancelled)
             return;
+
         if (args.Text.Length <= entity.Comp.ContentSize)
         {
+            // Respiral-Illiteracy-Edit-start
             var content = args.Text;
             if (HasComp<IlliteracyComponent>(args.Actor))
             {
                 content = ScrambleText(content, 12345);
             }
             SetContent(entity, content);
+            // Respiral-Illiteracy-Edit-end
 
             var paperStatus = string.IsNullOrWhiteSpace(args.Text) ? PaperStatus.Blank : PaperStatus.Written;
 
@@ -305,6 +308,8 @@ public sealed class PaperSystem : EntitySystem
 
         _appearance.SetData(entity, PaperVisuals.Status, status, appearance);
     }
+
+    // Respiral-Illiteracy-start
     //Логика перемешивания текста. Возвращает перемешанную строку
     private string ScrambleText(string input, int seed)
     {
@@ -325,8 +330,11 @@ public sealed class PaperSystem : EntitySystem
 
         return new string(characters);
     }
+    // Respiral-Illiteracy-end
+
     private void UpdateUserInterface(Entity<PaperComponent> entity, EntityUid? user = null)
     {
+        // Respiral-Illiteracy-Edit-start
         string content = entity.Comp.Content;
         if (user != null && HasComp<IlliteracyComponent>(user))
         {
@@ -336,6 +344,7 @@ public sealed class PaperSystem : EntitySystem
         entity.Owner,
         PaperUiKey.Key,
         new PaperBoundUserInterfaceState(content, entity.Comp.StampedBy, entity.Comp.Mode));
+        // Respiral-Illiteracy-Edit-end
     }
 }
 
