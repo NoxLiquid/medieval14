@@ -10,17 +10,17 @@ namespace Content.Client.Stylesheets
 {
     public sealed class StyleSpace : StyleBase
     {
-        public static readonly Color SpaceRed = Color.FromHex("#9b2236");
+        public static readonly Color SpaceRed = Color.FromHex("#7A1F28"); // Respiral-Stylization
 
-        public static readonly Color ButtonColorDefault = Color.FromHex("#464966");
-        public static readonly Color ButtonColorHovered = Color.FromHex("#575b7f");
-        public static readonly Color ButtonColorPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#30313c");
+        public static readonly Color ButtonColorDefault = Color.FromHex("#3D382E"); // Respiral-Stylization
+        public static readonly Color ButtonColorHovered = Color.FromHex("#4D4638"); // Respiral-Stylization
+        public static readonly Color ButtonColorPressed = Color.FromHex("#2D5016"); // Respiral-Stylization
+        public static readonly Color ButtonColorDisabled = Color.FromHex("#2E2A25"); // Respiral-Stylization
 
-        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232");
-        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f");
-        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#602a2a");
+        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#8C5E2D"); // Respiral-Stylization
+        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#A67A3F"); // Respiral-Stylization
+        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#5C3D1E"); // Respiral-Stylization
+        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#4A3926"); // Respiral-Stylization
 
         public override Stylesheet Stylesheet { get; }
 
@@ -77,7 +77,7 @@ namespace Content.Client.Stylesheets
 
                 Element<Label>().Class(StyleClassLabelSubText)
                     .Prop(Label.StylePropertyFont, notoSans10)
-                    .Prop(Label.StylePropertyFontColor, Color.DarkGray),
+                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#56452C")), // Respiral-Stylization
 
                 Element<PanelContainer>().Class(ClassHighDivider)
                     .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat
@@ -88,7 +88,7 @@ namespace Content.Client.Stylesheets
                 Element<PanelContainer>().Class(ClassLowDivider)
                     .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat
                     {
-                        BackgroundColor = Color.FromHex("#444"),
+                        BackgroundColor = Color.FromHex("#56452C"), // Respiral-Stylization
                         ContentMarginLeftOverride = 2,
                         ContentMarginBottomOverride = 2
                     }),
@@ -153,12 +153,12 @@ namespace Content.Client.Stylesheets
 
                 Element<PanelContainer>().Class(ClassAngleRect)
                     .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#202030")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#2E2A25")), // Respiral-Stylization
 
                 Child()
                     .Parent(Element<Button>().Class(ContainerButton.StylePseudoClassDisabled))
                     .Child(Element<Label>())
-                    .Prop("font-color", Color.FromHex("#E5E5E581")),
+                    .Prop("font-color", Color.FromHex("#8C7D6B")), // Respiral-Stylization
 
                 Element<ProgressBar>()
                     .Prop(ProgressBar.StylePropertyBackground, progressBarBackground)
