@@ -53,10 +53,13 @@ public abstract partial class SharedToolSystem : EntitySystem
         var ev = args.WrappedEvent;
         ev.DoAfter = args.DoAfter;
 
+        var usingEv = new ToolUsingFinishedEvent(); // Respiral-Durability
+        RaiseLocalEvent(uid, ref usingEv); // Respiral-Durability
+
         if (args.OriginalTarget != null)
-            RaiseLocalEvent(GetEntity(args.OriginalTarget.Value), (object) ev);
+            RaiseLocalEvent(GetEntity(args.OriginalTarget.Value), (object)ev);
         else
-            RaiseLocalEvent((object) ev);
+            RaiseLocalEvent((object)ev);
     }
 
     private void OnExamine(Entity<ToolComponent> ent, ref ExaminedEvent args)
@@ -331,5 +334,8 @@ public abstract partial class SharedToolSystem : EntitySystem
 
 [Serializable, NetSerializable]
 public sealed partial class CableCuttingFinishedEvent : SimpleDoAfterEvent;
+
+[ByRefEvent] // Respiral-Durability
+public readonly struct ToolUsingFinishedEvent; // Respiral-Durability
 
 #endregion
