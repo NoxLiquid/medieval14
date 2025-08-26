@@ -501,7 +501,7 @@ namespace Content.Client.Lobby.UI
                 TraitsList.AddChild(new Label
                 {
                     Text = Loc.GetString("humanoid-profile-editor-no-traits"),
-                    FontColorOverride = Color.Gray,
+                    FontColorOverride = Color.FromHex("#5D4C3D"), // Respiral-Stylization
                 });
                 return;
             }
@@ -578,7 +578,7 @@ namespace Content.Client.Lobby.UI
                     TraitsList.AddChild(new Label
                     {
                         Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount) ,("max", category.MaxTraitPoints)),
-                        FontColorOverride = Color.Gray
+                        FontColorOverride = Color.FromHex("#5D4C3D") // Respiral-Stylization
                     });
                 }
 
@@ -877,7 +877,7 @@ namespace Content.Client.Lobby.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#3D382E")}, // Respiral-Stylization
                         Children =
                         {
                             new Label

@@ -7,8 +7,7 @@ namespace Content.Client.Administration.UI.CustomControls;
 
 public sealed class VSeparator : PanelContainer
 {
-    private static readonly Color SeparatorColor = Color.FromHex("#3D4059");
-
+    private static readonly Color SeparatorColor = Color.FromHex("#5D4C3D"); // Respiral-Stylization
     public VSeparator(Color color)
     {
         MinSize = new Vector2(2, 5);

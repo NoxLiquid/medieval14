@@ -93,51 +93,51 @@ namespace Content.Client.Stylesheets
         public const string StyleClassPopupMessageLarge = "PopupMessageLarge";
         public const string StyleClassPopupMessageLargeCaution = "PopupMessageLargeCaution";
 
-        public static readonly Color PanelDark = Color.FromHex("#1E1E22");
+        public static readonly Color PanelDark = Color.FromHex("#0F0B08"); // Respiral-Stylization
 
-        public static readonly Color NanoGold = Color.FromHex("#A88B5E");
-        public static readonly Color GoodGreenFore = Color.FromHex("#31843E");
-        public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
-        public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
-        public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
+        public static readonly Color NanoGold = Color.FromHex("#8C7853"); // Respiral-Stylization
+        public static readonly Color GoodGreenFore = Color.FromHex("#2D5016"); // Respiral-Stylization
+        public static readonly Color ConcerningOrangeFore = Color.FromHex("#7D4E23"); // Respiral-Stylization
+        public static readonly Color DangerousRedFore = Color.FromHex("#5C2121"); // Respiral-Stylization
+        public static readonly Color DisabledFore = Color.FromHex("#3E3A35"); // Respiral-Stylization
 
-        public static readonly Color ButtonColorDefault = Color.FromHex("#464966");
-        public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B");
-        public static readonly Color ButtonColorHovered = Color.FromHex("#575b7f");
-        public static readonly Color ButtonColorHoveredRed = Color.FromHex("#DF6B6B");
-        public static readonly Color ButtonColorPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#30313c");
+        public static readonly Color ButtonColorDefault = Color.FromHex("#2E2A25"); // Respiral-Stylization
+        public static readonly Color ButtonColorDefaultRed = Color.FromHex("#5C2121"); // Respiral-Stylization
+        public static readonly Color ButtonColorHovered = Color.FromHex("#3D382E"); // Respiral-Stylization
+        public static readonly Color ButtonColorHoveredRed = Color.FromHex("#7D2B2B"); // Respiral-Stylization
+        public static readonly Color ButtonColorPressed = Color.FromHex("#1A1612"); // Respiral-Stylization
+        public static readonly Color ButtonColorDisabled = Color.FromHex("#23201C"); // Respiral-Stylization
 
-        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232");
-        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f");
-        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#602a2a");
+        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#8C7853"); // Respiral-Stylization
+        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#A6906A"); // Respiral-Stylization
+        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#56452C"); // Respiral-Stylization
+        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#3D382E"); // Respiral-Stylization
 
-        public static readonly Color ButtonColorGoodDefault = Color.FromHex("#3E6C45");
-        public static readonly Color ButtonColorGoodHovered = Color.FromHex("#31843E");
-        public static readonly Color ButtonColorGoodDisabled = Color.FromHex("#164420");
+        public static readonly Color ButtonColorGoodDefault = Color.FromHex("#2D5016"); // Respiral-Stylization
+        public static readonly Color ButtonColorGoodHovered = Color.FromHex("#3A6820"); // Respiral-Stylization
+        public static readonly Color ButtonColorGoodDisabled = Color.FromHex("#1E3010"); // Respiral-Stylization
 
         //NavMap
-        public static readonly Color PointRed = Color.FromHex("#B02E26");
-        public static readonly Color PointGreen = Color.FromHex("#38b026");
-        public static readonly Color PointMagenta = Color.FromHex("#FF00FF");
+        public static readonly Color PointRed = Color.FromHex("#8B1A1A"); // Respiral-Stylization
+        public static readonly Color PointGreen = Color.FromHex("#386326"); // Respiral-Stylization
+        public static readonly Color PointMagenta = Color.FromHex("#6B238E"); // Respiral-Stylization
 
         // Context menu button colors
-        public static readonly Color ButtonColorContext = Color.FromHex("#1119");
-        public static readonly Color ButtonColorContextHover = Color.DarkSlateGray;
-        public static readonly Color ButtonColorContextPressed = Color.LightSlateGray;
-        public static readonly Color ButtonColorContextDisabled = Color.Black;
+        public static readonly Color ButtonColorContext = Color.FromHex("#1A1612CC"); // Respiral-Stylization
+        public static readonly Color ButtonColorContextHover = Color.FromHex("#3D382E"); // Respiral-Stylization
+        public static readonly Color ButtonColorContextPressed = Color.FromHex("#56452C"); // Respiral-Stylization
+        public static readonly Color ButtonColorContextDisabled = Color.FromHex("#0F0B08"); // Respiral-Stylization
 
         // Examine button colors
         public static readonly Color ExamineButtonColorContext = Color.Transparent;
-        public static readonly Color ExamineButtonColorContextHover = Color.DarkSlateGray;
-        public static readonly Color ExamineButtonColorContextPressed = Color.LightSlateGray;
-        public static readonly Color ExamineButtonColorContextDisabled = Color.FromHex("#5A5A5A");
+        public static readonly Color ExamineButtonColorContextHover = Color.FromHex("#2E2A25AA"); // Respiral-Stylization
+        public static readonly Color ExamineButtonColorContextPressed = Color.FromHex("#3D382EAA"); // Respiral-Stylization
+        public static readonly Color ExamineButtonColorContextDisabled = Color.FromHex("#3E3A35"); // Respiral-Stylization
 
         // Fancy Tree elements
-        public static readonly Color FancyTreeEvenRowColor = Color.FromHex("#25252A");
+        public static readonly Color FancyTreeEvenRowColor = Color.FromHex("#1A1612"); // Respiral-Stylization
         public static readonly Color FancyTreeOddRowColor = FancyTreeEvenRowColor * new Color(0.8f, 0.8f, 0.8f);
-        public static readonly Color FancyTreeSelectedRowColor = new Color(55, 55, 68);
+        public static readonly Color FancyTreeSelectedRowColor = Color.FromHex("#2E2A25"); // Respiral-Stylization
 
         //Used by the APC and SMES menus
         public const string StyleClassPowerStateNone = "PowerStateNone";
@@ -146,7 +146,7 @@ namespace Content.Client.Stylesheets
 
         public const string StyleClassItemStatus = "ItemStatus";
         public const string StyleClassItemStatusNotHeld = "ItemStatusNotHeld";
-        public static readonly Color ItemStatusNotHeldColor = Color.Gray;
+        public static readonly Color ItemStatusNotHeldColor = Color.FromHex("#3E3A35"); // Respiral-Stylization
 
         //Background
         public const string StyleClassBackgroundBaseDark = "PanelBackgroundBaseDark";
@@ -156,7 +156,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassButtonColorRed = "ButtonColorRed";
         public const string StyleClassButtonColorGreen = "ButtonColorGreen";
 
-        public static readonly Color ChatBackgroundColor = Color.FromHex("#25252ADD");
+        public static readonly Color ChatBackgroundColor = Color.FromHex("#0F0B08DD"); // Respiral-Stylization
 
         //Bwoink
         public const string StyleClassPinButtonPinned = "pinButtonPinned";
@@ -405,20 +405,20 @@ namespace Content.Client.Stylesheets
             };
             tabContainerPanel.SetPatchMargin(StyleBox.Margin.All, 2);
 
-            var tabContainerBoxActive = new StyleBoxFlat { BackgroundColor = new Color(64, 64, 64) };
+            var tabContainerBoxActive = new StyleBoxFlat { BackgroundColor = Color.FromHex("#56452C") }; // Respiral-Stylization
             tabContainerBoxActive.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
-            var tabContainerBoxInactive = new StyleBoxFlat { BackgroundColor = new Color(32, 32, 32) };
+            var tabContainerBoxInactive = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2E2A25") }; // Respiral-Stylization
             tabContainerBoxInactive.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
 
             var progressBarBackground = new StyleBoxFlat
             {
-                BackgroundColor = new Color(0.25f, 0.25f, 0.25f)
+                BackgroundColor = Color.FromHex("#2E2A25") // Respiral-Stylization
             };
             progressBarBackground.SetContentMarginOverride(StyleBox.Margin.Vertical, 14.5f);
 
             var progressBarForeground = new StyleBoxFlat
             {
-                BackgroundColor = new Color(0.25f, 0.50f, 0.25f)
+                BackgroundColor = Color.FromHex("#2D5016") // Respiral-Stylization
             };
             progressBarForeground.SetContentMarginOverride(StyleBox.Margin.Vertical, 14.5f);
 
@@ -502,13 +502,13 @@ namespace Content.Client.Stylesheets
             placeholder.SetExpandMargin(StyleBox.Margin.All, -5);
             placeholder.Mode = StyleBoxTexture.StretchMode.Tile;
 
-            var itemListBackgroundSelected = new StyleBoxFlat { BackgroundColor = new Color(75, 75, 86) };
+            var itemListBackgroundSelected = new StyleBoxFlat { BackgroundColor = Color.FromHex("#3D382E") }; // Respiral-Stylization
             itemListBackgroundSelected.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListBackgroundSelected.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
-            var itemListItemBackgroundDisabled = new StyleBoxFlat { BackgroundColor = new Color(10, 10, 12) };
+            var itemListItemBackgroundDisabled = new StyleBoxFlat { BackgroundColor = Color.FromHex("#1A1612") }; // Respiral-Stylization
             itemListItemBackgroundDisabled.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListItemBackgroundDisabled.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
-            var itemListItemBackground = new StyleBoxFlat { BackgroundColor = new Color(55, 55, 68) };
+            var itemListItemBackground = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2E2A25") }; // Respiral-Stylization
             itemListItemBackground.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListItemBackground.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
             var itemListItemBackgroundTransparent = new StyleBoxFlat { BackgroundColor = Color.Transparent };
@@ -552,7 +552,7 @@ namespace Content.Client.Stylesheets
             var sliderFillBox = new StyleBoxTexture
             {
                 Texture = sliderFillTex,
-                Modulate = Color.FromHex("#3E6C45")
+                Modulate = Color.FromHex("#2D5016") // Respiral-Stylization
             };
 
             var sliderBackBox = new StyleBoxTexture
@@ -564,7 +564,7 @@ namespace Content.Client.Stylesheets
             var sliderForeBox = new StyleBoxTexture
             {
                 Texture = sliderOutlineTex,
-                Modulate = Color.FromHex("#494949")
+                Modulate = Color.FromHex("#3E3A35") // Respiral-Stylization
             };
 
             var sliderGrabBox = new StyleBoxTexture
@@ -587,7 +587,7 @@ namespace Content.Client.Stylesheets
             var insetBack = new StyleBoxTexture
             {
                 Texture = buttonTex,
-                Modulate = Color.FromHex("#202023"),
+                Modulate = Color.FromHex("#1A1612"), // Respiral-Stylization
             };
             insetBack.SetPatchMargin(StyleBox.Margin.All, 10);
 
@@ -595,7 +595,7 @@ namespace Content.Client.Stylesheets
             var paperBackground = new StyleBoxTexture
             {
                 Texture = resCache.GetTexture("/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"),
-                Modulate = Color.FromHex("#eaedde"), // A light cream
+                Modulate = Color.FromHex("#D8D0B8"), // A light cream // Respiral-Stylization
             };
             paperBackground.SetPatchMargin(StyleBox.Margin.All, 16.0f);
 
@@ -763,7 +763,7 @@ namespace Content.Client.Stylesheets
                     new SelectorElement(typeof(Label), null, null, null)),
                     new[]
                     {
-                        new StyleProperty("font-color", Color.FromHex("#E5E5E581")),
+                        new StyleProperty("font-color", Color.FromHex("#8C7D6B")), // Respiral-Stylization
                     }),
 
                 // ItemStatus for hands
@@ -896,19 +896,19 @@ namespace Content.Client.Stylesheets
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassNormal)
-                    .Prop(Control.StylePropertyModulateSelf, new Color(55, 55, 68)),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#2E2A25")), // Respiral-Stylization
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, new Color(75, 75, 86)),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#3D382E")), // Respiral-Stylization
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassPressed)
-                    .Prop(Control.StylePropertyModulateSelf, new Color(75, 75, 86)),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#3D382E")), // Respiral-Stylization
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassDisabled)
-                    .Prop(Control.StylePropertyModulateSelf, new Color(10, 10, 12)),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1A1612")), // Respiral-Stylization
 
                 // Main menu: Make those buttons bigger.
                 new StyleRule(new SelectorChild(
@@ -937,18 +937,18 @@ namespace Content.Client.Stylesheets
                     new SelectorElement(typeof(LineEdit), new[] {LineEdit.StyleClassLineEditNotEditable}, null, null),
                     new[]
                     {
-                        new StyleProperty("font-color", new Color(192, 192, 192)),
+                        new StyleProperty("font-color", Color.FromHex("#8C7D6B")), // Respiral-Stylization
                     }),
 
                 new StyleRule(
                     new SelectorElement(typeof(LineEdit), null, null, new[] {LineEdit.StylePseudoClassPlaceholder}),
                     new[]
                     {
-                        new StyleProperty("font-color", Color.Gray),
+                        new StyleProperty("font-color", Color.FromHex("#5D4C3D")), // Respiral-Stylization
                     }),
 
                 Element<TextEdit>().Pseudo(TextEdit.StylePseudoClassPlaceholder)
-                    .Prop("font-color", Color.Gray),
+                    .Prop("font-color", Color.FromHex("#5D4C3D")), // Respiral-Stylization
 
                 // chat subpanels (chat lineedit backing, popup backings)
                 new StyleRule(new SelectorElement(typeof(PanelContainer), new[] {StyleClassChatPanel}, null, null),
@@ -1120,7 +1120,7 @@ namespace Content.Client.Stylesheets
                 new StyleRule(new SelectorElement(typeof(ItemList), null, null, null), new[]
                 {
                     new StyleProperty(ItemList.StylePropertyBackground,
-                        new StyleBoxFlat {BackgroundColor = new Color(32, 32, 40)}),
+                        new StyleBoxFlat {BackgroundColor = Color.FromHex("#1A1612")}), // Respiral-Stylization
                     new StyleProperty(ItemList.StylePropertyItemBackground,
                         itemListItemBackground),
                     new StyleProperty(ItemList.StylePropertyDisabledItemBackground,
@@ -1157,10 +1157,10 @@ namespace Content.Client.Stylesheets
                 new StyleRule(new SelectorElement(typeof(Tree), null, null, null), new[]
                 {
                     new StyleProperty(Tree.StylePropertyBackground,
-                        new StyleBoxFlat {BackgroundColor = new Color(32, 32, 40)}),
+                        new StyleBoxFlat {BackgroundColor = Color.FromHex("#1A1612")}), // Respiral-Stylization
                     new StyleProperty(Tree.StylePropertyItemBoxSelected, new StyleBoxFlat
                     {
-                        BackgroundColor = new Color(55, 55, 68),
+                        BackgroundColor = Color.FromHex("#2E2A25"), // Respiral-Stylization
                         ContentMarginLeftOverride = 4
                     })
                 }),
@@ -1175,7 +1175,7 @@ namespace Content.Client.Stylesheets
                     new SelectorElement(typeof(Label), new[] {Placeholder.StyleClassPlaceholderText}, null, null), new[]
                     {
                         new StyleProperty(Label.StylePropertyFont, notoSans16),
-                        new StyleProperty(Label.StylePropertyFontColor, new Color(103, 103, 103, 128)),
+                        new StyleProperty(Label.StylePropertyFontColor, Color.FromHex("#5D4C3D80")), // Respiral-Stylization
                     }),
 
                 // Big Label
@@ -1197,7 +1197,7 @@ namespace Content.Client.Stylesheets
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassLabelSubText}, null, null), new[]
                 {
                     new StyleProperty(Label.StylePropertyFont, notoSans10),
-                    new StyleProperty(Label.StylePropertyFontColor, Color.DarkGray),
+                    new StyleProperty(Label.StylePropertyFontColor, Color.FromHex("#56452C")), // Respiral-Stylization
                 }),
 
                 // Label Key
@@ -1211,7 +1211,7 @@ namespace Content.Client.Stylesheets
                     new[]
                     {
                         new StyleProperty(Label.StylePropertyFont, notoSans12),
-                        new StyleProperty(Label.StylePropertyFontColor, Color.DarkGray),
+                        new StyleProperty(Label.StylePropertyFontColor, Color.FromHex("#56452C")), // Respiral-Stylization
                     }),
 
                 // Console text
@@ -1524,7 +1524,7 @@ namespace Content.Client.Stylesheets
                 }),
 
                 Element<PanelContainer>().Class(OptionButton.StyleClassOptionsBackground)
-                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#25252A"))),
+                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#25252A"))), // Respiral-Stylization
 
                 new StyleRule(new SelectorElement(typeof(PanelContainer), new []{ ClassHighDivider}, null, null), new []
                 {
@@ -1546,22 +1546,22 @@ namespace Content.Client.Stylesheets
                 // Different Background shapes ---
                 Element<PanelContainer>().Class(ClassAngleRect)
                     .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1A1612")), // Respiral-Stylization
 
                 Element<PanelContainer>().Class("BackgroundOpenRight")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenRight)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1A1612")), // Respiral-Stylization
 
                 Element<PanelContainer>().Class("BackgroundOpenLeft")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenLeft)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1A1612")), // Respiral-Stylization
                 // ---
 
                 // Dividers
                 Element<PanelContainer>().Class(ClassLowDivider)
                     .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat
                     {
-                        BackgroundColor = Color.FromHex("#444"),
+                        BackgroundColor = Color.FromHex("#56452C"), // Respiral-Stylization
                         ContentMarginLeftOverride = 2,
                         ContentMarginBottomOverride = 2
                     }),
@@ -1573,7 +1573,7 @@ namespace Content.Client.Stylesheets
 
                 Element<PanelContainer>().Class("WindowHeadingBackground")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenLeft) { Padding = default })
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1F1F23")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#0F0B08")), // Respiral-Stylization
 
                 Element<PanelContainer>().Class("WindowHeadingBackgroundLight")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenLeft) { Padding = default }),
@@ -1581,31 +1581,31 @@ namespace Content.Client.Stylesheets
                 // Window Header Help Button
                 Element<TextureButton>().Class(FancyWindow.StyleClassWindowHelpButton)
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Nano/help.png"))
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#4B596A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#5D4C3D")), // Respiral-Stylization
 
                 Element<TextureButton>().Class(FancyWindow.StyleClassWindowHelpButton).Pseudo(ContainerButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#7F3636")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#8C5E2D")), // Respiral-Stylization
 
                 Element<TextureButton>().Class(FancyWindow.StyleClassWindowHelpButton).Pseudo(ContainerButton.StylePseudoClassPressed)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#753131")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#5C3D1E")), // Respiral-Stylization
 
                 //The lengths you have to go through to change a background color smh
                 Element<PanelContainer>().Class("PanelBackgroundBaseDark")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenBoth) { Padding = default })
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1F1F23")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#0F0B08")), // Respiral-Stylization
 
                 Element<PanelContainer>().Class("PanelBackgroundLight")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenBoth) { Padding = default })
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#2F2F3B")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#2E2A25")), // Respiral-Stylization
 
                 // Window Footer
                 Element<TextureRect>().Class("NTLogoDark")
                     .Prop(TextureRect.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Nano/ntlogo.svg.png"))
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#757575")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#5D4C3D")), // Respiral-Stylization
 
                 Element<Label>().Class("WindowFooterText")
                     .Prop(Label.StylePropertyFont, notoSans8)
-                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#757575")),
+                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#8C7D6B")), // Respiral-Stylization
 
                 // X Texture button ---
                 Element<TextureButton>().Class("CrossButtonRed")
@@ -1613,10 +1613,10 @@ namespace Content.Client.Stylesheets
                     .Prop(Control.StylePropertyModulateSelf, DangerousRedFore),
 
                 Element<TextureButton>().Class("CrossButtonRed").Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#7F3636")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#7D2B2B")), // Respiral-Stylization
 
                 Element<TextureButton>().Class("CrossButtonRed").Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#753131")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#6A2525")), // Respiral-Stylization
 
                 //
                 Element<TextureButton>().Class("Refresh")
@@ -1629,18 +1629,18 @@ namespace Content.Client.Stylesheets
 
                 Element<TextureButton>().Class("SpeciesInfoWarning")
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/info.svg.192dpi.png"))
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#eeee11")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#8C7853")), // Respiral-Stylization
 
                 // The default look of paper in UIs. Pages can have components which override this
                 Element<PanelContainer>().Class("PaperDefaultBorder")
                     .Prop(PanelContainer.StylePropertyPanel, paperBackground),
                 Element<RichTextLabel>().Class("PaperWrittenText")
                     .Prop(Label.StylePropertyFont, notoSans12)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#111111")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#2E2A25")), // Respiral-Stylization
 
                 Element<RichTextLabel>().Class("LabelSubText")
                     .Prop(Label.StylePropertyFont, notoSans10)
-                    .Prop(Label.StylePropertyFontColor, Color.DarkGray),
+                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#56452C")), // Respiral-Stylization
 
                 Element<LineEdit>().Class("PaperLineEdit")
                     .Prop(LineEdit.StylePropertyStyleBox, new StyleBoxEmpty()),

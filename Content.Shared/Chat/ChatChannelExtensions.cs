@@ -6,7 +6,7 @@ public static class ChatChannelExtensions
     {
         return channel switch
         {
-            ChatChannel.Server => Color.Orange,
+            ChatChannel.Server => Color.FromHex("#A67A3F"), // Respiral-Stylization
             ChatChannel.Radio => Color.LimeGreen,
             ChatChannel.LOOC => Color.MediumTurquoise,
             ChatChannel.OOC => Color.LightSkyBlue,
