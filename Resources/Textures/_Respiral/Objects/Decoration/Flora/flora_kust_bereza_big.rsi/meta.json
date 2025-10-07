@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by <@1008260079558086707> (discord) for Respiral",
+    "size": {
+        "x": 192,
+        "y": 256
+    },
+    "states": [
+        {
+            "name": "tree01"
+        },
+        {
+            "name": "tree02"
+        },
+		{
+            "name": "tree03"
+        }
+    ]
+}
