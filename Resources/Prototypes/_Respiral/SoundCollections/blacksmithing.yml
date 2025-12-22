@@ -1,0 +1,10 @@
+- type: soundCollection
+  id: HummerStrikes
+  files:
+    - /Audio/_Respiral/Effects/Blacksmithing/hummer1.ogg
+    - /Audio/_Respiral/Effects/Blacksmithing/hummer2.ogg
+    - /Audio/_Respiral/Effects/Blacksmithing/hummer3.ogg
+    - /Audio/_Respiral/Effects/Blacksmithing/hummer4.ogg
+    - /Audio/_Respiral/Effects/Blacksmithing/hummer5.ogg
+    - /Audio/_Respiral/Effects/Blacksmithing/hummer6.ogg
+    - /Audio/_Respiral/Effects/Blacksmithing/hummer7.ogg

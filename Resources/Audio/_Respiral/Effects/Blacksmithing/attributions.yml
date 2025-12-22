@@ -1,0 +1,9 @@
+- files: ["quenching.ogg", "hummer1.ogg", "hummer2.ogg", "hummer3.ogg"]
+  license: "CC0-1.0"
+  copyright: "Idk, if they have a specific license, contact the owners to resolve the issue of free use of sounds from the internet, taken from https://melonradio.ru/"
+  source: "https://melonradio.ru/"
+
+- files: ["hummer4.ogg", "hummer5.ogg", "hummer6.ogg", "hummer7.ogg"]
+  license: "CC0-1.0"
+  copyright: "Taken from https://pixabay.com/"
+  source: "https://pixabay.com/sound-effects/hammer-and-anvil-32229/"
