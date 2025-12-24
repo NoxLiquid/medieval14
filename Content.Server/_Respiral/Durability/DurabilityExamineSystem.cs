@@ -1,8 +1,9 @@
+using Content.Shared.Durability;
 using Content.Shared.Examine;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Durability;
+namespace Content.Server.Durability;
 
 public sealed class DurabilityExamineSystem : EntitySystem
 {

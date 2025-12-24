@@ -1005,7 +1005,8 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
     /// <summary>
     /// Creates a simple planet setup for a map.
     /// </summary>
-    public void EnsurePlanet(EntityUid mapUid, BiomeTemplatePrototype biomeTemplate, int? seed = null, MetaDataComponent? metadata = null, Color? mapLight = null)
+    public void EnsurePlanet(EntityUid mapUid, BiomeTemplatePrototype biomeTemplate, int? seed = null, TimeSpan? lightOffset = null, // Respiral-ProcGen-Edit
+        MetaDataComponent? metadata = null, Color? mapLight = null) // Respiral-ProcGen-Edit
     {
         if (!Resolve(mapUid, ref metadata))
             return;
@@ -1032,9 +1033,16 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         light.AmbientLightColor = mapLight ?? Color.FromHex("#D8B059");
         Dirty(mapUid, light, metadata);
 
-        EnsureComp<RoofComponent>(mapUid);
+        // Respiral-ProcGen-Edit-start
+        var lightCycle = EnsureComp<LightCycleComponent>(mapUid);
+        if (lightOffset.HasValue)
+        {
+            lightCycle.Offset = lightOffset.Value;
+            lightCycle.InitialOffset = false;
+        }
+        // Respiral-ProcGen-end
 
-        EnsureComp<LightCycleComponent>(mapUid);
+        EnsureComp<RoofComponent>(mapUid);
 
         EnsureComp<SunShadowComponent>(mapUid);
         EnsureComp<SunShadowCycleComponent>(mapUid);

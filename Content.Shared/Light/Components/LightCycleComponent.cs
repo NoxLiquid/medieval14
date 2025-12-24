@@ -16,7 +16,7 @@ public sealed partial class LightCycleComponent : Component
     /// How long an entire cycle lasts
     /// </summary>
     [DataField, AutoNetworkedField]
-    public TimeSpan Duration = TimeSpan.FromMinutes(30);
+    public TimeSpan Duration = TimeSpan.FromMinutes(60); // Respiral-ProcGen-Edit
 
     [DataField, AutoNetworkedField]
     public TimeSpan Offset;

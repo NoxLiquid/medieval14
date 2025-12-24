@@ -14,7 +14,7 @@ public sealed class LightCycleSystem : SharedLightCycleSystem
     {
         base.OnCycleMapInit(ent, ref args);
 
-        if (ent.Comp.InitialOffset)
+        if (ent.Comp.InitialOffset && ent.Comp.Offset == TimeSpan.Zero) // Respiral-ProcGen-Edit
         {
             SetOffset(ent, _random.Next(ent.Comp.Duration));
         }
