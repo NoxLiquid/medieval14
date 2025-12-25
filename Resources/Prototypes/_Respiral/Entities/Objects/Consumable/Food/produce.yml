@@ -1,0 +1,265 @@
+- type: entity
+  name: тройника
+  parent: FoodProduceBase
+  id: FoodBerriesTroynika
+  description: Три красные ягодки, соединённые общим хвостиком
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Produce/troynika.rsi
+    state: berry
+  - type: Item
+    size: Tiny
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBerry
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+
+
+- type: entity
+  name: чернохвостка
+  parent: FoodProduceBase
+  id: FoodBerriesBlacktail
+  description: Длинные чёрные ягоды, сплетённые в хвостик
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Produce/blacktail.rsi
+    state: berry
+  - type: Item
+    size: Tiny
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBerry
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: феолика
+  parent: FoodProduceBase
+  id: FoodBerriesFeolika
+  description: Круглая ягода фиолетового цвета
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Produce/feolika.rsi
+    state: berry
+  - type: Item
+    size: Tiny
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBerry
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: синячка
+  parent: FoodProduceBase
+  id: FoodBerriesSinyachka
+  description: Две крупные ягоды синего цвета с общей веточкой.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: SodiumHydroxide
+          Quantity: 6
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Produce/sinyachka.rsi
+    state: berry
+  - type: Item
+    size: Tiny
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBerry
+        Quantity: 5
+      - ReagentId: SodiumHydroxide
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: тяфлика # ненасыщенная
+  suffix: Ненасыщенная
+  parent: FoodProduceBase
+  id: FoodBerriesTyaflikaUnsaturated
+  description: Ягода, форма которой напоминает сосульку. Она обмораживает вам пальцы
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 23
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Fresium
+          Quantity: 10
+        - ReagentId: FrostOil
+          Quantity: 10
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Produce/tyaflika.rsi
+    state: berry-unsaturated
+  - type: Item
+    heldPrefix: unsaturated
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: FrostOil
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: тяфлика # средненасыщенная
+  suffix: средне насыщенная
+  parent: FoodProduceBase
+  id: FoodBerriesTyaflikaNormalSaturated
+  description: Ягода, форма которой напоминает сосульку. Вы чувствуете холод, идущий от неё
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 13
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Fresium
+          Quantity: 10
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Produce/tyaflika.rsi
+    state: berry-normalsaturated
+  - type: Item
+    heldPrefix: normalsaturated
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: FrostOil
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: тяфлика # насыщенная
+  suffix: насыщенная
+  parent: FoodProduceBase
+  id: FoodBerriesTyaflikaSaturated
+  description: Ягода, форма которой напоминает сосульку. Она чуть прохладная
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Fresium
+          Quantity: 5
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Produce/tyaflika.rsi
+    state: berry-saturated
+  - type: Item
+    heldPrefix: saturated
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: FrostOil
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  name: златка
+  parent: FoodProduceBase
+  id: FoodBerriesZlatka
+  description: Круглая ягода золотого цвета
+  components:
+  - type: FlavorProfile
+    flavors:
+      - berry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Gold
+          Quantity: 4
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Produce/zlatka.rsi
+    state: berry
+  - type: Item
+    size: Tiny
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBerry
+        Quantity: 8
+      - ReagentId: Gold
+        Quantity: 2
+  - type: Tag
+    tags:
+    - Fruit

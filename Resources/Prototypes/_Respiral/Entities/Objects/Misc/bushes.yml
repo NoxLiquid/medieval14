@@ -1,0 +1,749 @@
+- type: entity
+  id: BaseBush
+  name: куст
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Appearance
+  - type: SpeedModifierContacts
+    affectAirborne: true
+    walkSpeedModifier: 0.4
+    sprintSpeedModifier: 0.4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+        - MidImpassable
+
+
+
+- type: entity # Большой куст без ягод
+  parent: BaseBush
+  id: BushBig
+  name: куст
+  description: Большой куст.
+  suffix: Большой, Без ягод
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Big/big_bush.rsi
+    layers:
+    - state: big_bush01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        big_bush01: ""
+        big_bush02: ""
+        big_bush03: ""
+        big_bush04: ""
+        big_bush05: ""
+
+
+- type: entity # Большая Тройника
+  parent: BaseBush
+  id: BushBigTroynika
+  description: Большой куст. На нём время от времени вырастают красные плоды, веточки которых соединяют три ягоды вместе.
+  suffix: Большой, Тройника
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Big/big_troynika.rsi
+    layers:
+    - state: big_troynika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTroynika
+    maxYield: 5
+    minYield: 3
+    minGrowthTime: 600
+    maxGrowthTime: 1200 # От 10 до 20 минут
+    harvestDuration: 25
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: big_troynika_b }
+          Harvested: { state: big_troynika_h }
+
+- type: entity # Большая Феолика
+  parent: BaseBush
+  id: BushBigFeolika
+  description: Большой куст. На нём время от времени вырастают фиолетовые ягоды, похожие на чернику.
+  suffix: Большой, Феолика
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Big/big_feolika.rsi
+    layers:
+    - state: big_feolika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesFeolika
+    maxYield: 5
+    minYield: 3
+    minGrowthTime: 600
+    maxGrowthTime: 1200 # От 10 до 20 минут
+    harvestDuration: 25
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: big_feolika_b }
+          Harvested: { state: big_feolika_h }
+
+- type: entity # Большая Чернохвостка
+  parent: BaseBush
+  id: BushBigChernohvostka
+  description: Большой куст. На нём время от времени вырастают длинные и чёрные ягоды.
+  suffix: Большой, Чернохвостка
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Big/big_chernohvostka.rsi
+    layers:
+    - state: big_chernohvostka_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesBlacktail
+    maxYield: 5
+    minYield: 3
+    minGrowthTime: 600
+    maxGrowthTime: 1200 # От 10 до 20 минут
+    harvestDuration: 25
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: big_chernohvostka_b }
+          Harvested: { state: big_chernohvostka_h }
+
+- type: entity # Большая Синячка
+  parent: BaseBush
+  id: BushBigSinyachka
+  description: Большой куст. На нём время от времени вырастают большие синие ягоды, соединённые по две.
+  suffix: Большой, Синячка
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Big/big_sinyachka.rsi
+    layers:
+    - state: big_sinyachka_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesSinyachka
+    maxYield: 5
+    minYield: 3
+    minGrowthTime: 600
+    maxGrowthTime: 1200 # От 10 до 20 минут
+    harvestDuration: 25
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: big_sinyachka_b }
+          Harvested: { state: big_sinyachka_h }
+
+- type: entity # Большая Тяфлика Насыщенная
+  parent: BaseBush
+  id: BushBigTyaflikaSaturated
+  description: Большой куст. На нём время от времени вырастают слегка изогнутые голубые ягоды.
+  suffix: Большой, Тяфлика, Насыщенная
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Big/big_tyaflika.rsi
+    layers:
+    - state: big_tyaflika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTyaflikaSaturated
+    maxYield: 5
+    minYield: 3
+    minGrowthTime: 600
+    maxGrowthTime: 1200 # От 10 до 20 минут
+    harvestDuration: 25
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: big_tyaflika_b }
+          Harvested: { state: big_tyaflika_h }
+
+- type: entity # Большая Тяфлика Среденасыщенная
+  parent: BaseBush
+  id: BushBigTyaflikaNormalSaturated
+  description: Большой куст. На нём время от времени вырастают слегка изогнутые голубые ягоды.
+  suffix: Большой, Тяфлика, Средняя
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Big/big_tyaflika.rsi
+    layers:
+    - state: big_tyaflika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTyaflikaNormalSaturated
+    maxYield: 5
+    minYield: 3
+    minGrowthTime: 600
+    maxGrowthTime: 1200 # От 10 до 20 минут
+    harvestDuration: 25
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: big_tyaflika_b }
+          Harvested: { state: big_tyaflika_h }
+
+- type: entity # Большая Тяфлика Ненасыщенная
+  parent: BaseBush
+  id: BushBigTyaflikaUnsaturated
+  description: Большой куст. На нём время от времени вырастают слегка изогнутые голубые ягоды.
+  suffix: Большой, Тяфлика, Ненасыщенная
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Big/big_tyaflika.rsi
+    layers:
+    - state: big_tyaflika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTyaflikaUnsaturated
+    maxYield: 5
+    minYield: 3
+    minGrowthTime: 600
+    maxGrowthTime: 1200 # От 10 до 20 минут
+    harvestDuration: 25
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: big_tyaflika_b }
+          Harvested: { state: big_tyaflika_h }
+
+- type: entity
+  name: Спавнер большая тяфлика
+  id: BushBigTyaflikaRandomSpawner
+  suffix: Случайная насыщенность, Большой
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Respiral/Objects/Misc/Bushes/Big/big_tyaflika.rsi
+        state: big_tyaflika_b
+  - type: RandomSpawner
+    prototypes:
+    - BushBigTyaflikaSaturated
+    - BushBigTyaflikaNormalSaturated
+    - BushBigTyaflikaUnsaturated
+
+- type: entity # Большая Златка
+  parent: BaseBush
+  id: BushBigZlatka
+  description: Большой куст. На нём время от времени вырастают небольшие золотистые ягоды.
+  suffix: Большой, Златка
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Big/big_zlatka.rsi
+    layers:
+    - state: big_zlatka_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesZlatka
+    maxYield: 5
+    minYield: 3
+    minGrowthTime: 600
+    maxGrowthTime: 1200 # От 10 до 20 минут
+    harvestDuration: 25
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: big_zlatka_b }
+          Harvested: { state: big_zlatka_h }
+
+- type: entity # Средний куст без ягод
+  parent: BaseBush
+  id: BushMedium
+  name: куст
+  description: Куст. Вполне обычный.
+  suffix: Средний, Без ягод
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_bush.rsi
+    layers:
+    - state: medium_bush01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        medium_bush01: ""
+        medium_bush02: ""
+        medium_bush03: ""
+        medium_bush04: ""
+        medium_bush05: ""
+        medium_bush06: ""
+
+- type: entity # Тройника средняя
+  parent: BaseBush
+  id: BushMediumTroynika
+  description: Куст. На нём время от времени вырастают красные плоды, веточки которых соединяют три ягоды вместе.
+  suffix: Средний, Тройника
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_troynika.rsi
+    layers:
+    - state: medium_troynika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTroynika
+    maxYield: 3
+    minYield: 2
+    minGrowthTime: 480
+    maxGrowthTime: 900 # От 8 до 15 минут
+    harvestDuration: 15
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: medium_troynika_b }
+          Harvested: { state: medium_troynika_h }
+
+- type: entity # Феолика средняя
+  parent: BaseBush
+  id: BushMediumFeolika
+  description: Куст. На нём время от времени вырастают фиолетовые ягоды, похожие на чернику.
+  suffix: Средний, Феолика
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_feolika.rsi
+    layers:
+    - state: medium_feolika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesFeolika
+    maxYield: 3
+    minYield: 2
+    minGrowthTime: 480
+    maxGrowthTime: 900 # От 8 до 15 минут
+    harvestDuration: 15
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: medium_feolika_b }
+          Harvested: { state: medium_feolika_h }
+
+- type: entity # Чернохвостка средняя
+  parent: BaseBush
+  id: BushMediumChernohvostka
+  description: Куст. На нём время от времени вырастают длинные и чёрные ягоды.
+  suffix: Средний, Чернохвостка
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_chernohvostka.rsi
+    layers:
+    - state: medium_chernohvostka_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesBlacktail
+    maxYield: 3
+    minYield: 2
+    minGrowthTime: 480
+    maxGrowthTime: 900 # От 8 до 15 минут
+    harvestDuration: 15
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: medium_chernohvostka_b }
+          Harvested: { state: medium_chernohvostka_h }
+
+- type: entity # Синячка средняя
+  parent: BaseBush
+  id: BushMediumSinyachka
+  description: Куст. На нём время от времени вырастают большие синие ягоды, соединённые по две.
+  suffix: Средний, Синячка
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_sinyachka.rsi
+    layers:
+    - state: medium_sinyachka_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesSinyachka
+    maxYield: 3
+    minYield: 2
+    minGrowthTime: 480
+    maxGrowthTime: 900 # От 8 до 15 минут
+    harvestDuration: 15
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: medium_sinyachka_b }
+          Harvested: { state: medium_sinyachka_h }
+
+- type: entity # Тяфлика средняя насыщенная
+  parent: BaseBush
+  id: BushMediumTyaflikaSaturated
+  description: Куст. На нём время от времени вырастают слегка изогнутые голубые ягоды.
+  suffix: Средний, Тяфлика, Насыщенная
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_tyaflika.rsi
+    layers:
+    - state: medium_tyaflika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTyaflikaSaturated
+    maxYield: 3
+    minYield: 2
+    minGrowthTime: 480
+    maxGrowthTime: 900 # От 8 до 15 минут
+    harvestDuration: 15
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: medium_tyaflika_b }
+          Harvested: { state: medium_tyaflika_h }
+
+- type: entity # Тяфлика средняя средне насыщенная
+  parent: BaseBush
+  id: BushMediumTyaflikaNormalSaturated
+  description: Куст. На нём время от времени вырастают слегка изогнутые голубые ягоды.
+  suffix: Средний, Тяфлика, Средне насыщенная
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_tyaflika.rsi
+    layers:
+    - state: medium_tyaflika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTyaflikaNormalSaturated
+    maxYield: 3
+    minYield: 2
+    minGrowthTime: 480
+    maxGrowthTime: 900 # От 8 до 15 минут
+    harvestDuration: 15
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: medium_tyaflika_b }
+          Harvested: { state: medium_tyaflika_h }
+
+- type: entity # Тяфлика средняя ненасыщенная
+  parent: BaseBush
+  id: BushMediumTyaflikaUnsaturated
+  description: Куст. На нём время от времени вырастают слегка изогнутые голубые ягоды.
+  suffix: Средний, Тяфлика, Ненасыщенная
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_tyaflika.rsi
+    layers:
+    - state: medium_tyaflika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTyaflikaUnsaturated
+    maxYield: 3
+    minYield: 2
+    minGrowthTime: 480
+    maxGrowthTime: 900 # От 8 до 15 минут
+    harvestDuration: 15
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: medium_tyaflika_b }
+          Harvested: { state: medium_tyaflika_h }
+
+- type: entity
+  name: Спавнер средняя тяфлика
+  id: BushMediumTyaflikaRandomSpawner
+  suffix: Случайная насыщенность, Средний
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_tyaflika.rsi
+        state: medium_tyaflika_b
+  - type: RandomSpawner
+    prototypes:
+    - BushMediumTyaflikaSaturated
+    - BushMediumTyaflikaNormalSaturated
+    - BushMediumTyaflikaUnsaturated
+
+- type: entity # Златка средняя
+  parent: BaseBush
+  id: BushMediumZlatka
+  description: Куст. На нём время от времени вырастают небольшие золотистые ягоды.
+  suffix: Средний, Златка
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_zlatka.rsi
+    layers:
+    - state: medium_zlatka_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesZlatka
+    maxYield: 3
+    minYield: 2
+    minGrowthTime: 480
+    maxGrowthTime: 900 # От 8 до 15 минут
+    harvestDuration: 15
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: medium_zlatka_b }
+          Harvested: { state: medium_zlatka_h }
+
+- type: entity # Маленький куст без ягод
+  parent: BaseBush
+  id: BushSmall
+  name: куст
+  description: Маленький куст
+  suffix: Маленький, Без ягод
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Small/small_bush.rsi
+    layers:
+    - state: small_bush01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        small_bush01: ""
+        small_bush02: ""
+        small_bush03: ""
+        small_bush04: ""
+        small_bush05: ""
+        small_bush06: ""
+
+- type: entity # Маленькая Тройника
+  parent: BaseBush
+  id: BushSmallTroynika
+  description: Маленький куст. На нём время от времени вырастают красные плоды, веточки которых соединяют три ягоды вместе.
+  suffix: Маленький, Тройника
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Small/small_troynika.rsi
+    layers:
+    - state: small_troynika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTroynika
+    maxYield: 2
+    minYield: 1
+    minGrowthTime: 300
+    maxGrowthTime: 480 # От 5 до 8 минут
+    harvestDuration: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: small_troynika_b }
+          Harvested: { state: small_troynika_h }
+
+- type: entity # Маленькая Феолика
+  parent: BaseBush
+  id: BushSmallFeolika
+  description: Маленький куст. На нём время от времени вырастают фиолетовые ягоды, похожие на чернику.
+  suffix: Маленький, Феолика
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Small/small_feolika.rsi
+    layers:
+    - state: small_feolika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesFeolika
+    maxYield: 2
+    minYield: 1
+    minGrowthTime: 300
+    maxGrowthTime: 480 # От 5 до 8 минут
+    harvestDuration: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: small_feolika_b }
+          Harvested: { state: small_feolika_h }
+
+- type: entity # Маленькая чернохвостка
+  parent: BaseBush
+  id: BushSmallBlacktail
+  description: Маленький куст. На нём время от времени вырастают длинные, чёрные ягоды.
+  suffix: Маленький, Чернохвостка
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Small/small_blacktail.rsi
+    layers:
+    - state: small_blacktail_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesBlacktail
+    maxYield: 2
+    minYield: 1
+    minGrowthTime: 300
+    maxGrowthTime: 480 # От 5 до 8 минут
+    harvestDuration: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: small_blacktail_b }
+          Harvested: { state: small_blacktail_h }
+
+
+- type: entity # Маленькая Синячка
+  parent: BaseBush
+  id: BushSmallSinyachka
+  description: Маленький куст. На нём время от времени вырастают большие синие ягоды, соединённые по две.
+  suffix: Маленький, Синячка
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Small/small_sinyachka.rsi
+    layers:
+    - state: small_sinyachka_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesSinyachka
+    maxYield: 2
+    minYield: 1
+    minGrowthTime: 300
+    maxGrowthTime: 480 # От 5 до 8 минут
+    harvestDuration: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: small_sinyachka_b }
+          Harvested: { state: small_sinyachka_h }
+
+- type: entity # Маленькая Тяфлика Насыщенная
+  parent: BaseBush
+  id: BushSmallTyaflikaSaturated
+  description: Маленький куст. На нём время от времени вырастают слегка изогнутые голубые ягоды.
+  suffix: Маленький, Тяфлика, Насыщенная
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Small/small_tyaflika.rsi
+    layers:
+    - state: small_tyaflika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTyaflikaSaturated
+    maxYield: 2
+    minYield: 1
+    minGrowthTime: 300
+    maxGrowthTime: 480 # От 5 до 8 минут
+    harvestDuration: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: small_tyaflika_b }
+          Harvested: { state: small_tyaflika_h }
+
+- type: entity # Маленькая Тяфлика средне насыщенная
+  parent: BaseBush
+  id: BushSmallTyaflikaNormalSaturated
+  description: Маленький куст. На нём время от времени вырастают слегка изогнутые голубые ягоды.
+  suffix: Маленький, Тяфлика, Средне насыщенная
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Small/small_tyaflika.rsi
+    layers:
+    - state: small_tyaflika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTyaflikaNormalSaturated
+    maxYield: 2
+    minYield: 1
+    minGrowthTime: 300
+    maxGrowthTime: 480 # От 5 до 8 минут
+    harvestDuration: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: small_tyaflika_b }
+          Harvested: { state: small_tyaflika_h }
+
+- type: entity # Маленькая Тяфлика ненасыщенная
+  parent: BaseBush
+  id: BushSmallTyaflikaUnsaturated
+  description: Маленький куст. На нём время от времени вырастают слегка изогнутые голубые ягоды.
+  suffix: Маленький, Тяфлика, Ненасыщенная
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Small/small_tyaflika.rsi
+    layers:
+    - state: small_tyaflika_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesTyaflikaUnsaturated
+    maxYield: 2
+    minYield: 1
+    minGrowthTime: 300
+    maxGrowthTime: 480 # От 5 до 8 минут
+    harvestDuration: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: small_tyaflika_b }
+          Harvested: { state: small_tyaflika_h }
+
+- type: entity
+  name: Спавнер маленькая тяфлика
+  id: BushSmallTyaflikaRandomSpawner
+  suffix: Случайная насыщенность, Маленький
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Respiral/Objects/Misc/Bushes/Small/small_tyaflika.rsi
+        state: small_tyaflika_b
+  - type: RandomSpawner
+    prototypes:
+    - BushSmallTyaflikaSaturated
+    - BushSmallTyaflikaNormalSaturated
+    - BushSmallTyaflikaUnsaturated
+
+- type: entity # Маленькая Златка
+  parent: BaseBush
+  id: BushSmallZlatka
+  description: Маленький куст. На нём время от времени вырастают небольшие золотистые ягоды.
+  suffix: Маленький, Златка
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/Bushes/Small/small_zlatka.rsi
+    layers:
+    - state: small_zlatka_b
+      map: ["flora"]
+  - type: Flora
+    harvestPrototype: FoodBerriesZlatka
+    maxYield: 2
+    minYield: 1
+    minGrowthTime: 300
+    maxGrowthTime: 480 # От 5 до 8 минут
+    harvestDuration: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.FloraVisuals.State:
+        flora:
+          Grown: { state: small_zlatka_b }
+          Harvested: { state: small_zlatka_h }

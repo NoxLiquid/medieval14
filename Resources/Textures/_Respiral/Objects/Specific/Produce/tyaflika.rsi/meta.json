@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA 3.0",
+  "copyright": "Created by <@1008260079558086707> (discord) for Respiral",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "berry-saturated"
+    },
+    {
+      "name": "saturated-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "saturated-inhand-right",
+      "directions": 4
+    },
+    {
+        "name": "berry-normalsaturated"
+    },
+    {
+      "name": "normalsaturated-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "normalsaturated-inhand-right",
+      "directions": 4
+    },
+    {
+        "name": "berry-unsaturated"
+    },
+    {
+      "name": "unsaturated-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "unsaturated-inhand-right",
+      "directions": 4
+    }
+  ]
+}

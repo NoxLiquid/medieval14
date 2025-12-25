@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by <@1008260079558086707> (discord) for Respiral",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "small_bush01"
+        },
+        {
+            "name": "small_bush02"
+        },
+        {
+            "name": "small_bush03"
+        },
+        {
+            "name": "small_bush04"
+        },
+        {
+            "name": "small_bush05"
+        },
+        {
+            "name": "small_bush06"
+        }
+    ]
+}
