@@ -19,7 +19,6 @@
   roles:
   - Bartender
   - Botanist
-  - Boxer
   - Chaplain
   - Chef
   - Clown
@@ -32,7 +31,6 @@
   - Passenger
   - Reporter
   - Visitor
-  - Zookeeper
   - ServiceWorker
   
 - type: department
@@ -148,8 +146,6 @@
   editorHidden: true # Respiral-Edit
   weight: 10
   roles:
-  - Boxer
   - Reporter
-  - Zookeeper
   - Psychologist
   primary: false
