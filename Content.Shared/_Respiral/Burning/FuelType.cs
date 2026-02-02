@@ -1,7 +1,7 @@
 namespace Content.Shared.Burning;
 
 [DataRecord]
-public record struct FuelType(
+public partial record struct FuelType(
     float BaseTemp,
     float MaxTemp,
     float TempRiseRate,

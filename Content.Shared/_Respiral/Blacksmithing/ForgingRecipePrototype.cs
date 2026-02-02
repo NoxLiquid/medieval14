@@ -2,8 +2,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Blacksmithing;
 
-[Prototype("forgingRecipe")]
-public sealed class ForgingRecipePrototype : IPrototype
+[Prototype]
+public sealed partial class ForgingRecipePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
@@ -38,8 +38,8 @@ public sealed class ForgingRecipePrototype : IPrototype
     public (float Min, float Max) IdealTemperature { get; private set; } = (800f, 950f);
 }
 
-[Prototype("strikeType")]
-public sealed class StrikeTypePrototype : IPrototype
+[Prototype]
+public sealed partial class StrikeTypePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

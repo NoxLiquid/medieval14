@@ -1,6 +1,6 @@
 using Content.Server.Hanging.Components;
 using Content.Shared.Buckle.Components;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Hanging;

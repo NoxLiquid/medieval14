@@ -4,6 +4,7 @@ using Content.Shared.Burning;
 using Content.Shared.Burning.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Hands;
 using Content.Shared.IgnitionSource;
 using Content.Shared.Interaction;

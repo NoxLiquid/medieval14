@@ -5,6 +5,7 @@ using Content.Shared.Damage;
 using Content.Shared.Inventory;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Throwing;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server.Durability;
 
