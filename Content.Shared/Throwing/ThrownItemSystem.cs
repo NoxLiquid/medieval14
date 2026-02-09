@@ -10,6 +10,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
+using Content.Shared._CE.ZLevels.Core.EntitySystems; // Respiral-ZLeveling
 
 namespace Content.Shared.Throwing
 {
@@ -25,6 +26,7 @@ namespace Content.Shared.Throwing
         [Dependency] private readonly SharedBroadphaseSystem _broadphase = default!;
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
         [Dependency] private readonly SharedGravitySystem _gravity = default!;
+        [Dependency] private readonly CESharedZLevelsSystem _zLevels = default!; // Respiral-ZLeveling
 
         private const string ThrowingFixture = "throw-fixture";
 
@@ -127,6 +129,11 @@ namespace Content.Shared.Throwing
                 _adminLogger.Add(LogType.Landed, LogImpact.Low, $"{ToPrettyString(uid):entity} thrown by {ToPrettyString(thrownItem.Thrower.Value):thrower} landed.");
 
             _broadphase.RegenerateContacts((uid, physics));
+
+            // Respiral-ZLeveling-start
+            if (_zLevels.DistanceToGround(uid) > 0.5f)
+                return;
+            // Respiral-ZLeveling-end
             var landEvent = new LandEvent(thrownItem.Thrower, playSound);
             RaiseLocalEvent(uid, ref landEvent);
         }

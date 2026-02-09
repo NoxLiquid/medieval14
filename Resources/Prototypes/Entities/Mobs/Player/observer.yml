@@ -27,6 +27,11 @@
         density: 15
         layer:
         - GhostImpassable
+  # Respiral-ZLeveling-start
+  - type: CEZLevelGhostMover
+  - type: CEZPhysics
+    autoStep: false
+  # Respiral-ZLeveling-end
 
 # shared parent between aghosts, replay spectators and normal observers
 - type: entity

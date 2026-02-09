@@ -1,0 +1,32 @@
+- type: entity
+  id: ActionZLevelUp
+  name: Move up
+  description: Move up one Z-Level
+  components:
+  - type: Action
+    checkCanInteract: false
+    icon: { sprite: _Respiral/Actions/misc.rsi, state: up }
+  - type: InstantAction
+    event: !type:CEZLevelActionUp
+
+- type: entity
+  id: ActionZLevelDown
+  name: Move down
+  description: Move down one Z-Level
+  components:
+  - type: Action
+    checkCanInteract: false
+    icon: { sprite: _Respiral/Actions/misc.rsi, state: down }
+  - type: InstantAction
+    event: !type:CEZLevelActionDown
+
+- type: entity
+  id: ActionToggleLookUp
+  name: Look up
+  description: You lift your head and look up at the sky.
+  components:
+  - type: Action
+    checkCanInteract: false
+    icon: { sprite: _Respiral/Actions/misc.rsi, state: eye }
+  - type: InstantAction
+    event: !type:CEToggleZLevelLookUpAction

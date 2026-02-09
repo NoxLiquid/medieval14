@@ -138,5 +138,13 @@ namespace Content.Shared.Maps
         {
             TileId = id;
         }
+
+        // Respiral-ZLeveling-start
+        /// <summary>
+        /// Used for lightning calculation through zlevels
+        /// </summary>
+        [DataField]
+        public bool Transparent;
+        // Respiral-ZLeveling-end
     }
 }

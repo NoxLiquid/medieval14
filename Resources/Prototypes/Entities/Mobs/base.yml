@@ -54,6 +54,7 @@
   - type: MobMover
   - type: MovementSpeedModifier
   - type: LagCompensation
+  - type: CEZPhysics # Respiral-ZLeveling
 
 - type: entity
   save: false

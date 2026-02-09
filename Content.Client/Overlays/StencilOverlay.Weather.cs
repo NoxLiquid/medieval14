@@ -20,7 +20,7 @@ public sealed partial class StencilOverlay
     {
         var worldHandle = args.WorldHandle;
         var mapId = args.MapId;
-        var worldAABB = args.WorldAABB;
+        var worldAABB = args.WorldAABB.Enlarged(1f); // Respiral-ZLeveling-Edit
         var worldBounds = args.WorldBounds;
         var position = args.Viewport.Eye?.Position.Position ?? Vector2.Zero;
 
@@ -42,7 +42,7 @@ public sealed partial class StencilOverlay
                 worldHandle.SetTransform(matty);
                 _entManager.TryGetComponent(grid.Owner, out RoofComponent? roofComp);
 
-                foreach (var tile in _map.GetTilesIntersecting(grid.Owner, grid, worldAABB))
+                foreach (var tile in _map.GetTilesIntersecting(grid.Owner, grid, worldAABB, ignoreEmpty: false)) // Respiral-ZLeveling-Edit
                 {
                     // Ignored tiles for stencil
                     if (_weather.CanWeatherAffect(grid.Owner, grid, tile, roofComp))
