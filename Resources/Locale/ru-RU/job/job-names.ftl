@@ -49,6 +49,7 @@ job-name-ertjanitor = уборщик ОБР
 job-name-boxer = боксёр
 job-name-zookeeper = зоотехник
 job-name-visitor = посетитель
+job-name-cluwne = клувень
 # unused jobs
 # these are required for the agent ID job icon tooltips
 # I am keeping them for roleplaying opportunities
@@ -60,7 +61,6 @@ job-name-syndicate = синдикат
 job-name-unknown = неизвестно
 job-name-virologist = вирусолог
 job-name-zombie = зомби
-job-name-pilligrim = странник
 # Job titles
 job-title-visitor = посетитель
 job-title-cluwne = клувень

@@ -9,4 +9,3 @@ department-Science = Научный отдел
 department-Silicon = Синтетики
 department-Specific = На определённых станциях
 department-Unknown = Неизвестный
-department-Commoner = Простолюдины
