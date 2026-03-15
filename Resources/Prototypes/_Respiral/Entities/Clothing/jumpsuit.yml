@@ -1,0 +1,54 @@
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalPeasantRags
+  name: лохмотья
+  components:
+  - type: Sprite
+    state: icon
+    sprite: _Respiral/Clothing/Jumpsuit/peasant-rags.rsi
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/peasant-rags.rsi
+
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalShirt
+  name: рубаха в полоску
+  components:
+  - type: Sprite
+    state: icon
+    sprite: _Respiral/Clothing/Jumpsuit/shirt.rsi
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/shirt.rsi
+
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalShirt2
+  name: рубаха с коротким рукавом
+  components:
+  - type: Sprite
+    state: icon
+    sprite: _Respiral/Clothing/Jumpsuit/shirt2.rsi
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/shirt2.rsi
+
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalLongShirt
+  name: длинная рубаха
+  components:
+  - type: Sprite
+    state: icon
+    sprite: _Respiral/Clothing/Jumpsuit/long_shirt.rsi
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/long_shirt.rsi
+
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalDress
+  name: хозяйственное платье
+  components:
+  - type: Sprite
+    state: icon
+    sprite: _Respiral/Clothing/Jumpsuit/dress.rsi
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/dress.rsi

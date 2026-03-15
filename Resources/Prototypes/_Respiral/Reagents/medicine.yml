@@ -1,0 +1,74 @@
+- type: reagent
+  id: MedievalHealingPotion
+  name: reagent-name-medieval-healing-potion
+  group: Medicine
+  desc: reagent-desc-medieval-healing-potion
+  flavor: sweet
+  color: "#ff9999"
+  physicalDesc: reagent-physical-desc-syrupy
+  metabolisms:
+    Bloodstream:
+      effects:
+        - !type:HealthChange
+          damage:
+            groups:
+              Brute: -2
+              Burn: -2
+            types:
+              Asphyxiation: -0.5
+              Bloodloss: -0.5
+        - !type:HealthChange
+          conditions:
+            - !type:ReagentCondition
+              reagent: MedievalHealingPotion
+              min: 15
+          damage:
+            groups:
+              Brute: 1.0
+
+- type: reagent
+  id: MedievalAntitoxin
+  name: reagent-name-medieval-antitoxin
+  group: Medicine
+  desc: reagent-desc-medieval-antitoxin
+  flavor: bitter
+  color: "#66ff66"
+  physicalDesc: reagent-physical-desc-opaque
+  metabolisms:
+    Bloodstream:
+      effects:
+        - !type:HealthChange
+          damage:
+            groups:
+              Toxin: -2
+        - !type:HealthChange
+          conditions:
+            - !type:ReagentCondition
+              reagent: MedievalAntitoxin
+              min: 15
+          damage:
+            types:
+              Poison: 1.0
+
+- type: reagent
+  id: MedievalManaPotion # Доработать
+  name: reagent-name-medieval-mana-potion
+  group: Medicine
+  desc: reagent-desc-medieval-mana-potion
+  flavor: mystical
+  color: "#6633cc"
+  physicalDesc: reagent-physical-desc-glowing
+  metabolisms:
+    Bloodstream:
+      effects:
+        - !type:AdjustReagent
+          reagent: Ephedrine
+          amount: 0.2
+        - !type:HealthChange
+          conditions:
+            - !type:ReagentCondition
+              reagent: MedievalManaPotion
+              min: 15
+          damage:
+            groups:
+              Toxin: 0.5

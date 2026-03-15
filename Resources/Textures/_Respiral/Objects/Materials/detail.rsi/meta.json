@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by Space Station 14 project Respiral",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "detail"
+    },
+    {
+      "name": "detail_2"
+    },
+    {
+      "name": "detail_3"
+    },
+    {
+      "name": "detail-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "detail-inhand-right",
+      "directions": 4
+    }
+  ]
+}

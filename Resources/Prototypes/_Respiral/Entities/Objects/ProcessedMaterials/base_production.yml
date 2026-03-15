@@ -1,0 +1,48 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: MedievalBaseProcessedMaterial
+  name: материал
+  suffix: Средневековье
+  components:
+  - type: Material
+  - type: Sprite
+    sprite: _Respiral/Objects/Materials/misk.rsi
+  - type: Item
+    sprite: _Respiral/Objects/Materials/misk.rsi
+    size: Normal
+  - type: Damageable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: MedievalIngotBase
+  suffix: Средневековье
+  name: слиток
+  components:
+  - type: Sprite
+    sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi
+  - type: Item
+    sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi
+    size: Normal
+  - type: Material
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 20
+        mask:
+          - ItemMask
+        restitution: 0.3
+        friction: 0.2

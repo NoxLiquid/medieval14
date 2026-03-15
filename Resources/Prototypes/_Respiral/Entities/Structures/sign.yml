@@ -1,0 +1,146 @@
+- type: entity
+  id: MedivalWoodenSign
+  name: указатель
+  suffix: Средневековье
+  abstract: true
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Respiral/Structures/sign.rsi
+    state: sign1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.4,0.35,0.4"
+        density: 100
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedivalWoodenSign1
+  parent: MedivalWoodenSign
+
+- type: entity
+  id: MedivalWoodenSign2
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign2
+
+- type: entity
+  id: MedivalWoodenSign3
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign3
+
+- type: entity
+  id: MedivalWoodenSign4
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign4
+
+- type: entity
+  id: MedivalWoodenSign5
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign5
+
+- type: entity
+  id: MedivalWoodenSign6
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign6
+
+- type: entity
+  id: MedivalWoodenSign7
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign7
+
+- type: entity
+  id: MedivalWoodenSign8
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign8
+
+- type: entity
+  id: MedivalWoodenSign9
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign9
+
+- type: entity
+  id: MedivalWoodenSign10
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign10
+
+- type: entity
+  id: MedivalWoodenSign11
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign11
+
+- type: entity
+  id: MedivalWoodenSign12
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign12
+
+- type: entity
+  id: MedivalWoodenSign13
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign13
+
+- type: entity
+  id: MedivalWoodenSign14
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign14
+
+- type: entity
+  id: MedivalWoodenSign15
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign15
+
+- type: entity
+  id: MedivalWoodenSign16
+  parent: MedivalWoodenSign
+  components:
+  - type: Sprite
+    state: sign16

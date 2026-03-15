@@ -1,0 +1,130 @@
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraBerezaLittle
+  name: большие берёзовые кусты
+  description: Большие и светлые кусты. В таких легко можно запрятать труп, сундук или же себя! Отлично сохраняют тепло. 
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_kust_bereza_little.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraBerezaBig
+  name: малые берёзовые кусты
+  description: Обычные кусты, малые светлые и прелестные. Ничем не примечательны и крайне теплы. 
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_kust_bereza_big.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+        
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraDubKustLittle
+  name: малые дубовые кусты
+  description: Обычные кусты, малые и средней светлость окраса. Ничем не примечательны, но хороши. 
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_kust_dub_little.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraDubKustBig
+  name: большие дубовые кусты
+  description: Большие и темноветые кусты. Широколиственные и причудливой формы, интересный экземпляр.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_kust_dub_big.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""       
+        tree03: ""  
+        
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraElkaKustLittle
+  name: малые кусты ели
+  description: Обычные кусты, малые и тёмные. Ничем не примечательны.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_kust_elka_little.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+        
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraElkaKustBig
+  name: большие кусты ели
+  description: Большие и тёмные кусты. Крайне необычная и причудливая листва. Крайне теплый куст, легко можно укрыться от малого холода.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_kust_elka_big.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+        
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraKustPenek
+  name: пень
+  description: Когда-то тут было дерево, теперь его здесь нет.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_kust_penek.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+        tree04: ""
+        tree05: ""
+        tree06: ""
+        tree07: ""
+        

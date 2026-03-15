@@ -1,0 +1,267 @@
+- type: entity
+  parent: MedievalBaseDagger
+  id: MedievalIronHideDagger
+  name: железный скрытый клинок
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 2
+    angle: 0
+    range: 1.5
+    damage:
+      types:
+        Piercing: 6
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8A8A8A"
+      right:
+      - state: inhand-right
+        color: "#8A8A8A"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 50
+      MedievalProcessedWood: 50
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseDagger
+  id: MedievalWoodHideDagger
+  name: деревянный скрытый клинок
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
+    layers:
+    - state: blade
+      color: "#8B4513"
+    - state: handle
+      color: "#8B4513"
+  - type: MeleeWeapon
+    attackRate: 2
+    angle: 0
+    range: 1.5
+    damage:
+      types:
+        Blunt: 1.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8B4513"
+      right:
+      - state: inhand-right
+        color: "#8B4513"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+
+- type: entity
+  parent: MedievalBaseDagger
+  id: MedievalSteelHideDagger
+  name: стальной скрытый клинок
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
+    layers:
+    - state: blade
+      color: "#B0C4DE"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 2
+    angle: 0
+    range: 1.5
+    damage:
+      types:
+        Piercing: 7.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#B0C4DE"
+      right:
+      - state: inhand-right
+        color: "#B0C4DE"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSteel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 50
+      MedievalProcessedWood: 50
+
+- type: entity
+  parent: MedievalBaseDagger
+  id: MedievalSilverHideDagger
+  name: серебрянный скрытый клинок
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
+    layers:
+    - state: blade
+      color: "#C0C0FF"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 2
+    angle: 0
+    range: 1.5
+    damage:
+      types:
+        Piercing: 6
+        Holy: 6
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSilver
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 50
+      MedievalProcessedWood: 50
+
+- type: entity
+  parent: MedievalBaseDagger
+  id: MedievalMithrilHideDagger
+  name: мифриловый скрытый клинок
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
+    layers:
+    - state: blade
+      color: "#9370DB"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 2
+    angle: 0
+    range: 1.5
+    damage:
+      types:
+        Piercing: 9
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9370DB"
+      right:
+      - state: inhand-right
+        color: "#9370DB"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalMithril
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedMithril: 50
+      MedievalProcessedWood: 50
+
+- type: entity
+  parent: MedievalBaseDagger
+  id: MedievalAdamantineHideDagger
+  name: адамантитовый скрытый клинок
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
+    layers:
+    - state: blade
+      color: "#4B0000"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 2
+    angle: 0
+    range: 1.5
+    damage:
+      types:
+        Piercing: 10.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4B0000"
+      right:
+      - state: inhand-right
+        color: "#4B0000"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalAdamantine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 50
+      MedievalProcessedWood: 50
+

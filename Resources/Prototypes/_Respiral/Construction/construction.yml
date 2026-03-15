@@ -1,0 +1,542 @@
+- type: construction
+  id: MedievalGirder
+  graph: MedievalGirder
+  startNode: start
+  targetNode: girder
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWallWood
+  graph: MedievalGirder
+  startNode: start
+  targetNode: woodWall
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalHeavyWallStone
+  graph: MedievalGirder
+  startNode: start
+  targetNode: heavyWallStone
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWallStone
+  graph: MedievalGirder
+  startNode: start
+  targetNode: wallStone
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalHeavyWallWood
+  graph: MedievalGirder
+  startNode: start
+  targetNode: heavyWallWood
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Кровати 🛏️
+
+- type: construction
+  id: MedievalComfortableBed
+  graph: MedievalBed
+  startNode: start
+  targetNode: сomfortableBed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalBed
+  graph: MedievalBed
+  startNode: start
+  targetNode: bed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalClothHeyBed
+  graph: MedievalBed
+  startNode: start
+  targetNode: сlothHeyBed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalHeyBed
+  graph: MedievalBed
+  startNode: start
+  targetNode: heyBed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Стулья 🪑
+
+- type: construction
+  id: MedievalStool
+  graph: MedievalChair
+  startNode: start
+  targetNode: stool
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChairPlain
+  graph: MedievalChair
+  startNode: start
+  targetNode: chairPlain
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChairRedCushion
+  graph: MedievalChair
+  startNode: start
+  targetNode: chairRedCushion
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChairEmeraldLuxury
+  graph: MedievalChair
+  startNode: start
+  targetNode: chairEmeraldLuxury
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Шкафы 🗄️
+
+- type: construction
+  id: MedievalFilingCabinet1
+  graph: MedievalCabinet
+  startNode: start
+  targetNode: filingCabinet1
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFilingCabinet2
+  graph: MedievalCabinet
+  startNode: start
+  targetNode: filingCabinet2
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFilingCabinet3
+  graph: MedievalCabinet
+  startNode: start
+  targetNode: filingCabinet3
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFilingCabinet4
+  graph: MedievalCabinet
+  startNode: start
+  targetNode: filingCabinet4
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Двери 🚪
+
+- type: construction
+  id: MedievalWoodDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWoodDurableDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodDurableDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalIronWoodDurableDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: ironWoodDurableDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWoodDoorFrame
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodDoorFrame
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalStoneDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: stoneDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalIronDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: ironDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Хранилища 📦
+
+- type: construction
+  id: MedievalBasket
+  graph: MedievalCrate
+  startNode: start
+  targetNode: basket
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWardrobeCarved
+  graph: MedievalCrate
+  startNode: start
+  targetNode: wardrobeCarved
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWardrobeIron
+  graph: MedievalCrate
+  startNode: start
+  targetNode: wardrobeIron
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWardrobeWood
+  graph: MedievalCrate
+  startNode: start
+  targetNode: wardrobeWood
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChestLuxury
+  graph: MedievalCrate
+  startNode: start
+  targetNode: chestLuxury
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChestOrnate
+  graph: MedievalCrate
+  startNode: start
+  targetNode: chestOrnate
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChestReinforced
+  graph: MedievalCrate
+  startNode: start
+  targetNode: chestReinforced
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChestWood
+  graph: MedievalCrate
+  startNode: start
+  targetNode: chestWood
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Забор
+
+#Wooden fence high
+- type: construction
+  id: MedievalFenceWood
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: straight
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFenceWoodEnd
+  name: construction-recipe-fence-wood-end
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: end
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFenceWoodCorner
+  name: construction-recipe-fence-wood-corner
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: corner
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFenceWoodTJunction
+  name: construction-recipe-fence-wood-t-junction
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: tjunction
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFenceWoodGate
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: gate
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFenceWoodSmall
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: straight_small
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFenceWoodEndSmall
+  name: construction-recipe-fence-wood-end-small
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: end_small
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFenceWoodCornerSmall
+  name: construction-recipe-fence-wood-corner-small
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: corner_small
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFenceWoodTJunctionSmall
+  name: construction-recipe-fence-wood-t-junction-small
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: tjunction_small
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFenceWoodGateSmall
+  name: construction-recipe-fence-wood-gate-small
+  graph: MedievalFenceWood
+  startNode: start
+  targetNode: gate_small
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

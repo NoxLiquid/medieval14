@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseStructure
+  id: MedievalWallBlock
+  suffix: Средневековье
+  name: кирпич
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Marker
+  - type: Tag
+    tags:
+      - Wall
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Respiral/Markers/cross.rsi
+    layers:
+    - state: wall
+  - type: Physics
+    bodyType: Static
+  - type: WallReplacementMarker

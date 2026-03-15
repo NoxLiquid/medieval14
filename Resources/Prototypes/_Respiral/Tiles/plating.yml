@@ -1,0 +1,14 @@
+- type: tile
+  id: MedievalLattice
+  name: tiles-medieval-lattice
+  sprite: /Textures/_Respiral/Tiles/lattice.png
+  baseTurf: MedievalDirt
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepCatwalk
+  friction: 0.3
+  isSpace: true
+  itemDrop: MedievalFloorTileItemGrass
+  heatCapacity: 10000

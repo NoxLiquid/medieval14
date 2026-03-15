@@ -1,0 +1,324 @@
+- type: entity
+  name: трава
+  parent: FoodProduceBase
+  id: MedievalBaseHerbItem
+  suffix: Средневековье
+  components:
+  - type: SolutionContainerManager
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/herbs.rsi
+    state: krovavaya_roza2
+  - type: Extractable
+
+- type: entity
+  name: глазница
+  parent: MedievalBaseHerbItem
+  id: MedievalGlaznicaItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - metallic
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalGlaznica
+          Quantity: 5
+  - type: Sprite
+    state: glaznica2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalGlaznica
+        Quantity: 5
+
+- type: entity
+  name: камнелистрик
+  parent: MedievalBaseHerbItem
+  id: MedievalKamnelepestnikItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - earthy
+      - mineral
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalKamnelepestnik
+          Quantity: 5
+  - type: Sprite
+    state: kamnelepestnik2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalKamnelepestnik
+        Quantity: 5
+
+- type: entity
+  name: кровавая роза
+  parent: MedievalBaseHerbItem
+  id: MedievalKrovavayaRozaItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - floral
+      - metallic
+      - bitter
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalKrovavayaRoza
+          Quantity: 5
+  - type: Sprite
+    state: krovavaya_roza2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalKrovavayaRoza
+        Quantity: 5
+
+- type: entity
+  name: луноцвет
+  parent: MedievalBaseHerbItem
+  id: MedievalLunocvetItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - magical
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalLunocvet
+          Quantity: 5
+  - type: Sprite
+    state: lunocvet2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalLunocvet
+        Quantity: 5
+
+- type: entity
+  name: гонецвет
+  parent: MedievalBaseHerbItem
+  id: MedievalOgneCvetItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - spicy
+      - bitter
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalOgneCvet
+          Quantity: 5
+  - type: Sprite
+    state: ogne_cvet2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalOgneCvet
+        Quantity: 5
+
+- type: entity
+  name: золотая пижма
+  parent: MedievalBaseHerbItem
+  id: MedievalPihtaItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - earthy
+      - floral
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalPihta
+          Quantity: 5
+  - type: Sprite
+    state: pihta2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalPihta
+        Quantity: 5
+
+- type: entity
+  name: лунная ромашка
+  parent: MedievalBaseHerbItem
+  id: MedievalRomashkaItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - floral
+      - calming
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalRomashka
+          Quantity: 5
+  - type: Sprite
+    state: romashka2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalRomashka
+        Quantity: 5
+
+- type: entity
+  name: шиповец
+  parent: MedievalBaseHerbItem
+  id: MedievalShipovecItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - thorny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalShipovec
+          Quantity: 5
+  - type: Sprite
+    state: shipovec2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalShipovec
+        Quantity: 5
+
+- type: entity
+  name: сухоцвет
+  parent: MedievalBaseHerbItem
+  id: MedievalSuhoCvetItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - dry
+      - earthy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalSuhoCvet
+          Quantity: 5
+  - type: Sprite
+    state: suho_cvet2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalSuhoCvet
+        Quantity: 5
+
+- type: entity
+  name: терновник ведьмы
+  parent: MedievalBaseHerbItem
+  id: MedievalTernovnikItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - spooky
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalTernovnik
+          Quantity: 5
+  - type: Sprite
+    state: ternovnik2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalTernovnik
+        Quantity: 5
+
+- type: entity
+  name: вереск
+  parent: MedievalBaseHerbItem
+  id: MedievalVereskItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - floral
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalVeresk
+          Quantity: 5
+  - type: Sprite
+    state: veresk2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalVeresk
+        Quantity: 5
+
+- type: entity
+  name: виунка
+  parent: MedievalBaseHerbItem
+  id: MedievalViunkaItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - earthy
+      - tangy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalViunka
+          Quantity: 5
+  - type: Sprite
+    state: viunka2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalViunka
+        Quantity: 5
+
+- type: entity
+  name: воросник
+  parent: MedievalBaseHerbItem
+  id: MedievalVorosnikItem
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - sour
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: MedievalVorosnik
+          Quantity: 5
+  - type: Sprite
+    state: vorosnik2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: MedievalVorosnik
+        Quantity: 5

@@ -98,19 +98,35 @@ entity-effect-guidebook-status-effect-old =
         [update]{ $chance ->
                     [1] Causes
                      *[other] cause
-                 } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} without accumulation
+                                 } {LOC($key)} минимум на {NATURALFIXED($time, 3)} { $time ->
+                                        [one] секунду
+                                        [few] секунды
+                                     *[other] секунд
+                                 }, эффект не накапливается
         [add]   { $chance ->
                     [1] Causes
                     *[other] cause
-                } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} with accumulation
+                } {LOC($key)} минимум на {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                   *[other] секунд
+                }, эффект накапливается
         [set]  { $chance ->
                     [1] Causes
                     *[other] cause
-                } {LOC($key)} for {NATURALFIXED($time, 3)} {MANY("second", $time)} without accumulation
+                } {LOC($key)} на {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                   *[other] секунд
+                }, эффект не накапливается
         *[remove]{ $chance ->
                     [1] Removes
                     *[other] remove
-                } {NATURALFIXED($time, 3)} {MANY("second", $time)} of {LOC($key)}
+                } {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                   *[other] секунд
+                } эффекта {LOC($key)}
     }
 
 entity-effect-guidebook-status-effect =
@@ -191,19 +207,35 @@ entity-effect-guidebook-knockdown =
         [update]{ $chance ->
                     [1] Causes
                     *[other] cause
-                    } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} without accumulation
+                    } {LOC($key)} минимум на {NATURALFIXED($time, 3)} { $time ->
+                        [one] секунду
+                        [few] секунды
+                       *[other] секунд
+                    }, эффект не накапливается
         [add]   { $chance ->
                     [1] Causes
                     *[other] cause
-                } knockdown for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} with accumulation
+                } сбивание с ног минимум на {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                   *[other] секунд
+                }, эффект накапливается
         *[set]  { $chance ->
                     [1] Causes
                     *[other] cause
-                } knockdown for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} without accumulation
+                } сбивание с ног минимум на {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                   *[other] секунд
+                }, эффект не накапливается
         [remove]{ $chance ->
                     [1] Removes
                     *[other] remove
-                } {NATURALFIXED($time, 3)} {MANY("second", $time)} of knockdown
+                } {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                   *[other] секунд
+                } сбивания с ног
     }
 
 entity-effect-guidebook-set-solution-temperature-effect =
@@ -344,7 +376,11 @@ entity-effect-guidebook-electrocute =
     { $chance ->
         [1] Electrocutes
         *[other] electrocute
-    } the metabolizer for {NATURALFIXED($time, 3)} {MANY("second", $time)}
+    } метаболизирующего на {NATURALFIXED($time, 3)} { $time ->
+        [one] секунду
+        [few] секунды
+       *[other] секунд
+    }
 
 entity-effect-guidebook-emote =
     { $chance ->
@@ -410,13 +446,21 @@ entity-effect-guidebook-paralyze =
     { $chance ->
         [1] Paralyzes
         *[other] paralyze
-    } the metabolizer for at least {NATURALFIXED($time, 3)} {MANY("second", $time)}
+    } метаболизирующего минимум на {NATURALFIXED($time, 3)} { $time ->
+        [one] секунду
+        [few] секунды
+       *[other] секунд
+    }
 
 entity-effect-guidebook-movespeed-modifier =
     { $chance ->
         [1] Modifies
         *[other] modify
-    } movement speed by {NATURALFIXED($sprintspeed, 3)}x for at least {NATURALFIXED($time, 3)} {MANY("second", $time)}
+    } скорость передвижения в {NATURALFIXED($sprintspeed, 3)} раза минимум на {NATURALFIXED($time, 3)} { $time ->
+        [one] секунду
+        [few] секунды
+       *[other] секунд
+    }
 
 entity-effect-guidebook-reset-narcolepsy =
     { $chance ->
@@ -452,13 +496,21 @@ entity-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Regenerates
         *[other] regenerate
-    } {NATURALFIXED($time, 3)} {MANY("second", $time)} of rotting
+    } гниение на {NATURALFIXED($time, 3)} { $time ->
+        [one] секунду
+        [few] секунды
+       *[other] секунд
+    }
 
 entity-effect-guidebook-area-reaction =
     { $chance ->
         [1] Causes
         *[other] cause
-    } a smoke or foam reaction for {NATURALFIXED($duration, 3)} {MANY("second", $duration)}
+    } реакцию дыма или пены на {NATURALFIXED($duration, 3)} { $duration ->
+        [one] секунду
+        [few] секунды
+       *[other] секунд
+    }
 
 entity-effect-guidebook-add-to-solution-reaction =
     { $chance ->

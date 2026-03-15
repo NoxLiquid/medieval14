@@ -1,0 +1,16 @@
+- type: entity
+  id: MedievalStandardTerritory
+  parent:
+    - BaseStation
+    - BaseStationCargo
+    - BaseStationJobsSpawning
+    - BaseStationCentcomm
+    # - BaseStationEvacuation
+    - BaseStationAlertLevels
+    - BaseStationExpeditions
+    # - BaseStationSalvageJobs
+    - BaseStationAllEventsEligible
+    - BaseStationDeliveries
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Transform

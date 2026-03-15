@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/Twilight-Fortress-SS13 and modified Space Station 14 project Respiral.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+	{
+      "name": "dublicate"
+    },
+	{
+      "name": "key1"
+    },
+	{
+      "name": "key2"
+    },
+	{
+      "name": "key3"
+    },
+	{
+      "name": "key4"
+    },
+	{
+      "name": "key5"
+    },
+	{
+      "name": "key6"
+    },
+	{
+      "name": "key7"
+    },
+	{
+      "name": "key8"
+    },
+	{
+      "name": "key9"
+    },
+	{
+      "name": "key10"
+    },
+	{
+      "name": "key11"
+    },
+	{
+      "name": "key12",
+	  "directions": 1,
+		"delays": [
+			[
+				0.15,
+				0.15,
+				0.15,
+				0.15,
+				0.15,
+				0.15
+			]
+		]
+    },
+	{
+      "name": "key13"
+    },
+	{
+      "name": "key14"
+    },
+	{
+      "name": "key15"
+    },
+	{
+      "name": "lockpick1"
+    },
+	{
+      "name": "lockpick2"
+    },
+	{
+      "name": "bunch1"
+    },
+	{
+      "name": "bunch2"
+    },
+	{
+      "name": "bunch3"
+    },
+	{
+      "name": "bunch4"
+    },
+	{
+      "name": "bunch5"
+    },
+	{
+      "name": "bunch6"
+    }
+  ]
+}

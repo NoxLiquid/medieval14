@@ -1,0 +1,83 @@
+- type: stack
+  id: MedievalBoard
+  name: stack-medieval-board
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/board.rsi, state: board }
+  spawn: MedievalBoard1
+  maxCount: 6
+
+- type: stack
+  id: MedievalRodWood
+  name: stack-medieval-rod-wood
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/parts.rsi, state: rods, color: "#8B4513" }
+  spawn: MedievalPartRodWood1
+  maxCount: 6
+
+- type: stack
+  id: MedievalProcessedIron
+  name: stack-medieval-processed-iron
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: iron }
+  spawn: MedievalIronIngot1
+  maxCount: 1
+
+- type: stack
+  id: MedievalSteel
+  name: stack-medieval-steel
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: steel }
+  spawn: MedievalSteelIngot1
+  maxCount: 1
+
+- type: stack
+  id: MedievalProcessedSilver
+  name: stack-medieval-processed-silver
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: silver }
+  spawn: MedievalSilverIngot1
+  maxCount: 1
+
+- type: stack
+  id: MedievalProcessedGold
+  name: stack-medieval-processed-gold
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: gold }
+  spawn: MedievalGoldIngot1
+  maxCount: 1
+
+- type: stack
+  id: MedievalProcessedMithril
+  name: stack-medieval-processed-mithril
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: mithril }
+  spawn: MedievalMithrilIngot1
+  maxCount: 1
+
+- type: stack
+  id: MedievalProcessedAdamantine
+  name: stack-medieval-processed-adamantine
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: adamantine }
+  spawn: MedievalAdamantineIngot1
+  maxCount: 1
+
+- type: stack
+  id: MedievalProcessedStone
+  name: stack-medieval-processed-stone
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/stone.rsi, state: stone }
+  spawn: MedievalProcessedStone1
+  maxCount: 5
+
+- type: stack
+  id: MedievalCloth
+  name: stack-medieval-processed-cloth
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: cloth4 }
+  spawn: MedievalCloth1
+  maxCount: 5
+
+- type: stack
+  id: MedievalProcessedPelt
+  name: stack-medieval-processed-pelt
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: procPelt3 }
+  spawn: MedievalProcessedPelt1
+  maxCount: 5
+
+- type: stack
+  id: MedievalConstructionToolsAmmo
+  name: stack-medieval-tool-ammo
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Tools/hammer.rsi, state: ammo }
+  spawn: MedievalConstructionToolsAmmo1
+  maxCount: 5

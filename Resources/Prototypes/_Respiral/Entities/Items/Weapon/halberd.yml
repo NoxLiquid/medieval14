@@ -1,0 +1,265 @@
+- type: entity
+  parent: MedievalBaseHalberd
+  id: MedievalIronHalberd
+  name: железная алебарда
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_halberd.rsi
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+      map: [ blade ]
+    - state: handle
+      map: [ handle ]
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 12.5
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 25
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8A8A8A"
+      right:
+      - state: inhand-right
+        color: "#8A8A8A"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+      MedievalProcessedWood: 200
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseHalberd
+  id: MedievalWoodHalberd
+  name: деревянная алебарда
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_halberd.rsi
+    layers:
+    - state: blade
+      color: "#8B4513"
+    - state: handle
+      color: "#8B4513"
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 3.16
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 6.25
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8B4513"
+      right:
+      - state: inhand-right
+        color: "#8B4513"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300
+
+
+- type: entity
+  parent: MedievalBaseHalberd
+  id: MedievalSteelHalberd
+  name: стальная алебарда
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_halberd.rsi
+    layers:
+    - state: blade
+      color: "#B0C4DE"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 16
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 31.25
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#B0C4DE"
+      right:
+      - state: inhand-right
+        color: "#B0C4DE"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSteel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 100
+      MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalBaseHalberd
+  id: MedievalSilverHalberd
+  name: серебрянная алебарда
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_halberd.rsi
+    layers:
+    - state: blade
+      color: "#C0C0FF"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 25
+      types:
+        Holy: 25
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 24
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSilver
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 100
+      MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalBaseHalberd
+  id: MedievalMithrilHalberd
+  name: мифриловая алебарда
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_halberd.rsi
+    layers:
+    - state: blade
+      color: "#9370DB"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 18
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 37.5
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9370DB"
+      right:
+      - state: inhand-right
+        color: "#9370DB"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalMithril
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedMithril: 100
+      MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalBaseHalberd
+  id: MedievalAdamantineHalberd
+  name: адамантитовая алебарда
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_halberd.rsi
+    layers:
+    - state: blade
+      color: "#4B0000"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 22
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 43.75
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4B0000"
+      right:
+      - state: inhand-right
+        color: "#4B0000"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalAdamantine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 100
+      MedievalProcessedWood: 200
+

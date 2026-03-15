@@ -1,0 +1,136 @@
+- type: entity
+  name: комфортная кровать
+  id: MedievalBaseBed
+  parent: BaseStructure
+  suffix: Средневековье
+  description: Деревянная кровать.
+  abstract: true
+  components:
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -1
+        Blunt: -1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.05"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/bed.rsi
+    state: bed
+    noRot: true
+  - type: Strap
+    position: Down
+    rotation: -90
+    buckleOffset: "0,-0.22" # DS14
+  - type: PlaceableSurface
+    placeCentered: true
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Anchorable
+  - type: Pullable
+
+- type: entity
+  id: MedievalComfortableBed
+  parent: MedievalBaseBed
+  name: удобная кровать
+  description: Крепкая кровать, мягкая и с подушкой. Такая встречается только в покоях знати.
+  components:
+  - type: PhysicalComposition # нужно rcd 1
+    materialComposition:
+      MedievalProcessedPelt: 100
+      MedievalProcessedWood: 200
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+      MedievalCloth: 200
+  - type: Construction
+    graph: MedievalBed
+    node: сomfortableBed
+
+- type: entity
+  id: MedievalBed
+  parent: MedievalBaseBed
+  name: кровать
+  description: Простая деревянная кровать с матрасом. Достаточно удобна для отдыха после трудного дня.
+  components:
+  - type: Sprite
+    state: bed2
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.5
+        Blunt: -0.5
+  - type: PhysicalComposition # нужно rcd 1
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+      MedievalCloth: 200
+  - type: Construction
+    graph: MedievalBed
+    node: bed
+
+- type: entity
+  id: MedievalClothHeyBed
+  parent: MedievalBaseBed
+  name: ткань, набитая сеном
+  description: Мешок из ткани, наполненный сеном. Дёшево и сердито, но спать можно.
+  components:
+  - type: Sprite
+    state: bed3
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.25
+        Blunt: -0.25
+  - type: PhysicalComposition # нужно rcd 1
+    materialComposition:
+      MedievalProcessedWood: 3
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+      MedievalCloth: 200
+  - type: Construction
+    graph: MedievalBed
+    node: сlothHeyBed
+
+- type: entity
+  id: MedievalHeyBed
+  parent: MedievalBaseBed
+  name: сено с простынёй
+  description: Куча сена, прикрытая простынёй. Спального место крестьянина.
+  components:
+  - type: Sprite
+    state: bed4
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+  - type: PhysicalComposition # нужно rcd 1
+    materialComposition:
+      MedievalProcessedWood: 3
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+      MedievalCloth: 100
+  - type: Construction
+    graph: MedievalBed
+    node: heyBed

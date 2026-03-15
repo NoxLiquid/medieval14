@@ -1,0 +1,140 @@
+- type: entity
+  name: лопата
+  parent: BaseItem
+  suffix: Средневековье
+  id: MedievalShovel
+  description: Большой инструмент для копания и перемещения грунта.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/shovel.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 10
+    soundHit:
+      collection: MetalThud
+  - type: Item
+    size: Normal
+    sprite: Objects/Tools/shovel.rsi
+  - type: Shovel
+  - type: Tool
+    qualities:
+      - MedievalDigging
+    useSound:
+      path: /Audio/Items/shovel_dig.ogg
+  - type: ToolTileCompatible
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [TileTool, MeleeHit]
+    damage:
+      types:
+        Structural: 10
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  name: кирка
+  parent: BaseItem
+  id: MedievalPickaxe
+  suffix: Средневековье
+  description: Идеально выточенный, чтобы забивать его в камни.
+  components:
+  - type: Tag
+    tags:
+    - Pickaxe
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/pickaxe.rsi
+    state: pickaxe
+  - type: MeleeWeapon
+    attackRate: 0.7
+    wideAnimationRotation: -135
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+      params:
+        volume: -3
+    damage:
+      groups:
+        Brute: 5
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 10
+      types:
+        Structural: 10
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    - 1,1,1,2
+    sprite: Objects/Weapons/Melee/pickaxe.rsi
+    storedRotation: -45
+  - type: UseDelay
+  - type: Tool
+    qualities:
+      - MedievalSwotting
+    useSound:
+      path: /Audio/Items/shovel_dig.ogg
+  - type: ToolTileCompatible
+
+- type: entity
+  id: MedievalHammer
+  parent: BaseItem
+  name: строительные инструменты
+  suffix: Средневековье
+  description: Инструмент установки различных конструкций и приспособлений.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Tools/hammer.rsi
+    state: hammer2
+  - type: Item
+    size: Normal
+    heldPrefix: hammer2
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+      MedievalProcessedWood: 100
+  - type: UserInterface
+    interfaces:
+      enum.RcdUiKey.Key:
+        type: RCDMenuBoundUserInterface
+  - type: ActivatableUI
+    inHandsOnly: true
+    key: enum.RcdUiKey.Key
+  - type: Wear
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: AddWearAfterUse
+    triggers: [RCD, MeleeHit]
+    damage:
+      types:
+        Structural: 5
+  - type: Tool
+    qualities:
+      - MedievalScore
+    useSound:
+      path: /Audio/_Respiral/Hammer/sound_effects_hit_punch.ogg

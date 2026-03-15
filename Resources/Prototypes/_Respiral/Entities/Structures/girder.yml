@@ -1,0 +1,88 @@
+- type: entity
+  id: MedievalBaseFurnitureGirder
+  suffix: Средневековье
+  parent: BaseStructureDynamic
+  name: каркас
+  components:
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - GlassAirlockLayer
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/girder.rsi
+    state: frame
+    noRot: true
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+          damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+
+- type: entity
+  id: MedievalBedGirder
+  suffix: Средневековье, кровать
+  parent: MedievalBaseFurnitureGirder
+  components:
+  - type: Construction
+    graph: MedievalBed
+    node: girder
+
+- type: entity
+  id: MedievalChairGirder
+  suffix: Средневековье, стул
+  parent: MedievalBaseFurnitureGirder
+  components:
+  - type: Construction
+    graph: MedievalChair
+    node: girder
+
+- type: entity
+  id: MedievalCabinetGirder
+  suffix: Средневековье, шкаф
+  parent: MedievalBaseFurnitureGirder
+  components:
+  - type: Construction
+    graph: MedievalCabinet
+    node: girder
+
+- type: entity
+  id: MedievalDoorGirder
+  suffix: Средневековье, дверь
+  parent: MedievalBaseFurnitureGirder
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: girder
+  - type: Sprite
+    state: door
+
+- type: entity
+  id: MedievalCrateGirder
+  suffix: Средневековье, сундук
+  parent: MedievalBaseFurnitureGirder
+  components:
+  - type: Construction
+    graph: MedievalCrate
+    node: girder

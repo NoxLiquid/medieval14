@@ -1,0 +1,155 @@
+- type: constructionGraph
+  id: MedievalCabinet
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: girder
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+
+  - node: girder
+    entity: MedievalCabinetGirder
+    edges:
+    - to: start
+      completed:
+        - !type:SpawnPrototype
+          prototype: MedievalConstructionToolsAmmo
+          amount: 1
+        - !type:DeleteEntity {}
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: girder2
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder2
+    entity: MedievalCabinetGirder
+    edges:
+    - to: girder
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: filingCabinet4
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 1
+
+    - to: girder3
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder3
+    entity: MedievalCabinetGirder
+    edges:
+    - to: girder2
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: filingCabinet1
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 1
+
+    - to: girder4
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder4
+    entity: MedievalCabinetGirder
+    edges:
+    - to: girder3
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: filingCabinet2
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 1
+
+    - to: girder5
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder5
+    entity: MedievalCabinetGirder
+    edges:
+    - to: girder4
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: filingCabinet3
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 2
+          doAfter: 1
+
+  - node: filingCabinet1
+    entity: MedievalFilingCabinet1
+
+  - node: filingCabinet2
+    entity: MedievalFilingCabinet2
+
+  - node: filingCabinet3
+    entity: MedievalFilingCabinet3
+
+  - node: filingCabinet4
+    entity: MedievalFilingCabinet4
+

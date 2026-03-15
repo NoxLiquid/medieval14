@@ -1,0 +1,20 @@
+- type: entity
+  id: CEDustEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Sprite # Временное решение
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - shader: unshaded 
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: Effects/atmospherics.rsi
+      state: frezon_old
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: AnimationPlayer
+

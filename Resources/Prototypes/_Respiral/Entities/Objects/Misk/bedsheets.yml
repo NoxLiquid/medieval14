@@ -1,0 +1,56 @@
+- type: entity
+  parent: BaseItem
+  id: MedievalBedsheetBase
+  suffix: Средневековье
+  name: Одеяло
+  abstract: true
+  description: Удивительно мягкая простыня.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Bed
+  components:
+  - type: Sprite
+    drawdepth: OverMobs
+    sprite: _Respiral/Structures/Furniture/bed.rsi
+    state: blanket
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - Bedsheet
+
+- type: entity
+  id: MedievalComfortableBedsheet
+  parent: MedievalBedsheetBase
+  name: комфортное одеяло
+  description: Мягкое и тёплое одеяло из льняной ткани. Такое обычно можно встретить в спальнях знати.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  id: MedievalLeatherBedsheet
+  parent: MedievalBedsheetBase
+  name: одеяло из кожи
+  description: Грубое одеяло из выделанной кожи. Долговечное и надёжное, но спать под ним не слишком приятно.
+  components:
+  - type: Sprite
+    state: blanket2
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  id: MedievalSimpleBedsheet
+  parent: MedievalBedsheetBase
+  name: простыня
+  description: Простая льняная простыня. Дешёвое, но практичное покрывало для крестьянской постели.
+  components:
+  - type: Sprite
+    state: blanket3
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 50

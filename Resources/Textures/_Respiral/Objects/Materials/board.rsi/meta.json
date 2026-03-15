@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/Twilight-Fortress-SS13",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "board"
+    },
+    {
+      "name": "board_2"
+    },
+    {
+      "name": "board_3"
+    },
+	{
+      "name": "board_4"
+    },
+    {
+      "name": "board-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "board-inhand-right",
+      "directions": 4
+    }
+  ]
+}

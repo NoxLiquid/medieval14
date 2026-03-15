@@ -1,0 +1,192 @@
+# Трава
+
+- type: stack
+  id: MedievalFloorTileGrass
+  name: stack-medieval-grass-floor
+  spawn: MedievalFloorTileItemGrass
+  maxCount: 15
+
+# 🌿 Тёмно-зелёная трава
+- type: stack
+  id: MedievalFloorTileGrassDarkGreen
+  name: stack-medieval-grass-dark-green-floor
+  spawn: MedievalFloorTileItemGrassDarkGreen
+  maxCount: 15
+
+# 🌿 Кристаллическая трава
+- type: stack
+  id: MedievalFloorTileGrassCrystal
+  name: stack-medieval-grass-crystal-floor
+  spawn: MedievalFloorTileItemGrassCrystal
+  maxCount: 15
+
+# 🌿 Красная трава
+- type: stack
+  id: MedievalFloorTileGrassRed
+  name: stack-medieval-grass-red-floor
+  spawn: MedievalFloorTileItemGrassRed
+  maxCount: 15
+
+# 🌿 Тёмная трава
+- type: stack
+  id: MedievalFloorTileGrassDark
+  name: stack-medieval-grass-dark-floor
+  spawn: MedievalFloorTileItemGrassDark
+  maxCount: 15
+
+# 🌿 Тёмная трава 2
+- type: stack
+  id: MedievalFloorTileGrassDark2
+  name: stack-medieval-grass-dark2-floor
+  spawn: MedievalFloorTileItemGrassDark2
+  maxCount: 15
+
+# ❄️ Снег
+- type: stack
+  id: MedievalFloorTileSnow
+  name: stack-medieval-snow-floor
+  spawn: MedievalFloorTileItemSnow
+  maxCount: 15
+
+# 🪨 Пепел
+- type: stack
+  id: MedievalFloorTileAsh
+  name: stack-medieval-ash-floor
+  spawn: MedievalFloorTileItemAsh
+  maxCount: 15
+
+# Камень
+
+- type: stack
+  id: MedievalFloorTileStone
+  name: stack-floor-tile-stone
+  spawn: MedievalFloorTileItemStone
+  maxCount: 15
+
+# Дерево
+
+- type: stack
+  id: MedievalFloorTileItemWood
+  name: stack-medieval-wood-tile
+  spawn: MedievalFloorTileItemWood
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodPattern
+  name: stack-medieval-wood-pat-tile
+  spawn: MedievalFloorTileItemWoodPattern
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChess
+  name: stack-chess-floor-tile
+  spawn: MedievalFloorTileItemWoodChess
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLarge
+  name: stack-large-wood-floor
+  spawn: MedievalFloorTileItemWoodLarge
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodBlack
+  name: stack-black-floor-tile
+  spawn: MedievalFloorTileItemWoodBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodDark
+  name: stack-dark-floor-tile
+  spawn: MedievalFloorTileItemWoodDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLight
+  name: stack-light-floor-tile
+  spawn: MedievalFloorTileItemWoodLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodRed
+  name: stack-red-floor-tile
+  spawn: MedievalFloorTileItemWoodRed
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeBlack
+  name: stack-large-black-floor-tile
+  spawn: MedievalFloorTileItemWoodLargeBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeDark
+  name: stack-large-dark-floor-tile
+  spawn: MedievalFloorTileItemWoodLargeDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeLight
+  name: stack-large-light-floor-tile
+  spawn: MedievalFloorTileItemWoodLargeLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeRed
+  name: stack-large-red-floor-tile
+  spawn: MedievalFloorTileItemWoodLargeRed
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquet
+  name: stack-parquet-floor-tile
+  spawn: MedievalFloorTileItemWoodParquet
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetBlack
+  name: stack-parquet-black-floor-tile
+  spawn: MedievalFloorTileItemWoodParquetBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetDark
+  name: stack-parquet-dark-floor-tile
+  spawn: MedievalFloorTileItemWoodParquetDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetLight
+  name: stack-parquet-light-floor-tile
+  spawn: MedievalFloorTileItemWoodParquetLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetRed
+  name: stack-parquet-red-floor-tile
+  spawn: MedievalFloorTileItemWoodParquetRed
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessBlack
+  name: stack-chess-black-floor-tile
+  spawn: MedievalFloorTileItemWoodChessBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessDark
+  name: stack-chess-dark-floor-tile
+  spawn: MedievalFloorTileItemWoodChessDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessLight
+  name: stack-chess-light-floor-tile
+  spawn: MedievalFloorTileItemWoodChessLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessRed
+  name: stack-chess-red-floor-tile
+  spawn: MedievalFloorTileItemWoodChessRed
+  maxCount: 15

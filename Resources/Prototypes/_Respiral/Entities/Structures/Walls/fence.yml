@@ -1,0 +1,408 @@
+- type: entity
+  parent: BaseStructure
+  id: MedievalBaseFenceWood
+  suffix: Средневековье
+  abstract: true
+  name: деревянная ограда
+  description: Деревянная ограда. Надеюсь, за ней находится бабушкин сад.
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Weapons/boxingpunch1.ogg"
+  - type: Tag
+    tags:
+    - Wooden
+  - type: Sprite
+    sprite: Structures/Walls/wooden_fence.rsi
+    drawdepth: WallTops
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
+  - type: RCDDeconstructable
+    cost: 2
+    delay: 2
+    fx: EffectRCDDeconstruct2
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+  - type: Climbable
+    delay: 5.0
+  - type: Appearance
+
+- type: entity
+  parent: MedievalBaseFenceWood
+  id: MedievalBaseFenceWoodSmall
+  name: небольшой деревянный забор
+  description: Деревянный фрагмент небольшого забора. Лучшая защита для ограждения частной территории!
+  abstract: true
+  components:
+  - type: Climbable
+    delay: 2.5
+  - type: RequireProjectileTarget
+
+#High
+- type: entity
+  parent: MedievalBaseFenceWood
+  id: MedievalFenceWoodHighStraight
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: straight
+  - type: Icon
+    sprite: Structures/Walls/wooden_fence.rsi
+    state: straight
+  - type: Sprite
+    layers:
+    - state: straight
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.5,0.10,0.5"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: MedievalBaseFenceWood
+  id: MedievalFenceWoodHighEnd
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: end
+  - type: Icon
+    sprite: Structures/Walls/wooden_fence.rsi
+    state: end
+  - type: Sprite
+    layers:
+    - state: end
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.5,0.1,0.0"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: MedievalBaseFenceWood
+  id: MedievalFenceWoodHighCorner
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: corner
+  - type: Icon
+    sprite: Structures/Walls/wooden_fence.rsi
+    state: corner
+  - type: Sprite
+    layers:
+    - state: corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.1,-0.1,0.1"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: MedievalBaseFenceWood
+  id: MedievalFenceWoodHighTJunction
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: tjunction
+  - type: Icon
+    sprite: Structures/Walls/wooden_fence.rsi
+    state: tjunction
+  - type: Sprite
+    layers:
+    - state: tjunction
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.5,0.10,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.1,-0.1,0.1"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: MedievalBaseFenceWood
+  id: MedievalFenceWoodHighGate
+  name: деревянные ворота для забора
+  description: Ты хоть представляешь, что ждет тебя за этими воротами? Это может быть как туалет, так и роскошный особняк
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: gate
+  - type: Sprite
+    layers:
+    - state: end
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.1,0.5,0.1"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: InteractionOutline
+  - type: Door
+    openSpriteState: door_opened
+    closedSpriteState: door_closed
+    canPry: false
+    occludes: false
+    changeAirtight: false
+    bumpOpen: false
+    clickOpen: true
+    canCrush: false
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    openingAnimationTime: 0
+    closingAnimationTime: 0
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg
+
+#Small
+- type: entity
+  parent: MedievalBaseFenceWoodSmall
+  id: MedievalFenceWoodSmallStraight
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: straight_small
+  - type: Icon
+    sprite: Structures/Walls/wooden_fence.rsi
+    state: straight_small
+  - type: Sprite
+    layers:
+    - state: straight_small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.5,0.10,0.5"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: MedievalBaseFenceWoodSmall
+  id: MedievalFenceWoodSmallEnd
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: end_small
+  - type: Icon
+    sprite: Structures/Walls/wooden_fence.rsi
+    state: end_small
+  - type: Sprite
+    layers:
+    - state: end_small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.5,0.1,0.0"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: MedievalBaseFenceWoodSmall
+  id: MedievalFenceWoodSmallCorner
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: corner_small
+  - type: Icon
+    sprite: Structures/Walls/wooden_fence.rsi
+    state: corner_small
+  - type: Sprite
+    layers:
+    - state: corner_small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.1,-0.1,0.1"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: MedievalBaseFenceWoodSmall
+  id: MedievalFenceWoodSmallTJunction
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: tjunction_small
+  - type: Icon
+    sprite: Structures/Walls/wooden_fence.rsi
+    state: tjunction_small
+  - type: Sprite
+    layers:
+    - state: tjunction_small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.5,0.10,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.1,-0.1,0.1"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: MedievalBaseFenceWoodSmall
+  id: MedievalFenceWoodSmallGate
+  name: деревянные ворота для забора
+  description: Глядя на эти ворота, в голове всплывает знакомый образ. Где мой поросенок?
+  components:
+  - type: Construction
+    graph: MedievalFenceWood
+    node: gate_small
+  - type: Sprite
+    layers:
+    - state: end_small
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.1,0.5,0.1"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: InteractionOutline
+  - type: Door
+    openSpriteState: door_opened_small
+    closedSpriteState: door_closed_small
+    canPry: false
+    occludes: false
+    changeAirtight: false
+    bumpOpen: false
+    clickOpen: true
+    canCrush: false
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    openingAnimationTime: 0
+    closingAnimationTime: 0
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg

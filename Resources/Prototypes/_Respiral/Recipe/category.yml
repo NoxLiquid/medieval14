@@ -1,0 +1,27 @@
+- type: latheCategory
+  id: MedievalToolsCategory
+  name: lathe-medieval-category-tools
+
+- type: latheCategory
+  id: MedievalTileCategory
+  name: lathe-medieval-category-tile
+
+- type: latheCategory
+  id: MedievalRawProcessingCategory
+  name: lathe-medieval-category-raw-processing
+
+- type: latheCategory
+  id: MedievalMaterialProcessingCategory
+  name: lathe-medieval-category-material-processing
+
+- type: latheCategory
+  id: MedievalDetailsCategory
+  name: lathe-medieval-category-details
+
+- type: latheCategory
+  id: MedievalWeaponCategory
+  name: lathe-medieval-category-weapon
+
+- type: latheCategory
+  id: MedievalMaterialArmorCategory
+  name: lathe-medieval-category-armor

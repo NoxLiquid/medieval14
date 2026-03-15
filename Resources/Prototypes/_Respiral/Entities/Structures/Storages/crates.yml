@@ -1,0 +1,337 @@
+- type: entity
+  parent: BaseStructureDynamic
+  id: MedievalBaseCrate
+  suffix: Средневековье
+  abstract: true
+  name: сундук
+  description: Большой контейнер.
+  components:
+  - type: Animateable
+  - type: Construction
+    containers:
+      - entity_storage
+  - type: Transform
+    noRot: true
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/Crates/crate1.rsi
+    state: base
+  - type: Sprite
+    noRot: true
+    sprite: _Respiral/Structures/Storages/Crates/crate1.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 50
+        mask:
+        - CrateMask
+        layer:
+        - MachineLayer
+  - type: EntityStorage
+  - type: PlaceableSurface
+    isPlaceable: false
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateDoorOpen: open
+    stateDoorClosed: closed
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: bounty }
+          CaptainsPaper: { state: captains_paper }
+          Invoice: { state: invoice }
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: comp-paper-label-insert
+      ejectVerbText: comp-paper-label-eject
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+      paper_label: !type:ContainerSlot
+  - type: ItemSlots
+  - type: RequireProjectileTarget
+
+- type: entity
+  id: MedievalBaseLockableCrate
+  parent: MedievalBaseCrate
+  abstract: true
+  components:
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+      paper_label: !type:ContainerSlot
+      lock-container: !type:ContainerSlot
+  - type: MedievalLockable
+
+- type: entity
+  parent: MedievalBaseLockableCrate
+  id: MedievalChestWood
+  name: деревянный сундук
+  description: Простой сундук для хранения вещей. Скрипит при открывании, но верно служит хозяину.
+  components:
+  - type: Construction
+    graph: MedievalCrate
+    node: chestWood
+  - type: Sprite
+    sprite: _Respiral/Structures/Storages/Crates/crate1.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/Crates/crate1.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+
+- type: entity
+  parent: MedievalBaseLockableCrate
+  id: MedievalChestReinforced
+  name: укреплённый деревянный сундук
+  description: Сундук с железными скобами. Тяжёлый и надёжный, вскрыть его будет непросто.
+  components:
+  - type: Construction
+    graph: MedievalCrate
+    node: chestReinforced
+  - type: Sprite
+    sprite: _Respiral/Structures/Storages/Crates/crate2.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/Crates/crate2.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseLockableCrate
+  id: MedievalChestOrnate
+  name: украшенный укреплённый деревянный сундук
+  description: Богато украшенный сундук с металлической окантовкой. Такой встречается в покоях знати.
+  components:
+  - type: Construction
+    graph: MedievalCrate
+    node: chestOrnate
+  - type: Sprite
+    sprite: _Respiral/Structures/Storages/Crates/crate3.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/Crates/crate3.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+      MedievalProcessedGold: 100
+
+- type: entity
+  parent: MedievalBaseLockableCrate
+  id: MedievalChestLuxury
+  name: роскошный деревянный сундук
+  description: Великолепный сундук, украшенный резьбой. Выглядит так, будто внутри должно быть золото.
+  components:
+  - type: Construction
+    graph: MedievalCrate
+    node: chestLuxury
+  - type: Sprite
+    sprite: _Respiral/Structures/Storages/Crates/crate4.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/Crates/crate4.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 100
+      MedievalProcessedGold: 100
+
+- type: entity
+  parent: MedievalBaseLockableCrate
+  id: MedievalWardrobeWood
+  name: деревянный шкаф
+  description: Старый шкаф с запахом дерева и пыли. Подходит для хранения одежды и секретов.
+  components:
+  - type: Construction
+    graph: MedievalCrate
+    node: wardrobeWood
+  - type: Sprite
+    sprite: _Respiral/Structures/Storages/Crates/wardrobe1.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/Crates/wardrobe1.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+
+- type: entity
+  parent: MedievalBaseLockableCrate
+  id: MedievalWardrobeIron
+  name: железный шкафчик
+  description: Тяжёлый шкаф из железа. Хранит вещи надёжнее, чем многие стражи.
+  components:
+  - type: Construction
+    graph: MedievalCrate
+    node: wardrobeIron
+  - type: Sprite
+    sprite: _Respiral/Structures/Storages/Crates/wardrobe2.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/Crates/wardrobe2.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 200
+
+- type: entity
+  parent: MedievalBaseLockableCrate
+  id: MedievalWardrobeCarved
+  name: деревянный шкаф
+  description: Шкаф с резными узорами. Когда-то принадлежал богатой семье.
+  components:
+  - type: Construction
+    graph: MedievalCrate
+    node: wardrobeCarved
+  - type: Sprite
+    sprite: _Respiral/Structures/Storages/Crates/wardrobe3.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/Crates/wardrobe3.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 400
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+
+- type: entity
+  parent: MedievalBaseCrate
+  id: MedievalBasket
+  name: корзина
+  description: Плетёная корзина из льна и дерева. Вмещает немного, но легко переносится.
+  components:
+  - type: Construction
+    graph: MedievalCrate
+    node: basket
+  - type: Sprite
+    sprite: _Respiral/Structures/Storages/Crates/basket.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/Crates/basket.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalFlax
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 6
+      MedievalProcessedStone: 14
+      MedievalProcessedIron: 6
+

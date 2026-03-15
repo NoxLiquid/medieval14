@@ -1,0 +1,268 @@
+- type: entity
+  parent: MedievalBaseSpear
+  id: MedievalIronSpear
+  name: железное копьё
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_spear.rsi
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+      map: [ blade ]
+    - state: handle
+      map: [ handle ]
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 10
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 20
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8A8A8A"
+      right:
+      - state: inhand-right
+        color: "#8A8A8A"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 50
+      MedievalProcessedWood: 200
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseSpear
+  id: MedievalWoodSpear
+  name: деревянное копьё
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_spear.rsi
+    layers:
+    - state: blade
+      color: "#8B4513"
+    - state: handle
+      color: "#8B4513"
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 2.5
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 5
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8B4513"
+      right:
+      - state: inhand-right
+        color: "#8B4513"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300
+
+- type: entity
+  parent: MedievalBaseSpear
+  id: MedievalSteelSpear
+  name: стальное копьё
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_spear.rsi
+    layers:
+    - state: blade
+      color: "#B0C4DE"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 12.5
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 25
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#B0C4DE"
+      right:
+      - state: inhand-right
+        color: "#B0C4DE"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSteel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 50
+      MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalBaseSpear
+  id: MedievalSilverSpear
+  name: серебрянное копьё
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_spear.rsi
+    layers:
+    - state: blade
+      color: "#C0C0FF"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 10
+      types:
+        Holy: 10
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 20
+      types:
+        Holy: 20
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSilver
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 50
+      MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalBaseSpear
+  id: MedievalMithrilSpear
+  name: мифриловое копьё
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_spear.rsi
+    layers:
+    - state: blade
+      color: "#9370DB"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 15
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 30
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        scale: 0.5, 0.5
+        color: "#9370DB"
+      right:
+      - state: inhand-right
+        scale: 0.5, 0.5
+        color: "#9370DB"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalMithril
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedMithril: 50
+      MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalBaseSpear
+  id: MedievalAdamantineSpear
+  name: адамантитовое копьё
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/two_spear.rsi
+    layers:
+    - state: blade
+      color: "#4B0000"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 12.5
+  - type: IncreaseDamageOnWield
+    damage:
+      groups:
+        Brute: 35
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4B0000"
+      right:
+      - state: inhand-right
+        color: "#4B0000"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalAdamantine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 50
+      MedievalProcessedWood: 200
+

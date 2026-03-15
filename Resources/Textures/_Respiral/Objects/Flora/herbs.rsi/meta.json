@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/Twilight-Fortress-SS13 and modified Space Station 14 project Respiral.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "glaznica"
+    },
+	{
+      "name": "glaznica2"
+    },
+	{
+      "name": "kamnelepestnik"
+    },
+	{
+      "name": "kamnelepestnik2"
+    },
+	{
+      "name": "krovavaya_roza"
+    },
+	{
+      "name": "krovavaya_roza2"
+    },
+	{
+      "name": "lunocvet"
+    },
+	{
+      "name": "lunocvet2"
+    },
+	{
+      "name": "ogne_cvet"
+    },
+	{
+      "name": "ogne_cvet2"
+    },
+	{
+      "name": "pihta"
+    },
+	{
+      "name": "pihta2"
+    },
+	{
+      "name": "romashka"
+    },
+	{
+      "name": "romashka2"
+    },
+	{
+      "name": "shipovec"
+    },
+	{
+      "name": "shipovec2"
+    },
+	{
+      "name": "suho_cvet"
+    },
+	{
+      "name": "suho_cvet2"
+    },
+	{
+      "name": "ternovnik"
+    },
+	{
+      "name": "ternovnik2"
+    },
+	{
+      "name": "veresk"
+    },
+	{
+      "name": "veresk2"
+    },
+	{
+      "name": "viunka"
+    },
+	{
+      "name": "viunka2"
+    },
+	{
+      "name": "vorosnik"
+    },
+	{
+      "name": "vorosnik2"
+    }
+  ]
+}

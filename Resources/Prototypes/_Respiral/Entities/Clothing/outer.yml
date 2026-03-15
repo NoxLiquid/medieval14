@@ -1,0 +1,31 @@
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedivalChain
+  suffix: Средневековье
+  name: кальчуга
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/armor/chain_armor.rsi
+    state: icon
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor # MedievalIronBody
+    modifiers:
+      coefficients:
+        Blunt: 0.73
+        Slash: 0.73
+        Piercing: 0.63
+        Heat: 0.75
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

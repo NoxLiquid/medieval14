@@ -1,0 +1,145 @@
+- type: entity
+  parent: BaseItem
+  id: MedievalSkillBookBase
+  suffix: Средневековье
+  abstract: true
+  name: книга
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - state: icon_text
+      map: [ "icon" ]
+    - state: overlay_null
+      map: [ "overlay" ]
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1
+  - type: Wear
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalBook
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: AddWearAfterUse
+    triggers: [Learn, MeleeHit]
+    damage:
+      types:
+        Slash: 1
+
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookBasicBlacksmithing
+  name: основы кузнечного дела
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: anvil
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - MedievalBasicBlacksmithing
+    points:
+      MedievalBasicBlacksmithing: 0.01
+    sound:
+      collection: LearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookWoodProcessing
+  name: обработка древесины
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: saw
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - MedievalWoodProcessing
+    points:
+      MedievalWoodProcessing: 0.01
+    sound:
+      collection: LearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookAlchem
+  name: алхимии
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: alhm
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - MedievalAlchem
+    points:
+      MedievalAlchem: 0.01
+    sound:
+      collection: LearnBook

@@ -1,7 +1,6 @@
 using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Durability; // Respiral-Durability
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Silicons.Borgs;
@@ -48,11 +47,6 @@ public abstract class SharedArmorSystem : EntitySystem
     {
         if (TryComp<MaskComponent>(uid, out var mask) && mask.IsToggled)
             return;
-
-        // Respiral-Durability-start
-        if (TryComp<DurabilityComponent>(uid, out var durability) && durability.CurrentDurability <= 0)
-            return;
-        // Respiral-Durability-end
 
         args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, component.Modifiers);
     }

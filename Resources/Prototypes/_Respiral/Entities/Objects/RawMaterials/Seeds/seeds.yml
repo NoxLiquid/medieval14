@@ -1,0 +1,116 @@
+- type: entity
+  suffix: Средневековье
+  parent: SeedBase
+  name: семена яблока
+  id: MedievalAppleSeeds
+  components:
+    - type: StaticPrice
+      price: 3
+    - type: Seed
+      seedId: MedievalApple
+    - type: Sprite
+      sprite: _Respiral/Objects/Materials/Seeds/apple.rsi
+
+- type: entity
+  suffix: Средневековье
+  parent: SeedBase
+  name: семена капусты
+  id: MedievalCabbageSeeds
+  components:
+    - type: StaticPrice
+      price: 1
+    - type: Seed
+      seedId: MedievalCabbage
+    - type: Sprite
+      sprite: _Respiral/Objects/Materials/Seeds/berries.rsi
+
+- type: entity
+  suffix: Средневековье
+  parent: SeedBase
+  name: семена ягод
+  id: MedievalBerriesSeeds
+  components:
+  - type: StaticPrice
+    price: 2
+  - type: Seed
+    seedId: MedievalBerries
+  - type: Sprite
+    sprite: _Respiral/Objects/Materials/Seeds/cabbage.rsi
+
+- type: entity
+  suffix: Средневековье
+  parent: SeedBase
+  name: семена моркови
+  id: MedievalCarrotSeeds
+  components:
+    - type: StaticPrice
+      price: 2
+    - type: Seed
+      seedId: MedievalCarrot
+    - type: Sprite
+      sprite: _Respiral/Objects/Materials/Seeds/carrot.rsi
+
+- type: entity
+  suffix: Средневековье
+  parent: SeedBase
+  name: семена вишни
+  id: MedievalCherrySeeds
+  components:
+    - type: StaticPrice
+      price: 3
+    - type: Seed
+      seedId: MedievalCherry
+    - type: Sprite
+      sprite: _Respiral/Objects/Materials/Seeds/cherry.rsi
+
+- type: entity
+  suffix: Средневековье
+  parent: SeedBase
+  name: семена льна
+  id: MedievalFlaxSeeds
+  components:
+    - type: StaticPrice
+      price: 0.3
+    - type: Seed
+      seedId: MedievalFlax
+    - type: Sprite
+      sprite: _Respiral/Objects/Materials/Seeds/flax.rsi
+
+- type: entity
+  suffix: Средневековье
+  parent: SeedBase
+  name: семена картошки
+  id: MedievalPotatoSeeds
+  components:
+    - type: StaticPrice
+      price: 1
+    - type: Seed
+      seedId: MedievalPotato
+    - type: Sprite
+      sprite: _Respiral/Objects/Materials/Seeds/potato.rsi
+
+- type: entity
+  suffix: Средневековье
+  parent: SeedBase
+  name: семена помидора
+  id: MedievalTomatoSeeds
+  components:
+    - type: StaticPrice
+      price: 1
+    - type: Seed
+      seedId: MedievalTomato
+    - type: Sprite
+      sprite: _Respiral/Objects/Materials/Seeds/tomato.rsi
+
+- type: entity
+  suffix: Средневековье
+  parent: SeedBase
+  name: семена пшеницы
+  id: MedievalWheatSeeds
+  components:
+    - type: StaticPrice
+      price: 1
+    - type: Seed
+      seedId: MedievalWheat
+    - type: Sprite
+      sprite: _Respiral/Objects/Materials/Seeds/wheat.rsi

@@ -1,0 +1,91 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+	"copyright": "https://github.com/Twilight-Fortress-SS13 and modified Space Station 14 project Respiral.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "stone"
+        },
+        {
+            "name": "ash"
+        },
+        {
+            "name": "ash-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "ash-inhand-left",
+            "directions": 4
+        },
+		{
+            "name": "crysgrass"
+        },
+        {
+            "name": "crysgrass-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "crysgrass-inhand-left",
+            "directions": 4
+        },
+		{
+            "name": "darkgrass"
+        },
+        {
+            "name": "darkgrass-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "darkgrass-inhand-left",
+            "directions": 4
+        },
+		{
+            "name": "darkgrass2"
+        },
+        {
+            "name": "darkgrass2-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "darkgrass2-inhand-left",
+            "directions": 4
+        },
+		{
+            "name": "darkgreengrass"
+        },
+        {
+            "name": "darkgreengrass-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "darkgreengrass-inhand-left",
+            "directions": 4
+        },
+		{
+            "name": "redgrass"
+        },
+        {
+            "name": "redgrass-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "redgrass-inhand-left",
+            "directions": 4
+        },
+		{
+            "name": "snow"
+        },
+        {
+            "name": "snow-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "snow-inhand-left",
+            "directions": 4
+        }
+    ]
+}

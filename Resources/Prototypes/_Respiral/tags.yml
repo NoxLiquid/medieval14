@@ -1,0 +1,29 @@
+- type: Tag
+  id: MedievalRawMaterial
+
+- type: Tag
+  id: MedievalSmelterMaterialStorage
+
+- type: Tag
+  id: MedievalSawmillMaterialStorage
+
+- type: Tag
+  id: CarpenterTableMaterialStorage
+
+- type: Tag
+  id: MedievalFlax
+
+- type: Tag
+  id: MedievalAnvilMaterialStorage
+
+- type: Tag
+  id: MedievalKey
+
+- type: Tag
+  id: MedievalTanneryMaterialStorage
+
+- type: Tag
+  id: MedievalLoomMaterialStorage
+
+- type: Tag
+  id: MedievalSewingMaterialStorage

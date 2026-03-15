@@ -1,0 +1,76 @@
+stack-black-floor-tile = черная плитка
+stack-dark-floor-tile = темная плитка
+stack-light-floor-tile = светлая плитка
+stack-red-floor-tile = красная плитка
+stack-large-black-floor-tile = большая черная плитка
+stack-large-dark-floor-tile = большая темная плитка
+stack-large-light-floor-tile = большая светлая плитка
+stack-large-red-floor-tile = большая красная плитка
+stack-medieval-wood-tile = деревянная плитка
+stack-medieval-wood-pat-tile = деревянный пол с рисунком
+stack-parquet-floor-tile = паркет
+stack-parquet-black-floor-tile = черная паркетная плитка
+stack-parquet-dark-floor-tile = темная паркетная плитка
+stack-parquet-light-floor-tile = светлая паркетная плитка
+stack-parquet-red-floor-tile = красная паркетная плитка
+stack-chess-floor-tile = шахматная плитка
+stack-chess-black-floor-tile = шахматная черная плитка
+stack-chess-dark-floor-tile = шахматная темная плитка
+stack-chess-light-floor-tile = шахматная светлая плитка
+stack-chess-red-floor-tile = шахматная красная плитка
+stack-floor-tile-terracotta = терракотовая плитка
+stack-floor-tile-terracotta-diagonal = терракотовая диагональная плитка
+stack-floor-tile-terracotta-herringbone = терракотовая плитка ёлочкой
+stack-floor-tile-terracotta-small = терракотовые мини плиты
+stack-floor-tile-stone = каменный пол
+stack-floor-tile-cult = культовый пол
+stack-floor-tile-stack-shuttle-mono-white = белый моно пол шаттла
+stack-floor-tile-stack-shuttle-mono-grey = серый моно пол шаттла
+stack-floor-tile-stack-shuttle-mono-black = чёрный моно пол шаттла
+stack-floor-tile-stack-shuttle-mono-blue = синий моно пол шаттла
+stack-floor-tile-stack-shuttle-mono-orange = оранжевый моно пол шаттла
+stack-floor-tile-stack-shuttle-mono-purple = фиолетовый моно пол шаттла
+stack-floor-tile-stack-shuttle-mono-red = красный моно пол шаттла
+stack-floor-tile-fairy-grass = трава фей
+stack-floor-tile-fairy-astro-grass = астро-трава фей
+stack-floor-tile-diamond = алмазный пол
+stack-floor-tile-plasma = плазменный пол
+stack-floor-tile-uranium = урановый пол
+
+stack-medieval-board = доска
+stack-medieval-rod-wood = деревянный стержень
+stack-medieval-processed-iron = обработанное железо
+stack-medieval-steel = сталь
+stack-medieval-processed-silver = обработанное серебро
+stack-medieval-processed-gold = обработанное золото
+stack-medieval-processed-mithril = обработанный мифрил
+stack-medieval-processed-adamantine = обработанный адамантит
+stack-medieval-processed-stone = обработанный камень
+stack-medieval-processed-cloth = ткань
+stack-medieval-processed-pelt = дублёная кожа
+stack-medieval-tool-ammo = стройматериалы
+
+stack-medieval-raw-wood = древесина
+stack-medieval-raw-stone = камень
+stack-medieval-raw-coal = уголь
+stack-medieval-raw-iron = железо
+stack-medieval-raw-silver = серебро
+stack-medieval-raw-gold = золото
+stack-medieval-raw-mithril = мифрил
+stack-medieval-raw-adamantine = адамантин
+stack-medieval-raw-pelt = шкура
+stack-medieval-raw-cloth = ткань
+
+stack-medieval-nail = гвоздь
+
+stack-medieval-mana-crystal = кристалл маны
+
+stack-medieval-grass-floor = трава
+stack-medieval-grass-dark-green-floor = тёмно-зелёная трава
+stack-medieval-grass-crystal-floor = кристаллическая трава
+stack-medieval-grass-red-floor = красная трава
+stack-medieval-grass-dark-floor = тёмная трава
+stack-medieval-grass-dark2-floor = тёмная трава 2
+
+stack-medieval-snow-floor = снег
+stack-medieval-ash-floor = пепел

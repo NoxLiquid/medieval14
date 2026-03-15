@@ -1,0 +1,100 @@
+- type: constructionGraph
+  id: MedievalBed
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: girder
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+
+  - node: girder
+    entity: MedievalBedGirder
+    edges:
+    - to: start
+      completed:
+        - !type:SpawnPrototype
+          prototype: MedievalConstructionToolsAmmo
+          amount: 1
+        - !type:DeleteEntity {}
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: girder2
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder2
+    entity: MedievalBedGirder
+    edges:
+    - to: girder
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: heyBed
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalCloth
+          amount: 1
+          doAfter: 1
+
+  - node: сomfortableBed
+    entity: MedievalComfortableBed
+
+  - node: bed
+    entity: MedievalBed
+    edges:
+    - to: сomfortableBed
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalProcessedPelt
+          amount: 1
+          doAfter: 1
+        - material: MedievalCloth
+          amount: 1
+          doAfter: 1
+
+  - node: сlothHeyBed
+    entity: MedievalClothHeyBed
+    edges:
+    - to: bed
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 2
+          doAfter: 1
+
+  - node: heyBed
+    entity: MedievalHeyBed
+    edges:
+    - to: сlothHeyBed
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalCloth
+          amount: 1
+          doAfter: 1

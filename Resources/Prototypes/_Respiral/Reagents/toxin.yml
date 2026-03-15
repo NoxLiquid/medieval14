@@ -1,0 +1,23 @@
+- type: reagent
+  id: MedievalBlindnessPotion
+  name: reagent-name-medieval-blindness-potion
+  group: Toxins
+  desc: reagent-desc-medieval-blindness-potion
+  flavor: acrid
+  color: "#000000"
+  physicalDesc: reagent-physical-desc-smoky
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 0.05
+      effects:
+        - !type:GenericStatusEffect
+          key: Muted
+          component: Muted
+          type: Add
+          time: 10
+        - !type:HealthChange
+          damage:
+            groups:
+              Airloss: 10
+            types:
+              Poison: 2

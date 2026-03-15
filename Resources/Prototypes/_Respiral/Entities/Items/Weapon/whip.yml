@@ -1,0 +1,289 @@
+- type: entity
+  parent: MedievalBaseWhip
+  id: MedievalPeltWhip
+  name: кожанная плеть
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/whip.rsi
+    layers:
+    - state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 12
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 200
+
+- type: entity
+  parent: MedievalBaseWhip
+  id: MedievalPeltWhip2
+  name: украшенная кожанная плеть
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/whip2.rsi
+    layers:
+    - state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 18
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 200
+      MedievalProcessedGold: 50
+
+- type: entity
+  parent: MedievalBaseWhip
+  id: MedievalIronWhip
+  name: железная плеть
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/whip3.rsi
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 14
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8A8A8A"
+      right:
+      - state: inhand-right
+        color: "#8A8A8A"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 200
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseWhip
+  id: MedievalWoodWhip
+  name: деревянная плеть
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/whip3.rsi
+    layers:
+    - state: blade
+      color: "#8B4513"
+    - state: handle
+      color: "#8B4513"
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 3.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8B4513"
+      right:
+      - state: inhand-right
+        color: "#8B4513"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalBaseWhip
+  id: MedievalSteelWhip
+  name: стальная плеть
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/whip3.rsi
+    layers:
+    - state: blade
+      color: "#B0C4DE"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 17.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#B0C4DE"
+      right:
+      - state: inhand-right
+        color: "#B0C4DE"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSteel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 200
+
+- type: entity
+  parent: MedievalBaseWhip
+  id: MedievalSilverWhip
+  name: серебрянная плеть
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/whip3.rsi
+    layers:
+    - state: blade
+      color: "#C0C0FF"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 14
+        Holy: 14
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSilver
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 200
+
+- type: entity
+  parent: MedievalBaseWhip
+  id: MedievalMithrilWhip
+  name: мифриловая плеть
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/whip3.rsi
+    layers:
+    - state: blade
+      color: "#9370DB"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 21
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9370DB"
+      right:
+      - state: inhand-right
+        color: "#9370DB"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalMithril
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedMithril: 200
+
+- type: entity
+  parent: MedievalBaseWhip
+  id: MedievalAdamantineWhip
+  name: адамантитовая плеть
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/whip3.rsi
+    layers:
+    - state: blade
+      color: "#4B0000"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 24.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4B0000"
+      right:
+      - state: inhand-right
+        color: "#4B0000"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalAdamantine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 200

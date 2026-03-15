@@ -1,0 +1,122 @@
+
+# Травка
+- type: biomeTemplate
+  id: MedievalGrasslands
+  layers:
+    - !type:BiomeDecalLayer
+      allowedTiles:
+        - MedievalFloorGrass
+      divisions: 2
+      threshold: -0.50
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 1
+      decals:
+        - BushDOne
+        - BushDTwo
+        - BushDThree
+    - !type:BiomeDecalLayer
+      allowedTiles:
+        - MedievalFloorGrass
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        frequency: 1
+      divisions: 1
+      threshold: 0.8
+      decals:
+        - FlowersBROne
+        - FlowersBRTwo
+        - FlowersBRThree
+
+    # Каменные образования
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - MedievalFloorStone2
+      threshold: -0.30
+      noise:
+        seed: 1
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      entities:
+        - MedievalWallRockBasalt
+
+    # Вода (озёра / реки)
+    - !type:BiomeEntityLayer
+      threshold: 0.9
+      noise:
+        seed: 2
+        noiseType: OpenSimplex2
+        frequency: 0.003
+        fractalType: Ridged
+        octaves: 1
+        lacunarity: 1.5
+      allowedTiles:
+        - MedievalDirt
+      entities:
+        - FloorWaterEntity
+
+    # Леса
+    - !type:BiomeEntityLayer
+      threshold: 0.5
+      noise:
+        seed: 3
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+        octaves: 3
+        lacunarity: 2
+      allowedTiles:
+        - MedievalFloorGrass
+      entities:
+        - MedievalTree
+        - MedievalTreeLarge
+    # Плитки
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: MedievalDirt
+    - !type:BiomeTileLayer
+      threshold: -0.99
+      tile: MedievalFloorGrass
+      noise:
+        seed: 0
+        frequency: 0.02
+        fractalType: None
+    - !type:BiomeTileLayer
+      tile: MedievalFloorStone2
+      threshold: -0.2
+      noise:
+        seed: 1
+        noiseType: Cellular
+        frequency: 0.05
+        lacunarity: 2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+    - !type:BiomeTileLayer
+      tile: MedievalDirt
+      threshold: 0.9
+      noise:
+        seed: 2
+        noiseType: OpenSimplex2
+        frequency: 0.003
+        fractalType: Ridged
+        octaves: 1
+        lacunarity: 1.5
+    - !type:BiomeTileLayer
+      threshold: 1
+      tile: MedievalFloorGrass
+      noise:
+        seed: 3
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+        octaves: 3
+        lacunarity: 2

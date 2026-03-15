@@ -1,0 +1,40 @@
+
+
+- type: entity
+  parent: MedievalBaseHeaterMachine
+  id: MedievalHotplate
+  name: костровая жаровня
+  description: Простейшее изобретение алхимиков. Очаг для нагрева колб и котлов. Работает куда надёжнее, чем хрупкий костёр.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Machines/hotplate.rsi
+    drawdepth: SmallObjects
+    snapCardinals: true
+    layers:
+    - state: icon
+    - state: on
+      map: ["enum.SolutionHeaterVisuals.IsOn"]
+      shader: unshaded
+  - type: SolutionHeater
+    heatPerSecond: 160
+  - type: ItemPlacer
+    whitelist:
+      components:
+      - FitsInDispenser
+  - type: PlaceableSurface
+    placeCentered: true
+    positionOffset: 0, 0.25
+  - type: Machine
+    board: MedievalHotplateDetail
+  - type: GenericVisualizer
+    visuals:
+      enum.SolutionHeaterVisuals.IsOn:
+        enum.SolutionHeaterVisuals.IsOn:
+          True: { visible: true }
+          False: { visible: false }
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 204
+      MedievalRawManaCrystal: 100
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 4

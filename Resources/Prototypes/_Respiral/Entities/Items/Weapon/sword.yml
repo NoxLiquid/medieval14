@@ -1,0 +1,496 @@
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalIronSword
+  name: железный меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword1.rsi
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 15
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8A8A8A"
+      right:
+      - state: inhand-right
+        color: "#8A8A8A"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 200
+      MedievalProcessedWood: 100
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalWoodSword
+  name: деревянный меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword1.rsi
+    layers:
+    - state: blade
+      color: "#8B4513"
+    - state: handle
+      color: "#8B4513"
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 3.75
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8B4513"
+      right:
+      - state: inhand-right
+        color: "#8B4513"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalSteelSword
+  name: стальной меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword1.rsi
+    layers:
+    - state: blade
+      color: "#B0C4DE"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 18.75
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#B0C4DE"
+      right:
+      - state: inhand-right
+        color: "#B0C4DE"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSteel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 150
+      MedievalProcessedWood: 100
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalSilverSword
+  name: серебрянный меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword1.rsi
+    layers:
+    - state: blade
+      color: "#C0C0FF"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 15
+        Holy: 15
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSilver
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 200
+      MedievalProcessedWood: 100
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalMithrilSword
+  name: мифриловый меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword1.rsi
+    layers:
+    - state: blade
+      color: "#9370DB"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 22.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9370DB"
+      right:
+      - state: inhand-right
+        color: "#9370DB"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalMithril
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedMithril: 200
+      MedievalProcessedWood: 100
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalAdamantineSword
+  name: адамантитовый меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword1.rsi
+    layers:
+    - state: blade
+      color: "#4B0000"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 26.25
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4B0000"
+      right:
+      - state: inhand-right
+        color: "#4B0000"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalAdamantine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 200
+      MedievalProcessedWood: 100
+
+
+# Меч 2
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalIronSword2
+  name: железный меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword2.rsi
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Slash: 17
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8A8A8A"
+      right:
+      - state: inhand-right
+        color: "#8A8A8A"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 200
+      MedievalProcessedWood: 100
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalWoodSword2
+  name: деревянный меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword2.rsi
+    layers:
+    - state: blade
+      color: "#8B4513"
+    - state: handle
+      color: "#8B4513"
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Blunt: 4.25
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8B4513"
+      right:
+      - state: inhand-right
+        color: "#8B4513"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalSteelSword2
+  name: стальной меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword2.rsi
+    layers:
+    - state: blade
+      color: "#B0C4DE"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Slash: 21.25
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#B0C4DE"
+      right:
+      - state: inhand-right
+        color: "#B0C4DE"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSteel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 150
+      MedievalProcessedWood: 100
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalSilverSword2
+  name: серебрянный меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword2.rsi
+    layers:
+    - state: blade
+      color: "#C0C0FF"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Slash: 17
+        Holy: 17
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSilver
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 200
+      MedievalProcessedWood: 100
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalMithrilSword2
+  name: мифриловый меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword2.rsi
+    layers:
+    - state: blade
+      color: "#9370DB"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Slash: 25.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9370DB"
+      right:
+      - state: inhand-right
+        color: "#9370DB"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalMithril
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedMithril: 200
+      MedievalProcessedWood: 100
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalAdamantineSword2
+  name: адамантитовый меч
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/sword2.rsi
+    layers:
+    - state: blade
+      color: "#4B0000"
+    - state: handle
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Slash: 29.75
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4B0000"
+      right:
+      - state: inhand-right
+        color: "#4B0000"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalAdamantine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 200
+      MedievalProcessedWood: 100

@@ -1,0 +1,45 @@
+- type: flavor
+  id: mineral
+  flavorType: Base
+  description: flavor-base-mineral
+
+- type: flavor
+  id: floral
+  flavorType: Base
+  description: flavor-base-floral
+
+- type: flavor
+  id: calming
+  flavorType: Base
+  description: flavor-base-calming
+
+- type: flavor
+  id: thorny
+  flavorType: Base
+  description: flavor-base-thorny
+
+- type: flavor
+  id: dry
+  flavorType: Base
+  description: flavor-base-dry
+
+- type: flavor
+  id: tangy
+  flavorType: Base
+  description: flavor-base-tangy
+
+
+- type: flavor
+  id: acrid
+  flavorType: Base
+  description: flavor-base-acrid
+
+- type: flavor
+  id: invigorating
+  flavorType: Base
+  description: flavor-base-invigorating
+
+- type: flavor
+  id: mystical
+  flavorType: Base
+  description: flavor-base-mystical

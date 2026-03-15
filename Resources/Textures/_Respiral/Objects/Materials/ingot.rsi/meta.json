@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/Twilight-Fortress-SS13",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+	{
+      "name": "adamantine"
+    },
+	{
+      "name": "iron"
+    },
+    {
+      "name": "steel"
+    },
+	{
+      "name": "silver"
+    },
+	{
+      "name": "gold"
+    },
+	{
+      "name": "mithril"
+    },
+	{
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+	{
+      "name": "adamantine-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "adamantine-inhand-right",
+      "directions": 4
+    },
+	{
+      "name": "iron-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "iron-inhand-right",
+      "directions": 4
+    },
+	{
+      "name": "steel-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "steel-inhand-right",
+      "directions": 4
+    },
+	{
+      "name": "silver-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "silver-inhand-right",
+      "directions": 4
+    },
+	{
+      "name": "gold-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "gold-inhand-right",
+      "directions": 4
+    },
+	{
+      "name": "mithril-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "mithril-inhand-right",
+      "directions": 4
+    }
+  ]
+}

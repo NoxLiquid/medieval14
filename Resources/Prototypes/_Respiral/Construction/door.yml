@@ -1,0 +1,181 @@
+- type: constructionGraph
+  id: MedievalDoor
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: girder
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+
+  - node: girder
+    entity: MedievalDoorGirder
+    edges:
+    - to: start
+      completed:
+        - !type:SpawnPrototype
+          prototype: MedievalConstructionToolsAmmo
+          amount: 1
+        - !type:DeleteEntity {}
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: girder2
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder2
+    entity: MedievalDoorGirder
+    edges:
+    - to: girder
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: woodDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 1
+
+    - to: stoneDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalProcessedStone
+          amount: 5
+          doAfter: 12
+
+    - to: ironDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalProcessedIron
+          amount: 3
+          doAfter: 24
+
+    - to: girder3
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder3
+    entity: MedievalDoorGirder
+    edges:
+    - to: girder2
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: ironWoodDurableDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+        - material: MedievalProcessedIron
+          amount: 1
+          doAfter: 5
+
+    - to: girder4
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder4
+    entity: MedievalDoorGirder
+    edges:
+    - to: girder3
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: woodDoorFrame
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+
+    - to: girder5
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder5
+    entity: MedievalDoorGirder
+    edges:
+    - to: girder4
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: woodDurableDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 2
+          doAfter: 5
+
+  - node: woodDoor
+    entity: MedievalWoodDoor
+
+  - node: woodDurableDoor
+    entity: MedievalWoodDurableDoor
+
+  - node: ironWoodDurableDoor
+    entity: MedievalIronWoodDurableDoor
+
+  - node: woodDoorFrame
+    entity: MedievalWoodDoorFrame
+
+  - node: stoneDoor
+    entity: MedievalStoneDoor
+
+  - node: ironDoor
+    entity: MedievalIronDoor

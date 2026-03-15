@@ -1,0 +1,37 @@
+- type: entity
+  parent: Bucket
+  id: MedievalBucket
+  name: ведро
+  description: Крепкая ёмкость из древесины.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Tools/bucket.rsi
+    layers:
+    - state: icon
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: Clothing
+    sprite: _Respiral/Objects/Items/Tools/bucket.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+  - type: DnaSubstanceTrace
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak

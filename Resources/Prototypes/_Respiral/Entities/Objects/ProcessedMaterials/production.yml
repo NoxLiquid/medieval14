@@ -1,0 +1,486 @@
+- type: entity
+  parent: MedievalBaseProcessedMaterial
+  id: MedievalBoard
+  categories: [ HideSpawnMenu ]
+  name: доска
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Materials/board.rsi
+    layers:
+    - state: board
+      map: ["base"]
+  - type: Item
+    sprite: _Respiral/Objects/Materials/board.rsi
+    heldPrefix: board
+    size: Normal
+  - type: Stack
+    stackType: MedievalBoard
+    baseLayer: base
+    layerStates:
+    - board
+    - board_2
+    - board_3
+    - board_4
+  - type: Tag
+    tags:
+    - MedievalAnvilMaterialStorage
+    - CarpenterTableMaterialStorage
+  - type: Appearance
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+  - type: FloorTile
+    outputs:
+    - MedievalLattice
+
+- type: entity
+  parent: MedievalBoard
+  id: MedievalBoard1
+  name: доска
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalBoard
+  id: MedievalBoard5
+  name: доска
+  suffix: Средневековье, 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: MedievalIngotBase
+  id: MedievalIronIngot
+  categories: [ HideSpawnMenu ]
+  name: слиток железа
+  components:
+  - type: Stack
+    stackType: MedievalProcessedIron
+  - type: Sprite
+    layers:
+    - state: iron
+      map: ["base"]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+  - type: Tag
+    tags:
+    - MedievalAnvilMaterialStorage
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: iron-inhand-left
+      right:
+      - state: iron-inhand-right
+
+- type: entity
+  id: MedievalIronIngot1
+  parent: MedievalIronIngot
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalIngotBase
+  id: MedievalSteelIngot
+  categories: [ HideSpawnMenu ]
+  name: слиток стали
+  components:
+  - type: Stack
+    stackType: MedievalSteel
+  - type: Sprite
+    layers:
+    - state: steel
+      map: ["base"]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 100
+  - type: Tag
+    tags:
+    - MedievalAnvilMaterialStorage
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: steel-inhand-left
+      right:
+      - state: steel-inhand-right
+
+- type: entity
+  id: MedievalSteelIngot1
+  parent: MedievalSteelIngot
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalIngotBase
+  id: MedievalSilverIngot
+  categories: [ HideSpawnMenu ]
+  name: слиток серебра
+  components:
+  - type: Stack
+    stackType: MedievalProcessedSilver
+  - type: Sprite
+    layers:
+    - state: silver
+      map: ["base"]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 100
+  - type: Tag
+    tags:
+    - MedievalAnvilMaterialStorage
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: silver-inhand-left
+      right:
+      - state: silver-inhand-right
+
+- type: entity
+  id: MedievalSilverIngot1
+  parent: MedievalSilverIngot
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalIngotBase
+  id: MedievalGoldIngot
+  categories: [ HideSpawnMenu ]
+  name: слиток золота
+  components:
+  - type: Stack
+    stackType: MedievalProcessedGold
+  - type: Tag
+    tags:
+    - MedievalAnvilMaterialStorage
+  - type: Sprite
+    layers:
+    - state: gold
+      map: ["base"]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 100
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: gold-inhand-left
+      right:
+      - state: gold-inhand-right
+
+- type: entity
+  id: MedievalGoldIngot1
+  parent: MedievalGoldIngot
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalIngotBase
+  id: MedievalMithrilIngot
+  categories: [ HideSpawnMenu ]
+  name: слиток мифрила
+  components:
+  - type: Stack
+    stackType: MedievalProcessedMithril
+  - type: Sprite
+    layers:
+    - state: mithril
+      map: ["base"]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedMithril: 100
+  - type: Tag
+    tags:
+    - MedievalAnvilMaterialStorage
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: mithril-inhand-left
+      right:
+      - state: mithril-inhand-right
+
+- type: entity
+  id: MedievalMithrilIngot1
+  parent: MedievalMithrilIngot
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalIngotBase
+  id: MedievalAdamantineIngot
+  categories: [ HideSpawnMenu ]
+  name: слиток адамантина
+  components:
+  - type: Stack
+    stackType: MedievalProcessedAdamantine
+  - type: Sprite
+    layers:
+    - state: adamantine
+      map: ["base"]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 100
+  - type: Tag
+    tags:
+    - MedievalAnvilMaterialStorage
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: adamantine-inhand-left
+      right:
+      - state: adamantine-inhand-right
+
+- type: entity
+  id: MedievalAdamantineIngot1
+  parent: MedievalAdamantineIngot
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalBaseProcessedMaterial
+  id: MedievalProcessedStone
+  categories: [ HideSpawnMenu ]
+  name: кирпич из камня
+  components:
+  - type: Appearance
+  - type: Stack
+    stackType: MedievalProcessedStone
+    baseLayer: base
+    layerStates:
+    - stone
+    - stone_2
+    - stone_3
+    - stone_4
+  - type: Sprite
+    sprite: _Respiral/Objects/Materials/stone.rsi
+    state: stone
+    layers:
+    - state: stone
+      map: ["base"]
+  - type: Item
+    heldPrefix: stone
+    sprite: _Respiral/Objects/Materials/stone.rsi
+    size: Normal
+    inhandVisuals:
+      left:
+      - state: stone-inhand-left
+      right:
+      - state: stone-inhand-right
+  - type: Tag
+    tags:
+    - MedievalAnvilMaterialStorage
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 100
+
+- type: entity
+  id: MedievalProcessedStone1
+  parent: MedievalProcessedStone
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  id: MedievalProcessedStone6
+  parent: MedievalProcessedStone
+  suffix: Средневековье, 6
+  components:
+  - type: Stack
+    count: 6
+
+- type: entity
+  parent: BaseItem
+  id: MedievalPartRodWood
+  name: деревянный стержень
+  categories: [ HideSpawnMenu ]
+  suffix: Средневековье
+  components:
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - ConstructionMaterial
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+  - type: Stack
+    stackType: MedievalRodWood
+    baseLayer: base
+    layerStates:
+    - rods
+    - rods_2
+    - rods_3
+    - rods_4
+    - rods_5
+  - type: Sprite
+    sprite: _Respiral/Objects/Materials/parts.rsi
+    state: rods_5
+    color: "#8B4513"
+    layers:
+    - state: rods_5
+      map: ["base"]
+  - type: Item
+    size: Normal
+    heldPrefix: rods
+    sprite: Objects/Materials/parts.rsi
+  - type: Appearance
+
+- type: entity
+  parent: MedievalPartRodWood
+  id: MedievalPartRodWood1
+  components:
+  - type: Sprite
+    state: rods
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalPartRodWood
+  id: MedievalPartRodWood3
+  suffix: Средневековье, 3
+  components:
+  - type: Stack
+    count: 3
+
+- type: entity
+  parent: MedievalPartRodWood
+  id: MedievalPartRodWood6
+  suffix: Средневековье, 6
+  components:
+  - type: Stack
+    count: 6
+
+- type: entity
+  name: ткань
+  description: Сотканное полотно, пригодное для пошива одежды, постелей и других вещей.
+  id: MedievalCloth
+  categories: [ HideSpawnMenu ]
+  parent: MedievalBaseProcessedMaterial
+  components:
+  - type: Stack
+    stackType: MedievalCloth
+    baseLayer: base
+    layerStates:
+    - cloth1
+    - cloth2
+    - cloth3
+    - cloth4
+  - type: Sprite
+    layers:
+    - state: cloth4
+      map: ["base"]
+  - type: Tag
+    tags:
+    - MedievalSewingMaterialStorage
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalCloth
+  id: MedievalCloth1
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalCloth
+  id: MedievalCloth5
+  suffix: Средневековье, 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  name: дублёная кожа
+  description: Прочно выделанная кожа, готовая для пошива одежды, обуви или брони. Гибкая и долговечная, ценится у ремесленников.
+  id: MedievalProcessedPelt
+  categories: [ HideSpawnMenu ]
+  parent: MedievalRawMaterialBase
+  components:
+  - type: Stack
+    stackType: MedievalProcessedPelt
+    baseLayer: base
+    layerStates:
+    - procPelt1
+    - procPelt2
+    - procPelt3
+  - type: Sprite
+    layers:
+    - state: procPelt3
+      map: ["base"]
+  - type: Tag
+    tags:
+    - MedievalSewingMaterialStorage
+    - MedievalAnvilMaterialStorage
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalProcessedPelt
+  id: MedievalProcessedPelt1
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalProcessedPelt
+  id: MedievalProcessedPelt5
+  suffix: Средневековье, 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  name: стройматериалы
+  parent: BaseItem
+  suffix: Средневековье
+  categories: [ HideSpawnMenu ]
+  id: MedievalConstructionToolsAmmo
+  description: Материалы для строительства сооружений.
+  components:
+  - type: RCDAmmo
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Tools/hammer.rsi
+    state: ammo
+  - type: Item
+    sprite: _Respiral/Objects/Items/Tools/hammer.rsi
+    heldPrefix: ammo
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+      MedievalProcessedStone: 200
+      MedievalProcessedIron: 100
+  - type: Stack
+    stackType: MedievalConstructionToolsAmmo
+
+- type: entity
+  parent: MedievalConstructionToolsAmmo
+  id: MedievalConstructionToolsAmmo1
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalConstructionToolsAmmo
+  id: MedievalConstructionToolsAmmo5
+  suffix: Средневековье, 5
+  components:
+  - type: Stack
+    count: 5

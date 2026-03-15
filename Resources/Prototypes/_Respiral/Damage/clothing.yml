@@ -1,0 +1,167 @@
+# ЖЕЛЕЗО
+- type: damageModifierSet
+  id: MedievalIronHeadOrLegs
+  coefficients:
+    Blunt: 0.91
+    Slash: 0.91
+    Piercing: 0.95
+    Heat: 0.9
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalIronBody
+  coefficients:
+    Blunt: 0.775
+    Slash: 0.775
+    Piercing: 0.875
+    Heat: 0.75
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalIronHeadFeet
+  coefficients:
+    Blunt: 0.955
+    Slash: 0.955
+    Piercing: 0.975
+    Heat: 0.95
+    Structural: 1
+
+# СТАЛЬ
+- type: damageModifierSet
+  id: MedievalSteelHeadOrLegs
+  coefficients:
+    Blunt: 0.89
+    Slash: 0.89
+    Piercing: 0.93
+    Heat: 0.84
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalSteelBody
+  coefficients:
+    Blunt: 0.725
+    Slash: 0.725
+    Piercing: 0.825
+    Heat: 0.6
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalSteelHeadFeet
+  coefficients:
+    Blunt: 0.945
+    Slash: 0.945
+    Piercing: 0.965
+    Heat: 0.92
+    Structural: 1
+
+# СЕРЕБРО
+- type: damageModifierSet
+  id: MedievalSilverHeadOrLegs
+  coefficients:
+    Blunt: 0.96
+    Slash: 0.96
+    Piercing: 0.98
+    Heat: 0.9
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalSilverBody
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.9
+    Piercing: 0.95
+    Heat: 0.75
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalSilverHeadFeet
+  coefficients:
+    Blunt: 0.98
+    Slash: 0.98
+    Piercing: 0.99
+    Heat: 0.95
+    Structural: 1
+    
+# МИФРИЛ
+- type: damageModifierSet
+  id: MedievalMithrilHeadOrLegs
+  coefficients:
+    Blunt: 0.87
+    Slash: 0.87
+    Piercing: 0.9
+    Heat: 0.84
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalMithrilBody
+  coefficients:
+    Blunt: 0.675
+    Slash: 0.675
+    Piercing: 0.75
+    Heat: 0.6
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalMithrilHeadFeet
+  coefficients:
+    Blunt: 0.935
+    Slash: 0.935
+    Piercing: 0.95
+    Heat: 0.92
+    Structural: 1
+
+# ЗОЛОТО
+- type: damageModifierSet
+  id: MedievalGoldHeadOrLegs
+  coefficients:
+    Blunt: 0.94
+    Slash: 0.94
+    Piercing: 0.96
+    Heat: 0.88
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalGoldBody
+  coefficients:
+    Blunt: 0.85
+    Slash: 0.85
+    Piercing: 0.9
+    Heat: 0.7
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalGoldHeadFeet
+  coefficients:
+    Blunt: 0.97
+    Slash: 0.97
+    Piercing: 0.98
+    Heat: 0.94
+    Structural: 1
+
+# АДАМАНТИТ
+- type: damageModifierSet
+  id: MedievalAdamantineHeadOrLegs
+  coefficients:
+    Blunt: 0.83
+    Slash: 0.83
+    Piercing: 0.86
+    Heat: 0.82
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalAdamantineBody
+  coefficients:
+    Blunt: 0.575
+    Slash: 0.575
+    Piercing: 0.65
+    Heat: 0.55
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalAdamantineHeadFeet
+  coefficients:
+    Blunt: 0.915
+    Slash: 0.915
+    Piercing: 0.93
+    Heat: 0.91
+    Structural: 1

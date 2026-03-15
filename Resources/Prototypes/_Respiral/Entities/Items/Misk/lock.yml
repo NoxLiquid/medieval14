@@ -1,0 +1,32 @@
+- type: entity
+  name: замок
+  parent: BaseItem
+  suffix: Средневековье
+  id: MedievalBaseLock
+  abstract: true
+  description: Замок, наверное, его нужно повесить?
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/lock.rsi
+    state: lock1
+  - type: Item
+    size: Small
+    sprite: _Respiral/Objects/Items/lock.rsi
+  - type: MedievalLock
+    attachSound:
+      path: /Audio/_Respiral/Lock/padlock.ogg
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLock

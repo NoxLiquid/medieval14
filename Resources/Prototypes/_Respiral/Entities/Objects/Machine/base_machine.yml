@@ -1,0 +1,161 @@
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: MedievalBaseMachine
+  suffix: Средневековье
+  components:
+  - type: Wear
+  - type: Animateable
+  - type: InteractionOutline
+  - type: Anchorable
+    delay: 2
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalLathe
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+
+- type: entity
+  abstract: true
+  id: MedievalConstructibleMachine
+  components:
+  - type: Animateable
+  - type: Machine
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Construction
+    graph: MedievalMachine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
+
+- type: entity
+  id: MedievalMachine
+  parent:
+  - MedievalConstructibleMachine
+  - MedievalBaseMachine
+  abstract: true
+  name: машина
+  components:
+  - type: Appearance
+  - type: WiresVisuals
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+          - MachineLayer
+  - type: MaterialStorage
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
+  - type: Transform
+    anchored: true
+  - type: Pullable
+
+
+- type: entity
+  id: MedievalBaseLathe
+  parent:
+  - MedievalMachine
+  abstract: true
+  name: станок
+  components:
+  - type: Lathe
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: LatheWear
+    damage:
+      type:
+        Structural: 5
+  # - type: StaticPrice
+  #   price: 800
+  # - type: ResearchClient
+  # - type: TechnologyDatabase
+
+- type: entity
+  abstract: true
+  parent: MedievalMachine
+  id: MedievalBaseHeaterMachine
+  components:
+  - type: Transform
+    anchored: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.08,-0.35,0.15,0.25"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container

@@ -1,0 +1,85 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: MedievalOreBase
+  suffix: Средневековье
+  name: руда
+  components:
+  - type: Sprite
+    sprite: /Textures/_Respiral/Objects/Materials/ore.rsi
+  - type: Item
+    sprite: /Textures/_Respiral/Objects/Materials/ore.rsi
+    size: Normal
+  - type: Material
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 20
+        mask:
+          - ItemMask
+        restitution: 0.3
+        friction: 0.2
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: MedievalRawMaterialBase
+  suffix: Средневековье
+  name: сырьё
+  components:
+  - type: Material
+  - type: Sprite
+    sprite: _Respiral/Objects/Materials/misk.rsi
+  - type: Item
+    sprite: _Respiral/Objects/Materials/misk.rsi
+    size: Normal
+  - type: Tag
+    tags:
+    - MedievalRawMaterial
+  - type: Damageable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: MedievalCrystalBase
+  suffix: Средневековье
+  name: кристалл
+  components:
+  - type: Material
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: Sprite
+    sprite: /Textures/_Respiral/Objects/Materials/crystal.rsi
+  - type: Item
+    sprite: /Textures/_Respiral/Objects/Materials/crystal.rsi
+  - type: SpaceGarbage
+  - type: MeleeWeapon
+    wideAnimationRotation: -22.5
+    attackRate: 1.5
+    damage:
+      types:
+        Slash: 3.5
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

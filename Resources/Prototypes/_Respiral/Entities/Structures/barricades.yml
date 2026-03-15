@@ -1,0 +1,21 @@
+- type: entity
+  id: MedievalBarricadeBlock
+  parent: Barricade
+  components:
+  - type: Sprite
+    sprite: Structures/barricades.rsi
+    state: barricade
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy

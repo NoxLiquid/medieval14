@@ -1,0 +1,97 @@
+- type: constructionGraph
+  id: MedievalChair
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: girder
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+
+  - node: girder
+    entity: MedievalChairGirder
+    edges:
+    - to: start
+      completed:
+        - !type:SpawnPrototype
+          prototype: MedievalConstructionToolsAmmo
+          amount: 1
+        - !type:DeleteEntity {}
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: girder2
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder2
+    entity: MedievalChairGirder
+    edges:
+    - to: girder
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: stool
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 1
+
+  - node: chairEmeraldLuxury
+    entity: MedievalChairEmeraldLuxury
+
+  - node: chairRedCushion
+    entity: MedievalChairRedCushion
+    edges:
+    - to: chairEmeraldLuxury
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalCloth
+          amount: 1
+          doAfter: 1
+
+  - node: chairPlain
+    entity: MedievalChairPlain
+    edges:
+    - to: chairRedCushion
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalCloth
+          amount: 1
+          doAfter: 1
+
+  - node: stool
+    entity: MedievalStool
+    edges:
+    - to: chairPlain
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 1

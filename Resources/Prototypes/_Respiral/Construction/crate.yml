@@ -1,0 +1,284 @@
+- type: constructionGraph
+  id: MedievalCrate
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: girder
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+
+  - node: girder
+    entity: MedievalCrateGirder
+    edges:
+    - to: start
+      completed:
+        - !type:SpawnPrototype
+          prototype: MedievalConstructionToolsAmmo
+          amount: 1
+        - !type:DeleteEntity {}
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: basket
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+
+    - to: girder2
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder2
+    entity: MedievalCrateGirder
+    edges:
+    - to: girder
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: chestWood
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 1
+
+    - to: girder3
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder3
+    entity: MedievalCrateGirder
+    edges:
+    - to: girder2
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: chestWood
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+
+    - to: girder4
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder4
+    entity: MedievalCrateGirder
+    edges:
+    - to: girder3
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: chestReinforced
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 1
+        - material: MedievalProcessedIron
+          amount: 1
+          doAfter: 5
+
+    - to: girder5
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder5
+    entity: MedievalCrateGirder
+    edges:
+    - to: girder4
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: chestOrnate
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 2
+          doAfter: 1
+        - material: MedievalProcessedGold
+          amount: 1
+          doAfter: 5
+
+    - to: girder6
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder6
+    entity: MedievalCrateGirder
+    edges:
+    - to: girder5
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: chestLuxury
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 2
+          doAfter: 1
+        - material: MedievalProcessedGold
+          amount: 1
+          doAfter: 5
+        - material: MedievalProcessedIron
+          amount: 1
+          doAfter: 5
+
+    - to: girder7
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder7
+    entity: MedievalCrateGirder
+    edges:
+    - to: girder6
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: wardrobeWood
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 2
+          doAfter: 1
+
+    - to: girder8
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: girder8
+    entity: MedievalCrateGirder
+    edges:
+    - to: girder7
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: Screwing
+          doAfter: 2
+
+    - to: wardrobeCarved
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 4
+          doAfter: 1
+
+    - to: wardrobeIron
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 1
+        - material: MedievalProcessedIron
+          amount: 2
+          doAfter: 1
+
+  - node: basket
+    entity: MedievalBasket
+
+  - node: wardrobeCarved
+    entity: MedievalWardrobeCarved
+
+  - node: wardrobeIron
+    entity: MedievalWardrobeIron
+
+  - node: wardrobeWood
+    entity: MedievalWardrobeWood
+
+  - node: chestLuxury
+    entity: MedievalChestLuxury
+
+  - node: chestOrnate
+    entity: MedievalChestOrnate
+
+  - node: chestReinforced
+    entity: MedievalChestReinforced
+
+  - node: chestWood
+    entity: MedievalChestWood
+

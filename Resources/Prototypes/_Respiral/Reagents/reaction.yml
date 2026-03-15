@@ -1,0 +1,68 @@
+- type: reaction
+  id: MedievalHealingPotionRecipe
+  minTemp: 370
+  reactants:
+    MedievalLunocvet:    # лечит Brute
+      amount: 1
+    MedievalPihta:       # снимает яд
+      amount: 1
+    MedievalKrovavayaRoza: # восстанавливает кровь
+      amount: 1
+  products:
+    MedievalHealingPotion: 3
+
+
+- type: reaction
+  id: MedievalAntitoxinRecipe
+  minTemp: 370
+  reactants:
+    MedievalVeresk:     # лечит токсины
+      amount: 1
+    MedievalPihta:      # тоже противоядное
+      amount: 1
+    MedievalGlaznica:   # нейтрализует яд в малых дозах
+      amount: 1
+  products:
+    MedievalAntitoxin: 3
+
+
+- type: reaction
+  id: MedievalManaPotionRecipe
+  minTemp: 370
+  reactants:
+    MedievalMana:        # чистая эссенция маны
+      amount: 1
+    MedievalLunocvet:    # светящийся цветок, усиливает эффект
+      amount: 3
+    MedievalVorosnik:    # кислый напиток, даёт основу для настоя
+      amount: 3
+  products:
+    MedievalManaPotion: 6
+
+
+- type: reaction
+  id: MedievalStaminaPotionRecipe
+  minTemp: 370
+  reactants:
+    MedievalOgneCvet:    # бодрящий и острый
+      amount: 1
+    MedievalViunka:      # снижает урон от шока, стимулирует
+      amount: 1
+    MedievalSuhoCvet:    # сушит, действует как энергетик
+      amount: 1
+  products:
+    MedievalStaminaPotion: 2
+
+
+- type: reaction
+  id: MedievalBlindnessPotionRecipe
+  minTemp: 370
+  reactants:
+    MedievalTernovnik:    # даёт шок и галлюцинации
+      amount: 1
+    MedievalShipovec:     # колючее растение (повреждает внутренне)
+      amount: 1
+    MedievalRomashka:     # в больших дозах усыпляет
+      amount: 1
+  products:
+    MedievalBlindnessPotion: 2

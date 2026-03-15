@@ -1,0 +1,244 @@
+- type: entity
+  parent: MedievalBaseBrassKnuckles
+  id: MedievalIronBrassKnuckles
+  name: железный кастет
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/brass_knuckles.rsi
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 10
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8A8A8A"
+      right:
+      - state: inhand-right
+        color: "#8A8A8A"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 50
+      MedievalProcessedWood: 50
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseBrassKnuckles
+  id: MedievalWoodBrassKnuckles
+  name: деревянный кастет
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/brass_knuckles.rsi
+    layers:
+    - state: blade
+      color: "#8B4513"
+    - state: handle
+      color: "#8B4513"
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 2.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8B4513"
+      right:
+      - state: inhand-right
+        color: "#8B4513"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+
+- type: entity
+  parent: MedievalBaseBrassKnuckles
+  id: MedievalSteelBrassKnuckles
+  name: стальной кастет
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/brass_knuckles.rsi
+    layers:
+    - state: blade
+      color: "#B0C4DE"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 12.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#B0C4DE"
+      right:
+      - state: inhand-right
+        color: "#B0C4DE"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSteel
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 50
+      MedievalProcessedWood: 50
+
+- type: entity
+  parent: MedievalBaseBrassKnuckles
+  id: MedievalSilverBrassKnuckles
+  name: серебрянный кастет
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/brass_knuckles.rsi
+    layers:
+    - state: blade
+      color: "#C0C0FF"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 10
+      types:
+        Holy: 10
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSilver
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 50
+      MedievalProcessedWood: 50
+
+- type: entity
+  parent: MedievalBaseBrassKnuckles
+  id: MedievalMithrilBrassKnuckles
+  name: мифриловый кастет
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/brass_knuckles.rsi
+    layers:
+    - state: blade
+      color: "#9370DB"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 15
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9370DB"
+      right:
+      - state: inhand-right
+        color: "#9370DB"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalMithril
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedMithril: 50
+      MedievalProcessedWood: 50
+
+- type: entity
+  parent: MedievalBaseBrassKnuckles
+  id: MedievalAdamantineBrassKnuckles
+  name: адамантитовый кастет
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/brass_knuckles.rsi
+    layers:
+    - state: blade
+      color: "#4B0000"
+    - state: handle
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 17.5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#4B0000"
+      right:
+      - state: inhand-right
+        color: "#4B0000"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalAdamantine
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 50
+      MedievalProcessedWood: 50

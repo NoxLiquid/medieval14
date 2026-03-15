@@ -1,0 +1,97 @@
+- type: material
+  id: MedievalRawWood
+  stackEntity: MedievalLog1
+  name: medieval-raw-materials-wood
+  color: "#8B4513"   # коричневый, древесина
+  icon: { sprite: _Respiral/Objects/Materials/log.rsi, state: log }
+  price: 0.96
+
+- type: material
+  id: MedievalRawStone
+  stackEntity: MedievalStoneOre1
+  name: medieval-raw-materials-stone
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: stone }
+  color: "#808080"   # серый, камень
+  price: 0.19
+
+- type: material
+  id: MedievalRawCoal
+  stackEntity: MedievalCoalOre1
+  name: medieval-raw-materials-coal
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: coal }
+  color: "#2F4F4F"   # тёмный серо-чёрный, уголь
+  price: 0.76
+
+- type: material
+  id: MedievalRawIron
+  stackEntity: MedievalIronOre1
+  name: medieval-raw-materials-iron
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: iron }
+  color: "#C0C0C0"   # серебристо-серый, железо
+  price: 1.53
+
+- type: material
+  id: MedievalRawSilver
+  stackEntity: MedievalSilverOre1
+  name: medieval-raw-materials-silver
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: silver }
+  color: "#C0C0FF"   # светло-серебристо-голубой, серебро
+  price: 3.07
+
+- type: material
+  id: MedievalRawGold
+  stackEntity: MedievalGoldOre1
+  name: medieval-raw-materials-gold
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: gold }
+  color: "#FFD700"   # золотой, золото
+  price: 6.14
+
+- type: material
+  id: MedievalRawMithril
+  stackEntity: MedievalMithrilOre1
+  name: medieval-raw-materials-mithril
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: mithril }
+  color: "#9370DB"   # средний фиолетовый (medium purple)
+  price: 12.29
+
+- type: material
+  id: MedievalRawAdamantine
+  stackEntity: MedievalAdamantineOre1
+  name: medieval-raw-materials-adamantine
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: adamantine }
+  color: "#4B0000"
+  price: 24.58
+
+- type: material
+  id: MedievalRawManaCrystal
+  stackEntity: MedievalManaCrystal1
+  name: medieval-raw-materials-crystal-mana
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/crystal.rsi, state: mana }
+  color: "#47f8ff"
+  price: 3.07
+
+- type: material
+  id: MedievalRawPelt
+  stackEntity: MedievalPelt1
+  name: medieval-raw-materials-pelt
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: pelt1 }
+  color: "#643932"
+  price: 5
+
+- type: material
+  id: MedievalRawCloth
+  stackEntity: FoodMedievalFlax1
+  name: medieval-raw-materials-cloth
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: cloth1 }
+  color: "#949494"
+  price: 0.02

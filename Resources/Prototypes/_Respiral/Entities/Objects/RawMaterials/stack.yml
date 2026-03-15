@@ -1,0 +1,76 @@
+- type: stack
+  id: MedievalRawWood
+  name: stack-medieval-raw-wood
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/log.rsi, state: log }
+  spawn: MedievalLog1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawStone
+  name: stack-medieval-raw-stone
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: stone }
+  spawn: MedievalStoneOre1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawCoal
+  name: stack-medieval-raw-coal
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: coal }
+  spawn: MedievalCoalOre1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawIron
+  name: stack-medieval-raw-iron
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: iron }
+  spawn: MedievalIronOre1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawSilver
+  name: stack-medieval-raw-silver
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: silver }
+  spawn: MedievalSilverOre1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawGold
+  name: stack-medieval-raw-gold
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: gold }
+  spawn: MedievalGoldOre1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawMithril
+  name: stack-medieval-raw-mithril
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: mithril }
+  spawn: MedievalMithrilOre1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawAdamantine
+  name: stack-medieval-raw-adamantine
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: adamantine }
+  spawn: MedievalAdamantineOre1
+  maxCount: 1
+
+- type: stack
+  id: MedievalManaCrystal
+  name: stack-medieval-mana-crystal
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/crystal.rsi, state: mana }
+  spawn: MedievalManaCrystal1
+  maxCount: 1
+
+- type: stack
+  id: MedievalPelt
+  name: stack-medieval-raw-pelt
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: pelt1 }
+  spawn: MedievalPelt1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawCloth
+  name: stack-medieval-raw-cloth
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: cloth1 }
+  spawn: FoodMedievalFlax1
+  maxCount: 5

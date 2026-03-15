@@ -1,0 +1,799 @@
+- type: tile
+  id: MedievalDirt
+  name: tiles-dirt-medieval-floor
+  sprite: /Textures/Tiles/dirt.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  friction: 0
+  isSubfloor: true
+  isSpace: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: MedievalCaveDrought
+  name: tiles-cave-drought
+  sprite: /Textures/Tiles/cavedrought.png
+  variants: 8
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepAsteroid
+  # itemDrop:
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWasteland
+  name: tiles-wasteland
+  sprite: /Textures/_Respiral/Tiles/Wasteland/wasteland.png
+  variants: 12
+  placementVariants:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepAsteroid
+  # itemDrop:
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorPlanetDirt
+  name: tiles-dirt-planet-floor
+  sprite: /Textures/Tiles/Planet/dirt.rsi/dirt.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepAsteroid
+  # itemDrop:
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+# Травушка
+
+- type: tile
+  id: MedievalFloorGrass
+  name: tiles-medieval-grass
+  sprite: /Textures/Tiles/Planet/Grass/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
+    NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png
+    NorthWest: /Textures/Tiles/Planet/Grass/single_edge.png
+    SouthWest: /Textures/Tiles/Planet/Grass/single_edge.png
+    South: /Textures/Tiles/Planet/Grass/double_edge.png
+    East: /Textures/Tiles/Planet/Grass/double_edge.png
+    North: /Textures/Tiles/Planet/Grass/double_edge.png
+    West: /Textures/Tiles/Planet/Grass/double_edge.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: MedievalFloorTileItemGrass
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorGrassDarkGreen
+  name: tiles-medieval-grass-dark-green
+  sprite: /Textures/_Respiral/Tiles/Grass/grass.png
+  variants: 4
+  placementVariants: [1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Grass/single_edge.png
+    NorthEast: /Textures/_Respiral/Tiles/Grass/single_edge.png
+    NorthWest: /Textures/_Respiral/Tiles/Grass/single_edge.png
+    SouthWest: /Textures/_Respiral/Tiles/Grass/single_edge.png
+    South: /Textures/_Respiral/Tiles/Grass/double_edge.png
+    East: /Textures/_Respiral/Tiles/Grass/double_edge.png
+    North: /Textures/_Respiral/Tiles/Grass/double_edge.png
+    West: /Textures/_Respiral/Tiles/Grass/double_edge.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [MedievalDigging]
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: MedievalFloorTileItemGrass
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorGrassCrystal
+  name: tiles-medieval-grass-crystal
+  sprite: /Textures/_Respiral/Tiles/Grass2/grass.png
+  variants: 4
+  placementVariants: [1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Grass2/single_edge.png
+    NorthEast: /Textures/_Respiral/Tiles/Grass2/single_edge.png
+    NorthWest: /Textures/_Respiral/Tiles/Grass2/single_edge.png
+    SouthWest: /Textures/_Respiral/Tiles/Grass2/single_edge.png
+    South: /Textures/_Respiral/Tiles/Grass2/double_edge.png
+    East: /Textures/_Respiral/Tiles/Grass2/double_edge.png
+    North: /Textures/_Respiral/Tiles/Grass2/double_edge.png
+    West: /Textures/_Respiral/Tiles/Grass2/double_edge.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [MedievalDigging]
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: MedievalFloorTileItemGrass
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorGrassRed
+  name: tiles-medieval-grass-red
+  sprite: /Textures/_Respiral/Tiles/Grass3/grass.png
+  variants: 4
+  placementVariants: [1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Grass3/single_edge.png
+    NorthEast: /Textures/_Respiral/Tiles/Grass3/single_edge.png
+    NorthWest: /Textures/_Respiral/Tiles/Grass3/single_edge.png
+    SouthWest: /Textures/_Respiral/Tiles/Grass3/single_edge.png
+    South: /Textures/_Respiral/Tiles/Grass3/double_edge.png
+    East: /Textures/_Respiral/Tiles/Grass3/double_edge.png
+    North: /Textures/_Respiral/Tiles/Grass3/double_edge.png
+    West: /Textures/_Respiral/Tiles/Grass3/double_edge.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [MedievalDigging]
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: MedievalFloorTileItemGrass
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorGrassDark
+  name: tiles-medieval-grass-dark
+  sprite: /Textures/_Respiral/Tiles/Grass4/grass.png
+  variants: 4
+  placementVariants: [1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Grass4/single_edge.png
+    NorthEast: /Textures/_Respiral/Tiles/Grass4/single_edge.png
+    NorthWest: /Textures/_Respiral/Tiles/Grass4/single_edge.png
+    SouthWest: /Textures/_Respiral/Tiles/Grass4/single_edge.png
+    South: /Textures/_Respiral/Tiles/Grass4/double_edge.png
+    East: /Textures/_Respiral/Tiles/Grass4/double_edge.png
+    North: /Textures/_Respiral/Tiles/Grass4/double_edge.png
+    West: /Textures/_Respiral/Tiles/Grass4/double_edge.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [MedievalDigging]
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: MedievalFloorTileItemGrass
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorGrassDark2
+  name: tiles-medieval-grass-dark2
+  sprite: /Textures/_Respiral/Tiles/Grass5/grass.png
+  variants: 4
+  placementVariants: [1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Grass5/single_edge.png
+    NorthEast: /Textures/_Respiral/Tiles/Grass5/single_edge.png
+    NorthWest: /Textures/_Respiral/Tiles/Grass5/single_edge.png
+    SouthWest: /Textures/_Respiral/Tiles/Grass5/single_edge.png
+    South: /Textures/_Respiral/Tiles/Grass5/double_edge.png
+    East: /Textures/_Respiral/Tiles/Grass5/double_edge.png
+    North: /Textures/_Respiral/Tiles/Grass5/double_edge.png
+    West: /Textures/_Respiral/Tiles/Grass5/double_edge.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [MedievalDigging]
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: MedievalFloorTileItemGrass
+  heatCapacity: 10000
+
+# Снег
+
+- type: tile
+  id: MedievalFloorSnow
+  name: tiles-medieval-snow
+  sprite: /Textures/_Respiral/Tiles/Snow/grass.png
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Snow/single_edge.png
+    NorthEast: /Textures/_Respiral/Tiles/Snow/single_edge.png
+    NorthWest: /Textures/_Respiral/Tiles/Snow/single_edge.png
+    SouthWest: /Textures/_Respiral/Tiles/Snow/single_edge.png
+    South: /Textures/_Respiral/Tiles/Snow/double_edge.png
+    East: /Textures/_Respiral/Tiles/Snow/double_edge.png
+    North: //Textures/_Respiral/Tiles/Snow/double_edge.png
+    West: /Textures/_Respiral/Tiles/Snow/double_edge.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: MedievalFloorTileItemGrass
+  heatCapacity: 10000
+
+
+# Камень
+
+- type: tile
+  id: MedievalFloorStone
+  name: tiles-stone-floor
+  sprite: /Textures/_Respiral/Tiles/stone_floor.png
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: MedievalFloorTileItemStone
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorAsh
+  name: tiles-medieval-ash
+  sprite: /Textures/_Respiral/Tiles/Ash/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Ash/single_edge.png
+    NorthEast: /Textures/_Respiral/Tiles/Ash/single_edge.png
+    NorthWest: /Textures/_Respiral/Tiles/Ash/single_edge.png
+    SouthWest: /Textures/_Respiral/Tiles/Ash/single_edge.png
+    South: /Textures/_Respiral/Tiles/Ash/double_edge.png
+    East: /Textures/_Respiral/Tiles/Ash/double_edge.png
+    North: //Textures/_Respiral/Tiles/Ash/double_edge.png
+    West: /Textures/_Respiral/Tiles/Ash/double_edge.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: MedievalFloorTileItemGrass
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorStone1
+  name: камень
+  sprite: /Textures/_Respiral/Tiles/Stone/grass.png
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Stone/single_edge.png
+    NorthEast: /Textures/_Respiral/Tiles/Stone/single_edge.png
+    NorthWest: /Textures/_Respiral/Tiles/Stone/single_edge.png
+    SouthWest: /Textures/_Respiral/Tiles/Stone/single_edge.png
+    South: /Textures/_Respiral/Tiles/Stone/double_edge.png
+    East: /Textures/_Respiral/Tiles/Stone/double_edge.png
+    North: //Textures/_Respiral/Tiles/Stone/double_edge.png
+    West: /Textures/_Respiral/Tiles/Stone/double_edge.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalSwotting ]
+  footstepSounds:
+    collection: FootstepAsteroid
+  itemDrop: MedievalStoneOre1
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorStone2
+  name: tiles-cave
+  sprite: /Textures/Tiles/cave.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalDirt
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ MedievalSwotting ]
+  itemDrop: MedievalStoneOre1
+
+- type: tile
+  id: MedievalFloorStone3
+  name: tiles-stone-tile
+  sprite: /Textures/_Respiral/Tiles/Moon/moon.png
+  variants: 13
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalDirt
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ MedievalSwotting ]
+  itemDrop: MedievalStoneOre1
+
+## Дерево
+
+- type: tile
+  id: MedievalFloorWood
+  name: tiles-wood
+  sprite: /Textures/Tiles/wood.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWood
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodChess
+  name: tiles-wood-chess
+  sprite: /Textures/_Respiral/Tiles/wood_chess.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodChess
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodChessDark
+  name: tiles-wood-chess-dark
+  sprite: /Textures/_Respiral/Tiles/wood_chess_dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodChessDark
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodTile2
+  name: tiles-wood2
+  sprite: /Textures/Tiles/wood_tile.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodPattern
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorBrokenWood
+  name: tiles-wood3
+  sprite: /Textures/Tiles/wood_broken.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalPartRodWood1
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodLarge
+  name: tiles-wood-large
+  sprite: /Textures/Tiles/wood_large.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodLarge
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodBlack
+  name: tiles-wood-black
+  sprite: /Textures/_Respiral/Tiles/wood_black.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodBlack
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodLargeBlack
+  name: tiles-wood-large-black
+  sprite: /Textures/_Respiral/Tiles/wood_large_black.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodBlack
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodParquetBlack
+  name: tiles-wood-parquet-black
+  sprite: /Textures/_Respiral/Tiles/wood_parquet_black.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodParquetBlack
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodChessBlack
+  name: tiles-wood-chess-black
+  sprite: /Textures/_Respiral/Tiles/wood_chess_black.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodChessBlack
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodDark
+  name: tiles-wood-dark
+  sprite: /Textures/_Respiral/Tiles/wood_dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodDark
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodLargeDark
+  name: tiles-wood-large-dark
+  sprite: /Textures/_Respiral/Tiles/wood_large_dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodLargeDark
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodParquetDark
+  name: tiles-wood-parquet-dark
+  sprite: /Textures/_Respiral/Tiles/wood_parquet_dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodParquetDark
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodLight
+  name: tiles-wood-light
+  sprite: /Textures/_Respiral/Tiles/wood_light.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodLight
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodLargeLight
+  name: tiles-wood-large-light
+  sprite: /Textures/_Respiral/Tiles/wood_large_light.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodLargeLight
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodParquetLight
+  name: tiles-wood-parquet-light
+  sprite: /Textures/_Respiral/Tiles/wood_parquet_light.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodParquetLight
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodChessLight
+  name: tiles-wood-chess-light
+  sprite: /Textures/_Respiral/Tiles/wood_chess_light.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodChessLight
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodRed
+  name: tiles-wood-red
+  sprite: /Textures/_Respiral/Tiles/wood_red.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodRed
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodLargeRed
+  name: tiles-wood-large-red
+  sprite: /Textures/_Respiral/Tiles/wood_large_red.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodLargeRed
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodParquetRed
+  name: tiles-wood-parquet-red
+  sprite: /Textures/_Respiral/Tiles/wood_parquet_red.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodParquetRed
+  heatCapacity: 10000
+
+- type: tile
+  id: MedievalFloorWoodChessRed
+  name: tiles-wood-chess-red
+  sprite: /Textures/_Respiral/Tiles/wood_chess_red.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MedievalFloorTileItemWoodChessRed
+  heatCapacity: 10000

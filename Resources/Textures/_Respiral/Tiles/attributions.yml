@@ -1,0 +1,24 @@
+- files: ["dirt1.png", "dirt2.png", "massa1.png", "stone3.png", "shabby1.png", "stone1.png", "stone2.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "https://github.com/Twilight-Fortress-SS13 and modified Space Station 14 project Respiral."
+  source: "https://github.com/Twilight-Fortress-SS13"
+
+- files: ["lattice.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Space Station 14 project Respiral."
+  source: "https://github.com/dead-space-server/medieval-fantasy"
+
+- files: ["stone_floor.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from /tg/station"
+  source: "https://github.com/tgstation/tgstation/"
+
+- files: ["mowed_grass.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by Ko4erga (discord)"
+  source: "https://github.com/space-syndicate/space-station-14/pull/2282"
+  
+- files: ["wood_light.png", "wood_dark.png", "wood_black.png", "wood_red.png", "wood_large_light.png", "wood_large_dark.png", "wood_large_black.png", "wood_large_red.png", "wood_chess.png", "wood_chess_light.png", "wood_chess_dark.png", "wood_chess_black.png", "wood_chess_red.png", "wood_parquet.png", "wood_parquet_light.png", "wood_parquet_dark.png", "wood_parquet_black.png", "wood_parquet_red.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "tgstation commit 8abb19545828230d92ba18827feeb42a67a55d49, Wood tiles are new tg tiles, resprited by Meowstushka, modified by Ko4erga (discord)"
+  source: "https://github.com/tgstation/tgstation/"

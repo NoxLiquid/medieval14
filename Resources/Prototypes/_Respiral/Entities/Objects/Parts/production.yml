@@ -1,0 +1,109 @@
+- type: entity
+  id: MedievalSawmillDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь пилорамы
+  components:
+  - type: MachineBoard
+    prototype: MedievalSawmill
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  id: MedievalCarpenterTableDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь стола плотника
+  components:
+  - type: MachineBoard
+    prototype: MedievalCarpenterTable
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300
+
+- type: entity
+  id: MedievalSmelterDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь плавильни
+  components:
+  - type: MachineBoard
+    prototype: MedievalSmelter
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 500
+
+- type: entity
+  id: MedievalAlchemTableDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь алхимического стола
+  components:
+  - type: MachineBoard
+    prototype: MedievalAlchemTable
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 400
+
+- type: entity
+  id: MedievalReagentGrinderDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь измельчителя
+  components:
+  - type: MachineBoard
+    prototype: MedievalReagentGrinder
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+
+- type: entity
+  id: MedievalHotplateDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь костровой жаровни
+  components:
+  - type: MachineBoard
+    prototype: MedievalHotplate
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+
+- type: entity
+  id: MedievalAnvilDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь наковальни
+  components:
+  - type: MachineBoard
+    prototype: MedievalAnvil
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 500
+
+- type: entity
+  id: MedievalTanneryDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь дубильни
+  components:
+  - type: MachineBoard
+    prototype: MedievalTannery
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+
+- type: entity
+  id: MedievalLoomDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь ткацкого станка
+  components:
+  - type: MachineBoard
+    prototype: MedievalLoom
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+
+- type: entity
+  id: MedievalSewingDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь швейной машины
+  components:
+  - type: MachineBoard
+    prototype: MedievalSewing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100

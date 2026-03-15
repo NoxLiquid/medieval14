@@ -1,0 +1,13 @@
+- type: damageContainer
+  id: MedievalClothing
+  supportedGroups:
+  - Brute
+  - Burn
+
+- type: damageContainer
+  id: MedievalInorganic
+  supportedGroups:
+  - Brute
+  - Burn
+  supportedTypes:
+  - Structural

@@ -1,0 +1,286 @@
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalGlaznica
+  name: глазница
+  abstract: true
+  components:
+  - type: Sprite
+    state: glaznica
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalGlaznicaItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalKamnelepestnik
+  name: камнелистрик
+  abstract: true
+  components:
+  - type: Sprite
+    state: kamnelepestnik
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalKamnelepestnikItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalKrovavayaRoza
+  name: кровавая роза
+  abstract: true
+  components:
+  - type: Sprite
+    state: krovavaya_roza
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalKrovavayaRozaItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalLunocvet
+  name: луноцвет
+  abstract: true
+  components:
+  - type: Sprite
+    state: lunocvet
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLunocvetItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalOgneCvet
+  name: гонецвет
+  abstract: true
+  components:
+  - type: Sprite
+    state: ogne_cvet
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalOgneCvetItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalPihta
+  name: золотая пижма
+  abstract: true
+  components:
+  - type: Sprite
+    state: pihta
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalPihtaItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalRomashka
+  name: лунная ромашка
+  abstract: true
+  components:
+  - type: Sprite
+    state: romashka
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalRomashkaItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalShipovec
+  name: шиповец
+  abstract: true
+  components:
+  - type: Sprite
+    state: shipovec
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalShipovecItem:
+            min: 1
+            max: 2
+
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalSuhoCvet
+  name: сухоцвет
+  abstract: true
+  components:
+  - type: Sprite
+    state: suho_cvet
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalSuhoCvetItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalTernovnik
+  name: терновник ведьмы
+  abstract: true
+  components:
+  - type: Sprite
+    state: ternovnik
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalTernovnikItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalVeresk
+  name: вереск
+  abstract: true
+  components:
+  - type: Sprite
+    state: veresk
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalVereskItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: MedievalViunka
+  name: виунка
+  abstract: true
+  components:
+  - type: Sprite
+    state: viunka
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalViunkaItem:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MedievalBaseHerb
+  id: Medievalvorosnik
+  name: воросник
+  abstract: true
+  components:
+  - type: Sprite
+    state: vorosnik
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalVorosnikItem:
+            min: 1
+            max: 2

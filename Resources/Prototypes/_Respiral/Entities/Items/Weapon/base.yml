@@ -1,0 +1,559 @@
+- type: entity
+  parent: BaseItem
+  id: MedievalBaseSword
+  suffix: Средневековье
+  name: меч
+  abstract: true
+  components:
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 1
+    angle: 60
+    range: 1.8
+    wideAnimationRotation: -135
+  - type: Sprite
+    state: icon
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: Item
+    size: Normal
+  - type: Utensil
+    types:
+      - Knife
+  - type: Tool
+    qualities:
+    - Slicing
+  - type: MeleeSkill
+    skills:
+    - MedievalOneSword
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalOneSword: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBaseDagger
+  suffix: Средневековье
+  name: кинжал
+  abstract: true
+  components:
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 1.5
+    angle: 0
+    range: 1.5
+    wideAnimationRotation: -135
+  - type: Sprite
+    state: icon
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: Item
+    size: Normal
+  - type: Utensil
+    types:
+      - Knife
+  - type: Tool
+    qualities:
+    - Slicing
+  - type: MeleeSkill
+    skills:
+    - MedievalDagger
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalDagger: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBaseCleaver
+  suffix: Средневековье
+  name: тесак
+  abstract: true
+  components:
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 1
+    angle: 60
+    range: 1.5
+    wideAnimationRotation: -135
+  - type: Sprite
+    state: icon
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: Item
+    size: Normal
+  - type: Utensil
+    types:
+      - Knife
+  - type: Tool
+    qualities:
+    - Slicing
+  - type: MeleeSkill
+    skills:
+    - MedievalOneSword
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalOneSword: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBaseBrassKnuckles
+  suffix: Средневековье
+  name: кастет
+  abstract: true
+  components:
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 1.3
+    angle: 35
+    range: 1.5
+    soundHit:
+      collection: AlienClaw
+    wideAnimationRotation: -100
+  - type: Sprite
+    state: icon
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: Item
+    size: Normal
+  - type: MeleeSkill
+    skills:
+    - MedievalFistFight
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalFistFight: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBaseMace
+  suffix: Средневековье
+  name: булова
+  abstract: true
+  components:
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 0.8
+    angle: 65
+    range: 1.8
+    wideAnimationRotation: -135
+  - type: Sprite
+    state: icon
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: Item
+    size: Normal
+  - type: MeleeSkill
+    skills:
+    - MedievalMace
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalMace: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBaseEveningstar
+  suffix: Средневековье
+  name: моргенштерн
+  abstract: true
+  components:
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 0.7
+    angle: 70
+    range: 1.8
+    wideAnimationRotation: -135
+    soundHit:
+      collection: MetalThud
+  - type: Sprite
+    state: icon
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+      map: [ base ]
+    - state: handle
+      map: [ base ]
+  - type: Item
+    size: Ginormous
+  - type: MeleeSkill
+    skills:
+    - MedievalMace
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalMace: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.WieldableVisuals.Wielded:
+        base:
+          True: { state: wielded }
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBaseHalberd
+  suffix: Средневековье
+  name: алебарда
+  abstract: true
+  components:
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 0.7
+    angle: 75
+    range: 2
+    wideAnimationRotation: -135
+    soundHit:
+      collection: MetalThud
+  - type: Sprite
+    state: icon
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+      map: [ base ]
+    - state: handle
+      map: [ base ]
+  - type: Item
+    size: Ginormous
+  - type: MeleeSkill
+    skills:
+    - MedievalAncientWeapons
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalAncientWeapons: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.WieldableVisuals.Wielded:
+        base:
+          True: { state: wielded }
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBasePolearm
+  suffix: Средневековье
+  name: полеарм
+  abstract: true
+  components:
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 0.9
+    angle: 60
+    range: 2
+    wideAnimationRotation: -135
+    soundHit:
+      collection: MetalThud
+  - type: Sprite
+    state: icon
+    layers:
+    - state: blade
+      scale: 0.5, 0.5
+      color: "#8A8A8A"
+      map: [ base ]
+    - state: handle
+      scale: 0.5, 0.5
+      map: [ base ]
+  - type: Item
+    unisex: false
+    size: Ginormous
+  - type: MeleeSkill
+    skills:
+    - MedievalAncientWeapons
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalAncientWeapons: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.WieldableVisuals.Wielded:
+        base:
+          True: { state: wielded }
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBaseSpear
+  suffix: Средневековье
+  name: копьё
+  abstract: true
+  components:
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 0.8
+    angle: 0
+    range: 2.5
+    wideAnimationRotation: -135
+    soundHit:
+      collection: MetalThud
+  - type: Sprite
+    state: icon
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+      map: [ base ]
+    - state: handle
+      map: [ base ]
+  - type: Item
+    unisex: false
+    size: Ginormous
+  - type: MeleeSkill
+    skills:
+    - MedievalAncientWeapons
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalAncientWeapons: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.WieldableVisuals.Wielded:
+        base:
+          True: { state: wielded }
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBaseWhip
+  suffix: Средневековье
+  name: плеть
+  abstract: true
+  components:
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 0.8
+    angle: 70
+    range: 2.15
+    wideAnimationRotation: -135
+  - type: Sprite
+    layers:
+    - state: blade
+      color: "#8A8A8A"
+    - state: handle
+  - type: Item
+    size: Normal
+  - type: MeleeSkill
+    skills:
+    - MedievalWhip
+  - type: LearnSkillWhenMeleeAttack
+    whitelist:
+      components:
+      - MobState
+    points:
+    - MedievalWhip: 0.01
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 10

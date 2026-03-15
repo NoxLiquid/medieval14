@@ -1,0 +1,254 @@
+# Древесина
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalSawmill
+  name: пилорама
+  description: Станок из грубых досок и железных деталей.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Machines/sawmill.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalSawmillDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalSawmillMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalSawmillStatic
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalWoodProcessing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 504
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 4
+      MedievalProcessedStone: 6
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalCarpenterTable
+  name: стол плотника
+  description: Рабочее место для изготовления деревянных изделий
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Machines/carpenter_table.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalCarpenterTableDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - CarpenterTableMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalCarpenterTable
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalWoodProcessing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 404
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 4
+      MedievalProcessedStone: 6
+
+# Руды
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalSmelter
+  name: плавильня
+  description: Массивная каменная печь, используемая для переплавки руды в слитки. Работает на угле.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Machines/smelter.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalSmelterDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalSmelterMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalSmelter
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalBasicBlacksmithing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 104
+      MedievalRawManaCrystal: 100
+      MedievalProcessedStone: 606
+      MedievalProcessedIron: 4
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalAnvil
+  name: Наковальня
+  description: Тяжёлая железная наковальня, используемая для ковки и обработки металла. Необходимый инструмент кузнеца для создания оружия, брони и инструментов.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Machines/anvil.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalAnvilDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalAnvilMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalAnvil
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalBasicBlacksmithing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 104
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 504
+      MedievalProcessedStone: 6
+
+# Одежда
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalTannery
+  name: дубильня
+  description: Приспособление для выделки звериных шкур в прочную кожу.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Machines/tannery.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalTanneryDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalTanneryMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalTannery
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalTailor
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 104
+      MedievalRawManaCrystal: 100
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 4
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalLoom
+  name: ткацкий станок
+  description: Деревянный станок для изготовления ткани. Основной инструмент ткача.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Machines/loom.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalLoomDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalLoomMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalLoom
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalTailor
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 104
+      MedievalRawManaCrystal: 100
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 4
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalSewing
+  name: швейная машина
+  description: Железный станок для изготовления объектов из ткани. Основной инструмент швеи.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Machines/sewing.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalSewingDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalSewingMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalSewing
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalTailor
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 4
+      MedievalRawManaCrystal: 100
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 104

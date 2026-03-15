@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Space Station 14 project Respiral",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+	{
+      "name": "blade1"
+    },
+	{
+      "name": "blade2"
+    },
+	{
+      "name": "handle1"
+    },
+	{
+      "name": "handle2"
+    }
+  ]
+}

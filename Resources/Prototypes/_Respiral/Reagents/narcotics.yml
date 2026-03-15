@@ -1,0 +1,58 @@
+- type: reagent
+  id: MedievalStaminaPotion
+  name: reagent-name-medieval-stamina-potion
+  group: Medicine
+  desc: reagent-desc-medieval-stamina-potion
+  flavor: invigorating
+  color: "#FFFF00"
+  physicalDesc: reagent-physical-desc-bubbly
+  boilingPoint: 212.0  # Dexosyephedrine vape when?
+  meltingPoint: 170.0
+  metabolisms:
+    Bloodstream:
+      effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Poison: 0.75
+              Asphyxiation: -3
+              Bloodloss: -3
+        - !type:HealthChange
+          conditions:
+            - !type:ReagentCondition
+              reagent: MedievalStaminaPotion
+              min: 30
+          damage:
+            types:
+              Poison: 2
+              Asphyxiation: 2
+        - !type:MovementSpeedModifier
+          walkSpeedModifier: 1.35
+          sprintSpeedModifier: 1.35
+        - !type:GenericStatusEffect
+          key: Stutter
+          component: StutteringAccent
+        - !type:Jitter
+        - !type:GenericStatusEffect
+          key: Stun
+          time: 3
+          type: Remove
+        - !type:GenericStatusEffect
+          key: KnockedDown
+          time: 3
+          type: Remove
+        - !type:GenericStatusEffect
+          conditions:
+            - !type:ReagentCondition
+              reagent: Haloperidol
+              max: 0.01
+          key: Drowsiness
+          time: 10
+          type: Remove
+        - !type:ResetNarcolepsy
+          conditions:
+            - !type:ReagentCondition
+              reagent: MedievalStaminaPotion
+              min: 20
+
+

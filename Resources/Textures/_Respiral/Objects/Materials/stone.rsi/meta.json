@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/Twilight-Fortress-SS13",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+	{
+      "name": "stone"
+    },
+	{
+      "name": "stone_2"
+    },
+    {
+      "name": "stone_3"
+    },
+	{
+      "name": "stone_4"
+    },
+	{
+      "name": "stone-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "stone-inhand-right",
+      "directions": 4
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+- type: seed
+  id: MedievalApple
+  name: medieval-seeds-apple-name
+  noun: seeds-noun-seeds
+  displayName: medieval-seeds-apple-display-name
+  plantRsi: _Respiral/Objects/Materials/Seeds/apple.rsi
+  packetPrototype: MedievalAppleSeeds
+  productPrototypes:
+    - FoodMedievalApple
+  lifespan: 40
+  maturation: 12
+  production: 4
+  yield: 3
+  potency: 15
+  growthStages: 5
+  waterConsumption: 0.6
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25
+
+- type: seed
+  id: MedievalCabbage
+  name: medieval-seeds-cabbage-name
+  noun: seeds-noun-seeds
+  displayName: medieval-seeds-cabbage-display-name
+  plantRsi: _Respiral/Objects/Materials/Seeds/cabbage.rsi
+  packetPrototype: MedievalCabbageSeeds
+  productPrototypes:
+    - FoodMedievalCabbage
+  lifespan: 30
+  maturation: 8
+  production: 4
+  yield: 3
+  potency: 10
+  growthStages: 4
+  waterConsumption: 0.7
+  chemicals:
+    Nutriment:
+      Min: 2
+      Max: 6
+      PotencyDivisor: 15
+
+- type: seed
+  id: MedievalBerries
+  name: medieval-seeds-berries-name
+  noun: seeds-noun-seeds
+  displayName: medieval-seeds-berries-display-name
+  plantRsi: _Respiral/Objects/Materials/Seeds/berries.rsi
+  packetPrototype: MedievalBerriesSeeds
+  productPrototypes:
+    - FoodMedievalBerries
+  lifespan: 25
+  maturation: 6
+  production: 5
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.5
+  chemicals:
+    Sugar:
+      Min: 1
+      Max: 8
+      PotencyDivisor: 10
+    Nutriment:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 20
+
+- type: seed
+  id: MedievalCarrot
+  name: medieval-seeds-carrots-name
+  noun: seeds-noun-seeds
+  displayName: medieval-seeds-carrots-display-name
+  plantRsi: _Respiral/Objects/Materials/Seeds/carrot.rsi
+  packetPrototype: MedievalCarrotSeeds
+  productPrototypes:
+    - FoodMedievalCarrot
+  lifespan: 25
+  maturation: 10
+  production: 3
+  yield: 3
+  potency: 10
+  growthStages: 3
+  waterConsumption: 0.6
+  chemicals:
+    JuiceCarrot:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 25
+
+- type: seed
+  id: MedievalCherry
+  name: medieval-seeds-cherry-name
+  noun: seeds-noun-seeds
+  displayName: medieval-seeds-cherry-display-name
+  plantRsi: _Respiral/Objects/Materials/Seeds/cherry.rsi
+  packetPrototype: MedievalCherrySeeds
+  productPrototypes:
+    - FoodMedievalCherry
+  lifespan: 35
+  maturation: 8
+  production: 4
+  yield: 3
+  potency: 15
+  growthStages: 4
+  waterConsumption: 0.6
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 20
+    Sugar:
+      Min: 2
+      Max: 6
+      PotencyDivisor: 15
+
+- type: seed
+  id: MedievalFlax
+  name: medieval-seeds-flax-name
+  noun: seeds-noun-seeds
+  displayName: medieval-seeds-flax-display-name
+  plantRsi: _Respiral/Objects/Materials/Seeds/flax.rsi
+  packetPrototype: MedievalFlaxSeeds
+  productPrototypes:
+    - FoodMedievalFlax1
+  lifespan: 45
+  maturation: 12
+  production: 3
+  yield: 2
+  potency: 5
+  growthStages: 4
+  waterConsumption: 0.4
+  chemicals:
+    Fiber:
+      Min: 2
+      Max: 6
+      PotencyDivisor: 10
+
+- type: seed
+  id: MedievalPotato
+  name: medieval-seeds-potato-name
+  noun: seeds-noun-seeds
+  displayName: medieval-seeds-potato-display-name
+  plantRsi: _Respiral/Objects/Materials/Seeds/potato.rsi
+  packetPrototype: MedievalPotatoSeeds
+  productPrototypes:
+    - FoodMedievalPotato
+  lifespan: 35
+  maturation: 9
+  production: 4
+  yield: 4
+  potency: 10
+  growthStages: 4
+  waterConsumption: 0.7
+  chemicals:
+    Nutriment:
+      Min: 2
+      Max: 6
+      PotencyDivisor: 15
+
+- type: seed
+  id: MedievalTomato
+  name: medieval-seeds-tomato-name
+  noun: seeds-noun-seeds
+  displayName: medieval-seeds-tomato-display-name
+  plantRsi: _Respiral/Objects/Materials/Seeds/tomato.rsi
+  packetPrototype: MedievalTomatoSeeds
+  productPrototypes:
+    - FoodMedievalTomato
+  lifespan: 30
+  maturation: 8
+  production: 4
+  yield: 3
+  potency: 10
+  growthStages: 4
+  waterConsumption: 0.6
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 30
+
+
+- type: seed
+  id: MedievalWheat
+  name: medieval-seeds-wheat-name
+  noun: seeds-noun-seeds
+  displayName: medieval-seeds-wheat-display-name
+  plantRsi: _Respiral/Objects/Materials/Seeds/wheat.rsi
+  packetPrototype: MedievalWheatSeeds
+  productPrototypes:
+    - FoodMedievalWheat
+  lifespan: 40
+  maturation: 12
+  production: 5
+  yield: 4
+  potency: 5
+  growthStages: 5
+  waterConsumption: 0.5
+  chemicals:
+    Flour:
+      Min: 2
+      Max: 8
+      PotencyDivisor: 10
+

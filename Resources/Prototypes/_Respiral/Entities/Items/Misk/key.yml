@@ -1,0 +1,173 @@
+- type: entity
+  name: ключ
+  parent: BaseItem
+  suffix: Средневековье
+  id: MedievalBaseKey
+  abstract: true
+  description: Ключ, но что он открывает?
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/key.rsi
+    state: key1
+  - type: Tag
+    tags:
+    - MedievalKey
+  - type: Item
+    size: Small
+    sprite: _Respiral/Objects/Items/key.rsi
+  - type: MedievalKey
+    useSound:
+      path: /Audio/_Respiral/Lock/key.ogg
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [Key]
+    damage:
+      types:
+        Structural: 5
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKey
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalBaseLockpick
+  name: отмычка
+  description: Главный инструмент домушника.
+  abstract: true
+  components:
+  - type: Sprite
+    state: lockpick1
+  - type: MedievalKey
+    useDuration: 10
+    isLockpick: true
+    useSound:
+      path: /Audio/_Respiral/Lock/lockpick.ogg
+  - type: AddWearAfterUse
+    triggers: [Key]
+    damage:
+      types:
+        Structural: 100
+
+- type: entity
+  parent: MedievalBaseLockpick
+  id: MedievalLockpick
+
+- type: entity
+  parent: BaseItem
+  id: MedievalKeyDuplicator
+  name: мастер-ключ
+  description: Инструмент для создания копий ключей. Помогает сделать запасной ключ или подготовить этот ключ к замку.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/key.rsi
+    state: dublicate
+  - type: Item
+    size: Small
+    sprite: _Respiral/Objects/Items/key.rsi
+  - type: MedievalKeyDuplicator
+  - type: AddWearAfterUse
+    triggers: [KeyDuplicator]
+    damage:
+      types:
+        Structural: 10
+  - type: Wear
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 50
+
+
+- type: entity
+  parent: BaseItem
+  id: MedievalBunch
+  name: связка ключей
+  components:
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/key.rsi
+    state: bunch1
+  - type: Item
+    size: Small
+    sprite: _Respiral/Objects/Items/key.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,1,5
+    whitelist:
+      tags:
+        - MedievalKey
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:EmptyContainersBehaviour
+        containers:
+        - storagebase
+  - type: ItemMapper
+    mapLayers:
+      bunch1:
+        whitelist:
+          tags: [ MedievalKey ]
+        minCount: 0
+      bunch2:
+        whitelist:
+          tags: [ MedievalKey ]
+        minCount: 1
+      bunch3:
+        whitelist:
+          tags: [ MedievalKey ]
+        minCount: 2
+      bunch4:
+        whitelist:
+          tags: [ MedievalKey ]
+        minCount: 3
+      bunch5:
+        whitelist:
+          tags: [ MedievalKey ]
+        minCount: 4
+      bunch6:
+        whitelist:
+          tags: [ MedievalKey ]
+        minCount: 5
+    sprite: _Respiral/Objects/Items/key.rsi
+  - type: Appearance
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 10

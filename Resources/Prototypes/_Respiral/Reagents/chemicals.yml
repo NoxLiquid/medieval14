@@ -1,0 +1,16 @@
+- type: reagent
+  id: MedievalMana
+  name: reagent-name-medieval-mana
+  desc: reagent-desc-medieval-mana
+  flavor: tangy
+  color: "#47f8ff"
+  physicalDesc: reagent-physical-desc-glowing
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Airloss: 2
+          types:
+              Poison: 1
