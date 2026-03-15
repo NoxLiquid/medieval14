@@ -1,3 +1,31 @@
+# ТКАНЬ
+- type: damageModifierSet
+  id: MedievalClothHeadOrLegs
+  coefficients:
+    Blunt: 0.96
+    Slash: 0.96
+    Piercing: 0.96
+    Heat: 0.98
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalClothBody
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.9
+    Piercing: 0.9
+    Heat: 0.96
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalClothHeadFeet
+  coefficients:
+    Blunt: 0.98
+    Slash: 0.98
+    Piercing: 0.98
+    Heat: 0.98
+    Structural: 1
+
 # ЖЕЛЕЗО
 - type: damageModifierSet
   id: MedievalIronHeadOrLegs
@@ -11,18 +39,18 @@
 - type: damageModifierSet
   id: MedievalIronBody
   coefficients:
-    Blunt: 0.775
-    Slash: 0.775
-    Piercing: 0.875
+    Blunt: 0.78
+    Slash: 0.78
+    Piercing: 0.88
     Heat: 0.75
     Structural: 1
 
 - type: damageModifierSet
   id: MedievalIronHeadFeet
   coefficients:
-    Blunt: 0.955
-    Slash: 0.955
-    Piercing: 0.975
+    Blunt: 0.96
+    Slash: 0.96
+    Piercing: 0.98
     Heat: 0.95
     Structural: 1
 
@@ -39,18 +67,18 @@
 - type: damageModifierSet
   id: MedievalSteelBody
   coefficients:
-    Blunt: 0.725
-    Slash: 0.725
-    Piercing: 0.825
+    Blunt: 0.73
+    Slash: 0.73
+    Piercing: 0.83
     Heat: 0.6
     Structural: 1
 
 - type: damageModifierSet
   id: MedievalSteelHeadFeet
   coefficients:
-    Blunt: 0.945
-    Slash: 0.945
-    Piercing: 0.965
+    Blunt: 0.95
+    Slash: 0.95
+    Piercing: 0.97
     Heat: 0.92
     Structural: 1
 
@@ -95,8 +123,8 @@
 - type: damageModifierSet
   id: MedievalMithrilBody
   coefficients:
-    Blunt: 0.675
-    Slash: 0.675
+    Blunt: 0.68
+    Slash: 0.68
     Piercing: 0.75
     Heat: 0.6
     Structural: 1
@@ -104,8 +132,8 @@
 - type: damageModifierSet
   id: MedievalMithrilHeadFeet
   coefficients:
-    Blunt: 0.935
-    Slash: 0.935
+    Blunt: 0.94
+    Slash: 0.94
     Piercing: 0.95
     Heat: 0.92
     Structural: 1
@@ -151,8 +179,8 @@
 - type: damageModifierSet
   id: MedievalAdamantineBody
   coefficients:
-    Blunt: 0.575
-    Slash: 0.575
+    Blunt: 0.58
+    Slash: 0.58
     Piercing: 0.65
     Heat: 0.55
     Structural: 1
@@ -160,8 +188,8 @@
 - type: damageModifierSet
   id: MedievalAdamantineHeadFeet
   coefficients:
-    Blunt: 0.915
-    Slash: 0.915
+    Blunt: 0.92
+    Slash: 0.92
     Piercing: 0.93
     Heat: 0.91
     Structural: 1
