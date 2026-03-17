@@ -1,0 +1,30 @@
+- type: parallax
+  id: Water
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Tiles/Planet/water.rsi/shoreline_water.png"
+      slowness: 0
+      scale: "1, 1"
+      scrolling: "0.02, 0.0"
+      shader: ""
+
+- type: parallax
+  id: Stone
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Tiles/Moon/moon.png"
+      slowness: 0
+      scale: "1, 1"
+      shader: ""
+
+- type: parallax
+  id: Black
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Tiles/black_parallax.png"
+      slowness: 0
+      scale: "1, 1"
+      shader: ""

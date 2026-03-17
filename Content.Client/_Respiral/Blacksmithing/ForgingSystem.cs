@@ -1,9 +1,9 @@
 using System.Numerics;
-using Content.Shared.Blacksmithing;
-using Content.Shared.Blacksmithing.Components;
+using Content.Shared._Respiral.Blacksmithing;
+using Content.Shared._Respiral.Blacksmithing.Components;
 using Robust.Client.GameObjects;
 
-namespace Content.Client.Blacksmithing.Systems;
+namespace Content.Client._Respiral.Blacksmithing.Systems;
 
 public sealed class ForgingSystem : EntitySystem
 {

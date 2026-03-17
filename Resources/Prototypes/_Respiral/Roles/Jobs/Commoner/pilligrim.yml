@@ -1,16 +1,16 @@
 - type: job
-  id: Pilligrim
+  id: MedievalPilligrim
   name: job-name-pilligrim
   description: job-description-Pilligrim
-  playTimeTracker: JobPilligrim
-  startingGear: PilligrimGear
+  playTimeTracker: MedievalJobPilligrim
+  startingGear: MedievalPilligrimGear
   icon: "JobIconPilligrim"
   supervisors: job-supervisors-everyone
   access:
   - Maintenance
 
 - type: startingGear
-  id: PilligrimGear
+  id: MedievalPilligrimGear
   #equipment:
   #  id: PassengerPDA
   #  ears: ClothingHeadsetGrey

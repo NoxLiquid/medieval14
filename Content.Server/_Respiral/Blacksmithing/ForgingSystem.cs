@@ -1,8 +1,8 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Damage.Systems;
-using Content.Shared.Blacksmithing;
-using Content.Shared.Blacksmithing.Components;
+using Content.Shared._Respiral.Blacksmithing;
+using Content.Shared._Respiral.Blacksmithing.Components;
 using Content.Shared.Burning.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -12,7 +12,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Blacksmithing.Systems;
+namespace Content.Server._Respiral.Blacksmithing.Systems;
 
 public sealed class ForgingSystem : EntitySystem
 {

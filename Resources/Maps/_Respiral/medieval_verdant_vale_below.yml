@@ -1,0 +1,58 @@
+meta:
+  format: 7
+  category: Map
+  engineVersion: 272.0.0
+  forkId: ""
+  forkVersion: ""
+  time: 03/16/2026 17:10:01
+  entityCount: 1
+maps:
+- 1
+grids:
+- 1
+orphans: []
+nullspace: []
+tilemap: {}
+entities:
+- proto: ""
+  entities:
+  - uid: 1
+    components:
+    - type: MetaData
+      name: VerdantVale Below
+    - type: Transform
+    - type: BecomesStation
+      id: VerdantVale
+    - type: Map
+      mapPaused: True
+    - type: GridTree
+    - type: Broadphase
+    - type: OccluderTree
+    - type: MapGrid
+      chunks: {}
+    - type: SpreaderGrid
+    - type: GridPathfinding
+    - type: Gravity
+      gravityShakeSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/alert.ogg
+      inherent: True
+      enabled: True
+    - type: DecalGrid
+      chunkCollection:
+        version: 2
+        nodes: []
+    - type: Parallax
+      parallax: Black
+    - type: Roof
+      data: {}
+    - type: MapAtmosphere
+      space: False
+      mixture:
+        volume: 2500
+        immutable: True
+        temperature: 293.15
+        moles:
+          Oxygen: 21.82478
+          Nitrogen: 82.10312
+    - type: RadiationGridResistance
+    - type: ExplosionAirtightGrid

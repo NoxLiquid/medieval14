@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Blacksmithing;
+namespace Content.Shared._Respiral.Blacksmithing;
 
 [Prototype]
 public sealed partial class ForgingRecipePrototype : IPrototype

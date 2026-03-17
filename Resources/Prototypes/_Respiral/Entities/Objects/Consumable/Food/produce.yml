@@ -1,7 +1,7 @@
 - type: entity
   name: тройника
   parent: FoodProduceBase
-  id: FoodBerriesTroynika
+  id: MedievalFoodBerriesTroynika
   description: Три красные ягодки, соединённые общим хвостиком
   components:
   - type: FlavorProfile
@@ -34,7 +34,7 @@
 - type: entity
   name: чернохвостка
   parent: FoodProduceBase
-  id: FoodBerriesBlacktail
+  id: MedievalFoodBerriesBlacktail
   description: Длинные чёрные ягоды, сплетённые в хвостик
   components:
   - type: FlavorProfile
@@ -66,7 +66,7 @@
 - type: entity
   name: феолика
   parent: FoodProduceBase
-  id: FoodBerriesFeolika
+  id: MedievalFoodBerriesFeolika
   description: Круглая ягода фиолетового цвета
   components:
   - type: FlavorProfile
@@ -98,7 +98,7 @@
 - type: entity
   name: синячка
   parent: FoodProduceBase
-  id: FoodBerriesSinyachka
+  id: MedievalFoodBerriesSinyachka
   description: Две крупные ягоды синего цвета с общей веточкой.
   components:
   - type: FlavorProfile
@@ -133,7 +133,7 @@
   name: тяфлика # ненасыщенная
   suffix: Ненасыщенная
   parent: FoodProduceBase
-  id: FoodBerriesTyaflikaUnsaturated
+  id: MedievalFoodBerriesTyaflikaUnsaturated
   description: Ягода, форма которой напоминает сосульку. Она обмораживает вам пальцы
   components:
   - type: FlavorProfile
@@ -168,7 +168,7 @@
   name: тяфлика # средненасыщенная
   suffix: средне насыщенная
   parent: FoodProduceBase
-  id: FoodBerriesTyaflikaNormalSaturated
+  id: MedievalFoodBerriesTyaflikaNormalSaturated
   description: Ягода, форма которой напоминает сосульку. Вы чувствуете холод, идущий от неё
   components:
   - type: FlavorProfile
@@ -201,7 +201,7 @@
   name: тяфлика # насыщенная
   suffix: насыщенная
   parent: FoodProduceBase
-  id: FoodBerriesTyaflikaSaturated
+  id: MedievalFoodBerriesTyaflikaSaturated
   description: Ягода, форма которой напоминает сосульку. Она чуть прохладная
   components:
   - type: FlavorProfile
@@ -233,7 +233,7 @@
 - type: entity
   name: златка
   parent: FoodProduceBase
-  id: FoodBerriesZlatka
+  id: MedievalFoodBerriesZlatka
   description: Круглая ягода золотого цвета
   components:
   - type: FlavorProfile

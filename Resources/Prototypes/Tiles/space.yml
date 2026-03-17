@@ -2,8 +2,8 @@
   id: Space
   name: tiles-space
   friction: 0
-  transparent: true # Respiral-ZLeveling
   isSubfloor: true
+  transparent: true # Respiral-Zlvls
   isSpace: true
   sturdy: false
   thermalConductivity: 0.4

@@ -1,0 +1,4 @@
+- type: entity
+  id: MedievalFloorWaterEntity
+  name: вода
+  parent: FloorWaterEntity

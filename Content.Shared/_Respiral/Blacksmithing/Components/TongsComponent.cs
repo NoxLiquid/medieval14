@@ -1,6 +1,6 @@
 using Robust.Shared.Containers;
 
-namespace Content.Shared.Blacksmithing.Components;
+namespace Content.Shared._Respiral.Blacksmithing.Components;
 
 [RegisterComponent]
 public sealed partial class TongsComponent : Component

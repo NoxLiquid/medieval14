@@ -1,0 +1,24 @@
+- type: gameMap
+  id: MedievalVerdantVale
+  mapName: 'VerdantVale'
+  mapPath: /Maps/_Respiral/medieval_verdant_vale.yml
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    VerdantVale:
+      stationProto: MedievalStandardTerritory
+      components:
+        - type: CEStationZLevels
+          mapsBelow:
+            - /Maps/_Respiral/medieval_verdant_vale_below.yml
+          mapsAbove:
+            - /Maps/_Respiral/medieval_verdant_vale_above.yml
+        # - type: StationBiome
+        #   biome: MedievalGrasslands
+        - type: StationNameSetup
+          mapNameTemplate: '{0} VerdantVale {1}'
+        # - type: StationEmergencyShuttle
+        #   emergencyShuttlePath: /Maps/Shuttles/emergency_amber.yml
+        - type: StationJobs
+          availableJobs:
+            MedievalPilligrim: [ -1, -1 ]

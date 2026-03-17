@@ -9,3 +9,4 @@ tiles-medieval-grass-dark = тёмная трава
 tiles-medieval-grass-dark2 = тёмная трава 2
 tiles-medieval-snow = снег
 tiles-medieval-ash = пепел
+tiles-empty = пустота

@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Blacksmithing.Components;
+namespace Content.Shared._Respiral.Blacksmithing.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class BlacksmithingProcessComponent : Component

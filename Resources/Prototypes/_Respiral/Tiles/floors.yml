@@ -8,13 +8,14 @@
   - 1.0
   - 1.0
   - 1.0
-  friction: 0
-  isSubfloor: true
-  isSpace: true
+  baseTurf: Space
+  deconstructTools: [ MedievalDigging ]
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
+  isSubfloor: true
   weather: true
+  indestructible: true
 
 - type: tile
   id: MedievalCaveDrought

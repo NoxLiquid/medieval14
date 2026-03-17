@@ -1,6 +1,6 @@
 using Robust.Shared.Audio;
 
-namespace Content.Shared.Blacksmithing.Components;
+namespace Content.Shared._Respiral.Blacksmithing.Components;
 
 [RegisterComponent]
 public sealed partial class ForgingHammerComponent : Component
@@ -13,7 +13,7 @@ public sealed partial class ForgingHammerComponent : Component
         StrikeType.Heavy
     };
 
-    [DataField("staminaCost")]
+    [DataField]
     public Dictionary<StrikeType, float> StaminaCost = new()
     {
         { StrikeType.Light, 0f },
@@ -21,7 +21,7 @@ public sealed partial class ForgingHammerComponent : Component
         { StrikeType.Heavy, 10f }
     };
 
-    [DataField("currentStrikeIndex")]
+    [DataField]
     public int CurrentStrikeIndex = 0;
 
     [ViewVariables]

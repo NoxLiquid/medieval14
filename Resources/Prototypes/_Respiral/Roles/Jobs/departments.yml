@@ -1,8 +1,8 @@
 - type: department
-  id: Commoner
+  id: MedievalCommoner
   name: department-Commoner
   description: department-Commoner-description
   color: "#6F4F28"
   weight: -10
   roles:
-  - Pilligrim
+  - MedievalPilligrim

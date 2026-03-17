@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Blacksmithing;
+namespace Content.Shared._Respiral.Blacksmithing;
 
 [RegisterComponent]
 public sealed partial class EntityQualityComponent : Component
@@ -8,7 +8,7 @@ public sealed partial class EntityQualityComponent : Component
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public EntityQuality Quality = EntityQuality.Rough;
 
-    [DataField("producerMark")]
+    [DataField]
     public string ProducerMark = string.Empty;
 }
 

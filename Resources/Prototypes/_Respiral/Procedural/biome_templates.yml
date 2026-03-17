@@ -60,7 +60,7 @@
       allowedTiles:
         - MedievalDirt
       entities:
-        - FloorWaterEntity
+        - MedievalFloorWaterEntity
 
     # Леса
     - !type:BiomeEntityLayer

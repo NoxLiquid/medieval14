@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Blacksmithing;
+namespace Content.Shared._Respiral.Blacksmithing;
 
 [Serializable, NetSerializable]
 public enum IngotVisuals : byte
