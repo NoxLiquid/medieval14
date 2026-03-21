@@ -1,0 +1,209 @@
+# Medieval armor prototypes generated from _Respiral/Clothing/OuterClothing/armor/*.rsi
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorGilded
+  suffix: Средневековье
+  name: позолоченный доспех
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/armor/armorwithgold.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/armor/armorwithgold.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalGold
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.9
+        Heat: 0.7
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorChainmail
+  suffix: Средневековье
+  name: кольчуга
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/armor/chain_armor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/armor/chain_armor.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.78
+        Slash: 0.78
+        Piercing: 0.88
+        Heat: 0.75
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorCopper
+  suffix: Средневековье
+  name: медный доспех
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/armor/copper_armor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/armor/copper_armor.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.78
+        Slash: 0.78
+        Piercing: 0.88
+        Heat: 0.75
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorSegmented
+  suffix: Средневековье
+  name: сегментный доспех
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/armor/Differentiated_armor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/armor/Differentiated_armor.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.78
+        Slash: 0.78
+        Piercing: 0.88
+        Heat: 0.75
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorPractice
+  suffix: Средневековье
+  name: учебный доспех
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/armor/example.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/armor/example.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.78
+        Slash: 0.78
+        Piercing: 0.88
+        Heat: 0.75
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorLamellar
+  suffix: Средневековье
+  name: ламеллярный доспех
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/armor/lamellar_armor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/armor/lamellar_armor.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.78
+        Slash: 0.78
+        Piercing: 0.88
+        Heat: 0.75
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorLeather
+  suffix: Средневековье
+  name: кожаный доспех
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/armor/leather_armor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/armor/leather_armor.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.96
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorLightLamellar
+  suffix: Средневековье
+  name: лёгкий ламеллярный доспех
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/armor/light_lamellar_armor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/armor/light_lamellar_armor.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.78
+        Slash: 0.78
+        Piercing: 0.88
+        Heat: 0.75
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100

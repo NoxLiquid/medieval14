@@ -63,6 +63,47 @@
   conditions:
     - !type:TileNotBlocked
 
+# Лестницы
+
+- type: construction
+  id: MedievalLadder
+  graph: MedievalLadder
+  startNode: start
+  targetNode: straight
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: AlignTileAny
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# - type: construction
+#   id: MedievalLadderCorner
+#   graph: MedievalLadder
+#   startNode: start
+#   targetNode: corner
+#   category: construction-category-structures
+#   objectType: Structure
+#   placementMode: AlignTileAny
+#   canRotate: false
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked
+
+# - type: construction
+#   id: MedievalLadderInnerCorner
+#   graph: MedievalLadder
+#   startNode: start
+#   targetNode: innerCorner
+#   category: construction-category-structures
+#   objectType: Structure
+#   placementMode: AlignTileAny
+#   canRotate: false
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked
+
 # Кровати 🛏️
 
 - type: construction

@@ -1,0 +1,131 @@
+# Medieval inner clothing generated from _Respiral/Clothing/Jumpsuit/*.rsi
+
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalClothingInnerDress
+  suffix: Средневековье
+  name: платье
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Jumpsuit/dress.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/dress.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.96
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalClothingInnerLongTunic
+  suffix: Средневековье
+  name: длинная туника
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Jumpsuit/long_shirt.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/long_shirt.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.96
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalClothingInnerPeasantRags
+  suffix: Средневековье
+  name: крестьянские лохмотья
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Jumpsuit/peasant-rags.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/peasant-rags.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.96
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalClothingInnerSimpleShirt
+  suffix: Средневековье
+  name: простая рубаха
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Jumpsuit/shirt.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/shirt.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.96
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalClothingInnerTrimmedShirt
+  suffix: Средневековье
+  name: расшитая рубаха
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Jumpsuit/shirt2.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Jumpsuit/shirt2.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.96
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100

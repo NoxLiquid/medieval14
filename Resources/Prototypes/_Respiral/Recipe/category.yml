@@ -23,5 +23,9 @@
   name: lathe-medieval-category-weapon
 
 - type: latheCategory
-  id: MedievalMaterialArmorCategory
-  name: lathe-medieval-category-armor
+  id: MedievalMetalClothingCategory
+  name: lathe-medieval-category-metal-clothing
+
+- type: latheCategory
+  id: MedievalTailorClothingCategory
+  name: lathe-medieval-category-tailor-clothing

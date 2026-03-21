@@ -464,9 +464,9 @@
     heldPrefix: ammo
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedWood: 100
-      MedievalProcessedStone: 200
-      MedievalProcessedIron: 100
+      MedievalProcessedWood: 3
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
   - type: Stack
     stackType: MedievalConstructionToolsAmmo
 

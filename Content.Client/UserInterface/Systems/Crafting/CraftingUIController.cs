@@ -1,4 +1,4 @@
-using Content.Client.Construction.UI;
+using Content.Client._Respiral.Controllers;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using JetBrains.Annotations;
@@ -11,13 +11,13 @@ namespace Content.Client.UserInterface.Systems.Crafting;
 [UsedImplicitly]
 public sealed class CraftingUIController : UIController, IOnStateChanged<GameplayState>
 {
-    private ConstructionMenuPresenter? _presenter;
+    private MedievalConstructionMenuPresenter? _presenter; // Respiral-edit-сокрытие крафта
     private MenuButton? CraftingButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.CraftingButton;
 
     public void OnStateEntered(GameplayState state)
     {
         DebugTools.Assert(_presenter == null);
-        _presenter = new ConstructionMenuPresenter();
+        _presenter = new MedievalConstructionMenuPresenter(); // Respiral-edit-сокрытие крафта
     }
 
     public void OnStateExited(GameplayState state)
@@ -29,7 +29,7 @@ public sealed class CraftingUIController : UIController, IOnStateChanged<Gamepla
         _presenter = null;
     }
 
-    internal void UnloadButton(ConstructionMenuPresenter? presenter = null)
+    internal void UnloadButton(MedievalConstructionMenuPresenter? presenter = null) // Respiral-edit-сокрытие крафта
     {
         if (CraftingButton == null)
         {
