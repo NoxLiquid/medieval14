@@ -1,0 +1,79 @@
+- type: entity
+  id: MedievalTableWoodFrame
+  parent: 
+  - BaseStructure
+  - MedievalWoodenFurnitureBase
+  name: Деревянный каркас стола 
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    sprite: Structures/Furniture/Tables/frame.rsi
+  - type: Icon
+    sprite: Structures/Furniture/Tables/frame.rsi
+    state: full
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: IconSmooth
+    key: state
+    base: state_
+  - type: Construction
+    graph: Table
+    node: MedievalTableWoodFrame
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 3
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+
+- type: entity
+  id: MedievalCounterWood
+  parent: [CounterBase, MedievalWoodenFurnitureBase]
+  name: деревянная стойка
+  description: Идеально подходит чтобы топить печь.
+  components:
+  - type: Sprite
+    sprite: Structures/Furniture/Tables/counterwood.rsi
+  - type: Icon
+    sprite: Structures/Furniture/Tables/counterwood.rsi
+    state: full
+  - type: IconSmooth
+    key: counterwood
+    base: state_
+  - type: Construction
+    graph: Table
+    node: MedievalCounterWood
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood:  103
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+
+- type: entity
+  id: MedievalTableWood
+  parent: [TableBase, MedievalWoodenFurnitureBase]
+  name: деревянный стол
+  description: Идеально подходит чтобы топить печь.
+  components:
+  - type: Sprite
+    sprite: Structures/Furniture/Tables/wood.rsi
+  - type: Icon
+    sprite: Structures/Furniture/Tables/wood.rsi
+  - type: IconSmooth
+    key: woodtable
+  - type: Construction
+    graph: Table
+    node: MedievalTableWood
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 103
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3

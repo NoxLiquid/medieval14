@@ -1,0 +1,186 @@
+# Столы 🗄️
+- type: construction
+  id: MedievalCounterWood
+  graph:  MedievalTable
+  startNode: start
+  targetNode: MedievalCounterWood
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalTableWood
+  graph: MedievalTable
+  startNode: start
+  targetNode: MedievalTableWood
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Кровати 🛏️
+
+- type: construction
+  id: MedievalComfortableBed
+  graph: MedievalBed
+  startNode: start
+  targetNode: сomfortableBed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalBed
+  graph: MedievalBed
+  startNode: start
+  targetNode: bed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalClothHeyBed
+  graph: MedievalBed
+  startNode: start
+  targetNode: сlothHeyBed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalHeyBed
+  graph: MedievalBed
+  startNode: start
+  targetNode: heyBed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Стулья 🪑
+
+- type: construction
+  id: MedievalStool
+  graph: MedievalChair
+  startNode: start
+  targetNode: stool
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChairPlain
+  graph: MedievalChair
+  startNode: start
+  targetNode: chairPlain
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChairRedCushion
+  graph: MedievalChair
+  startNode: start
+  targetNode: chairRedCushion
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalChairEmeraldLuxury
+  graph: MedievalChair
+  startNode: start
+  targetNode: chairEmeraldLuxury
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Шкафы 🗄️
+
+- type: construction
+  id: MedievalFilingCabinet1
+  graph: MedievalCabinet
+  startNode: start
+  targetNode: filingCabinet1
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFilingCabinet2
+  graph: MedievalCabinet
+  startNode: start
+  targetNode: filingCabinet2
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFilingCabinet3
+  graph: MedievalCabinet
+  startNode: start
+  targetNode: filingCabinet3
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalFilingCabinet4
+  graph: MedievalCabinet
+  startNode: start
+  targetNode: filingCabinet4
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
