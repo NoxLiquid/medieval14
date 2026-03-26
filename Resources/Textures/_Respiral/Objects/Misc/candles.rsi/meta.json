@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by TheShuEd (github) for ss14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "candelabra1",
+      "delays": [
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      ]
+    },
+    {
+      "name": "candelabra1_off"
+    },
+    {
+      "name": "candelabra2_off"
+    },
+    {
+      "name": "candelabra3_off"
+    },
+    {
+      "name": "candelabra4_off"
+    }
+  ]
+}

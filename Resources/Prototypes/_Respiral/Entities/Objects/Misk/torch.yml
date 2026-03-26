@@ -85,6 +85,9 @@
   components:
     - type: Sprite
       sprite: _Respiral/Objects/Misc/torch.rsi
+    - type: Icon
+      sprite: _Respiral/Objects/Misc/torch.rsi
+      state: icon
 
 - type: entity
   name: металлический факел
@@ -104,3 +107,6 @@
           shader: unshaded
         - map: [ enum.ExpendableLightVisualLayers.Overlay ]
           state: torch_nocloth
+    - type: Icon
+      sprite: _Respiral/Objects/Misc/metal_torch.rsi
+      state: icon
