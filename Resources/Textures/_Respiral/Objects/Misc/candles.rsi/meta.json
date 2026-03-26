@@ -8,7 +8,7 @@
   },
   "states": [
     {
-      "name": "candelabra1",
+      "name": "candelabra1_on",
       "delays": [
         [
           0.25,
@@ -22,13 +22,72 @@
       "name": "candelabra1_off"
     },
     {
+      "name": "candelabra2_on",
+      "delays": [
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      ]
+    },
+    {
       "name": "candelabra2_off"
+    },
+    {
+      "name": "candelabra3_on",
+      "delays": [
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      ]
     },
     {
       "name": "candelabra3_off"
     },
     {
+      "name": "candelabra4_on",
+      "delays": [
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      ]
+    },
+    {
       "name": "candelabra4_off"
+    },
+    {
+      "name": "candelabra5_on",
+      "delays": [
+        [
+          0.25,
+          0.25,
+          0.25
+        ]
+      ]
+    },
+    {
+      "name": "candelabra5_off"
+    },
+    {
+      "name": "candelabra6_on",
+      "delays": [
+        [
+          0.25,
+          0.25,
+          0.25
+        ]
+      ]
+    },
+    {
+      "name": "candelabra6_off"
     }
-  ]
+  ] 
 }
