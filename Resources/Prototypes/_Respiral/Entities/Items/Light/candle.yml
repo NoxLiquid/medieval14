@@ -1,0 +1,130 @@
+- type: entity
+  name: candle
+  parent: BaseItem
+  id: MedievalBaseCandelabra
+  components:
+  - type: Tag
+    tags:
+    - Candle
+  - type: Sprite
+    noRot: true
+    sprite: _Respiral/Objects/Items/Light/candles.rsi
+  - type: Item
+    size: Small
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: ExtinguishOnInteract
+    extinguishAttemptSound:
+      path: /Audio/Items/candle_blowing.ogg
+      params:
+        variation: 0.05
+        volume: 10
+  - type: UseDelay
+  - type: ExtinguishableSetCollisionWake
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 3.0
+    firestackFade: -0.01
+    damage:
+      types:
+        Heat: 0.1
+  - type: FireVisuals
+    sprite: _Respiral/Objects/Items/Light/candles.rsi
+  - type: ToggleableVisuals
+    spriteLayer: null
+    inhandVisuals:
+      left:
+      - state: inhand-left-flame
+        shader: unshaded
+      right:
+      - state: inhand-right-flame
+        shader: unshaded
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  name: candle
+  parent: MedievalBaseCandelabra
+  id: MedievalCandelabra1
+  components:
+    - type: Sprite
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      state: candelabra1_off
+    - type: FireVisuals
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      normalState: candelabra1_on
+      
+- type: entity
+  name: candle
+  parent: MedievalBaseCandelabra
+  id: MedievalCandelabra2
+  components:
+    - type: Sprite
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      state: candelabra2_off
+    - type: FireVisuals
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      normalState: candelabra2_on
+
+- type: entity
+  name: candle
+  parent: MedievalBaseCandelabra
+  id: MedievalCandelabra3
+  components:
+    - type: Sprite
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      state: candelabra2_off
+    - type: FireVisuals
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      normalState: candelabra2_on
+
+- type: entity
+  name: candle
+  parent: MedievalBaseCandelabra
+  id: MedievalCandelabra4
+  components:
+    - type: Sprite
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      state: candelabra4_off
+    - type: FireVisuals
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      normalState: candelabra2_on
+
+- type: entity
+  name: candle
+  parent: MedievalBaseCandelabra
+  id: MedievalCandelabra5
+  components:
+    - type: Sprite
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      state: candelabra5_off
+    - type: FireVisuals
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      normalState: candelabra5_on
+
+- type: entity
+  name: candle
+  parent: MedievalBaseCandelabra
+  id: MedievalCandelabra6
+  components:
+    - type: Sprite
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      state: candelabra6_off
+    - type: FireVisuals
+      sprite: _Respiral/Objects/Items/Light/candles.rsi
+      normalState: candelabra5_on

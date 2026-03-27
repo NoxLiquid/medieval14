@@ -36,29 +36,7 @@
       "name": "candelabra2_off"
     },
     {
-      "name": "candelabra3_on",
-      "delays": [
-        [
-          0.25,
-          0.25,
-          0.25,
-          0.25
-        ]
-      ]
-    },
-    {
       "name": "candelabra3_off"
-    },
-    {
-      "name": "candelabra4_on",
-      "delays": [
-        [
-          0.25,
-          0.25,
-          0.25,
-          0.25
-        ]
-      ]
     },
     {
       "name": "candelabra4_off"
@@ -75,16 +53,6 @@
     },
     {
       "name": "candelabra5_off"
-    },
-    {
-      "name": "candelabra6_on",
-      "delays": [
-        [
-          0.25,
-          0.25,
-          0.25
-        ]
-      ]
     },
     {
       "name": "candelabra6_off"

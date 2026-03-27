@@ -2,7 +2,7 @@
   name: torch
   abstract: true
   parent: BaseItem
-  id: BaseItemTorch
+  id: MedievalBaseItemTorch
   description: A torch fashioned from some wood.
   components:
     - type: Sprite
@@ -17,7 +17,7 @@
         - map: [ enum.ExpendableLightVisualLayers.Overlay ]
           state: torch_nocloth
     - type: ExpendableLight
-      refuelMaterialID: WoodPlank
+      refuelMaterialID: MedievalRawWood
       glowDuration: 200
       refuelMaximumDuration: 405
       fadeOutDuration: 4
@@ -28,10 +28,10 @@
       litSound:
         path: /Audio/Items/Flare/flare_on.ogg
     - type: Icon
-      sprite: Objects/Misc/torch.rsi
+      sprite: Objects/Items/Light/torch.rsi
       state: icon
     - type: Item
-      sprite: Objects/Misc/torch.rsi
+      sprite: Objects/Items/Light/torch.rsi
       heldPrefix: unlit
     - type: Appearance
     - type: PointLight
@@ -79,24 +79,24 @@
 
 - type: entity
   name: факел
-  parent: BaseItemTorch
-  id: SimpleTorch
-  description: Факел, сделанный из какого-то дерева.
+  parent: MedievalBaseItemTorch
+  id: MedievalSimpleTorch
+  description: Факел, сделанный из дерева.
   components:
     - type: Sprite
-      sprite: _Respiral/Objects/Misc/torch.rsi
+      sprite: _Respiral/Objects/Items/Light/torch.rsi
     - type: Icon
-      sprite: _Respiral/Objects/Misc/torch.rsi
+      sprite: _Respiral/Objects/Items/Light/torch.rsi
       state: icon
 
 - type: entity
   name: металлический факел
-  parent: BaseItemTorch
-  id: SimpleMetalTorch
-  description: Факел, сделанный из какого-то металла и дерева.
+  parent: MedievalBaseItemTorch
+  id: MedievalSimpleMetalTorch
+  description: Факел, сделанный из металла и дерева.
   components:
     - type: Sprite
-      sprite: _Respiral/Objects/Misc/metal_torch.rsi
+      sprite: _Respiral/Objects/Items/Light/metal_torch.rsi
       layers:
         - map: [ enum.ExpendableLightVisualLayers.Base ]
           state: torch_unlit
@@ -108,5 +108,5 @@
         - map: [ enum.ExpendableLightVisualLayers.Overlay ]
           state: torch_nocloth
     - type: Icon
-      sprite: _Respiral/Objects/Misc/metal_torch.rsi
+      sprite: _Respiral/Objects/Items/Light/metal_torch.rsi
       state: icon
