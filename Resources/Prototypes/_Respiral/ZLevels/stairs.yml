@@ -1,0 +1,145 @@
+- type: entity
+  id: MedievalCEZLevelLadderBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  name: лестница
+  description: Будьте осторожны, чем выше вы поднимаетесь, тем больнее будет падение.
+  placement:
+      mode: AlignTileAny
+  components:
+  # - type: CEAutoTilePlacement
+  #   tile: CEPlanks
+  - type: SpriteFade
+  - type: Sprite
+    sprite: _Respiral/Structures/stairs.rsi
+    state: stairs_wood
+    drawdepth: Mobs
+    offset: 0,0.5
+  - type: PlacementReplacement
+    key: walls
+  - type: Occluder
+    enabled: false
+  - type: Transform
+    anchored: True
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      hard:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,0.6,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+        hard: true
+      slowdown:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+  - type: CEZLevelHighGround
+    stick: true
+    heightCurve:
+    - 1.05
+    - 1.05
+    - 0.1
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.3
+    sprintSpeedModifier: 0.3
+
+- type: entity
+  parent: MedievalCEZLevelLadderBase
+  id: MedievalCEZLevelLadderCornerBase
+  categories: [ HideSpawnMenu ]
+  abstract: true
+  placement:
+      mode: AlignTileAny
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/stairs.rsi
+    state: stairs_wood
+    drawdepth: FloorTiles
+  - type: Occluder
+    enabled: false
+  - type: CEZLevelHighGround
+    corner: true
+    heightCurve:
+    - 1.05
+    - 1.05
+    - 0.5
+    - 0.1
+  - type: Fixtures
+    fixtures:
+      hard:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.5,0.5,0.6,0.6"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+        hard: true
+      slowdown:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: MedievalCEZLevelLadderCornerBase
+  id: MedievalCEZLevelLadderCornerInnerBase
+  categories: [ HideSpawnMenu ]
+  abstract: true
+  placement:
+      mode: AlignTileAny
+  components:
+  - type: Occluder
+    enabled: true
+    boundingBox: "-0.5,-0.5,0.5,0.5"
+  - type: Sprite
+    sprite: _Respiral/Structures/stairs.rsi
+    state: stairs_wood
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: MedievalCEZLevelLadderBase
+  id: MedievalCEZLevelLadder
+  suffix: Прямая
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+
+# - type: entity
+#   parent: MedievalCEZLevelLadderCornerBase
+#   id: MedievalCEZLevelLadderCorner
+#   suffix: Угловая
+#   components:
+#   - type: PhysicalComposition
+#     materialComposition:
+#       MedievalProcessedWood: 200
+
+# - type: entity
+#   parent: MedievalCEZLevelLadderCornerInnerBase
+#   id: MedievalCEZLevelLadderInnerCorner
+#   suffix: Внутренний угол
+#   components:
+#   - type: PhysicalComposition
+#     materialComposition:
+#       MedievalProcessedWood: 200

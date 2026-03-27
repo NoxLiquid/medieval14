@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using Content.Client._Respiral.Controllers;
 using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
 using Content.Client.Sandbox;
@@ -35,8 +36,8 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     private SandboxWindow? _window;
 
     // TODO hud refactor cache
-    private EntitySpawningUIController EntitySpawningController => UIManager.GetUIController<EntitySpawningUIController>();
-    private TileSpawningUIController TileSpawningController => UIManager.GetUIController<TileSpawningUIController>();
+    private MedievalEntitySpawningUIController EntitySpawningController => UIManager.GetUIController<MedievalEntitySpawningUIController>(); // Respiral-edit-сокрытие сущностей
+    private MedievalTileSpawningUIController TileSpawningController => UIManager.GetUIController<MedievalTileSpawningUIController>(); // Respiral-edit-сокрытие тайлов
     private DecalPlacerUIController DecalPlacerController => UIManager.GetUIController<DecalPlacerUIController>();
 
     private MenuButton? SandboxButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.SandboxButton;

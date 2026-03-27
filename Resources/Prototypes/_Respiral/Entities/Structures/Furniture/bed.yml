@@ -1,7 +1,9 @@
 - type: entity
   name: комфортная кровать
   id: MedievalBaseBed
-  parent: BaseStructure
+  parent: 
+  - BaseStructure
+  - MedievalWoodenFurnitureBase
   suffix: Средневековье
   description: Деревянная кровать.
   abstract: true
@@ -32,17 +34,23 @@
     buckleOffset: "0,-0.22" # DS14
   - type: PlaceableSurface
     placeCentered: true
-  - type: Damageable
-    damageContainer: MedievalInorganic
-    damageModifierSet: MedievalWood
   - type: Destructible
     thresholds:
-    - trigger: # Excess damage, don't spawn entities
+    - trigger:
         !type:DamageTrigger
         damage: 400
       behaviors:
       - !type:DoActsBehavior
-        acts: ["Destruction"]
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Transform
     anchored: true
     noRot: true

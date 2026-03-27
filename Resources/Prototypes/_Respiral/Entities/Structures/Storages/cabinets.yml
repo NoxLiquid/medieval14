@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseStructureDynamic, BaseBagOpenClose ]
+  parent: [ BaseStructureDynamic, BaseBagOpenClose, MedievalWoodenFurnitureBase ]
   id: MedievalBaseFilingCabinet
   name: Шкаф
   description: Шкаф для хранения всех ваших предметов.
@@ -35,20 +35,23 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
-  - type: Damageable
-    damageContainer: MedievalInorganic
-    damageModifierSet: MedievalWood
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
         damage: 400
       behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: MetalBreak
+          collection: WoodDestroy
       - !type:DoActsBehavior
-        acts: ["Destruction"]
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: MedievalBaseFilingCabinet

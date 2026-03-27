@@ -16,6 +16,7 @@
   isSubfloor: true
   weather: true
   indestructible: true
+  sturdy: false
 
 - type: tile
   id: MedievalCaveDrought
@@ -38,6 +39,7 @@
     collection: FootstepAsteroid
   # itemDrop:
   heatCapacity: 10000
+  sturdy: false
 
 - type: tile
   id: MedievalFloorWasteland
@@ -64,6 +66,7 @@
     collection: FootstepAsteroid
   # itemDrop:
   heatCapacity: 10000
+  sturdy: false
 
 - type: tile
   id: MedievalFloorPlanetDirt
@@ -84,6 +87,7 @@
   heatCapacity: 10000
   weather: true
   indestructible: true
+  sturdy: false
 
 # Травушка
 
@@ -114,6 +118,7 @@
     collection: FootstepGrass
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassDarkGreen
@@ -138,6 +143,7 @@
     collection: FootstepGrass
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassCrystal
@@ -162,6 +168,7 @@
     collection: FootstepGrass
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassRed
@@ -186,6 +193,7 @@
     collection: FootstepGrass
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassDark
@@ -210,6 +218,7 @@
     collection: FootstepGrass
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassDark2
@@ -234,6 +243,7 @@
     collection: FootstepGrass
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
+  sturdy: false
 
 # Снег
 
@@ -258,6 +268,7 @@
     collection: FootstepGrass
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
+  sturdy: false
 
 
 # Камень
@@ -301,6 +312,7 @@
     collection: FootstepGrass
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
+  sturdy: false
 
 - type: tile
   id: MedievalFloorStone1
@@ -323,6 +335,7 @@
     collection: FootstepAsteroid
   itemDrop: MedievalStoneOre1
   heatCapacity: 10000
+  sturdy: false
 
 - type: tile
   id: MedievalFloorStone2
@@ -345,6 +358,7 @@
   weather: true
   deconstructTools: [ MedievalSwotting ]
   itemDrop: MedievalStoneOre1
+  sturdy: false
 
 - type: tile
   id: MedievalFloorStone3
@@ -373,6 +387,7 @@
   weather: true
   deconstructTools: [ MedievalSwotting ]
   itemDrop: MedievalStoneOre1
+  sturdy: false
 
 ## Дерево
 

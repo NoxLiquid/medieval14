@@ -63,8 +63,8 @@
               doAfter: 5.0
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
-              amount: 2
+              prototype: MedievalBoard
+              amount: 1
             - !type:DeleteEntity {}
     - node: end
       entity: FenceWoodHighEnd
@@ -75,8 +75,8 @@
               doAfter: 2.5
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
-              amount: 2
+              prototype: MedievalBoard
+              amount: 1
             - !type:DeleteEntity {}
     - node: corner
       entity: FenceWoodHighCorner
@@ -87,8 +87,8 @@
               doAfter: 5.0
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
-              amount: 2
+              prototype: MedievalBoard
+              amount: 1
             - !type:DeleteEntity {}
     - node: tjunction
       entity: FenceWoodHighTJunction
@@ -99,8 +99,8 @@
               doAfter: 5.0
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
-              amount: 2
+              prototype: MedievalBoard
+              amount: 1
             - !type:DeleteEntity {}
     - node: gate
       entity: FenceWoodHighGate
@@ -111,8 +111,8 @@
               doAfter: 5.0
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
-              amount: 2
+              prototype: MedievalBoard
+              amount: 1
             - !type:DeleteEntity {}
     - node: straight_small
       entity: FenceWoodSmallStraight
@@ -123,7 +123,7 @@
               doAfter: 2.5
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
+              prototype: MedievalBoard
               amount: 1
             - !type:DeleteEntity {}
     - node: end_small
@@ -135,7 +135,7 @@
               doAfter: 1.25
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
+              prototype: MedievalBoard
               amount: 1
             - !type:DeleteEntity {}
     - node: corner_small
@@ -147,7 +147,7 @@
               doAfter: 2.5
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
+              prototype: MedievalBoard
               amount: 1
             - !type:DeleteEntity {}
     - node: tjunction_small
@@ -159,7 +159,7 @@
               doAfter: 2.5
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
+              prototype: MedievalBoard
               amount: 1
             - !type:DeleteEntity {}
     - node: gate_small
@@ -171,6 +171,6 @@
               doAfter: 2.5
           completed:
             - !type:SpawnPrototype
-              prototype: MaterialWoodPlank1
+              prototype: MedievalBoard
               amount: 1
             - !type:DeleteEntity {}

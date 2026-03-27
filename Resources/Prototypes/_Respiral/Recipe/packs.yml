@@ -137,7 +137,15 @@
   - MedievalWoodBrassKnucklesRecipe
   - MedievalIronBrassKnucklesRecipe
   # Броня
-  - MedivalChainRecipe
+  - MedievalClothingOuterBloodPlateArmorRecipe
+  - MedievalClothingOuterHeavyPlateArmorRecipe
+  - MedievalClothingOuterArmorGildedRecipe
+  - MedievalClothingOuterArmorChainmailRecipe
+  - MedievalClothingOuterArmorCopperRecipe
+  - MedievalClothingOuterArmorSegmentedRecipe
+  - MedievalClothingOuterArmorPracticeRecipe
+  - MedievalClothingOuterArmorLamellarRecipe
+  - MedievalClothingOuterArmorLightLamellarRecipe
 
 - type: latheRecipePack
   id: MedievalLoom
@@ -150,6 +158,31 @@
   - MedievalComfortableBedsheetRecipe
   - MedievalLeatherBedsheetRecipe
   - MedievalSimpleBedsheetRecipe
+  - MedievalClothingInnerDressRecipe
+  - MedievalClothingInnerLongTunicRecipe
+  - MedievalClothingInnerPeasantRagsRecipe
+  - MedievalClothingInnerSimpleShirtRecipe
+  - MedievalClothingInnerTrimmedShirtRecipe
+  - MedievalClothingOuterWornTunicRecipe
+  - MedievalClothingOuterBluePharaohRobeRecipe
+  - MedievalClothingOuterGambesonRecipe
+  - MedievalClothingOuterArmorLeatherRecipe
+  - MedievalClothingOuterTravelCoatRecipe
+  - MedievalClothingOuterBattleMantleRecipe
+  - MedievalClothingOuterBlueMageMantleRecipe
+  - MedievalClothingOuterBlackLeatherCoatRecipe
+  - MedievalClothingOuterDarkLeatherMantleRecipe
+  - MedievalClothingOuterPaddedMantleRecipe
+  - MedievalClothingOuterJerkinRecipe
+  - MedievalClothingOuterKimonoRecipe
+  - MedievalClothingOuterLeatherMantleRecipe
+  - MedievalClothingOuterSleevelessTunicRecipe
+  - MedievalClothingOuterMonkRobeRecipe
+  - MedievalClothingOuterNunRobeRecipe
+  - MedievalClothingOuterAustereRobeRecipe
+  - MedievalClothingOuterDreadRobeRecipe
+  - MedievalClothingOuterWhiteDreadRobeRecipe
+  - MedievalClothingOuterWandererRobeRecipe
 
 - type: latheRecipePack
   id: MedievalTannery

@@ -50,6 +50,20 @@
   categories:
   - MedievalMaterialArmorCategory
 
+- type: latheRecipe
+  abstract: true
+  id: MedievalBaseMetalClothingRecipe
+  completetime: 10
+  categories:
+  - MedievalMetalClothingCategory
+
+- type: latheRecipe
+  abstract: true
+  id: MedievalBaseTailorClothingRecipe
+  completetime: 10
+  categories:
+  - MedievalTailorClothingCategory
+
 ## Пилорама
 
 - type: latheRecipe
@@ -261,13 +275,6 @@
     MedievalRawCoal: 100
 
 # Кузня
-
-- type: latheRecipe
-  parent: MedievalBaseArmorRecipe
-  id: MedivalChainRecipe
-  result: MedivalChain
-  materials:
-    MedievalProcessedIron: 100
 
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
@@ -949,6 +956,71 @@
   materials:
     MedievalProcessedAdamantine: 200
 
+# Одежда из металла
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterBloodPlateArmorRecipe
+  result: MedievalClothingOuterBloodPlateArmor
+  materials:
+    MedievalSteel: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterHeavyPlateArmorRecipe
+  result: MedievalClothingOuterHeavyPlateArmor
+  materials:
+    MedievalSteel: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorGildedRecipe
+  result: MedievalClothingOuterArmorGilded
+  materials:
+    MedievalProcessedGold: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorChainmailRecipe
+  result: MedievalClothingOuterArmorChainmail
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorCopperRecipe
+  result: MedievalClothingOuterArmorCopper
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorSegmentedRecipe
+  result: MedievalClothingOuterArmorSegmented
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorPracticeRecipe
+  result: MedievalClothingOuterArmorPractice
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorLamellarRecipe
+  result: MedievalClothingOuterArmorLamellar
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorLightLamellarRecipe
+  result: MedievalClothingOuterArmorLightLamellar
+  materials:
+    MedievalProcessedIron: 100
+
 # Каменоломня
 
 - type: latheRecipe
@@ -998,3 +1070,178 @@
   result: MedievalSimpleBedsheet
   materials:
     MedievalCloth: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerDressRecipe
+  result: MedievalClothingInnerDress
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerLongTunicRecipe
+  result: MedievalClothingInnerLongTunic
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerPeasantRagsRecipe
+  result: MedievalClothingInnerPeasantRags
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerSimpleShirtRecipe
+  result: MedievalClothingInnerSimpleShirt
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerTrimmedShirtRecipe
+  result: MedievalClothingInnerTrimmedShirt
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterWornTunicRecipe
+  result: MedievalClothingOuterWornTunic
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterBluePharaohRobeRecipe
+  result: MedievalClothingOuterBluePharaohRobe
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterGambesonRecipe
+  result: MedievalClothingOuterGambeson
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterArmorLeatherRecipe
+  result: MedievalClothingOuterArmorLeather
+  materials:
+    MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterTravelCoatRecipe
+  result: MedievalClothingOuterTravelCoat
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterBattleMantleRecipe
+  result: MedievalClothingOuterBattleMantle
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterBlueMageMantleRecipe
+  result: MedievalClothingOuterBlueMageMantle
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterBlackLeatherCoatRecipe
+  result: MedievalClothingOuterBlackLeatherCoat
+  materials:
+    MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterDarkLeatherMantleRecipe
+  result: MedievalClothingOuterDarkLeatherMantle
+  materials:
+    MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterPaddedMantleRecipe
+  result: MedievalClothingOuterPaddedMantle
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterJerkinRecipe
+  result: MedievalClothingOuterJerkin
+  materials:
+    MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterKimonoRecipe
+  result: MedievalClothingOuterKimono
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterLeatherMantleRecipe
+  result: MedievalClothingOuterLeatherMantle
+  materials:
+    MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterSleevelessTunicRecipe
+  result: MedievalClothingOuterSleevelessTunic
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterMonkRobeRecipe
+  result: MedievalClothingOuterMonkRobe
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterNunRobeRecipe
+  result: MedievalClothingOuterNunRobe
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterAustereRobeRecipe
+  result: MedievalClothingOuterAustereRobe
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterDreadRobeRecipe
+  result: MedievalClothingOuterDreadRobe
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterWhiteDreadRobeRecipe
+  result: MedievalClothingOuterWhiteDreadRobe
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterWandererRobeRecipe
+  result: MedievalClothingOuterWandererRobe
+  materials:
+    MedievalCloth: 100
