@@ -1245,3 +1245,37 @@
   result: MedievalClothingOuterWandererRobe
   materials:
     MedievalCloth: 100
+
+#Candel
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalCandelabra1
+  result: MedievalCandelabra1
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalCandelabra1
+  id: MedievalCandelabra2
+  result: MedievalCandelabra2
+
+- type: latheRecipe
+  parent: MedievalCandelabra1
+  id: MedievalCandelabra3
+  result: MedievalCandelabra3
+
+- type: latheRecipe
+  parent: MedievalCandelabra1
+  id: MedievalCandelabra4
+  result: MedievalCandelabra4
+
+- type: latheRecipe
+  parent: MedievalCandelabra1
+  id: MedievalCandelabra5
+  result: MedievalCandelabra5
+
+- type: latheRecipe
+  parent: MedievalCandelabra1
+  id: MedievalCandelabra6
+  result: MedievalCandelabra6

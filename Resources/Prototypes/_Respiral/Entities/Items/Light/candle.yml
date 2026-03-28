@@ -1,6 +1,7 @@
 - type: entity
   name: candle
   parent: BaseItem
+  abstract: true
   id: MedievalBaseCandelabra
   components:
   - type: Tag
@@ -62,69 +63,111 @@
   parent: MedievalBaseCandelabra
   id: MedievalCandelabra1
   components:
-    - type: Sprite
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      state: candelabra1_off
-    - type: FireVisuals
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      normalState: candelabra1_on
-      
+  - type: Sprite
+    layers:
+      - state: candelabra1_off
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0C0"
+      right:
+      - state: inhand-right
+        color: "#C0C0C0"
+  - type: FireVisuals
+    normalState: candelabra1_on
+
 - type: entity
   name: candle
   parent: MedievalBaseCandelabra
   id: MedievalCandelabra2
   components:
-    - type: Sprite
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      state: candelabra2_off
-    - type: FireVisuals
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      normalState: candelabra2_on
+  - type: Sprite
+    layers:
+      - state: candelabra2_off
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0C0"
+      right:
+      - state: inhand-right
+        color: "#C0C0C0"
+  - type: FireVisuals
+    normalState: candelabra2_on
 
 - type: entity
   name: candle
   parent: MedievalBaseCandelabra
   id: MedievalCandelabra3
   components:
-    - type: Sprite
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      state: candelabra2_off
-    - type: FireVisuals
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      normalState: candelabra2_on
+  - type: Sprite
+    layers:
+      - state: candelabra3_off
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#DAA520"
+      right:
+      - state: inhand-right
+        color: "#DAA520"
+  - type: FireVisuals
+    normalState: candelabra1_on
 
 - type: entity
   name: candle
   parent: MedievalBaseCandelabra
   id: MedievalCandelabra4
   components:
-    - type: Sprite
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      state: candelabra4_off
-    - type: FireVisuals
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      normalState: candelabra2_on
+  - type: Sprite
+    layers:
+      - state: candelabra4_off
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#DAA520"
+      right:
+      - state: inhand-right
+        color: "#DAA520"
+  - type: FireVisuals
+    normalState: candelabra2_on
 
 - type: entity
   name: candle
   parent: MedievalBaseCandelabra
   id: MedievalCandelabra5
   components:
-    - type: Sprite
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      state: candelabra5_off
-    - type: FireVisuals
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      normalState: candelabra5_on
+  - type: Sprite
+    layers:
+      - state: candelabra5_off
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0C0"
+      right:
+      - state: inhand-right
+        color: "#C0C0C0"
+  - type: FireVisuals
+    normalState: candelabra5_on
 
 - type: entity
   name: candle
   parent: MedievalBaseCandelabra
   id: MedievalCandelabra6
   components:
-    - type: Sprite
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      state: candelabra6_off
-    - type: FireVisuals
-      sprite: _Respiral/Objects/Items/Light/candles.rsi
-      normalState: candelabra5_on
+  - type: Sprite
+    layers:
+      - state: candelabra6_off
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#DAA520"
+      right:
+      - state: inhand-right
+        color: "#DAA520"
+  - type: FireVisuals
+    normalState: candelabra5_on

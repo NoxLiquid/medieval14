@@ -17,7 +17,7 @@
         - map: [ enum.ExpendableLightVisualLayers.Overlay ]
           state: torch_nocloth
     - type: ExpendableLight
-      refuelMaterialID: MedievalRawWood
+      refuelMaterialID: MedievalBoard
       glowDuration: 200
       refuelMaximumDuration: 405
       fadeOutDuration: 4
