@@ -21,7 +21,7 @@
       glowDuration: 200
       refuelMaximumDuration: 405
       fadeOutDuration: 4
-      iconStateSpent: torch_spent
+      iconStateSpent: torch_spent  #накладывается вместо замены
       turnOnBehaviourID: turn_on
       fadeOutBehaviourID: fade_out
       # Sounds legit nuff
