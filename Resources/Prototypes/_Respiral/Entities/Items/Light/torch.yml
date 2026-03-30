@@ -2,7 +2,7 @@
   name: torch
   abstract: true
   parent: BaseItem
-  id: MedievalBaseItemTorch
+  id: MedievalBaseTorch
   description: A torch fashioned from some wood.
   components:
     - type: Sprite
@@ -27,12 +27,6 @@
       # Sounds legit nuff
       litSound:
         path: /Audio/Items/Flare/flare_on.ogg
-    - type: Icon
-      sprite: Objects/Items/Light/torch.rsi
-      state: icon
-    - type: Item
-      sprite: Objects/Items/Light/torch.rsi
-      heldPrefix: unlit
     - type: Appearance
     - type: PointLight
       enabled: false
@@ -79,7 +73,7 @@
 
 - type: entity
   name: факел
-  parent: MedievalBaseItemTorch
+  parent: MedievalBaseTorch
   id: MedievalSimpleTorch
   description: Факел, сделанный из дерева.
   components:
@@ -88,10 +82,13 @@
     - type: Icon
       sprite: _Respiral/Objects/Items/Light/torch.rsi
       state: icon
+    - type: Item
+      sprite: _Respiral/Objects/Items/Light/torch.rsi
+      heldPrefix: unlit
 
 - type: entity
   name: металлический факел
-  parent: MedievalBaseItemTorch
+  parent: MedievalBaseTorch
   id: MedievalSimpleMetalTorch
   description: Факел, сделанный из металла и дерева.
   components:
@@ -110,3 +107,6 @@
     - type: Icon
       sprite: _Respiral/Objects/Items/Light/metal_torch.rsi
       state: icon
+    - type: Item
+      sprite: _Respiral/Objects/Items/Light/metal_torch.rsi
+      heldPrefix: unlit
