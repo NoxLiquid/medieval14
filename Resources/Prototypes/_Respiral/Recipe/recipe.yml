@@ -1264,9 +1264,11 @@
   parent: MedievalCandelabra1
   id: MedievalCandelabra3
   result: MedievalCandelabra3
+  materials:
+    MedievalProcessedGold: 100
 
 - type: latheRecipe
-  parent: MedievalCandelabra1
+  parent: MedievalCandelabra3
   id: MedievalCandelabra4
   result: MedievalCandelabra4
 
@@ -1276,6 +1278,6 @@
   result: MedievalCandelabra5
 
 - type: latheRecipe
-  parent: MedievalCandelabra1
+  parent: MedievalCandelabra3
   id: MedievalCandelabra6
   result: MedievalCandelabra6

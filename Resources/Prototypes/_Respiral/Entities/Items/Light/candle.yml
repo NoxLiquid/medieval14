@@ -62,10 +62,10 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#C0C0C0"
+        color: "#C0C0FF"
       right:
       - state: inhand-right
-        color: "#C0C0C0"
+        color: "#C0C0FF"
   - type: FireVisuals
     normalState: candelabra1_on
 
@@ -80,10 +80,10 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#C0C0C0"
+        color: "#C0C0FF"
       right:
       - state: inhand-right
-        color: "#C0C0C0"
+        color: "#C0C0FF"
   - type: FireVisuals
     normalState: candelabra2_on
 
@@ -98,10 +98,10 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#DAA520"
+        color: "#FFD700"
       right:
       - state: inhand-right
-        color: "#DAA520"
+        color: "#FFD700"
   - type: FireVisuals
     normalState: candelabra1_on
 
@@ -116,10 +116,10 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#DAA520"
+        color: "#FFD700"
       right:
       - state: inhand-right
-        color: "#DAA520"
+        color: "#FFD700"
   - type: FireVisuals
     normalState: candelabra2_on
 
@@ -134,10 +134,10 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#C0C0C0"
+        color: "#C0C0FF"
       right:
       - state: inhand-right
-        color: "#C0C0C0"
+        color: "#C0C0FF"
   - type: FireVisuals
     normalState: candelabra5_on
 
@@ -152,9 +152,9 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#DAA520"
+        color: "#FFD700"
       right:
       - state: inhand-right
-        color: "#DAA520"
+        color: "#FFD700"
   - type: FireVisuals
     normalState: candelabra5_on
