@@ -53,12 +53,23 @@
 
 - type: entity
   parent: MedievalBaseCandelabra
-  id: MedievalCandelabra1
+  id: MedievalBaseGoldCandelabra
+  abstract: true
   components:
-  - type: Sprite
-    layers:
-      - state: candelabra_metal_3
-      - state: Candle3
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFD700"
+      right:
+      - state: inhand-right
+        color: "#FFD700"
+
+- type: entity
+  parent: MedievalBaseCandelabra
+  id: MedievalBaseSilverCandelabra
+  abstract: true
+  components:
   - type: Item
     inhandVisuals:
       left:
@@ -67,66 +78,55 @@
       right:
       - state: inhand-right
         color: "#C0C0FF"
-  - type: FireVisuals
-    normalState: candelabra1_on
+
+###################################################################################################
 
 - type: entity
-  parent: MedievalBaseCandelabra
-  id: MedievalCandelabra2
+  parent: MedievalBaseSilverCandelabra
+  id: MedievalCandelabra1
   components:
   - type: Sprite
     layers:
       - state: candelabra_metal_1
       - state: Candle1
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#C0C0FF"
-      right:
-      - state: inhand-right
-        color: "#C0C0FF"
   - type: FireVisuals
-    normalState: candelabra2_on
+    normalState: candelabra1_on
 
 - type: entity
-  parent: MedievalBaseCandelabra
+  parent: MedievalBaseSilverCandelabra
+  id: MedievalCandelabra2
+  components:
+  - type: Sprite
+    layers:
+      - state: candelabra_metal_3
+      - state: Candle3
+  - type: FireVisuals
+    normalState: candelabra3_on
+
+- type: entity
+  parent: MedievalBaseSilverCandelabra
   id: MedievalCandelabra3
   components:
   - type: Sprite
     layers:
       - state: candelabra_metal_mini
       - state: Candle_mini
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#C0C0FF"
-      right:
-      - state: inhand-right
-        color: "#C0C0FF"
   - type: FireVisuals
-    normalState: candelabra1_on
-#######
+    normalState: candelabra_mini_on
+
+##################################################################################################
+
 - type: entity
   parent: MedievalBaseCandelabra
   id: MedievalCandelabra4
   components:
   - type: Sprite
     layers:
-      - state: candelabra_metal_3
+      - state: candelabra_metal_1
         color: "#FFD700"
-      - state: Candle3
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#FFD700"
-      right:
-      - state: inhand-right
-        color: "#FFD700"
+      - state: Candle1
   - type: FireVisuals
-    normalState: candelabra2_on
+    normalState: candelabra1_on
 
 - type: entity
   parent: MedievalBaseCandelabra
@@ -134,19 +134,11 @@
   components:
   - type: Sprite
     layers:
-      - state: candelabra_metal_1
+      - state: candelabra_metal_3
         color: "#FFD700"
-      - state: Candle1
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#FFD700"
-      right:
-      - state: inhand-right
-        color: "#FFD700"
+      - state: Candle3
   - type: FireVisuals
-    normalState: candelabra5_on
+    normalState: candelabra3_on
 
 - type: entity
   parent: MedievalBaseCandelabra
@@ -157,13 +149,5 @@
       - state: candelabra_metal_mini
         color: "#FFD700"
       - state: Candle_mini
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#FFD700"
-      right:
-      - state: inhand-right
-        color: "#FFD700"
   - type: FireVisuals
-    normalState: candelabra5_on
+    normalState: candelabra_mini_on
