@@ -6,8 +6,16 @@ import os
 import subprocess
 from typing import Iterable
 
-PUBLISH_TOKEN = os.environ["PUBLISH_TOKEN"]
-VERSION = os.environ["GITHUB_SHA"]
+
+def required_env(name: str) -> str:
+    value = os.environ[name].strip()
+    if not value:
+        raise RuntimeError(f"Environment variable {name} is empty")
+    return value
+
+
+PUBLISH_TOKEN = required_env("PUBLISH_TOKEN")
+VERSION = required_env("GITHUB_SHA")
 
 RELEASE_DIR = "release"
 
@@ -15,8 +23,8 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = os.environ.get("ROBUST_CDN_URL", "https://ss14.noxliquid.ru/cdn/")
-FORK_ID = os.environ.get("ROBUST_CDN_FORK_ID", "noxliquid-respiral")
+ROBUST_CDN_URL = os.environ.get("ROBUST_CDN_URL", "https://ss14.noxliquid.ru/cdn/").strip()
+FORK_ID = os.environ.get("ROBUST_CDN_FORK_ID", "noxliquid-respiral").strip()
 
 def main():
     parser = argparse.ArgumentParser()
