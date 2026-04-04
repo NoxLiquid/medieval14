@@ -1,0 +1,57 @@
+- type: entity
+  parent:
+  - MobRespirator
+  - MobAtmosStandard
+  - BaseSimpleMob
+  - MobAtmosExposed
+  - MobCombat
+  - MobBloodstream
+  - MobFlammable
+  - BaseMobAnimal
+  id: MedievalFloraMobBase
+  suffix: ИИ
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: MedievalBiological
+    damageModifierSet: MobFlora
+  - type: Hunger
+    thresholds:
+      Overfed: 100
+      Okay: 50
+      Peckish: 25
+      Starving: 10
+      Dead: 0
+    baseDecayRate: 0.00926
+  - type: Thirst
+    thresholds:
+      OverHydrated: 200
+      Okay: 150
+      Thirsty: 100
+      Parched: 50
+      Dead: 0
+    baseDecayRate: 0.04
+  - type: StatusEffects
+    allowed:
+    - Electrocution
+    - TemporaryBlindness
+    - Pacified
+    - Flashed
+    - RadiationProtection
+    - Adrenaline
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 200
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: running
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: MobPrice
+    price: 500
+  - type: FloatingVisuals

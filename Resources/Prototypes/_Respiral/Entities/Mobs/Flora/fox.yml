@@ -1,0 +1,66 @@
+- type: entity
+  name: лиса
+  parent: MedievalFloraMobBase
+  id: MedievalMobFox
+  description: Эта лиса выглядит довольно милой, с пушистой шерстью и хитрым взглядом. Она может быть дружелюбной, если к ней подойти осторожно, но не стоит забывать, что она все же дикий зверь.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/fox.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#985629'
+      state: running
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Butcherable
+    spawned:
+    - id: MedievalRawPelt
+      amount: 1
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-soft-floofy
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      collection: Fox
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 300
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 8
+  # - type: NpcFactionMember
+  #   factions:
+  #   - Passive
+  # - type: NPCRetaliation
+  #   attackMemoryLength: 10
+  # - type: HTN
+  #   rootTask:
+  #     task: RuminantHostileCompound
+  - type: MessyDrinker

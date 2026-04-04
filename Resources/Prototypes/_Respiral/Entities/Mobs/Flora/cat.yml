@@ -1,0 +1,70 @@
+- type: entity
+  name: кот
+  parent: MedievalFloraMobBase
+  id: MedievalMobCat
+  description: Маленький пушистый котик. Он мурлычет и трется о ваши ноги, прося внимания.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/cat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 15
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Speech
+    speechSounds: Cat
+    speechVerb: SmallMob
+  - type: Butcherable
+    spawned:
+    - id: MedievalRawPelt
+      amount: 1
+  - type: ReplacementAccent
+    accent: cat
+  - type: InteractionPopup
+    successChance: 0.7
+    interactSuccessString: petting-success-cat
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/cat_meow.ogg
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 5
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: MobPrice
+    price: 1500
+  - type: Tag
+    tags:
+    - VimPilot
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 4
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 100
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Critical
+      140: Dead

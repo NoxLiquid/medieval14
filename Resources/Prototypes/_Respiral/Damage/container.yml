@@ -11,3 +11,12 @@
   - Burn
   supportedTypes:
   - Structural
+
+- type: damageContainer
+  id: MedievalBiological
+  supportedGroups:
+  - Brute
+  - Burn
+  - Toxin
+  - Airloss
+  - Genetic

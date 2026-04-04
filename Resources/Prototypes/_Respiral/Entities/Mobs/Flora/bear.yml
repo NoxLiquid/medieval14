@@ -1,0 +1,59 @@
+- type: entity
+  name: ужасный медведь
+  id: MedievalMobDireBear
+  parent: MedievalFloraMobBase
+  description: Этот медведь выглядит огромным и свирепым, с густой шерстью и острыми когтями. Он может быть очень опасным, если к нему подойти, и не стоит недооценивать его силу и агрессивность.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/dire_bear.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#C2A36B'
+      state: running
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.50
+        density: 500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Butcherable
+    spawned:
+    - id: MedievalRawPelt
+      amount: 3
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: Vocal
+    sounds:
+      Unsexed: Bear
+  - type: InteractionPopup
+    successChance: 0.25
+    interactSuccessString: petting-success-bear
+    interactFailureString: petting-failure-bear
+    interactSuccessSound:
+      path: /Audio/Animals/sloth_squeak.ogg
+  - type: MobPrice
+    price: 5000
+  - type: MeleeWeapon
+    angle: 45
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      groups:
+        Brute: 25
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 300
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Critical
+      400: Dead

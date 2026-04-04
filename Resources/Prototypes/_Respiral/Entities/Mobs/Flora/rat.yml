@@ -1,0 +1,196 @@
+- type: entity
+  name: крыса
+  id: MedievalMobRat
+  parent: [ MedievalFloraMobBase, BaseMobRat ]
+  description: Эта крыса выглядит грязной и больной, с её лохматой шерстью и красными глазами. Она может быть агрессивной, если к ней подойти, и не стоит недооценивать её опасность.
+  components:
+  - type: Item
+    size: Tiny
+    heldPrefix: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 20
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      25: Critical
+      50: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 4
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/rat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#dddddd'
+      state: running
+  - type: ReplacementAccent
+    accent: mouse
+  - type: Speech
+    speechSounds: Squeak
+    speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
+  - type: Vocal
+    sounds:
+      Male: Mouse
+      Female: Mouse
+      Unsexed: Mouse
+    wilhelmProbability: 0.001
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 3
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 20
+  - type: MobPrice
+    price: 50
+  - type: BadFood
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Thirst
+    startingThirst: 35
+    thresholds:
+      OverHydrated: 35
+      Okay: 25
+      Thirsty: 15
+      Parched: 10
+      Dead: 0
+    baseDecayRate: 0.04
+  - type: Hunger
+    thresholds:
+      Overfed: 35
+      Okay: 25
+      Peckish: 15
+      Starving: 10
+      Dead: 0
+  - type: Edible
+  - type: FlavorProfile
+    flavors:
+    - meaty
+
+- type: entity
+  id: MedievalMobRat2
+  parent: MedievalMobRat
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/rat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#6d7b8d'
+      state: running
+  
+- type: entity
+  id: MedievalMobRat3
+  parent: MedievalMobRat
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/rat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#293133'
+      state: running
+
+- type: entity
+  name: большая крыса
+  id: MedievalMobBigRat
+  parent: MedievalMobRat
+  description: Эта большая крыса выглядит ещё более грязной и больной, с её лохматой шерстью и красными глазами. Она может быть агрессивной, если к ней подойти, и не стоит недооценивать её опасность.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        density: 20
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/big_rat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#dddddd'
+      state: running
+  - type: Thirst
+    startingThirst: 50
+    thresholds:
+      OverHydrated: 50
+      Okay: 25
+      Thirsty: 15
+      Parched: 10
+      Dead: 0
+    baseDecayRate: 0.04
+  - type: Hunger
+    thresholds:
+      Overfed: 50
+      Okay: 25
+      Peckish: 15
+      Starving: 10
+      Dead: 0
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 20
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      100: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 6
+
+- type: entity
+  id: MedievalMobBigRat2
+  parent: MedievalMobBigRat
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/big_rat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#6d7b8d'
+      state: running
+
+- type: entity
+  id: MedievalMobBigRat3
+  parent: MedievalMobBigRat
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/big_rat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#293133'
+      state: running
