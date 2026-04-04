@@ -1,0 +1,41 @@
+- type: htnCompound
+  id: HostileFloraCompound
+  branches:
+  - tasks:
+    - !type:HTNCompoundTask
+      task: LowHealthRetreatCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: MeleeCombatCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: FoodCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: IdleCompound
+
+- type: htnCompound
+  id: LowHealthRetreatCompound
+  branches:
+  - preconditions:
+    - !type:LowHealthPrecondition
+      threshold: 0.3
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: NearbyMeleeTargets
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      operator: !type:FleeTargetOperator
+        targetKey: Target
+        targetCoordinatesKey: FleeCoordinates
+        distance: 8
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: FleeCoordinates
+      operator: !type:MoveToOperator
+        targetKey: FleeCoordinates
+        rangeKey: MovementRangeClose
