@@ -1,1 +1,105 @@
-# Reserved for medieval gloves-slot clothing prototypes.
+# Medieval gloves-slot clothing prototypes generated from _Respiral/Clothing/Hands/*.rsi
+
+- type: entity
+  parent: MedievalBaseGloves
+  id: MedievalClothingHandsBlackGloves
+  suffix: Средневековье
+  name: чёрные перчатки
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Hands/black.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Hands/black.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseGloves
+  id: MedievalClothingHandsChainGloves
+  suffix: Средневековье
+  name: кольчужные перчатки
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Hands/chain.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Hands/chain.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseGloves
+  id: MedievalClothingHandsLeatherGloves
+  suffix: Средневековье
+  name: кожаные перчатки
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Hands/leather.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Hands/leather.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseGloves
+  id: MedievalClothingHandsRagGloves
+  suffix: Средневековье
+  name: тряпичные перчатки
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Hands/rags.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Hands/rags.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100

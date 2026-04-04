@@ -146,6 +146,15 @@
   - MedievalClothingOuterArmorPracticeRecipe
   - MedievalClothingOuterArmorLamellarRecipe
   - MedievalClothingOuterArmorLightLamellarRecipe
+  - MedievalClothingBeltChainRecipe
+  - MedievalClothingBeltGoldRecipe
+  - MedievalClothingBeltSilverRecipe
+  - MedievalClothingHandsChainGlovesRecipe
+  - MedievalClothingHeadCrownRecipe
+  - MedievalClothingHeadHeavyHelmetRecipe
+  - MedievalClothingHeadHelmetRecipe
+  - MedievalClothingMaskGlassesRecipe
+  - MedievalClothingShoesChainRecipe
 
 - type: latheRecipePack
   id: MedievalLoom
@@ -183,6 +192,33 @@
   - MedievalClothingOuterDreadRobeRecipe
   - MedievalClothingOuterWhiteDreadRobeRecipe
   - MedievalClothingOuterWandererRobeRecipe
+  - MedievalClothingBackBackpackRecipe
+  - MedievalClothingBackDuffelRecipe
+  - MedievalClothingBackSatchelRecipe
+  - MedievalClothingBeltLeatherRecipe
+  - MedievalClothingBeltLeatherBlackRecipe
+  - MedievalClothingBeltLeatherRedRecipe
+  - MedievalClothingBeltRopeRecipe
+  - MedievalClothingHandsBlackGlovesRecipe
+  - MedievalClothingHandsLeatherGlovesRecipe
+  - MedievalClothingHandsRagGlovesRecipe
+  - MedievalClothingHeadBandanaRecipe
+  - MedievalClothingHeadCapRecipe
+  - MedievalClothingHeadCoifRecipe
+  - MedievalClothingHeadFeatherHatRecipe
+  - MedievalClothingHeadHatRecipe
+  - MedievalClothingHeadJesterCapRecipe
+  - MedievalClothingHeadMinstrelCapRecipe
+  - MedievalClothingHeadWideHatRecipe
+  - MedievalClothingMaskBandanaRecipe
+  - MedievalClothingMaskExecutionerRecipe
+  - MedievalClothingMaskPlagueDoctorRecipe
+  - MedievalClothingShoesBlackRecipe
+  - MedievalClothingShoesJesterRecipe
+  - MedievalClothingShoesLeatherRecipe
+  - MedievalClothingShoesSimpleRecipe
+  - MedievalClothingShoesStrawRecipe
+  - MedievalClothingShoesWarmRecipe
 
 - type: latheRecipePack
   id: MedievalTannery

@@ -1,1 +1,287 @@
-# Reserved for medieval head-slot clothing prototypes.
+# Medieval head-slot clothing prototypes generated from _Respiral/Clothing/Head/**/*.rsi
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadBandana
+  suffix: Средневековье
+  name: бандана
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/bandana.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/bandana.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadCap
+  suffix: Средневековье
+  name: чепец
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/cap.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/cap.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadCoif
+  suffix: Средневековье
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/cope.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/cope.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadCrown
+  suffix: Средневековье
+  name: корона
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/crown.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/crown.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalGold
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.97
+        Slash: 0.97
+        Piercing: 0.98
+        Heat: 0.94
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadFeatherHat
+  suffix: Средневековье
+  name: шляпа с пером
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/feather.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/feather.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadHat
+  suffix: Средневековье
+  name: шляпа
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/hat.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/hat.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadJesterCap
+  suffix: Средневековье
+  name: шутовской колпак
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/jester.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/jester.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadMinstrelCap
+  suffix: Средневековье
+  name: колпак менестреля
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/minstrel.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/minstrel.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadWideHat
+  suffix: Средневековье
+  name: широкополая шляпа
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/wide-hat.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/wide-hat.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadHeavyHelmet
+  suffix: Средневековье
+  name: тяжёлый шлем
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Helmets/heavy_helmet.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Helmets/heavy_helmet.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalSteel
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.97
+        Heat: 0.92
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadHelmet
+  suffix: Средневековье
+  name: шлем
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Helmets/helmet.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Helmets/helmet.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.96
+        Slash: 0.96
+        Piercing: 0.98
+        Heat: 0.95
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100

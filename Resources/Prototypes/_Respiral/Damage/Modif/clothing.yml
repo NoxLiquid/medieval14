@@ -26,6 +26,15 @@
     Heat: 0.98
     Structural: 1
 
+- type: damageModifierSet
+  id: MedievalClothOther
+  coefficients:
+    Blunt: 0.99
+    Slash: 0.99
+    Piercing: 0.99
+    Heat: 0.99
+    Structural: 1
+
 # ЖЕЛЕЗО
 - type: damageModifierSet
   id: MedievalIronHeadOrLegs
@@ -52,6 +61,15 @@
     Slash: 0.96
     Piercing: 0.98
     Heat: 0.95
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalIronOther
+  coefficients:
+    Blunt: 0.98
+    Slash: 0.98
+    Piercing: 0.98
+    Heat: 0.98
     Structural: 1
 
 # СТАЛЬ
@@ -82,6 +100,15 @@
     Heat: 0.92
     Structural: 1
 
+- type: damageModifierSet
+  id: MedievalSteelOther
+  coefficients:
+    Blunt: 0.97
+    Slash: 0.97
+    Piercing: 0.97
+    Heat: 0.97
+    Structural: 1
+
 # СЕРЕБРО
 - type: damageModifierSet
   id: MedievalSilverHeadOrLegs
@@ -110,6 +137,15 @@
     Heat: 0.95
     Structural: 1
     
+- type: damageModifierSet
+  id: MedievalSilverOther
+  coefficients:
+    Blunt: 0.98
+    Slash: 0.98
+    Piercing: 0.98
+    Heat: 0.98
+    Structural: 1
+
 # МИФРИЛ
 - type: damageModifierSet
   id: MedievalMithrilHeadOrLegs
@@ -136,6 +172,15 @@
     Slash: 0.94
     Piercing: 0.95
     Heat: 0.92
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalMithrilOther
+  coefficients:
+    Blunt: 0.96
+    Slash: 0.96
+    Piercing: 0.96
+    Heat: 0.96
     Structural: 1
 
 # ЗОЛОТО
@@ -166,6 +211,15 @@
     Heat: 0.94
     Structural: 1
 
+- type: damageModifierSet
+  id: MedievalGoldOther
+  coefficients:
+    Blunt: 0.98
+    Slash: 0.98
+    Piercing: 0.98
+    Heat: 0.98
+    Structural: 1
+
 # АДАМАНТИТ
 - type: damageModifierSet
   id: MedievalAdamantineHeadOrLegs
@@ -192,4 +246,13 @@
     Slash: 0.92
     Piercing: 0.93
     Heat: 0.91
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalAdamantineOther
+  coefficients:
+    Blunt: 0.95
+    Slash: 0.95
+    Piercing: 0.95
+    Heat: 0.95
     Structural: 1
