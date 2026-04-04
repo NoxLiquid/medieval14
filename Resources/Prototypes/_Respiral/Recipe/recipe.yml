@@ -38,6 +38,13 @@
 
 - type: latheRecipe
   abstract: true
+  id: MedievalBaseLightingRecipe
+  completetime: 10
+  categories:
+  - MedievalLightingCategory
+
+- type: latheRecipe
+  abstract: true
   id: MedievalBaseWeaponRecipe
   completetime: 10
   categories:
@@ -325,6 +332,87 @@
   result: MedievalKeyDuplicator
   materials:
     MedievalProcessedIron: 50
+
+- type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalIronCandelabra1Recipe
+  result: MedievalIronCandelabra1
+  materials:
+    MedievalProcessedIron: 50
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
+
+- type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalSilverCandelabra1Recipe
+  result: MedievalSilverCandelabra1
+  materials:
+    MedievalProcessedSilver: 50
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
+
+- type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalGoldCandelabra1Recipe
+  result: MedievalGoldCandelabra1
+  materials:
+    MedievalProcessedGold: 50
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
+
+- type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalIronCandelabra3Recipe
+  result: MedievalIronCandelabra3
+  materials:
+    MedievalProcessedIron: 75
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
+
+- type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalSilverCandelabra3Recipe
+  result: MedievalSilverCandelabra3
+  materials:
+    MedievalProcessedSilver: 75
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
+
+- type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalGoldCandelabra3Recipe
+  result: MedievalGoldCandelabra3
+  materials:
+    MedievalProcessedGold: 50
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
+
+- type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalIronCandelabraMiniRecipe
+  result: MedievalIronCandelabraMini
+  materials:
+    MedievalProcessedIron: 25
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
+
+- type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalSilverCandelabraMiniRecipe
+  result: MedievalSilverCandelabraMini
+  materials:
+    MedievalProcessedSilver: 25
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
+
+- type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalGoldCandelabraMiniRecipe
+  result: MedievalGoldCandelabraMini
+  materials:
+    MedievalProcessedGold: 25
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
 
 - type: latheRecipe
   parent: MedievalMaterialProcessingRecipe
@@ -1497,3 +1585,4 @@
   result: MedievalClothingShoesWarm
   materials:
     MedievalProcessedPelt: 100
+

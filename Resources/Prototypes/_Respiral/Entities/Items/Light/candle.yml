@@ -1,0 +1,153 @@
+- type: entity
+  name: подсвечник
+  parent: BaseItem
+  abstract: true
+  id: MedievalBaseCandelabra
+  components:
+  - type: Tag
+    tags:
+    - Candle
+  - type: Sprite
+    noRot: true
+    sprite: _Respiral/Objects/Items/Light/candles.rsi
+  - type: Item
+    size: Large
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: ExtinguishOnInteract
+    extinguishAttemptSound:
+      path: /Audio/Items/candle_blowing.ogg
+      params:
+        variation: 0.05
+        volume: 10
+  - type: UseDelay
+  - type: ExtinguishableSetCollisionWake
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 3.0
+    firestackFade: -0.01
+    damage:
+      types:
+        Heat: 0.1
+  - type: FireVisuals
+    sprite: _Respiral/Objects/Items/Light/candles.rsi
+  - type: ToggleableVisuals
+    spriteLayer: null
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalBaseCandelabra
+  id: MedievalBaseGoldCandelabra
+  abstract: true
+  components:
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFD700"
+      right:
+      - state: inhand-right
+        color: "#FFD700"
+
+- type: entity
+  parent: MedievalBaseCandelabra
+  id: MedievalBaseSilverCandelabra
+  abstract: true
+  components:
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+
+###################################################################################################
+
+- type: entity
+  parent: MedievalBaseSilverCandelabra
+  id: MedievalCandelabra1
+  components:
+  - type: Sprite
+    layers:
+      - state: candelabra_metal_1
+      - state: Candle1
+  - type: FireVisuals
+    normalState: candelabra1_on
+
+- type: entity
+  parent: MedievalBaseSilverCandelabra
+  id: MedievalCandelabra2
+  components:
+  - type: Sprite
+    layers:
+      - state: candelabra_metal_3
+      - state: Candle3
+  - type: FireVisuals
+    normalState: candelabra3_on
+
+- type: entity
+  parent: MedievalBaseSilverCandelabra
+  id: MedievalCandelabra3
+  components:
+  - type: Sprite
+    layers:
+      - state: candelabra_metal_mini
+      - state: Candle_mini
+  - type: FireVisuals
+    normalState: candelabra_mini_on
+
+##################################################################################################
+
+- type: entity
+  parent: MedievalBaseCandelabra
+  id: MedievalCandelabra4
+  components:
+  - type: Sprite
+    layers:
+      - state: candelabra_metal_1
+        color: "#FFD700"
+      - state: Candle1
+  - type: FireVisuals
+    normalState: candelabra1_on
+
+- type: entity
+  parent: MedievalBaseCandelabra
+  id: MedievalCandelabra5
+  components:
+  - type: Sprite
+    layers:
+      - state: candelabra_metal_3
+        color: "#FFD700"
+      - state: Candle3
+  - type: FireVisuals
+    normalState: candelabra3_on
+
+- type: entity
+  parent: MedievalBaseCandelabra
+  id: MedievalCandelabra6
+  components:
+  - type: Sprite
+    layers:
+      - state: candelabra_metal_mini
+        color: "#FFD700"
+      - state: Candle_mini
+  - type: FireVisuals
+    normalState: candelabra_mini_on
