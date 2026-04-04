@@ -87,6 +87,12 @@
   - type: FlavorProfile
     flavors:
     - meaty
+  - type: NpcFactionMember
+    factions:
+    - MedievalWolf
+  - type: HTN
+    rootTask:
+      task: MedievalHostileFloraCompound
 
 - type: entity
   id: MedievalMobRat2

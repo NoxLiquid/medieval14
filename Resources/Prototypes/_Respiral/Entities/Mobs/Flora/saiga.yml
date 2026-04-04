@@ -37,6 +37,13 @@
       types:
         Piercing: 10
     animation: WeaponArcFist
+  - type: NpcFactionMember
+    factions:
+    - MedievalHerbivoreFlora
+  - type: HerbivoreFear
+  - type: HTN
+    rootTask:
+      task: MedievalHerbivoreFloraCompound
   - type: MobThresholds
     thresholds:
       0: Alive

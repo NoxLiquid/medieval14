@@ -8,23 +8,30 @@ using Robust.Shared.Map;
 namespace Content._Respiral.NPC.Operators;
 
 /// <summary>
-/// Computes coordinates away from a target and stores them on the blackboard for movement.
+///     Вычисляет координаты на удалении от цели и сохраняет их на доске для перемещения
 /// </summary>
 public sealed partial class FleeTargetOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    private SharedMapSystem _map = default!;
+    private SharedTransformSystem _transform = default!;
 
-    [DataField("targetKey", required: true)]
+    [DataField(required: true)]
     public string TargetKey = default!;
 
-    [DataField("targetCoordinatesKey")]
+    [DataField]
     public string TargetCoordinatesKey = "FleeCoordinates";
 
     [DataField]
     public float Distance = 8f;
+
+    public override void Initialize(IEntitySystemManager sysManager)
+    {
+        base.Initialize(sysManager);
+        _map = sysManager.GetEntitySystem<SharedMapSystem>();
+        _transform = sysManager.GetEntitySystem<SharedTransformSystem>();
+    }
 
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard, CancellationToken cancelToken)
     {

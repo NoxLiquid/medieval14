@@ -7,19 +7,25 @@ using Content.Shared.Mobs.Systems;
 namespace Content._Respiral.NPC.Preconditions;
 
 /// <summary>
-/// Returns true if the owner's remaining health percentage is at or below the configured threshold.
-/// Health is calculated against the mob's dead threshold.
+///     Возвращает значение true, если процент оставшегося здоровья владельца находится на уровне или ниже заданного порога.
+///     Здоровье рассчитывается исходя из порога смерти моба.
 /// </summary>
 public sealed partial class LowHealthPrecondition : HTNPrecondition
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly MobThresholdSystem _thresholds = default!;
+    private MobThresholdSystem _thresholds = default!;
 
     [DataField(required: true)]
     public float Threshold;
 
     [DataField]
     public bool IncludeEquals = true;
+
+    public override void Initialize(IEntitySystemManager sysManager)
+    {
+        base.Initialize(sysManager);
+        _thresholds = sysManager.GetEntitySystem<MobThresholdSystem>();
+    }
 
     public override bool IsMet(NPCBlackboard blackboard)
     {

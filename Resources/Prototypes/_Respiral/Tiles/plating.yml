@@ -10,5 +10,5 @@
     collection: FootstepCatwalk
   friction: 0.3
   isSpace: true
-  itemDrop: MedievalFloorTileItemGrass
+  itemDrop: MedievalBoard
   heatCapacity: 10000

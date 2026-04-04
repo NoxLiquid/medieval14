@@ -34,7 +34,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: Blood
-        Quantity: 300
+        Quantity: 150
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -48,14 +48,12 @@
     damage:
       groups:
         Brute: 11
-  # - type: NpcFactionMember
-  #   factions:
-  #   - Passive
-  # - type: NPCRetaliation
-  #   attackMemoryLength: 10
-  # - type: HTN
-  #   rootTask:
-  #     task: RuminantHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - MedievalWolf
+  - type: HTN
+    rootTask:
+      task: MedievalHostileFloraCompound
   - type: MessyDrinker
 
 - type: entity

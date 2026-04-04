@@ -1,9 +1,9 @@
 - type: htnCompound
-  id: HostileFloraCompound
+  id: MedievalHostileFloraCompound
   branches:
   - tasks:
     - !type:HTNCompoundTask
-      task: LowHealthRetreatCompound
+      task: MedievalLowHealthRetreatCompound
   - tasks:
     - !type:HTNCompoundTask
       task: MeleeCombatCompound
@@ -15,7 +15,69 @@
       task: IdleCompound
 
 - type: htnCompound
-  id: LowHealthRetreatCompound
+  id: MedievalHerbivoreFloraCompound
+  branches:
+  - preconditions:
+    - !type:FearActivePrecondition
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: MedievalNearbyNonFriendlyCreatures
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      operator: !type:RefreshFearTimerOperator
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      operator: !type:FleeTargetOperator
+        targetKey: Target
+        targetCoordinatesKey: RespiralFearCoordinates
+        distance: 8
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: RespiralFearCoordinates
+      operator: !type:MoveToOperator
+        targetKey: RespiralFearCoordinates
+        rangeKey: MovementRangeClose
+        removeKeyOnFinish: false
+  - preconditions:
+    - !type:FearActivePrecondition
+    - !type:KeyExistsPrecondition
+      key: RespiralFearCoordinates
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        targetKey: RespiralFearCoordinates
+        rangeKey: MovementRangeClose
+        removeKeyOnFinish: false
+  - tasks:
+    - !type:HTNCompoundTask
+      task: FoodCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: IdleCompound
+
+- type: utilityQuery
+  id: MedievalNearbyNonFriendlyCreatures
+  query:
+    - !type:NearbyHostilesQuery
+  considerations:
+    - !type:TargetIsAliveCon
+      curve: !type:BoolCurve
+    - !type:TargetDistanceCon
+      curve: !type:PresetCurve
+        preset: TargetDistance
+    - !type:TargetAccessibleCon
+      curve: !type:BoolCurve
+    - !type:TargetInLOSOrCurrentCon
+      curve: !type:BoolCurve
+
+- type: htnCompound
+  id: MedievalLowHealthRetreatCompound
   branches:
   - preconditions:
     - !type:LowHealthPrecondition

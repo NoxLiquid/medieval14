@@ -57,3 +57,9 @@
       0: Alive
       300: Critical
       400: Dead
+  - type: NpcFactionMember
+    factions:
+    - MedievalBear
+  - type: HTN
+    rootTask:
+      task: MedievalHostileFloraCompound

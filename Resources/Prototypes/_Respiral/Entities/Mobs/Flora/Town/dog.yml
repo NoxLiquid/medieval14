@@ -1,0 +1,86 @@
+- type: entity
+  name: собака
+  parent: MedievalBaseHerbivore
+  id: MedievalMobDog
+  description: Эта собака выглядит дружелюбной, с её мягкой шерстью и преданными глазами. Она может быть отличным компаньоном, если вы проявите к ней доброту и заботу. Однако, не стоит забывать, что она всё же может быть опасной, если её спровоцировать или угрожать ей.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/dog.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#8B5A2B'
+      state: running
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Butcherable
+    spawned:
+    - id: MedievalRawPelt
+      amount: 1
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 150
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      groups:
+        Brute: 11
+  - type: NpcFactionMember
+    factions:
+    - TownPeople
+  - type: HTN
+    rootTask:
+      task: MedievalHostileFloraCompound
+  - type: ReplacementAccent
+    accent: dog
+  - type: MessyDrinker
+  - type: Speech
+    speechVerb: Canine
+    speechSounds: Dog
+
+- type: entity
+  parent: MedievalMobDog
+  id: MedievalMobDog2
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/dog.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#C2A27C'
+      state: running
+
+- type: entity
+  parent: MedievalMobDog
+  id: MedievalMobDog3
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/dog.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#2F2F2F'
+      state: running

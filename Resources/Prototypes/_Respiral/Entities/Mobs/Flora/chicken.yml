@@ -89,7 +89,11 @@
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
     factions:
-    - Passive
+    - TownPeople
+  - type: HerbivoreFear
+  - type: HTN
+    rootTask:
+      task: MedievalHerbivoreFloraCompound
 
 - type: entity
   parent: MedievalMobChicken

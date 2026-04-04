@@ -55,12 +55,10 @@
     damage:
       types:
         Piercing: 8
-  # - type: NpcFactionMember
-  #   factions:
-  #   - Passive
-  # - type: NPCRetaliation
-  #   attackMemoryLength: 10
-  # - type: HTN
-  #   rootTask:
-  #     task: RuminantHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - MedievalWolf
+  - type: HTN
+    rootTask:
+      task: MedievalHostileFloraCompound
   - type: MessyDrinker

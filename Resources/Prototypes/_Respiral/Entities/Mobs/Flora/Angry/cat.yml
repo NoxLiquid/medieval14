@@ -68,3 +68,9 @@
       0: Alive
       80: Critical
       140: Dead
+  - type: NpcFactionMember
+    factions:
+    - MedievalCat
+  - type: HTN
+    rootTask:
+      task: MedievalHostileFloraCompound

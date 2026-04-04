@@ -1,0 +1,12 @@
+- type: entity
+  parent: MedievalFloraMobBase
+  id: MedievalBaseHerbivore
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - MedievalHerbivoreFlora
+  - type: HTN
+    rootTask:
+      task: MedievalHerbivoreFloraCompound
+  - type: HerbivoreFear
