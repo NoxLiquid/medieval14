@@ -415,6 +415,15 @@
     MedievalRawCoal: 25
 
 - type: latheRecipe
+  parent: MedievalBaseLightingRecipe
+  id: MedievalSimpleMetalTorchRecipe
+  result: MedievalSimpleMetalTorch
+  materials:
+    MedievalProcessedIron: 50
+    MedievalProcessedWood: 50
+    MedievalRawCoal: 25
+
+- type: latheRecipe
   parent: MedievalMaterialProcessingRecipe
   id: MedievaHammerAmmoRecipe
   result: MedievalConstructionToolsAmmo

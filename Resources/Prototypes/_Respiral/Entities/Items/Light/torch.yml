@@ -17,8 +17,8 @@
         - map: [ enum.ExpendableLightVisualLayers.Overlay ]
           state: torch_nocloth
     - type: ExpendableLight
-      refuelMaterialID: MedievalBoard
-      glowDuration: 200
+      refuelMaterialID: MedievalRawCoal
+      glowDuration: 400
       refuelMaximumDuration: 405
       fadeOutDuration: 4
       iconStateSpent: torch_spent  #накладывается вместо замены
@@ -110,3 +110,8 @@
     - type: Item
       sprite: _Respiral/Objects/Items/Light/metal_torch.rsi
       heldPrefix: unlit
+    - type: PhysicalComposition
+      materialComposition:
+        MedievalProcessedIron: 50
+        MedievalProcessedWood: 50
+        MedievalRawCoal: 25
