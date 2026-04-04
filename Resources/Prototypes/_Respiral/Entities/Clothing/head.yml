@@ -165,8 +165,22 @@
   - type: Sprite
     sprite: _Respiral/Clothing/Head/Hats/jester.rsi
     state: icon
+    layers:
+      - state: icon
+        color: "#FF3B3B"
+      - state: icon-color
+        color: "#2E6BFF"
+      - state: icon-bells
   - type: Clothing
     sprite: _Respiral/Clothing/Head/Hats/jester.rsi
+    slots: [head]
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FF3B3B"
+      - state: equipped-HELMET-color
+        color: "#2E6BFF"
+      - state: equipped-HELMET-bells
   - type: Damageable
     damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
@@ -181,6 +195,56 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
+
+- type: entity
+  parent: MedievalClothingHeadJesterCap
+  id: MedievalClothingHeadJesterCap2
+  suffix: Средневековье
+  name: шутовской колпак
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/jester.rsi
+    state: icon
+    layers:
+      - state: icon
+        color: "#FFD93B"
+      - state: icon-color
+        color: "#8A2BE2"
+      - state: icon-bells
+  - type: Clothing
+    slots: [head]
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#FFD93B"
+      - state: equipped-HELMET-color
+        color: "#8A2BE2"
+      - state: equipped-HELMET-bells
+
+- type: entity
+  parent: MedievalClothingHeadJesterCap
+  id: MedievalClothingHeadJesterCap3
+  suffix: Средневековье
+  name: шутовской колпак
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/jester.rsi
+    state: icon
+    layers:
+      - state: icon
+        color: "#39FF14"
+      - state: icon-color
+        color: "#FF4FD8"
+      - state: icon-bells
+  - type: Clothing
+    slots: [head]
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#39FF14"
+      - state: equipped-HELMET-color
+        color: "#FF4FD8"
+      - state: equipped-HELMET-bells
 
 - type: entity
   parent: MedievalBaseHead
