@@ -1,15 +1,12 @@
 - type: entity
   name: подсвечник
   parent: BaseItem
+  id: MedievalCandelabraBase
   abstract: true
-  id: MedievalBaseCandelabra
   components:
   - type: Tag
     tags:
     - Candle
-  - type: Sprite
-    noRot: true
-    sprite: _Respiral/Objects/Items/Light/candles.rsi
   - type: Item
     size: Large
   - type: Appearance
@@ -35,10 +32,15 @@
     damage:
       types:
         Heat: 0.1
-  - type: FireVisuals
-    sprite: _Respiral/Objects/Items/Light/candles.rsi
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#F5C16C"
+    radius: 2.1
+    energy: 1.8
+  - type: ItemTogglePointLight
   - type: ToggleableVisuals
-    spriteLayer: null
+    spriteLayer: flame
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -50,26 +52,53 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 50
+      MedievalProcessedWood: 50
 
 - type: entity
-  parent: MedievalBaseCandelabra
-  id: MedievalBaseGoldCandelabra
-  abstract: true
+  parent: MedievalCandelabraBase
+  id: MedievalIronCandelabra1
   components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Light/candles.rsi
+    layers:
+    - state: candelabra_metal_1
+      color: "#8A8A8A"
+    - state: candle1
+    - state: candelabra1_on
+      shader: unshaded
+      visible: false
+      map: [ "flame" ]
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#FFD700"
+        color: "#8A8A8A"
       right:
       - state: inhand-right
-        color: "#FFD700"
+        color: "#8A8A8A"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 50
+      MedievalProcessedWood: 50
+      MedievalRawCoal: 25
 
 - type: entity
-  parent: MedievalBaseCandelabra
-  id: MedievalBaseSilverCandelabra
-  abstract: true
+  parent: MedievalCandelabraBase
+  id: MedievalSilverCandelabra1
   components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Light/candles.rsi
+    layers:
+    - state: candelabra_metal_1
+      color: "#C0C0FF"
+    - state: candle1
+    - state: candelabra1_on
+      shader: unshaded
+      visible: false
+      map: [ "flame" ]
   - type: Item
     inhandVisuals:
       left:
@@ -78,76 +107,212 @@
       right:
       - state: inhand-right
         color: "#C0C0FF"
-
-###################################################################################################
-
-- type: entity
-  parent: MedievalBaseSilverCandelabra
-  id: MedievalCandelabra1
-  components:
-  - type: Sprite
-    layers:
-      - state: candelabra_metal_1
-      - state: Candle1
-  - type: FireVisuals
-    normalState: candelabra1_on
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 50
+      MedievalProcessedWood: 50
+      MedievalRawCoal: 25
 
 - type: entity
-  parent: MedievalBaseSilverCandelabra
-  id: MedievalCandelabra2
+  parent: MedievalCandelabraBase
+  id: MedievalGoldCandelabra1
   components:
   - type: Sprite
+    sprite: _Respiral/Objects/Items/Light/candles.rsi
     layers:
-      - state: candelabra_metal_3
-      - state: Candle3
-  - type: FireVisuals
-    normalState: candelabra3_on
-
-- type: entity
-  parent: MedievalBaseSilverCandelabra
-  id: MedievalCandelabra3
-  components:
-  - type: Sprite
-    layers:
-      - state: candelabra_metal_mini
-      - state: Candle_mini
-  - type: FireVisuals
-    normalState: candelabra_mini_on
-
-##################################################################################################
-
-- type: entity
-  parent: MedievalBaseCandelabra
-  id: MedievalCandelabra4
-  components:
-  - type: Sprite
-    layers:
-      - state: candelabra_metal_1
+    - state: candelabra_metal_1
+      color: "#FFD700"
+    - state: candle1
+    - state: candelabra1_on
+      shader: unshaded
+      visible: false
+      map: [ "flame" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
         color: "#FFD700"
-      - state: Candle1
-  - type: FireVisuals
-    normalState: candelabra1_on
+      right:
+      - state: inhand-right
+        color: "#FFD700"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 50
+      MedievalProcessedWood: 50
+      MedievalRawCoal: 25
 
 - type: entity
-  parent: MedievalBaseCandelabra
-  id: MedievalCandelabra5
+  parent: MedievalCandelabraBase
+  id: MedievalIronCandelabra3
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Light/candles.rsi
+    layers:
+    - state: candelabra_metal_3
+      color: "#8A8A8A"
+    - state: candle3
+    - state: candelabra3_on
+      shader: unshaded
+      visible: false
+      map: [ "flame" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8A8A8A"
+      right:
+      - state: inhand-right
+        color: "#8A8A8A"
+  - type: Flammable
+    firestacksOnIgnite: 4.5
+    firestackFade: -0.007
+  - type: PointLight
+    radius: 2.8
+    energy: 2.6
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 75
+      MedievalProcessedWood: 50
+      MedievalRawCoal: 25
+
+- type: entity
+  parent: MedievalIronCandelabra3
+  id: MedievalSilverCandelabra3
   components:
   - type: Sprite
     layers:
-      - state: candelabra_metal_3
-        color: "#FFD700"
-      - state: Candle3
-  - type: FireVisuals
-    normalState: candelabra3_on
+    - state: candelabra_metal_3
+      color: "#C0C0FF"
+    - state: candle3
+    - state: candelabra3_on
+      shader: unshaded
+      visible: false
+      map: [ "flame" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 75
+      MedievalProcessedWood: 50
+      MedievalRawCoal: 25
 
 - type: entity
-  parent: MedievalBaseCandelabra
-  id: MedievalCandelabra6
+  parent: MedievalIronCandelabra3
+  id: MedievalGoldCandelabra3
   components:
   - type: Sprite
     layers:
-      - state: candelabra_metal_mini
+    - state: candelabra_metal_3
+      color: "#FFD700"
+    - state: candle3
+    - state: candelabra3_on
+      shader: unshaded
+      visible: false
+      map: [ "flame" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
         color: "#FFD700"
-      - state: Candle_mini
-  - type: FireVisuals
-    normalState: candelabra_mini_on
+      right:
+      - state: inhand-right
+        color: "#FFD700"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 50
+      MedievalProcessedWood: 50
+      MedievalRawCoal: 25
+
+- type: entity
+  parent: MedievalCandelabraBase
+  id: MedievalIronCandelabraMini
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Light/candles.rsi
+    layers:
+    - state: candelabra_metal_mini
+      color: "#8A8A8A"
+    - state: candle_mini
+    - state: candelabra_mini_on
+      shader: unshaded
+      visible: false
+      map: [ "flame" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8A8A8A"
+      right:
+      - state: inhand-right
+        color: "#8A8A8A"
+  - type: Flammable
+    firestacksOnIgnite: 2.0
+    firestackFade: -0.015
+  - type: PointLight
+    radius: 1.5
+    energy: 1.2
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 25
+      MedievalProcessedWood: 50
+      MedievalRawCoal: 25
+
+- type: entity
+  parent: MedievalIronCandelabraMini
+  id: MedievalSilverCandelabraMini
+  components:
+  - type: Sprite
+    layers:
+    - state: candelabra_metal_mini
+      color: "#C0C0FF"
+    - state: candle_mini
+    - state: candelabra_mini_on
+      shader: unshaded
+      visible: false
+      map: [ "flame" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C0C0FF"
+      right:
+      - state: inhand-right
+        color: "#C0C0FF"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 25
+      MedievalProcessedWood: 50
+      MedievalRawCoal: 25
+
+- type: entity
+  parent: MedievalIronCandelabraMini
+  id: MedievalGoldCandelabraMini
+  components:
+  - type: Sprite
+    layers:
+    - state: candelabra_metal_mini
+      color: "#FFD700"
+    - state: candle_mini
+    - state: candelabra_mini_on
+      shader: unshaded
+      visible: false
+      map: [ "flame" ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#FFD700"
+      right:
+      - state: inhand-right
+        color: "#FFD700"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 25
+      MedievalProcessedWood: 50
+      MedievalRawCoal: 25

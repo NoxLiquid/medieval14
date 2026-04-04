@@ -157,6 +157,19 @@
   - MedievalClothingShoesChainRecipe
 
 - type: latheRecipePack
+  id: MedievalAnvilCandel
+  recipes:
+  - MedievalIronCandelabra1Recipe
+  - MedievalSilverCandelabra1Recipe
+  - MedievalGoldCandelabra1Recipe
+  - MedievalIronCandelabra3Recipe
+  - MedievalSilverCandelabra3Recipe
+  - MedievalGoldCandelabra3Recipe
+  - MedievalIronCandelabraMiniRecipe
+  - MedievalSilverCandelabraMiniRecipe
+  - MedievalGoldCandelabraMiniRecipe
+
+- type: latheRecipePack
   id: MedievalLoom
   recipes:
   - MedievalClothRecipe
@@ -224,13 +237,3 @@
   id: MedievalTannery
   recipes:
   - MedievalProcessedPeltRecipe
-
-- type: latheRecipePack
-  id: MedievalAnvilCandel
-  recipes:
-  - MedievalCandelabra1
-  - MedievalCandelabra2
-  - MedievalCandelabra3
-  - MedievalCandelabra4
-  - MedievalCandelabra5
-  - MedievalCandelabra6

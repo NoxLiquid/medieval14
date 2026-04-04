@@ -134,7 +134,6 @@
     defaultProductionAmount: 1
     staticPacks:
     - MedievalAnvil
-    - MedievalAnvilCandel
   - type: NeededSkillForInteract
     neededSkills:
     - MedievalBasicBlacksmithing
