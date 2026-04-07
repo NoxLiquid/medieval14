@@ -419,3 +419,18 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+# Манекен
+
+- type: construction
+  id: MedievalStandingTarget
+  graph: MedievalStandingTarget
+  startNode: start
+  targetNode: target
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

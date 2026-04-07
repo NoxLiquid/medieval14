@@ -1,0 +1,20 @@
+- type: constructionGraph
+  id: MedievalStandingTarget
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: target
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 2
+      - material: MedievalProcessedWood
+        amount: 2
+        doAfter: 1
+      - tool: MedievalScore
+        doAfter: 2
+  - node: target
+    entity: MedievalBaseTarget

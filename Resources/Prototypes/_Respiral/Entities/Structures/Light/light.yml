@@ -22,9 +22,9 @@
     noRot: true
   - type: Appearance
   - type: ExpendableLight
-    glowDuration: 400
-    refuelMaterialTime: 400
-    refuelMaximumDuration: 405
+    glowDuration: 1200
+    refuelMaterialTime: 1200
+    refuelMaximumDuration: 1205
     fadeOutDuration: 4
     turnOnBehaviourID: turn_on
     fadeOutBehaviourID: fade_out
@@ -92,9 +92,9 @@
       shader: unshaded
   - type: ExpendableLight
     refuelMaterialID: MedievalRawCoal
-    glowDuration: 400
-    refuelMaterialTime: 400
-    refuelMaximumDuration: 405
+    glowDuration: 1200
+    refuelMaterialTime: 1200
+    refuelMaximumDuration: 1205
   - type: PointLight
     enabled: false
     netsync: false
@@ -137,9 +137,9 @@
       shader: unshaded
   - type: ExpendableLight
     refuelMaterialID: MedievalManaCrystal
-    glowDuration: 4000
-    refuelMaterialTime: 4000
-    refuelMaximumDuration: 4005
+    glowDuration: 3600
+    refuelMaterialTime: 3600
+    refuelMaximumDuration: 3605
   - type: PointLight
     enabled: false
     netsync: false
@@ -245,9 +245,9 @@
       shader: unshaded
   - type: ExpendableLight
     refuelMaterialID: MedievalRawCoal
-    glowDuration: 700
-    refuelMaterialTime: 700
-    refuelMaximumDuration: 705
+    glowDuration: 1500
+    refuelMaterialTime: 1500
+    refuelMaximumDuration: 1505
   - type: PointLight
     enabled: false
     netsync: false
@@ -299,9 +299,9 @@
       shader: unshaded
   - type: ExpendableLight
     refuelMaterialID: MedievalRawCoal
-    glowDuration: 550
-    refuelMaterialTime: 550
-    refuelMaximumDuration: 555
+    glowDuration: 1300
+    refuelMaterialTime: 1300
+    refuelMaximumDuration: 1305
   - type: PointLight
     enabled: false
     netsync: false

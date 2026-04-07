@@ -1,0 +1,47 @@
+- type: entity
+  id: MedievalBaseTarget
+  name: манекен
+  description: Манекен для отработки навыков и проверки урона.
+  parent: BaseStructureDynamic
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/target.rsi
+    state: icon
+    noRot: true
+  - type: DamagePopup
+    allowTypeChange: true
+    damagePopupType: Combined
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 200
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: Physics
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
