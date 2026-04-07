@@ -1,0 +1,328 @@
+- type: entity
+  id: MedievalBaseExpendableLightStructure
+  abstract: true
+  parent: BaseStructure
+  suffix: Средневековье
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 30
+        mask:
+        - TableMask
+  - type: InteractionOutline
+  - type: Sprite
+    noRot: true
+  - type: Appearance
+  - type: ExpendableLight
+    glowDuration: 400
+    refuelMaterialTime: 400
+    refuelMaximumDuration: 405
+    fadeOutDuration: 4
+    turnOnBehaviourID: turn_on
+    fadeOutBehaviourID: fade_out
+    litSound:
+      path: /Audio/Items/Flare/flare_on.ogg
+    loopedSound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+    dieSound:
+      path: /Audio/Items/candle_blowing.ogg
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#E25822"
+    radius: 2.5
+    energy: 3.0
+  - type: IgnitionSource
+    temperature: 700
+    ignited: false
+  - type: IgniteExpendableLightOnHotInteract
+  - type: LightBehaviour
+    behaviours:
+      - !type:RandomizeBehaviour
+        id: turn_on
+        interpolate: Nearest
+        minDuration: 0.02
+        maxDuration: 0.06
+        startValue: 2.4
+        endValue: 3.8
+        property: Energy
+        isLooped: true
+      - !type:FadeBehaviour
+        id: turn_on
+        maxDuration: 4.0
+        startValue: 1.0
+        endValue: 3.0
+      - !type:RandomizeBehaviour
+        id: fade_out
+        interpolate: Nearest
+        minDuration: 0.02
+        maxDuration: 0.06
+        startValue: 1.5
+        endValue: 3.0
+        property: Energy
+        isLooped: true
+      - !type:FadeBehaviour
+        id: fade_out
+        maxDuration: 4.0
+        startValue: 3.0
+        endValue: 0.8
+
+- type: entity
+  id: MedievalStandingTorch
+  parent: MedievalBaseExpendableLightStructure
+  name: напольный железный факел
+  description: Железный факел на длинной ножке. Его можно зажечь вручную или от другого источника огня, а когда топливо прогорит — зарядить углём.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Light/torch.rsi
+    layers:
+    - map: [ enum.ExpendableLightVisualLayers.Base ]
+      state: off
+    - map: [ enum.ExpendableLightVisualLayers.Glow ]
+      state: fire_on
+      visible: false
+      shader: unshaded
+  - type: ExpendableLight
+    refuelMaterialID: MedievalRawCoal
+    glowDuration: 400
+    refuelMaterialTime: 400
+    refuelMaximumDuration: 405
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#F5C16C"
+    radius: 2.2
+    energy: 2.8
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+      MedievalRawCoal: 25
+  - type: Construction
+    graph: MedievalStandingTorch
+    node: torch
+
+- type: entity
+  id: MedievalStandingManaTorch
+  parent: MedievalBaseExpendableLightStructure
+  name: напольный железный мана-факел
+  description: Железный факел на длинной ножке с кристаллом маны. Горит заметно дольше обычного и перезаправляется осколком мана-кристалла.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Light/torch.rsi
+    layers:
+    - map: [ enum.ExpendableLightVisualLayers.Base ]
+      state: off
+    - map: [ enum.ExpendableLightVisualLayers.Glow ]
+      state: mana_fire_on
+      visible: false
+      shader: unshaded
+  - type: ExpendableLight
+    refuelMaterialID: MedievalManaCrystal
+    glowDuration: 4000
+    refuelMaterialTime: 4000
+    refuelMaximumDuration: 4005
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#47F8FF"
+    radius: 2.6
+    energy: 3.2
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+      MedievalRawManaCrystal: 25
+  - type: Construction
+    graph: MedievalStandingManaTorch
+    node: torch
+
+- type: entity
+  id: MedievalBonfire
+  parent: MedievalBaseExpendableLightStructure
+  name: костёр
+  description: Небольшой костёр из деревянных жердей. Когда топливо прогорает, он не исчезает и ждёт, пока в него добавят ещё угля.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 30
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _Respiral/Structures/Light/bonfire.rsi
+    layers:
+    - map: [ enum.ExpendableLightVisualLayers.Base ]
+      state: off
+    - map: [ enum.ExpendableLightVisualLayers.Glow ]
+      state: fire_on
+      visible: false
+      shader: unshaded
+  - type: ExpendableLight
+    refuelMaterialID: MedievalRawCoal
+    glowDuration: 800
+    refuelMaterialTime: 800
+    refuelMaximumDuration: 805
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#FFC90C"
+    radius: 3.8
+    energy: 4.6
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalRawCoal: 25
+  - type: Construction
+    graph: MedievalBonfire
+    node: bonfire
+
+- type: entity
+  id: MedievalBrazier
+  parent: MedievalBaseExpendableLightStructure
+  name: жаровня
+  description: Деревянная жаровня для двора и зала. Её можно разжечь, а потом пополнять запас топлива углём.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        density: 30
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _Respiral/Structures/Light/brazier.rsi
+    layers:
+    - map: [ enum.ExpendableLightVisualLayers.Base ]
+      state: off
+    - map: [ enum.ExpendableLightVisualLayers.Glow ]
+      state: fire_on
+      visible: false
+      shader: unshaded
+  - type: ExpendableLight
+    refuelMaterialID: MedievalRawCoal
+    glowDuration: 700
+    refuelMaterialTime: 700
+    refuelMaximumDuration: 705
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#F5C16C"
+    radius: 3.2
+    energy: 4.0
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 140
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalRawCoal: 25
+  - type: Construction
+    graph: MedievalBrazier
+    node: brazier
+
+- type: entity
+  id: MedievalSmallBrazier
+  parent: MedievalBaseExpendableLightStructure
+  name: малая жаровня
+  description: Компактная жаровня для тесных помещений. После выгорания топлива остаётся на месте и принимает новую порцию угля.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.24
+        density: 30
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _Respiral/Structures/Light/brazier_small.rsi
+    layers:
+    - map: [ enum.ExpendableLightVisualLayers.Base ]
+      state: off
+    - map: [ enum.ExpendableLightVisualLayers.Glow ]
+      state: fire_on
+      visible: false
+      shader: unshaded
+  - type: ExpendableLight
+    refuelMaterialID: MedievalRawCoal
+    glowDuration: 550
+    refuelMaterialTime: 550
+    refuelMaximumDuration: 555
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#F5C16C"
+    radius: 2.7
+    energy: 3.3
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+      MedievalRawCoal: 25
+  - type: Construction
+    graph: MedievalSmallBrazier
+    node: brazier

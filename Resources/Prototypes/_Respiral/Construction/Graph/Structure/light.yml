@@ -1,0 +1,113 @@
+- type: constructionGraph
+  id: MedievalStandingTorch
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: torch
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 2
+      - material: MedievalProcessedIron
+        amount: 1
+        doAfter: 1
+      - material: MedievalRawCoal
+        amount: 1
+        doAfter: 1
+  - node: torch
+    entity: MedievalStandingTorch
+
+- type: constructionGraph
+  id: MedievalStandingManaTorch
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: torch
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 2
+      - material: MedievalProcessedIron
+        amount: 1
+        doAfter: 1
+      - material: MedievalManaCrystal
+        amount: 1
+        doAfter: 1
+  - node: torch
+    entity: MedievalStandingManaTorch
+
+- type: constructionGraph
+  id: MedievalBonfire
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bonfire
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - material: MedievalRodWood
+        amount: 3
+        doAfter: 2
+      - material: MedievalRawCoal
+        amount: 1
+        doAfter: 1
+  - node: bonfire
+    entity: MedievalBonfire
+
+- type: constructionGraph
+  id: MedievalBrazier
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: brazier
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 2
+      - material: MedievalRodWood
+        amount: 2
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 2
+        doAfter: 1
+      - material: MedievalRawCoal
+        amount: 1
+        doAfter: 1
+  - node: brazier
+    entity: MedievalBrazier
+
+- type: constructionGraph
+  id: MedievalSmallBrazier
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: brazier
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 2
+      - material: MedievalRodWood
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+      - material: MedievalRawCoal
+        amount: 1
+        doAfter: 1
+  - node: brazier
+    entity: MedievalSmallBrazier
