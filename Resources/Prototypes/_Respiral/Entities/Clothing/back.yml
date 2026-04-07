@@ -1,1 +1,79 @@
-# Reserved for medieval back-slot clothing prototypes.
+# Medieval back-slot clothing prototypes generated from _Respiral/Clothing/Back/*.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: MedievalClothingBackBackpack
+  suffix: Средневековье
+  name: рюкзак
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Back/backpack.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Back/backpack.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: MedievalClothingBackDuffel
+  suffix: Средневековье
+  name: вещмешок
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Back/duffel.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Back/duffel.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: MedievalClothingBackSatchel
+  suffix: Средневековье
+  name: сумка через плечо
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Back/satchel.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Back/satchel.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100

@@ -82,6 +82,7 @@
   - type: Tag
     tags:
     - MedievalSmelterMaterialStorage
+    - MedievalAnvilMaterialStorage
   - type: Sprite
     layers:
     - state: coal

@@ -287,12 +287,12 @@
     count: 1
 
 - type: entity
-  id: MedievalProcessedStone6
+  id: MedievalProcessedStone5
   parent: MedievalProcessedStone
-  suffix: Средневековье, 6
+  suffix: Средневековье, 5
   components:
   - type: Stack
-    count: 6
+    count: 5
 
 - type: entity
   parent: BaseItem

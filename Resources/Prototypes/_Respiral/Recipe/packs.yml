@@ -146,6 +146,29 @@
   - MedievalClothingOuterArmorPracticeRecipe
   - MedievalClothingOuterArmorLamellarRecipe
   - MedievalClothingOuterArmorLightLamellarRecipe
+  - MedievalClothingBeltChainRecipe
+  - MedievalClothingBeltGoldRecipe
+  - MedievalClothingBeltSilverRecipe
+  - MedievalClothingHandsChainGlovesRecipe
+  - MedievalClothingHeadCrownRecipe
+  - MedievalClothingHeadHeavyHelmetRecipe
+  - MedievalClothingHeadHelmetRecipe
+  - MedievalClothingMaskGlassesRecipe
+  - MedievalClothingShoesChainRecipe
+
+- type: latheRecipePack
+  id: MedievalAnvilCandel
+  recipes:
+  - MedievalIronCandelabra1Recipe
+  - MedievalSilverCandelabra1Recipe
+  - MedievalGoldCandelabra1Recipe
+  - MedievalIronCandelabra3Recipe
+  - MedievalSilverCandelabra3Recipe
+  - MedievalGoldCandelabra3Recipe
+  - MedievalIronCandelabraMiniRecipe
+  - MedievalSilverCandelabraMiniRecipe
+  - MedievalGoldCandelabraMiniRecipe
+  - MedievalSimpleMetalTorchRecipe
 
 - type: latheRecipePack
   id: MedievalLoom
@@ -183,6 +206,33 @@
   - MedievalClothingOuterDreadRobeRecipe
   - MedievalClothingOuterWhiteDreadRobeRecipe
   - MedievalClothingOuterWandererRobeRecipe
+  - MedievalClothingBackBackpackRecipe
+  - MedievalClothingBackDuffelRecipe
+  - MedievalClothingBackSatchelRecipe
+  - MedievalClothingBeltLeatherRecipe
+  - MedievalClothingBeltLeatherBlackRecipe
+  - MedievalClothingBeltLeatherRedRecipe
+  - MedievalClothingBeltRopeRecipe
+  - MedievalClothingHandsBlackGlovesRecipe
+  - MedievalClothingHandsLeatherGlovesRecipe
+  - MedievalClothingHandsRagGlovesRecipe
+  - MedievalClothingHeadBandanaRecipe
+  - MedievalClothingHeadCapRecipe
+  - MedievalClothingHeadCoifRecipe
+  - MedievalClothingHeadFeatherHatRecipe
+  - MedievalClothingHeadHatRecipe
+  - MedievalClothingHeadJesterCapRecipe
+  - MedievalClothingHeadMinstrelCapRecipe
+  - MedievalClothingHeadWideHatRecipe
+  - MedievalClothingMaskBandanaRecipe
+  - MedievalClothingMaskExecutionerRecipe
+  - MedievalClothingMaskPlagueDoctorRecipe
+  - MedievalClothingShoesBlackRecipe
+  - MedievalClothingShoesJesterRecipe
+  - MedievalClothingShoesLeatherRecipe
+  - MedievalClothingShoesSimpleRecipe
+  - MedievalClothingShoesStrawRecipe
+  - MedievalClothingShoesWarmRecipe
 
 - type: latheRecipePack
   id: MedievalTannery

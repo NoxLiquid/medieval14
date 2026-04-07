@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Shared.Maps;
 using Content.Shared.NPC;
 using Content.Shared.Physics;
 using Robust.Shared.Collections;
@@ -52,8 +53,21 @@ public sealed partial class PathfindingSystem
     {
         foreach (var change in ev.Changes)
         {
-            if (change.OldTile.IsEmpty == change.NewTile.IsEmpty)
+            // _Respiral-start
+            // Перестраиваем чанк не только при смене empty/non-empty, но и при смене прозрачности тайла.
+            // Иначе navmesh не узнает, что стоимость прохода через этот тайл изменилась.
+            var oldTransparent = false;
+            var newTransparent = false;
+
+            if (_tileDefs.TryGetDefinition(change.OldTile.TypeId, out var oldDef) && oldDef is ContentTileDefinition oldContentDef)
+                oldTransparent = oldContentDef.Transparent;
+
+            if (_tileDefs.TryGetDefinition(change.NewTile.TypeId, out var newDef) && newDef is ContentTileDefinition newContentDef)
+                newTransparent = newContentDef.Transparent;
+
+            if (change.OldTile.IsEmpty == change.NewTile.IsEmpty && oldTransparent == newTransparent)
                 continue;
+            // _Respiral-end
 
             DirtyChunk(ev.Entity, _maps.GridTileToLocal(ev.Entity, ev.Entity.Comp, change.GridIndices));
         }
@@ -427,6 +441,17 @@ public sealed partial class PathfindingSystem
 
                 var tile = _maps.GetTileRef(grid.Owner, grid.Comp, tilePos);
                 var flags = tile.Tile.IsEmpty ? PathfindingBreadcrumbFlag.Space : PathfindingBreadcrumbFlag.None;
+
+                // _Respiral-start
+                // Пробрасываем transparent из tile definition в breadcrumb-флаг,
+                // чтобы дальше pathfinding мог повысить стоимость таких узлов.
+                if (_tileDefs.TryGetDefinition(tile.Tile.TypeId, out var tileDef) &&
+                    tileDef is ContentTileDefinition contentTileDef &&
+                    contentTileDef.Transparent)
+                {
+                    flags |= PathfindingBreadcrumbFlag.Transparent;
+                }
+                // _Respiral-end
                 // var isBorder = x < 0 || y < 0 || x == ChunkSize - 1 || y == ChunkSize - 1;
 
                 tileEntities.Clear();

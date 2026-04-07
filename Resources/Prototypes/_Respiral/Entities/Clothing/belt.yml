@@ -1,1 +1,183 @@
-# Reserved for medieval belt-slot clothing prototypes.
+# Medieval belt-slot clothing prototypes generated from _Respiral/Clothing/Belt/*.rsi
+
+- type: entity
+  parent: MedievalBaseBelt
+  id: MedievalClothingBeltChain
+  suffix: Средневековье
+  name: цепной пояс
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Belt/chain.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Belt/chain.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseBelt
+  id: MedievalClothingBeltGold
+  suffix: Средневековье
+  name: золотой пояс
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Belt/gold.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Belt/gold.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalGold
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 100
+
+- type: entity
+  parent: MedievalBaseBelt
+  id: MedievalClothingBeltLeather
+  suffix: Средневековье
+  name: кожаный пояс
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Belt/leather.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Belt/leather.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseBelt
+  id: MedievalClothingBeltLeatherBlack
+  suffix: Средневековье
+  name: чёрный кожаный пояс
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Belt/leather_black.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Belt/leather_black.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseBelt
+  id: MedievalClothingBeltLeatherRed
+  suffix: Средневековье
+  name: красный кожаный пояс
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Belt/leather_red.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Belt/leather_red.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseBelt
+  id: MedievalClothingBeltRope
+  suffix: Средневековье
+  name: верёвочный пояс
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Belt/rope.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Belt/rope.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseBelt
+  id: MedievalClothingBeltSilver
+  suffix: Средневековье
+  name: серебряный пояс
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Belt/silver.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Belt/silver.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalSilver
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 100

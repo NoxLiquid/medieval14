@@ -1,0 +1,43 @@
+- type: entity
+  name: землеройка
+  parent: MedievalBaseHerbivore
+  description: Эта маленькая землеройка с острыми зубами и длинным носом кажется безобидной, но не стоит недооценивать её. Она может быстро бегать и прыгать, а её острые зубы могут нанести болезненные укусы. Землеройка предпочитает жить в норах и может быть найдена в лесах или на полях.
+  id: MedievalMobShrew
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/shrew.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#2B2B2B'
+      state: running
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 250
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Butcherable
+    spawned:
+    - id: MedievalRawPelt
+      amount: 1
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: InteractionPopup
+    successChance: 0.7
+    interactSuccessString: petting-success-pig
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/pig_oink.ogg
+  - type: ReplacementAccent
+    accent: pig
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-organic
+  

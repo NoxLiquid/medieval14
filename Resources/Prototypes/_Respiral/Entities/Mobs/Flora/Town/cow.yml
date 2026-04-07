@@ -1,0 +1,85 @@
+- type: entity
+  name: корова
+  parent: [ MedievalFloraMobBase, BaseMobRuminant ]
+  id: MedievalMobCow
+  abstract: true
+  description: Милая коровка. Она бродит по округе, жуя траву и изредка мычит, глядя вам прямо в глаза. Кажется, она не прочь, если вы погладите её.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cow
+      sprite: Mobs/Animals/cow.rsi
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - MedievalCow
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - MedievalCow
+    offspring:
+    - id: MedievalMobCow
+  - type: ReproductivePartner
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 400
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: cow
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: SolutionContainerManager
+    solutions:
+      udder:
+        maxVol: 250
+        reagents:
+        - ReagentId: Milk
+          Quantity: 30
+  - type: Udder
+    reagentId: Milk
+    quantityPerUpdate: 25
+    growthDelay: 30
+  - type: ExaminableHunger
+  - type: Butcherable
+    spawned:
+    - id: MedievalRawPelt
+      amount: 3
+  - type: Grammar
+    attributes:
+      gender: female
+  - type: InteractionPopup
+    successChance: 0.7
+    interactDelay: 2
+    interactSuccessString: petting-success-soft-floofy
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/cow_moo.ogg
+  - type: Perishable
+    molsPerSecondPerUnitMass: 0.0015
+  - type: MobPrice
+    price: 4000
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 300
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead

@@ -1,0 +1,34 @@
+- type: entity
+  id: MedievalWoodenFurnitureBase
+  name: wooden furniture base
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+  - type: Tag
+    tags:
+    - Wooden

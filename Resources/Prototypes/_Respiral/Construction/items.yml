@@ -1,0 +1,7 @@
+- type: construction
+  id: MedievalSimpleLightTorch
+  graph: MedievalSimpleLightTorch
+  startNode: start
+  targetNode: torch
+  category: construction-category-tools
+  objectType: Item

@@ -1,0 +1,109 @@
+- type: entity
+  name: волк
+  parent: MedievalFloraMobBase
+  id: MedievalMobWolf
+  description: Этот волк выглядит пугающе, с его острыми зубами и злобным взглядом. Он может быть агрессивным, если к нему подойти, и не стоит недооценивать его опасность.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/wolf.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#8A8F8C'
+      state: running
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Butcherable
+    spawned:
+    - id: MedievalRawPelt
+      amount: 1
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 150
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      groups:
+        Brute: 11
+  - type: NpcFactionMember
+    factions:
+    - MedievalWolf
+  - type: HTN
+    rootTask:
+      task: MedievalHostileFloraCompound
+  - type: MessyDrinker
+
+- type: entity
+  parent: MedievalMobWolf
+  id: MedievalMobWolf2
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/wolf.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#2B2B2B'
+      state: running
+
+- type: entity
+  name: полярный волк
+  parent: MedievalMobWolf
+  id: MedievalMobWolf3
+  description: Этот полярный волк выглядит ещё более пугающим, с его белой шерстью и ледяными глазами. Он может быть агрессивным, если к нему подойти, и не стоит недооценивать его опасность.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    scale: 1.2, 1.2
+    sprite: _Respiral/Mobs/Flora/wolf.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#E8E8E8'
+      state: running
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      groups:
+        Brute: 17
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      250: Dead
+
+- type: entity
+  parent: MedievalMobWolf
+  id: MedievalMobWolf4
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/wolf.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#7A5C3A'
+      state: running

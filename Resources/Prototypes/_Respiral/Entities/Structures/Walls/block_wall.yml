@@ -9,9 +9,6 @@
     - Wall
   components:
   - type: Marker
-  - type: Tag
-    tags:
-      - Wall
   - type: Sprite
     drawdepth: Walls
     sprite: _Respiral/Markers/cross.rsi

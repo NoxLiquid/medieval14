@@ -1,0 +1,84 @@
+- type: entity
+  id: MedievalGirder
+  suffix: Средневековье
+  parent: BaseStructureDynamic
+  name: каркас
+  components:
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - GlassAirlockLayer
+  - type: InteractionOutline
+  - type: Construction
+    graph: MedievalGirder
+    node: girder
+  - type: Sprite
+    sprite: Structures/barricades.rsi
+    state: barricade_full
+    noRot: true
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+          damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+
+- type: entity
+  id: MedievalGirder2
+  suffix: Средневековье lvl2
+  parent: MedievalGirder
+  components:
+  - type: Construction
+    graph: MedievalGirder
+    node: girder2
+
+- type: entity
+  id: MedievalHeavyGirder
+  parent: MedievalGirder
+  components:
+  - type: Construction
+    graph: MedievalGirder
+    node: heavyGirder
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/girder.rsi
+    state: icon
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+          damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+
+- type: entity
+  id: MedievalHeavyGirder2
+  suffix: Средневековье lvl2
+  parent: MedievalHeavyGirder
+  components:
+  - type: Construction
+    graph: MedievalGirder
+    node: heavyGirder2
