@@ -95,3 +95,12 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: cloth1 }
   color: "#949494"
   price: 0.02
+
+- type: material
+  id: MedievalRawQuartz
+  stackEntity: MedievalQuartzOre1
+  name: medieval-raw-materials-quartz
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: quartz }
+  color: "#51484F"
+  price: 2

@@ -74,3 +74,10 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: cloth1 }
   spawn: FoodMedievalFlax1
   maxCount: 5
+
+- type: stack
+  id: MedievalRawQuartz
+  name: stack-medieval-raw-quartz
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi,, state: quartz }
+  spawn: MedievalQuartzOre1
+  maxCount: 1

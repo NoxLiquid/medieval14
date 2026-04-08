@@ -60,6 +60,7 @@ stack-medieval-raw-mithril = мифрил
 stack-medieval-raw-adamantine = адамантин
 stack-medieval-raw-pelt = шкура
 stack-medieval-raw-cloth = ткань
+stack-medieval-raw-quartz = кварц
 
 stack-medieval-nail = гвоздь
 

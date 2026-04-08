@@ -353,3 +353,34 @@
   components:
   - type: Stack
     count: 1
+
+- type: entity
+  parent: MedievalOreBase
+  id: MedievalQuartzOre
+  categories: [ HideSpawnMenu ]
+  name: кварцевая руда
+  components:
+  - type: Stack
+    stackType: MedievalRawQuartz
+  - type: Tag
+    tags:
+    - MedievalSmelterMaterialStorage
+  - type: Sprite
+    layers:
+    - state: quartz
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalRawQuartz: 100
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: quartz-inhand-left
+      right:
+      - state: quartz-inhand-right
+
+- type: entity
+  id: MedievalQuartzOre1
+  parent: MedievalQuartzOre
+  components:
+  - type: Stack
+    count: 1

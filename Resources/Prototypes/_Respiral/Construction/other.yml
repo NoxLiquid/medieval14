@@ -184,6 +184,19 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  id: MedievalGate
+  graph: MedievalGate
+  startNode: start
+  targetNode: gate
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 # Хранилища 📦
 
 - type: construction

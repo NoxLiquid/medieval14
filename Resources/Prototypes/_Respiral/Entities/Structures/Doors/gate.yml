@@ -1,0 +1,81 @@
+- type: entity
+  name: ворота
+  parent: MedievalBaseDoor
+  id: MedievalGate
+  description: Эти ворота выглядят достаточно прочными, чтобы выдержать даже самые сильные бури. Они могут быть открыты только с помощью механизма, который находится внутри здания.
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Weapons/smash.ogg"
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/gate.rsi
+    snapCardinals: true
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: DoorSignalControl
+  - type: DeviceLinkSink
+    ports:
+      - Open
+      - Close
+      - Toggle
+      - AutoClose
+  - type: DeviceLinkSource
+    ports:
+      - DoorStatus
+    lastSignals:
+      DoorStatus: false
+  - type: Airtight
+    noAirWhenFullyAirBlocked: false
+  - type: RadiationBlocker
+    resistance: 3
+  - type: Occluder
+    boundingBox: "-0.5,-0.5,1.5,1.5"
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+  - type: Construction
+    graph: MedievalGate
+    node: gate
+  - type: StaticPrice
+    price: 150
+  - type: LightningTarget
+    priority: 1
+  - type: BlockWeather
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,1.49,1.49" # don't want this colliding with walls or they won't close
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+  - type: Door
+    bumpOpen: false
+    clickOpen: false
+    canPry: false
+    canCrush: true
+    closeTimeOne: 1.8
+    closeTimeTwo: 1
+    openTimeOne: 1.8
+    openTimeTwo: 1
+    openingAnimationTime: 1.8
+    closingAnimationTime: 1.8
+  placement:
+    mode: SnapgridCenter
