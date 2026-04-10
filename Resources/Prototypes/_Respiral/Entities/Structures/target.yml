@@ -3,7 +3,6 @@
   name: манекен
   description: Манекен для отработки навыков и проверки урона.
   parent: BaseStructureDynamic
-  abstract: true
   components:
   - type: Sprite
     sprite: _Respiral/Structures/target.rsi

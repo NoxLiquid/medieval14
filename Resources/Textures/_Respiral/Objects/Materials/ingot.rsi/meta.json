@@ -13,9 +13,7 @@
 	  {
       "name": "iron"
     },
-    {
-      "name": "quartz"
-    },
+
     {
       "name": "steel"
     },
@@ -50,14 +48,6 @@
     },
     {
       "name": "iron-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "quartz-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "quartz-inhand-right",
       "directions": 4
     },
     {

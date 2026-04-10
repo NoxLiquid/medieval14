@@ -78,6 +78,6 @@
 - type: stack
   id: MedievalRawQuartz
   name: stack-medieval-raw-quartz
-  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi,, state: quartz }
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: quartz }
   spawn: MedievalQuartzOre1
   maxCount: 1
