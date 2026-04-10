@@ -3,6 +3,9 @@
   id: MedievalBaseWall
   abstract: true
   components:
+  - type: Sprite
+    drawdepth: OverMobs
+  - type: SpriteFade
   - type: Tag
     tags:
     - MedievalWall
@@ -184,7 +187,9 @@
   parent: MedievalWoodenSupportWall
   name: поломанная деревянная опорная стена
   components:
+  - type: SpriteFade
   - type: Sprite
+    drawdepth: OverMobs
     sprite: Objects/Decoration/mines.rsi
     state: support_wall_broken
   - type: Destructible
@@ -212,7 +217,9 @@
   - type: Tag
     tags:
     - Wooden
+  - type: SpriteFade
   - type: Sprite
+    drawdepth: OverMobs
     noRot: true
     sprite: Objects/Decoration/mines.rsi
     state: support_wall

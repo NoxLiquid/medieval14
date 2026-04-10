@@ -29,8 +29,9 @@
     - Window
     - MedievalWall
   - type: InteractionOutline
+  - type: SpriteFade
   - type: Sprite
-    drawdepth: WallTops
+    drawdepth: OverMobs
   - type: Icon
     state: full
 

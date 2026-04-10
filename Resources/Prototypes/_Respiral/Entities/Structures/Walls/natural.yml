@@ -4,6 +4,9 @@
   abstract: true
   suffix: Средневековье
   components:
+  - type: Sprite
+    drawdepth: OverMobs
+  - type: SpriteFade
   - type: IconSmooth
     key: walls
     base: wall

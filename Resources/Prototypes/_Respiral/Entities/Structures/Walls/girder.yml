@@ -22,7 +22,9 @@
         layer:
         - GlassAirlockLayer
   - type: InteractionOutline
+  - type: SpriteFade
   - type: Sprite
+    drawdepth: OverMobs
     noRot: true
   - type: Icon
     state: frame

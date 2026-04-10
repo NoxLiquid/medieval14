@@ -25,7 +25,8 @@
     - Window
     - MedievalWall
   - type: Sprite
-    drawdepth: WallTops
+    drawdepth: OverMobs
+  - type: SpriteFade
   - type: Icon
     state: full
   - type: Physics
@@ -83,7 +84,8 @@
     - Window
     - MedievalWall
   - type: Sprite
-    drawdepth: WallTops
+    drawdepth: OverMobs
+  - type: SpriteFade
   - type: Icon
     state: full
   - type: Physics

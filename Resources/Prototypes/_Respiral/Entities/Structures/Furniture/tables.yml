@@ -26,7 +26,7 @@
     key: state
     base: state_
   - type: Construction
-    graph: Table
+    graph: MedievalTable
     node: MedievalTableWoodFrame
   - type: PhysicalComposition
     materialComposition:
@@ -49,7 +49,7 @@
     key: counterwood
     base: state_
   - type: Construction
-    graph: Table
+    graph: MedievalTable
     node: MedievalCounterWood
   - type: PhysicalComposition
     materialComposition:
@@ -70,7 +70,7 @@
   - type: IconSmooth
     key: woodtable
   - type: Construction
-    graph: Table
+    graph: MedievalTable
     node: MedievalTableWood
   - type: PhysicalComposition
     materialComposition:
