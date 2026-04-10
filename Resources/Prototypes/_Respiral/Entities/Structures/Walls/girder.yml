@@ -1,8 +1,9 @@
 - type: entity
-  id: MedievalGirder
+  id: MedievalBaseWallFrame
+  abstract: true
   suffix: Средневековье
   parent: BaseStructureDynamic
-  name: каркас
+  name: каркас стены
   components:
   - type: Transform
     anchored: true
@@ -21,13 +22,16 @@
         layer:
         - GlassAirlockLayer
   - type: InteractionOutline
-  - type: Construction
-    graph: MedievalGirder
-    node: girder
   - type: Sprite
-    sprite: Structures/barricades.rsi
-    state: barricade_full
     noRot: true
+  - type: Icon
+    state: frame
+
+- type: entity
+  id: MedievalBaseWoodWallFrame
+  abstract: true
+  parent: MedievalBaseWallFrame
+  components:
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
@@ -35,50 +39,131 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-          damage: 200
+        damage: 250
       behaviors:
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
       - !type:PlaySoundBehavior
-          sound:
-            collection: MetalBreak
+        sound:
+          collection: WoodDestroyHeavy
 
 - type: entity
-  id: MedievalGirder2
-  suffix: Средневековье lvl2
-  parent: MedievalGirder
+  id: MedievalBaseStoneWallFrame
+  abstract: true
+  parent: MedievalBaseWallFrame
   components:
-  - type: Construction
-    graph: MedievalGirder
-    node: girder2
-
-- type: entity
-  id: MedievalHeavyGirder
-  parent: MedievalGirder
-  components:
-  - type: Construction
-    graph: MedievalGirder
-    node: heavyGirder
-  - type: Sprite
-    sprite: _Respiral/Structures/Walls/girder.rsi
-    state: icon
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-          damage: 400
+        damage: 350
       behaviors:
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
       - !type:PlaySoundBehavior
-          sound:
-            collection: MetalBreak
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
 
 - type: entity
-  id: MedievalHeavyGirder2
-  suffix: Средневековье lvl2
-  parent: MedievalHeavyGirder
+  id: MedievalWallWoodenFrame
+  parent: MedievalBaseWoodWallFrame
+  name: каркас деревянной стены
   components:
   - type: Construction
-    graph: MedievalGirder
-    node: heavyGirder2
+    graph: MedievalWall
+    node: woodenWallFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/wooden_wall.rsi
+    state: frame
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/wooden_wall.rsi
+
+- type: entity
+  id: MedievalWallWoodenBirchFrame
+  parent: MedievalBaseWoodWallFrame
+  name: каркас берёзовой стены
+  components:
+  - type: Construction
+    graph: MedievalWall
+    node: woodenBirchWallFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/wooden_wall_birch.rsi
+    state: frame
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/wooden_wall_birch.rsi
+
+- type: entity
+  id: MedievalWallWoodenSpruceFrame
+  parent: MedievalBaseWoodWallFrame
+  name: каркас еловой стены
+  components:
+  - type: Construction
+    graph: MedievalWall
+    node: woodenSpruceWallFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/wooden_wall_spruce.rsi
+    state: frame
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/wooden_wall_spruce.rsi
+
+- type: entity
+  id: MedievalWallWoodenPalisadFrame
+  parent: MedievalBaseWoodWallFrame
+  name: каркас палисады
+  components:
+  - type: Construction
+    graph: MedievalWall
+    node: woodenPalisadWallFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/wooden_palisad.rsi
+    state: full
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/wooden_palisad.rsi
+    state: full
+
+- type: entity
+  id: MedievalWallBrickStoneOldFrame
+  parent: MedievalBaseStoneWallFrame
+  name: каркас старой кирпично-каменной стены
+  components:
+  - type: Construction
+    graph: MedievalWall
+    node: brickStoneOldWallFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/brick_stone_old_wall.rsi
+    state: frame
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/brick_stone_old_wall.rsi
+
+- type: entity
+  id: MedievalWallBricksStoneFrame
+  parent: MedievalBaseStoneWallFrame
+  name: каркас кирпично-каменной стены
+  components:
+  - type: Construction
+    graph: MedievalWall
+    node: bricksStoneWallFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/bricks_stone_wall.rsi
+    state: frame
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/bricks_stone_wall.rsi
+
+- type: entity
+  id: MedievalWallMarbleBricksStoneFrame
+  parent: MedievalBaseStoneWallFrame
+  name: каркас мраморно-кирпичной стены
+  components:
+  - type: Construction
+    graph: MedievalWall
+    node: marbleBricksStoneWallFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/marblebricks_stone_wall.rsi
+    state: frame
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/marblebricks_stone_wall.rsi

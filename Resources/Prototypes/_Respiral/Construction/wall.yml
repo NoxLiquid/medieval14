@@ -1,0 +1,90 @@
+- type: construction
+  id: MedievalWallWooden
+  graph: MedievalWall
+  startNode: start
+  targetNode: woodenWall
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWallWoodenBirch
+  graph: MedievalWall
+  startNode: start
+  targetNode: woodenBirchWall
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWallWoodenSpruce
+  graph: MedievalWall
+  startNode: start
+  targetNode: woodenSpruceWall
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWallWoodenPalisad
+  graph: MedievalWall
+  startNode: start
+  targetNode: woodenPalisadWall
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWallBrickStoneOld
+  graph: MedievalWall
+  startNode: start
+  targetNode: brickStoneOldWall
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWallBricksStone
+  graph: MedievalWall
+  startNode: start
+  targetNode: bricksStoneWall
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWallMarbleBricksStone
+  graph: MedievalWall
+  startNode: start
+  targetNode: marbleBricksStoneWall
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
