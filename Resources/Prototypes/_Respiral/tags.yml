@@ -36,3 +36,9 @@
 
 - type: Tag
   id: MedievalCow
+
+- type: Tag
+  id: MedievalWall
+
+- type: Tag
+  id: MedievalDiagonal
