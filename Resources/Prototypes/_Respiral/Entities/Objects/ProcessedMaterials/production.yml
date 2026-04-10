@@ -407,6 +407,51 @@
     count: 5
 
 - type: entity
+  id: MedievalGlass
+  parent: SheetGlassBase
+  name: стекло
+  categories: [ HideSpawnMenu ]
+  suffix: Средневековье
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalGlass: 100
+  - type: Stack
+    stackType: MedievalGlass
+    baseLayer: base
+    layerStates:
+    - glass
+    - glass_2
+    - glass_3
+  - type: Sprite
+    state: glass_3
+    layers:
+    - state: glass_3
+      map: ["base"]
+  - type: Item
+    heldPrefix: glass
+
+- type: entity
+  id: MedievalGlass1
+  parent: MedievalGlass
+  components:
+  - type: Sprite
+    state: glass
+    layers:
+    - state: glass
+      map: ["base"]
+  - type: Stack
+    count: 1
+
+- type: entity
+  id: MedievalGlass5
+  parent: MedievalGlass
+  suffix: Средневековье, 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
   name: дублёная кожа
   description: Прочно выделанная кожа, готовая для пошива одежды, обуви или брони. Гибкая и долговечная, ценится у ремесленников.
   id: MedievalProcessedPelt

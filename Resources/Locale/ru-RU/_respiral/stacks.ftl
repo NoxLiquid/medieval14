@@ -48,6 +48,7 @@ stack-medieval-processed-adamantine = обработанный адаманти�
 stack-medieval-processed-stone = обработанный камень
 stack-medieval-processed-cloth = ткань
 stack-medieval-processed-pelt = дублёная кожа
+stack-medieval-processed-glass = стекло
 stack-medieval-tool-ammo = стройматериалы
 
 stack-medieval-raw-wood = древесина
