@@ -348,7 +348,7 @@
     - MedievalTanneryMaterialStorage
   - type: PhysicalComposition
     materialComposition:
-      MedievalRawPelt: 100
+      MedievalPelt: 100
 
 - type: entity
   parent: MedievalPelt

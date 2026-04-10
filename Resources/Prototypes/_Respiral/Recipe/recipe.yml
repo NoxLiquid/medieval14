@@ -1259,7 +1259,7 @@
   id: MedievalProcessedPeltRecipe
   result: MedievalProcessedPelt1
   materials:
-    MedievalRawPelt: 100
+    MedievalPelt: 100
 
 # Швейный станок
 

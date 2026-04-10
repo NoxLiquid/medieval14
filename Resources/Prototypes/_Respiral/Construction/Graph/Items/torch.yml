@@ -6,7 +6,7 @@
       edges:
         - to: torch
           steps:
-            - material: MedievalPartRodWood
+            - material: MedievalRodWood
               amount: 1
               doAfter: 2
             - material: MedievalRawCoal

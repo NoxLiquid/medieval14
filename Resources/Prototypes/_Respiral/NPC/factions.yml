@@ -28,7 +28,6 @@
   - MedievalWolf
   hostile:
   - TownPeople
-  - MedievalHostileFlora
   - MedievalCat
   - MedievalBear
   - MedievalFox
@@ -41,7 +40,6 @@
   hostile:
   - MedievalWolf
   - TownPeople
-  - MedievalHostileFlora
   - MedievalBear
   - MedievalFox
   - MedievalHog
@@ -53,7 +51,6 @@
   hostile:
   - MedievalWolf
   - TownPeople
-  - MedievalHostileFlora
   - MedievalCat
   - MedievalFox
   - MedievalHog
@@ -65,7 +62,6 @@
   hostile:
   - MedievalWolf
   - TownPeople
-  - MedievalHostileFlora
   - MedievalBear
   - MedievalCat
   - MedievalHog
@@ -77,7 +73,6 @@
   hostile:
   - MedievalWolf
   - TownPeople
-  - MedievalHostileFlora
   - MedievalBear
   - MedievalFox
   - MedievalCat
