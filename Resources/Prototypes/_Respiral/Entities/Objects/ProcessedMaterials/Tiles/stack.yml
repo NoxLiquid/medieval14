@@ -63,6 +63,42 @@
   spawn: MedievalFloorTileItemStone
   maxCount: 15
 
+- type: stack
+  id: MedievalFloorTileMarbleSmallBricks
+  name: stack-medieval-floor-marble-small-bricks
+  spawn: MedievalFloorTileItemMarbleSmallBricks
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileMarble
+  name: stack-medieval-floor-marble
+  spawn: MedievalFloorTileItemMarble
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileStoneBrickSmallCarved
+  name: stack-medieval-floor-stonebrick-small-carved
+  spawn: MedievalFloorTileItemStoneBrickSmallCarved
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileStoneBrickSmallCarved2
+  name: stack-medieval-floor-stonebrick-small-carved2
+  spawn: MedievalFloorTileItemStoneBrickSmallCarved2
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileStoneBrickSquareCarved
+  name: stack-medieval-floor-stonebrick-square-carved
+  spawn: MedievalFloorTileItemStoneBrickSquareCarved
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileStoneBrick
+  name: stack-medieval-floor-stonebrick
+  spawn: MedievalFloorTileItemStoneBrick
+  maxCount: 15
+
 # Дерево
 
 - type: stack

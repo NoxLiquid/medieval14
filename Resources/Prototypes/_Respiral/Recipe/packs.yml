@@ -1,8 +1,19 @@
 - type: latheRecipePack
-  id: MedievalSawmillStatic
+  id: MedievalSawmillPack
   recipes:
   - MedievalBoardRecipe
   - MedievalPartRodWoodRecipe
+
+- type: latheRecipePack
+  id: MedievalQuarryPack
+  recipes:
+  - MedievalFloorTileItemStoneRecipe
+  - MedievalFloorTileItemMarbleSmallBricksRecipe
+  - MedievalFloorTileItemMarbleRecipe
+  - MedievalFloorTileItemStoneBrickSmallCarvedRecipe
+  - MedievalFloorTileItemStoneBrickSmallCarved2Recipe
+  - MedievalFloorTileItemStoneBrickSquareCarvedRecipe
+  - MedievalFloorTileItemStoneBrickRecipe
 
 - type: latheRecipePack
   id: MedievalCarpenterTable
@@ -49,6 +60,7 @@
   recipes:
   - MedievaHammerAmmoRecipe
   - MedievalSawmillDetailRecipe
+  - MedievalQuarryDetailRecipe
   - MedievalConstructionToolsRecipe
   - MedievalBaseLockpickRecipe
   - MedievalKeyRecipe

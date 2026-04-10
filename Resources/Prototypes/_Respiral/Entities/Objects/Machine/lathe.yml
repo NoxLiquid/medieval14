@@ -24,15 +24,51 @@
     runningState: building
     defaultProductionAmount: 1
     staticPacks:
-    - MedievalSawmillStatic
+    - MedievalSawmillPack
   - type: NeededSkillForInteract
     neededSkills:
     - MedievalWoodProcessing
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedWood: 504
+      MedievalProcessedWood: 404
       MedievalRawManaCrystal: 100
-      MedievalProcessedIron: 4
+      MedievalProcessedIron: 104
+      MedievalProcessedStone: 6
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalQuarry
+  name: каменоломня
+  description: Станок для обработки камня, состоящий из массивного каменного основания и железных деталей.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Machines/sawmill.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalQuarryDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalQuarryMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalQuarryPack
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalStoneProcessing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 404
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 104
       MedievalProcessedStone: 6
 
 - type: entity

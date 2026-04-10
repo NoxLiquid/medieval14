@@ -145,6 +145,114 @@
     stackType: MedievalFloorTileStone
 
 - type: entity
+  id: MedievalFloorTileItemMarbleSmallBricks
+  parent: MedievalFloorTileItemBase
+  name: мраморный пол из мелкого кирпича
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    state: marble_smallbricks
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorMarbleSmallBricks
+  - type: Stack
+    stackType: MedievalFloorTileMarbleSmallBricks
+
+- type: entity
+  id: MedievalFloorTileItemMarble
+  parent: MedievalFloorTileItemBase
+  name: мраморный пол
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    state: marble
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorMarble
+  - type: Stack
+    stackType: MedievalFloorTileMarble
+
+- type: entity
+  id: MedievalFloorTileItemStoneBrickSmallCarved
+  parent: MedievalFloorTileItemBase
+  name: резной пол из мелкого каменного кирпича
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    state: stonebrick_small_carved
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneBrickSmallCarved
+  - type: Stack
+    stackType: MedievalFloorTileStoneBrickSmallCarved
+
+- type: entity
+  id: MedievalFloorTileItemStoneBrickSmallCarved2
+  parent: MedievalFloorTileItemBase
+  name: резной пол из мелкого каменного кирпича 2
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    state: stonebrick_small_carved2
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneBrickSmallCarved2
+  - type: Stack
+    stackType: MedievalFloorTileStoneBrickSmallCarved2
+
+- type: entity
+  id: MedievalFloorTileItemStoneBrickSquareCarved
+  parent: MedievalFloorTileItemBase
+  name: резной пол из квадратного каменного кирпича
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    state: stonebrick_square_carved
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneBrickSquareCarved
+  - type: Stack
+    stackType: MedievalFloorTileStoneBrickSquareCarved
+
+- type: entity
+  id: MedievalFloorTileItemStoneBrick
+  parent: MedievalFloorTileItemBase
+  name: пол из каменного кирпича
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    state: stonebrick
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/crystal_punk.rsi
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneBrick
+  - type: Stack
+    stackType: MedievalFloorTileStoneBrick
+
+- type: entity
   id: MedievalFloorTileItemAsh
   parent: MedievalFloorTileItemBase
   name: пепел

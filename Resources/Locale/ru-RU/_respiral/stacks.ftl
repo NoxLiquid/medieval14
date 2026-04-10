@@ -75,3 +75,9 @@ stack-medieval-grass-dark2-floor = тёмная трава 2
 
 stack-medieval-snow-floor = снег
 stack-medieval-ash-floor = пепел
+stack-medieval-floor-marble-small-bricks = мраморный пол из мелкого кирпича
+stack-medieval-floor-marble = мраморный пол
+stack-medieval-floor-stonebrick-small-carved = резной пол из мелкого каменного кирпича
+stack-medieval-floor-stonebrick-small-carved2 = резной пол из мелкого каменного кирпича 2
+stack-medieval-floor-stonebrick-square-carved = резной пол из квадратного каменного кирпича
+stack-medieval-floor-stonebrick = пол из каменного кирпича

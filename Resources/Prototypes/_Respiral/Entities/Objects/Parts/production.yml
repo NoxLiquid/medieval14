@@ -8,6 +8,19 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
+      MedievalProcessedWood: 400
+
+- type: entity
+  id: MedievalQuarryDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь каменоломни
+  components:
+  - type: MachineBoard
+    prototype: MedievalQuarry
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+      MedievalProcessedWood: 400
 
 - type: entity
   id: MedievalCarpenterTableDetail

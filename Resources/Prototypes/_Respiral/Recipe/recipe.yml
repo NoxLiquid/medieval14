@@ -31,6 +31,15 @@
 
 - type: latheRecipe
   abstract: true
+  id: MedievalBaseStoneTileRecipe
+  completetime: 10
+  materials:
+    MedievalProcessedStone: 100
+  categories:
+  - MedievalTileCategory
+
+- type: latheRecipe
+  abstract: true
   id: MedievalBaseDetailsRecipe
   completetime: 10
   categories:
@@ -231,6 +240,41 @@
   id: MedievalFloorTileItemWoodChessRedRecipe
   result: MedievalFloorTileItemWoodChessRed5
 
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneRecipe
+  result: MedievalFloorTileItemStone
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemMarbleSmallBricksRecipe
+  result: MedievalFloorTileItemMarbleSmallBricks
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemMarbleRecipe
+  result: MedievalFloorTileItemMarble
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneBrickSmallCarvedRecipe
+  result: MedievalFloorTileItemStoneBrickSmallCarved
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneBrickSmallCarved2Recipe
+  result: MedievalFloorTileItemStoneBrickSmallCarved2
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneBrickSquareCarvedRecipe
+  result: MedievalFloorTileItemStoneBrickSquareCarved
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneBrickRecipe
+  result: MedievalFloorTileItemStoneBrick
+
 ## Плавильня
 
 - type: latheRecipe
@@ -289,6 +333,15 @@
   result: MedievalSawmillDetail
   materials:
     MedievalProcessedIron: 100
+    MedievalProcessedWood: 400
+
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalQuarryDetailRecipe
+  result: MedievalQuarryDetail
+  materials:
+    MedievalProcessedIron: 100
+    MedievalProcessedWood: 400
 
 - type: latheRecipe
   parent: MedievalBaseToolsRecipe
@@ -1181,7 +1234,7 @@
   materials:
     MedievalProcessedIron: 100
 
-# Каменоломня
+# Плавильня
 
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
