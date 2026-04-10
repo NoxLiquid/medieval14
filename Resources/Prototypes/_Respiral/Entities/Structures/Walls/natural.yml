@@ -1,0 +1,394 @@
+- type: entity
+  parent: MedievalBaseWall
+  id: MedievalNaturalWallBase
+  abstract: true
+  suffix: Средневековье
+  components:
+  - type: IconSmooth
+    key: walls
+    base: wall
+
+- type: entity
+  parent: MedievalNaturalWallBase
+  id: MedievalNaturalMineWallBase
+  abstract: true
+  components:
+  - type: SoundOnGather
+  - type: Gatherable
+    toolWhitelist:
+      tags:
+      - Pickaxe
+  - type: MiningScannerViewable
+
+- type: entity
+  parent: MedievalNaturalMineWallBase
+  id: MedievalWallCaveStone
+  name: каменная пещерная стена
+  description: Плотная природная каменная порода.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        offset: 0.5
+        spawn:
+          MedievalStoneOre:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  parent: MedievalNaturalMineWallBase
+  id: MedievalWallCaveStoneStrong
+  name: укреплённая каменная пещерная стена
+  description: Более прочная природная каменная порода.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_strong.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_strong.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        offset: 0.5
+        spawn:
+          MedievalStoneOre:
+            min: 2
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  parent: MedievalNaturalMineWallBase
+  id: MedievalWallCaveStoneCoal
+  name: угольная жила
+  description: Каменная жила с редкими включениями угля.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_coal.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_coal.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalCoalOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  parent: MedievalNaturalMineWallBase
+  id: MedievalWallCaveStoneGold
+  name: золотая жила
+  description: Каменная жила с редкими включениями золота.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_gold.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_gold.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalGoldOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  parent: MedievalNaturalMineWallBase
+  id: MedievalWallCaveStoneIron
+  name: железная жила
+  description: Каменная жила с редкими включениями железа.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_iron.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_iron.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalIronOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  parent: MedievalNaturalMineWallBase
+  id: MedievalWallCaveStoneMithril
+  name: мифриловая жила
+  description: Каменная жила с редкими включениями мифрила.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_mithril.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_mithril.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalMithrilOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  parent: MedievalNaturalMineWallBase
+  id: MedievalWallCaveStoneSilver
+  name: серебряная жила
+  description: Каменная жила с редкими включениями серебра.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_silver.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/cave_stone_silver.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalSilverOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  parent: MedievalNaturalMineWallBase
+  id: MedievalWallNaturalQuartz
+  name: кварцевая стена
+  description: Хрупкая кварцевая порода.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/quartz.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/quartz.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalQuartz
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 175
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        offset: 0.5
+        spawn:
+          MedievalQuartzOre:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  parent: MedievalNaturalWallBase
+  id: MedievalWallNaturalDirt
+  name: земляная стена
+  description: Слежавшаяся земля и каменная крошка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/dirt_wall.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/dirt_wall.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalDirt
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 450
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  parent: MedievalNaturalWallBase
+  id: MedievalWallNaturalLeaf
+  name: стена из листвы
+  description: Плотно слежавшаяся листва и корни.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/leaf.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/leaf.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalGrass
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+
+- type: entity
+  parent: MedievalNaturalWallBase
+  id: MedievalWallNaturalSnow
+  name: снежная стена
+  description: Плотный наст из снега и льда.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/Natural/snow_wall.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/Natural/snow_wall.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalSnow
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -10

@@ -24,7 +24,7 @@
         - MobLayer
   - type: Butcherable
     spawned:
-    - id: MedievalRawPelt
+    - id: MedievalPelt
       amount: 1
   - type: Grammar
     attributes:

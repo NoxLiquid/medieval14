@@ -56,7 +56,7 @@
   - type: ExaminableHunger
   - type: Butcherable
     spawned:
-    - id: MedievalRawPelt
+    - id: MedievalPelt
       amount: 3
   - type: Grammar
     attributes:

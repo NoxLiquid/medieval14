@@ -79,7 +79,7 @@
   price: 3.07
 
 - type: material
-  id: MedievalRawPelt
+  id: MedievalPelt
   stackEntity: MedievalPelt1
   name: medieval-raw-materials-pelt
   unit: materials-unit-chunk

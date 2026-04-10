@@ -27,7 +27,7 @@
     speechVerb: SmallMob
   - type: Butcherable
     spawned:
-    - id: MedievalRawPelt
+    - id: MedievalPelt
       amount: 1
   - type: ReplacementAccent
     accent: cat

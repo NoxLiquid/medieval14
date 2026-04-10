@@ -28,7 +28,7 @@
     - Pig
   - type: Butcherable
     spawned:
-    - id: MedievalRawPelt
+    - id: MedievalPelt
       amount: 2
   - type: Grammar
     attributes:
