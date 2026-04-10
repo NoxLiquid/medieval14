@@ -159,7 +159,7 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTrigger
+        !type:DamageTrigger # если вдруг урона будет много, то палисад развалится полностью
         damage: 1800
       behaviors:
       - !type:DoActsBehavior

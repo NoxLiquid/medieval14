@@ -1,0 +1,145 @@
+- type: entity
+  id: MedievalBaseWindowFrame
+  abstract: true
+  parent: BaseStructureDynamic
+  suffix: Средневековье
+  description: Каркас, в который можно вставить стекло.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Tag
+    tags:
+    - ForceFixRotations
+    - Window
+    - MedievalWall
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: WallTops
+  - type: Icon
+    state: full
+
+- type: entity
+  id: MedievalBaseWoodenWindowFrame
+  abstract: true
+  parent: MedievalBaseWindowFrame
+  components:
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+
+- type: entity
+  id: MedievalBaseStoneWindowFrame
+  abstract: true
+  parent: MedievalBaseWindowFrame
+  components:
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 180
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+
+- type: entity
+  id: MedievalWindowWoodenFrame
+  parent: MedievalBaseWoodenWindowFrame
+  name: каркас деревянного окна
+  components:
+  - type: Construction
+    graph: MedievalWindow
+    node: woodenWindowFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Windows/wooden_window_frame.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Windows/wooden_window_frame.rsi
+    state: full
+  - type: IconSmooth
+    key: medievalWoodenWindows
+    base: window
+
+- type: entity
+  id: MedievalWindowWoodenBirchFrame
+  parent: MedievalBaseWoodenWindowFrame
+  name: каркас берёзового окна
+  components:
+  - type: Construction
+    graph: MedievalWindow
+    node: woodenBirchWindowFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Windows/birch_window_frame.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Windows/birch_window_frame.rsi
+    state: full
+  - type: IconSmooth
+    key: medievalBirchWindows
+    base: window
+
+- type: entity
+  id: MedievalWindowStoneBricksFrame
+  parent: MedievalBaseStoneWindowFrame
+  name: каркас кирпично-каменного окна
+  components:
+  - type: Construction
+    graph: MedievalWindow
+    node: stoneBricksWindowFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Windows/stone_bricks_window_frame.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Windows/stone_bricks_window_frame.rsi
+    state: full
+  - type: IconSmooth
+    key: medievalStoneBrickWindows
+    base: window
+
+- type: entity
+  id: MedievalWindowMarbleBricksFrame
+  parent: MedievalBaseStoneWindowFrame
+  name: каркас мраморно-кирпичного окна
+  components:
+  - type: Construction
+    graph: MedievalWindow
+    node: marbleBricksWindowFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Windows/marble_bricks_window_frame.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Windows/marble_bricks_window_frame.rsi
+    state: full
+  - type: IconSmooth
+    key: medievalMarbleBrickWindows
+    base: window

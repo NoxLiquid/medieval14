@@ -37,7 +37,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 200
       behaviors:
       - !type:SpawnEntitiesBehavior
         offset: 0.5
@@ -70,14 +70,14 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 250
+        damage: 1000
       behaviors:
       - !type:SpawnEntitiesBehavior
         offset: 0.5
         spawn:
           MedievalStoneOre:
-            min: 2
-            max: 3
+            min: 1
+            max: 2
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
@@ -102,8 +102,92 @@
   - type: Destructible
     thresholds:
     - trigger:
+        !type:DamageTrigger # без RepeatDamageTrigger т.к. если будет нанесено. например, 300 урона, то руда выпадет только 1 раз, а не 3
+        damage: 100
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalCoalOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 200
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalCoalOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalCoalOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalCoalOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
       behaviors:
       - !type:ProbSpawnEntitiesBehavior
         offset: 0.5
@@ -142,7 +226,91 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 100
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalGoldOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalGoldOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalGoldOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalGoldOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
       behaviors:
       - !type:ProbSpawnEntitiesBehavior
         offset: 0.5
@@ -181,7 +349,91 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 100
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalIronOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalIronOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalIronOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalIronOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
       behaviors:
       - !type:ProbSpawnEntitiesBehavior
         offset: 0.5
@@ -220,7 +472,91 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 100
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalMithrilOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalMithrilOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalMithrilOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalMithrilOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
       behaviors:
       - !type:ProbSpawnEntitiesBehavior
         offset: 0.5
@@ -259,7 +595,91 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 100
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalSilverOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalSilverOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalSilverOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:ProbSpawnEntitiesBehavior
+        offset: 0.5
+        amount: 1
+        spawns:
+        - id: MedievalStoneOre
+          prob: 0.8
+          amount: 1
+          maxAmount: 1
+        - id: MedievalSilverOre
+          prob: 0.2
+          amount: 1
+          maxAmount: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
       behaviors:
       - !type:ProbSpawnEntitiesBehavior
         offset: 0.5
