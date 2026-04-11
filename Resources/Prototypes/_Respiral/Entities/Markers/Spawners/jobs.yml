@@ -1,0 +1,205 @@
+# Medieval jobs
+
+- type: entity
+  id: SpawnPointMedievalLord
+  parent: SpawnPointJobBase
+  name: лорд
+  components:
+  - type: SpawnPoint
+    job_id: MedievalLord
+  - type: Sprite
+    layers:
+      - state: green
+      - state: captain
+
+- type: entity
+  id: SpawnPointMedievalKnight
+  parent: SpawnPointJobBase
+  name: рыцарь
+  components:
+  - type: SpawnPoint
+    job_id: MedievalKnight
+  - type: Sprite
+    layers:
+      - state: green
+      - state: warden
+
+- type: entity
+  id: SpawnPointMedievalCitySteward
+  parent: SpawnPointJobBase
+  name: управляющий городом
+  components:
+  - type: SpawnPoint
+    job_id: MedievalCitySteward
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hop
+
+- type: entity
+  id: SpawnPointMedievalTreasurer
+  parent: SpawnPointJobBase
+  name: казначей
+  components:
+  - type: SpawnPoint
+    job_id: MedievalTreasurer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: qm
+
+- type: entity
+  id: SpawnPointMedievalBlacksmith
+  parent: SpawnPointJobBase
+  name: кузнец
+  components:
+  - type: SpawnPoint
+    job_id: MedievalBlacksmith
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: SpawnPointMedievalCarpenter
+  parent: SpawnPointJobBase
+  name: плотник
+  components:
+  - type: SpawnPoint
+    job_id: MedievalCarpenter
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: SpawnPointMedievalMason
+  parent: SpawnPointJobBase
+  name: каменщик
+  components:
+  - type: SpawnPoint
+    job_id: MedievalMason
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: SpawnPointMedievalEngineer
+  parent: SpawnPointJobBase
+  name: инженер
+  components:
+  - type: SpawnPoint
+    job_id: MedievalEngineer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: SpawnPointMedievalInnkeeper
+  parent: SpawnPointJobBase
+  name: корчмарь
+  components:
+  - type: SpawnPoint
+    job_id: MedievalInnkeeper
+  - type: Sprite
+    layers:
+      - state: green
+      - state: bartender
+
+- type: entity
+  id: SpawnPointMedievalHerbalist
+  parent: SpawnPointJobBase
+  name: травник
+  components:
+  - type: SpawnPoint
+    job_id: MedievalHerbalist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: botanist
+
+- type: entity
+  id: SpawnPointMedievalCitizen
+  parent: SpawnPointJobBase
+  name: горожанин
+  components:
+  - type: SpawnPoint
+    job_id: MedievalCitizen
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointMedievalMerchant
+  parent: SpawnPointJobBase
+  name: торговец
+  components:
+  - type: SpawnPoint
+    job_id: MedievalMerchant
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+
+- type: entity
+  id: SpawnPointMedievalGuard
+  parent: SpawnPointJobBase
+  name: стражник
+  components:
+  - type: SpawnPoint
+    job_id: MedievalGuard
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointMedievalElder
+  parent: SpawnPointJobBase
+  name: староста
+  components:
+  - type: SpawnPoint
+    job_id: MedievalElder
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hop
+
+- type: entity
+  id: SpawnPointMedievalFarmer
+  parent: SpawnPointJobBase
+  name: фермер
+  components:
+  - type: SpawnPoint
+    job_id: MedievalFarmer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: botanist
+
+- type: entity
+  id: SpawnPointMedievalPeasant
+  parent: SpawnPointJobBase
+  name: крестьянин
+  components:
+  - type: SpawnPoint
+    job_id: MedievalPeasant
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointMedievalPilligrim
+  parent: SpawnPointJobBase
+  name: переселенец
+  components:
+  - type: SpawnPoint
+    job_id: MedievalPilligrim
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger

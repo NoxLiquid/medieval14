@@ -1,0 +1,47 @@
+- type: job
+  id: MedievalLord
+  name: job-name-medieval-lord
+  description: job-description-medieval-lord
+  playTimeTracker: JobMedievalLord
+  startingGear: MedievalLordGear
+  icon: JobIconCaptain
+  supervisors: job-supervisors-medieval-none
+
+- type: startingGear
+  id: MedievalLordGear
+
+- type: job
+  id: MedievalKnight
+  name: job-name-medieval-knight
+  description: job-description-medieval-knight
+  playTimeTracker: JobMedievalKnight
+  startingGear: MedievalKnightGear
+  icon: JobIconWarden
+  supervisors: job-supervisors-medieval-lord
+
+- type: startingGear
+  id: MedievalKnightGear
+
+- type: job
+  id: MedievalCitySteward
+  name: job-name-medieval-city-steward
+  description: job-description-medieval-city-steward
+  playTimeTracker: JobMedievalCitySteward
+  startingGear: MedievalCityStewardGear
+  icon: JobIconHeadOfPersonnel
+  supervisors: job-supervisors-medieval-lord
+
+- type: startingGear
+  id: MedievalCityStewardGear
+
+- type: job
+  id: MedievalTreasurer
+  name: job-name-medieval-treasurer
+  description: job-description-medieval-treasurer
+  playTimeTracker: JobMedievalTreasurer
+  startingGear: MedievalTreasurerGear
+  icon: JobIconQuarterMaster
+  supervisors: job-supervisors-medieval-lord
+
+- type: startingGear
+  id: MedievalTreasurerGear
