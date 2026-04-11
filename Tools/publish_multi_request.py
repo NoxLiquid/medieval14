@@ -4,6 +4,7 @@ import argparse
 import requests
 import os
 import subprocess
+import sys
 from typing import Iterable
 
 
@@ -49,6 +50,15 @@ def main():
         "Content-Type": "application/json"
     }
     resp = session.post(f"{robust_cdn_url}fork/{fork_id}/publish/start", json=data, headers=headers)
+    if resp.status_code == 409:
+        print(
+            "Publish already exists or is already in progress for this version. "
+            "Treating as an idempotent success."
+        )
+        response_text = resp.text.strip()
+        if response_text:
+            print(response_text)
+        sys.exit(0)
     resp.raise_for_status()
     print("Publish successfully started, adding files...")
 
