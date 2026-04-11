@@ -4,7 +4,15 @@
   graph:
   - node: start
     edges:
-    - to: girder
+    - to: ironColits
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+    - to: woodenDoorFrame
       completed:
         - !type:SnapToGrid
           southRotation: true
@@ -12,170 +20,173 @@
         - material: MedievalConstructionToolsAmmo
           amount: 1
           doAfter: 1
-
-  - node: girder
-    entity: MedievalDoorGirder
-    edges:
-    - to: start
-      completed:
-        - !type:SpawnPrototype
-          prototype: MedievalConstructionToolsAmmo
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
           amount: 1
-        - !type:DeleteEntity {}
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
+          doAfter: 5
+
+    - to: woodenBirchDoorFrame
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
       steps:
-        - tool: Screwing
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+
+    - to: ironDoorFrame
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalProcessedIron
+          amount: 1
+          doAfter: 10
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalProcessedIron
+          amount: 3
+          doAfter: 10
+        - tool: MedievalScore
           doAfter: 2
 
-    - to: girder2
+    - to: woodDoorConvenientWindow
       conditions:
         - !type:EntityAnchored
           anchored: true
       steps:
         - tool: MedievalScore
           doAfter: 2
-
-  - node: girder2
-    entity: MedievalDoorGirder
-    edges:
-    - to: girder
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - tool: Screwing
-          doAfter: 2
-
-    - to: woodDoor
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - material: MedievalBoard
+        - material: MedievalConstructionToolsAmmo
           amount: 1
           doAfter: 1
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalProcessedWood
+          amount: 3
+          doAfter: 10
+        - tool: MedievalScore
+          doAfter: 2
 
-    - to: stoneDoor
+
+  - node: woodDoorConvenientWindow
+    entity: MedievalWoodDoorConvenientWindow
+
+  - node: woodenDoorFrame
+    entity: MedievalWoodenDoorFrame
+    edges:
+    - to: woodenDoor
       conditions:
         - !type:EntityAnchored
           anchored: true
       steps:
-        - material: MedievalProcessedStone
-          amount: 5
-          doAfter: 12
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
 
+    - to: woodenWindowedDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+        - material: MedievalGlass
+          amount: 1
+          doAfter: 5
+
+  - node: woodenDoor
+    entity: MedievalWoodenDoor
+
+  - node: woodenWindowedDoor
+    entity: MedievalWoodenWindowedDoor
+
+  - node: woodenBirchDoorFrame
+    entity: MedievalWoodenBirchDoorFrame
+    edges:
+    - to: woodenBirchDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+
+    - to: woodenBirchWindowedDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+        - material: MedievalGlass
+          amount: 1
+          doAfter: 5
+
+  - node: woodenBirchDoor
+    entity: MedievalWoodenBirchDoor
+
+  - node: woodenBirchWindowedDoor
+    entity: MedievalWoodenBirchWindowedDoor
+
+  - node: ironDoorFrame
+    entity: MedievalIronDoorFrame
+    edges:
     - to: ironDoor
       conditions:
         - !type:EntityAnchored
           anchored: true
       steps:
+        - tool: MedievalScore
+          doAfter: 2
         - material: MedievalProcessedIron
-          amount: 3
-          doAfter: 24
-
-    - to: girder3
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - tool: MedievalScore
-          doAfter: 2
-
-  - node: girder3
-    entity: MedievalDoorGirder
-    edges:
-    - to: girder2
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - tool: Screwing
-          doAfter: 2
-
-    - to: ironWoodDurableDoor
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - material: MedievalBoard
-          amount: 1
-          doAfter: 5
-        - material: MedievalProcessedIron
-          amount: 1
-          doAfter: 5
-
-    - to: girder4
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - tool: MedievalScore
-          doAfter: 2
-
-  - node: girder4
-    entity: MedievalDoorGirder
-    edges:
-    - to: girder3
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - tool: Screwing
-          doAfter: 2
-
-    - to: woodDoorFrame
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - material: MedievalBoard
-          amount: 1
-          doAfter: 5
-
-    - to: girder5
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - tool: MedievalScore
-          doAfter: 2
-
-  - node: girder5
-    entity: MedievalDoorGirder
-    edges:
-    - to: girder4
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - tool: Screwing
-          doAfter: 2
-
-    - to: woodDurableDoor
-      conditions:
-        - !type:EntityAnchored
-          anchored: true
-      steps:
-        - material: MedievalBoard
           amount: 2
+          doAfter: 14
+
+    - to: ironWindowedDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalProcessedIron
+          amount: 2
+          doAfter: 14
+        - material: MedievalGlass
+          amount: 1
           doAfter: 5
-
-  - node: woodDoor
-    entity: MedievalWoodDoor
-
-  - node: woodDurableDoor
-    entity: MedievalWoodDurableDoor
-
-  - node: ironWoodDurableDoor
-    entity: MedievalIronWoodDurableDoor
-
-  - node: woodDoorFrame
-    entity: MedievalWoodDoorFrame
-
-  - node: stoneDoor
-    entity: MedievalStoneDoor
 
   - node: ironDoor
-    entity: MedievalIronDoor
+    entity: MedievalIronPlateDoor
+
+  - node: ironWindowedDoor
+    entity: MedievalIronWindowedDoor
+
+  - node: ironColits
+    entity: MedievalIronColits

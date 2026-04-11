@@ -9414,7 +9414,7 @@ entities:
     - type: Transform
       pos: 7.5,32.5
       parent: 1
-- proto: MedievalIronDoor
+- proto: MedievalIronColits
   entities:
   - uid: 1468
     components:
@@ -14906,7 +14906,7 @@ entities:
     - type: Transform
       pos: -28.5,1.5
       parent: 1
-- proto: MedievalWoodDoor
+- proto: MedievalWoodenDoor
   entities:
   - uid: 2208
     components:
@@ -14957,7 +14957,7 @@ entities:
     - type: Transform
       pos: 14.5,-63.5
       parent: 1
-- proto: MedievalWoodDoorFrame
+- proto: MedievalWoodenDoorFrame
   entities:
   - uid: 1933
     components:

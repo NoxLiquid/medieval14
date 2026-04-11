@@ -1,0 +1,155 @@
+- type: construction
+  id: MedievalWoodConvenientWindow
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodDoorConvenientWindow
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalIronDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: ironColits
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWoodenDoorFrame
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodenDoorFrame
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWoodenDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodenDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWoodenWindowedDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodenWindowedDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWoodenBirchDoorFrame
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodenBirchDoorFrame
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWoodenBirchDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodenBirchDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWoodenBirchWindowedDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: woodenBirchWindowedDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalIronDoorFrame
+  graph: MedievalDoor
+  startNode: start
+  targetNode: ironDoorFrame
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalIronPlateDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: ironDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalIronWindowedDoor
+  graph: MedievalDoor
+  startNode: start
+  targetNode: ironWindowedDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalGate
+  graph: MedievalGate
+  startNode: start
+  targetNode: gate
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

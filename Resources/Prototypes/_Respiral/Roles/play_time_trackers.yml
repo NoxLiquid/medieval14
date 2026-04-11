@@ -1,54 +1,54 @@
 # Jobs
 
 - type: playTimeTracker
-	id: JobMedievalLord
+  id: JobMedievalLord
 
 - type: playTimeTracker
-	id: JobMedievalKnight
+  id: JobMedievalKnight
 
 - type: playTimeTracker
-	id: JobMedievalCitySteward
+  id: JobMedievalCitySteward
 
 - type: playTimeTracker
-	id: JobMedievalTreasurer
+  id: JobMedievalTreasurer
 
 - type: playTimeTracker
-	id: JobMedievalBlacksmith
+  id: JobMedievalBlacksmith
 
 - type: playTimeTracker
-	id: JobMedievalCarpenter
+  id: JobMedievalCarpenter
 
 - type: playTimeTracker
-	id: JobMedievalMason
+  id: JobMedievalMason
 
 - type: playTimeTracker
-	id: JobMedievalEngineer
+  id: JobMedievalEngineer
 
 - type: playTimeTracker
-	id: JobMedievalInnkeeper
+  id: JobMedievalInnkeeper
 
 - type: playTimeTracker
-	id: JobMedievalHerbalist
+  id: JobMedievalHerbalist
 
 - type: playTimeTracker
-	id: JobMedievalCitizen
+  id: JobMedievalCitizen
 
 - type: playTimeTracker
-	id: JobMedievalMerchant
+  id: JobMedievalMerchant
 
 - type: playTimeTracker
-	id: JobMedievalGuard
+  id: JobMedievalGuard
 
 - type: playTimeTracker
-	id: JobMedievalElder
+  id: JobMedievalElder
 
 - type: playTimeTracker
-	id: JobMedievalFarmer
+  id: JobMedievalFarmer
 
 - type: playTimeTracker
-	id: JobMedievalPeasant
+  id: JobMedievalPeasant
 
 - type: playTimeTracker
-	id: JobMedievalPilligrim
+  id: JobMedievalPilligrim
 
 # Commoner

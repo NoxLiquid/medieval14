@@ -68,17 +68,6 @@
     node: girder
 
 - type: entity
-  id: MedievalDoorGirder
-  suffix: Средневековье, дверь
-  parent: MedievalBaseFurnitureGirder
-  components:
-  - type: Construction
-    graph: MedievalDoor
-    node: girder
-  - type: Sprite
-    state: door
-
-- type: entity
   id: MedievalCrateGirder
   suffix: Средневековье, сундук
   parent: MedievalBaseFurnitureGirder

@@ -1,106 +1,97 @@
 - type: entity
-  id: MedievalWoodDoor
-  name: деревянная дверь
+  id: MedievalBaseInstantDoor
+  abstract: true
   parent: MedievalBaseLockableDoor
   components:
-  - type: Construction
-    graph: MedievalDoor
-    node: woodDoor
+  - type: Door
+    openDrawDepth: OverMobs
+    closedDrawDepth: OverMobs
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    openingAnimationTime: 0
+    closingAnimationTime: 0
+  - type: Occluder
+    boundingBox: "-0.5,-0.25,0.5,0.5"
 
 - type: entity
-  id: MedievalWoodDurableDoor
-  name: крепкая деревянная дверь
-  parent: MedievalBaseLockableDoor
+  id: MedievalBaseIronInstantDoor
+  abstract: true
+  parent: MedievalBaseInstantDoor
   components:
-  - type: Construction
-    graph: MedievalDoor
-    node: woodDurableDoor
-  - type: Sprite
-    sprite: _Respiral/Structures/Doors/wood_durable_door.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 2000
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-
-- type: entity
-  id: MedievalIronWoodDurableDoor
-  name: укреплённая деревянная дверь
-  parent: MedievalBaseLockableDoor
-  components:
-  - type: Construction
-    graph: MedievalDoor
-    node: ironWoodDurableDoor
-  - type: Sprite
-    sprite: _Respiral/Structures/Doors/iron_wood_durable_door.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 3000
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-
-- type: entity
-  id: MedievalWoodDoorFrame
-  name: деревянное раздвижное окно
-  parent: MedievalBaseLockableDoor
-  components:
-  - type: Construction
-    graph: MedievalDoor
-    node: woodDoorFrame
-  - type: Sprite
-    sprite: _Respiral/Structures/Doors/wood_door_frame.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1500
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-
-- type: entity
-  id: MedievalStoneDoor
-  name: каменная дверь
-  parent: MedievalBaseLockableDoor
-  components:
-  - type: Construction
-    graph: MedievalDoor
-    node: stoneDoor
-  - type: Sprite
-    sprite: _Respiral/Structures/Doors/stone_durable_door.rsi
   - type: Damageable
     damageContainer: MedievalInorganic
-    damageModifierSet: MedievalStone
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 3000
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+    damageModifierSet: MedievalIron
   - type: Door
+    openDrawDepth: OverMobs
+    closedDrawDepth: OverMobs
     openSound:
       path: /Audio/Effects/stonedoor_openclose.ogg
     closeSound:
       path: /Audio/Effects/stonedoor_openclose.ogg
 
 - type: entity
-  id: MedievalIronDoor
-  name: железная дверь
-  parent: MedievalBaseLockableDoor
+  id: MedievalBaseWindowedDoor
+  abstract: true
   components:
-  - type: Construction
-    graph: MedievalDoor
-    node: ironDoor
-  - type: Sprite
-    sprite: _Respiral/Structures/Doors/iron_door.rsi
+  - type: Door
+    occludes: false
+    changeAirtight: false
+  - type: Occluder
+    enabled: false
+
+- type: entity
+  id: MedievalBaseDoorFrame
+  abstract: true
+  parent: BaseStructure
+  suffix: Средневековье
+  description: Каркас двери, который можно восстановить.
+  components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        density: 80
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+
+- type: entity
+  id: MedievalBaseWoodenDoorFrame
+  abstract: true
+  parent: MedievalBaseDoorFrame
+  components:
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedievalBaseIronDoorFrame
+  abstract: true
+  parent: MedievalBaseDoorFrame
+  components:
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -108,12 +99,220 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 2500
+        damage: 400
       behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: Door
-    openSound:
-      path: /Audio/Effects/stonedoor_openclose.ogg
-    closeSound:
-      path: /Audio/Effects/stonedoor_openclose.ogg
+
+- type: entity
+  id: MedievalWoodenDoorFrame
+  name: каркас деревянной двери
+  parent: MedievalBaseWoodenDoorFrame
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: woodenDoorFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/wooden_frame.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Doors/wooden_frame.rsi
+    state: closed
+
+- type: entity
+  id: MedievalWoodenBirchDoorFrame
+  name: каркас берёзовой двери
+  parent: MedievalBaseWoodenDoorFrame
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: woodenBirchDoorFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/wooden_birch_frame.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Doors/wooden_birch_frame.rsi
+    state: closed
+
+- type: entity
+  id: MedievalIronDoorFrame
+  name: каркас железной двери
+  parent: MedievalBaseIronDoorFrame
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: ironDoorFrame
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/iron_frame.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Doors/iron_frame.rsi
+    state: closed
+
+- type: entity
+  id: MedievalWoodenDoor
+  name: деревянная дверь
+  parent: MedievalBaseInstantDoor
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: woodenDoor
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/wooden_door.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Doors/wooden_door.rsi
+    state: closed
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:ChangeConstructionNodeBehavior
+        node: woodenDoorFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedievalWoodenWindowedDoor
+  name: деревянная дверь с окном
+  parent: [MedievalBaseInstantDoor, MedievalBaseWindowedDoor]
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: woodenWindowedDoor
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/wooden_windowed_door.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Doors/wooden_windowed_door.rsi
+    state: closed
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:ChangeConstructionNodeBehavior
+        node: woodenDoorFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedievalWoodenBirchDoor
+  name: берёзовая дверь
+  parent: MedievalBaseInstantDoor
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: woodenBirchDoor
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/wooden_birch_door.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Doors/wooden_birch_door.rsi
+    state: closed
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1050
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:ChangeConstructionNodeBehavior
+        node: woodenBirchDoorFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedievalWoodenBirchWindowedDoor
+  name: берёзовая дверь с окном
+  parent: [MedievalBaseInstantDoor, MedievalBaseWindowedDoor]
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: woodenBirchWindowedDoor
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/wooden_birch_windowed_door.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Doors/wooden_birch_windowed_door.rsi
+    state: closed
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1050
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:ChangeConstructionNodeBehavior
+        node: woodenBirchDoorFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedievalIronPlateDoor
+  name: железная дверь
+  parent: MedievalBaseIronInstantDoor
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: ironDoor
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/iron_door.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Doors/iron_door.rsi
+    state: closed
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1800
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:ChangeConstructionNodeBehavior
+        node: ironDoorFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedievalIronWindowedDoor
+  name: железная дверь с окном
+  parent: [MedievalBaseIronInstantDoor, MedievalBaseWindowedDoor]
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: ironWindowedDoor
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/iron_windowed_door.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Doors/iron_windowed_door.rsi
+    state: closed
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1800
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:ChangeConstructionNodeBehavior
+        node: ironDoorFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
