@@ -22,3 +22,10 @@
         - type: StationJobs
           availableJobs:
             MedievalPilligrim: [ -1, -1 ]
+
+- type: zMap
+  id: MedievalVerdantVale
+  maps:
+    - /Maps/_Respiral/medieval_verdant_vale_above.yml
+    - /Maps/_Respiral/medieval_verdant_vale.yml
+    - /Maps/_Respiral/medieval_verdant_vale_below.yml
