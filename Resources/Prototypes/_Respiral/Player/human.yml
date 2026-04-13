@@ -1,0 +1,16 @@
+- type: entity
+  parent: MedievalMobHuman
+  id: MedievalMobHumanPilligrim
+  name: путник
+  suffix: Human, Base
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  # - type: Loadout
+  #   prototypes: [SyndicateOperativeGearExtremelyBasic]
+  #   roleLoadout: [ RoleSurvivalSyndicate ]
+  - type: RandomMetadata
+    nameSegments: [MedievalNames]
+  - type: NpcFactionMember
+    factions:
+    - TownPeople
