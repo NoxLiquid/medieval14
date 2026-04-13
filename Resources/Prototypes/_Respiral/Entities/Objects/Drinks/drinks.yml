@@ -1,0 +1,472 @@
+- type: entity
+  abstract: true
+  parent: DrinkBaseCup
+  id: MedievalDrinkBaseWoodenCup
+  components:
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 25
+
+- type: entity
+  abstract: true
+  parent: DrinkBaseCup
+  id: MedievalDrinkBaseIconFillCup
+  components:
+  - type: Appearance
+  - type: Sprite
+    layers:
+    - state: icon-0
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: icon-
+    inHandsFillBaseName: null
+
+- type: entity
+  abstract: true
+  parent: [MedievalDrinkBaseWoodenCup, MedievalDrinkBaseIconFillCup]
+  id: MedievalDrinkBaseWoodenBeerMug
+  name: деревянная кружка
+  description: Простая деревянная кружка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_wood.rsi
+    layers:
+    - state: icon-0
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+
+- type: entity
+  abstract: true
+  parent: [DrinkBaseMaterialMetal, MedievalDrinkBaseIconFillCup]
+  id: MedievalDrinkBaseMetalBeerMug
+  name: металлическая кружка
+  description: Кружка, выкованная из металла.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
+    layers:
+    - state: icon-0
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+
+- type: entity
+  abstract: true
+  parent: [MedievalDrinkBaseWoodenCup, MedievalDrinkBaseIconFillCup]
+  id: MedievalDrinkBaseWoodMetalBeerMug
+  name: окованная кружка
+  description: Деревянная кружка с металлической окантовкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_wood_metall.rsi
+    layers:
+    - state: icon-0
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: metall
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+
+- type: entity
+  abstract: true
+  parent: [DrinkBaseMaterialMetal, DrinkBaseCup]
+  id: MedievalDrinkBaseGoblet
+  name: кубок
+  description: Металлический кубок.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/goblet.rsi
+    layers:
+    - state: iron_goblet
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: fill-
+    inHandsFillBaseName: null
+
+- type: entity
+  abstract: true
+  parent: [DrinkBaseMaterialGlass, DrinkBase, DrinkBaseOpenable, DrinkVisualsAll]
+  id: MedievalDrinkBaseBottle
+  name: бутылка
+  description: Стеклянная бутылка для напитков.
+  components:
+  - type: Item
+    size: Small
+  - type: Openable
+    sound:
+      collection: bottleOpenSounds
+    closeable: true
+    closeSound:
+      collection: bottleCloseSounds
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 50
+  - type: FitsInDispenser
+    solution: drink
+  - type: Tool
+    qualities:
+    - Rolling
+    speedModifier: 0.75
+  - type: Tag
+    tags:
+    - DrinkBottle
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalGlass: 25
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          BrokenBottle:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalDrinkBaseWoodenBeerMug
+  id: MedievalDrinkMugWood
+  name: деревянная кружка
+  description: Простая деревянная кружка.
+
+- type: entity
+  parent: MedievalDrinkBaseMetalBeerMug
+  id: MedievalDrinkMugIron
+  name: железная кружка
+  description: Прочная железная кружка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
+    layers:
+    - state: icon-0
+      color: "#8A8A8A"
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 25
+
+- type: entity
+  parent: MedievalDrinkBaseMetalBeerMug
+  id: MedievalDrinkMugSteel
+  name: стальная кружка
+  description: Тяжёлая стальная кружка.
+  components:
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
+    layers:
+    - state: icon-0
+      color: "#B0C4DE"
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 25
+
+- type: entity
+  parent: MedievalDrinkBaseMetalBeerMug
+  id: MedievalDrinkMugSilver
+  name: серебряная кружка
+  description: Кружка из серебра.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
+    layers:
+    - state: icon-0
+      color: "#C0C0FF"
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 25
+
+- type: entity
+  parent: [DrinkBaseMaterialGold, MedievalDrinkBaseIconFillCup]
+  id: MedievalDrinkMugGold
+  name: золотая кружка
+  description: Роскошная золотая кружка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
+    layers:
+    - state: icon-0
+      color: "#FFD700"
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 25
+
+- type: entity
+  parent: MedievalDrinkBaseWoodMetalBeerMug
+  id: MedievalDrinkMugWoodIron
+  name: окованная железом кружка
+  description: Деревянная кружка с железной окантовкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_wood_metall.rsi
+    layers:
+    - state: icon-0
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: metall
+      color: "#8A8A8A"
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+      MedievalProcessedIron: 5
+
+- type: entity
+  parent: MedievalDrinkBaseWoodMetalBeerMug
+  id: MedievalDrinkMugWoodSteel
+  name: окованная сталью кружка
+  description: Деревянная кружка со стальной окантовкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_wood_metall.rsi
+    layers:
+    - state: icon-0
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: metall
+      color: "#B0C4DE"
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+      MedievalSteel: 5
+
+- type: entity
+  parent: MedievalDrinkBaseWoodMetalBeerMug
+  id: MedievalDrinkMugWoodSilver
+  name: окованная серебром кружка
+  description: Деревянная кружка с серебряной окантовкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_wood_metall.rsi
+    layers:
+    - state: icon-0
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: metall
+      color: "#C0C0FF"
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+      MedievalProcessedSilver: 5
+
+- type: entity
+  parent: [DrinkBaseMaterialGold, MedievalDrinkBaseWoodMetalBeerMug]
+  id: MedievalDrinkMugWoodGold
+  name: окованная золотом кружка
+  description: Деревянная кружка с золотой окантовкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/beer_mug_wood_metall.rsi
+    layers:
+    - state: icon-0
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: metall
+      color: "#FFD700"
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+      MedievalProcessedGold: 5
+
+- type: entity
+  parent: MedievalDrinkBaseGoblet
+  id: MedievalDrinkGobletIron
+  name: железный кубок
+  description: Железный кубок для вина и эля.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/goblet.rsi
+    layers:
+    - state: iron_goblet
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 25
+
+- type: entity
+  parent: MedievalDrinkBaseGoblet
+  id: MedievalDrinkGobletSteel
+  name: стальной кубок
+  description: Стальной кубок с холодным блеском.
+  components:
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/goblet.rsi
+    layers:
+    - state: iron_goblet
+      color: "#B0C4DE"
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 25
+
+- type: entity
+  parent: MedievalDrinkBaseGoblet
+  id: MedievalDrinkGobletSilver
+  name: серебряный кубок
+  description: Серебряный кубок для торжеств.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/goblet.rsi
+    layers:
+    - state: iron_goblet
+      color: "#C0C0FF"
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 25
+
+- type: entity
+  parent: [DrinkBaseMaterialGold, DrinkBaseCup]
+  id: MedievalDrinkGobletGold
+  name: золотой кубок
+  description: Роскошный золотой кубок.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/goblet.rsi
+    layers:
+    - state: gold_goblet
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: fill-
+    inHandsFillBaseName: null
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 25
+
+- type: entity
+  parent: MedievalDrinkBaseBottle
+  id: MedievalDrinkBottleBlue
+  name: синяя бутылка
+  description: Стеклянная бутылка синего стекла.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/blue_bottle.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+
+- type: entity
+  parent: MedievalDrinkBaseBottle
+  id: MedievalDrinkBottleGreen
+  name: зелёная бутылка
+  description: Стеклянная бутылка зелёного стекла.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/green_bottle.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+
+- type: entity
+  parent: MedievalDrinkBaseBottle
+  id: MedievalDrinkBottleGreenTall
+  name: высокая зелёная бутылка
+  description: Высокая бутылка из зелёного стекла.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/green2_bottle.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+
+- type: entity
+  parent: MedievalDrinkBaseBottle
+  id: MedievalDrinkBottleOrange
+  name: янтарная бутылка
+  description: Бутылка из янтарного стекла.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/orange_bottle.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+
+- type: entity
+  parent: MedievalDrinkBaseBottle
+  id: MedievalDrinkBottleRed
+  name: красная бутылка
+  description: Бутылка из красного стекла.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Drinks/red_bottle.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4

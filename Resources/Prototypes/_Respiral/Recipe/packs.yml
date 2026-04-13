@@ -19,6 +19,7 @@
   id: MedievalCarpenterTable
   recipes:
   - MedievalBucketRecipe
+  - MedievalDrinkMugWoodRecipe
   - MedievalCarpenterTableDetailRecipe
   - MedievalAlchemTableDetailRecipe
   - MedievalReagentGrinderDetailRecipe
@@ -54,6 +55,11 @@
   - MedievalGoldIngotRecipe
   - MedievalMithrilIngotRecipe
   - MedievalAdamantineIngotRecipe
+  - MedievalDrinkBottleBlueRecipe
+  - MedievalDrinkBottleGreenRecipe
+  - MedievalDrinkBottleGreenTallRecipe
+  - MedievalDrinkBottleOrangeRecipe
+  - MedievalDrinkBottleRedRecipe
 
 - type: latheRecipePack
   id: MedievalAnvil
@@ -62,6 +68,19 @@
   - MedievalSawmillDetailRecipe
   - MedievalQuarryDetailRecipe
   - MedievalConstructionToolsRecipe
+  - MedievalDrinkMugWoodRecipe
+  - MedievalDrinkMugIronRecipe
+  - MedievalDrinkMugSteelRecipe
+  - MedievalDrinkMugSilverRecipe
+  - MedievalDrinkMugGoldRecipe
+  - MedievalDrinkMugWoodIronRecipe
+  - MedievalDrinkMugWoodSteelRecipe
+  - MedievalDrinkMugWoodSilverRecipe
+  - MedievalDrinkMugWoodGoldRecipe
+  - MedievalDrinkGobletIronRecipe
+  - MedievalDrinkGobletSteelRecipe
+  - MedievalDrinkGobletSilverRecipe
+  - MedievalDrinkGobletGoldRecipe
   - MedievalBaseLockpickRecipe
   - MedievalKeyRecipe
   - MedievalLockRecipe
