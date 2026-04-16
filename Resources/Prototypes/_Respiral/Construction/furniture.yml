@@ -231,6 +231,18 @@
   placementMode: SnapgridCenter
   canBuildInImpassable: true
 
+- type: construction
+  id: MedievalBookshelf
+  graph: MedievalBookshelf
+  startNode: start
+  targetNode: bookshelf
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 # Шкафы 🗄️
 
 - type: construction
