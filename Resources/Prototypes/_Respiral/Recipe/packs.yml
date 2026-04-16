@@ -212,6 +212,14 @@
   - MedievalComfortableBedsheetRecipe
   - MedievalLeatherBedsheetRecipe
   - MedievalSimpleBedsheetRecipe
+  - MedievalCarpetRedRecipe
+  - MedievalCarpetBlackRecipe
+  - MedievalCarpetBlueRecipe
+  - MedievalCarpetCyanRecipe
+  - MedievalCarpetGreenRecipe
+  - MedievalCarpetOrangeRecipe
+  - MedievalCarpetPurpleRecipe
+  - MedievalCarpetYellowRecipe
   - MedievalClothingInnerDressRecipe
   - MedievalClothingInnerLongTunicRecipe
   - MedievalClothingInnerPeasantRagsRecipe

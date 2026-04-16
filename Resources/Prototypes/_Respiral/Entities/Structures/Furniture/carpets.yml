@@ -1,0 +1,139 @@
+- type: entity
+  id: MedievalCarpetBase
+  parent: BaseStructure
+  name: ковёр
+  description: Мягкое тканое покрытие для пола.
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+  - type: Icon
+    state: full
+  - type: IconSmooth
+    key: full
+    base: carpet_
+  - type: Tag
+    tags:
+    - Carpet
+    - ForceFixRotations
+  - type: Clickable
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 5
+        layer:
+        - DoorPassable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: MedievalFlax
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalCloth1:
+            min: 1
+            max: 1
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 2
+    spawned:
+    - id: MedievalCloth1
+      amount: 1
+  - type: TrayScanReveal
+
+- type: entity
+  id: MedievalCarpetRed
+  parent: MedievalCarpetBase
+  name: красный ковёр
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Carpets/red_carpet.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Carpets/red_carpet.rsi
+
+- type: entity
+  id: MedievalCarpetBlack
+  parent: MedievalCarpetBase
+  name: чёрный ковёр
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Carpets/black_carpet.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Carpets/black_carpet.rsi
+
+- type: entity
+  id: MedievalCarpetBlue
+  parent: MedievalCarpetBase
+  name: синий ковёр
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Carpets/blue_carpet.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Carpets/blue_carpet.rsi
+
+- type: entity
+  id: MedievalCarpetCyan
+  parent: MedievalCarpetBase
+  name: бирюзовый ковёр
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Carpets/cyan_carpet.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Carpets/cyan_carpet.rsi
+
+- type: entity
+  id: MedievalCarpetGreen
+  parent: MedievalCarpetBase
+  name: зелёный ковёр
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Carpets/green_carpet.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Carpets/green_carpet.rsi
+
+- type: entity
+  id: MedievalCarpetOrange
+  parent: MedievalCarpetBase
+  name: оранжевый ковёр
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Carpets/orange_carpet.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Carpets/orange_carpet.rsi
+
+- type: entity
+  id: MedievalCarpetPurple
+  parent: MedievalCarpetBase
+  name: фиолетовый ковёр
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Carpets/purple_carpet.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Carpets/purple_carpet.rsi
+
+- type: entity
+  id: MedievalCarpetYellow
+  parent: MedievalCarpetBase
+  name: жёлтый ковёр
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Carpets/yellow_carpet.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Carpets/yellow_carpet.rsi
