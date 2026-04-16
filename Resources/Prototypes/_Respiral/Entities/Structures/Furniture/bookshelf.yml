@@ -71,3 +71,8 @@
     graph: MedievalBookshelf
     node: bookshelf
   - type: BlockWeather
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 203
+      MedievalProcessedStone: 7
+      MedievalProcessedIron: 3

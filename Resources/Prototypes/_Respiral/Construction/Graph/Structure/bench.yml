@@ -1,0 +1,33 @@
+- type: constructionGraph
+  id: MedievalBench
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: bench
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - tool: Screwing
+        doAfter: 2
+      - material: MedievalBoard
+        amount: 2
+        doAfter: 3
+      - tool: MedievalScore
+        doAfter: 2
+
+  - node: bench
+    entity: MedievalBenchWood
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalBoard1
+        amount: 2
+      steps:
+      - tool: Prying
+        doAfter: 3

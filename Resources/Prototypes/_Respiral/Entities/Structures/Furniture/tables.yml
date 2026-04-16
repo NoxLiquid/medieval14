@@ -7,10 +7,11 @@
   components:
   - type: SpriteFade
   - type: Sprite
-    sprite: Structures/Furniture/Tables/frame.rsi
+    sprite: _Respiral/Structures/Furniture/Tables/wood.rsi
+    state: frame
   - type: Icon
-    sprite: Structures/Furniture/Tables/frame.rsi
-    state: full
+    sprite: _Respiral/Structures/Furniture/Tables/wood.rsi
+    state: frame
   - type: Fixtures
     fixtures:
       fix1:
@@ -41,9 +42,9 @@
   description: Идеально подходит чтобы топить печь.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/counterwood.rsi
+    sprite: _Respiral/Structures/Furniture/Tables/wood_counter.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/counterwood.rsi
+    sprite: _Respiral/Structures/Furniture/Tables/wood_counter.rsi
     state: full
   - type: IconSmooth
     key: counterwood
@@ -64,9 +65,10 @@
   description: Идеально подходит чтобы топить печь.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/wood.rsi
+    sprite: _Respiral/Structures/Furniture/Tables/wood.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/wood.rsi
+    sprite: _Respiral/Structures/Furniture/Tables/wood.rsi
+    state: full
   - type: IconSmooth
     key: woodtable
   - type: Construction
@@ -76,4 +78,88 @@
     materialComposition:
       MedievalProcessedWood: 103
       MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+
+- type: entity
+  id: MedievalCounterBirch
+  parent: [CounterBase, MedievalWoodenFurnitureBase]
+  name: берёзовая стойка
+  description: Светлая деревянная стойка из берёзы.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Tables/birch_counter.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Tables/birch_counter.rsi
+    state: full
+  - type: IconSmooth
+    key: birchcounter
+    base: state_
+  - type: Construction
+    graph: MedievalTable
+    node: MedievalCounterBirch
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 103
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+
+- type: entity
+  id: MedievalTableBirch
+  parent: [TableBase, MedievalWoodenFurnitureBase]
+  name: берёзовый стол
+  description: Светлый деревянный стол из берёзы.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Tables/birch.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Tables/birch.rsi
+    state: full
+  - type: IconSmooth
+    key: birchtable
+  - type: Construction
+    graph: MedievalTable
+    node: MedievalTableBirch
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 103
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 3
+
+- type: entity
+  id: MedievalTableMarble
+  parent: TableBase
+  name: мраморный стол
+  description: Тяжёлый каменный стол с мраморной столешницей.
+  components:
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Tables/marble.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/Tables/marble.rsi
+    state: full
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: IconSmooth
+    key: marbletable
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepTile
+  - type: Construction
+    graph: MedievalTable
+    node: MedievalTableMarble
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 3
+      MedievalProcessedStone: 106
       MedievalProcessedIron: 3

@@ -23,6 +23,42 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  id: MedievalCounterBirch
+  graph: MedievalTable
+  startNode: start
+  targetNode: MedievalCounterBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalTableBirch
+  graph: MedievalTable
+  startNode: start
+  targetNode: MedievalTableBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalTableMarble
+  graph: MedievalTable
+  startNode: start
+  targetNode: MedievalTableMarble
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 # Кровати 🛏️
 
 - type: construction
@@ -236,6 +272,30 @@
   graph: MedievalBookshelf
   startNode: start
   targetNode: bookshelf
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalBenchWood
+  graph: MedievalBench
+  startNode: start
+  targetNode: bench
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalBarrel
+  graph: MedievalBarrel
+  startNode: start
+  targetNode: barrel
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter

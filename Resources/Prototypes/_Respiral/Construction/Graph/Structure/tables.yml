@@ -40,6 +40,18 @@
             - material: MedievalBoard
               amount: 1
               doAfter: 1
+        - to: MedievalCounterBirch
+          conditions:
+            - !type:MinHealth
+              threshold: 250
+          steps:
+            - tool: MedievalScore
+              doAfter: 1
+            - tool: MedievalScore
+              doAfter: 1
+            - material: MedievalBoard
+              amount: 1
+              doAfter: 1
         - to: MedievalTableWood
           conditions:
             - !type:MinHealth
@@ -50,9 +62,42 @@
             - material: MedievalBoard
               amount: 1
               doAfter: 1
+        - to: MedievalTableBirch
+          conditions:
+            - !type:MinHealth
+              threshold: 250
+          steps:
+            - tool: MedievalScore
+              doAfter: 1
+            - material: MedievalBoard
+              amount: 1
+              doAfter: 1
+        - to: MedievalTableMarble
+          conditions:
+            - !type:MinHealth
+              threshold: 250
+          steps:
+            - material: MedievalProcessedStone
+              amount: 1
+              doAfter: 2
 
     - node: MedievalCounterWood
       entity: MedievalCounterWood
+      edges:
+        - to: MedievalTableWoodFrame
+          conditions:
+            - !type:MinHealth
+              threshold: 250
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 1
+          steps:
+            - tool: Prying
+              doAfter: 1
+
+    - node: MedievalCounterBirch
+      entity: MedievalCounterBirch
       edges:
         - to: MedievalTableWoodFrame
           conditions:
@@ -76,6 +121,36 @@
           completed:
             - !type:SpawnPrototype
               prototype: MedievalBoard
+              amount: 1
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: MedievalTableBirch
+      entity: MedievalTableBirch
+      edges:
+        - to: MedievalTableWoodFrame
+          conditions:
+            - !type:MinHealth
+              threshold: 250
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 1
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: MedievalTableMarble
+      entity: MedievalTableMarble
+      edges:
+        - to: MedievalTableWoodFrame
+          conditions:
+            - !type:MinHealth
+              threshold: 250
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalProcessedStone1
               amount: 1
           steps:
             - tool: Prying
