@@ -48,7 +48,7 @@
     state: full
   - type: IconSmooth
     key: counterwood
-    base: state_
+    base: state
   - type: Construction
     graph: MedievalTable
     node: MedievalCounterWood

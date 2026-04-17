@@ -9,6 +9,16 @@
             - material: MedievalBoard
               amount: 2
               doAfter: 2.0
+        - to: straightStone
+          steps:
+            - material: MedievalProcessedStone
+              amount: 2
+              doAfter: 3.0
+        - to: straightMarble
+          steps:
+            - material: MedievalProcessedStone
+              amount: 3
+              doAfter: 4.0
         # - to: corner
         #   steps:
         #     - material: MedievalBoard
@@ -31,6 +41,32 @@
             - !type:SpawnPrototype
               prototype: MedievalBoard
               amount: 2
+            - !type:DeleteEntity {}
+
+    - node: straightStone
+      entity: MedievalCEZLevelLadderStone
+      edges:
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 5.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalProcessedStone
+              amount: 2
+            - !type:DeleteEntity {}
+
+    - node: straightMarble
+      entity: MedievalCEZLevelLadderMarble
+      edges:
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 5.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalProcessedStone
+              amount: 3
             - !type:DeleteEntity {}
 
     # - node: corner

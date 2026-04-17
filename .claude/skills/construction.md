@@ -83,6 +83,23 @@ Sound collections on destroy:
 - `WoodDestroyHeavy` — heavy structures (walls, doors, roofs)
 - No stone-specific sound collection exists yet; use `WoodDestroyHeavy` for stone structures.
 
+## Stairs (ZLevel лестницы)
+
+Сущности в `Resources/Prototypes/_Respiral/ZLevels/stairs.yml`.
+Граф крафта: `MedievalLadder` (`Construction/Graph/Structure/stairs.yml`).
+Рецепты: `Construction/other.yml`.
+
+| ID | Спрайт state | color | Материал крафта |
+|---|---|---|---|
+| `MedievalCEZLevelLadder` | `stairs_wood` | — (без color) | MedievalBoard ×2 |
+| `MedievalCEZLevelLadderStone` | `stairs_stone` | `#808080` | MedievalProcessedStone ×2 |
+| `MedievalCEZLevelLadderMarble` | `stairs_stone` | `#E8E0C8` | MedievalProcessedStone ×3 |
+
+- Спрайты нейтрального цвета — цвет материала задаётся через `color` в компоненте `Sprite`.
+- Мрамор использует тот же спрайт `stairs_stone`, что и камень, но с ivory-цветом `#E8E0C8`.
+- Мрамор дороже в постройке (×3 камня) и демонтаже.
+- Цвета берутся из `materials.yml`: `MedievalProcessedStone → #808080`.
+
 ## Roof System
 
 ### Entities (`Resources/Prototypes/_Respiral/Entities/Structures/Roof/roof.yml`)
