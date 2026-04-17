@@ -114,6 +114,7 @@
     boundingBox: "-0.5,-0.5,0.5,0.5"
   - type: Sprite
     sprite: _Respiral/Structures/stairs.rsi
+    color: "#8B4513"
     state: stairs_wood
     drawdepth: FloorTiles
 
