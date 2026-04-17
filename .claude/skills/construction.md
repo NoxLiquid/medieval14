@@ -83,6 +83,29 @@ Sound collections on destroy:
 - `WoodDestroyHeavy` — heavy structures (walls, doors, roofs)
 - No stone-specific sound collection exists yet; use `WoodDestroyHeavy` for stone structures.
 
+## Key/Lock System
+
+**Компоненты:**
+- `MedievalKeyComponent.KeyId` — строка-идентификатор ключа
+- `MedievalLockComponent.KeyId` — требуемый ключ; `Locked` — заблокирован ли замок
+- `MedievalLockableComponent` — на двери/сундуке: разрешает блокировку
+- Замок ищется через `lock-container` (`ContainerSlot`) на двери, ИЛИ через `MedievalLockComponent` прямо на двери
+
+**Файлы прототипов:**
+| Файл | Содержимое |
+|---|---|
+| `Entities/Items/Misk/key.yml` | Базовые прототипы (`MedievalBaseKey`, `MedievalKey`, отмычки) |
+| `Entities/Items/Misk/key_sets.yml` | 37 ключей по keyId |
+| `Entities/Items/Misk/lock.yml` | Базовые прототипы замков |
+| `Entities/Items/Misk/lock_sets.yml` | 37 замков по keyId (`locked: true`) |
+| `Entities/Structures/Doors/locked_door.yml` | 222 двери = 6 типов × 37 keyId |
+
+**Именование:** `MedievalKey{Latin}` / `MedievalLock{Latin}` / `MedievalWoodenDoor{Latin}`, suffix = кириллический keyId.
+
+**Список keyId:** кузнец, портной, алхимик, плотник, каменщик, торговец, таверна, таверна1–6, лорд, казарма, тюрьма, староста, амбар, склад, казна, стража, дом1–10, управляющий, рыцарь1–5.
+
+**Locked door:** наследует тип двери + `ContainerContainer` с пустым `lock-container: !type:ContainerSlot`. Замок (`MedievalLockKuznec` и т.д.) кладётся в слот на карте, НЕ через прототип (ContainerSlot.ent — EntityUid, не прото-ID). Имя компонента в YAML: `ContainerContainer` (т.к. `[ComponentProtoName("ContainerContainer")]`). `SharedMedievalLockSystem` обращается только к замку внутри контейнера через `GetLock()`, `MedievalLock` на двери не нужен.
+
 ## Stairs (ZLevel лестницы)
 
 Сущности в `Resources/Prototypes/_Respiral/ZLevels/stairs.yml`.

@@ -8,6 +8,7 @@ namespace Content.Shared._Respiral.Lock;
 public abstract partial class SharedMedievalLockSystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -18,73 +19,92 @@ public abstract partial class SharedMedievalLockSystem : EntitySystem
 
     private void OnBeforeDoorOpened(EntityUid uid, MedievalLockableComponent component, BeforeDoorOpenedEvent args)
     {
-        if (!CanUnlock(uid, out _))
+        if (!CanUnlock(uid))
             args.Cancel();
     }
 
     private void OnStorageOpenAttempt(EntityUid uid, MedievalLockableComponent component, ref StorageOpenAttemptEvent args)
     {
-        if (!CanUnlock(uid, out _))
+        if (!CanUnlock(uid))
             args.Cancelled = true;
     }
 
-    private bool CanUnlock(EntityUid uid, out MedievalLockComponent? lockComp)
+    private bool CanUnlock(EntityUid uid)
     {
-        lockComp = null;
-
-        if (TryComp<MedievalLockComponent>(uid, out lockComp))
-            return !lockComp.Locked;
-
         var lockEnt = GetLock(uid);
-        if (lockEnt != null && TryComp<MedievalLockComponent>(lockEnt, out lockComp))
-            return !lockComp.Locked;
+        if (lockEnt == null)
+            return true;
 
-        return true;
+        if (!TryComp<MedievalLockComponent>(lockEnt, out var lockComp))
+            return true;
+
+        return !lockComp.Locked;
     }
 
-    public bool IsLocked(EntityUid uid, MedievalLockComponent? component = null)
+    public bool IsLocked(EntityUid uid)
     {
-        if (!Resolve(uid, ref component))
+        var lockEnt = GetLock(uid);
+        if (lockEnt == null)
             return false;
 
+        if (!TryComp<MedievalLockComponent>(lockEnt, out var lockComp))
+            return false;
+
+        return lockComp.Locked;
+    }
+
+    public bool IsLocked(EntityUid uid, MedievalLockComponent component)
+    {
         return component.Locked;
     }
 
-    public bool TryUnlock(EntityUid uid, string key, MedievalLockComponent? component = null)
+    public bool TryUnlock(EntityUid uid, string key)
     {
-        if (!Resolve(uid, ref component))
+        var lockEnt = GetLock(uid);
+        if (lockEnt == null)
             return false;
 
-        if (String.IsNullOrEmpty(component.KeyId))
+        if (!TryComp<MedievalLockComponent>(lockEnt, out var lockComp))
             return false;
 
-        if (component.KeyId != key)
+        if (string.IsNullOrEmpty(lockComp.KeyId) || lockComp.KeyId != key || !lockComp.Locked)
             return false;
 
-        if (!component.Locked)
-            return false;
-
-        UnLock(uid, component);
-
+        UnLock(lockEnt.Value, lockComp);
         return true;
     }
 
-    public bool TryLock(EntityUid uid, string key, MedievalLockComponent? component = null)
+    public bool TryUnlock(EntityUid uid, string key, MedievalLockComponent component)
     {
-        if (!Resolve(uid, ref component))
+        if (string.IsNullOrEmpty(component.KeyId) || component.KeyId != key || !component.Locked)
             return false;
 
-        if (String.IsNullOrEmpty(component.KeyId))
+        UnLock(uid, component);
+        return true;
+    }
+
+    public bool TryLock(EntityUid uid, string key)
+    {
+        var lockEnt = GetLock(uid);
+        if (lockEnt == null)
             return false;
 
-        if (component.KeyId != key)
+        if (!TryComp<MedievalLockComponent>(lockEnt, out var lockComp))
             return false;
 
-        if (component.Locked)
+        if (string.IsNullOrEmpty(lockComp.KeyId) || lockComp.KeyId != key || lockComp.Locked)
+            return false;
+
+        Lock(lockEnt.Value, lockComp);
+        return true;
+    }
+
+    public bool TryLock(EntityUid uid, string key, MedievalLockComponent component)
+    {
+        if (string.IsNullOrEmpty(component.KeyId) || component.KeyId != key || component.Locked)
             return false;
 
         Lock(uid, component);
-
         return true;
     }
 

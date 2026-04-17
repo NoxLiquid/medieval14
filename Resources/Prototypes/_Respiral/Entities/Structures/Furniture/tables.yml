@@ -25,7 +25,7 @@
         - TableLayer
   - type: IconSmooth
     key: state
-    base: state_
+    base: state
   - type: Construction
     graph: MedievalTable
     node: MedievalTableWoodFrame
@@ -71,6 +71,7 @@
     state: full
   - type: IconSmooth
     key: woodtable
+    base: state
   - type: Construction
     graph: MedievalTable
     node: MedievalTableWood
@@ -93,7 +94,7 @@
     state: full
   - type: IconSmooth
     key: birchcounter
-    base: state_
+    base: state
   - type: Construction
     graph: MedievalTable
     node: MedievalCounterBirch
@@ -116,6 +117,7 @@
     state: full
   - type: IconSmooth
     key: birchtable
+    base: state
   - type: Construction
     graph: MedievalTable
     node: MedievalTableBirch
@@ -152,6 +154,7 @@
         acts: ["Destruction"]
   - type: IconSmooth
     key: marbletable
+    base: state
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepTile
