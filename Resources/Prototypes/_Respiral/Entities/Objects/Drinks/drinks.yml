@@ -426,6 +426,7 @@
     sprite: _Respiral/Objects/Drinks/blue_bottle.rsi
   - type: SolutionContainerVisuals
     maxFillLevels: 3
+    inHandsFillBaseName: null
 
 - type: entity
   parent: MedievalDrinkBaseBottle
@@ -437,6 +438,7 @@
     sprite: _Respiral/Objects/Drinks/green_bottle.rsi
   - type: SolutionContainerVisuals
     maxFillLevels: 4
+    inHandsFillBaseName: null
 
 - type: entity
   parent: MedievalDrinkBaseBottle
@@ -448,6 +450,7 @@
     sprite: _Respiral/Objects/Drinks/green2_bottle.rsi
   - type: SolutionContainerVisuals
     maxFillLevels: 4
+    inHandsFillBaseName: null
 
 - type: entity
   parent: MedievalDrinkBaseBottle
@@ -459,6 +462,7 @@
     sprite: _Respiral/Objects/Drinks/orange_bottle.rsi
   - type: SolutionContainerVisuals
     maxFillLevels: 4
+    inHandsFillBaseName: null
 
 - type: entity
   parent: MedievalDrinkBaseBottle
@@ -470,3 +474,4 @@
     sprite: _Respiral/Objects/Drinks/red_bottle.rsi
   - type: SolutionContainerVisuals
     maxFillLevels: 4
+    inHandsFillBaseName: null
