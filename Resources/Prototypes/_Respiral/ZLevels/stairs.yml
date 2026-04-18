@@ -127,6 +127,9 @@
     color: "#8B4513"
     state: stairs_wood
     drawdepth: FloorTiles
+  - type: Construction
+    graph: MedievalLadder
+    node: straight
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 200
@@ -146,6 +149,9 @@
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Construction
+    graph: MedievalLadder
+    node: straightStone
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedStone: 200
@@ -165,6 +171,9 @@
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Construction
+    graph: MedievalLadder
+    node: straightMarble
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedStone: 200

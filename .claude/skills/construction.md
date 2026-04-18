@@ -1,5 +1,17 @@
 # Construction System
 
+## ConstructionComponent Requirements
+
+`Content.Server.Construction.Components.ConstructionComponent` has `required: true` for both `graph` and `node` fields. Every entity that appears as a node entity in a construction graph MUST have:
+
+```yaml
+- type: Construction
+  graph: <constructionGraphId>
+  node: <nodeName>
+```
+
+Without both fields, the entity fails to deserialize (silently skipped — `protoMan.TryIndex` returns false), breaking `ConstructionPrototypeTest`.
+
 ## File Layout
 
 | Path | Purpose |

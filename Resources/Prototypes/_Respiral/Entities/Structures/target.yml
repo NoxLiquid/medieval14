@@ -27,6 +27,9 @@
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Construction
+    graph: MedievalStandingTarget
+    node: target
   - type: Destructible
     thresholds:
     - trigger:
