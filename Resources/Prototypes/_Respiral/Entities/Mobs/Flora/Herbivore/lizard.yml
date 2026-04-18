@@ -8,7 +8,7 @@
     drawdepth: Mobs
     sprite: _Respiral/Mobs/Flora/fox.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       color: '#4E7F3A'
       state: running
   - type: MovementSpeedModifier
@@ -17,7 +17,7 @@
   - type: SpriteMovement
     movementLayers:
       movement:
-        state: moving
+        state: running
     noMovementLayers:
       movement:
         state: running
@@ -71,9 +71,16 @@
     drawdepth: Mobs
     sprite: _Respiral/Mobs/Flora/lizard.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       color: '#2F5D2F'
       state: running
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: moving
+    noMovementLayers:
+      movement:
+        state: running
 
 - type: entity
   parent: MedievalLizard
@@ -83,6 +90,13 @@
     drawdepth: Mobs
     sprite: _Respiral/Mobs/Flora/lizard.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       color: '#B7C45A'
       state: running
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: moving
+    noMovementLayers:
+      movement:
+        state: running
