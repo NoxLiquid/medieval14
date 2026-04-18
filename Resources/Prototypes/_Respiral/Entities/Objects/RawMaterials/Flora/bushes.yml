@@ -298,7 +298,7 @@
   suffix: Средний, Тройника
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_troynika.rsi
+    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_troynika.rsi
     layers:
     - state: medium_troynika_b
       map: ["flora"]
@@ -323,7 +323,7 @@
   suffix: Средний, Феолика
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_feolika.rsi
+    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_feolika.rsi
     layers:
     - state: medium_feolika_b
       map: ["flora"]
@@ -348,7 +348,7 @@
   suffix: Средний, Чернохвостка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_chernohvostka.rsi
+    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_chernohvostka.rsi
     layers:
     - state: medium_chernohvostka_b
       map: ["flora"]
@@ -373,7 +373,7 @@
   suffix: Средний, Синячка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_sinyachka.rsi
+    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_sinyachka.rsi
     layers:
     - state: medium_sinyachka_b
       map: ["flora"]
@@ -398,7 +398,7 @@
   suffix: Средний, Тяфлика, Насыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_tyaflika.rsi
+    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_tyaflika.rsi
     layers:
     - state: medium_tyaflika_b
       map: ["flora"]
@@ -423,7 +423,7 @@
   suffix: Средний, Тяфлика, Средне насыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_tyaflika.rsi
+    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_tyaflika.rsi
     layers:
     - state: medium_tyaflika_b
       map: ["flora"]
@@ -448,7 +448,7 @@
   suffix: Средний, Тяфлика, Ненасыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_tyaflika.rsi
+    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_tyaflika.rsi
     layers:
     - state: medium_tyaflika_b
       map: ["flora"]
@@ -490,7 +490,7 @@
   suffix: Средний, Златка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/medium/medium_zlatka.rsi
+    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_zlatka.rsi
     layers:
     - state: medium_zlatka_b
       map: ["flora"]
