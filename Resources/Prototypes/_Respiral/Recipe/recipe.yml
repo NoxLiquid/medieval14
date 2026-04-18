@@ -34,7 +34,7 @@
   id: MedievalBaseStoneTileRecipe
   completetime: 10
   materials:
-    MedievalProcessedStone: 100
+    MedievalRawStone: 100
   categories:
   - MedievalTileCategory
 
