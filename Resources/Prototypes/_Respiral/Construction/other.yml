@@ -15,6 +15,32 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  id: MedievalLadderStone
+  graph: MedievalLadder
+  startNode: start
+  targetNode: straightStone
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: AlignTileAny
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalLadderMarble
+  graph: MedievalLadder
+  startNode: start
+  targetNode: straightMarble
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: AlignTileAny
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 # - type: construction
 #   id: MedievalLadderCorner
 #   graph: MedievalLadder

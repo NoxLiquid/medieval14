@@ -1,0 +1,99 @@
+- type: entity
+  id: MedievalCarpetItemBase
+  parent: BaseItem
+  name: ковёр
+  description: Свернутый тканый ковёр, готовый к укладке.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/Carpets/icons.rsi
+  - type: Item
+    sprite: _Respiral/Structures/Furniture/Carpets/icons.rsi
+    size: Normal
+  - type: SpawnAfterInteract
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Clickable
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  id: MedievalCarpetItemRed
+  parent: MedievalCarpetItemBase
+  name: красный ковёр
+  components:
+  - type: Sprite
+    state: red
+  - type: SpawnAfterInteract
+    prototype: MedievalCarpetRed
+
+- type: entity
+  id: MedievalCarpetItemBlack
+  parent: MedievalCarpetItemBase
+  name: чёрный ковёр
+  components:
+  - type: Sprite
+    state: black
+  - type: SpawnAfterInteract
+    prototype: MedievalCarpetBlack
+
+- type: entity
+  id: MedievalCarpetItemBlue
+  parent: MedievalCarpetItemBase
+  name: синий ковёр
+  components:
+  - type: Sprite
+    state: blue
+  - type: SpawnAfterInteract
+    prototype: MedievalCarpetBlue
+
+- type: entity
+  id: MedievalCarpetItemCyan
+  parent: MedievalCarpetItemBase
+  name: бирюзовый ковёр
+  components:
+  - type: Sprite
+    state: cyan
+  - type: SpawnAfterInteract
+    prototype: MedievalCarpetCyan
+
+- type: entity
+  id: MedievalCarpetItemGreen
+  parent: MedievalCarpetItemBase
+  name: зелёный ковёр
+  components:
+  - type: Sprite
+    state: green
+  - type: SpawnAfterInteract
+    prototype: MedievalCarpetGreen
+
+- type: entity
+  id: MedievalCarpetItemOrange
+  parent: MedievalCarpetItemBase
+  name: оранжевый ковёр
+  components:
+  - type: Sprite
+    state: orange
+  - type: SpawnAfterInteract
+    prototype: MedievalCarpetOrange
+
+- type: entity
+  id: MedievalCarpetItemPurple
+  parent: MedievalCarpetItemBase
+  name: фиолетовый ковёр
+  components:
+  - type: Sprite
+    state: purple
+  - type: SpawnAfterInteract
+    prototype: MedievalCarpetPurple
+
+- type: entity
+  id: MedievalCarpetItemYellow
+  parent: MedievalCarpetItemBase
+  name: жёлтый ковёр
+  components:
+  - type: Sprite
+    state: yellow
+  - type: SpawnAfterInteract
+    prototype: MedievalCarpetYellow

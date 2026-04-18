@@ -122,9 +122,61 @@
   id: MedievalCEZLevelLadder
   suffix: Прямая
   components:
+  - type: Sprite
+    sprite: _Respiral/Structures/stairs.rsi
+    color: "#8B4513"
+    state: stairs_wood
+    drawdepth: FloorTiles
+  - type: Construction
+    graph: MedievalLadder
+    node: straight
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 200
+
+- type: entity
+  parent: MedievalCEZLevelLadderBase
+  id: MedievalCEZLevelLadderStone
+  name: каменная лестница
+  suffix: Прямая, камень
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/stairs.rsi
+    state: stairs_stone
+    color: "#808080"
+    drawdepth: Mobs
+    offset: 0,0.5
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Construction
+    graph: MedievalLadder
+    node: straightStone
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 200
+
+- type: entity
+  parent: MedievalCEZLevelLadderBase
+  id: MedievalCEZLevelLadderMarble
+  name: мраморная лестница
+  suffix: Прямая, мрамор
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/stairs.rsi
+    state: stairs_stone
+    color: "#E8E0C8"
+    drawdepth: Mobs
+    offset: 0,0.5
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Construction
+    graph: MedievalLadder
+    node: straightMarble
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 200
 
 # - type: entity
 #   parent: MedievalCEZLevelLadderCornerBase

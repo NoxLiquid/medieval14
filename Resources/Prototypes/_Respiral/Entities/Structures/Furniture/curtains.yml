@@ -1,0 +1,360 @@
+﻿- type: entity
+  id: MedievalCurtains
+  parent: BaseCurtains
+  name: шторы
+  description: Плотные шторы, скрывающие происходящее за ними.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtains
+  - type: Occluder
+    boundingBox: "-0.5,0.4,0.5,1.2"
+
+- type: entity
+  id: MedievalCurtainsOpen
+  parent: MedievalCurtains
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: MedievalCurtainsBlack
+  parent: MedievalCurtains
+  name: чёрные шторы
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      color: "#2B2B2B"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsBlack
+
+- type: entity
+  id: MedievalCurtainsBlackOpen
+  parent: MedievalCurtainsBlack
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      color: "#2B2B2B"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsBlackOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: MedievalCurtainsBlue
+  parent: MedievalCurtains
+  name: синие шторы
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      color: "#3F67B1"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsBlue
+
+- type: entity
+  id: MedievalCurtainsBlueOpen
+  parent: MedievalCurtainsBlue
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      color: "#3F67B1"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsBlueOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: MedievalCurtainsSkyBlue
+  parent: MedievalCurtains
+  name: голубые шторы
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      color: "#74C7EC"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsSkyBlue
+
+- type: entity
+  id: MedievalCurtainsSkyBlueOpen
+  parent: MedievalCurtainsSkyBlue
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      color: "#74C7EC"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsSkyBlueOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: MedievalCurtainsCyan
+  parent: MedievalCurtains
+  name: бирюзовые шторы
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      color: "#2AA198"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsCyan
+
+- type: entity
+  id: MedievalCurtainsCyanOpen
+  parent: MedievalCurtainsCyan
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      color: "#2AA198"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsCyanOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: MedievalCurtainsGreen
+  parent: MedievalCurtains
+  name: зелёные шторы
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      color: "#4D7F44"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsGreen
+
+- type: entity
+  id: MedievalCurtainsGreenOpen
+  parent: MedievalCurtainsGreen
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      color: "#4D7F44"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsGreenOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: MedievalCurtainsOrange
+  parent: MedievalCurtains
+  name: оранжевые шторы
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      color: "#C97A3D"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsOrange
+
+- type: entity
+  id: MedievalCurtainsOrangeOpen
+  parent: MedievalCurtainsOrange
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      color: "#C97A3D"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsOrangeOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: MedievalCurtainsPink
+  parent: MedievalCurtains
+  name: розовые шторы
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      color: "#D17AA8"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsPink
+
+- type: entity
+  id: MedievalCurtainsPinkOpen
+  parent: MedievalCurtainsPink
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      color: "#D17AA8"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsPinkOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: MedievalCurtainsPurple
+  parent: MedievalCurtains
+  name: фиолетовые шторы
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      color: "#7D5BA6"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsPurple
+
+- type: entity
+  id: MedievalCurtainsPurpleOpen
+  parent: MedievalCurtainsPurple
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      color: "#7D5BA6"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsPurpleOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: MedievalCurtainsRed
+  parent: MedievalCurtains
+  name: красные шторы
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: closed
+      color: "#A84A4A"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsRed
+
+- type: entity
+  id: MedievalCurtainsRedOpen
+  parent: MedievalCurtainsRed
+  suffix: Open
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/curtains.rsi
+    layers:
+    - state: open
+      color: "#A84A4A"
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: MedievalCurtains
+    node: curtainsRedOpen
+  - type: Physics
+    canCollide: false

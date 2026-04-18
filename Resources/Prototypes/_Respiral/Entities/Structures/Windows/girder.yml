@@ -91,7 +91,7 @@
     sprite: _Respiral/Structures/Windows/wooden_window_frame.rsi
     state: full
   - type: IconSmooth
-    key: medievalWoodenWindows
+    key: woods
     base: window
 
 - type: entity
@@ -108,7 +108,7 @@
     sprite: _Respiral/Structures/Windows/birch_window_frame.rsi
     state: full
   - type: IconSmooth
-    key: medievalBirchWindows
+    key: woods
     base: window
 
 - type: entity
@@ -125,7 +125,7 @@
     sprite: _Respiral/Structures/Windows/stone_bricks_window_frame.rsi
     state: full
   - type: IconSmooth
-    key: medievalStoneBrickWindows
+    key: walls
     base: window
 
 - type: entity
@@ -142,5 +142,5 @@
     sprite: _Respiral/Structures/Windows/marble_bricks_window_frame.rsi
     state: full
   - type: IconSmooth
-    key: medievalMarbleBrickWindows
+    key: walls
     base: window

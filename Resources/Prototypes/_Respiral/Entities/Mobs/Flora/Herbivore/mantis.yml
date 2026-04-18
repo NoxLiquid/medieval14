@@ -8,7 +8,7 @@
     drawdepth: Mobs
     sprite: _Respiral/Mobs/Flora/mantis.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       color: '#4E7F3A'
       state: running
   - type: MovementSpeedModifier
@@ -17,7 +17,7 @@
   - type: SpriteMovement
     movementLayers:
       movement:
-        state: moving
+        state: running
     noMovementLayers:
       movement:
         state: running
@@ -71,7 +71,7 @@
     drawdepth: Mobs
     sprite: _Respiral/Mobs/Flora/mantis.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       color: '#2F5D2F'
       state: running
 

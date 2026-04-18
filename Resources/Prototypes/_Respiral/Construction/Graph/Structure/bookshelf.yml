@@ -1,0 +1,33 @@
+- type: constructionGraph
+  id: MedievalBookshelf
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: bookshelf
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - tool: Screwing
+        doAfter: 2
+      - material: MedievalBoard
+        amount: 2
+        doAfter: 4
+      - tool: MedievalScore
+        doAfter: 2
+
+  - node: bookshelf
+    entity: MedievalBookshelf
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalBoard1
+        amount: 2
+      steps:
+      - tool: Prying
+        doAfter: 4

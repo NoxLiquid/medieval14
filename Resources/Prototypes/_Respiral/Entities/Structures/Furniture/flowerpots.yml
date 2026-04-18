@@ -1,0 +1,82 @@
+- type: entity
+  id: MedievalFlowerpotBase
+  parent: BaseStructureDynamic
+  abstract: true
+  name: цветочный горшок
+  description: Небольшой декоративный горшок с растением.
+  components:
+  - type: SpriteFade
+  - type: Transform
+    noRot: true
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.12
+        density: 90
+        mask:
+        - HighImpassable
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/flowerpots.rsi
+    noRot: true
+    layers:
+    - state: pot
+    - state: plant1
+  - type: Pullable
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/plant_rustle.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedievalFlowerpotPlant1
+  parent: MedievalFlowerpotBase
+  name: цветочный горшок
+  suffix: plant1
+
+- type: entity
+  id: MedievalFlowerpotPlant2
+  parent: MedievalFlowerpotBase
+  name: цветочный горшок
+  suffix: plant2
+  components:
+  - type: Sprite
+    layers:
+    - state: pot
+    - state: plant2
+
+- type: entity
+  id: MedievalFlowerpotPlant3
+  parent: MedievalFlowerpotBase
+  name: цветочный горшок
+  suffix: plant3
+  components:
+  - type: Sprite
+    layers:
+    - state: pot
+    - state: plant3
+
+- type: entity
+  id: MedievalFlowerpotPlant4
+  parent: MedievalFlowerpotBase
+  name: цветочный горшок
+  suffix: plant4
+  components:
+  - type: Sprite
+    layers:
+    - state: pot
+    - state: plant4

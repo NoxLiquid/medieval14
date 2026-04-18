@@ -1,0 +1,57 @@
+- type: entity
+  id: MedievalBarrel
+  parent:
+  - BaseStructureDynamic
+  - MedievalWoodenFurnitureBase
+  name: деревянная бочка
+  description: Дубовая бочка с крышкой. Её можно открыть и использовать для хранения вещей.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Animateable
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/barrel.rsi
+    state: icon
+  - type: Sprite
+    noRot: true
+    sprite: _Respiral/Structures/Furniture/barrel.rsi
+    layers:
+    - state: barrel
+      map: ["enum.StorageVisualLayers.Base"]
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.28,-0.45,0.28,0.2"
+        density: 65
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: EntityStorage
+  - type: PlaceableSurface
+    isPlaceable: false
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: barrel
+    stateBaseOpen: barrel_open
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+  - type: Construction
+    graph: MedievalBarrel
+    node: barrel
+    containers:
+    - entity_storage
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 203
+      MedievalProcessedStone: 7
+      MedievalProcessedIron: 3

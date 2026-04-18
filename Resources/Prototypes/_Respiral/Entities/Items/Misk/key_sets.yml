@@ -1,0 +1,297 @@
+# Ключи по keyId
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyKuznec
+  suffix: кузнец
+  components:
+  - type: MedievalKey
+    keyId: кузнец
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyPortnoy
+  suffix: портной
+  components:
+  - type: MedievalKey
+    keyId: портной
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyAlkhimik
+  suffix: алхимик
+  components:
+  - type: MedievalKey
+    keyId: алхимик
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyPlotnik
+  suffix: плотник
+  components:
+  - type: MedievalKey
+    keyId: плотник
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyKamenschik
+  suffix: каменщик
+  components:
+  - type: MedievalKey
+    keyId: каменщик
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyTorgovets
+  suffix: торговец
+  components:
+  - type: MedievalKey
+    keyId: торговец
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyTaverna
+  suffix: таверна
+  components:
+  - type: MedievalKey
+    keyId: таверна
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyTaverna1
+  suffix: таверна1
+  components:
+  - type: MedievalKey
+    keyId: таверна1
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyTaverna2
+  suffix: таверна2
+  components:
+  - type: MedievalKey
+    keyId: таверна2
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyTaverna3
+  suffix: таверна3
+  components:
+  - type: MedievalKey
+    keyId: таверна3
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyTaverna4
+  suffix: таверна4
+  components:
+  - type: MedievalKey
+    keyId: таверна4
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyTaverna5
+  suffix: таверна5
+  components:
+  - type: MedievalKey
+    keyId: таверна5
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyTaverna6
+  suffix: таверна6
+  components:
+  - type: MedievalKey
+    keyId: таверна6
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyLord
+  suffix: лорд
+  components:
+  - type: MedievalKey
+    keyId: лорд
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyKazarma
+  suffix: казарма
+  components:
+  - type: MedievalKey
+    keyId: казарма
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyTyurma
+  suffix: тюрьма
+  components:
+  - type: MedievalKey
+    keyId: тюрьма
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyStarosta
+  suffix: староста
+  components:
+  - type: MedievalKey
+    keyId: староста
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyAmbar
+  suffix: амбар
+  components:
+  - type: MedievalKey
+    keyId: амбар
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeySklad
+  suffix: склад
+  components:
+  - type: MedievalKey
+    keyId: склад
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyKazna
+  suffix: казна
+  components:
+  - type: MedievalKey
+    keyId: казна
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyStrazha
+  suffix: стража
+  components:
+  - type: MedievalKey
+    keyId: стража
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom1
+  suffix: дом1
+  components:
+  - type: MedievalKey
+    keyId: дом1
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom2
+  suffix: дом2
+  components:
+  - type: MedievalKey
+    keyId: дом2
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom3
+  suffix: дом3
+  components:
+  - type: MedievalKey
+    keyId: дом3
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom4
+  suffix: дом4
+  components:
+  - type: MedievalKey
+    keyId: дом4
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom5
+  suffix: дом5
+  components:
+  - type: MedievalKey
+    keyId: дом5
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom6
+  suffix: дом6
+  components:
+  - type: MedievalKey
+    keyId: дом6
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom7
+  suffix: дом7
+  components:
+  - type: MedievalKey
+    keyId: дом7
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom8
+  suffix: дом8
+  components:
+  - type: MedievalKey
+    keyId: дом8
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom9
+  suffix: дом9
+  components:
+  - type: MedievalKey
+    keyId: дом9
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyDom10
+  suffix: дом10
+  components:
+  - type: MedievalKey
+    keyId: дом10
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyUpravlyauschiy
+  suffix: управляющий
+  components:
+  - type: MedievalKey
+    keyId: управляющий
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyRytsar1
+  suffix: рыцарь1
+  components:
+  - type: MedievalKey
+    keyId: рыцарь1
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyRytsar2
+  suffix: рыцарь2
+  components:
+  - type: MedievalKey
+    keyId: рыцарь2
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyRytsar3
+  suffix: рыцарь3
+  components:
+  - type: MedievalKey
+    keyId: рыцарь3
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyRytsar4
+  suffix: рыцарь4
+  components:
+  - type: MedievalKey
+    keyId: рыцарь4
+
+- type: entity
+  parent: MedievalBaseKey
+  id: MedievalKeyRytsar5
+  suffix: рыцарь5
+  components:
+  - type: MedievalKey
+    keyId: рыцарь5

@@ -1,0 +1,78 @@
+- type: entity
+  id: MedievalBookshelf
+  parent:
+  - BaseStructure
+  - MedievalWoodenFurnitureBase
+  name: книжная полка
+  description: В основном заполнена книгами.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/bookshelf.rsi
+    layers:
+    - state: base
+    - state: book-0
+    - map: ["enum.StorageFillLayers.Fill"]
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 27
+    fillBaseName: book
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalBoard1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Anchorable
+  - type: Pullable
+  - type: Occluder
+  - type: Storage
+    grid:
+    - 0,0,9,3
+    maxItemSize: Normal
+    whitelist:
+      tags:
+      - Document
+      - Folder
+      - Write
+      - Book
+      - Spellbook
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Construction
+    graph: MedievalBookshelf
+    node: bookshelf
+  - type: BlockWeather
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 203
+      MedievalProcessedStone: 7
+      MedievalProcessedIron: 3

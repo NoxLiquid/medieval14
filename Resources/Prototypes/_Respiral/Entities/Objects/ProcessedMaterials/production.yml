@@ -416,6 +416,9 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalGlass: 100
+  - type: Tag
+    tags:
+    - MedievalSmelterMaterialStorage
   - type: Stack
     stackType: MedievalGlass
     baseLayer: base

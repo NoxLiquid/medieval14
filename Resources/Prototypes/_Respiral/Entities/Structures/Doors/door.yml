@@ -53,6 +53,8 @@
     - Anchorable
   - type: Rotatable
   - type: InteractionOutline
+  - type: Sprite
+    drawdepth: OverMobs
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -119,6 +121,7 @@
     node: woodenDoorFrame
   - type: Sprite
     sprite: _Respiral/Structures/Doors/wooden_frame.rsi
+    state: closed
   - type: Icon
     sprite: _Respiral/Structures/Doors/wooden_frame.rsi
     state: closed
@@ -133,6 +136,7 @@
     node: woodenBirchDoorFrame
   - type: Sprite
     sprite: _Respiral/Structures/Doors/wooden_birch_frame.rsi
+    state: closed
   - type: Icon
     sprite: _Respiral/Structures/Doors/wooden_birch_frame.rsi
     state: closed
@@ -147,6 +151,7 @@
     node: ironDoorFrame
   - type: Sprite
     sprite: _Respiral/Structures/Doors/iron_frame.rsi
+    state: closed
   - type: Icon
     sprite: _Respiral/Structures/Doors/iron_frame.rsi
     state: closed

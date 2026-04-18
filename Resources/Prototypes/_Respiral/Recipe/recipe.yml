@@ -34,7 +34,7 @@
   id: MedievalBaseStoneTileRecipe
   completetime: 10
   materials:
-    MedievalProcessedStone: 100
+    MedievalRawStone: 100
   categories:
   - MedievalTileCategory
 
@@ -106,6 +106,101 @@
   result: MedievalBucket
   materials:
     MedievalProcessedWood: 100
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkMugWoodRecipe
+  result: MedievalDrinkMugWood
+  materials:
+    MedievalProcessedWood: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkMugIronRecipe
+  result: MedievalDrinkMugIron
+  materials:
+    MedievalProcessedIron: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkMugSteelRecipe
+  result: MedievalDrinkMugSteel
+  materials:
+    MedievalSteel: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkMugSilverRecipe
+  result: MedievalDrinkMugSilver
+  materials:
+    MedievalProcessedSilver: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkMugGoldRecipe
+  result: MedievalDrinkMugGold
+  materials:
+    MedievalProcessedGold: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkMugWoodIronRecipe
+  result: MedievalDrinkMugWoodIron
+  materials:
+    MedievalProcessedWood: 20
+    MedievalProcessedIron: 5
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkMugWoodSteelRecipe
+  result: MedievalDrinkMugWoodSteel
+  materials:
+    MedievalProcessedWood: 20
+    MedievalSteel: 5
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkMugWoodSilverRecipe
+  result: MedievalDrinkMugWoodSilver
+  materials:
+    MedievalProcessedWood: 20
+    MedievalProcessedSilver: 5
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkMugWoodGoldRecipe
+  result: MedievalDrinkMugWoodGold
+  materials:
+    MedievalProcessedWood: 20
+    MedievalProcessedGold: 5
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkGobletIronRecipe
+  result: MedievalDrinkGobletIron
+  materials:
+    MedievalProcessedIron: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkGobletSteelRecipe
+  result: MedievalDrinkGobletSteel
+  materials:
+    MedievalSteel: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkGobletSilverRecipe
+  result: MedievalDrinkGobletSilver
+  materials:
+    MedievalProcessedSilver: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkGobletGoldRecipe
+  result: MedievalDrinkGobletGold
+  materials:
+    MedievalProcessedGold: 25
 
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
@@ -324,6 +419,41 @@
   materials:
     MedievalRawAdamantine: 300
     MedievalRawCoal: 100
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkBottleBlueRecipe
+  result: MedievalDrinkBottleBlue
+  materials:
+    MedievalGlass: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkBottleGreenRecipe
+  result: MedievalDrinkBottleGreen
+  materials:
+    MedievalGlass: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkBottleGreenTallRecipe
+  result: MedievalDrinkBottleGreenTall
+  materials:
+    MedievalGlass: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkBottleOrangeRecipe
+  result: MedievalDrinkBottleOrange
+  materials:
+    MedievalGlass: 25
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalDrinkBottleRedRecipe
+  result: MedievalDrinkBottleRed
+  materials:
+    MedievalGlass: 25
 
 # Кузня
 
@@ -577,7 +707,6 @@
   result: MedievalAdamantineCleaver
   materials:
     MedievalProcessedAdamantine: 100
-    MedievalProcessedWood: 50
 
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe

@@ -1,0 +1,48 @@
+- type: constructionGraph
+  id: MedievalRoof
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: wooden
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - material: MedievalBoard
+          amount: 2
+          doAfter: 2
+    - to: birch
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - material: MedievalBoard
+          amount: 2
+          doAfter: 2
+    - to: stone
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - material: MedievalProcessedStone
+          amount: 2
+          doAfter: 3
+
+  - node: wooden
+    entity: MedievalRoofWooden
+
+  - node: birch
+    entity: MedievalRoofBirch
+
+  - node: stone
+    entity: MedievalRoofStone

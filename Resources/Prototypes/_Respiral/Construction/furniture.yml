@@ -23,6 +23,42 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  id: MedievalCounterBirch
+  graph: MedievalTable
+  startNode: start
+  targetNode: MedievalCounterBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalTableBirch
+  graph: MedievalTable
+  startNode: start
+  targetNode: MedievalTableBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalTableMarble
+  graph: MedievalTable
+  startNode: start
+  targetNode: MedievalTableMarble
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 # Кровати 🛏️
 
 - type: construction
@@ -127,6 +163,142 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalCurtains
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtains
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalCurtainsBlack
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtainsBlack
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalCurtainsBlue
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtainsBlue
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalCurtainsSkyBlue
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtainsSkyBlue
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalCurtainsCyan
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtainsCyan
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalCurtainsGreen
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtainsGreen
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalCurtainsOrange
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtainsOrange
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalCurtainsPink
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtainsPink
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalCurtainsPurple
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtainsPurple
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalCurtainsRed
+  graph: MedievalCurtains
+  startNode: start
+  targetNode: curtainsRed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  id: MedievalBookshelf
+  graph: MedievalBookshelf
+  startNode: start
+  targetNode: bookshelf
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalBenchWood
+  graph: MedievalBench
+  startNode: start
+  targetNode: bench
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalBarrel
+  graph: MedievalBarrel
+  startNode: start
+  targetNode: barrel
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked

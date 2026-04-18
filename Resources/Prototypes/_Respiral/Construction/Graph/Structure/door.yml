@@ -76,7 +76,7 @@
           doAfter: 1
         - tool: MedievalScore
           doAfter: 2
-        - material: MedievalProcessedWood
+        - material: MedievalBoard
           amount: 3
           doAfter: 10
         - tool: MedievalScore

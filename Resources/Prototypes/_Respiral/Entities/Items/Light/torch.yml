@@ -85,6 +85,9 @@
     - type: Item
       sprite: _Respiral/Objects/Items/Light/torch.rsi
       heldPrefix: unlit
+    - type: Construction
+      graph: MedievalSimpleLightTorch
+      node: torch
 
 - type: entity
   name: металлический факел
