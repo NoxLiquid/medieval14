@@ -24,6 +24,7 @@
   id: MedievalBaseClothing
   suffix: Средневековье
   components:
+  - type: MedievalSpiralPhysicalPriced
   - type: Item
     size: Normal
   - type: Sprite

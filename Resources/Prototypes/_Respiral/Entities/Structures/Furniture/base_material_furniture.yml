@@ -3,6 +3,7 @@
   name: wooden furniture base
   abstract: true
   components:
+  - type: MedievalSpiralPhysicalPriced
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
