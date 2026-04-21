@@ -1,6 +1,21 @@
 - type: entity
   abstract: true
-  parent: DrinkBaseCup
+  parent: DrinkBase
+  id: MedievalDrinkBaseCup
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 20
+  - type: FitsInDispenser
+    solution: drink
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+    maxTransferAmount: 10
+
+- type: entity
+  abstract: true
+  parent: MedievalDrinkBaseCup 
   id: MedievalDrinkBaseWoodenCup
   components:
   - type: Damageable
@@ -30,7 +45,7 @@
 
 - type: entity
   abstract: true
-  parent: DrinkBaseCup
+  parent: MedievalDrinkBaseCup 
   id: MedievalDrinkBaseIconFillCup
   components:
   - type: Appearance

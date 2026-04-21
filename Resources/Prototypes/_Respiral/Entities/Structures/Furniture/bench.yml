@@ -20,6 +20,6 @@
     node: bench
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedWood: 203
+      MedievalProcessedWood: 200
       MedievalProcessedStone: 7
       MedievalProcessedIron: 3

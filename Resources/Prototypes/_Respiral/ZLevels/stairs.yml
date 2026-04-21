@@ -68,7 +68,7 @@
   - type: Sprite
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_wood
-    drawdepth: FloorTiles
+    drawdepth: Overdoors
   - type: Occluder
     enabled: false
   - type: CEZLevelHighGround
@@ -115,7 +115,7 @@
   - type: Sprite
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_wood
-    drawdepth: FloorTiles
+    drawdepth: Overdoors
 
 - type: entity
   parent: MedievalCEZLevelLadderBase
@@ -126,7 +126,7 @@
     sprite: _Respiral/Structures/stairs.rsi
     color: "#8B4513"
     state: stairs_wood
-    drawdepth: FloorTiles
+    drawdepth: Overdoors
   - type: Construction
     graph: MedievalLadder
     node: straight

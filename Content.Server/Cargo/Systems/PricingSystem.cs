@@ -15,6 +15,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Shared.Research.Prototypes;
+using Content.Shared._Respiral.Pricing;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -246,7 +247,8 @@ public sealed class PricingSystem : EntitySystem
     {
         double price = 0;
 
-        if (HasComp<MaterialComponent>(uid) &&
+        // _Respiral-start: MedievalPhysicalPricedComponent позволяет считать цену через PhysicalComposition без MaterialComponent
+        if ((HasComp<MaterialComponent>(uid) || HasComp<MedievalPhysicalPricedComponent>(uid)) &&
             TryComp<PhysicalCompositionComponent>(uid, out var composition))
         {
             var matPrice = GetMaterialPrice(composition);
@@ -255,6 +257,7 @@ public sealed class PricingSystem : EntitySystem
 
             price += matPrice;
         }
+        // _Respiral-end
 
         return price;
     }
@@ -263,7 +266,9 @@ public sealed class PricingSystem : EntitySystem
     {
         double price = 0;
 
-        if (prototype.Components.ContainsKey(Factory.GetComponentName<MaterialComponent>()) &&
+        // _Respiral-start: MedievalPhysicalPricedComponent позволяет считать цену через PhysicalComposition без MaterialComponent
+        if ((prototype.Components.ContainsKey(Factory.GetComponentName<MaterialComponent>()) ||
+             prototype.Components.ContainsKey(Factory.GetComponentName<MedievalPhysicalPricedComponent>())) &&
             prototype.Components.TryGetValue(Factory.GetComponentName<PhysicalCompositionComponent>(), out var composition))
         {
             var compositionComp = (PhysicalCompositionComponent) composition.Component;
@@ -276,6 +281,7 @@ public sealed class PricingSystem : EntitySystem
 
             price += matPrice;
         }
+        // _Respiral-end
 
         return price;
     }

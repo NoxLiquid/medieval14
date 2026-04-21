@@ -2,6 +2,7 @@ using Content.Shared.Armor;
 using Content.Shared.Cargo;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Materials;
 
 namespace Content.Server.Armor;
 
@@ -19,6 +20,11 @@ public sealed class ArmorSystem : SharedArmorSystem
 
     private void GetArmorPrice(EntityUid uid, ArmorComponent component, ref PriceCalculationEvent args)
     {
+        // _Respiral-start: если есть PhysicalComposition, то цена считается через материалы, иначе через коэффициенты брони
+        if (TryComp<PhysicalCompositionComponent>(uid, out _))
+            return;
+        // _Respiral-end
+
         foreach (var modifier in component.Modifiers.Coefficients)
         {
             var damageType = _protoManager.Index<DamageTypePrototype>(modifier.Key);
