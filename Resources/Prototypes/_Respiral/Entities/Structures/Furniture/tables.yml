@@ -77,7 +77,7 @@
     node: MedievalTableWood
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedWood: 103
+      MedievalProcessedWood: 100
       MedievalProcessedStone: 6
       MedievalProcessedIron: 3
 
@@ -100,7 +100,7 @@
     node: MedievalCounterBirch
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedWood: 103
+      MedievalProcessedWood: 100
       MedievalProcessedStone: 6
       MedievalProcessedIron: 3
 
@@ -123,7 +123,7 @@
     node: MedievalTableBirch
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedWood: 103
+      MedievalProcessedWood: 100
       MedievalProcessedStone: 6
       MedievalProcessedIron: 3
 
@@ -164,5 +164,5 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 3
-      MedievalProcessedStone: 106
+      MedievalProcessedStone: 100
       MedievalProcessedIron: 3

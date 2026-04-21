@@ -9,6 +9,7 @@ tiles-medieval-grass-dark = тёмная трава
 tiles-medieval-grass-dark2 = тёмная трава 2
 tiles-medieval-snow = снег
 tiles-medieval-ash = пепел
+tiles-stone-floor = каменный кирпичный пол
 tiles-medieval-floor-marble-small-bricks = мраморный пол из мелкого кирпича
 tiles-medieval-floor-marble = мраморный пол
 tiles-medieval-floor-stonebrick-small-carved = резной пол из мелкого каменного кирпича

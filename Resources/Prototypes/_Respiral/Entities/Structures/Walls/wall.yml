@@ -1,8 +1,9 @@
 - type: entity
-  parent: BaseWall
+  parent: MedievalBaseStructureWall
   id: MedievalBaseWall
   abstract: true
   components:
+  - type: Occluder
   - type: Sprite
     drawdepth: OverMobs
   - type: SpriteFade
@@ -33,6 +34,60 @@
   - type: IconSmooth
     key: woods
     base: wood
+
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: MedievalBaseStructureWall
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          MetalBulletImpact
+    soundTypes:
+      Heat:
+        collection:
+          MetalLaserImpact
+  - type: Tag
+    tags:
+    - Wall
+  - type: IsRoof
+  - type: Sprite
+    drawdepth: Walls
+  - type: Icon
+    state: full
+  - type: PlacementReplacement
+    key: walls
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+  - type: Airtight
+  - type: RadiationBlocker
+    resistance: 2
+  - type: BlockWeather
+  - type: SunShadowCast
 
 - type: entity
   parent: MedievalBaseWoodWall
