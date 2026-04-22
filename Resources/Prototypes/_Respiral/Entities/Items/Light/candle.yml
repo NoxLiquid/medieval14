@@ -4,6 +4,7 @@
   id: MedievalCandelabraBase
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Tag
     tags:
     - Candle

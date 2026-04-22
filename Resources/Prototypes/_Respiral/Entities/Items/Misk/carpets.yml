@@ -5,6 +5,7 @@
   description: Свернутый тканый ковёр, готовый к укладке.
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Structures/Furniture/Carpets/icons.rsi
   - type: Item

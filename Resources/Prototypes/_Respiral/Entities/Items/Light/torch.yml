@@ -5,6 +5,7 @@
   id: MedievalBaseTorch
   description: A torch fashioned from some wood.
   components:
+  - type: MedievalPhysicalPriced
     - type: Sprite
       layers:
         - map: [ enum.ExpendableLightVisualLayers.Base ]

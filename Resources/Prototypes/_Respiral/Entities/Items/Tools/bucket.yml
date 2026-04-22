@@ -4,6 +4,7 @@
   name: ведро
   description: Крепкая ёмкость из древесины.
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Objects/Items/Tools/bucket.rsi
     layers:

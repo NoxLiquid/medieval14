@@ -95,6 +95,7 @@
   suffix: Средневековье
   description: Инструмент установки различных конструкций и приспособлений.
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Objects/Items/Tools/hammer.rsi
     state: hammer2

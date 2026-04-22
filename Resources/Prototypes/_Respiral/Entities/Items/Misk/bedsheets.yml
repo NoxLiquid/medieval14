@@ -10,6 +10,7 @@
     snap:
     - Bed
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     drawdepth: OverMobs
     sprite: _Respiral/Structures/Furniture/bed.rsi

@@ -70,6 +70,7 @@
   name: мастер-ключ
   description: Инструмент для создания копий ключей. Помогает сделать запасной ключ или подготовить этот ключ к замку.
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Objects/Items/key.rsi
     state: dublicate
@@ -104,6 +105,7 @@
   id: MedievalBunch
   name: связка ключей
   components:
+  - type: MedievalPhysicalPriced
   - type: ContainerContainer
     containers:
       storagebase: !type:Container

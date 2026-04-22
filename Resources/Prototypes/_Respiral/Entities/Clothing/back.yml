@@ -6,6 +6,7 @@
   suffix: Средневековье
   name: рюкзак
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Clothing/Back/backpack.rsi
     state: icon
@@ -32,6 +33,7 @@
   suffix: Средневековье
   name: вещмешок
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Clothing/Back/duffel.rsi
     state: icon
@@ -58,6 +60,7 @@
   suffix: Средневековье
   name: сумка через плечо
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Clothing/Back/satchel.rsi
     state: icon

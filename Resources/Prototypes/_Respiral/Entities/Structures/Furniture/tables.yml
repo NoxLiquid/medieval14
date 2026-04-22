@@ -133,6 +133,7 @@
   name: мраморный стол
   description: Тяжёлый каменный стол с мраморной столешницей.
   components:
+  - type: MedievalPhysicalPriced
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone

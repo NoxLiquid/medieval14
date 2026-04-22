@@ -18,6 +18,7 @@
   parent: MedievalDrinkBaseCup 
   id: MedievalDrinkBaseWoodenCup
   components:
+  - type: MedievalPhysicalPriced
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
@@ -84,6 +85,7 @@
   name: металлическая кружка
   description: Кружка, выкованная из металла.
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
     layers:
@@ -100,6 +102,7 @@
   name: окованная кружка
   description: Деревянная кружка с металлической окантовкой.
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Objects/Drinks/beer_mug_wood_metall.rsi
     layers:
@@ -117,6 +120,7 @@
   name: кубок
   description: Металлический кубок.
   components:
+  - type: MedievalPhysicalPriced
   - type: Appearance
   - type: Sprite
     sprite: _Respiral/Objects/Drinks/goblet.rsi
@@ -137,6 +141,7 @@
   name: бутылка
   description: Стеклянная бутылка для напитков.
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     size: Small
   - type: Openable
@@ -257,6 +262,7 @@
   name: золотая кружка
   description: Роскошная золотая кружка.
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
     layers:
@@ -451,6 +457,7 @@
   name: золотой кубок
   description: Роскошный золотой кубок.
   components:
+  - type: MedievalPhysicalPriced
   - type: Appearance
   - type: Sprite
     sprite: _Respiral/Objects/Drinks/goblet.rsi

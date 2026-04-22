@@ -8,6 +8,7 @@
   description: Деревянная кровать.
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: HealOnBuckle
     damage:
       types:

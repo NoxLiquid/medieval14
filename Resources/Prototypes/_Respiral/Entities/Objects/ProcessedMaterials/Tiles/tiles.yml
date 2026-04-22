@@ -3,6 +3,8 @@
   id: MedievalFloorTileItemBase
   suffix: Средневековье
   abstract: true
+  components:
+  - type: MedievalPhysicalPriced
 
 # Трава
 

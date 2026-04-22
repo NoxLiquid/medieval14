@@ -6,6 +6,7 @@
   name: сундук
   description: Большой контейнер.
   components:
+  - type: MedievalPhysicalPriced
   - type: Animateable
   - type: Construction
     containers:
@@ -91,6 +92,7 @@
   parent: MedievalBaseCrate
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container

@@ -51,6 +51,7 @@
   abstract: true
   name: рубаха
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -70,6 +71,7 @@
   abstract: true
   name: камзол
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -89,6 +91,7 @@
   abstract: true
   name: шлем
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -146,6 +149,7 @@
   abstract: true
   name: маска
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -203,6 +207,7 @@
   abstract: true
   name: пояс
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -222,6 +227,7 @@
   abstract: true
   name: перчатки
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -241,6 +247,7 @@
   abstract: true
   name: сапоги
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:

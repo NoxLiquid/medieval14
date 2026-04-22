@@ -64,6 +64,7 @@
   abstract: true
   name: машина
   components:
+  - type: MedievalPhysicalPriced
   - type: Appearance
   - type: WiresVisuals
   - type: Fixtures
@@ -111,6 +112,7 @@
   abstract: true
   name: станок
   components:
+  - type: MedievalPhysicalPriced
   - type: Lathe
   - type: Destructible
     thresholds:
@@ -139,6 +141,7 @@
   parent: MedievalMachine
   id: MedievalBaseHeaterMachine
   components:
+  - type: MedievalPhysicalPriced
   - type: Transform
     anchored: true
   - type: Fixtures

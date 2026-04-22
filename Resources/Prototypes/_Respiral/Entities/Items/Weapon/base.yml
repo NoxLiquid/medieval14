@@ -5,6 +5,7 @@
   name: меч
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
@@ -61,6 +62,7 @@
   name: кинжал
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
@@ -117,6 +119,7 @@
   name: тесак
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
@@ -173,6 +176,7 @@
   name: кастет
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -224,6 +228,7 @@
   name: булова
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -273,6 +278,7 @@
   name: моргенштерн
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -333,6 +339,7 @@
   name: алебарда
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -393,6 +400,7 @@
   name: полеарм
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -456,6 +464,7 @@
   name: копьё
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -517,6 +526,7 @@
   name: плеть
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
