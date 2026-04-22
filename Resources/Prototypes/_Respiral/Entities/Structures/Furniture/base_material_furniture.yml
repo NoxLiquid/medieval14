@@ -4,7 +4,6 @@
   abstract: true
   components:
   - type: MedievalPhysicalPriced
-  - type: MedievalSpiralPhysicalPriced
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood

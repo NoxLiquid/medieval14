@@ -68,7 +68,7 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: MedievalPhysicalPriced
+    - type: MedievalPhysicalPriced
     - type: Transform
       anchored: true
     - type: Physics

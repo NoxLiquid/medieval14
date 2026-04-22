@@ -54,7 +54,7 @@
     node: MedievalCounterWood
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedWood:  103
+      MedievalProcessedWood: 100
       MedievalProcessedStone: 6
       MedievalProcessedIron: 3
 

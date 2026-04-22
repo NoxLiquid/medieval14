@@ -177,7 +177,7 @@
     node: straightMarble
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedStone: 200
+      MedievalProcessedStone: 300
 
 # - type: entity
 #   parent: MedievalCEZLevelLadderCornerBase
