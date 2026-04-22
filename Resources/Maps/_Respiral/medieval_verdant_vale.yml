@@ -22498,7 +22498,7 @@ entities:
       parent: 1
     - type: Paper
       content: Примерно так нужно будет распологатьукреплённые стены, чтобы было интересно в них рыться. Остальное заполнить неукреплёнными
-- proto: SpawnPointAnyJob
+- proto: SpawnPointMedievalPilligrim
   entities:
   - uid: 3606
     components:
