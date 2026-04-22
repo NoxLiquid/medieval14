@@ -1,9 +1,9 @@
-using Content.Server.Hanging.Components;
+using Content.Server._Respiral.Hanging.Components;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Damage.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Hanging;
+namespace Content.Server._Respiral.Hanging;
 
 public sealed class HangingSystem : EntitySystem
 {

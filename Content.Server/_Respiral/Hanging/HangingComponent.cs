@@ -2,9 +2,9 @@ using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Server.Hanging.Components;
+namespace Content.Server._Respiral.Hanging.Components;
 
-[RegisterComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class HangingComponent : Component
 {
     [DataField, AutoNetworkedField]
