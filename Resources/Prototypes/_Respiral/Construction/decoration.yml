@@ -1,0 +1,93 @@
+# Статуи
+
+- type: construction
+  id: MedievalAngelStatue1
+  graph: MedievalStatue
+  startNode: start
+  targetNode: angelStatue1
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalAngelStatue2
+  graph: MedievalStatue
+  startNode: start
+  targetNode: angelStatue2
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalAngelStatue3
+  graph: MedievalStatue
+  startNode: start
+  targetNode: angelStatue3
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalWizardStatue
+  graph: MedievalStatue
+  startNode: start
+  targetNode: wizardStatue
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Надгробия
+
+- type: construction
+  id: MedievalTombstoneCross
+  graph: MedievalTombstone
+  startNode: start
+  targetNode: cross
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalTombstoneCross2
+  graph: MedievalTombstone
+  startNode: start
+  targetNode: cross2
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalTombstone
+  graph: MedievalTombstone
+  startNode: start
+  targetNode: tomb
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
