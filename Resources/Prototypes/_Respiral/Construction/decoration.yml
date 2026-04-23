@@ -93,6 +93,60 @@
   conditions:
     - !type:TileNotBlocked
 
+# Колокола
+
+- type: construction
+  id: MedievalGuardBell1
+  graph: MedievalGuardBell
+  startNode: start
+  targetNode: bell1
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalGuardBell2
+  graph: MedievalGuardBell
+  startNode: start
+  targetNode: bell2
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalGuardBell3
+  graph: MedievalGuardBell
+  startNode: start
+  targetNode: bell3
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalGuardBell4
+  graph: MedievalGuardBell
+  startNode: start
+  targetNode: bell4
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 - type: construction
   id: MedievalTombstone
   graph: MedievalTombstone

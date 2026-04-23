@@ -1,0 +1,100 @@
+# Колокола
+- type: entity
+  id: MedievalGuardBell1
+  name: сторожевой колокол
+  description: Железный колокол на деревянной стойке. Используется для оповещения.
+  parent: BaseStructureDynamic
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/guard_bell.rsi
+    state: base
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 400
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: InteractionPopup
+    interactDelay: 1
+    successChance: 1
+    interactSuccessSound:
+      collection: ChurchBell
+  - type: Physics
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Construction
+    graph: MedievalGuardBell
+    node: bell1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalIronIngot1:
+            min: 1
+            max: 1
+          MedievalBoard1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalIronIngot: 100
+      MedievalBoard: 200
+
+- type: entity
+  id: MedievalGuardBell2
+  parent: MedievalGuardBell1
+  name: сторожевой колокол
+  description: Железный колокол на деревянной стойке. Используется для оповещения.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/guard_bell.rsi
+    state: base-2
+    noRot: true
+  - type: Construction
+    graph: MedievalGuardBell
+    node: bell2
+
+- type: entity
+  id: MedievalGuardBell3
+  parent: MedievalGuardBell1
+  name: сторожевой колокол
+  description: Железный колокол на деревянной стойке. Используется для оповещения.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/guard_bell.rsi
+    state: base-3
+    noRot: true
+  - type: Construction
+    graph: MedievalGuardBell
+    node: bell3
+
+- type: entity
+  id: MedievalGuardBell4
+  parent: MedievalGuardBell1
+  name: сторожевой колокол
+  description: Железный колокол на деревянной стойке. Используется для оповещения.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/guard_bell.rsi
+    state: base-4
+    noRot: true
+  - type: Construction
+    graph: MedievalGuardBell
+    node: bell4
