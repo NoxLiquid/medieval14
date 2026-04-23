@@ -39,6 +39,17 @@
         doAfter: 5
       - tool: MedievalScore
         doAfter: 3
+    - to: lumeraStatue
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - material: MedievalProcessedStone
+        amount: 3
+        doAfter: 5
+      - tool: MedievalScore
+        doAfter: 3
     - to: wizardStatue
       completed:
       - !type:SnapToGrid {}
@@ -83,6 +94,21 @@
 
   - node: angelStatue3
     entity: MedievalAngelStatue3
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalProcessedStone1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: lumeraStatue
+    entity: MedievalLumeraStatue
     edges:
     - to: start
       conditions:

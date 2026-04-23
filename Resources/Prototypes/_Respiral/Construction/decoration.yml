@@ -52,6 +52,19 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  id: MedievalLumeraStatue
+  graph: MedievalStatue
+  startNode: start
+  targetNode: lumeraStatue
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 # Надгробия
 
 - type: construction
