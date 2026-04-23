@@ -18,8 +18,8 @@
       edges:
         - to: start
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           completed:
             - !type:SpawnPrototype
               prototype: MedievalConstructionToolsAmmo
@@ -30,8 +30,8 @@
               doAfter: 1  
         - to: MedievalCounterWood
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           steps:
             - tool: MedievalScore
               doAfter: 1
@@ -42,8 +42,8 @@
               doAfter: 1
         - to: MedievalCounterBirch
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           steps:
             - tool: MedievalScore
               doAfter: 1
@@ -54,8 +54,8 @@
               doAfter: 1
         - to: MedievalTableWood
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           steps:
             - tool: MedievalScore
               doAfter: 1
@@ -64,8 +64,8 @@
               doAfter: 1
         - to: MedievalTableBirch
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           steps:
             - tool: MedievalScore
               doAfter: 1
@@ -74,8 +74,8 @@
               doAfter: 1
         - to: MedievalTableMarble
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           steps:
             - material: MedievalProcessedStone
               amount: 1
@@ -86,8 +86,8 @@
       edges:
         - to: MedievalTableWoodFrame
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           completed:
             - !type:SpawnPrototype
               prototype: MedievalBoard
@@ -101,8 +101,8 @@
       edges:
         - to: MedievalTableWoodFrame
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           completed:
             - !type:SpawnPrototype
               prototype: MedievalBoard
@@ -116,8 +116,8 @@
       edges:
         - to: MedievalTableWoodFrame  
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           completed:
             - !type:SpawnPrototype
               prototype: MedievalBoard
@@ -131,8 +131,8 @@
       edges:
         - to: MedievalTableWoodFrame
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           completed:
             - !type:SpawnPrototype
               prototype: MedievalBoard
@@ -146,8 +146,8 @@
       edges:
         - to: MedievalTableWoodFrame
           conditions:
-            - !type:MinHealth
-              threshold: 250
+            - !type:MinHealthPercent
+              value: 90
           completed:
             - !type:SpawnPrototype
               prototype: MedievalProcessedStone1

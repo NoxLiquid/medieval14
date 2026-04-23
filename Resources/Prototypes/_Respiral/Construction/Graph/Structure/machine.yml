@@ -38,6 +38,8 @@
             - !type:ContainerEmpty
               container: machine_board
               examineText: construction-condition-machine-container-empty
+            - !type:MinHealthPercent
+              value: 90
           completed:
             - !type:SpawnPrototype
               prototype: MedievalManaCrystal1

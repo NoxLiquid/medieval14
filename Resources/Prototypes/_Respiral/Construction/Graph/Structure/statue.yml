@@ -55,6 +55,9 @@
     entity: MedievalAngelStatue1
     edges:
     - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
       completed:
       - !type:SpawnPrototype
         prototype: MedievalProcessedStone1
@@ -67,6 +70,9 @@
     entity: MedievalAngelStatue2
     edges:
     - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
       completed:
       - !type:SpawnPrototype
         prototype: MedievalProcessedStone1
@@ -79,6 +85,9 @@
     entity: MedievalAngelStatue3
     edges:
     - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
       completed:
       - !type:SpawnPrototype
         prototype: MedievalProcessedStone1
@@ -91,6 +100,9 @@
     entity: MedievalWizardStatue
     edges:
     - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
       completed:
       - !type:SpawnPrototype
         prototype: MedievalProcessedStone1
@@ -146,6 +158,9 @@
     entity: MedievalTombstoneCross
     edges:
     - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
       completed:
       - !type:SpawnPrototype
         prototype: MedievalProcessedStone1
@@ -158,6 +173,9 @@
     entity: MedievalTombstoneCross2
     edges:
     - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
       completed:
       - !type:SpawnPrototype
         prototype: MedievalProcessedStone1
@@ -170,6 +188,9 @@
     entity: MedievalTombstone
     edges:
     - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
       completed:
       - !type:SpawnPrototype
         prototype: MedievalProcessedStone1

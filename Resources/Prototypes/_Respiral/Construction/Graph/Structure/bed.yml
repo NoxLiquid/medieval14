@@ -25,6 +25,8 @@
       conditions:
         - !type:EntityAnchored
           anchored: true
+        - !type:MinHealthPercent
+          value: 90
       steps:
         - tool: Screwing
           doAfter: 2

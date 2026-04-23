@@ -58,6 +58,9 @@
       entity: FenceWoodHighStraight
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 5.0
@@ -70,6 +73,9 @@
       entity: FenceWoodHighEnd
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 2.5
@@ -82,6 +88,9 @@
       entity: FenceWoodHighCorner
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 5.0
@@ -94,6 +103,9 @@
       entity: FenceWoodHighTJunction
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 5.0
@@ -106,6 +118,9 @@
       entity: FenceWoodHighGate
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 5.0
@@ -118,6 +133,9 @@
       entity: FenceWoodSmallStraight
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 2.5
@@ -130,6 +148,9 @@
       entity: FenceWoodSmallEnd
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 1.25
@@ -142,6 +163,9 @@
       entity: FenceWoodSmallCorner
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 2.5
@@ -154,6 +178,9 @@
       entity: FenceWoodSmallTJunction
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 2.5
@@ -166,6 +193,9 @@
       entity: FenceWoodSmallGate
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 2.5

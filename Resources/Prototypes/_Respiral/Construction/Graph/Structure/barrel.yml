@@ -24,6 +24,9 @@
     entity: MedievalBarrel
     edges:
     - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
       completed:
       - !type:SpawnPrototype
         prototype: MedievalBoard1

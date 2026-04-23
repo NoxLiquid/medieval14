@@ -34,6 +34,9 @@
       entity: MedievalCEZLevelLadder
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 5.0
@@ -47,6 +50,9 @@
       entity: MedievalCEZLevelLadderStone
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 5.0
@@ -60,6 +66,9 @@
       entity: MedievalCEZLevelLadderMarble
       edges:
         - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
           steps:
             - tool: Prying
               doAfter: 5.0
