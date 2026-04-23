@@ -255,6 +255,108 @@
     stackType: MedievalFloorTileStoneBrick
 
 - type: entity
+  id: MedievalFloorTileItemStoneTile1
+  parent: MedievalFloorTileItemBase
+  name: каменная плитка 1
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: stone
+  - type: Item
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneTile1
+  - type: Stack
+    stackType: MedievalFloorTileStoneTile1
+
+- type: entity
+  id: MedievalFloorTileItemStoneTile2
+  parent: MedievalFloorTileItemBase
+  name: каменная плитка 2
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: stone
+  - type: Item
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneTile2
+  - type: Stack
+    stackType: MedievalFloorTileStoneTile2
+
+- type: entity
+  id: MedievalFloorTileItemStoneTile3
+  parent: MedievalFloorTileItemBase
+  name: каменная плитка 3
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: stone
+  - type: Item
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneTile3
+  - type: Stack
+    stackType: MedievalFloorTileStoneTile3
+
+- type: entity
+  id: MedievalFloorTileItemStoneTile4
+  parent: MedievalFloorTileItemBase
+  name: каменная плитка 4
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: stone
+  - type: Item
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneTile4
+  - type: Stack
+    stackType: MedievalFloorTileStoneTile4
+
+- type: entity
+  id: MedievalFloorTileItemStoneTile5
+  parent: MedievalFloorTileItemBase
+  name: каменная плитка 5
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: stone
+  - type: Item
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneTile5
+  - type: Stack
+    stackType: MedievalFloorTileStoneTile5
+
+- type: entity
+  id: MedievalFloorTileItemStoneTile6
+  parent: MedievalFloorTileItemBase
+  name: каменная плитка 6
+  description: Может послужить неплохим метательным оружием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: stone
+  - type: Item
+    heldPrefix: stone
+  - type: FloorTile
+    outputs:
+    - MedievalFloorStoneTile6
+  - type: Stack
+    stackType: MedievalFloorTileStoneTile6
+
+- type: entity
   id: MedievalFloorTileItemAsh
   parent: MedievalFloorTileItemBase
   name: пепел

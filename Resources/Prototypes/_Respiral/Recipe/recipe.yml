@@ -370,6 +370,36 @@
   id: MedievalFloorTileItemStoneBrickRecipe
   result: MedievalFloorTileItemStoneBrick
 
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneTile1Recipe
+  result: MedievalFloorTileItemStoneTile1
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneTile2Recipe
+  result: MedievalFloorTileItemStoneTile2
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneTile3Recipe
+  result: MedievalFloorTileItemStoneTile3
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneTile4Recipe
+  result: MedievalFloorTileItemStoneTile4
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneTile5Recipe
+  result: MedievalFloorTileItemStoneTile5
+
+- type: latheRecipe
+  parent: MedievalBaseStoneTileRecipe
+  id: MedievalFloorTileItemStoneTile6Recipe
+  result: MedievalFloorTileItemStoneTile6
+
 ## Плавильня
 
 - type: latheRecipe
