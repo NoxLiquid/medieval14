@@ -6,7 +6,7 @@
   name: книга
   components:
   - type: Sprite
-    sprite: Objects/Misc/books.rsi
+    sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
     layers:
     - state: paper
     - state: cover_base
@@ -55,20 +55,20 @@
   components:
   - type: Sprite
     layers:
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: paper
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: cover_base
       color: "#332d27"
       map: [ "cover" ]
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: decor_wingette
       color: "#453f3a"
       map: [ "decor" ]
-    - sprite: _Respiral/Objects/Items/books.rsi
+    - sprite: Overdoors
       state: anvil
       map: [ "icon" ]
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: overlay_null
       map: [ "overlay" ]
   - type: LearnSkillWhenUsing
@@ -87,20 +87,20 @@
   components:
   - type: Sprite
     layers:
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: paper
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: cover_base
       color: "#332d27"
       map: [ "cover" ]
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: decor_wingette
       color: "#453f3a"
       map: [ "decor" ]
-    - sprite: _Respiral/Objects/Items/books.rsi
+    - sprite: Overdoors
       state: saw
       map: [ "icon" ]
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: overlay_null
       map: [ "overlay" ]
   - type: LearnSkillWhenUsing
@@ -119,20 +119,20 @@
   components:
   - type: Sprite
     layers:
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: paper
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: cover_base
       color: "#332d27"
       map: [ "cover" ]
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: decor_wingette
       color: "#453f3a"
       map: [ "decor" ]
-    - sprite: _Respiral/Objects/Items/books.rsi
+    - sprite: Overdoors
       state: alhm
       map: [ "icon" ]
-    - sprite: Objects/Misc/books.rsi
+    - sprite: _Respiral/Objects/Items/Bureaucracy/books.rsi
       state: overlay_null
       map: [ "overlay" ]
   - type: LearnSkillWhenUsing

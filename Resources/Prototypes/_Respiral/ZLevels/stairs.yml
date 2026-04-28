@@ -8,14 +8,14 @@
   placement:
       mode: AlignTileAny
   components:
+  - type: SpriteFade
   - type: MedievalPhysicalPriced
   # - type: CEAutoTilePlacement
   #   tile: CEPlanks
-  - type: SpriteFade
   - type: Sprite
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_wood
-    drawdepth: Mobs
+    drawdepth: Overdoors
     offset: 0,0.5
   - type: PlacementReplacement
     key: walls
@@ -145,7 +145,7 @@
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_stone
     color: "#808080"
-    drawdepth: Mobs
+    drawdepth: Overdoors
     offset: 0,0.5
   - type: Damageable
     damageContainer: MedievalInorganic
@@ -167,7 +167,7 @@
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_stone
     color: "#E8E0C8"
-    drawdepth: Mobs
+    drawdepth: Overdoors
     offset: 0,0.5
   - type: Damageable
     damageContainer: MedievalInorganic
