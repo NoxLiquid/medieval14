@@ -1,0 +1,87 @@
+# Средневековая бумага и штампы
+
+# Базовая бумага
+- type: entity
+  parent: BasePaper
+  id: MedievalBasePaper
+  abstract: true
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+
+# Бумага (записываемая)
+- type: entity
+  name: бумага
+  parent: MedievalBasePaper
+  id: MedievalPaper
+  description: Лист грубой бумаги. На нём можно писать.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#bbb19e"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#bbb19e"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: Paper
+  - type: PaperLabelType
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: PaperVisuals
+
+# Бумага с текстом (для маппинга)
+- type: entity
+  parent: MedievalPaper
+  id: MedievalPaperWritten
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_words
+      color: "#bbb19e"
+
+# Штампы
+
+- type: entity
+  name: банковская печать
+  parent: RubberStampBase
+  id: MedievalStampBank
+  description: Печать для заверения финансовых документов.
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-medieval-bank
+    stampState: paper_stamp-generic
+    stampedColor: "#8B4513"
+
+- type: entity
+  name: печать подтверждения
+  parent: RubberStampBase
+  id: MedievalStampApproved
+  description: Печать, означающая одобрение документа.
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-medieval-approved
+    stampState: paper_stamp-ok
+    stampedColor: "#228B22"
+
+- type: entity
+  name: печать отказа
+  parent: RubberStampBase
+  id: MedievalStampDenied
+  description: Печать, означающая отклонение документа.
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-medieval-denied
+    stampState: paper_stamp-deny
+    stampedColor: "#8B0000"

@@ -1,0 +1,32 @@
+- type: entity
+  name: перо
+  parent: BaseItem
+  id: MedievalPen
+  description: Гусиное перо, заточенное для письма. Кончик пропитан чернилами.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Bureaucracy/pens.rsi
+    state: feather
+  - type: Item
+    sprite: _Respiral/Objects/Items/Bureaucracy/pens.rsi
+    heldPrefix: feather
+    size: Tiny
+  - type: Tag
+    tags:
+    - Write
+    - Pen
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+          - -0.3,0.1
+          - -0.1,0.3
+          - 0.3,-0.1
+          - 0.1,-0.3
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
