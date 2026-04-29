@@ -9,7 +9,6 @@
     sprite: _Respiral/Objects/Items/mop.rsi
     layers:
     - state: mop
-      color: "#4B0000"
     - map: ["enum.SolutionContainerLayers.Fill"]
       state: fill-3
       visible: false
