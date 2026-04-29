@@ -1,0 +1,131 @@
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieHuman
+  name: плюшевый человек
+  description: Мягкая игрушка в виде человека.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: human
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieDwarf
+  name: плюшевый дварф
+  description: Мягкая игрушка в виде коренастого дварфа.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: dwarf
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieElf
+  name: плюшевый эльф
+  description: Мягкая игрушка в виде эльфа с длинными ушами.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: elf
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieGoblin
+  name: плюшевый гоблин
+  description: Мягкая игрушка в виде зелёного гоблина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: goblin
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieTiefling
+  name: плюшевый тифлинг
+  description: Мягкая игрушка в виде тифлинга с рожками.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: tiefling
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieSilva
+  name: плюшевая сильва
+  description: Мягкая игрушка в виде сильвы.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: silva
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieCarcat
+  name: плюшевый каркат
+  description: Мягкая игрушка в виде карката.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: carcat
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieFrog
+  name: плюшевая лягушка
+  description: Мягкая игрушка в виде лягушки.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: frog
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieSkeleton
+  name: плюшевый скелет
+  description: Мягкая игрушка в виде скелета. Жутковато мило.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: skeleton
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieAgaric
+  name: плюшевый мухомор
+  description: Мягкая игрушка в виде мухомора.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: agaric
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieLumera
+  name: плюшевая люмера
+  description: Мягкая игрушка в виде люмеры.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/plushies.rsi
+    state: lumera
+  - type: Item
+    sprite: _Respiral/Objects/Items/plushies.rsi
