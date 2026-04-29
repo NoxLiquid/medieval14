@@ -541,6 +541,20 @@
 
 - type: latheRecipe
   parent: MedievalBaseToolsRecipe
+  id: MedievalGoldCoinRecipe
+  result: MedievalGoldCoin1
+  materials:
+    MedievalProcessedGold: 10
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalSilverCoinRecipe
+  result: MedievalSilverCoin1
+  materials:
+    MedievalProcessedSilver: 10
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
   id: MedievalKeyDuplicatorRecipe
   result: MedievalKeyDuplicator
   materials:

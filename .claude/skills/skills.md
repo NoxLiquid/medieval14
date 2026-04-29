@@ -10,6 +10,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `combat.md` | Damage system, modifiers, Destructible balance |
 | `containers.md` | EntityStorage, бочки (Barrel), SolutionContainer на структурах, визуализаторы |
 | `bureaucracy.md` | Бумага, свитки, папки, паспорт, штампы (средневековые) |
+| `economy.md` | Монеты, кошелёк, драгоценные камни как материалы |
 
 ## Key Architectural Rules
 

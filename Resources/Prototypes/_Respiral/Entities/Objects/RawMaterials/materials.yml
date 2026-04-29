@@ -104,3 +104,39 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: quartz }
   color: "#51484F"
   price: 2
+
+- type: material
+  id: MedievalRawEmerald
+  stackEntity: MedievalEmeraldGem1
+  name: medieval-raw-materials-emerald
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: emerald1 }
+  color: "#50C878"
+  price: 8
+
+- type: material
+  id: MedievalRawSapphire
+  stackEntity: MedievalSapphireGem1
+  name: medieval-raw-materials-sapphire
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: sapphire1 }
+  color: "#0F52BA"
+  price: 9
+
+- type: material
+  id: MedievalRawRuby
+  stackEntity: MedievalRubyGem1
+  name: medieval-raw-materials-ruby
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: ruby1 }
+  color: "#E0115F"
+  price: 10
+
+- type: material
+  id: MedievalRawTopaz
+  stackEntity: MedievalTopazGem1
+  name: medieval-raw-materials-topaz
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: topaz1 }
+  color: "#FFC87C"
+  price: 11

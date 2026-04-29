@@ -1,0 +1,182 @@
+# Монеты
+
+- type: entity
+  parent: BaseItem
+  id: MedievalGoldCoin
+  categories: [ HideSpawnMenu ]
+  name: золотая монета
+  description: Блестящая золотая монета.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Economy/gold_coin.rsi
+    layers:
+    - state: coin0
+      map: ["base"]
+  - type: Item
+    size: Tiny
+    sprite: _Respiral/Objects/Items/Economy/gold_coin.rsi
+  - type: Stack
+    stackType: MedievalGoldCoin
+    baseLayer: base
+    layerStates:
+    - coin0
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+  - type: Tag
+    tags:
+    - MedievalCoin
+    - MedievalGoldCoin
+  - type: Appearance
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedGold: 10
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalGoldCoin
+  id: MedievalGoldCoin1
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: BaseItem
+  id: MedievalSilverCoin
+  categories: [ HideSpawnMenu ]
+  name: серебряная монета
+  description: Серебряная монета с чеканным узором.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Economy/silver_coin.rsi
+    layers:
+    - state: coin0
+      map: ["base"]
+  - type: Item
+    size: Tiny
+    sprite: _Respiral/Objects/Items/Economy/silver_coin.rsi
+  - type: Stack
+    stackType: MedievalSilverCoin
+    baseLayer: base
+    layerStates:
+    - coin0
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+  - type: Tag
+    tags:
+    - MedievalCoin
+    - MedievalSilverCoin
+  - type: Appearance
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 10
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: MedievalSilverCoin
+  id: MedievalSilverCoin1
+  components:
+  - type: Stack
+    count: 1
+
+# Кошелёк
+
+- type: entity
+  parent: BaseItem
+  id: MedievalWallet
+  name: кошелёк
+  description: Кожаный мешочек для монет.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Economy/wallet.rsi
+    state: wallet-0
+  - type: Item
+    size: Small
+    sprite: _Respiral/Objects/Items/Economy/wallet.rsi
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,5,2
+    whitelist:
+      tags:
+        - MedievalCoin
+  - type: Damageable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:EmptyContainersBehaviour
+        containers:
+        - storagebase
+  - type: ItemMapper
+    mapLayers:
+      wallet-0:
+        whitelist:
+          tags: [ MedievalCoin ]
+        minCount: 0
+      wallet-1:
+        whitelist:
+          tags: [ MedievalCoin ]
+        minCount: 1
+      wallet-2:
+        whitelist:
+          tags: [ MedievalCoin ]
+        minCount: 4
+      wallet-3:
+        whitelist:
+          tags: [ MedievalCoin ]
+        minCount: 7
+    sprite: _Respiral/Objects/Items/Economy/wallet.rsi
+  - type: Appearance

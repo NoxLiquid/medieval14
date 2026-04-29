@@ -62,6 +62,12 @@ stack-medieval-raw-adamantine = адамантин
 stack-medieval-raw-pelt = шкура
 stack-medieval-raw-cloth = ткань
 stack-medieval-raw-quartz = кварц
+stack-medieval-gold-coin = золотые монеты
+stack-medieval-silver-coin = серебряные монеты
+stack-medieval-raw-emerald = изумруд
+stack-medieval-raw-sapphire = сапфир
+stack-medieval-raw-ruby = рубин
+stack-medieval-raw-topaz = топаз
 
 stack-medieval-nail = гвоздь
 

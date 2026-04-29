@@ -42,3 +42,12 @@
 
 - type: Tag
   id: MedievalDiagonal
+
+- type: Tag
+  id: MedievalCoin
+
+- type: Tag
+  id: MedievalGoldCoin
+
+- type: Tag
+  id: MedievalSilverCoin

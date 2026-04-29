@@ -92,6 +92,8 @@
   - MedievalLockRecipe
   - MedievalConstructionToolsRecipe
   - MedievalBunchRecipe
+  - MedievalGoldCoinRecipe
+  - MedievalSilverCoinRecipe
   - MedievalKeyDuplicatorRecipe
   - MedievalAdamantineWhipRecipe
   - MedievalMithrilWhipRecipe
