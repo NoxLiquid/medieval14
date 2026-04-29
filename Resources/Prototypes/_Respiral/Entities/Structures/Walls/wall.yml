@@ -5,7 +5,7 @@
   components:
   - type: Occluder
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: Mobs
   - type: SpriteFade
   - type: Tag
     tags:
@@ -244,7 +244,7 @@
   components:
   - type: SpriteFade
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: Mobs
     sprite: Objects/Decoration/mines.rsi
     state: support_wall_broken
   - type: Destructible
@@ -274,7 +274,7 @@
     - Wooden
   - type: SpriteFade
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: Mobs
     noRot: true
     sprite: Objects/Decoration/mines.rsi
     state: support_wall

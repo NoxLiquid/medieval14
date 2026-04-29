@@ -24,7 +24,7 @@
   - type: InteractionOutline
   - type: SpriteFade
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: Mobs
     noRot: true
   - type: Icon
     state: frame

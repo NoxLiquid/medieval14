@@ -25,6 +25,7 @@
   id: MedievalCarpenterTable
   recipes:
   - MedievalBucketRecipe
+  - MedievalMopRecipe
   - MedievalDrinkMugWoodRecipe
   - MedievalCarpenterTableDetailRecipe
   - MedievalAlchemTableDetailRecipe
@@ -92,6 +93,7 @@
   - MedievalLockRecipe
   - MedievalConstructionToolsRecipe
   - MedievalBunchRecipe
+  - MedievalScissorsRecipe
   - MedievalGoldCoinRecipe
   - MedievalSilverCoinRecipe
   - MedievalKeyDuplicatorRecipe

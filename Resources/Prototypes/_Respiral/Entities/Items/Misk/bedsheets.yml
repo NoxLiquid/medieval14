@@ -12,7 +12,7 @@
   components:
   - type: MedievalPhysicalPriced
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: Mobs
     sprite: _Respiral/Structures/Furniture/bed.rsi
     state: blanket
     noRot: true

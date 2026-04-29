@@ -13,7 +13,7 @@
   - type: Rotatable
   - type: InteractionOutline
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: Mobs
     sprite: _Respiral/Structures/Doors/wood_door.rsi
     layers:
     - state: closed
@@ -35,8 +35,8 @@
     bumpOpen: false
     clickOpen: true
     canCrush: false
-    openDrawDepth: OverMobs
-    closedDrawDepth: OverMobs
+    openDrawDepth: Mobs
+    closedDrawDepth: Mobs
     closeTimeOne: 0.4
     closeTimeTwo: 0.8
     openTimeOne: 0.8

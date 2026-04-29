@@ -16,7 +16,7 @@
     - Wooden
   - type: Sprite
     sprite: Structures/Walls/wooden_fence.rsi
-    drawdepth: OverMobs
+    drawdepth: Mobs
   - type: SpriteFade
   - type: Physics
     bodyType: Static

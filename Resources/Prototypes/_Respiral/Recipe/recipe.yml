@@ -541,6 +541,20 @@
 
 - type: latheRecipe
   parent: MedievalBaseToolsRecipe
+  id: MedievalScissorsRecipe
+  result: MedievalScissors
+  materials:
+    MedievalProcessedIron: 10
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalMopRecipe
+  result: MedievalMop
+  materials:
+    MedievalProcessedWood: 100
+
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
   id: MedievalGoldCoinRecipe
   result: MedievalGoldCoin1
   materials:

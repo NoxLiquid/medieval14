@@ -4,8 +4,8 @@
   parent: MedievalBaseLockableDoor
   components:
   - type: Door
-    openDrawDepth: OverMobs
-    closedDrawDepth: OverMobs
+    openDrawDepth: Mobs
+    closedDrawDepth: Mobs
     closeTimeOne: 0
     closeTimeTwo: 0
     openTimeOne: 0
@@ -24,8 +24,8 @@
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
   - type: Door
-    openDrawDepth: OverMobs
-    closedDrawDepth: OverMobs
+    openDrawDepth: Mobs
+    closedDrawDepth: Mobs
     openSound:
       path: /Audio/Effects/stonedoor_openclose.ogg
     closeSound:
@@ -54,7 +54,7 @@
   - type: Rotatable
   - type: InteractionOutline
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: Mobs
   - type: Physics
     bodyType: Static
   - type: Fixtures

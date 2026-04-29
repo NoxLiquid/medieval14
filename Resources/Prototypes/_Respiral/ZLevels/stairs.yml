@@ -15,7 +15,7 @@
   - type: Sprite
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_wood
-    drawdepth: Overdoors
+    drawdepth: Mobs
     offset: 0,0.5
   - type: PlacementReplacement
     key: walls
@@ -69,7 +69,7 @@
   - type: Sprite
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_wood
-    drawdepth: Overdoors
+    drawdepth: Mobs
   - type: Occluder
     enabled: false
   - type: CEZLevelHighGround
@@ -116,7 +116,7 @@
   - type: Sprite
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_wood
-    drawdepth: Overdoors
+    drawdepth: Mobs
 
 - type: entity
   parent: MedievalCEZLevelLadderBase
@@ -127,7 +127,7 @@
     sprite: _Respiral/Structures/stairs.rsi
     color: "#8B4513"
     state: stairs_wood
-    drawdepth: Overdoors
+    drawdepth: Mobs
   - type: Construction
     graph: MedievalLadder
     node: straight
@@ -145,7 +145,7 @@
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_stone
     color: "#808080"
-    drawdepth: Overdoors
+    drawdepth: Mobs
     offset: 0,0.5
   - type: Damageable
     damageContainer: MedievalInorganic
@@ -167,7 +167,7 @@
     sprite: _Respiral/Structures/stairs.rsi
     state: stairs_stone
     color: "#E8E0C8"
-    drawdepth: Overdoors
+    drawdepth: Mobs
     offset: 0,0.5
   - type: Damageable
     damageContainer: MedievalInorganic

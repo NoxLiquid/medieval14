@@ -25,7 +25,7 @@
     - Window
     - MedievalWall
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: Mobs
   - type: SpriteFade
   - type: Icon
     state: full
@@ -84,7 +84,7 @@
     - Window
     - MedievalWall
   - type: Sprite
-    drawdepth: OverMobs
+    drawdepth: Mobs
   - type: SpriteFade
   - type: Icon
     state: full
