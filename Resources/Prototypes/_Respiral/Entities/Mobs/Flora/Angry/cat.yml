@@ -9,7 +9,7 @@
     sprite: _Respiral/Mobs/Flora/cat.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: running
+      state: alive
   - type: Physics
   - type: Fixtures
     fixtures:

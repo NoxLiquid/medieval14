@@ -36,7 +36,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#dddddd'
-      state: running
+      state: alive
   - type: ReplacementAccent
     accent: mouse
   - type: Speech
@@ -104,7 +104,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#6d7b8d'
-      state: running
+      state: alive
   
 - type: entity
   id: MedievalMobRat3
@@ -116,7 +116,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#293133'
-      state: running
+      state: alive
 
 - type: entity
   name: большая крыса
@@ -141,7 +141,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#dddddd'
-      state: running
+      state: alive
   - type: Thirst
     startingThirst: 50
     thresholds:
@@ -187,7 +187,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#6d7b8d'
-      state: running
+      state: alive
 
 - type: entity
   id: MedievalMobBigRat3
@@ -199,4 +199,4 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#293133'
-      state: running
+      state: alive

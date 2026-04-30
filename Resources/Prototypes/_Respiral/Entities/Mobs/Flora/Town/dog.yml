@@ -10,7 +10,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#8B5A2B'
-      state: running
+      state: alive
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -71,7 +71,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#C2A27C'
-      state: running
+      state: alive
 
 - type: entity
   parent: MedievalMobDog
@@ -83,4 +83,4 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#2F2F2F'
-      state: running
+      state: alive

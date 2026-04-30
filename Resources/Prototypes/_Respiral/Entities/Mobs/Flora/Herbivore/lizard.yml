@@ -10,17 +10,17 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       color: '#4E7F3A'
-      state: running
+      state: alive
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 6
   - type: SpriteMovement
     movementLayers:
       movement:
-        state: running
+        state: alive
     noMovementLayers:
       movement:
-        state: running
+        state: alive
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -73,14 +73,14 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       color: '#2F5D2F'
-      state: running
+      state: alive
   - type: SpriteMovement
     movementLayers:
       movement:
         state: moving
     noMovementLayers:
       movement:
-        state: running
+        state: alive
 
 - type: entity
   parent: MedievalLizard
@@ -92,11 +92,11 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       color: '#B7C45A'
-      state: running
+      state: alive
   - type: SpriteMovement
     movementLayers:
       movement:
         state: moving
     noMovementLayers:
       movement:
-        state: running
+        state: alive

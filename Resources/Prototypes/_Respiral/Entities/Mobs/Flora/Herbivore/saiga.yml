@@ -10,7 +10,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#C2A36B'
-      state: running
+      state: alive
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -55,7 +55,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#C2A36B'
-      state: running
+      state: alive
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:

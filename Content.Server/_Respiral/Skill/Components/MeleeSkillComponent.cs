@@ -11,7 +11,7 @@ public sealed partial class MeleeSkillComponent : Component
     ///     Требуемые навыки
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<SkillPrototype>> Skills;
+    public List<ProtoId<SkillPrototype>> NeededSkills;
 
     /// <summary>
     ///     Количество даваемых очков при изучении

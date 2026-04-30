@@ -47,7 +47,7 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: running
+        Base: alive
       Critical:
         Base: dead
       Dead:

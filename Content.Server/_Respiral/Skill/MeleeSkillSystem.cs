@@ -23,7 +23,7 @@ public sealed class MeleeSkillSystem : EntitySystem
         // Урон
         var damage = args.BaseDamage;
 
-        foreach (var skill in component.Skills)
+        foreach (var skill in component.NeededSkills)
         {
             damage *= _skillSystem.GetSkillProgress(args.User, skill);
         }

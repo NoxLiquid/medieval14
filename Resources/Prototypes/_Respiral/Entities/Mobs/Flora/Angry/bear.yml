@@ -10,7 +10,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#C2A36B'
-      state: running
+      state: alive
   - type: Fixtures
     fixtures:
       fix1:

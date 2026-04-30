@@ -10,7 +10,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#8A8F8C'
-      state: running
+      state: alive
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -66,7 +66,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#2B2B2B'
-      state: running
+      state: alive
 
 - type: entity
   name: полярный волк
@@ -81,7 +81,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#E8E8E8'
-      state: running
+      state: alive
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
@@ -106,4 +106,4 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#7A5C3A'
-      state: running
+      state: alive

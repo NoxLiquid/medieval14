@@ -29,7 +29,7 @@
     qualities:
     - Slicing
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalOneSword
     points:
     - MedievalOneSword: 0.01
@@ -87,7 +87,7 @@
     qualities:
     - Slicing
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalDagger
     points:
     - MedievalDagger: 0.01
@@ -145,7 +145,7 @@
     qualities:
     - Slicing
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalOneSword
     points:
     - MedievalOneSword: 0.01
@@ -198,7 +198,7 @@
   - type: Item
     size: Normal
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalFistFight
     points:
     - MedievalFistFight: 0.01
@@ -249,7 +249,7 @@
   - type: Item
     size: Normal
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalMace
     points:
     - MedievalMace: 0.01
@@ -304,7 +304,7 @@
   - type: Item
     size: Ginormous
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalMace
     points:
     - MedievalMace: 0.01
@@ -366,7 +366,7 @@
   - type: Item
     size: Ginormous
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalAncientWeapons
     points:
     - MedievalAncientWeapons: 0.01
@@ -431,7 +431,7 @@
     unisex: false
     size: Ginormous
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalAncientWeapons
     points:
     - MedievalAncientWeapons: 0.01
@@ -494,7 +494,7 @@
     unisex: false
     size: Ginormous
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalAncientWeapons
     points:
     - MedievalAncientWeapons: 0.01
@@ -551,7 +551,7 @@
   - type: Item
     size: Normal
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalWhip
     points:
     - MedievalWhip: 0.01
