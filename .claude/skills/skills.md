@@ -12,6 +12,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `bureaucracy.md` | Бумага, свитки, папки, паспорт, штампы (средневековые) |
 | `economy.md` | Монеты, кошелёк, драгоценные камни как материалы |
 | `inventory.md` | Слоты инвентаря, визуализация одежды, sex-specific спрайты |
+| `skill_system.md` | Система навыков, MeleeSkill, модификаторы изучения |
 
 ## Key Architectural Rules
 

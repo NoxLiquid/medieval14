@@ -31,12 +31,13 @@
   - type: MeleeSkill
     skills:
     - MedievalOneSword
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalOneSword: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -88,12 +89,13 @@
   - type: MeleeSkill
     skills:
     - MedievalDagger
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalDagger: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -145,12 +147,13 @@
   - type: MeleeSkill
     skills:
     - MedievalOneSword
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalOneSword: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -197,12 +200,13 @@
   - type: MeleeSkill
     skills:
     - MedievalFistFight
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalFistFight: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -247,12 +251,13 @@
   - type: MeleeSkill
     skills:
     - MedievalMace
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalMace: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -301,12 +306,13 @@
   - type: MeleeSkill
     skills:
     - MedievalMace
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalMace: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -362,12 +368,13 @@
   - type: MeleeSkill
     skills:
     - MedievalAncientWeapons
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalAncientWeapons: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -426,12 +433,13 @@
   - type: MeleeSkill
     skills:
     - MedievalAncientWeapons
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalAncientWeapons: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -488,12 +496,13 @@
   - type: MeleeSkill
     skills:
     - MedievalAncientWeapons
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalAncientWeapons: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -544,12 +553,13 @@
   - type: MeleeSkill
     skills:
     - MedievalWhip
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalWhip: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
