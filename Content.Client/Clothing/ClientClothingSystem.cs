@@ -102,9 +102,24 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         List<PrototypeLayerData>? layers = null;
 
-        // first attempt to get species specific data.
-        if (inventory.SpeciesId != null)
+        // Respiral-Start
+        Sex? sex = null;
+
+        if (TryComp(args.Equipee, out HumanoidProfileComponent? appearance))
+            sex = appearance.Sex;
+
+        // 1. Species + Sex
+        if (inventory.SpeciesId != null && sex != null)
+            item.ClothingVisuals.TryGetValue($"{args.Slot}-{inventory.SpeciesId}-{sex.Value}", out layers);
+
+        // 2. Только Species
+        if (layers == null && inventory.SpeciesId != null)
             item.ClothingVisuals.TryGetValue($"{args.Slot}-{inventory.SpeciesId}", out layers);
+
+        // 3. Только Sex
+        if (layers == null && sex != null)
+            item.ClothingVisuals.TryGetValue($"{args.Slot}-{sex.Value}", out layers);
+        // Respiral-End
 
         // if that returned nothing, attempt to find generic data
         if (layers == null && !item.ClothingVisuals.TryGetValue(args.Slot, out layers))
