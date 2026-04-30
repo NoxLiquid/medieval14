@@ -8,9 +8,9 @@
     layers:
     - state: blade
       color: "#8A8A8A"
-      map: [ blade ]
+      map: [ base ]
     - state: handle
-      map: [ handle ]
+      map: [ base ]
   - type: MeleeWeapon
     damage:
       groups:

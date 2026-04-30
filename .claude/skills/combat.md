@@ -22,3 +22,10 @@
 | `MedievalSilver` | 0.8 | 0.8 | 0.9 | 0.5 | 1.0 |
 
 Note: `DamageTrigger` checks accumulated damage **after** modifiers.
+
+## GenericVisualizer + Wieldable
+
+- `GenericVisualizer` targets layers by `map` key (e.g., `base`)
+- If a child prototype overrides `Sprite.layers` and changes `map` keys, the visualizer loses the target layer
+- `PrototypeLayerData` supports `color` field — `{ state: wielded, color: "#8A8A8A" }` is valid YAML
+- Child weapon prototypes must keep `map: [ base ]` on the layer that changes state on wield
