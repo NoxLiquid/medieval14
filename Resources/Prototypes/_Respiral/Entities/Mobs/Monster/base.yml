@@ -1,0 +1,52 @@
+- type: entity
+  parent:
+  - MobRespirator
+  - MobAtmosStandard
+  - BaseSimpleMob
+  - MobAtmosExposed
+  - MobCombat
+  - MobBloodstream
+  - MobFlammable
+  - BaseMobAnimal
+  id: MedievalMonsterMobBase
+  suffix: ИИ
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - MedievalMonster
+  - type: HTN
+    rootTask:
+      task: MedievalHostileFloraCompound
+  - type: Damageable
+    damageContainer: MedievalBiological
+  - type: StatusEffects
+    allowed:
+    - Electrocution
+    - TemporaryBlindness
+    - Pacified
+    - Flashed
+    - RadiationProtection
+    - Adrenaline
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 200
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: MobPrice
+    price: 500
+  - type: FloatingVisuals
+  - type: Climbing
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.7
+      80: 0.5
+  - type: Perishable

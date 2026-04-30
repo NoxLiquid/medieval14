@@ -13,6 +13,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `economy.md` | Монеты, кошелёк, драгоценные камни как материалы |
 | `inventory.md` | Слоты инвентаря, визуализация одежды, sex-specific спрайты |
 | `skill_system.md` | Система навыков, MeleeSkill, модификаторы изучения |
+| `mobs.md` | NPC, монстры, фракции, базовые прототипы мобов |
 
 ## Key Architectural Rules
 
