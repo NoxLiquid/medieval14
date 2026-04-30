@@ -3,7 +3,7 @@
   slots:
     # Respiral-Start - слот штанов
     - name: pants
-      slotTexture: uniform
+      slotTexture: pants
       slotFlags: LEGS
       stripTime: 4
       uiWindowPos: 0,0

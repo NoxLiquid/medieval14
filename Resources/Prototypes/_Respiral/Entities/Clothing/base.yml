@@ -10,13 +10,11 @@
 #         {"belt", "BELT"},
 #         {"gloves", "HAND"},
 #         {"shoes", "FEET"},
+#         {"pants", "LEGS"},
 #         {"id", "IDCARD"},
 #         {"pocket1", "POCKET1"},
 #         {"pocket2", "POCKET2"},
-#         {"suitstorage", "SUITSTORAGE"},
-#         {"socks", "SOCKS"}, // DS14-Underwear
-#         {"underweart", "UNDERWEART"}, // DS14-Underwear
-#         {"underwearb", "UNDERWEARB"}, // DS14-Underwear
+#         {"suitstorage", "SUITSTORAGE"}
 
 - type: entity
   abstract: true
@@ -239,6 +237,26 @@
     clothingVisuals:
       gloves:
       - state: equipped-HAND
+
+# === BASE PANTS ===
+- type: entity
+  parent: MedievalBaseClothing
+  id: MedievalBasePants
+  abstract: true
+  name: штаны
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Clothing
+    slots: [legs]
+    clothingVisuals:
+      pants:
+      - state: equipped-LEGS
 
 # === BASE SHOES ===
 - type: entity
