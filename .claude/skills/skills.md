@@ -11,6 +11,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `containers.md` | EntityStorage, бочки (Barrel), SolutionContainer на структурах, визуализаторы |
 | `bureaucracy.md` | Бумага, свитки, папки, паспорт, штампы (средневековые) |
 | `economy.md` | Монеты, кошелёк, драгоценные камни как материалы |
+| `inventory.md` | Слоты инвентаря, визуализация одежды, sex-specific спрайты |
 
 ## Key Architectural Rules
 
