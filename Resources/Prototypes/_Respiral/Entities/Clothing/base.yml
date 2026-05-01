@@ -255,8 +255,12 @@
   - type: Clothing
     slots: [legs]
     clothingVisuals:
-      pants:
+      jumpsuit:
       - state: equipped-LEGS
+      jumpsuit-Male:
+      - state: equipped-LEGS
+      jumpsuit-Female:
+      - state: equipped-LEGS-female
 
 # === BASE SHOES ===
 - type: entity
@@ -275,8 +279,12 @@
   - type: Clothing
     slots: [feet]
     clothingVisuals:
-      shoes:
+      jumpsuit:
       - state: equipped-FEET
+      jumpsuit-Male:
+      - state: equipped-FEET
+      jumpsuit-Female:
+      - state: equipped-FEET-female
 
 # === BASE ID ===
 - type: entity
