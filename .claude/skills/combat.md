@@ -23,9 +23,10 @@
 
 Note: `DamageTrigger` checks accumulated damage **after** modifiers.
 
-## GenericVisualizer + Wieldable
+## Wieldable In-Hand Visuals
 
-- `GenericVisualizer` targets layers by `map` key (e.g., `base`)
-- If a child prototype overrides `Sprite.layers` and changes `map` keys, the visualizer loses the target layer
-- `PrototypeLayerData` supports `color` field — `{ state: wielded, color: "#8A8A8A" }` is valid YAML
-- Child weapon prototypes must keep `map: [ base ]` on the layer that changes state on wield
+- `GenericVisualizer` for `WieldableVisuals.Wielded` was removed from base weapons — it required a non-existent `wielded` RSI state and a missing `Appearance` component
+- Wielded in-hand display is handled via `HeldPrefix` ("wielded") set by `SharedWieldableSystem`
+- `ItemSystem.OnGetVisuals` (Respiral modification) now applies `HeldPrefix` to explicit `inhandVisuals` layers: if `wielded-{state}` exists in the RSI, it replaces the original state
+- This allows weapons with explicit `inhandVisuals` (for per-material color tinting) to also support wielded sprites
+- RSIs for two-handed weapons need both `inhand-left/right` and `wielded-inhand-left/right` states

@@ -330,11 +330,6 @@
     damage:
       types:
         Structural: 10
-  - type: GenericVisualizer
-    visuals:
-      enum.WieldableVisuals.Wielded:
-        base:
-          True: { state: wielded }
   - type: Wieldable
   - type: IncreaseDamageOnWield
 
@@ -392,11 +387,6 @@
     damage:
       types:
         Structural: 10
-  - type: GenericVisualizer
-    visuals:
-      enum.WieldableVisuals.Wielded:
-        base:
-          True: { state: wielded }
   - type: Wieldable
   - type: IncreaseDamageOnWield
 
@@ -457,11 +447,6 @@
     damage:
       types:
         Structural: 10
-  - type: GenericVisualizer
-    visuals:
-      enum.WieldableVisuals.Wielded:
-        base:
-          True: { state: wielded }
   - type: Wieldable
   - type: IncreaseDamageOnWield
 
@@ -520,11 +505,6 @@
     damage:
       types:
         Structural: 10
-  - type: GenericVisualizer
-    visuals:
-      enum.WieldableVisuals.Wielded:
-        base:
-          True: { state: wielded }
   - type: Wieldable
   - type: IncreaseDamageOnWield
 
