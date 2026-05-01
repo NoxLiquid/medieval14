@@ -10,7 +10,7 @@
       color: "#8A8A8A"
       map: [ base ]
     - state: handle
-      map: [ base ]
+      map: [ handle ]
   - type: MeleeWeapon
     damage:
       groups:

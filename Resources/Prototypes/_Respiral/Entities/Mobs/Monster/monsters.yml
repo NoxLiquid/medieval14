@@ -303,12 +303,6 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: alive
-      Dead:
-        Base: lumishroom
   - type: MobState
     allowedStates:
     - Alive
@@ -461,8 +455,8 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageStateTrigger
-        state: Dead
+        !type:DamageTrigger
+        damage: 20
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
