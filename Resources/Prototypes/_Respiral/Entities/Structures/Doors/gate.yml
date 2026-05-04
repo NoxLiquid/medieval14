@@ -4,6 +4,8 @@
   id: MedievalGate
   description: Эти ворота выглядят достаточно прочными, чтобы выдержать даже самые сильные бури. Они могут быть открыты только с помощью механизма, который находится внутри здания.
   components:
+  - type: Rotatable
+    rotateWhileAnchored: true
   - type: MeleeSound
     soundGroups:
       Brute:
