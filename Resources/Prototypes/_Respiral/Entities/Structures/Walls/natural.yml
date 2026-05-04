@@ -770,6 +770,9 @@
   name: стена из листвы
   description: Плотно слежавшаяся листва и корни.
   components:
+  - type: IconSmooth
+    key: leaf_walls
+    base: wall
   - type: Sprite
     sprite: _Respiral/Structures/Walls/Natural/leaf.rsi
   - type: Icon
@@ -795,6 +798,9 @@
   name: снежная стена
   description: Плотный наст из снега и льда.
   components:
+  - type: IconSmooth
+    key: snow_walls
+    base: wall
   - type: Sprite
     sprite: _Respiral/Structures/Walls/Natural/snow_wall.rsi
   - type: Icon
