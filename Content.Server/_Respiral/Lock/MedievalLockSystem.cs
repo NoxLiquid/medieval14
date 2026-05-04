@@ -14,12 +14,22 @@ public sealed class MedievalLockSystem : SharedMedievalLockSystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly MedievalKeySystem _medievalKey = default!;
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<MedievalLockComponent, ComponentInit>(OnCompInit);
         SubscribeLocalEvent<MedievalLockComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<LockExamineComponent, ExaminedEvent>(OnExamine);
+    }
+
+    private void OnCompInit(EntityUid uid, MedievalLockComponent component, ComponentInit args)
+    {
+        if (!component.GenerateKey)
+            return;
+
+        component.KeyId = _medievalKey.GenerateKeyId();
     }
 
     private void OnExamine(EntityUid uid, LockExamineComponent component, ExaminedEvent args)
@@ -70,7 +80,6 @@ public sealed class MedievalLockSystem : SharedMedievalLockSystem
 
             _popup.PopupEntity(Loc.GetString("medieval-add-lock-pass"), args.User, args.User);
         }
-
     }
 
 }

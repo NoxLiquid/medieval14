@@ -14,5 +14,8 @@ public sealed partial class MedievalLockComponent : Component
     public string KeyId = string.Empty;
 
     [DataField]
+    public bool GenerateKey;
+
+    [DataField]
     public SoundSpecifier? AttachSound;
 }

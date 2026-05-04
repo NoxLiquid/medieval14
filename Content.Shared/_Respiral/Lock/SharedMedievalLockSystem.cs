@@ -53,8 +53,11 @@ public abstract partial class SharedMedievalLockSystem : EntitySystem
         return lockComp.Locked;
     }
 
-    public bool IsLocked(EntityUid uid, MedievalLockComponent component)
+    public bool IsLocked(EntityUid uid, MedievalLockComponent? component = null)
     {
+        if (!Resolve(uid, ref component))
+            return false;
+
         return component.Locked;
     }
 
@@ -126,15 +129,6 @@ public abstract partial class SharedMedievalLockSystem : EntitySystem
         Dirty(uid, component);
     }
 
-    public void SetKey(EntityUid uid, string key, MedievalLockComponent? component = null)
-    {
-        if (!Resolve(uid, ref component))
-            return;
-
-        component.KeyId = key;
-        Dirty(uid, component);
-    }
-
     public EntityUid? GetLock(EntityUid target)
     {
         if (!_container.TryGetContainer(target, "lock-container", out var lockContainer))
@@ -144,5 +138,13 @@ public abstract partial class SharedMedievalLockSystem : EntitySystem
             return null;
 
         return slot.ContainedEntity;
+    }
+
+    public void SetKey(EntityUid uid, string key, MedievalLockComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        component.KeyId = key;
     }
 }

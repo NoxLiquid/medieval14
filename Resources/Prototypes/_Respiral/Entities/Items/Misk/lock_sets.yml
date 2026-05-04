@@ -1,5 +1,15 @@
 # Замки по keyId (locked: true — ставятся на двери уже закрытыми)
 
+# Замок со случайным keyId (генерируется при спавне)
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockRandom
+  suffix: случайный
+  components:
+  - type: MedievalLock
+    generateKey: true
+    locked: true
+
 - type: entity
   parent: MedievalBaseLock
   id: MedievalLockKuznec

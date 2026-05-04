@@ -2231,3 +2231,65 @@
       lock-container:
       - MedievalLockRytsar5
 
+
+# двери со случайным замком
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
