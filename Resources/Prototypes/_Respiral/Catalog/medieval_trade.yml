@@ -1,0 +1,104 @@
+# Respiral - средневековый рынок и аккаунт торговли
+
+- type: cargoMarket
+  id: MedievalMarket
+
+- type: cargoAccount
+  id: MedievalTrade
+  name: medieval-trade-account-name
+  code: medieval-trade-account-code
+  color: "#c9a33e"
+  radioChannel: Supply
+  acquisitionSlip: PaperAcquisitionSlipCargo
+
+# Материалы
+- type: cargoProduct
+  id: MedievalTradeRawIron
+  name: medieval-trade-product-raw-iron
+  description: medieval-trade-product-raw-iron-desc
+  product: MedievalRawIron
+  cost: 100
+  category: medieval-trade-category-materials
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeRawCoal
+  name: medieval-trade-product-raw-coal
+  description: medieval-trade-product-raw-coal-desc
+  product: MedievalRawCoal
+  cost: 50
+  category: medieval-trade-category-materials
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeRawCloth
+  name: medieval-trade-product-raw-cloth
+  description: medieval-trade-product-raw-cloth-desc
+  product: MedievalRawCloth
+  cost: 80
+  category: medieval-trade-category-materials
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeRawStone
+  name: medieval-trade-product-raw-stone
+  description: medieval-trade-product-raw-stone-desc
+  product: MedievalRawStone
+  cost: 60
+  category: medieval-trade-category-materials
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeRawWood
+  name: medieval-trade-product-raw-wood
+  description: medieval-trade-product-raw-wood-desc
+  product: MedievalRawWood
+  cost: 40
+  category: medieval-trade-category-materials
+  group: MedievalMarket
+
+# Семена
+- type: cargoProduct
+  id: MedievalTradeWheatSeeds
+  name: medieval-trade-product-wheat-seeds
+  description: medieval-trade-product-wheat-seeds-desc
+  product: MedievalWheatSeeds
+  cost: 30
+  category: medieval-trade-category-seeds
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeAppleSeeds
+  name: medieval-trade-product-apple-seeds
+  description: medieval-trade-product-apple-seeds-desc
+  product: MedievalAppleSeeds
+  cost: 40
+  category: medieval-trade-category-seeds
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeCabbageSeeds
+  name: medieval-trade-product-cabbage-seeds
+  description: medieval-trade-product-cabbage-seeds-desc
+  product: MedievalCabbageSeeds
+  cost: 30
+  category: medieval-trade-category-seeds
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradePotatoSeeds
+  name: medieval-trade-product-potato-seeds
+  description: medieval-trade-product-potato-seeds-desc
+  product: MedievalPotatoSeeds
+  cost: 25
+  category: medieval-trade-category-seeds
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeFlaxSeeds
+  name: medieval-trade-product-flax-seeds
+  description: medieval-trade-product-flax-seeds-desc
+  product: MedievalFlaxSeeds
+  cost: 35
+  category: medieval-trade-category-seeds
+  group: MedievalMarket

@@ -14,6 +14,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `inventory.md` | Слоты инвентаря, визуализация одежды, sex-specific спрайты |
 | `skill_system.md` | Система навыков, MeleeSkill, модификаторы изучения |
 | `mobs.md` | NPC, монстры, фракции, базовые прототипы мобов |
+| `trade_console.md` | Торговая система: заказ через CargoOrderConsole, доставка через CargoPallet (Buy/Sell), продажа через CargoPalletConsole |
 
 ## Key Architectural Rules
 
@@ -21,3 +22,9 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 - YAML prototype IDs use the `Medieval` prefix (e.g., `MedievalRoofWooden`).
 - C# systems/components in `Content.Server/_Respiral/` and `Content.Shared/_Respiral/`.
 - ZLevels subsystem uses the `CE` prefix; ported MIT code from CrystallEdge.
+
+## Prototype Inheritance Rules (SS14)
+
+- **Словари** (dict/map) при наследовании **мержатся** — дочерний прототип добавляет только новые ключи, родительские сохраняются автоматически. НЕ дублировать апстримные ключи.
+- **Списки** (sequence/list) при наследовании **заменяются** — если нужно сохранить родительские элементы, перечислять их явно.
+- Это критично для `StationCargoOrderDatabase.orders` (dict) vs `.markets` (list) и аналогичных компонентов.

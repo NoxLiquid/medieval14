@@ -1,0 +1,136 @@
+# Respiral - средневековая торговля: консоль заказов, палеты, консоль продажи
+
+- type: entity
+  id: MedievalTradeConsole
+  name: торговая табличка
+  description: Табличка для заказа товаров из дальних земель.
+  suffix: Торговля
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Respiral/Structures/sign.rsi
+    state: sign7
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.4,0.35,0.4"
+        density: 100
+  - type: Transform
+    anchored: true
+  - type: CargoOrderConsole
+    account: MedievalTrade
+    allowedGroups:
+    - MedievalMarket
+  - type: ActivatableUI
+    key: enum.CargoConsoleUiKey.Orders
+  - type: UserInterface
+    interfaces:
+      enum.CargoConsoleUiKey.Orders:
+        type: CargoOrderConsoleBoundUserInterface
+
+# Respiral - торговые палеты (места для получения и продажи товаров)
+
+- type: entity
+  id: MedievalTradePalletBuy
+  name: торговый помост (приём)
+  description: Место, куда доставляют заказанные товары.
+  suffix: Покупка
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: CargoPallet
+    palletType: buy
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: Structures/cargo_pallets.rsi
+  - type: Icon
+    sprite: Structures/cargo_pallets.rsi
+    state: cargo_pallet_buy
+  - type: IconSmooth
+    key: cargo_pallet_buy
+    base: cargo_pallet_buy_
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 15
+        mask:
+        - MachineMask
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+
+- type: entity
+  id: MedievalTradePalletSell
+  name: торговый помост (продажа)
+  description: Положите товары сюда для продажи.
+  suffix: Продажа
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: CargoPallet
+    palletType: sell
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: Structures/cargo_pallets.rsi
+  - type: Icon
+    sprite: Structures/cargo_pallets.rsi
+    state: cargo_pallet_sell
+  - type: IconSmooth
+    key: cargo_pallet_sell
+    base: cargo_pallet_sell_
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 15
+        mask:
+        - MachineMask
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+
+# Respiral - консоль продажи (оценка и продажа товаров на палетах)
+
+- type: entity
+  id: MedievalTradePalletConsole
+  name: торговая табличка
+  description: Табличка для продажи товаров, выложенных на помосты.
+  suffix: Продажа
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Respiral/Structures/sign.rsi
+    state: sign8
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.4,0.35,0.4"
+        density: 100
+  - type: Transform
+    anchored: true
+  - type: CargoPalletConsole
+  - type: ActivatableUI
+    key: enum.CargoPalletConsoleUiKey.Sale
+  - type: UserInterface
+    interfaces:
+      enum.CargoPalletConsoleUiKey.Sale:
+        type: CargoPalletConsoleBoundUserInterface

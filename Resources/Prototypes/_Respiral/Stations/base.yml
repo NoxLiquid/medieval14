@@ -2,7 +2,6 @@
   id: MedievalStandardTerritory
   parent:
     - BaseStation
-    - BaseStationCargo
     - BaseStationJobsSpawning
     - BaseStationCentcomm
     # - BaseStationEvacuation
@@ -14,3 +13,10 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
+    - type: StationBankAccount
+    - type: StationCargoOrderDatabase
+      orders:
+        MedievalTrade: []
+      markets:
+      - MedievalMarket
+    - type: MedievalTradeStation

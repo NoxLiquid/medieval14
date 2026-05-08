@@ -15,7 +15,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Shared.Research.Prototypes;
-using Content.Shared._Respiral.Pricing;
+using Content.Server._Respiral.Pricing.Components;
 
 namespace Content.Server.Cargo.Systems;
 
