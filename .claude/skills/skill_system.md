@@ -51,6 +51,29 @@
     modifier: 2.0
 ```
 
+## Ремесленные навыки
+
+| Skill ID | Название | Станок | Книга |
+|---|---|---|---|
+| MedievalWoodProcessing | обработка дерева | MedievalSawmill, MedievalCarpenterTable | MedievalSkillBookWoodProcessing |
+| MedievalStoneProcessing | обработка камня | MedievalQuarry | MedievalSkillBookStoneProcessing |
+| MedievalBasicBlacksmithing | кузнечное дело | MedievalAnvil | MedievalSkillBookBasicBlacksmithing |
+| MedievalTailor | портное дело | MedievalSewing, MedievalLoom | MedievalSkillBookTailor |
+| MedievalAlchem | алхимия | MedievalAlchemTable | MedievalSkillBookAlchem |
+| MedievalJewelry | ювелирное дело | MedievalJeweler | MedievalSkillBookJewelry |
+
+## Паттерн создания нового станка
+
+1. Skill → `skill.yml` (type: skill, pointsNeeded: 100)
+2. Tag → `tags.yml` (Medieval[Machine]MaterialStorage)
+3. Category → `Recipe/category.yml` (type: latheCategory) + locale в `lathe/category.ftl`
+4. Recipe pack → `Recipe/packs.yml` (type: latheRecipePack)
+5. Machine detail → `Parts/production.yml` (parent: MedievalBaseMachineDetail, type: MachineBoard)
+6. Machine entity → `Structures/Machine/lathe.yml` (parent: MedievalBaseLathe, NeededSkillForInteract)
+7. Книга → `Skill/book.yml` (parent: MedievalSkillBookBase, LearnSkillWhenUsing)
+8. Тег на входные материалы → добавить Medieval[Machine]MaterialStorage к нужным сущностям
+9. Граф строительства — общий MedievalMachine (не нужен кастомный)
+
 ## История
 
 - `LearnSkillWhenMeleeAttackSystem` и `LearnSkillWhenMeleeAttackComponent` — удалены, функциональность перенесена в `MeleeSkillSystem` и `MeleeSkillComponent`

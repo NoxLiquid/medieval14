@@ -120,3 +120,15 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
+
+- type: entity
+  id: MedievalJewelerDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь станка ювелира
+  components:
+  - type: MachineBoard
+    prototype: MedievalJeweler
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 200
+      MedievalProcessedGold: 100

@@ -7,12 +7,12 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/mixer.rsi
+    sprite: _Respiral/Structures/Machines/mixer.rsi
     snapCardinals: true
     layers:
     - state: running
   - type: Icon
-    sprite: _Respiral/Objects/Machines/mixer.rsi
+    sprite: _Respiral/Structures/Machines/mixer.rsi
     state: icon
   - type: ChemMaster
     pillDosageLimit: 20

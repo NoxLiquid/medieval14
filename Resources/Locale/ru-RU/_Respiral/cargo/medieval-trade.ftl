@@ -73,6 +73,8 @@ medieval-trade-product-loom-detail = Деталь ткацкого станка
 medieval-trade-product-loom-detail-desc = Основная деталь для сборки ткацкого станка.
 medieval-trade-product-sewing-detail = Деталь швейной машины
 medieval-trade-product-sewing-detail-desc = Основная деталь для сборки швейной машины.
+medieval-trade-product-jeweler-detail = Деталь станка ювелира
+medieval-trade-product-jeweler-detail-desc = Основная деталь для сборки станка ювелира.
 
 # Книги ремёсел
 medieval-trade-category-books = Книги ремёсел
@@ -87,6 +89,8 @@ medieval-trade-product-book-stoneprocessing = Книга: Обработка к�
 medieval-trade-product-book-stoneprocessing-desc = Учебник по обработке камня и каменной кладке.
 medieval-trade-product-book-tailor = Книга: Портное дело
 medieval-trade-product-book-tailor-desc = Учебник по шитью и портному ремеслу.
+medieval-trade-product-book-jewelry = Книга: Ювелирное дело
+medieval-trade-product-book-jewelry-desc = Учебник по огранке камней и ювелирному ремеслу.
 
 # Семена
 medieval-trade-product-wheat-seeds = Семена пшеницы

@@ -52,7 +52,7 @@
         acts: ["Destruction"]
   - type: Sprite
     color: "#8B4513"
-    sprite: _Respiral/Objects/Machines/parts.rsi
+    sprite: _Respiral/Structures/Machines/parts.rsi
     state: box_0
     snapCardinals: true
   - type: PhysicalComposition
@@ -119,7 +119,7 @@
         machine_parts: !type:Container
     - type: Sprite
       color: "#8B4513"
-      sprite: _Respiral/Objects/Machines/parts.rsi
+      sprite: _Respiral/Structures/Machines/parts.rsi
       state: box_1
       snapCardinals: true
     - type: Appearance

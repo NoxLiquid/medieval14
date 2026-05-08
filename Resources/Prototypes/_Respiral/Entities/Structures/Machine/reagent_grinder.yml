@@ -20,7 +20,7 @@
   - type: Appearance
   - type: Physics
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/grinder.rsi
+    sprite: _Respiral/Structures/Machines/grinder.rsi
     layers:
     - map: [ "grinder" ]
       state: "grinder_empty"

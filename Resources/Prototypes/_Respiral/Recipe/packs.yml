@@ -287,3 +287,7 @@
   id: MedievalTannery
   recipes:
   - MedievalProcessedPeltRecipe
+
+- type: latheRecipePack
+  id: MedievalJeweler
+  recipes: []

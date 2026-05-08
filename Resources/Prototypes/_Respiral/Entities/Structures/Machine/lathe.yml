@@ -6,7 +6,7 @@
   description: Станок из грубых досок и железных деталей.
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/sawmill.rsi
+    sprite: _Respiral/Structures/Machines/sawmill.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -42,7 +42,7 @@
   description: Станок для обработки камня, состоящий из массивного каменного основания и железных деталей.
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/sawmill.rsi
+    sprite: _Respiral/Structures/Machines/sawmill.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -78,7 +78,7 @@
   description: Рабочее место для изготовления деревянных изделий
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/carpenter_table.rsi
+    sprite: _Respiral/Structures/Machines/carpenter_table.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -115,7 +115,7 @@
   description: Массивная каменная печь, используемая для переплавки руды в слитки. Работает на угле.
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/smelter.rsi
+    sprite: _Respiral/Structures/Machines/smelter.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -151,7 +151,7 @@
   description: Тяжёлая железная наковальня, используемая для ковки и обработки металла. Необходимый инструмент кузнеца для создания оружия, брони и инструментов.
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/anvil.rsi
+    sprite: _Respiral/Structures/Machines/anvil.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -188,7 +188,7 @@
   description: Приспособление для выделки звериных шкур в прочную кожу.
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/tannery.rsi
+    sprite: _Respiral/Structures/Machines/tannery.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -224,7 +224,7 @@
   description: Деревянный станок для изготовления ткани. Основной инструмент ткача.
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/loom.rsi
+    sprite: _Respiral/Structures/Machines/loom.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -260,7 +260,7 @@
   description: Железный станок для изготовления объектов из ткани. Основной инструмент швеи.
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/sewing.rsi
+    sprite: _Respiral/Structures/Machines/sewing.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -288,3 +288,39 @@
       MedievalRawManaCrystal: 100
       MedievalProcessedStone: 6
       MedievalProcessedIron: 104
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalJeweler
+  name: станок ювелира
+  description: Изящный станок для огранки камней и создания ювелирных изделий. Основной инструмент ювелира.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/temp.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalJewelerDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalJewelerMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalJeweler
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalJewelry
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 4
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 204
+      MedievalProcessedGold: 104

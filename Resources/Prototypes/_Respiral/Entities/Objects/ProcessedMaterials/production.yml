@@ -132,6 +132,7 @@
   - type: Tag
     tags:
     - MedievalAnvilMaterialStorage
+    - MedievalJewelerMaterialStorage
   - type: Item
     inhandVisuals:
       left:
@@ -157,6 +158,7 @@
   - type: Tag
     tags:
     - MedievalAnvilMaterialStorage
+    - MedievalJewelerMaterialStorage
   - type: Sprite
     layers:
     - state: gold

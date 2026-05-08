@@ -29,6 +29,12 @@
   pointsNeeded: 100
 
 - type: skill
+  id: MedievalJewelry
+  name: ювелирное дело
+  description: Ремесло
+  pointsNeeded: 100
+
+- type: skill
   id: MedievalOneSword
   name: одноручный клинок
   description: Бой

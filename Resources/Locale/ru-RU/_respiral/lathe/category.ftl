@@ -7,3 +7,4 @@ lathe-medieval-category-lighting = Освещение
 lathe-medieval-category-weapon = Вооружение
 lathe-medieval-category-metal-clothing = Одежда из металла
 lathe-medieval-category-tailor-clothing = Одежда
+lathe-medieval-category-jewelry = Ювелирные изделия

@@ -33,3 +33,7 @@
 - type: latheCategory
   id: MedievalTailorClothingCategory
   name: lathe-medieval-category-tailor-clothing
+
+- type: latheCategory
+  id: MedievalJewelryCategory
+  name: lathe-medieval-category-jewelry

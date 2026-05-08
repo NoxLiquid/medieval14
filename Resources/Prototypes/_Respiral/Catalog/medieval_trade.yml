@@ -275,6 +275,15 @@
   category: medieval-trade-category-parts
   group: MedievalMarket
 
+- type: cargoProduct
+  id: MedievalTradeJewelerDetail
+  name: medieval-trade-product-jeweler-detail
+  description: medieval-trade-product-jeweler-detail-desc
+  product: MedievalJewelerDetail
+  cost: 11563
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
 # Книги ремёсел
 - type: cargoProduct
   id: MedievalTradeBookBlacksmithing
@@ -317,6 +326,15 @@
   name: medieval-trade-product-book-tailor
   description: medieval-trade-product-book-tailor-desc
   product: MedievalSkillBookTailor
+  cost: 1000
+  category: medieval-trade-category-books
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeBookJewelry
+  name: medieval-trade-product-book-jewelry
+  description: medieval-trade-product-book-jewelry-desc
+  product: MedievalSkillBookJewelry
   cost: 1000
   category: medieval-trade-category-books
   group: MedievalMarket

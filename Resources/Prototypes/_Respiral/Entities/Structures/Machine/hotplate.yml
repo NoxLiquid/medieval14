@@ -7,8 +7,8 @@
   description: Простейшее изобретение алхимиков. Очаг для нагрева колб и котлов. Работает куда надёжнее, чем хрупкий костёр.
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Machines/hotplate.rsi
-    drawdepth: SmallObjects
+    sprite: _Respiral/Structures/Machines/hotplate.rsi
+    drawdepth: SmallStructures
     snapCardinals: true
     layers:
     - state: icon

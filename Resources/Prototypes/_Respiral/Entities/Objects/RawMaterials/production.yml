@@ -396,6 +396,9 @@
   categories: [ HideSpawnMenu ]
   name: изумруд
   components:
+  - type: Tag
+    tags:
+    - MedievalJewelerMaterialStorage
   - type: Stack
     stackType: MedievalRawEmerald
   - type: Sprite
@@ -429,6 +432,9 @@
   categories: [ HideSpawnMenu ]
   name: сапфир
   components:
+  - type: Tag
+    tags:
+    - MedievalJewelerMaterialStorage
   - type: Stack
     stackType: MedievalRawSapphire
   - type: Sprite
@@ -461,6 +467,9 @@
   categories: [ HideSpawnMenu ]
   name: рубин
   components:
+  - type: Tag
+    tags:
+    - MedievalJewelerMaterialStorage
   - type: Stack
     stackType: MedievalRawRuby
   - type: Sprite
@@ -493,6 +502,9 @@
   categories: [ HideSpawnMenu ]
   name: топаз
   components:
+  - type: Tag
+    tags:
+    - MedievalJewelerMaterialStorage
   - type: Stack
     stackType: MedievalRawTopaz
   - type: Sprite

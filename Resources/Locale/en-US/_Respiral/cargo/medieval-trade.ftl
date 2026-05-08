@@ -73,6 +73,8 @@ medieval-trade-product-loom-detail = Loom Part
 medieval-trade-product-loom-detail-desc = Core part for assembling a loom.
 medieval-trade-product-sewing-detail = Sewing Machine Part
 medieval-trade-product-sewing-detail-desc = Core part for assembling a sewing machine.
+medieval-trade-product-jeweler-detail = Jeweler Workbench Part
+medieval-trade-product-jeweler-detail-desc = Core part for assembling a jeweler workbench.
 
 # Craft books
 medieval-trade-category-books = Craft Books
@@ -87,6 +89,8 @@ medieval-trade-product-book-stoneprocessing = Book: Stone Processing
 medieval-trade-product-book-stoneprocessing-desc = A textbook on stonecutting and masonry.
 medieval-trade-product-book-tailor = Book: Tailoring
 medieval-trade-product-book-tailor-desc = A textbook on sewing and tailoring.
+medieval-trade-product-book-jewelry = Book: Jewelry Making
+medieval-trade-product-book-jewelry-desc = A textbook on gemcutting and jewelry crafting.
 
 # Seeds
 medieval-trade-product-wheat-seeds = Wheat Seeds
