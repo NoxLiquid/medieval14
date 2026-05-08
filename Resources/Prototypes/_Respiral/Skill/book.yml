@@ -46,7 +46,8 @@
     damage:
       types:
         Slash: 1
-
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: MedievalSkillBookBase
@@ -141,5 +142,69 @@
     - MedievalAlchem
     points:
       MedievalAlchem: 0.01
+    sound:
+      collection: LearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookStoneProcessing
+  name: обработка камня
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: book1
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - MedievalStoneProcessing
+    points:
+      MedievalStoneProcessing: 0.01
+    sound:
+      collection: LearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookTailor
+  name: портное дело
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: book2
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - MedievalTailor
+    points:
+      MedievalTailor: 0.01
     sound:
       collection: LearnBook

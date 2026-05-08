@@ -59,4 +59,16 @@
 | `MedievalTradePalletConsole` | Консоль продажи (CargoPalletConsole) |
 
 ## Adding New Products
-Добавить `cargoProduct` в `medieval_trade.yml` с `group: MedievalMarket` и добавить loc-строки.
+Добавить `cargoProduct` в `medieval_trade.yml` с `group: MedievalMarket` и добавить loc-строки (ru-RU + en-US).
+
+### Ценообразование
+- Цена продажи (sell) = material_value × 1.2 (MedievalPhysicalPriced markup 20%)
+- material_value = сумма (material_price_per_unit × quantity) из PhysicalComposition
+- Цена покупки (cost в cargoProduct) = 2 × sell price (временное правило до динамических рынков)
+- Формула: cost = round(material_value × 2.4)
+
+### Категории
+- `medieval-trade-category-materials` — сырьё (руды, брёвна)
+- `medieval-trade-category-processed` — обработанные материалы (доски, слитки, ткань, кожа, стекло)
+- `medieval-trade-category-parts` — детали механизмов (MachineBoard)
+- `medieval-trade-category-seeds` — семена

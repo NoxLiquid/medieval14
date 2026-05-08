@@ -18,6 +18,76 @@ medieval-trade-product-raw-stone-desc = A piece of worked stone.
 medieval-trade-product-raw-wood = Wood
 medieval-trade-product-raw-wood-desc = A log for construction.
 
+# Processed materials
+medieval-trade-category-processed = Processed Materials
+
+medieval-trade-product-processed-wood = Board
+medieval-trade-product-processed-wood-desc = A processed wooden board for construction and crafting.
+medieval-trade-product-processed-iron = Iron Ingot
+medieval-trade-product-processed-iron-desc = A smelted iron ingot.
+medieval-trade-product-processed-steel = Steel Ingot
+medieval-trade-product-processed-steel-desc = A smelted tempered steel ingot.
+medieval-trade-product-processed-silver = Silver Ingot
+medieval-trade-product-processed-silver-desc = A smelted silver ingot.
+medieval-trade-product-processed-gold = Gold Ingot
+medieval-trade-product-processed-gold-desc = A smelted gold ingot.
+medieval-trade-product-processed-mithril = Mithril Ingot
+medieval-trade-product-processed-mithril-desc = A smelted mithril ingot — an exceedingly rare metal.
+medieval-trade-product-processed-adamantine = Adamantine Ingot
+medieval-trade-product-processed-adamantine-desc = A smelted adamantine ingot — the hardest known metal.
+medieval-trade-product-processed-stone = Stone Brick
+medieval-trade-product-processed-stone-desc = A processed stone brick for masonry.
+medieval-trade-product-processed-cloth = Cloth
+medieval-trade-product-processed-cloth-desc = Woven fabric for tailoring clothes.
+medieval-trade-product-processed-pelt = Tanned Leather
+medieval-trade-product-processed-pelt-desc = Cured leather for tailoring and crafting.
+medieval-trade-product-processed-glass = Glass
+medieval-trade-product-processed-glass-desc = A sheet of glass for windows and crafting.
+medieval-trade-product-rod-wood = Wooden Rod
+medieval-trade-product-rod-wood-desc = A processed wooden rod for crafting.
+medieval-trade-product-construction-ammo = Construction Materials
+medieval-trade-product-construction-ammo-desc = A bundle of materials for building structures.
+
+# Machine parts
+medieval-trade-category-parts = Machine Parts
+
+medieval-trade-product-sawmill-detail = Sawmill Part
+medieval-trade-product-sawmill-detail-desc = Core part for assembling a sawmill.
+medieval-trade-product-quarry-detail = Quarry Part
+medieval-trade-product-quarry-detail-desc = Core part for assembling a quarry.
+medieval-trade-product-carpenter-detail = Carpenter Table Part
+medieval-trade-product-carpenter-detail-desc = Core part for assembling a carpenter table.
+medieval-trade-product-smelter-detail = Smelter Part
+medieval-trade-product-smelter-detail-desc = Core part for assembling a smelter.
+medieval-trade-product-alchemtable-detail = Alchemy Table Part
+medieval-trade-product-alchemtable-detail-desc = Core part for assembling an alchemy table.
+medieval-trade-product-grinder-detail = Grinder Part
+medieval-trade-product-grinder-detail-desc = Core part for assembling a grinder.
+medieval-trade-product-hotplate-detail = Campfire Brazier Part
+medieval-trade-product-hotplate-detail-desc = Core part for assembling a campfire brazier.
+medieval-trade-product-anvil-detail = Anvil Part
+medieval-trade-product-anvil-detail-desc = Core part for assembling an anvil.
+medieval-trade-product-tannery-detail = Tannery Part
+medieval-trade-product-tannery-detail-desc = Core part for assembling a tannery.
+medieval-trade-product-loom-detail = Loom Part
+medieval-trade-product-loom-detail-desc = Core part for assembling a loom.
+medieval-trade-product-sewing-detail = Sewing Machine Part
+medieval-trade-product-sewing-detail-desc = Core part for assembling a sewing machine.
+
+# Craft books
+medieval-trade-category-books = Craft Books
+
+medieval-trade-product-book-blacksmithing = Book: Basics of Blacksmithing
+medieval-trade-product-book-blacksmithing-desc = A textbook on the fundamentals of blacksmithing.
+medieval-trade-product-book-woodprocessing = Book: Wood Processing
+medieval-trade-product-book-woodprocessing-desc = A textbook on woodworking and carpentry.
+medieval-trade-product-book-alchem = Book: Alchemy
+medieval-trade-product-book-alchem-desc = A textbook on the fundamentals of alchemy.
+medieval-trade-product-book-stoneprocessing = Book: Stone Processing
+medieval-trade-product-book-stoneprocessing-desc = A textbook on stonecutting and masonry.
+medieval-trade-product-book-tailor = Book: Tailoring
+medieval-trade-product-book-tailor-desc = A textbook on sewing and tailoring.
+
 # Seeds
 medieval-trade-product-wheat-seeds = Wheat Seeds
 medieval-trade-product-wheat-seeds-desc = Seeds for planting wheat.

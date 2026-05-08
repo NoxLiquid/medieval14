@@ -57,6 +57,270 @@
   category: medieval-trade-category-materials
   group: MedievalMarket
 
+# Обработанные материалы
+- type: cargoProduct
+  id: MedievalTradeProcessedWood
+  name: medieval-trade-product-processed-wood
+  description: medieval-trade-product-processed-wood-desc
+  product: MedievalBoard1
+  cost: 338
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedIron
+  name: medieval-trade-product-processed-iron
+  description: medieval-trade-product-processed-iron-desc
+  product: MedievalIronIngot1
+  cost: 1063
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedSteel
+  name: medieval-trade-product-processed-steel
+  description: medieval-trade-product-processed-steel-desc
+  product: MedievalSteelIngot1
+  cost: 2582
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedSilver
+  name: medieval-trade-product-processed-silver
+  description: medieval-trade-product-processed-silver-desc
+  product: MedievalSilverIngot1
+  cost: 4289
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedGold
+  name: medieval-trade-product-processed-gold
+  description: medieval-trade-product-processed-gold-desc
+  product: MedievalGoldIngot1
+  cost: 9437
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedMithril
+  name: medieval-trade-product-processed-mithril
+  description: medieval-trade-product-processed-mithril-desc
+  product: MedievalMithrilIngot1
+  cost: 10325
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedAdamantine
+  name: medieval-trade-product-processed-adamantine
+  description: medieval-trade-product-processed-adamantine-desc
+  product: MedievalAdamantineIngot1
+  cost: 18113
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedStone
+  name: medieval-trade-product-processed-stone
+  description: medieval-trade-product-processed-stone-desc
+  product: MedievalProcessedStone1
+  cost: 211
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedCloth
+  name: medieval-trade-product-processed-cloth
+  description: medieval-trade-product-processed-cloth-desc
+  product: MedievalCloth1
+  cost: 480
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedPelt
+  name: medieval-trade-product-processed-pelt
+  description: medieval-trade-product-processed-pelt-desc
+  product: MedievalProcessedPelt1
+  cost: 2400
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeProcessedGlass
+  name: medieval-trade-product-processed-glass
+  description: medieval-trade-product-processed-glass-desc
+  product: MedievalGlass1
+  cost: 4080
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeRodWood
+  name: medieval-trade-product-rod-wood
+  description: medieval-trade-product-rod-wood-desc
+  product: MedievalPartRodWood1
+  cost: 338
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeConstructionAmmo
+  name: medieval-trade-product-construction-ammo
+  description: medieval-trade-product-construction-ammo-desc
+  product: MedievalConstructionToolsAmmo1
+  cost: 55
+  category: medieval-trade-category-processed
+  group: MedievalMarket
+
+# Детали механизмов
+- type: cargoProduct
+  id: MedievalTradeSawmillDetail
+  name: medieval-trade-product-sawmill-detail
+  description: medieval-trade-product-sawmill-detail-desc
+  product: MedievalSawmillDetail
+  cost: 2417
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeQuarryDetail
+  name: medieval-trade-product-quarry-detail
+  description: medieval-trade-product-quarry-detail-desc
+  product: MedievalQuarryDetail
+  cost: 2417
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeCarpenterTableDetail
+  name: medieval-trade-product-carpenter-detail
+  description: medieval-trade-product-carpenter-detail-desc
+  product: MedievalCarpenterTableDetail
+  cost: 1015
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeSmelterDetail
+  name: medieval-trade-product-smelter-detail
+  description: medieval-trade-product-smelter-detail-desc
+  product: MedievalSmelterDetail
+  cost: 1056
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeAlchemTableDetail
+  name: medieval-trade-product-alchemtable-detail
+  description: medieval-trade-product-alchemtable-detail-desc
+  product: MedievalAlchemTableDetail
+  cost: 1354
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeReagentGrinderDetail
+  name: medieval-trade-product-grinder-detail
+  description: medieval-trade-product-grinder-detail-desc
+  product: MedievalReagentGrinderDetail
+  cost: 677
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeHotplateDetail
+  name: medieval-trade-product-hotplate-detail
+  description: medieval-trade-product-hotplate-detail-desc
+  product: MedievalHotplateDetail
+  cost: 338
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeAnvilDetail
+  name: medieval-trade-product-anvil-detail
+  description: medieval-trade-product-anvil-detail-desc
+  product: MedievalAnvilDetail
+  cost: 5316
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeTanneryDetail
+  name: medieval-trade-product-tannery-detail
+  description: medieval-trade-product-tannery-detail-desc
+  product: MedievalTanneryDetail
+  cost: 338
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeLoomDetail
+  name: medieval-trade-product-loom-detail
+  description: medieval-trade-product-loom-detail-desc
+  product: MedievalLoomDetail
+  cost: 338
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeSewingDetail
+  name: medieval-trade-product-sewing-detail
+  description: medieval-trade-product-sewing-detail-desc
+  product: MedievalSewingDetail
+  cost: 1063
+  category: medieval-trade-category-parts
+  group: MedievalMarket
+
+# Книги ремёсел
+- type: cargoProduct
+  id: MedievalTradeBookBlacksmithing
+  name: medieval-trade-product-book-blacksmithing
+  description: medieval-trade-product-book-blacksmithing-desc
+  product: MedievalSkillBookBasicBlacksmithing
+  cost: 1000
+  category: medieval-trade-category-books
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeBookWoodProcessing
+  name: medieval-trade-product-book-woodprocessing
+  description: medieval-trade-product-book-woodprocessing-desc
+  product: MedievalSkillBookWoodProcessing
+  cost: 1000
+  category: medieval-trade-category-books
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeBookAlchem
+  name: medieval-trade-product-book-alchem
+  description: medieval-trade-product-book-alchem-desc
+  product: MedievalSkillBookAlchem
+  cost: 1000
+  category: medieval-trade-category-books
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeBookStoneProcessing
+  name: medieval-trade-product-book-stoneprocessing
+  description: medieval-trade-product-book-stoneprocessing-desc
+  product: MedievalSkillBookStoneProcessing
+  cost: 1000
+  category: medieval-trade-category-books
+  group: MedievalMarket
+
+- type: cargoProduct
+  id: MedievalTradeBookTailor
+  name: medieval-trade-product-book-tailor
+  description: medieval-trade-product-book-tailor-desc
+  product: MedievalSkillBookTailor
+  cost: 1000
+  category: medieval-trade-category-books
+  group: MedievalMarket
+
 # Семена
 - type: cargoProduct
   id: MedievalTradeWheatSeeds
