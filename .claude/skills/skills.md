@@ -15,6 +15,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `skill_system.md` | Система навыков, MeleeSkill, модификаторы изучения |
 | `mobs.md` | NPC, монстры, фракции, базовые прототипы мобов |
 | `trade_console.md` | Торговая система: заказ через CargoOrderConsole, доставка через CargoPallet (Buy/Sell), продажа через CargoPalletConsole |
+| `communications.md` | Связующий магический шар (средневековая консоль коммуникаций) |
 
 ## Key Architectural Rules
 

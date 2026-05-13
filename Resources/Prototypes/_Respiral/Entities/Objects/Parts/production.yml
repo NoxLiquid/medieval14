@@ -132,3 +132,15 @@
     materialComposition:
       MedievalProcessedIron: 200
       MedievalProcessedGold: 100
+
+- type: entity
+  id: MedievalConnectingMagicBallDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь связующего магического шара
+  components:
+  - type: MachineBoard
+    prototype: MedievalConnectingMagicBall
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 300
+      MedievalRawManaCrystal: 200

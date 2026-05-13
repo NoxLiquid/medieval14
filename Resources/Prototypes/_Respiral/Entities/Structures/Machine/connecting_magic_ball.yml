@@ -1,0 +1,62 @@
+# Respiral - связующий магический шар (средневековая консоль коммуникаций)
+
+- type: entity
+  id: MedievalConnectingMagicBall
+  parent:
+  - MedievalConstructibleMachine
+  - MedievalBaseMachine
+  name: связующий магический шар
+  description: Магический шар, позволяющий отправлять послания всем жителям поселения.
+  suffix: Средневековье
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/connecting_magic_ball.rsi
+    state: running
+  - type: Appearance
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-medieval-magic-ball
+    canShuttle: false
+  - type: ActivatableUI
+    key: enum.CommunicationsConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CommunicationsConsoleUiKey.Key:
+        type: CommunicationsConsoleBoundUserInterface
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: PointLight
+    radius: 1.5
+    energy: 2.0
+    color: "#7b68ee"
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 4
+      MedievalProcessedStone: 306
+      MedievalProcessedIron: 4
+      MedievalRawManaCrystal: 300
+  - type: Transform
+    anchored: true
+  - type: Pullable
