@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared.Maps;
 using Content.Shared.Parallax.Biomes.Layers;
+using Content.Shared._Respiral.Parallax.Biomes.Layers; // Respiral - слой региона биома с координатными ограничениями
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Noise;
@@ -125,6 +126,21 @@ public abstract class SharedBiomeSystem : EntitySystem
             if (value < layer.Threshold)
                 continue;
 
+            // Respiral-start 
+            // проверка координатного региона: если тайл попадает в область BiomeRegionLayer, 
+            // генерируем тайл из вложенного шаблона биома
+            if (layer is BiomeRegionLayer region)
+            {
+                if (region.ContainsPoint(indices) &&
+                    TryGetBiomeTile(indices, ProtoManager.Index(region.Template).Layers, seed, grid, out tile))
+                {
+                    return true;
+                }
+
+                continue;
+            }
+            // Respiral-end проверка координатного региона
+
             // Check if the tile is from meta layer, otherwise fall back to default layers.
             if (layer is BiomeMetaLayer meta)
             {
@@ -231,6 +247,8 @@ public abstract class SharedBiomeSystem : EntitySystem
                     break;
                 case BiomeMetaLayer:
                     break;
+                case BiomeRegionLayer: // Respiral - не пропускаем слой региона в switch
+                    break;
                 default:
                     continue;
             }
@@ -243,6 +261,21 @@ public abstract class SharedBiomeSystem : EntitySystem
 
             if (value < layer.Threshold)
                 continue;
+
+            // Respiral-start 
+            // проверка координатного региона: если тайл попадает в область BiomeRegionLayer, 
+            // спавним сущность из вложенного шаблона биома
+            if (layer is BiomeRegionLayer region)
+            {
+                if (region.ContainsPoint(indices) &&
+                    TryGetEntity(indices, ProtoManager.Index(region.Template).Layers, tileRef, seed, grid, out entity))
+                {
+                    return true;
+                }
+
+                continue;
+            }
+            // Respiral-end проверка координатного региона
 
             if (layer is BiomeMetaLayer meta)
             {
@@ -307,6 +340,8 @@ public abstract class SharedBiomeSystem : EntitySystem
                     break;
                 case BiomeMetaLayer:
                     break;
+                case BiomeRegionLayer: // Respiral - не пропускаем слой региона в switch
+                    break;
                 default:
                     continue;
             }
@@ -318,6 +353,21 @@ public abstract class SharedBiomeSystem : EntitySystem
 
             if (value < layer.Threshold)
                 continue;
+
+            // Respiral-start 
+            // проверка координатного региона: если тайл попадает в область BiomeRegionLayer, 
+            // размещаем декали из вложенного шаблона биома
+            if (layer is BiomeRegionLayer region)
+            {
+                if (region.ContainsPoint(indices) &&
+                    TryGetDecals(indices, ProtoManager.Index(region.Template).Layers, seed, grid, out decals))
+                {
+                    return true;
+                }
+
+                continue;
+            }
+            // Respiral-end проверка координатного региона
 
             if (layer is BiomeMetaLayer meta)
             {
