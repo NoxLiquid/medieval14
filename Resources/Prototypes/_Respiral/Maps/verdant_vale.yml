@@ -16,7 +16,7 @@
         # - type: StationBiome
         #   biome: MedievalGrasslands
         - type: StationNameSetup
-          mapNameTemplate: '{0} VerdantVale {1}'
+          mapNameTemplate: 'VerdantVale'
         # - type: StationEmergencyShuttle
         #   emergencyShuttlePath: /Maps/Shuttles/emergency_amber.yml
         - type: StationJobs

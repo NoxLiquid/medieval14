@@ -17,6 +17,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `trade_console.md` | Торговая система: заказ через CargoOrderConsole, доставка через CargoPallet (Buy/Sell), продажа через CargoPalletConsole |
 | `communications.md` | Связующий магический шар (средневековая консоль коммуникаций) |
 | `biomes.md` | Биомы, процедурная генерация карт, слои, маркеры, Gateway |
+| `zlevels.md` | Z-уровни (вертикальные карты), CEZLevelsSystem, ZNetwork |
 
 ## Key Architectural Rules
 
