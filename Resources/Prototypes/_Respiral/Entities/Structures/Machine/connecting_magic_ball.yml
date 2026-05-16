@@ -58,7 +58,7 @@
       MedievalProcessedWood: 4
       MedievalProcessedStone: 306
       MedievalProcessedIron: 4
-      MedievalRawManaCrystal: 300
+      MedievalRawManaCrystal: 100
   - type: Transform
     anchored: true
   - type: Pullable

@@ -26,25 +26,25 @@
   tags: ["medieval", "markings"]
   sprite:
     sprite: _Respiral/Decals/bricks.rsi
-    state: double_edge_NE
+    state: single_edge_NE
 
 - type: decal
   id: MedievalBrickDoubleEdgeNW
   tags: ["medieval", "markings"]
   sprite:
     sprite: _Respiral/Decals/bricks.rsi
-    state: double_edgeN_W
+    state: single_edge_NW
 
 - type: decal
   id: MedievalBrickDoubleEdgeSE
   tags: ["medieval", "markings"]
   sprite:
     sprite: _Respiral/Decals/bricks.rsi
-    state: double_edge_SE
+    state: single_edge_SE
 
 - type: decal
   id: MedievalBrickDoubleEdgeSW
   tags: ["medieval", "markings"]
   sprite:
     sprite: _Respiral/Decals/bricks.rsi
-    state: double_edge_SW
+    state: single_edge_SW

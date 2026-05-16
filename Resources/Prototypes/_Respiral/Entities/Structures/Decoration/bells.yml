@@ -54,8 +54,8 @@
         acts: [ "Destruction" ]
   - type: PhysicalComposition
     materialComposition:
-      MedievalIronIngot: 100
-      MedievalBoard: 200
+      MedievalProcessedIron: 100
+      MedievalProcessedWood: 200
 
 - type: entity
   id: MedievalGuardBell2

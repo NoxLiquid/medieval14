@@ -17,16 +17,19 @@
             "name": "double_edge_S"
         },
         {
-            "name": "double_edge_NE"
+            "name": "double_edge_W"
         },
         {
-            "name": "double_edgeN_W"
+            "name": "single_edge_NE"
         },
         {
-            "name": "double_edge_SE"
+            "name": "single_edge_NW"
         },
         {
-            "name": "double_edge_SW"
+            "name": "single_edge_SE"
+        },
+        {
+            "name": "single_edge_SW"
         }
     ]
 }
