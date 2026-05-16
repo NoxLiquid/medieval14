@@ -10,6 +10,8 @@
   suffix: Средневековье
   components:
   - type: MedievalPhysicalPriced
+  - type: Machine
+    board: MedievalConnectingMagicBallDetail
   - type: Sprite
     sprite: _Respiral/Structures/Machines/connecting_magic_ball.rsi
     state: running

@@ -19,12 +19,12 @@ public sealed class MedievalLockSystem : SharedMedievalLockSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MedievalLockComponent, ComponentInit>(OnCompInit);
+        SubscribeLocalEvent<MedievalLockComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MedievalLockComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<LockExamineComponent, ExaminedEvent>(OnExamine);
     }
 
-    private void OnCompInit(EntityUid uid, MedievalLockComponent component, ComponentInit args)
+    private void OnMapInit(EntityUid uid, MedievalLockComponent component, MapInitEvent args)
     {
         if (!component.GenerateKey)
             return;

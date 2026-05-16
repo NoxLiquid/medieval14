@@ -16,12 +16,12 @@ public sealed class MedievalPhysicalPricedSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MedievalPhysicalPricedComponent, ComponentInit>(OnInit, after: [typeof(PricingSystem)]);
+        SubscribeLocalEvent<MedievalPhysicalPricedComponent, MapInitEvent>(OnMapInit, after: [typeof(PricingSystem)]);
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, DamageChangedEvent>(OnDamageChanged);
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, PriceCalculationEvent>(OnPriceCalculation);
     }
 
-    private void OnInit(Entity<MedievalPhysicalPricedComponent> ent, ref ComponentInit args)
+    private void OnMapInit(Entity<MedievalPhysicalPricedComponent> ent, ref MapInitEvent args)
     {
         ent.Comp.BasePrice = _pricing.GetPrice(ent.Owner);
         ent.Comp.AddedValue = ent.Comp.BasePrice * ent.Comp.Markup;
