@@ -8,7 +8,7 @@
   components:
   - type: Sprite
     sprite: _Respiral/Structures/Machines/hotplate.rsi
-    drawdepth: SmallStructures
+    drawdepth: SmallObjects
     snapCardinals: true
     layers:
     - state: icon
