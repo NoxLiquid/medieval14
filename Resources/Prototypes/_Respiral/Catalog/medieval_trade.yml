@@ -16,8 +16,8 @@
   id: MedievalTradeRawIron
   name: medieval-trade-product-raw-iron
   description: medieval-trade-product-raw-iron-desc
-  product: MedievalRawIron
-  cost: 100
+  product: MedievalIronOre1
+  cost: 200
   category: medieval-trade-category-materials
   group: MedievalMarket
 
@@ -25,8 +25,8 @@
   id: MedievalTradeRawCoal
   name: medieval-trade-product-raw-coal
   description: medieval-trade-product-raw-coal-desc
-  product: MedievalRawCoal
-  cost: 50
+  product: MedievalCoalOre1
+  cost: 100
   category: medieval-trade-category-materials
   group: MedievalMarket
 
@@ -34,7 +34,7 @@
   id: MedievalTradeRawCloth
   name: medieval-trade-product-raw-cloth
   description: medieval-trade-product-raw-cloth-desc
-  product: MedievalRawCloth
+  product: FoodMedievalFlax1
   cost: 80
   category: medieval-trade-category-materials
   group: MedievalMarket
@@ -43,7 +43,7 @@
   id: MedievalTradeRawStone
   name: medieval-trade-product-raw-stone
   description: medieval-trade-product-raw-stone-desc
-  product: MedievalRawStone
+  product: MedievalStoneOre1
   cost: 60
   category: medieval-trade-category-materials
   group: MedievalMarket
@@ -52,8 +52,8 @@
   id: MedievalTradeRawWood
   name: medieval-trade-product-raw-wood
   description: medieval-trade-product-raw-wood-desc
-  product: MedievalRawWood
-  cost: 40
+  product: MedievalLog1
+  cost: 120
   category: medieval-trade-category-materials
   group: MedievalMarket
 

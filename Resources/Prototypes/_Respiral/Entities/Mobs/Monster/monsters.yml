@@ -7,9 +7,7 @@
   components:
   - type: Bloodstream
     bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 0
+      reagents: []
   - type: Sprite
     drawdepth: Mobs
     sprite: _Respiral/Mobs/Monster/bone_hound.rsi
@@ -144,9 +142,7 @@
   components:
   - type: Bloodstream
     bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 0
+      reagents: []
   - type: Sprite
     drawdepth: Mobs
     sprite: _Respiral/Mobs/Monster/flyagaric.rsi
@@ -193,9 +189,7 @@
   components:
   - type: Bloodstream
     bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 0
+      reagents: []
   - type: Sprite
     drawdepth: Mobs
     sprite: _Respiral/Mobs/Monster/ice_spectre.rsi
@@ -294,9 +288,7 @@
   components:
   - type: Bloodstream
     bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 0
+      reagents: []
   - type: Sprite
     drawdepth: Mobs
     sprite: _Respiral/Mobs/Monster/lumish.rsi
