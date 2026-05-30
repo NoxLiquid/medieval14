@@ -19,6 +19,10 @@
   name: lathe-medieval-category-details
 
 - type: latheCategory
+  id: MedievalLightingCategory
+  name: lathe-medieval-category-lighting
+
+- type: latheCategory
   id: MedievalWeaponCategory
   name: lathe-medieval-category-weapon
 
@@ -29,3 +33,7 @@
 - type: latheCategory
   id: MedievalTailorClothingCategory
   name: lathe-medieval-category-tailor-clothing
+
+- type: latheCategory
+  id: MedievalJewelryCategory
+  name: lathe-medieval-category-jewelry

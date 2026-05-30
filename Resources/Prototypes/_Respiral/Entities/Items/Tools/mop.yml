@@ -1,0 +1,32 @@
+- type: entity
+  parent: MopItem
+  id: MedievalMop
+  name: швабра
+  description: Деревянная швабра для уборки полов.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/mop.rsi
+    layers:
+    - state: mop
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-3
+      visible: false
+  - type: Item
+    size: Large
+    sprite: _Respiral/Objects/Items/mop.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 100
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpillBehavior { }
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

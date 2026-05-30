@@ -1,0 +1,50 @@
+# Respiral - кирпичные декалы (края кладки)
+
+- type: decal
+  id: MedievalBrickDoubleEdgeE
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/bricks.rsi
+    state: double_edge_E
+
+- type: decal
+  id: MedievalBrickDoubleEdgeN
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/bricks.rsi
+    state: double_edge_N
+
+- type: decal
+  id: MedievalBrickDoubleEdgeS
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/bricks.rsi
+    state: double_edge_S
+
+- type: decal
+  id: MedievalBrickDoubleEdgeNE
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/bricks.rsi
+    state: single_edge_NE
+
+- type: decal
+  id: MedievalBrickDoubleEdgeNW
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/bricks.rsi
+    state: single_edge_NW
+
+- type: decal
+  id: MedievalBrickDoubleEdgeSE
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/bricks.rsi
+    state: single_edge_SE
+
+- type: decal
+  id: MedievalBrickDoubleEdgeSW
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/bricks.rsi
+    state: single_edge_SW

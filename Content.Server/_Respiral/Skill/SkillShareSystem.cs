@@ -45,7 +45,7 @@ public sealed class SkillShareSystem : EntitySystem
             isAdminGhost = true;
         }
 
-        // For non-admin users, apply regular restrictions
+        // Для пользователей, не являющихся администраторами, применяются стандартные ограничения.
         if (!isAdminGhost)
         {
             if (HasComp<GhostComponent>(args.User))

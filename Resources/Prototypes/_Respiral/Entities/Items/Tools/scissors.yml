@@ -1,0 +1,31 @@
+- type: entity
+  parent: BarberScissors
+  id: MedievalScissors
+  name: ножницы
+  description: Острые ножницы. Можно использовать для стрижки.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/scissors.rsi
+    state: icon
+  - type: Item
+    sprite: _Respiral/Objects/Items/scissors.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 10
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

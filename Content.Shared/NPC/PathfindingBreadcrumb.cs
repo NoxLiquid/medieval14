@@ -120,4 +120,11 @@ public enum PathfindingBreadcrumbFlag : ushort
     /// Is there climbing involved
     /// </summary>
     Climb = 1 << 4,
+
+    /// <summary>
+    /// _Respiral
+    /// Флаг для тайлов, которые отмечены как transparent в tile definition.
+    /// Используется pathfinding-ом как штраф к стоимости прохода, а не как полный запрет.
+    /// </summary>
+    Transparent = 1 << 5,
 }

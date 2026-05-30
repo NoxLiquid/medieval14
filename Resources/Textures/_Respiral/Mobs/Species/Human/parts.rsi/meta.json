@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "https://github.com/Twilight-Fortress-SS13",
+  "copyright": "https://github.com/tgstation/tgstation/blob/8024397cc81c5f47f74cf4279e35728487d0a1a7/icons/mob/human_parts_greyscale.dmi and modified by DrSmugleaf",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +9,12 @@
   "states": [
     {
       "name": "full"
+    },
+    {
+      "name": "full4_f"
+    },
+    {
+      "name": "full4_m"
     },
     {
       "name": "head_f",
@@ -19,66 +25,50 @@
       "directions": 4
     },
     {
-      "name": "l_arm_m",
-      "directions": 4
-    },
-	{
-      "name": "l_arm_f",
+      "name": "l_arm",
       "directions": 4
     },
     {
       "name": "l_foot_m",
       "directions": 4
     },
-	{
+    {
       "name": "l_foot_f",
       "directions": 4
     },
     {
-      "name": "l_hand_m",
-      "directions": 4
-    },
-	{
-      "name": "l_hand_f",
+      "name": "l_hand",
       "directions": 4
     },
     {
       "name": "l_leg_m",
       "directions": 4
     },
-	{
+    {
       "name": "l_leg_f",
       "directions": 4
     },
     {
-      "name": "r_arm_m",
-      "directions": 4
-    },
-	{
-      "name": "r_arm_f",
+      "name": "r_arm",
       "directions": 4
     },
     {
       "name": "r_foot_m",
       "directions": 4
     },
-	{
+    {
       "name": "r_foot_f",
       "directions": 4
     },
     {
-      "name": "r_hand_m",
-      "directions": 4
-    },
-	{
-      "name": "r_hand_f",
+      "name": "r_hand",
       "directions": 4
     },
     {
       "name": "r_leg_m",
       "directions": 4
     },
-	{
+    {
       "name": "r_leg_f",
       "directions": 4
     },
@@ -88,22 +78,6 @@
     },
     {
       "name": "torso_m",
-      "directions": 4
-    },
-    {
-      "name": "eyes_m",
-      "directions": 4
-    },
-    {
-      "name": "eyes_f",
-      "directions": 4
-    },
-    {
-      "name": "Female_Full",
-      "directions": 4
-    },
-    {
-      "name": "Male_Full",
       "directions": 4
     }
   ]

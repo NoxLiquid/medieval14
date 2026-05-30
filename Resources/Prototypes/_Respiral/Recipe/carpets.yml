@@ -1,0 +1,47 @@
+- type: latheRecipe
+  abstract: true
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalBaseCarpetRecipe
+  completetime: 1
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseCarpetRecipe
+  id: MedievalCarpetRedRecipe
+  result: MedievalCarpetItemRed
+
+- type: latheRecipe
+  parent: MedievalBaseCarpetRecipe
+  id: MedievalCarpetBlackRecipe
+  result: MedievalCarpetItemBlack
+
+- type: latheRecipe
+  parent: MedievalBaseCarpetRecipe
+  id: MedievalCarpetBlueRecipe
+  result: MedievalCarpetItemBlue
+
+- type: latheRecipe
+  parent: MedievalBaseCarpetRecipe
+  id: MedievalCarpetCyanRecipe
+  result: MedievalCarpetItemCyan
+
+- type: latheRecipe
+  parent: MedievalBaseCarpetRecipe
+  id: MedievalCarpetGreenRecipe
+  result: MedievalCarpetItemGreen
+
+- type: latheRecipe
+  parent: MedievalBaseCarpetRecipe
+  id: MedievalCarpetOrangeRecipe
+  result: MedievalCarpetItemOrange
+
+- type: latheRecipe
+  parent: MedievalBaseCarpetRecipe
+  id: MedievalCarpetPurpleRecipe
+  result: MedievalCarpetItemPurple
+
+- type: latheRecipe
+  parent: MedievalBaseCarpetRecipe
+  id: MedievalCarpetYellowRecipe
+  result: MedievalCarpetItemYellow

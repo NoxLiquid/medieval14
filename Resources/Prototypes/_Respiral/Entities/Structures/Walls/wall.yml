@@ -1,12 +1,75 @@
 - type: entity
-  id: MedievalGirder
-  suffix: Средневековье
-  parent: BaseStructureDynamic
-  name: каркас
+  parent: MedievalBaseStructureWall
+  id: MedievalBaseWall
+  abstract: true
   components:
-  - type: Transform
-    anchored: true
-    noRot: false
+  - type: Occluder
+  - type: Sprite
+    drawdepth: Mobs
+  - type: SpriteFade
+  - type: Tag
+    tags:
+    - MedievalWall
+
+- type: entity
+  parent: MedievalBaseWall
+  id: MedievalBaseStoneWall
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: IconSmooth
+    key: walls
+    base: stonebricks
+
+- type: entity
+  parent: MedievalBaseWall
+  id: MedievalBaseWoodWall
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: IconSmooth
+    key: woods
+    base: wood
+
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: MedievalBaseStructureWall
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          MetalBulletImpact
+    soundTypes:
+      Heat:
+        collection:
+          MetalLaserImpact
+  - type: Tag
+    tags:
+    - Wall
+  - type: IsRoof
+  - type: Sprite
+    drawdepth: Walls
+  - type: Icon
+    state: full
+  - type: PlacementReplacement
+    key: walls
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -14,86 +77,32 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-        density: 60
+          bounds: "-0.5,-0.5,0.5,0.5"
         mask:
-        - MachineMask
+        - FullTileMask
         layer:
-        - GlassAirlockLayer
-  - type: InteractionOutline
-  - type: Construction
-    graph: MedievalGirder
-    node: girder
-  - type: Sprite
-    sprite: Structures/barricades.rsi
-    state: barricade_full
-    noRot: true
-  - type: Damageable
-    damageContainer: MedievalInorganic
-    damageModifierSet: MedievalWood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-          damage: 200
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:PlaySoundBehavior
-          sound:
-            collection: MetalBreak
+        - WallLayer
+        density: 1000
+  - type: Airtight
+  - type: RadiationBlocker
+    resistance: 2
+  - type: BlockWeather
+  - type: SunShadowCast
 
 - type: entity
-  id: MedievalGirder2
-  suffix: Средневековье lvl2
-  parent: MedievalGirder
-  components:
-  - type: Construction
-    graph: MedievalGirder
-    node: girder2
-
-- type: entity
-  id: MedievalHeavyGirder
-  parent: MedievalGirder
-  components:
-  - type: Construction
-    graph: MedievalGirder
-    node: heavyGirder
-  - type: Sprite
-    sprite: _Respiral/Structures/Walls/girder.rsi
-    state: icon
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-          damage: 400
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:PlaySoundBehavior
-          sound:
-            collection: MetalBreak
-
-- type: entity
-  id: MedievalHeavyGirder2
-  suffix: Средневековье lvl2
-  parent: MedievalHeavyGirder
-  components:
-  - type: Construction
-    graph: MedievalGirder
-    node: heavyGirder2
-
-- type: entity
-  parent: BaseWall
-  id: MedievalWallWood
+  parent: MedievalBaseWoodWall
+  id: MedievalWallWooden
   suffix: Средневековье
   name: деревянная стена
   description: Традиционное защитное сооружение.
   components:
   - type: Sprite
-    sprite: Structures/Walls/wood.rsi
+    sprite: _Respiral/Structures/Walls/wooden_wall.rsi
   - type: Icon
-    sprite: Structures/Walls/wood.rsi
+    sprite: _Respiral/Structures/Walls/wooden_wall.rsi
+  - type: Construction
+    graph: MedievalWall
+    node: woodenWall
   - type: Destructible
     thresholds:
     - trigger:
@@ -105,22 +114,137 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroyHeavy
-  - type: IconSmooth
-    key: woods
-    base: wood
-  - type: Damageable
-    damageContainer: MedievalInorganic
-    damageModifierSet: MedievalWood
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:ChangeConstructionNodeBehavior
+        node: woodenWallFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: MedievalBaseWoodWall
+  id: MedievalWallWoodenBirch
+  suffix: Средневековье
+  name: берёзовая деревянная стена
+  description: Традиционное защитное сооружение.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/wooden_wall_birch.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/wooden_wall_birch.rsi
   - type: Construction
-    graph: MedievalGirder
-    node: woodWall
+    graph: MedievalWall
+    node: woodenBirchWall
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+    - trigger:
+        !type:DamageTrigger
+        damage: 1050
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:ChangeConstructionNodeBehavior
+        node: woodenBirchWallFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: MedievalBaseWoodWall
+  id: MedievalWallWoodenSpruce
+  suffix: Средневековье
+  name: еловая деревянная стена
+  description: Традиционное защитное сооружение.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Construction
+    graph: MedievalWall
+    node: woodenSpruceWall
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+    - trigger:
+        !type:DamageTrigger
+        damage: 1100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:ChangeConstructionNodeBehavior
+        node: woodenSpruceWallFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: MedievalBaseWoodWall
+  id: MedievalWallWoodenPalisad
+  suffix: Средневековье
+  name: деревянная палисада
+  description: Грубое защитное сооружение из кольев и досок.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Walls/wooden_palisad.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Walls/wooden_palisad.rsi
+  - type: Construction
+    graph: MedievalWall
+    node: woodenPalisadWall
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger # если вдруг урона будет много, то палисад развалится полностью
+        damage: 1800
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+    - trigger:
+        !type:DamageTrigger
+        damage: 900
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:ChangeConstructionNodeBehavior
+        node: woodenPalisadWallFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
   id: MedievalWoodenSupportWallBroken
   parent: MedievalWoodenSupportWall
   name: поломанная деревянная опорная стена
   components:
+  - type: SpriteFade
   - type: Sprite
+    drawdepth: Mobs
     sprite: Objects/Decoration/mines.rsi
     state: support_wall_broken
   - type: Destructible
@@ -147,9 +271,10 @@
     key: walls
   - type: Tag
     tags:
-    - Wall
     - Wooden
+  - type: SpriteFade
   - type: Sprite
+    drawdepth: Mobs
     noRot: true
     sprite: Objects/Decoration/mines.rsi
     state: support_wall
@@ -182,21 +307,24 @@
           collection: WoodDestroyHeavy
 
 - type: entity
-  parent: BaseWall
-  id: MedievalHeavyWallStone
+  parent: MedievalBaseStoneWall
+  id: MedievalWallBrickStoneOld
   suffix: Средневековье
-  name: укреплённая каменная стена
+  name: старая кирпично-каменная стена
   description: Традиционное защитное сооружение.
   components:
   - type: Sprite
-    sprite: _Respiral/Structures/Walls/stone.rsi
+    sprite: _Respiral/Structures/Walls/brick_stone_old_wall.rsi
   - type: Icon
-    sprite: _Respiral/Structures/Walls/stone.rsi
+    sprite: _Respiral/Structures/Walls/brick_stone_old_wall.rsi
+  - type: Construction
+    graph: MedievalWall
+    node: brickStoneOldWall
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 6000
+        damage: 3200
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -205,27 +333,34 @@
           path: /Audio/Effects/break_stone.ogg
           params:
             volume: -6
-  - type: Damageable
-    damageContainer: MedievalInorganic
-    damageModifierSet: MedievalStone
-  - type: IconSmooth
-    key: walls
-    base: brick
-  - type: Construction
-    graph: MedievalGirder
-    node: heavyWallStone
+    - trigger:
+        !type:DamageTrigger
+        damage: 1600
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:ChangeConstructionNodeBehavior
+        node: brickStoneOldWallFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
-  parent: BaseWall
-  id: MedievalWallStone
+  parent: MedievalBaseStoneWall
+  id: MedievalWallBricksStone
   suffix: Средневековье
-  name: каменная стена
+  name: кирпично-каменная стена
   description: Традиционное защитное сооружение.
   components:
   - type: Sprite
-    sprite: _Respiral/Structures/Walls/stone2.rsi
+    sprite: _Respiral/Structures/Walls/bricks_stone_wall.rsi
   - type: Icon
-    sprite: _Respiral/Structures/Walls/stone2.rsi
+    sprite: _Respiral/Structures/Walls/bricks_stone_wall.rsi
+  - type: Construction
+    graph: MedievalWall
+    node: bricksStoneWall
   - type: Destructible
     thresholds:
     - trigger:
@@ -239,44 +374,57 @@
           path: /Audio/Effects/break_stone.ogg
           params:
             volume: -6
-  - type: Damageable
-    damageContainer: MedievalInorganic
-    damageModifierSet: MedievalStone
-  - type: IconSmooth
-    key: walls
-    base: brick
-  - type: Construction
-    graph: MedievalGirder
-    node: wallStone
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:ChangeConstructionNodeBehavior
+        node: bricksStoneWallFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
-  parent: BaseWall
-  id: MedievalHeavyWallWood
+  parent: MedievalBaseStoneWall
+  id: MedievalWallMarbleBricksStone
   suffix: Средневековье
-  name: укреплённая деревянная стена
+  name: мраморно-кирпичная стена
   description: Традиционное защитное сооружение.
   components:
   - type: Sprite
-    sprite: _Respiral/Structures/Walls/roguewood.rsi
+    sprite: _Respiral/Structures/Walls/marblebricks_stone_wall.rsi
   - type: Icon
-    sprite: _Respiral/Structures/Walls/roguewood.rsi
+    sprite: _Respiral/Structures/Walls/marblebricks_stone_wall.rsi
+  - type: Construction
+    graph: MedievalWall
+    node: marbleBricksStoneWall
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 4000
+        damage: 5000
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          collection: WoodDestroyHeavy
-  - type: Damageable
-    damageContainer: MedievalInorganic
-    damageModifierSet: MedievalWood
-  - type: IconSmooth
-    key: walls
-    base: brick
-  - type: Construction
-    graph: MedievalGirder
-    node: heavyWallWood
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+    - trigger:
+        !type:DamageTrigger
+        damage: 2500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:ChangeConstructionNodeBehavior
+        node: marbleBricksStoneWallFrame
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

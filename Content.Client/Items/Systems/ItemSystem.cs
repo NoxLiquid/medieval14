@@ -63,6 +63,11 @@ public sealed class ItemSystem : SharedItemSystem
                 return;
         }
 
+        // Respiral-Start: примените параметр HeldPrefix к явным визуальным состояниям в руках (например, при wielded  оружия).
+        if (item.HeldPrefix != null && item.InhandVisuals.ContainsKey(args.Location))
+            layers = GetPrefixedLayers(uid, item, layers);
+        // Respiral-End
+
         var i = 0;
         foreach (var layer in layers)
         {
@@ -76,6 +81,55 @@ public sealed class ItemSystem : SharedItemSystem
             args.Layers.Add((key, layer));
         }
     }
+
+    // Respiral-Start
+    /// <summary>
+    ///     Пытается создать предварительно настроенные версии визуальных слоев explicit inhand, используя HeldPrefix.
+    ///     Возвращается к исходным слоям, если предварительно настроенные состояния не существуют.
+    /// </summary>
+    private List<PrototypeLayerData> GetPrefixedLayers(EntityUid uid, ItemComponent item, List<PrototypeLayerData> layers)
+    {
+        RSI? rsi = null;
+
+        if (item.RsiPath != null)
+            rsi = _resCache.GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / item.RsiPath).RSI;
+        else if (TryComp(uid, out SpriteComponent? sprite))
+            rsi = sprite.BaseRSI;
+
+        if (rsi == null)
+            return layers;
+
+        var prefixed = new List<PrototypeLayerData>(layers.Count);
+        foreach (var layer in layers)
+        {
+            if (layer.State == null)
+            {
+                prefixed.Add(layer);
+                continue;
+            }
+
+            var prefixedState = $"{item.HeldPrefix}-{layer.State}";
+            if (!rsi.TryGetState(prefixedState, out _))
+                return layers;
+
+            prefixed.Add(new PrototypeLayerData
+            {
+                State = prefixedState,
+                Color = layer.Color,
+                Scale = layer.Scale,
+                RsiPath = layer.RsiPath,
+                TexturePath = layer.TexturePath,
+                MapKeys = layer.MapKeys,
+                Shader = layer.Shader,
+                Rotation = layer.Rotation,
+                Offset = layer.Offset,
+                Visible = layer.Visible,
+            });
+        }
+
+        return prefixed;
+    }
+    // Respiral-end
 
     /// <summary>
     ///     If no explicit in-hand visuals were specified, this attempts to populate with default values.

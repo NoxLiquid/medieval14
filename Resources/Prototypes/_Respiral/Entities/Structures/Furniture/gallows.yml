@@ -4,11 +4,11 @@
   name: виселица
   description: позависаем?
   components:
-  - type: Hanging 
-    damage:
-      types:
-        Asphyxiation: 10
-    damageInterval: 2
+  # - type: Hanging 
+  #   damage:
+  #     types:
+  #       Asphyxiation: 10
+  #   damageInterval: 2
   - type: Strap
     position: Stand
     buckleOffset: "0,0"

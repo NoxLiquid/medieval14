@@ -1,67 +1,4 @@
-- type: construction
-  id: MedievalGirder
-  graph: MedievalGirder
-  startNode: start
-  targetNode: girder
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
 
-- type: construction
-  id: MedievalWallWood
-  graph: MedievalGirder
-  startNode: start
-  targetNode: woodWall
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalHeavyWallStone
-  graph: MedievalGirder
-  startNode: start
-  targetNode: heavyWallStone
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalWallStone
-  graph: MedievalGirder
-  startNode: start
-  targetNode: wallStone
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalHeavyWallWood
-  graph: MedievalGirder
-  startNode: start
-  targetNode: heavyWallWood
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
 
 # Лестницы
 
@@ -70,6 +7,32 @@
   graph: MedievalLadder
   startNode: start
   targetNode: straight
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: AlignTileAny
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalLadderStone
+  graph: MedievalLadder
+  startNode: start
+  targetNode: straightStone
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: AlignTileAny
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalLadderMarble
+  graph: MedievalLadder
+  startNode: start
+  targetNode: straightMarble
   category: construction-category-structures
   objectType: Structure
   placementMode: AlignTileAny
@@ -103,86 +66,6 @@
 #   canBuildInImpassable: false
 #   conditions:
 #     - !type:TileNotBlocked
-
-# Двери 🚪
-
-- type: construction
-  id: MedievalWoodDoor
-  graph: MedievalDoor
-  startNode: start
-  targetNode: woodDoor
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalWoodDurableDoor
-  graph: MedievalDoor
-  startNode: start
-  targetNode: woodDurableDoor
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalIronWoodDurableDoor
-  graph: MedievalDoor
-  startNode: start
-  targetNode: ironWoodDurableDoor
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalWoodDoorFrame
-  graph: MedievalDoor
-  startNode: start
-  targetNode: woodDoorFrame
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalStoneDoor
-  graph: MedievalDoor
-  startNode: start
-  targetNode: stoneDoor
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalIronDoor
-  graph: MedievalDoor
-  startNode: start
-  targetNode: ironDoor
-  category: construction-category-structures
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
 
 # Хранилища 📦
 
@@ -419,3 +302,18 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+# Манекен
+
+- type: construction
+  id: MedievalStandingTarget
+  graph: MedievalStandingTarget
+  startNode: start
+  targetNode: target
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

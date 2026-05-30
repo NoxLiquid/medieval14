@@ -3,6 +3,7 @@
   parent: FoodProduceBase
   id: MedievalBaseHerbItem
   suffix: Средневековье
+  abstract: true
   components:
   - type: SolutionContainerManager
   - type: Sprite

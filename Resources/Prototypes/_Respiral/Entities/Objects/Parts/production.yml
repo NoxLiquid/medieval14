@@ -8,6 +8,19 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
+      MedievalProcessedWood: 400
+
+- type: entity
+  id: MedievalQuarryDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь каменоломни
+  components:
+  - type: MachineBoard
+    prototype: MedievalQuarry
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+      MedievalProcessedWood: 400
 
 - type: entity
   id: MedievalCarpenterTableDetail
@@ -107,3 +120,27 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
+
+- type: entity
+  id: MedievalJewelerDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь станка ювелира
+  components:
+  - type: MachineBoard
+    prototype: MedievalJeweler
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 200
+      MedievalProcessedGold: 100
+
+- type: entity
+  id: MedievalConnectingMagicBallDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь связующего магического шара
+  components:
+  - type: MachineBoard
+    prototype: MedievalConnectingMagicBall
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 300
+      MedievalRawManaCrystal: 200

@@ -1,0 +1,98 @@
+- type: npcFaction
+  id: TownPeople
+  friendly:
+  - TownPeople
+  hostile:
+  - MedievalHerbivoreFlora
+  - MedievalWolf
+  - MedievalCat
+  - MedievalBear
+  - MedievalFox
+  - MedievalHog
+  - MedievalMonster
+
+- type: npcFaction
+  id: MedievalHerbivoreFlora
+  friendly:
+  - MedievalHerbivoreFlora
+  hostile:
+  - TownPeople
+  - MedievalWolf
+  - MedievalCat
+  - MedievalBear
+  - MedievalFox
+  - MedievalHog
+  - MedievalMonster
+
+- type: npcFaction
+  id: MedievalWolf
+  friendly:
+  - MedievalWolf
+  hostile:
+  - TownPeople
+  - MedievalCat
+  - MedievalBear
+  - MedievalFox
+  - MedievalHog
+  - MedievalMonster
+
+- type: npcFaction
+  id: MedievalCat
+  friendly:
+  - MedievalCat
+  hostile:
+  - MedievalWolf
+  - TownPeople
+  - MedievalBear
+  - MedievalFox
+  - MedievalHog
+  - MedievalMonster
+
+- type: npcFaction
+  id: MedievalBear
+  friendly:
+  - MedievalBear
+  hostile:
+  - MedievalWolf
+  - TownPeople
+  - MedievalCat
+  - MedievalFox
+  - MedievalHog
+  - MedievalMonster
+
+- type: npcFaction
+  id: MedievalFox
+  friendly:
+  - MedievalFox
+  hostile:
+  - MedievalWolf
+  - TownPeople
+  - MedievalBear
+  - MedievalCat
+  - MedievalHog
+  - MedievalMonster
+  
+- type: npcFaction
+  id: MedievalHog
+  friendly:
+  - MedievalHog
+  hostile:
+  - MedievalWolf
+  - TownPeople
+  - MedievalBear
+  - MedievalFox
+  - MedievalCat
+  - MedievalMonster
+
+- type: npcFaction
+  id: MedievalMonster
+  friendly:
+  - MedievalMonster
+  hostile:
+  - TownPeople
+  - MedievalHerbivoreFlora
+  - MedievalWolf
+  - MedievalCat
+  - MedievalBear
+  - MedievalFox
+  - MedievalHog

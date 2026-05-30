@@ -1,0 +1,28 @@
+- type: constructionGraph
+  id: MedievalGate
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: gate
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 4
+        - material: MedievalProcessedIron
+          amount: 2
+          doAfter: 8
+        - tool: MedievalScore
+          doAfter: 2
+        - tool: Screwing
+          doAfter: 2
+        - material: MedievalProcessedIron
+          amount: 2
+          doAfter: 8
+        - tool: MedievalScore
+          doAfter: 2
+
+  - node: gate
+    entity: MedievalGate

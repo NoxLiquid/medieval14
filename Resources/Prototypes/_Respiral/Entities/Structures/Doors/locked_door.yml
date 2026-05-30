@@ -1,0 +1,2295 @@
+# Двери с предустановленными замками — для маппинга
+
+# деревянная дверь
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorKuznec
+  suffix: кузнец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKuznec
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorPortnoy
+  suffix: портной
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPortnoy
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorAlkhimik
+  suffix: алхимик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAlkhimik
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorPlotnik
+  suffix: плотник
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPlotnik
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorKamenschik
+  suffix: каменщик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKamenschik
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorTorgovets
+  suffix: торговец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTorgovets
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorTaverna
+  suffix: таверна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorTaverna1
+  suffix: таверна1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna1
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorTaverna2
+  suffix: таверна2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna2
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorTaverna3
+  suffix: таверна3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna3
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorTaverna4
+  suffix: таверна4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna4
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorTaverna5
+  suffix: таверна5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna5
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorTaverna6
+  suffix: таверна6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna6
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorLord
+  suffix: лорд
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockLord
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorKazarma
+  suffix: казарма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazarma
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorTyurma
+  suffix: тюрьма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTyurma
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorStarosta
+  suffix: староста
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStarosta
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorAmbar
+  suffix: амбар
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAmbar
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorSklad
+  suffix: склад
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockSklad
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorKazna
+  suffix: казна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazna
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorStrazha
+  suffix: стража
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStrazha
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom1
+  suffix: дом1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom1
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom2
+  suffix: дом2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom2
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom3
+  suffix: дом3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom3
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom4
+  suffix: дом4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom4
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom5
+  suffix: дом5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom5
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom6
+  suffix: дом6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom6
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom7
+  suffix: дом7
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom7
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom8
+  suffix: дом8
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom8
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom9
+  suffix: дом9
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom9
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorDom10
+  suffix: дом10
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom10
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorUpravlyauschiy
+  suffix: управляющий
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockUpravlyauschiy
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorRytsar1
+  suffix: рыцарь1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar1
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorRytsar2
+  suffix: рыцарь2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar2
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorRytsar3
+  suffix: рыцарь3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar3
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorRytsar4
+  suffix: рыцарь4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar4
+
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorRytsar5
+  suffix: рыцарь5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar5
+
+
+# деревянная дверь с окном
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorKuznec
+  suffix: кузнец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKuznec
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorPortnoy
+  suffix: портной
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPortnoy
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorAlkhimik
+  suffix: алхимик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAlkhimik
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorPlotnik
+  suffix: плотник
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPlotnik
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorKamenschik
+  suffix: каменщик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKamenschik
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorTorgovets
+  suffix: торговец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTorgovets
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorTaverna
+  suffix: таверна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorTaverna1
+  suffix: таверна1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna1
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorTaverna2
+  suffix: таверна2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna2
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorTaverna3
+  suffix: таверна3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna3
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorTaverna4
+  suffix: таверна4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna4
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorTaverna5
+  suffix: таверна5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna5
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorTaverna6
+  suffix: таверна6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna6
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorLord
+  suffix: лорд
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockLord
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorKazarma
+  suffix: казарма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazarma
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorTyurma
+  suffix: тюрьма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTyurma
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorStarosta
+  suffix: староста
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStarosta
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorAmbar
+  suffix: амбар
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAmbar
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorSklad
+  suffix: склад
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockSklad
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorKazna
+  suffix: казна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazna
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorStrazha
+  suffix: стража
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStrazha
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom1
+  suffix: дом1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom1
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom2
+  suffix: дом2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom2
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom3
+  suffix: дом3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom3
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom4
+  suffix: дом4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom4
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom5
+  suffix: дом5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom5
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom6
+  suffix: дом6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom6
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom7
+  suffix: дом7
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom7
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom8
+  suffix: дом8
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom8
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom9
+  suffix: дом9
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom9
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorDom10
+  suffix: дом10
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom10
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorUpravlyauschiy
+  suffix: управляющий
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockUpravlyauschiy
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorRytsar1
+  suffix: рыцарь1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar1
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorRytsar2
+  suffix: рыцарь2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar2
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorRytsar3
+  suffix: рыцарь3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar3
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorRytsar4
+  suffix: рыцарь4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar4
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorRytsar5
+  suffix: рыцарь5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar5
+
+
+# берёзовая дверь
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorKuznec
+  suffix: кузнец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKuznec
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorPortnoy
+  suffix: портной
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPortnoy
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorAlkhimik
+  suffix: алхимик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAlkhimik
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorPlotnik
+  suffix: плотник
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPlotnik
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorKamenschik
+  suffix: каменщик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKamenschik
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorTorgovets
+  suffix: торговец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTorgovets
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorTaverna
+  suffix: таверна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorTaverna1
+  suffix: таверна1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna1
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorTaverna2
+  suffix: таверна2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna2
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorTaverna3
+  suffix: таверна3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna3
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorTaverna4
+  suffix: таверна4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna4
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorTaverna5
+  suffix: таверна5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna5
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorTaverna6
+  suffix: таверна6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna6
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorLord
+  suffix: лорд
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockLord
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorKazarma
+  suffix: казарма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazarma
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorTyurma
+  suffix: тюрьма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTyurma
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorStarosta
+  suffix: староста
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStarosta
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorAmbar
+  suffix: амбар
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAmbar
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorSklad
+  suffix: склад
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockSklad
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorKazna
+  suffix: казна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazna
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorStrazha
+  suffix: стража
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStrazha
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom1
+  suffix: дом1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom1
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom2
+  suffix: дом2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom2
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom3
+  suffix: дом3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom3
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom4
+  suffix: дом4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom4
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom5
+  suffix: дом5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom5
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom6
+  suffix: дом6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom6
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom7
+  suffix: дом7
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom7
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom8
+  suffix: дом8
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom8
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom9
+  suffix: дом9
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom9
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorDom10
+  suffix: дом10
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom10
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorUpravlyauschiy
+  suffix: управляющий
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockUpravlyauschiy
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorRytsar1
+  suffix: рыцарь1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar1
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorRytsar2
+  suffix: рыцарь2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar2
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorRytsar3
+  suffix: рыцарь3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar3
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorRytsar4
+  suffix: рыцарь4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar4
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorRytsar5
+  suffix: рыцарь5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar5
+
+
+# берёзовая дверь с окном
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorKuznec
+  suffix: кузнец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKuznec
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorPortnoy
+  suffix: портной
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPortnoy
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorAlkhimik
+  suffix: алхимик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAlkhimik
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorPlotnik
+  suffix: плотник
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPlotnik
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorKamenschik
+  suffix: каменщик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKamenschik
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorTorgovets
+  suffix: торговец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTorgovets
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorTaverna
+  suffix: таверна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorTaverna1
+  suffix: таверна1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna1
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorTaverna2
+  suffix: таверна2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna2
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorTaverna3
+  suffix: таверна3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna3
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorTaverna4
+  suffix: таверна4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna4
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorTaverna5
+  suffix: таверна5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna5
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorTaverna6
+  suffix: таверна6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna6
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorLord
+  suffix: лорд
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockLord
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorKazarma
+  suffix: казарма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazarma
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorTyurma
+  suffix: тюрьма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTyurma
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorStarosta
+  suffix: староста
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStarosta
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorAmbar
+  suffix: амбар
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAmbar
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorSklad
+  suffix: склад
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockSklad
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorKazna
+  suffix: казна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazna
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorStrazha
+  suffix: стража
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStrazha
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom1
+  suffix: дом1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom1
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom2
+  suffix: дом2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom2
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom3
+  suffix: дом3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom3
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom4
+  suffix: дом4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom4
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom5
+  suffix: дом5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom5
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom6
+  suffix: дом6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom6
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom7
+  suffix: дом7
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom7
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom8
+  suffix: дом8
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom8
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom9
+  suffix: дом9
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom9
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorDom10
+  suffix: дом10
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom10
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorUpravlyauschiy
+  suffix: управляющий
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockUpravlyauschiy
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorRytsar1
+  suffix: рыцарь1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar1
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorRytsar2
+  suffix: рыцарь2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar2
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorRytsar3
+  suffix: рыцарь3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar3
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorRytsar4
+  suffix: рыцарь4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar4
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorRytsar5
+  suffix: рыцарь5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar5
+
+
+# железная дверь
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorKuznec
+  suffix: кузнец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKuznec
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorPortnoy
+  suffix: портной
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPortnoy
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorAlkhimik
+  suffix: алхимик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAlkhimik
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorPlotnik
+  suffix: плотник
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPlotnik
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorKamenschik
+  suffix: каменщик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKamenschik
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorTorgovets
+  suffix: торговец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTorgovets
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorTaverna
+  suffix: таверна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorTaverna1
+  suffix: таверна1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna1
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorTaverna2
+  suffix: таверна2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna2
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorTaverna3
+  suffix: таверна3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna3
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorTaverna4
+  suffix: таверна4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna4
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorTaverna5
+  suffix: таверна5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna5
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorTaverna6
+  suffix: таверна6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna6
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorLord
+  suffix: лорд
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockLord
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorKazarma
+  suffix: казарма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazarma
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorTyurma
+  suffix: тюрьма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTyurma
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorStarosta
+  suffix: староста
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStarosta
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorAmbar
+  suffix: амбар
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAmbar
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorSklad
+  suffix: склад
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockSklad
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorKazna
+  suffix: казна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazna
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorStrazha
+  suffix: стража
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStrazha
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom1
+  suffix: дом1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom1
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom2
+  suffix: дом2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom2
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom3
+  suffix: дом3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom3
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom4
+  suffix: дом4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom4
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom5
+  suffix: дом5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom5
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom6
+  suffix: дом6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom6
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom7
+  suffix: дом7
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom7
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom8
+  suffix: дом8
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom8
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom9
+  suffix: дом9
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom9
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorDom10
+  suffix: дом10
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom10
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorUpravlyauschiy
+  suffix: управляющий
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockUpravlyauschiy
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorRytsar1
+  suffix: рыцарь1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar1
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorRytsar2
+  suffix: рыцарь2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar2
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorRytsar3
+  suffix: рыцарь3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar3
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorRytsar4
+  suffix: рыцарь4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar4
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorRytsar5
+  suffix: рыцарь5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar5
+
+
+# железная дверь с окном
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorKuznec
+  suffix: кузнец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKuznec
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorPortnoy
+  suffix: портной
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPortnoy
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorAlkhimik
+  suffix: алхимик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAlkhimik
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorPlotnik
+  suffix: плотник
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockPlotnik
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorKamenschik
+  suffix: каменщик
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKamenschik
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorTorgovets
+  suffix: торговец
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTorgovets
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorTaverna
+  suffix: таверна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorTaverna1
+  suffix: таверна1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna1
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorTaverna2
+  suffix: таверна2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna2
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorTaverna3
+  suffix: таверна3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna3
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorTaverna4
+  suffix: таверна4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna4
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorTaverna5
+  suffix: таверна5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna5
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorTaverna6
+  suffix: таверна6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTaverna6
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorLord
+  suffix: лорд
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockLord
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorKazarma
+  suffix: казарма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazarma
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorTyurma
+  suffix: тюрьма
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockTyurma
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorStarosta
+  suffix: староста
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStarosta
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorAmbar
+  suffix: амбар
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockAmbar
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorSklad
+  suffix: склад
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockSklad
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorKazna
+  suffix: казна
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockKazna
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorStrazha
+  suffix: стража
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockStrazha
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom1
+  suffix: дом1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom1
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom2
+  suffix: дом2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom2
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom3
+  suffix: дом3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom3
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom4
+  suffix: дом4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom4
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom5
+  suffix: дом5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom5
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom6
+  suffix: дом6
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom6
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom7
+  suffix: дом7
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom7
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom8
+  suffix: дом8
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom8
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom9
+  suffix: дом9
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom9
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorDom10
+  suffix: дом10
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockDom10
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorUpravlyauschiy
+  suffix: управляющий
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockUpravlyauschiy
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorRytsar1
+  suffix: рыцарь1
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar1
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorRytsar2
+  suffix: рыцарь2
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar2
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorRytsar3
+  suffix: рыцарь3
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar3
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorRytsar4
+  suffix: рыцарь4
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar4
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorRytsar5
+  suffix: рыцарь5
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRytsar5
+
+
+# двери со случайным замком
+- type: entity
+  parent: MedievalWoodenDoor
+  id: MedievalWoodenDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalWoodenWindowedDoor
+  id: MedievalWoodenWindowedDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalWoodenBirchDoor
+  id: MedievalWoodenBirchDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalWoodenBirchWindowedDoor
+  id: MedievalWoodenBirchWindowedDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalIronPlateDoor
+  id: MedievalIronPlateDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+
+- type: entity
+  parent: MedievalIronWindowedDoor
+  id: MedievalIronWindowedDoorRandom
+  suffix: случайный замок
+  components:
+  - type: ContainerFill
+    containers:
+      lock-container:
+      - MedievalLockRandom
+

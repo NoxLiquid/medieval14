@@ -8,16 +8,12 @@
   },
   "states": [
     {
-      "name": "icon",
-      "directions": 1
-    },
-	{
-      "name": "frame",
-      "directions": 1
-    },
-	{
-      "name": "door",
-      "directions": 1
-    }
-  ]
+        "name": "frame",
+        "directions": 1
+      },
+    {
+        "name": "door",
+        "directions": 1
+      }
+    ]
 }

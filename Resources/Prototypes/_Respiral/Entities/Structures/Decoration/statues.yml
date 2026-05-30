@@ -1,0 +1,229 @@
+# Статуи ангелов
+- type: entity
+  id: MedievalAngelStatue1
+  name: статуя ангела
+  description: Величественная каменная статуя ангела с расправленными крыльями.
+  parent: BaseStructureDynamic
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Decoration/angel_statue.rsi
+    noRot: true
+    layers:
+    - state: statue1
+    - state: glow
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.0, -0.5, 1.0, 0.5"
+        density: 500
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: Physics
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Construction
+    graph: MedievalStatue
+    node: angelStatue1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalProcessedStone1:
+            min: 2
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 300
+
+- type: entity
+  id: MedievalAngelStatue2
+  parent: MedievalAngelStatue1
+  name: статуя ангела
+  description: Величественная каменная статуя ангела с расправленными крыльями.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Decoration/angel_statue.rsi
+    noRot: true
+    layers:
+    - state: statue2
+    - state: glow
+      shader: unshaded
+  - type: Construction
+    graph: MedievalStatue
+    node: angelStatue2
+
+- type: entity
+  id: MedievalAngelStatue3
+  parent: MedievalAngelStatue1
+  name: статуя ангела
+  description: Величественная каменная статуя ангела с расправленными крыльями.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Decoration/angel_statue.rsi
+    noRot: true
+    layers:
+    - state: statue3
+    - state: glow
+      shader: unshaded
+  - type: Construction
+    graph: MedievalStatue
+    node: angelStatue3
+
+# Статуя волшебника
+- type: entity
+  id: MedievalWizardStatue
+  name: статуя волшебника
+  description: Каменная статуя мудрого волшебника в длинной мантии.
+  parent: BaseStructureDynamic
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Decoration/wizard_statue.rsi
+    state: statue_wizard
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 400
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: Physics
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Construction
+    graph: MedievalStatue
+    node: wizardStatue
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalProcessedStone1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 200
+
+- type: entity
+  id: MedievalLumeraStatue
+  parent: MedievalAngelStatue1
+  name: статуя люмеры
+  description: Тёмная крылатая статуя, окутанная мрачным величием.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Decoration/lumera_statue.rsi
+    noRot: true
+    layers:
+    - state: statue1
+  - type: Construction
+    graph: MedievalStatue
+    node: lumeraStatue
+
+# Надгробия
+- type: entity
+  id: MedievalTombstoneCross
+  name: надгробный крест
+  description: Простой каменный крест на могиле.
+  parent: BaseStructureDynamic
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Decoration/tombstone.rsi
+    state: cross
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 300
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: Physics
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Construction
+    graph: MedievalTombstone
+    node: cross
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalProcessedStone1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 100
+
+- type: entity
+  id: MedievalTombstoneCross2
+  parent: MedievalTombstoneCross
+  name: надгробный крест
+  description: Каменный крест с узором.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Decoration/tombstone.rsi
+    state: cross2
+    noRot: true
+  - type: Construction
+    graph: MedievalTombstone
+    node: cross2
+
+- type: entity
+  id: MedievalTombstone
+  parent: MedievalTombstoneCross
+  name: надгробие
+  description: Каменное надгробие.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Decoration/tombstone.rsi
+    state: tomb
+    noRot: false
+  - type: Construction
+    graph: MedievalTombstone
+    node: tomb

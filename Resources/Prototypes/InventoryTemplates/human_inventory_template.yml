@@ -1,6 +1,15 @@
 - type: inventoryTemplate
   id: human
   slots:
+    # Respiral-Start - слот штанов
+    - name: pants
+      slotTexture: pants
+      slotFlags: LEGS
+      stripTime: 4
+      uiWindowPos: 0,0
+      strippingWindowPos: 0,3
+      displayName: Pants
+    # Respiral-End
     - name: shoes
       slotTexture: shoes
       slotFlags: FEET

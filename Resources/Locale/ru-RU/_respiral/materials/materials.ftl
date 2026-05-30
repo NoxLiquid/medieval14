@@ -9,7 +9,12 @@ medieval-raw-materials-mithril = мифрил
 medieval-raw-materials-adamantine = адамантит
 medieval-raw-materials-crystal-mana = кристал маны
 medieval-raw-materials-pelt = шкура
-medieval-raw-materials-cloth = такань
+medieval-raw-materials-cloth = ткань
+medieval-raw-materials-quartz = кварц
+medieval-raw-materials-emerald = изумруд
+medieval-raw-materials-sapphire = сапфир
+medieval-raw-materials-ruby = рубин
+medieval-raw-materials-topaz = топаз
 
 # Processed
 medieval-processed-materials-wood = обработанное древесина
@@ -22,3 +27,4 @@ medieval-processed-materials-adamantine = обработанный адаман�
 medieval-processed-materials-stone = обработанный камень
 medieval-processed-materials-cloth = ткань
 medieval-processed-materials-pelt = дублёная кожа
+medieval-processed-materials-glass = стекло

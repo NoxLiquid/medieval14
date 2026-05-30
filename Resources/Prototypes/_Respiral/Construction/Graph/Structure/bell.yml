@@ -1,0 +1,128 @@
+- type: constructionGraph
+  id: MedievalGuardBell
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: bell1
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalBoard
+        amount: 2
+        doAfter: 3
+      - material: MedievalProcessedIron
+        amount: 1
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 2
+    - to: bell2
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalBoard
+        amount: 2
+        doAfter: 3
+      - material: MedievalProcessedIron
+        amount: 1
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 2
+    - to: bell3
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalBoard
+        amount: 2
+        doAfter: 3
+      - material: MedievalProcessedIron
+        amount: 1
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 2
+    - to: bell4
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalBoard
+        amount: 2
+        doAfter: 3
+      - material: MedievalProcessedIron
+        amount: 1
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 2
+
+  - node: bell1
+    entity: MedievalGuardBell1
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalBoard1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: MedievalIronIngot1
+        amount: 1
+      steps:
+      - tool: Prying
+        doAfter: 4
+
+  - node: bell2
+    entity: MedievalGuardBell2
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalBoard1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: MedievalIronIngot1
+        amount: 1
+      steps:
+      - tool: Prying
+        doAfter: 4
+
+  - node: bell3
+    entity: MedievalGuardBell3
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalBoard1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: MedievalIronIngot1
+        amount: 1
+      steps:
+      - tool: Prying
+        doAfter: 4
+
+  - node: bell4
+    entity: MedievalGuardBell4
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalBoard1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: MedievalIronIngot1
+        amount: 1
+      steps:
+      - tool: Prying
+        doAfter: 4

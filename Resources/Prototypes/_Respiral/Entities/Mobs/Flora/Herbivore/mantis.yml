@@ -1,0 +1,77 @@
+- type: entity
+  name: богомол
+  parent: MedievalBaseHerbivore
+  id: MedievalMantis
+  description: Этот богомол выглядит довольно безобидным, с её зелёной окраской и маленькими лапками. Она может быть дружелюбной, если к ней подойти осторожно, но не стоит забывать, что она все же дикий зверь.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/mantis.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      color: '#4E7F3A'
+      state: alive
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 6
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: alive
+    noMovementLayers:
+      movement:
+        state: alive
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 5
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  # - type: Butcherable
+  #   spawned:
+  #   - id: FoodMeat
+  #     amount: 1
+  - type: InteractionPopup
+    successChance: 0.6
+    interactSuccessString: petting-success-frog
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    # interactSuccessSound:
+    #   path: /Audio/Animals/frog_ribbit.ogg
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 25
+  - type: Tag
+    tags:
+    - VimPilot
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 60
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+  
+
+- type: entity
+  parent: MedievalMantis
+  id: MedievalMantis2
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/mantis.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      color: '#2F5D2F'
+      state: alive
+

@@ -65,7 +65,7 @@ public sealed class MedievalKeySystem : EntitySystem
         {
             var lockEnt = _medLock.GetLock(target);
 
-            if (lockEnt == null || !TryComp<MedievalLockComponent>(lockEnt, out lockComp))
+            if (lockEnt == null || !TryComp(lockEnt, out lockComp))
             {
                 component.Sound = _audio.Stop(component.Sound);
                 return;

@@ -1,0 +1,107 @@
+- type: job
+  id: MedievalBlacksmith
+  name: job-name-medieval-blacksmith
+  description: job-description-medieval-blacksmith
+  playTimeTracker: JobMedievalBlacksmith
+  startingGear: MedievalBlacksmithGear
+  icon: JobIconStationEngineer
+  supervisors: job-supervisors-medieval-steward
+
+- type: startingGear
+  id: MedievalBlacksmithGear
+
+- type: job
+  id: MedievalCarpenter
+  name: job-name-medieval-carpenter
+  description: job-description-medieval-carpenter
+  playTimeTracker: JobMedievalCarpenter
+  startingGear: MedievalCarpenterGear
+  icon: JobIconStationEngineer
+  supervisors: job-supervisors-medieval-steward
+
+- type: startingGear
+  id: MedievalCarpenterGear
+
+- type: job
+  id: MedievalMason
+  name: job-name-medieval-mason
+  description: job-description-medieval-mason
+  playTimeTracker: JobMedievalMason
+  startingGear: MedievalMasonGear
+  icon: JobIconStationEngineer
+  supervisors: job-supervisors-medieval-steward
+
+- type: startingGear
+  id: MedievalMasonGear
+
+- type: job
+  id: MedievalEngineer
+  name: job-name-medieval-engineer
+  description: job-description-medieval-engineer
+  playTimeTracker: JobMedievalEngineer
+  startingGear: MedievalEngineerGear
+  icon: JobIconStationEngineer
+  supervisors: job-supervisors-medieval-steward
+
+- type: startingGear
+  id: MedievalEngineerGear
+
+- type: job
+  id: MedievalInnkeeper
+  name: job-name-medieval-innkeeper
+  description: job-description-medieval-innkeeper
+  playTimeTracker: JobMedievalInnkeeper
+  startingGear: MedievalInnkeeperGear
+  icon: JobIconBartender
+  supervisors: job-supervisors-medieval-steward
+
+- type: startingGear
+  id: MedievalInnkeeperGear
+
+- type: job
+  id: MedievalHerbalist
+  name: job-name-medieval-herbalist
+  description: job-description-medieval-herbalist
+  playTimeTracker: JobMedievalHerbalist
+  startingGear: MedievalHerbalistGear
+  icon: JobIconBotanist
+  supervisors: job-supervisors-medieval-steward
+
+- type: startingGear
+  id: MedievalHerbalistGear
+
+- type: job
+  id: MedievalCitizen
+  name: job-name-medieval-citizen
+  description: job-description-medieval-citizen
+  playTimeTracker: JobMedievalCitizen
+  startingGear: MedievalCitizenGear
+  icon: JobIconPassenger
+  supervisors: job-supervisors-medieval-steward
+
+- type: startingGear
+  id: MedievalCitizenGear
+
+- type: job
+  id: MedievalMerchant
+  name: job-name-medieval-merchant
+  description: job-description-medieval-merchant
+  playTimeTracker: JobMedievalMerchant
+  startingGear: MedievalMerchantGear
+  icon: JobIconCargoTechnician
+  supervisors: job-supervisors-medieval-steward
+
+- type: startingGear
+  id: MedievalMerchantGear
+
+- type: job
+  id: MedievalGuard
+  name: job-name-medieval-guard
+  description: job-description-medieval-guard
+  playTimeTracker: JobMedievalGuard
+  startingGear: MedievalGuardGear
+  icon: JobIconSecurityOfficer
+  supervisors: job-supervisors-medieval-steward
+
+- type: startingGear
+  id: MedievalGuardGear

@@ -5,6 +5,7 @@
   suffix: Средневековье
   name: руда
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: /Textures/_Respiral/Objects/Materials/ore.rsi
   - type: Item
@@ -30,6 +31,7 @@
   suffix: Средневековье
   name: сырьё
   components:
+  - type: MedievalPhysicalPriced
   - type: Material
   - type: Sprite
     sprite: _Respiral/Objects/Materials/misk.rsi
@@ -57,6 +59,7 @@
   suffix: Средневековье
   name: кристалл
   components:
+  - type: MedievalPhysicalPriced
   - type: Material
   - type: Sharp
   - type: Execution

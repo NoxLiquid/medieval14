@@ -1,0 +1,226 @@
+- type: constructionGraph
+  id: MedievalStatue
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: angelStatue1
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - material: MedievalProcessedStone
+        amount: 3
+        doAfter: 5
+      - tool: MedievalScore
+        doAfter: 3
+    - to: angelStatue2
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - material: MedievalProcessedStone
+        amount: 3
+        doAfter: 5
+      - tool: MedievalScore
+        doAfter: 3
+    - to: angelStatue3
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - material: MedievalProcessedStone
+        amount: 3
+        doAfter: 5
+      - tool: MedievalScore
+        doAfter: 3
+    - to: lumeraStatue
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - material: MedievalProcessedStone
+        amount: 3
+        doAfter: 5
+      - tool: MedievalScore
+        doAfter: 3
+    - to: wizardStatue
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - material: MedievalProcessedStone
+        amount: 2
+        doAfter: 4
+      - tool: MedievalScore
+        doAfter: 3
+
+  - node: angelStatue1
+    entity: MedievalAngelStatue1
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalProcessedStone1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: angelStatue2
+    entity: MedievalAngelStatue2
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalProcessedStone1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: angelStatue3
+    entity: MedievalAngelStatue3
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalProcessedStone1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: lumeraStatue
+    entity: MedievalLumeraStatue
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalProcessedStone1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: wizardStatue
+    entity: MedievalWizardStatue
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalProcessedStone1
+        amount: 2
+      steps:
+      - tool: Prying
+        doAfter: 4
+
+- type: constructionGraph
+  id: MedievalTombstone
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: cross
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - material: MedievalProcessedStone
+        amount: 1
+        doAfter: 3
+      - tool: MedievalScore
+        doAfter: 2
+    - to: cross2
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - material: MedievalProcessedStone
+        amount: 1
+        doAfter: 3
+      - tool: MedievalScore
+        doAfter: 2
+    - to: tomb
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+      - material: MedievalProcessedStone
+        amount: 1
+        doAfter: 3
+      - tool: MedievalScore
+        doAfter: 2
+
+  - node: cross
+    entity: MedievalTombstoneCross
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalProcessedStone1
+        amount: 1
+      steps:
+      - tool: Prying
+        doAfter: 3
+
+  - node: cross2
+    entity: MedievalTombstoneCross2
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalProcessedStone1
+        amount: 1
+      steps:
+      - tool: Prying
+        doAfter: 3
+
+  - node: tomb
+    entity: MedievalTombstone
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:SpawnPrototype
+        prototype: MedievalProcessedStone1
+        amount: 1
+      steps:
+      - tool: Prying
+        doAfter: 3

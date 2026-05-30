@@ -48,6 +48,7 @@ stack-medieval-processed-adamantine = обработанный адаманти�
 stack-medieval-processed-stone = обработанный камень
 stack-medieval-processed-cloth = ткань
 stack-medieval-processed-pelt = дублёная кожа
+stack-medieval-processed-glass = стекло
 stack-medieval-tool-ammo = стройматериалы
 
 stack-medieval-raw-wood = древесина
@@ -60,6 +61,13 @@ stack-medieval-raw-mithril = мифрил
 stack-medieval-raw-adamantine = адамантин
 stack-medieval-raw-pelt = шкура
 stack-medieval-raw-cloth = ткань
+stack-medieval-raw-quartz = кварц
+stack-medieval-gold-coin = золотые монеты
+stack-medieval-silver-coin = серебряные монеты
+stack-medieval-raw-emerald = изумруд
+stack-medieval-raw-sapphire = сапфир
+stack-medieval-raw-ruby = рубин
+stack-medieval-raw-topaz = топаз
 
 stack-medieval-nail = гвоздь
 
@@ -74,3 +82,15 @@ stack-medieval-grass-dark2-floor = тёмная трава 2
 
 stack-medieval-snow-floor = снег
 stack-medieval-ash-floor = пепел
+stack-medieval-floor-marble-small-bricks = мраморный пол из мелкого кирпича
+stack-medieval-floor-marble = мраморный пол
+stack-medieval-floor-stonebrick-small-carved = резной пол из мелкого каменного кирпича
+stack-medieval-floor-stonebrick-small-carved2 = резной пол из мелкого каменного кирпича 2
+stack-medieval-floor-stonebrick-square-carved = резной пол из квадратного каменного кирпича
+stack-medieval-floor-stonebrick = пол из каменного кирпича
+stack-medieval-floor-stone-tile-1 = каменная плитка 1
+stack-medieval-floor-stone-tile-2 = каменная плитка 2
+stack-medieval-floor-stone-tile-3 = каменная плитка 3
+stack-medieval-floor-stone-tile-4 = каменная плитка 4
+stack-medieval-floor-stone-tile-5 = каменная плитка 5
+stack-medieval-floor-stone-tile-6 = каменная плитка 6

@@ -85,3 +85,12 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: procPelt3 }
   color: "#643932"
   price: 10
+
+- type: material
+  id: MedievalGlass
+  stackEntity: MedievalGlass1
+  name: medieval-processed-materials-glass
+  unit: materials-unit-chunk
+  icon: { sprite: /Textures/Objects/Materials/Sheets/glass.rsi, state: glass }
+  color: "#bbe7d2"
+  price: 17

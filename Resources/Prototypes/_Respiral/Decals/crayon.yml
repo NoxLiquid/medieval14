@@ -1,0 +1,101 @@
+# Respiral - средневековые рисунки мелом
+
+- type: decal
+  id: MedievalCrayonArrowD
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: arrow_d
+
+- type: decal
+  id: MedievalCrayonArrowU
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: arrow_u
+
+- type: decal
+  id: MedievalCrayonArrowL
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: arrow_l
+
+- type: decal
+  id: MedievalCrayonArrowR
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: arrow_r
+
+- type: decal
+  id: MedievalCrayonArrowDL
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: arrow_dl
+
+- type: decal
+  id: MedievalCrayonArrowDR
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: arrow_dr
+
+- type: decal
+  id: MedievalCrayonArrowUR
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: arrow_ur
+
+- type: decal
+  id: MedievalCrayonArrowUL
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: arrow_ul
+
+- type: decal
+  id: MedievalCrayonPoint
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: point
+
+- type: decal
+  id: MedievalCrayonSkull
+  tags: ["medieval", "crayon"]
+  defaultCleanable: true
+  defaultCustomColor: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/crayon.rsi
+    state: skull

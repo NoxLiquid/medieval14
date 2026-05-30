@@ -1,0 +1,344 @@
+# Замки по keyId (locked: true — ставятся на двери уже закрытыми)
+
+# Замок со случайным keyId (генерируется при спавне)
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockRandom
+  suffix: случайный
+  components:
+  - type: MedievalLock
+    generateKey: true
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockKuznec
+  suffix: кузнец
+  components:
+  - type: MedievalLock
+    keyId: кузнец
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockPortnoy
+  suffix: портной
+  components:
+  - type: MedievalLock
+    keyId: портной
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockAlkhimik
+  suffix: алхимик
+  components:
+  - type: MedievalLock
+    keyId: алхимик
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockPlotnik
+  suffix: плотник
+  components:
+  - type: MedievalLock
+    keyId: плотник
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockKamenschik
+  suffix: каменщик
+  components:
+  - type: MedievalLock
+    keyId: каменщик
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockTorgovets
+  suffix: торговец
+  components:
+  - type: MedievalLock
+    keyId: торговец
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockTaverna
+  suffix: таверна
+  components:
+  - type: MedievalLock
+    keyId: таверна
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockTaverna1
+  suffix: таверна1
+  components:
+  - type: MedievalLock
+    keyId: таверна1
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockTaverna2
+  suffix: таверна2
+  components:
+  - type: MedievalLock
+    keyId: таверна2
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockTaverna3
+  suffix: таверна3
+  components:
+  - type: MedievalLock
+    keyId: таверна3
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockTaverna4
+  suffix: таверна4
+  components:
+  - type: MedievalLock
+    keyId: таверна4
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockTaverna5
+  suffix: таверна5
+  components:
+  - type: MedievalLock
+    keyId: таверна5
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockTaverna6
+  suffix: таверна6
+  components:
+  - type: MedievalLock
+    keyId: таверна6
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockLord
+  suffix: лорд
+  components:
+  - type: MedievalLock
+    keyId: лорд
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockKazarma
+  suffix: казарма
+  components:
+  - type: MedievalLock
+    keyId: казарма
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockTyurma
+  suffix: тюрьма
+  components:
+  - type: MedievalLock
+    keyId: тюрьма
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockStarosta
+  suffix: староста
+  components:
+  - type: MedievalLock
+    keyId: староста
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockAmbar
+  suffix: амбар
+  components:
+  - type: MedievalLock
+    keyId: амбар
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockSklad
+  suffix: склад
+  components:
+  - type: MedievalLock
+    keyId: склад
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockKazna
+  suffix: казна
+  components:
+  - type: MedievalLock
+    keyId: казна
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockStrazha
+  suffix: стража
+  components:
+  - type: MedievalLock
+    keyId: стража
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom1
+  suffix: дом1
+  components:
+  - type: MedievalLock
+    keyId: дом1
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom2
+  suffix: дом2
+  components:
+  - type: MedievalLock
+    keyId: дом2
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom3
+  suffix: дом3
+  components:
+  - type: MedievalLock
+    keyId: дом3
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom4
+  suffix: дом4
+  components:
+  - type: MedievalLock
+    keyId: дом4
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom5
+  suffix: дом5
+  components:
+  - type: MedievalLock
+    keyId: дом5
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom6
+  suffix: дом6
+  components:
+  - type: MedievalLock
+    keyId: дом6
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom7
+  suffix: дом7
+  components:
+  - type: MedievalLock
+    keyId: дом7
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom8
+  suffix: дом8
+  components:
+  - type: MedievalLock
+    keyId: дом8
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom9
+  suffix: дом9
+  components:
+  - type: MedievalLock
+    keyId: дом9
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockDom10
+  suffix: дом10
+  components:
+  - type: MedievalLock
+    keyId: дом10
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockUpravlyauschiy
+  suffix: управляющий
+  components:
+  - type: MedievalLock
+    keyId: управляющий
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockRytsar1
+  suffix: рыцарь1
+  components:
+  - type: MedievalLock
+    keyId: рыцарь1
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockRytsar2
+  suffix: рыцарь2
+  components:
+  - type: MedievalLock
+    keyId: рыцарь2
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockRytsar3
+  suffix: рыцарь3
+  components:
+  - type: MedievalLock
+    keyId: рыцарь3
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockRytsar4
+  suffix: рыцарь4
+  components:
+  - type: MedievalLock
+    keyId: рыцарь4
+    locked: true
+
+- type: entity
+  parent: MedievalBaseLock
+  id: MedievalLockRytsar5
+  suffix: рыцарь5
+  components:
+  - type: MedievalLock
+    keyId: рыцарь5
+    locked: true

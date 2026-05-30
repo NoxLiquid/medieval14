@@ -1,0 +1,105 @@
+- type: constructionGraph
+  id: MedievalLadder
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: straight
+          steps:
+            - material: MedievalBoard
+              amount: 2
+              doAfter: 2.0
+        - to: straightStone
+          steps:
+            - material: MedievalProcessedStone
+              amount: 2
+              doAfter: 3.0
+        - to: straightMarble
+          steps:
+            - material: MedievalProcessedStone
+              amount: 3
+              doAfter: 4.0
+        # - to: corner
+        #   steps:
+        #     - material: MedievalBoard
+        #       amount: 2
+        #       doAfter: 2.0
+        # - to: innerCorner
+        #   steps:
+        #     - material: MedievalBoard
+        #       amount: 2
+        #       doAfter: 2.0
+
+    - node: straight
+      entity: MedievalCEZLevelLadder
+      edges:
+        - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
+          steps:
+            - tool: Prying
+              doAfter: 5.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 2
+            - !type:DeleteEntity {}
+
+    - node: straightStone
+      entity: MedievalCEZLevelLadderStone
+      edges:
+        - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
+          steps:
+            - tool: Prying
+              doAfter: 5.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalProcessedStone
+              amount: 2
+            - !type:DeleteEntity {}
+
+    - node: straightMarble
+      entity: MedievalCEZLevelLadderMarble
+      edges:
+        - to: start
+          conditions:
+          - !type:MinHealthPercent
+            value: 90
+          steps:
+            - tool: Prying
+              doAfter: 5.0
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalProcessedStone
+              amount: 3
+            - !type:DeleteEntity {}
+
+    # - node: corner
+    #   entity: MedievalCEZLevelLadderCorner
+    #   edges:
+    #     - to: start
+    #       steps:
+    #         - tool: MedievalScore
+    #           doAfter: 5.0
+    #       completed:
+    #         - !type:SpawnPrototype
+    #           prototype: MedievalBoard
+    #           amount: 2
+    #         - !type:DeleteEntity {}
+
+    # - node: innerCorner
+    #   entity: MedievalCEZLevelLadderInnerCorner
+    #   edges:
+    #     - to: start
+    #       steps:
+    #         - tool: MedievalScore
+    #           doAfter: 5.0
+    #       completed:
+    #         - !type:SpawnPrototype
+    #           prototype: MedievalBoard
+    #           amount: 2
+    #         - !type:DeleteEntity {}

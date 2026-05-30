@@ -1,1 +1,183 @@
-# Reserved for medieval shoes-slot clothing prototypes.
+# Medieval shoes-slot clothing prototypes generated from _Respiral/Clothing/Shoes/*.rsi
+
+- type: entity
+  parent: MedievalBaseShoes
+  id: MedievalClothingShoesBlack
+  suffix: Средневековье
+  name: чёрные сапоги
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/black.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/black.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseShoes
+  id: MedievalClothingShoesChain
+  suffix: Средневековье
+  name: кольчужные сапоги
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/chain.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/chain.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalIron
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.96
+        Slash: 0.96
+        Piercing: 0.98
+        Heat: 0.95
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseShoes
+  id: MedievalClothingShoesJester
+  suffix: Средневековье
+  name: шутовские башмаки
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/jester.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/jester.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseShoes
+  id: MedievalClothingShoesLeather
+  suffix: Средневековье
+  name: кожаные сапоги
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/leather.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/leather.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseShoes
+  id: MedievalClothingShoesSimple
+  suffix: Средневековье
+  name: туфли
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/shoes.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/shoes.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseShoes
+  id: MedievalClothingShoesStraw
+  suffix: Средневековье
+  name: соломенные сандалии
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/straw.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/straw.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseShoes
+  id: MedievalClothingShoesWarm
+  suffix: Средневековье
+  name: тёплые сапоги
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/warm.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/warm.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100

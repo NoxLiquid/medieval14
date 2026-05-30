@@ -1,4 +1,5 @@
 using Content.Shared._Respiral.Skills.Prototypes;
+using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Respiral.Skill.Components;
@@ -7,21 +8,31 @@ namespace Content.Server._Respiral.Skill.Components;
 public sealed partial class MeleeSkillComponent : Component
 {
     /// <summary>
-    ///     Множитель без какого-либо навыка
-    /// </summary>
-    [DataField]
-    public float DefaultModifier = 2f;
-
-    /// <summary>
     ///     Требуемые навыки
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<SkillPrototype>> Skills;
+    public List<ProtoId<SkillPrototype>> NeededSkills;
 
     /// <summary>
-    ///     Множители урона на навык (будет браться максимальный из всех)
+    ///     Количество даваемых очков при изучении
+    /// </summary>
+    [DataField(required: true)]
+    public List<Dictionary<ProtoId<SkillPrototype>, float>> Points { get; set; } = new();
+
+    /// <summary>
+    ///     Множители очков обучения по белому списку цели.
+    ///     Если цель не подходит ни под один — очки не начисляются.
     /// </summary>
     [DataField]
-    public Dictionary<ProtoId<SkillPrototype>, float> DamageModifiers { get; set; } = new Dictionary<ProtoId<SkillPrototype>, float>();
+    public List<SkillLearnModifier> LearnModifiers { get; set; } = new();
+}
 
+[DataDefinition]
+public sealed partial class SkillLearnModifier
+{
+    [DataField(required: true)]
+    public EntityWhitelist Whitelist = default!;
+
+    [DataField(required: true)]
+    public float Modifier = 1f;
 }

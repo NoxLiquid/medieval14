@@ -102,6 +102,9 @@ namespace Content.IntegrationTests.Tests
             "dm01-entryway",
             "Exo",
             "Snowball",
+            // _Respiral-start
+            "MedievalVerdantVale",
+            // _Respiral-end
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";

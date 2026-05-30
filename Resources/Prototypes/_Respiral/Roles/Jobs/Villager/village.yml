@@ -1,0 +1,35 @@
+- type: job
+  id: MedievalElder
+  name: job-name-medieval-elder
+  description: job-description-medieval-elder
+  playTimeTracker: JobMedievalElder
+  startingGear: MedievalElderGear
+  icon: JobIconHeadOfPersonnel
+  supervisors: job-supervisors-medieval-lord
+
+- type: startingGear
+  id: MedievalElderGear
+
+- type: job
+  id: MedievalFarmer
+  name: job-name-medieval-farmer
+  description: job-description-medieval-farmer
+  playTimeTracker: JobMedievalFarmer
+  startingGear: MedievalFarmerGear
+  icon: JobIconBotanist
+  supervisors: job-supervisors-medieval-elder
+
+- type: startingGear
+  id: MedievalFarmerGear
+
+- type: job
+  id: MedievalPeasant
+  name: job-name-medieval-peasant
+  description: job-description-medieval-peasant
+  playTimeTracker: JobMedievalPeasant
+  startingGear: MedievalPeasantGear
+  icon: JobIconPassenger
+  supervisors: job-supervisors-medieval-elder
+
+- type: startingGear
+  id: MedievalPeasantGear

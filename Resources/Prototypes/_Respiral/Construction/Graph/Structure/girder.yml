@@ -1,0 +1,237 @@
+- type: constructionGraph
+  id: MedievalWall
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: woodenWallFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+
+    - to: woodenBirchWallFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+
+    - to: woodenSpruceWallFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+
+    - to: woodenPalisadWallFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+
+    - to: brickStoneOldWallFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalProcessedStone
+        amount: 1
+        doAfter: 1
+
+    - to: bricksStoneWallFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalProcessedStone
+        amount: 1
+        doAfter: 1
+
+    - to: marbleBricksStoneWallFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalProcessedStone
+        amount: 2
+        doAfter: 2
+
+  - node: woodenWallFrame
+    entity: MedievalWallWoodenFrame
+    edges:
+    - to: woodenWall
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+
+  - node: woodenBirchWallFrame
+    entity: MedievalWallWoodenBirchFrame
+    edges:
+    - to: woodenBirchWall
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+
+  - node: woodenSpruceWallFrame
+    entity: MedievalWallWoodenSpruceFrame
+    edges:
+    - to: woodenSpruceWall
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+
+  - node: woodenPalisadWallFrame
+    entity: MedievalWallWoodenPalisadFrame
+    edges:
+    - to: woodenPalisadWall
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 2
+        doAfter: 2
+
+  - node: brickStoneOldWallFrame
+    entity: MedievalWallBrickStoneOldFrame
+    edges:
+    - to: brickStoneOldWall
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalProcessedStone
+        amount: 1
+        doAfter: 2
+
+  - node: bricksStoneWallFrame
+    entity: MedievalWallBricksStoneFrame
+    edges:
+    - to: bricksStoneWall
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalProcessedStone
+        amount: 1
+        doAfter: 2
+
+  - node: marbleBricksStoneWallFrame
+    entity: MedievalWallMarbleBricksStoneFrame
+    edges:
+    - to: marbleBricksStoneWall
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalProcessedStone
+        amount: 2
+        doAfter: 3
+
+  - node: woodenWall
+    entity: MedievalWallWooden
+
+  - node: woodenBirchWall
+    entity: MedievalWallWoodenBirch
+
+  - node: woodenSpruceWall
+    entity: MedievalWallWoodenSpruce
+
+  - node: woodenPalisadWall
+    entity: MedievalWallWoodenPalisad
+
+  - node: brickStoneOldWall
+    entity: MedievalWallBrickStoneOld
+
+  - node: bricksStoneWall
+    entity: MedievalWallBricksStone
+
+  - node: marbleBricksStoneWall
+    entity: MedievalWallMarbleBricksStone
+

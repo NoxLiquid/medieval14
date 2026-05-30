@@ -1,0 +1,25 @@
+- type: entity
+  id: MedievalBenchWood
+  parent:
+  - MedievalBaseChair
+  name: деревянная скамейка
+  description: Простая деревянная скамейка для короткого отдыха у стены или стола.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Furniture/bench.rsi
+    state: wooden
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
+  - type: Construction
+    graph: MedievalBench
+    node: bench
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalProcessedStone: 7
+      MedievalProcessedIron: 3

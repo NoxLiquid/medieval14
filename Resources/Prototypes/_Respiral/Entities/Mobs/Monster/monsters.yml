@@ -1,0 +1,520 @@
+# === Костяной пёс ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalBoneHound
+  name: костяной пёс
+  description: Нежить, собранная из костей. Быстрая и агрессивная.
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents: []
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/bone_hound.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 6
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 8
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 60
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+# === Кудахта ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalCackle
+  name: кудахта
+  description: Странное создание, издающее жуткие звуки.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/cackle.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 5
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 6
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+# === Флем ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalFlem
+  name: флем
+  description: Слизистое существо, источающее отвратительный запах.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/flem.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 30
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 10
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+# === Мухомор ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalFlyagaric
+  name: мухомор
+  description: Ходячий гриб. Ядовит.
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents: []
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/flyagaric.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Poison: 8
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 40
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+# === Ледяной призрак ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalIceSpectre
+  name: ледяной призрак
+  description: Призрачное существо, веющее холодом.
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents: []
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/ice_spectre.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      70: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 70
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Cold: 10
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 30
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+# === Невидимый свистун ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalInvisibleWhistler
+  name: невидимый свистун
+  description: Его почти не видно, но свист слышно издалека.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/invisible_whistler.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 7
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 12
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 30
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+# === Люмиш ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalLumish
+  name: люмиш
+  description: Светящийся грибной организм.
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents: []
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/lumish.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: PointLight
+    radius: 3
+    energy: 2
+    color: "#7CFC00"
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Poison: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 30
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+# === Скрытень ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalLurker
+  name: скрытень
+  description: Притаившийся хищник, нападающий из засады.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/lurker.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      120: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 15
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+# === Крот ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalMole
+  name: крот
+  description: Подземный обитатель с мощными когтями.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/mole.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 4
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      groups:
+        Brute: 8
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 40
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+
+# === Комар ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalMosquito
+  name: стая маскитов
+  description: Кровососущее скопление.
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 20
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/mosquito.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      20: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 7
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.20
+        density: 10
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+
+# === Шипохвост ===
+- type: entity
+  parent: MedievalMonsterMobBase
+  id: MobMedievalSpineguard
+  name: шипохвост
+  description: Бронированное существо, покрытое острыми шипами.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Monster/spineguard.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.5
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      groups:
+        Brute: 18
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer

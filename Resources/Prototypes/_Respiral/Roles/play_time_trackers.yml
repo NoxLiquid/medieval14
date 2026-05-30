@@ -1,5 +1,54 @@
 # Jobs
 
-# Commoner
 - type: playTimeTracker
-  id: MedievalJobPilligrim
+  id: JobMedievalLord
+
+- type: playTimeTracker
+  id: JobMedievalKnight
+
+- type: playTimeTracker
+  id: JobMedievalCitySteward
+
+- type: playTimeTracker
+  id: JobMedievalTreasurer
+
+- type: playTimeTracker
+  id: JobMedievalBlacksmith
+
+- type: playTimeTracker
+  id: JobMedievalCarpenter
+
+- type: playTimeTracker
+  id: JobMedievalMason
+
+- type: playTimeTracker
+  id: JobMedievalEngineer
+
+- type: playTimeTracker
+  id: JobMedievalInnkeeper
+
+- type: playTimeTracker
+  id: JobMedievalHerbalist
+
+- type: playTimeTracker
+  id: JobMedievalCitizen
+
+- type: playTimeTracker
+  id: JobMedievalMerchant
+
+- type: playTimeTracker
+  id: JobMedievalGuard
+
+- type: playTimeTracker
+  id: JobMedievalElder
+
+- type: playTimeTracker
+  id: JobMedievalFarmer
+
+- type: playTimeTracker
+  id: JobMedievalPeasant
+
+- type: playTimeTracker
+  id: JobMedievalPilligrim
+
+# Commoner

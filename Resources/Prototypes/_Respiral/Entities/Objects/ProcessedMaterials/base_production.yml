@@ -5,6 +5,7 @@
   name: материал
   suffix: Средневековье
   components:
+  - type: MedievalPhysicalPriced
   - type: Material
   - type: Sprite
     sprite: _Respiral/Objects/Materials/misk.rsi
@@ -29,6 +30,7 @@
   suffix: Средневековье
   name: слиток
   components:
+  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi
   - type: Item

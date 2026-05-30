@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: MedievalSimpleLightTorch
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: torch
+          steps:
+            - material: MedievalRodWood
+              amount: 1
+              doAfter: 2
+            - material: MedievalRawCoal
+              amount: 1
+              doAfter: 2
+    - node: torch
+      entity: MedievalSimpleTorch

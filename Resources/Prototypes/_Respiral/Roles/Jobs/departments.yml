@@ -1,8 +1,48 @@
 - type: department
+  id: MedievalNobles
+  name: department-nobles
+  description: department-nobles-description
+  color: "#C0C0C0"
+  weight: 0
+  roles:
+  - MedievalLord
+  - MedievalKnight
+  - MedievalCitySteward
+  - MedievalTreasurer
+
+- type: department
   id: MedievalCommoner
-  name: department-Commoner
-  description: department-Commoner-description
+  name: department-commoner
+  description: department-commoner-description
   color: "#6F4F28"
   weight: -10
   roles:
   - MedievalPilligrim
+
+- type: department
+  id: MedievalCraftsman
+  name: department-craftsman
+  description: department-craftsman-description
+  color: "#8B4513"
+  weight: 0
+  roles:
+  - MedievalBlacksmith
+  - MedievalCarpenter
+  - MedievalMason
+  - MedievalEngineer
+  - MedievalInnkeeper
+  - MedievalHerbalist
+  - MedievalCitizen
+  - MedievalMerchant
+  - MedievalGuard
+
+- type: department
+  id: MedievalVillager
+  name: department-villager
+  description: department-villager-description
+  color: "#A0522D"
+  weight: 0
+  roles:
+  - MedievalElder
+  - MedievalFarmer
+  - MedievalPeasant

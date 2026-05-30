@@ -1,0 +1,149 @@
+- type: constructionGraph
+  id: MedievalWindow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: woodenWindowFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+
+    - to: woodenBirchWindowFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalBoard
+        amount: 1
+        doAfter: 1
+
+    - to: stoneBricksWindowFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalProcessedStone
+        amount: 1
+        doAfter: 1
+
+    - to: marbleBricksWindowFrame
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalProcessedStone
+        amount: 2
+        doAfter: 2
+
+  - node: woodenWindowFrame
+    entity: MedievalWindowWoodenFrame
+    edges:
+    - to: woodenWindow
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalGlass
+        amount: 2
+        doAfter: 2
+
+  - node: woodenBirchWindowFrame
+    entity: MedievalWindowWoodenBirchFrame
+    edges:
+    - to: woodenBirchWindow
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalGlass
+        amount: 2
+        doAfter: 2
+
+  - node: stoneBricksWindowFrame
+    entity: MedievalWindowStoneBricksFrame
+    edges:
+    - to: stoneBricksWindow
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalGlass
+        amount: 2
+        doAfter: 2
+
+  - node: marbleBricksWindowFrame
+    entity: MedievalWindowMarbleBricksFrame
+    edges:
+    - to: marbleBricksWindow
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tool: MedievalScore
+        doAfter: 1
+      - material: MedievalConstructionToolsAmmo
+        amount: 1
+        doAfter: 1
+      - material: MedievalGlass
+        amount: 2
+        doAfter: 2
+
+  - node: woodenWindowBroken
+    entity: MedievalWindowWoodenBroken
+
+  - node: woodenBirchWindowBroken
+    entity: MedievalWindowWoodenBirchBroken
+
+  - node: stoneBricksWindowBroken
+    entity: MedievalWindowStoneBricksBroken
+
+  - node: marbleBricksWindowBroken
+    entity: MedievalWindowMarbleBricksBroken
+
+  - node: woodenWindow
+    entity: MedievalWindowWooden
+
+  - node: woodenBirchWindow
+    entity: MedievalWindowWoodenBirch
+
+  - node: stoneBricksWindow
+    entity: MedievalWindowStoneBricks
+
+  - node: marbleBricksWindow
+    entity: MedievalWindowMarbleBricks

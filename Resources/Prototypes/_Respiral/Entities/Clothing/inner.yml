@@ -1,4 +1,4 @@
-# Medieval inner clothing generated from _Respiral/Clothing/Jumpsuit/*.rsi
+# Medieval inner clothing generated from _Respiral/Clothing/Uniforms/Jumpsuit/*.rsi
 
 - type: entity
   parent: MedievalBaseInnerClothing
@@ -7,10 +7,10 @@
   name: платье
   components:
   - type: Sprite
-    sprite: _Respiral/Clothing/Jumpsuit/dress.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/dress.rsi
     state: icon
   - type: Clothing
-    sprite: _Respiral/Clothing/Jumpsuit/dress.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/dress.rsi
   - type: Damageable
     damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
@@ -33,10 +33,10 @@
   name: длинная туника
   components:
   - type: Sprite
-    sprite: _Respiral/Clothing/Jumpsuit/long_shirt.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/long_shirt.rsi
     state: icon
   - type: Clothing
-    sprite: _Respiral/Clothing/Jumpsuit/long_shirt.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/long_shirt.rsi
   - type: Damageable
     damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
@@ -59,10 +59,10 @@
   name: крестьянские лохмотья
   components:
   - type: Sprite
-    sprite: _Respiral/Clothing/Jumpsuit/peasant-rags.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant-rags.rsi
     state: icon
   - type: Clothing
-    sprite: _Respiral/Clothing/Jumpsuit/peasant-rags.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant-rags.rsi
   - type: Damageable
     damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
@@ -85,10 +85,10 @@
   name: простая рубаха
   components:
   - type: Sprite
-    sprite: _Respiral/Clothing/Jumpsuit/shirt.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/shirt.rsi
     state: icon
   - type: Clothing
-    sprite: _Respiral/Clothing/Jumpsuit/shirt.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/shirt.rsi
   - type: Damageable
     damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
@@ -111,10 +111,10 @@
   name: расшитая рубаха
   components:
   - type: Sprite
-    sprite: _Respiral/Clothing/Jumpsuit/shirt2.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/shirt2.rsi
     state: icon
   - type: Clothing
-    sprite: _Respiral/Clothing/Jumpsuit/shirt2.rsi
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/shirt2.rsi
   - type: Damageable
     damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax

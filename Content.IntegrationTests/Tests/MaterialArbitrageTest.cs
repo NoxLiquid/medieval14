@@ -16,6 +16,7 @@ using Content.Shared.Materials;
 using Content.Shared.Research.Prototypes;
 using Content.Shared.Stacks;
 using Content.Shared.Tools.Components;
+using Content.Server._Respiral.Pricing.Components; // _Respiral-Add
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
@@ -58,6 +59,9 @@ public sealed class MaterialArbitrageTest
         var materialName = compFact.GetComponentName<MaterialComponent>();
         var destructibleName = compFact.GetComponentName<DestructibleComponent>();
         var refinableName = compFact.GetComponentName<ToolRefinableComponent>();
+        // _Respiral-start: маркер для расчёта цены через PhysicalComposition без MaterialComponent
+        var medievalSpiralPhysicalPricedName = compFact.GetComponentName<MedievalPhysicalPricedComponent>();
+        // _Respiral-end
 
         // get the inverted lathe recipe dictionary
         var latheRecipes = latheSys.InverseRecipes;
@@ -144,13 +148,15 @@ public sealed class MaterialArbitrageTest
         {
             Dictionary<string, int>? baseComposition = null;
 
-            if (proto.Components.ContainsKey(materialName)
+            // _Respiral-start: также учитываем сущности с MedievalPhysicalPricedComponent
+            if ((proto.Components.ContainsKey(materialName) || proto.Components.ContainsKey(medievalSpiralPhysicalPricedName))
                 && proto.Components.TryGetValue(compositionName, out var compositionReg))
             {
                 var compositionComp = (PhysicalCompositionComponent)compositionReg.Component;
                 baseComposition = compositionComp.MaterialComposition;
 
             }
+            // _Respiral-end
 
             if (!proto.Components.TryGetValue(refinableName, out var refinableReg))
             {

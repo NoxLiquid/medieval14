@@ -6,6 +6,7 @@
   suffix: Средневековье, пустой
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Storage
     grid:
     - 0,0,9,3

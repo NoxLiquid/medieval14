@@ -10,10 +10,11 @@ using Content.Shared.Access.Components;
 using Content.Shared.Administration;
 using Content.Shared.Climbing.Components;
 using Content.Shared.Doors.Components;
+using Content.Shared.Maps;
 using Content.Shared.NPC;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
-using Robust.Shared.Map;
+using Robust.Shared.Map; // _Respiral-Add
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -51,6 +52,11 @@ namespace Content.Server.NPC.Pathfinding
         [Dependency] private readonly NPCSystem _npc = default!;
         [Dependency] private readonly SharedMapSystem _maps = default!;
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+        // _Respiral-start
+        // Нужен доступ к описанию тайлов, чтобы pathfinding мог учитывать их флаги
+        // и отдельно помечать прозрачные тайлы как нежелательные для маршрута.
+        [Dependency] private readonly ITileDefinitionManager _tileDefs = default!;
+        // _Respiral-end
         [Dependency] private readonly SharedTransformSystem _transform = default!;
 
         private readonly Dictionary<ICommonSession, PathfindingDebugMode> _subscribedSessions = new();

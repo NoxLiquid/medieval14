@@ -1,0 +1,208 @@
+# Respiral - декалы травы и кустов
+
+- type: decal
+  id: MedievalGrassBushes1
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_bushes1
+
+- type: decal
+  id: MedievalGrassBushes2
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_bushes2
+
+- type: decal
+  id: MedievalGrassBushes3
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_bushes3
+
+- type: decal
+  id: MedievalGrassBushes4
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_bushes4
+
+- type: decal
+  id: MedievalGrassBushes5
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_bushes5
+
+- type: decal
+  id: MedievalGrassBushes6
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_bushes6
+
+- type: decal
+  id: MedievalGrassBushes7
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_bushes7
+
+- type: decal
+  id: MedievalGrassBushes8
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_bushes8
+
+- type: decal
+  id: MedievalGrassBushes9
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_bushes9
+
+- type: decal
+  id: MedievalGrassShort1
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short1
+
+- type: decal
+  id: MedievalGrassShort2
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short2
+
+- type: decal
+  id: MedievalGrassShort3
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short3
+
+- type: decal
+  id: MedievalGrassShort4
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short4
+
+- type: decal
+  id: MedievalGrassShort5
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short5
+
+- type: decal
+  id: MedievalGrassShort6
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short6
+
+- type: decal
+  id: MedievalGrassShort7
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short7
+
+- type: decal
+  id: MedievalGrassShort8
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short8
+
+- type: decal
+  id: MedievalGrassShort9
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short9
+
+- type: decal
+  id: MedievalGrassShort10
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short10
+
+- type: decal
+  id: MedievalGrassShort11
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short11
+
+- type: decal
+  id: MedievalGrassShort12
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short12
+
+- type: decal
+  id: MedievalGrassShort13
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short13
+
+- type: decal
+  id: MedievalGrassShort14
+  tags: ["medieval", "flora"]
+  snapCardinals: true
+  defaultSnap: false
+  sprite:
+    sprite: _Respiral/Decals/grass.rsi
+    state: grass_short14

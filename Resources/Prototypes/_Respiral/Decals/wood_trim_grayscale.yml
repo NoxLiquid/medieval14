@@ -1,0 +1,137 @@
+# Respiral - деревянный бордюр (окрашиваемый)
+
+- type: decal
+  id: MedievalWoodTrimBox
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_box
+
+- type: decal
+  id: MedievalWoodTrimCornerNe
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_corner_ne
+
+- type: decal
+  id: MedievalWoodTrimCornerSe
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_corner_se
+
+- type: decal
+  id: MedievalWoodTrimCornerNw
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_corner_nw
+
+- type: decal
+  id: MedievalWoodTrimCornerSw
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_corner_sw
+
+- type: decal
+  id: MedievalWoodTrimEndN
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_end_n
+
+- type: decal
+  id: MedievalWoodTrimEndE
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_end_e
+
+- type: decal
+  id: MedievalWoodTrimEndS
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_end_s
+
+- type: decal
+  id: MedievalWoodTrimEndW
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_end_w
+
+- type: decal
+  id: MedievalWoodTrimLineN
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_line_n
+
+- type: decal
+  id: MedievalWoodTrimLineE
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_line_e
+
+- type: decal
+  id: MedievalWoodTrimLineS
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_line_s
+
+- type: decal
+  id: MedievalWoodTrimLineW
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_line_w
+
+- type: decal
+  id: MedievalWoodTrimInnerNe
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_inner_ne
+
+- type: decal
+  id: MedievalWoodTrimInnerSe
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_inner_se
+
+- type: decal
+  id: MedievalWoodTrimInnerNw
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_inner_nw
+
+- type: decal
+  id: MedievalWoodTrimInnerSw
+  tags: ["medieval", "markings"]
+  defaultCustomColor: true
+  sprite:
+    sprite: _Respiral/Decals/wood_trim_Grayscale.rsi
+    state: thin_inner_sw

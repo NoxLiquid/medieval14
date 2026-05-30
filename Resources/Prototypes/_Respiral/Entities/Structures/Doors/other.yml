@@ -1,0 +1,51 @@
+# Всё, что не совсем дверь, но всё же дверь. Например, колитки и раздвижные окна.
+
+- type: entity
+  id: MedievalWoodDoorConvenientWindow
+  name: деревянное раздвижное окно
+  parent: MedievalBaseLockableDoor
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: woodDoorConvenientWindow
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/wood_convenient_window.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedievalIronColits
+  name: железная колитка
+  parent: MedievalBaseLockableDoor
+  components:
+  - type: Construction
+    graph: MedievalDoor
+    node: ironColits
+  - type: Sprite
+    sprite: _Respiral/Structures/Doors/iron_colits.rsi
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Door
+    occludes: false
+    changeAirtight: false
+    openSound:
+      path: /Audio/Effects/stonedoor_openclose.ogg
+    closeSound:
+      path: /Audio/Effects/stonedoor_openclose.ogg
+  - type: Occluder
+    enabled: false

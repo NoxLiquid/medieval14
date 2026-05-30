@@ -51,6 +51,9 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalRawStone: 100
+  - type: Tag
+    tags:
+    - MedievalQuarryMaterialStorage
   - type: Item
     inhandVisuals:
       left:
@@ -82,6 +85,7 @@
   - type: Tag
     tags:
     - MedievalSmelterMaterialStorage
+    - MedievalAnvilMaterialStorage
   - type: Sprite
     layers:
     - state: coal
@@ -344,11 +348,183 @@
     - MedievalTanneryMaterialStorage
   - type: PhysicalComposition
     materialComposition:
-      MedievalRawPelt: 100
+      MedievalPelt: 100
 
 - type: entity
   parent: MedievalPelt
   id: MedievalPelt1
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalOreBase
+  id: MedievalQuartzOre
+  categories: [ HideSpawnMenu ]
+  name: кварцевая руда
+  components:
+  - type: Stack
+    stackType: MedievalRawQuartz
+  - type: Tag
+    tags:
+    - MedievalSmelterMaterialStorage
+  - type: Sprite
+    layers:
+    - state: quartz
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalRawQuartz: 100
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: quartz-inhand-left
+      right:
+      - state: quartz-inhand-right
+
+- type: entity
+  id: MedievalQuartzOre1
+  parent: MedievalQuartzOre
+  components:
+  - type: Stack
+    count: 1
+
+# Драгоценные камни
+
+- type: entity
+  parent: MedievalCrystalBase
+  id: MedievalEmeraldGem
+  categories: [ HideSpawnMenu ]
+  name: изумруд
+  components:
+  - type: Tag
+    tags:
+    - MedievalJewelerMaterialStorage
+  - type: Stack
+    stackType: MedievalRawEmerald
+  - type: Sprite
+    sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi
+    layers:
+    - state: emerald1
+      map: ["random"]
+  - type: Item
+    sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalRawEmerald: 100
+  - type: RandomSprite
+    available:
+    - random:
+        emerald1: ""
+        emerald2: ""
+        emerald3: ""
+        emerald4: ""
+
+- type: entity
+  id: MedievalEmeraldGem1
+  parent: MedievalEmeraldGem
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalCrystalBase
+  id: MedievalSapphireGem
+  categories: [ HideSpawnMenu ]
+  name: сапфир
+  components:
+  - type: Tag
+    tags:
+    - MedievalJewelerMaterialStorage
+  - type: Stack
+    stackType: MedievalRawSapphire
+  - type: Sprite
+    sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi
+    layers:
+    - state: sapphire1
+      map: ["random"]
+  - type: Item
+    sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalRawSapphire: 100
+  - type: RandomSprite
+    available:
+    - random:
+        sapphire1: ""
+        sapphire2: ""
+        sapphire3: ""
+
+- type: entity
+  id: MedievalSapphireGem1
+  parent: MedievalSapphireGem
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalCrystalBase
+  id: MedievalRubyGem
+  categories: [ HideSpawnMenu ]
+  name: рубин
+  components:
+  - type: Tag
+    tags:
+    - MedievalJewelerMaterialStorage
+  - type: Stack
+    stackType: MedievalRawRuby
+  - type: Sprite
+    sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi
+    layers:
+    - state: ruby1
+      map: ["random"]
+  - type: Item
+    sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalRawRuby: 100
+  - type: RandomSprite
+    available:
+    - random:
+        ruby1: ""
+        ruby2: ""
+        ruby3: ""
+
+- type: entity
+  id: MedievalRubyGem1
+  parent: MedievalRubyGem
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MedievalCrystalBase
+  id: MedievalTopazGem
+  categories: [ HideSpawnMenu ]
+  name: топаз
+  components:
+  - type: Tag
+    tags:
+    - MedievalJewelerMaterialStorage
+  - type: Stack
+    stackType: MedievalRawTopaz
+  - type: Sprite
+    sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi
+    layers:
+    - state: topaz1
+      map: ["random"]
+  - type: Item
+    sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalRawTopaz: 100
+  - type: RandomSprite
+    available:
+    - random:
+        topaz1: ""
+
+- type: entity
+  id: MedievalTopazGem1
+  parent: MedievalTopazGem
   components:
   - type: Stack
     count: 1

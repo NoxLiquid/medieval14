@@ -1,0 +1,40 @@
+# Крыши
+
+- type: construction
+  id: MedievalRoofWooden
+  graph: MedievalRoof
+  startNode: start
+  targetNode: wooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalRoofBirch
+  graph: MedievalRoof
+  startNode: start
+  targetNode: birch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalRoofStone
+  graph: MedievalRoof
+  startNode: start
+  targetNode: stone
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

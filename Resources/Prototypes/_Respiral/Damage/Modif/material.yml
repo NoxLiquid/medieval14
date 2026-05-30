@@ -1,0 +1,179 @@
+- type: damageModifierSet
+  id: MedievalWood
+  coefficients:
+    Blunt: 1
+    Slash: 1
+    Piercing: 1
+    Heat: 1
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalStone
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.7
+    Piercing: 0.7
+    Heat: 0.3
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalQuartz
+  coefficients:
+    Blunt: 0.6
+    Slash: 0.6
+    Piercing: 0.7
+    Heat: 0.4
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalDirt
+  coefficients:
+    Blunt: 0.85
+    Slash: 0.9
+    Piercing: 1
+    Heat: 0.8
+    Structural: 1.2
+
+- type: damageModifierSet
+  id: MedievalSnow
+  coefficients:
+    Blunt: 1
+    Slash: 1
+    Piercing: 1.1
+    Heat: 1.5
+    Structural: 1.2
+
+- type: damageModifierSet
+  id: MedievalGrass
+  coefficients:
+    Blunt: 1
+    Slash: 1.05
+    Piercing: 1
+    Heat: 1.2
+    Structural: 1.1
+
+- type: damageModifierSet
+  id: MedievalFlax
+  coefficients:
+    Blunt: 0.8
+    Slash: 0.8
+    Piercing: 0.8
+    Shock: 0.9
+    Cold: 0.8
+    Heat: 1
+    Poison: 0
+    Radiation: 0
+    Holy: 0
+    Caustic: 1
+    Cellular: 0
+    Bloodloss: 0
+    Asphyxiation: 0
+    Structural: 0
+
+- type: damageModifierSet
+  id: MedievalPelt
+  coefficients:
+    Blunt: 0.8
+    Slash: 0.7
+    Piercing: 0.7
+    Shock: 0.8
+    Cold: 0.6
+    Heat: 0.8
+    Poison: 0
+    Radiation: 0
+    Holy: 0
+    Caustic: 0.8
+    Cellular: 0
+    Bloodloss: 0
+    Asphyxiation: 0
+    Structural: 0
+
+- type: damageModifierSet
+  id: MedievalLathe
+  coefficients:
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.5
+    Shock: 0.5
+    Cold: 0
+    Heat: 1
+    Poison: 0
+    Radiation: 0
+    Holy: 0
+    Caustic: 0.5
+    Cellular: 0
+    Bloodloss: 0
+    Asphyxiation: 0
+    Structural: 1.5
+
+- type: damageModifierSet
+  id: MedievalBook
+  coefficients:
+    Blunt: 1
+    Slash: 1
+    Piercing: 1
+    Shock: 1
+    Cold: 0
+    Heat: 1
+    Poison: 0
+    Radiation: 0
+    Holy: 0
+    Caustic: 1
+    Cellular: 0
+    Bloodloss: 0
+    Asphyxiation: 0
+    Structural: 0
+
+- type: damageModifierSet
+  id: MedievalIron
+  coefficients:
+    Blunt: 0.55
+    Slash: 0.55
+    Piercing: 0.75
+    Heat: 0.5
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalSteel
+  coefficients:
+    Blunt: 0.45
+    Slash: 0.45
+    Piercing: 0.65
+    Heat: 0.2
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalSilver
+  coefficients:
+    Blunt: 0.8
+    Slash: 0.8
+    Piercing: 0.9
+    Heat: 0.5
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalMithril
+  coefficients:
+    Blunt: 0.35
+    Slash: 0.35
+    Piercing: 0.5
+    Heat: 0.2
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalGold
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.7
+    Piercing: 0.8
+    Heat: 0.4
+    Structural: 1
+
+- type: damageModifierSet
+  id: MedievalAdamantine
+  coefficients:
+    Blunt: 0.15
+    Slash: 0.15
+    Piercing: 0.3
+    Heat: 0.1
+    Structural: 1

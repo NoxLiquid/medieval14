@@ -51,6 +51,14 @@ public sealed partial class PathfindingSystem
         {
             return 0f;
         }
+        // _Respiral-start
+        // Повышаем стоимость прозрачных тайлов, чтобы ИИ предпочитал обходить их.
+        // Полностью непроходимыми их не делаем, иначе можно случайно отрезать единственный маршрут.
+        if ((end.Data.Flags & PathfindingBreadcrumbFlag.Transparent) != 0x0)
+        {
+            modifier += 25f;
+        }
+        // _Respiral-end
 
         if ((request.CollisionLayer & end.Data.CollisionMask) != 0x0 ||
             (request.CollisionMask & end.Data.CollisionLayer) != 0x0)

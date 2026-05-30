@@ -45,7 +45,7 @@
         cellularDistanceFunction: Euclidean
         cellularReturnType: Distance2
       entities:
-        - MedievalWallRockBasalt
+        - MedievalWallCaveStoneStrong
 
     # Вода (озёра / реки)
     - !type:BiomeEntityLayer

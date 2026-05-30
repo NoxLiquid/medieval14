@@ -1,0 +1,192 @@
+- type: constructionGraph
+  id: MedievalDoor
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: ironColits
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+
+    - to: woodenDoorFrame
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+
+    - to: woodenBirchDoorFrame
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+
+    - to: ironDoorFrame
+      completed:
+        - !type:SnapToGrid
+          southRotation: true
+      steps:
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalProcessedIron
+          amount: 1
+          doAfter: 10
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalProcessedIron
+          amount: 3
+          doAfter: 10
+        - tool: MedievalScore
+          doAfter: 2
+
+    - to: woodDoorConvenientWindow
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalConstructionToolsAmmo
+          amount: 1
+          doAfter: 1
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 3
+          doAfter: 10
+        - tool: MedievalScore
+          doAfter: 2
+
+
+  - node: woodDoorConvenientWindow
+    entity: MedievalWoodDoorConvenientWindow
+
+  - node: woodenDoorFrame
+    entity: MedievalWoodenDoorFrame
+    edges:
+    - to: woodenDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+
+    - to: woodenWindowedDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+        - material: MedievalGlass
+          amount: 1
+          doAfter: 5
+
+  - node: woodenDoor
+    entity: MedievalWoodenDoor
+
+  - node: woodenWindowedDoor
+    entity: MedievalWoodenWindowedDoor
+
+  - node: woodenBirchDoorFrame
+    entity: MedievalWoodenBirchDoorFrame
+    edges:
+    - to: woodenBirchDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+
+    - to: woodenBirchWindowedDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalBoard
+          amount: 1
+          doAfter: 5
+        - material: MedievalGlass
+          amount: 1
+          doAfter: 5
+
+  - node: woodenBirchDoor
+    entity: MedievalWoodenBirchDoor
+
+  - node: woodenBirchWindowedDoor
+    entity: MedievalWoodenBirchWindowedDoor
+
+  - node: ironDoorFrame
+    entity: MedievalIronDoorFrame
+    edges:
+    - to: ironDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalProcessedIron
+          amount: 2
+          doAfter: 14
+
+    - to: ironWindowedDoor
+      conditions:
+        - !type:EntityAnchored
+          anchored: true
+      steps:
+        - tool: MedievalScore
+          doAfter: 2
+        - material: MedievalProcessedIron
+          amount: 2
+          doAfter: 14
+        - material: MedievalGlass
+          amount: 1
+          doAfter: 5
+
+  - node: ironDoor
+    entity: MedievalIronPlateDoor
+
+  - node: ironWindowedDoor
+    entity: MedievalIronWindowedDoor
+
+  - node: ironColits
+    entity: MedievalIronColits

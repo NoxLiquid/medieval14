@@ -13,7 +13,7 @@ public sealed partial class WearComponent : Component
     public SoundSpecifier? Sound = default!;
 
     [DataField]
-    public WearState State = WearState.Invalid;
+    public WearState State = WearState.Normal;
 }
 
 /// <summary>

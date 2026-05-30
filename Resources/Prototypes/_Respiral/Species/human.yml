@@ -1,0 +1,7 @@
+- type: species
+  id: MedievalHuman
+  name: species-name-human
+  roundStart: true
+  prototype: MedievalMobHuman
+  dollPrototype: AppearanceMedievalHuman
+  skinColoration: HumanToned

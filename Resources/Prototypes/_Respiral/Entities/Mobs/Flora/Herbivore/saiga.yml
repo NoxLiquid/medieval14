@@ -1,0 +1,68 @@
+- type: entity
+  name: сайгак
+  parent: MedievalBaseHerbivore
+  id: MedievalMobSaigaMale
+  description: Крупное животное, имеет характерные изогнутые рога и длинные ноги, что позволяет ему быстро бегать и преодолевать большие расстояния. Сайгаки питаются травой и кустарниками, и они являются важной частью экосистемы, поддерживая баланс между растительностью и другими животными.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/saiga_male.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#C2A36B'
+      state: alive
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.48
+        density: 200
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Butcherable
+    spawned:
+    - id: MedievalPelt
+      amount: 3
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 300
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 10
+    animation: WeaponArcFist
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      250: Dead
+
+- type: entity
+  name: сайгак
+  parent: MedievalMobSaigaMale
+  id: MedievalMobSaigaFemale
+  description: Крупное животное, имеет длинные ноги, что позволяет ей быстро бегать и преодолевать большие расстояния. Сайгаки питаются травой и кустарниками, и они являются важной частью экосистемы, поддерживая баланс между растительностью и другими животными.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Respiral/Mobs/Flora/saiga_female.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      color: '#C2A36B'
+      state: alive
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 300
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 1
+    animation: WeaponArcFist

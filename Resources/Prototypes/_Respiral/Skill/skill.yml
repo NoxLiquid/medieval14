@@ -5,6 +5,12 @@
   pointsNeeded: 100
 
 - type: skill
+  id: MedievalStoneProcessing
+  name: обработка камня
+  description: Ремесло
+  pointsNeeded: 100
+
+- type: skill
   id: MedievalBasicBlacksmithing
   name: основы кузнечного дела
   description: Ремесло
@@ -19,6 +25,12 @@
 - type: skill
   id: MedievalAlchem
   name: алхимия
+  description: Ремесло
+  pointsNeeded: 100
+
+- type: skill
+  id: MedievalJewelry
+  name: ювелирное дело
   description: Ремесло
   pointsNeeded: 100
 

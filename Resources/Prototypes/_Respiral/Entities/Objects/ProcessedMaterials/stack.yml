@@ -76,6 +76,13 @@
   maxCount: 5
 
 - type: stack
+  id: MedievalGlass
+  name: stack-medieval-processed-glass
+  icon: { sprite: /Textures/Objects/Materials/Sheets/glass.rsi, state: glass }
+  spawn: MedievalGlass1
+  maxCount: 5
+
+- type: stack
   id: MedievalConstructionToolsAmmo
   name: stack-medieval-tool-ammo
   icon: { sprite: /Textures/_Respiral/Objects/Items/Tools/hammer.rsi, state: ammo }

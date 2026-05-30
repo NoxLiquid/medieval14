@@ -1,0 +1,129 @@
+- type: entity
+  id: MedievalBaseRoof
+  abstract: true
+  name: крыша
+  description: Крыша над головой, чтобы защитить вас от жары солнца или непогоды.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: PlacementReplacement
+    key: MedievalRoof
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Transform
+    anchored: true
+  - type: BlockWeather
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _Respiral/Structures/Roof/test.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Roof/test.rsi
+    state: full
+  - type: IconSmooth
+    key: MedievalRoof
+    base: roof
+  - type: IsRoof
+  - type: SunShadowCast
+  - type: WallMount
+    arc: 360
+
+- type: entity
+  parent: MedievalBaseRoof
+  id: MedievalRoofWooden
+  name: деревянная крыша
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Roof/wooden.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Roof/wooden.rsi
+    state: full
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalBoard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: MedievalRoof
+    node: wooden
+
+- type: entity
+  parent: MedievalBaseRoof
+  id: MedievalRoofBirch
+  name: берёзовая крыша
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Roof/birch.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Roof/birch.rsi
+    state: full
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalBoard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: MedievalRoof
+    node: birch
+
+- type: entity
+  parent: MedievalBaseRoof
+  id: MedievalRoofStone
+  name: каменная крыша
+  description: Прочная каменная крыша, надёжно защищающая от непогоды.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Roof/stone.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Roof/stone.rsi
+    state: full
+  - type: Damageable
+    damageContainer: MedievalInorganic
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalProcessedStone:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: MedievalRoof
+    node: stone

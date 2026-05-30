@@ -5,6 +5,7 @@
   name: меч
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
@@ -28,14 +29,15 @@
     qualities:
     - Slicing
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalOneSword
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalOneSword: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -61,6 +63,7 @@
   name: кинжал
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
@@ -84,14 +87,15 @@
     qualities:
     - Slicing
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalDagger
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalDagger: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -117,6 +121,7 @@
   name: тесак
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
@@ -140,14 +145,15 @@
     qualities:
     - Slicing
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalOneSword
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalOneSword: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -173,6 +179,7 @@
   name: кастет
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -191,14 +198,15 @@
   - type: Item
     size: Normal
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalFistFight
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalFistFight: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -224,6 +232,7 @@
   name: булова
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -240,14 +249,15 @@
   - type: Item
     size: Normal
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalMace
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalMace: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -273,6 +283,7 @@
   name: моргенштерн
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -289,18 +300,19 @@
       color: "#8A8A8A"
       map: [ base ]
     - state: handle
-      map: [ base ]
+      map: [ handle ]
   - type: Item
     size: Ginormous
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalMace
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalMace: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -318,11 +330,6 @@
     damage:
       types:
         Structural: 10
-  - type: GenericVisualizer
-    visuals:
-      enum.WieldableVisuals.Wielded:
-        base:
-          True: { state: wielded }
   - type: Wieldable
   - type: IncreaseDamageOnWield
 
@@ -333,6 +340,7 @@
   name: алебарда
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -349,18 +357,19 @@
       color: "#8A8A8A"
       map: [ base ]
     - state: handle
-      map: [ base ]
+      map: [ handle ]
   - type: Item
     size: Ginormous
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalAncientWeapons
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalAncientWeapons: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -378,11 +387,6 @@
     damage:
       types:
         Structural: 10
-  - type: GenericVisualizer
-    visuals:
-      enum.WieldableVisuals.Wielded:
-        base:
-          True: { state: wielded }
   - type: Wieldable
   - type: IncreaseDamageOnWield
 
@@ -393,6 +397,7 @@
   name: полеарм
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -411,19 +416,20 @@
       map: [ base ]
     - state: handle
       scale: 0.5, 0.5
-      map: [ base ]
+      map: [ handle ]
   - type: Item
     unisex: false
     size: Ginormous
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalAncientWeapons
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalAncientWeapons: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -441,11 +447,6 @@
     damage:
       types:
         Structural: 10
-  - type: GenericVisualizer
-    visuals:
-      enum.WieldableVisuals.Wielded:
-        base:
-          True: { state: wielded }
   - type: Wieldable
   - type: IncreaseDamageOnWield
 
@@ -456,6 +457,7 @@
   name: копьё
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -472,19 +474,20 @@
       color: "#8A8A8A"
       map: [ base ]
     - state: handle
-      map: [ base ]
+      map: [ handle ]
   - type: Item
     unisex: false
     size: Ginormous
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalAncientWeapons
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalAncientWeapons: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
@@ -502,11 +505,6 @@
     damage:
       types:
         Structural: 10
-  - type: GenericVisualizer
-    visuals:
-      enum.WieldableVisuals.Wielded:
-        base:
-          True: { state: wielded }
   - type: Wieldable
   - type: IncreaseDamageOnWield
 
@@ -517,6 +515,7 @@
   name: плеть
   abstract: true
   components:
+  - type: MedievalPhysicalPriced
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -532,14 +531,15 @@
   - type: Item
     size: Normal
   - type: MeleeSkill
-    skills:
+    neededSkills:
     - MedievalWhip
-  - type: LearnSkillWhenMeleeAttack
-    whitelist:
-      components:
-      - MobState
     points:
     - MedievalWhip: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
   - type: Damageable
     damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron

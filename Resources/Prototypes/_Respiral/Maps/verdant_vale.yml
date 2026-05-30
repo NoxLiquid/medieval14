@@ -16,9 +16,16 @@
         # - type: StationBiome
         #   biome: MedievalGrasslands
         - type: StationNameSetup
-          mapNameTemplate: '{0} VerdantVale {1}'
+          mapNameTemplate: 'VerdantVale'
         # - type: StationEmergencyShuttle
         #   emergencyShuttlePath: /Maps/Shuttles/emergency_amber.yml
         - type: StationJobs
           availableJobs:
             MedievalPilligrim: [ -1, -1 ]
+
+- type: zMap
+  id: MedievalVerdantVale
+  maps:
+    - /Maps/_Respiral/medieval_verdant_vale_above.yml
+    - /Maps/_Respiral/medieval_verdant_vale.yml
+    - /Maps/_Respiral/medieval_verdant_vale_below.yml

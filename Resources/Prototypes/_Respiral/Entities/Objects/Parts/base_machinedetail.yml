@@ -5,6 +5,7 @@
   abstract: true
   suffix: Средневековье
   components:
+  - type: MedievalPhysicalPriced
   - type: MachineBoard
   - type: Sprite
     sprite: _Respiral/Objects/Materials/detail.rsi

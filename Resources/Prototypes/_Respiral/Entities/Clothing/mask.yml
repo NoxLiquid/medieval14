@@ -1,1 +1,105 @@
-# Reserved for medieval mask-slot clothing prototypes.
+# Medieval mask-slot clothing prototypes generated from _Respiral/Clothing/Mask/*.rsi
+
+- type: entity
+  parent: MedievalBaseMask
+  id: MedievalClothingMaskBandana
+  suffix: Средневековье
+  name: бандана на лицо
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/bandana.rsi
+    state: icon_mask
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/bandana.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseMask
+  id: MedievalClothingMaskExecutioner
+  suffix: Средневековье
+  name: колпак палача
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Mask/executioner.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Mask/executioner.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalFlax
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseMask
+  id: MedievalClothingMaskGlasses
+  suffix: Средневековье
+  name: очки
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Mask/glasses.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Mask/glasses.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalSilver
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedSilver: 100
+
+- type: entity
+  parent: MedievalBaseMask
+  id: MedievalClothingMaskPlagueDoctor
+  suffix: Средневековье
+  name: маска чумного доктора
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Mask/plague_doctor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Mask/plague_doctor.rsi
+  - type: Damageable
+    damageContainer: MedievalClothing
+    damageModifierSet: MedievalPelt
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.99
+        Piercing: 0.99
+        Heat: 0.99
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100

@@ -1,0 +1,55 @@
+- type: construction
+  id: MedievalWindowWooden
+  graph: MedievalWindow
+  startNode: start
+  targetNode: woodenWindow
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+  - !type:EmptyOrWindowValidInTile
+  - !type:NoWindowsInTile
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
+- type: construction
+  id: MedievalWindowWoodenBirch
+  graph: MedievalWindow
+  startNode: start
+  targetNode: woodenBirchWindow
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+  - !type:EmptyOrWindowValidInTile
+  - !type:NoWindowsInTile
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
+- type: construction
+  id: MedievalWindowStoneBricks
+  graph: MedievalWindow
+  startNode: start
+  targetNode: stoneBricksWindow
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+  - !type:EmptyOrWindowValidInTile
+  - !type:NoWindowsInTile
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
+- type: construction
+  id: MedievalWindowMarbleBricks
+  graph: MedievalWindow
+  startNode: start
+  targetNode: marbleBricksWindow
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+  - !type:EmptyOrWindowValidInTile
+  - !type:NoWindowsInTile
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false

@@ -74,3 +74,52 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: cloth1 }
   spawn: FoodMedievalFlax1
   maxCount: 5
+
+- type: stack
+  id: MedievalRawQuartz
+  name: stack-medieval-raw-quartz
+  icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: quartz }
+  spawn: MedievalQuartzOre1
+  maxCount: 1
+
+- type: stack
+  id: MedievalGoldCoin
+  name: stack-medieval-gold-coin
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/gold_coin.rsi, state: coin1 }
+  spawn: MedievalGoldCoin1
+  maxCount: 10
+
+- type: stack
+  id: MedievalSilverCoin
+  name: stack-medieval-silver-coin
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/silver_coin.rsi, state: coin1 }
+  spawn: MedievalSilverCoin1
+  maxCount: 10
+
+- type: stack
+  id: MedievalRawEmerald
+  name: stack-medieval-raw-emerald
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: emerald1 }
+  spawn: MedievalEmeraldGem1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawSapphire
+  name: stack-medieval-raw-sapphire
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: sapphire1 }
+  spawn: MedievalSapphireGem1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawRuby
+  name: stack-medieval-raw-ruby
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: ruby1 }
+  spawn: MedievalRubyGem1
+  maxCount: 1
+
+- type: stack
+  id: MedievalRawTopaz
+  name: stack-medieval-raw-topaz
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: topaz1 }
+  spawn: MedievalTopazGem1
+  maxCount: 1

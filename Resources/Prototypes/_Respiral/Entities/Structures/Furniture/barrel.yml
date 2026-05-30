@@ -1,0 +1,83 @@
+- type: entity
+  id: MedievalBarrel
+  parent:
+  - BaseStructureDynamic
+  - MedievalWoodenFurnitureBase
+  name: деревянная бочка
+  description: Дубовая бочка с крышкой. Её можно открыть и использовать для хранения вещей или наполнить водой.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Barrel
+  - type: Animateable
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Icon
+    sprite: _Respiral/Structures/Furniture/barrel.rsi
+    state: icon
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Respiral/Structures/Furniture/barrel.rsi
+    layers:
+    - state: icon
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: icon
+      map: ["enum.StorageVisualLayers.Door"]
+      visible: false
+    - state: liq1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.28,-0.45,0.28,0.2"
+        density: 65
+        mask:
+        - CrateMask
+        layer:
+        - MachineLayer
+  - type: EntityStorage
+    airtight: false
+  - type: PlaceableSurface
+    isPlaceable: false
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: icon
+    stateBaseOpen: barrel_open
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 500
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq
+    changeColor: true
+  - type: RefillableSolution
+    solution: drink
+  - type: DrainableSolution
+    solution: drink
+  - type: ExaminableSolution
+    solution: drink
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+    maxTransferAmount: 50
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+  - type: Construction
+    graph: MedievalBarrel
+    node: barrel
+    containers:
+    - entity_storage
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalProcessedStone: 7
+      MedievalProcessedIron: 3

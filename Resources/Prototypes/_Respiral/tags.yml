@@ -8,6 +8,9 @@
   id: MedievalSawmillMaterialStorage
 
 - type: Tag
+  id: MedievalQuarryMaterialStorage
+
+- type: Tag
   id: CarpenterTableMaterialStorage
 
 - type: Tag
@@ -27,3 +30,27 @@
 
 - type: Tag
   id: MedievalSewingMaterialStorage
+
+- type: Tag
+  id: MedievalJewelerMaterialStorage
+
+- type: Tag
+  id: MedievalGoat
+
+- type: Tag
+  id: MedievalCow
+
+- type: Tag
+  id: MedievalWall
+
+- type: Tag
+  id: MedievalDiagonal
+
+- type: Tag
+  id: MedievalCoin
+
+- type: Tag
+  id: MedievalGoldCoin
+
+- type: Tag
+  id: MedievalSilverCoin

@@ -1,0 +1,378 @@
+- type: constructionGraph
+  id: MedievalCurtains
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: curtains
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+    - to: curtainsBlack
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+    - to: curtainsBlue
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+    - to: curtainsSkyBlue
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+    - to: curtainsCyan
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+    - to: curtainsGreen
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+    - to: curtainsOrange
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+    - to: curtainsPink
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+    - to: curtainsPurple
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+    - to: curtainsRed
+      completed:
+      - !type:SnapToGrid {}
+      steps:
+      - material: MedievalCloth
+        amount: 2
+        doAfter: 1
+
+  - node: curtains
+    entity: MedievalCurtains
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsOpen
+    entity: MedievalCurtainsOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsBlack
+    entity: MedievalCurtainsBlack
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsBlackOpen
+    entity: MedievalCurtainsBlackOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsBlue
+    entity: MedievalCurtainsBlue
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsBlueOpen
+    entity: MedievalCurtainsBlueOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsSkyBlue
+    entity: MedievalCurtainsSkyBlue
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsSkyBlueOpen
+    entity: MedievalCurtainsSkyBlueOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsCyan
+    entity: MedievalCurtainsCyan
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsCyanOpen
+    entity: MedievalCurtainsCyanOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsGreen
+    entity: MedievalCurtainsGreen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsGreenOpen
+    entity: MedievalCurtainsGreenOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsOrange
+    entity: MedievalCurtainsOrange
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsOrangeOpen
+    entity: MedievalCurtainsOrangeOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsPink
+    entity: MedievalCurtainsPink
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsPinkOpen
+    entity: MedievalCurtainsPinkOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsPurple
+    entity: MedievalCurtainsPurple
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsPurpleOpen
+    entity: MedievalCurtainsPurpleOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsRed
+    entity: MedievalCurtainsRed
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: curtainsRedOpen
+    entity: MedievalCurtainsRedOpen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalCloth1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1

@@ -22,3 +22,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "tgstation commit 8abb19545828230d92ba18827feeb42a67a55d49, Wood tiles are new tg tiles, resprited by Meowstushka, modified by Ko4erga (discord)"
   source: "https://github.com/tgstation/tgstation/"
+
+- files: ["stone4", "stone5", "stone6"]
+  license: "CC-BY-SA-3.0"
+  copyright: "https://github.com/crystallpunk-14"
+  source: "https://github.com/crystallpunk-14"

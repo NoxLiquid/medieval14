@@ -10,13 +10,11 @@
 #         {"belt", "BELT"},
 #         {"gloves", "HAND"},
 #         {"shoes", "FEET"},
+#         {"pants", "LEGS"},
 #         {"id", "IDCARD"},
 #         {"pocket1", "POCKET1"},
 #         {"pocket2", "POCKET2"},
-#         {"suitstorage", "SUITSTORAGE"},
-#         {"socks", "SOCKS"}, // DS14-Underwear
-#         {"underweart", "UNDERWEART"}, // DS14-Underwear
-#         {"underwearb", "UNDERWEARB"}, // DS14-Underwear
+#         {"suitstorage", "SUITSTORAGE"}
 
 - type: entity
   abstract: true
@@ -24,6 +22,7 @@
   id: MedievalBaseClothing
   suffix: Средневековье
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     size: Normal
   - type: Sprite
@@ -50,6 +49,7 @@
   abstract: true
   name: рубаха
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -69,6 +69,7 @@
   abstract: true
   name: камзол
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -88,6 +89,7 @@
   abstract: true
   name: шлем
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -145,6 +147,7 @@
   abstract: true
   name: маска
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -202,6 +205,7 @@
   abstract: true
   name: пояс
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -221,6 +225,7 @@
   abstract: true
   name: перчатки
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -233,6 +238,30 @@
       gloves:
       - state: equipped-HAND
 
+# === BASE PANTS ===
+- type: entity
+  parent: MedievalBaseClothing
+  id: MedievalBasePants
+  abstract: true
+  name: штаны
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Clothing
+    slots: [legs]
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-LEGS
+      jumpsuit-Male:
+      - state: equipped-LEGS
+      jumpsuit-Female:
+      - state: equipped-LEGS-female
+
 # === BASE SHOES ===
 - type: entity
   parent: MedievalBaseClothing
@@ -240,6 +269,7 @@
   abstract: true
   name: сапоги
   components:
+  - type: MedievalPhysicalPriced
   - type: Item
     inhandVisuals:
       left:
@@ -249,8 +279,12 @@
   - type: Clothing
     slots: [feet]
     clothingVisuals:
-      shoes:
+      jumpsuit:
       - state: equipped-FEET
+      jumpsuit-Male:
+      - state: equipped-FEET
+      jumpsuit-Female:
+      - state: equipped-FEET-female
 
 # === BASE ID ===
 - type: entity

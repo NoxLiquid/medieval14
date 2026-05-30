@@ -1,13 +1,32 @@
 - type: latheRecipePack
-  id: MedievalSawmillStatic
+  id: MedievalSawmillPack
   recipes:
   - MedievalBoardRecipe
   - MedievalPartRodWoodRecipe
 
 - type: latheRecipePack
+  id: MedievalQuarryPack
+  recipes:
+  - MedievalFloorTileItemStoneRecipe
+  - MedievalFloorTileItemMarbleSmallBricksRecipe
+  - MedievalFloorTileItemMarbleRecipe
+  - MedievalFloorTileItemStoneBrickSmallCarvedRecipe
+  - MedievalFloorTileItemStoneBrickSmallCarved2Recipe
+  - MedievalFloorTileItemStoneBrickSquareCarvedRecipe
+  - MedievalFloorTileItemStoneBrickRecipe
+  - MedievalFloorTileItemStoneTile1Recipe
+  - MedievalFloorTileItemStoneTile2Recipe
+  - MedievalFloorTileItemStoneTile3Recipe
+  - MedievalFloorTileItemStoneTile4Recipe
+  - MedievalFloorTileItemStoneTile5Recipe
+  - MedievalFloorTileItemStoneTile6Recipe
+
+- type: latheRecipePack
   id: MedievalCarpenterTable
   recipes:
   - MedievalBucketRecipe
+  - MedievalMopRecipe
+  - MedievalDrinkMugWoodRecipe
   - MedievalCarpenterTableDetailRecipe
   - MedievalAlchemTableDetailRecipe
   - MedievalReagentGrinderDetailRecipe
@@ -43,18 +62,40 @@
   - MedievalGoldIngotRecipe
   - MedievalMithrilIngotRecipe
   - MedievalAdamantineIngotRecipe
+  - MedievalDrinkBottleBlueRecipe
+  - MedievalDrinkBottleGreenRecipe
+  - MedievalDrinkBottleGreenTallRecipe
+  - MedievalDrinkBottleOrangeRecipe
+  - MedievalDrinkBottleRedRecipe
 
 - type: latheRecipePack
   id: MedievalAnvil
   recipes:
   - MedievaHammerAmmoRecipe
   - MedievalSawmillDetailRecipe
+  - MedievalQuarryDetailRecipe
   - MedievalConstructionToolsRecipe
+  - MedievalDrinkMugWoodRecipe
+  - MedievalDrinkMugIronRecipe
+  - MedievalDrinkMugSteelRecipe
+  - MedievalDrinkMugSilverRecipe
+  - MedievalDrinkMugGoldRecipe
+  - MedievalDrinkMugWoodIronRecipe
+  - MedievalDrinkMugWoodSteelRecipe
+  - MedievalDrinkMugWoodSilverRecipe
+  - MedievalDrinkMugWoodGoldRecipe
+  - MedievalDrinkGobletIronRecipe
+  - MedievalDrinkGobletSteelRecipe
+  - MedievalDrinkGobletSilverRecipe
+  - MedievalDrinkGobletGoldRecipe
   - MedievalBaseLockpickRecipe
   - MedievalKeyRecipe
   - MedievalLockRecipe
   - MedievalConstructionToolsRecipe
   - MedievalBunchRecipe
+  - MedievalScissorsRecipe
+  - MedievalGoldCoinRecipe
+  - MedievalSilverCoinRecipe
   - MedievalKeyDuplicatorRecipe
   - MedievalAdamantineWhipRecipe
   - MedievalMithrilWhipRecipe
@@ -146,6 +187,29 @@
   - MedievalClothingOuterArmorPracticeRecipe
   - MedievalClothingOuterArmorLamellarRecipe
   - MedievalClothingOuterArmorLightLamellarRecipe
+  - MedievalClothingBeltChainRecipe
+  - MedievalClothingBeltGoldRecipe
+  - MedievalClothingBeltSilverRecipe
+  - MedievalClothingHandsChainGlovesRecipe
+  - MedievalClothingHeadCrownRecipe
+  - MedievalClothingHeadHeavyHelmetRecipe
+  - MedievalClothingHeadHelmetRecipe
+  - MedievalClothingMaskGlassesRecipe
+  - MedievalClothingShoesChainRecipe
+
+- type: latheRecipePack
+  id: MedievalAnvilCandel
+  recipes:
+  - MedievalIronCandelabra1Recipe
+  - MedievalSilverCandelabra1Recipe
+  - MedievalGoldCandelabra1Recipe
+  - MedievalIronCandelabra3Recipe
+  - MedievalSilverCandelabra3Recipe
+  - MedievalGoldCandelabra3Recipe
+  - MedievalIronCandelabraMiniRecipe
+  - MedievalSilverCandelabraMiniRecipe
+  - MedievalGoldCandelabraMiniRecipe
+  - MedievalSimpleMetalTorchRecipe
 
 - type: latheRecipePack
   id: MedievalLoom
@@ -158,6 +222,14 @@
   - MedievalComfortableBedsheetRecipe
   - MedievalLeatherBedsheetRecipe
   - MedievalSimpleBedsheetRecipe
+  - MedievalCarpetRedRecipe
+  - MedievalCarpetBlackRecipe
+  - MedievalCarpetBlueRecipe
+  - MedievalCarpetCyanRecipe
+  - MedievalCarpetGreenRecipe
+  - MedievalCarpetOrangeRecipe
+  - MedievalCarpetPurpleRecipe
+  - MedievalCarpetYellowRecipe
   - MedievalClothingInnerDressRecipe
   - MedievalClothingInnerLongTunicRecipe
   - MedievalClothingInnerPeasantRagsRecipe
@@ -183,8 +255,39 @@
   - MedievalClothingOuterDreadRobeRecipe
   - MedievalClothingOuterWhiteDreadRobeRecipe
   - MedievalClothingOuterWandererRobeRecipe
+  - MedievalClothingBackBackpackRecipe
+  - MedievalClothingBackDuffelRecipe
+  - MedievalClothingBackSatchelRecipe
+  - MedievalClothingBeltLeatherRecipe
+  - MedievalClothingBeltLeatherBlackRecipe
+  - MedievalClothingBeltLeatherRedRecipe
+  - MedievalClothingBeltRopeRecipe
+  - MedievalClothingHandsBlackGlovesRecipe
+  - MedievalClothingHandsLeatherGlovesRecipe
+  - MedievalClothingHandsRagGlovesRecipe
+  - MedievalClothingHeadBandanaRecipe
+  - MedievalClothingHeadCapRecipe
+  - MedievalClothingHeadCoifRecipe
+  - MedievalClothingHeadFeatherHatRecipe
+  - MedievalClothingHeadHatRecipe
+  - MedievalClothingHeadJesterCapRecipe
+  - MedievalClothingHeadMinstrelCapRecipe
+  - MedievalClothingHeadWideHatRecipe
+  - MedievalClothingMaskBandanaRecipe
+  - MedievalClothingMaskExecutionerRecipe
+  - MedievalClothingMaskPlagueDoctorRecipe
+  - MedievalClothingShoesBlackRecipe
+  - MedievalClothingShoesJesterRecipe
+  - MedievalClothingShoesLeatherRecipe
+  - MedievalClothingShoesSimpleRecipe
+  - MedievalClothingShoesStrawRecipe
+  - MedievalClothingShoesWarmRecipe
 
 - type: latheRecipePack
   id: MedievalTannery
   recipes:
   - MedievalProcessedPeltRecipe
+
+- type: latheRecipePack
+  id: MedievalJeweler
+  recipes: []

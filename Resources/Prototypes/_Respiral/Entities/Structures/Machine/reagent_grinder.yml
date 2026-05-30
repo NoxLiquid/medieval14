@@ -1,0 +1,46 @@
+- type: entity
+  id: MedievalReagentGrinder
+  parent: MedievalMachine
+  name: магический измельчитель
+  description: Простая деревянная чаша с пестиком, покрытая магическими рунами.
+  components:
+  - type: ReagentGrinder
+  - type: ActivatableUI
+    key: enum.ReagentGrinderUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ReagentGrinderUiKey.Key:
+        type: ReagentGrinderBoundUserInterface
+  - type: GenericVisualizer
+    visuals:
+      enum.ReagentGrinderVisualState.BeakerAttached:
+        grinder:
+          True: {state: "grinder_beaker_attached"}
+          False: {state: "grinder_empty"}
+  - type: Appearance
+  - type: Physics
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/grinder.rsi
+    layers:
+    - map: [ "grinder" ]
+      state: "grinder_empty"
+  - type: ItemSlots
+    slots:
+      beakerSlot:
+        whitelist:
+          components:
+          - FitsInDispenser
+  - type: Machine
+    board: MedievalReagentGrinderDetail
+  - type: ContainerContainer
+    containers:
+      beakerSlot: !type:ContainerSlot
+      inputContainer: !type:Container
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 204
+      MedievalRawManaCrystal: 100
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 4

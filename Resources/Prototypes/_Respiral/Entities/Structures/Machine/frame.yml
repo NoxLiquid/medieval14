@@ -1,0 +1,138 @@
+- type: entity
+  id: MedievalUnfinishedMachineFrame
+  name: каркас механизма
+  suffix: Средневековье
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.5,0.25,0.5"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Anchorable
+  - type: Rotatable
+  - type: Pullable
+  - type: Construction
+    containers:
+      - machine_board
+      - machine_parts
+    graph: MedievalMachine
+    node: start
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Sprite
+    color: "#8B4513"
+    sprite: _Respiral/Structures/Machines/parts.rsi
+    state: box_0
+    snapCardinals: true
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 4
+      MedievalProcessedStone: 6
+      MedievalProcessedIron: 4
+
+- type: entity
+  id: MedievalMachineFrame
+  name: механизм
+  suffix: Средневековье готовый
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: MedievalPhysicalPriced
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,-0.5,0.25,0.5"
+          density: 190
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Anchorable
+    - type: Rotatable
+    - type: Pullable
+    - type: Construction
+      graph: MedievalMachine
+      node: machineFrame
+      defaultTarget: machine
+      containers:
+        - machine_board
+        - machine_parts
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:ChangeConstructionNodeBehavior
+          node: start
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+    - type: MachineFrame
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+        machine_parts: !type:Container
+    - type: Sprite
+      color: "#8B4513"
+      sprite: _Respiral/Structures/Machines/parts.rsi
+      state: box_1
+      snapCardinals: true
+    - type: Appearance
+    - type: ItemMapper
+      mapLayers:
+        box_2:
+          minCount: 1
+          whitelist:
+            components:
+            - MachineBoard
+    - type: PhysicalComposition
+      materialComposition:
+        MedievalProcessedWood: 4
+        MedievalProcessedStone: 6
+        MedievalProcessedIron: 4
+        MedievalRawManaCrystal: 100
