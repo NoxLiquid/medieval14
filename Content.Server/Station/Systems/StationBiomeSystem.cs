@@ -8,10 +8,10 @@ namespace Content.Server.Station.Systems;
 
 public sealed partial class StationBiomeSystem : EntitySystem
 {
-    [Dependency] private readonly BiomeSystem _biome = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private BiomeSystem _biome = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private readonly IRobustRandom _random = default!; // Respiral-ProcGen-Add
 
     public override void Initialize()
