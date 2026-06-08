@@ -9,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Flora;
 
-public sealed class FloraSystem : EntitySystem
+public sealed partial class FloraSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IGameTiming _gameTiming = default!;

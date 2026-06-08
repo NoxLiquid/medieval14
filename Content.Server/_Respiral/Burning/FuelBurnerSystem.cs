@@ -19,7 +19,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Burning.Systems;
 
-public sealed class FuelBurnerSystem : EntitySystem
+public sealed partial class FuelBurnerSystem : EntitySystem
 {
     [Dependency] private AmbientSoundSystem _ambient = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;

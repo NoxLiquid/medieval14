@@ -3,7 +3,7 @@ using Content.Shared.Storage.Components;
 
 namespace Content.Shared._Respiral.Barrel;
 
-public sealed class BarrelSystem : EntitySystem
+public sealed partial class BarrelSystem : EntitySystem
 {
     public override void Initialize()
     {

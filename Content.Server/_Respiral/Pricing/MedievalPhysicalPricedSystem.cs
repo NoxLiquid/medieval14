@@ -7,7 +7,7 @@ using Content.Shared.Damage.Systems;
 
 namespace Content.Server._Respiral.Trade;
 
-public sealed class MedievalPhysicalPricedSystem : EntitySystem
+public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
 {
     [Dependency] private PricingSystem _pricing = default!;
     [Dependency] private DestructibleSystem _destructible = default!;

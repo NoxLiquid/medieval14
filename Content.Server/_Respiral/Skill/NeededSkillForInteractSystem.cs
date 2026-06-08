@@ -4,7 +4,7 @@ using Content.Shared.Interaction;
 
 namespace Content.Server._Respiral.Skill;
 
-public sealed class NeededSkillForInteractSystem : EntitySystem
+public sealed partial class NeededSkillForInteractSystem : EntitySystem
 {
     [Dependency] private SkillSystem _skillSystem = default!;
     public override void Initialize()

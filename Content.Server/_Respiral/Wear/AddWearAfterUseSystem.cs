@@ -9,7 +9,7 @@ using Content.Shared.Whitelist;
 
 namespace Content.Server_Respiral.Wear;
 
-public sealed class AddWearAfterUseSystem : EntitySystem
+public sealed partial class AddWearAfterUseSystem : EntitySystem
 {
     [Dependency] private WearSystem _wear = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;

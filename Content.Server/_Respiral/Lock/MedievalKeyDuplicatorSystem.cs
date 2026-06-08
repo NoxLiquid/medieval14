@@ -14,7 +14,7 @@ using Content.Shared._Respiral.Lock.Components;
 
 namespace Content.Server._Respiral.Lock;
 
-public sealed class MedievalKeyDuplicatorSystem : EntitySystem
+public sealed partial class MedievalKeyDuplicatorSystem : EntitySystem
 {
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private AudioSystem _audio = default!;

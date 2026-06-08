@@ -8,7 +8,7 @@ using Robust.Shared.Timing;
 
 namespace Content._Respiral.NPC.Systems;
 
-public sealed class HerbivoreFearSystem : EntitySystem
+public sealed partial class HerbivoreFearSystem : EntitySystem
 {
     [Dependency] private HTNSystem _htn = default!;
     [Dependency] private IGameTiming _timing = default!;

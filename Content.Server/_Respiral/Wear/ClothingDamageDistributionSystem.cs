@@ -7,7 +7,7 @@ using Content.Shared.Damage.Systems;
 
 namespace Content.Server_Respiral.ClothingDamage;
 
-public sealed class ContainerDamageDistributionSystem : EntitySystem
+public sealed partial class ContainerDamageDistributionSystem : EntitySystem
 {
     [Dependency] private ServerInventorySystem _inventory = default!;
     [Dependency] private IRobustRandom _random = default!;

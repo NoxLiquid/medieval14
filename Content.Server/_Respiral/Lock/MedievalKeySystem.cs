@@ -10,7 +10,7 @@ using Content.Shared.Popups;
 
 namespace Content.Server._Respiral.Lock;
 
-public sealed class MedievalKeySystem : EntitySystem
+public sealed partial class MedievalKeySystem : EntitySystem
 {
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;

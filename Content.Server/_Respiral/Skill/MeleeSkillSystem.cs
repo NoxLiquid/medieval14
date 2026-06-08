@@ -6,7 +6,7 @@ using Content.Shared.Whitelist;
 
 namespace Content.Server._Respiral.Skill;
 
-public sealed class MeleeSkillSystem : EntitySystem
+public sealed partial class MeleeSkillSystem : EntitySystem
 {
     [Dependency] private SkillSystem _skillSystem = default!;
     [Dependency] private EntityWhitelistSystem _entityWhitelist = default!;

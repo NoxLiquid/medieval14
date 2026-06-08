@@ -9,7 +9,7 @@ using Robust.Server.Audio;
 
 namespace Content.Server._Respiral.Skill;
 
-public sealed class LearnSkillWhenUsingSystem : EntitySystem
+public sealed partial class LearnSkillWhenUsingSystem : EntitySystem
 {
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SkillSystem _skillSystem = default!;

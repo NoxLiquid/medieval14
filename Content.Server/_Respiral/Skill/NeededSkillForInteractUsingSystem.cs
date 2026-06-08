@@ -3,7 +3,7 @@ using Content.Shared._Respiral.Skills.Events;
 
 namespace Content.Server._Respiral.Skill;
 
-public sealed class NeededSkillForInteractUsingSystem : EntitySystem
+public sealed partial class NeededSkillForInteractUsingSystem : EntitySystem
 {
     [Dependency] private SkillSystem _skillSystem = default!;
     public override void Initialize()

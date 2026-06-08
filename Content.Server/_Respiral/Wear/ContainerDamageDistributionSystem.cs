@@ -7,7 +7,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server_Respiral.Wear;
 
-public sealed class ContainerDamageDistributionSystem : EntitySystem
+public sealed partial class ContainerDamageDistributionSystem : EntitySystem
 {
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private DamageableSystem _damageable = default!;

@@ -14,7 +14,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Respiral.Blacksmithing.Systems;
 
-public sealed class ForgingSystem : EntitySystem
+public sealed partial class ForgingSystem : EntitySystem
 {
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedAudioSystem _audio = default!;

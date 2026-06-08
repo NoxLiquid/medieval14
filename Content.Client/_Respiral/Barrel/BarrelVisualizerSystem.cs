@@ -6,7 +6,7 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._Respiral.Barrel;
 
-public sealed class BarrelVisualizerSystem : EntitySystem
+public sealed partial class BarrelVisualizerSystem : EntitySystem
 {
     [Dependency] private AppearanceSystem _appearance = default!;
     [Dependency] private SpriteSystem _sprite = default!;

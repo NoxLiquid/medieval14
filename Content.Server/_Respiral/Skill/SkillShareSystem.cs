@@ -11,7 +11,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._Respiral.Skill;
 
-public sealed class SkillShareSystem : EntitySystem
+public sealed partial class SkillShareSystem : EntitySystem
 {
     [Dependency] private IAdminManager _adminManager = default!;
     [Dependency] private EuiManager _euiManager = default!;
