@@ -5,7 +5,7 @@ namespace Content.Server._Respiral.Skill;
 
 public sealed class NeededSkillForInteractUsingSystem : EntitySystem
 {
-    [Dependency] private readonly SkillSystem _skillSystem = default!;
+    [Dependency] private SkillSystem _skillSystem = default!;
     public override void Initialize()
     {
         base.Initialize();

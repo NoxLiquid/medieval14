@@ -19,10 +19,10 @@ namespace Content.Client._Respiral.Controllers;
 [UsedImplicitly]
 public sealed class MedievalTileSpawningUIController : UIController
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IPlacementManager _placement = default!;
-    [Dependency] private readonly IResourceCache _resources = default!;
-    [Dependency] private readonly ITileDefinitionManager _tiles = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IPlacementManager _placement = default!;
+    [Dependency] private IResourceCache _resources = default!;
+    [Dependency] private ITileDefinitionManager _tiles = default!;
 
     private TileSpawnWindow? _window;
     private bool _init;

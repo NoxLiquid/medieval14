@@ -16,11 +16,11 @@ namespace Content.Server._Respiral.Blacksmithing.Systems;
 
 public sealed class ForgingSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private StaminaSystem _stamina = default!;
 
     private const int MAXSTRIKES = 64; /// 2^6 too much
 

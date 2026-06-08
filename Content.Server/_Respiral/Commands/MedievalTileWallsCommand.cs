@@ -13,8 +13,8 @@ namespace Content.Server._Respiral.Commands;
 [AdminCommand(AdminFlags.Mapping)]
 public sealed class MedievalTileWallsCommand : IConsoleCommand
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private ITileDefinitionManager _tileDefManager = default!;
 
     // ReSharper disable once StringLiteralTypo
     public string Command => "medievaltilewalls";

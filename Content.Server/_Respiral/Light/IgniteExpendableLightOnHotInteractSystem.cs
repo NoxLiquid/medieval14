@@ -9,7 +9,7 @@ namespace Content.Server._Respiral.Light;
 
 public sealed class IgniteExpendableLightOnHotInteractSystem : EntitySystem
 {
-    [Dependency] private readonly ExpendableLightSystem _expendableLight = default!;
+    [Dependency] private ExpendableLightSystem _expendableLight = default!;
 
     public override void Initialize()
     {

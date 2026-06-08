@@ -14,8 +14,8 @@ namespace Content.Server_Respiral.Wear;
 
 public sealed partial class WearSystem : EntitySystem
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private DamageableSystem _damage = default!;
     public override void Initialize()
     {
         base.Initialize();

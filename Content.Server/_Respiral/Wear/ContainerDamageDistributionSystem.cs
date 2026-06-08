@@ -9,9 +9,9 @@ namespace Content.Server_Respiral.Wear;
 
 public sealed class ContainerDamageDistributionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {

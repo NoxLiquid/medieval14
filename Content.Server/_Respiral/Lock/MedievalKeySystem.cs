@@ -12,11 +12,11 @@ namespace Content.Server._Respiral.Lock;
 
 public sealed class MedievalKeySystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly SharedMedievalLockSystem _medLock = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private SharedMedievalLockSystem _medLock = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
         base.Initialize();

@@ -18,9 +18,9 @@ namespace Content.Client._Respiral.Controllers;
 [UsedImplicitly]
 public sealed class MedievalEntitySpawningUIController : UIController
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IPlacementManager _placement = default!;
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IPlacementManager _placement = default!;
+    [Dependency] private IPrototypeManager _prototypes = default!;
 
     private EntitySpawnWindow? _window;
     private readonly List<EntityPrototype> _shownEntities = new();

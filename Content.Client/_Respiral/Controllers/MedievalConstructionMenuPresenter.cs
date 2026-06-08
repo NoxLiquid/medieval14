@@ -22,15 +22,15 @@ namespace Content.Client._Respiral.Controllers;
 
 internal sealed class MedievalConstructionMenuPresenter : IDisposable
 {
-    [Dependency] private readonly EntityManager _entManager = default!;
-    [Dependency] private readonly IEntitySystemManager _systemManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IPlacementManager _placementManager = default!;
-    [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private EntityManager _entManager = default!;
+    [Dependency] private IEntitySystemManager _systemManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IPlacementManager _placementManager = default!;
+    [Dependency] private IUserInterfaceManager _uiManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IClientPreferencesManager _preferencesManager = default!;
+    [Dependency] private ILogManager _logManager = default!;
 
     private readonly SpriteSystem _spriteSystem;
     private readonly ISawmill _sawmill;

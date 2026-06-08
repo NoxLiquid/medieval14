@@ -10,13 +10,13 @@ namespace Content._Respiral.NPC.Systems;
 
 public sealed class HerbivoreFearSystem : EntitySystem
 {
-    [Dependency] private readonly HTNSystem _htn = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly Robust.Shared.Random.IRobustRandom _random = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly TimedWindowSystem _timedWindow = default!;
+    [Dependency] private HTNSystem _htn = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private Robust.Shared.Random.IRobustRandom _random = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private TimedWindowSystem _timedWindow = default!;
 
     public override void Initialize()
     {

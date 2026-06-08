@@ -9,8 +9,8 @@ namespace Content.Server._Respiral.Trade;
 
 public sealed class MedievalPhysicalPricedSystem : EntitySystem
 {
-    [Dependency] private readonly PricingSystem _pricing = default!;
-    [Dependency] private readonly DestructibleSystem _destructible = default!;
+    [Dependency] private PricingSystem _pricing = default!;
+    [Dependency] private DestructibleSystem _destructible = default!;
 
     public override void Initialize()
     {

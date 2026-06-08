@@ -9,9 +9,9 @@ namespace Content.Server_Respiral.ClothingDamage;
 
 public sealed class ContainerDamageDistributionSystem : EntitySystem
 {
-    [Dependency] private readonly ServerInventorySystem _inventory = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly WearSystem _wear = default!;
+    [Dependency] private ServerInventorySystem _inventory = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private WearSystem _wear = default!;
     public override void Initialize()
     {
         base.Initialize();

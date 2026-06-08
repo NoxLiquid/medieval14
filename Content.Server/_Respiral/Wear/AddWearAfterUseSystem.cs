@@ -11,8 +11,8 @@ namespace Content.Server_Respiral.Wear;
 
 public sealed class AddWearAfterUseSystem : EntitySystem
 {
-    [Dependency] private readonly WearSystem _wear = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private WearSystem _wear = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
     public override void Initialize()
     {
         base.Initialize();

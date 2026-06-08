@@ -12,7 +12,7 @@ namespace Content._Respiral.NPC.Preconditions;
 /// </summary>
 public sealed partial class LowHealthPrecondition : HTNPrecondition
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
     private MobThresholdSystem _thresholds = default!;
 
     [DataField(required: true)]

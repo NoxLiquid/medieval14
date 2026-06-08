@@ -5,7 +5,7 @@ namespace Content.Server_Respiral.Wear;
 
 public sealed class LatheWearSystem : EntitySystem
 {
-    [Dependency] private readonly WearSystem _wear = default!;
+    [Dependency] private WearSystem _wear = default!;
     public override void Initialize()
     {
         base.Initialize();

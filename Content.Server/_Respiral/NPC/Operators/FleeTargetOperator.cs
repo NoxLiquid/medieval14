@@ -12,8 +12,8 @@ namespace Content._Respiral.NPC.Operators;
 /// </summary>
 public sealed partial class FleeTargetOperator : HTNOperator
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private IMapManager _mapManager = default!;
     private SharedMapSystem _map = default!;
     private SharedTransformSystem _transform = default!;
 

@@ -7,7 +7,7 @@ namespace Content.Shared._Respiral.Lock;
 
 public abstract partial class SharedMedievalLockSystem : EntitySystem
 {
-    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
 
     public override void Initialize()
     {
