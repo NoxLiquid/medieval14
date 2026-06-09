@@ -17,7 +17,7 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 namespace Content.Client._Respiral.Controllers;
 
 [UsedImplicitly]
-public sealed class MedievalTileSpawningUIController : UIController
+public sealed partial class MedievalTileSpawningUIController : UIController
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IPlacementManager _placement = default!;

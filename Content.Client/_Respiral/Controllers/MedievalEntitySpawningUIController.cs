@@ -16,7 +16,7 @@ using Robust.Shared.Utility;
 namespace Content.Client._Respiral.Controllers;
 
 [UsedImplicitly]
-public sealed class MedievalEntitySpawningUIController : UIController
+public sealed partial class MedievalEntitySpawningUIController : UIController
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IPlacementManager _placement = default!;

@@ -20,7 +20,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Respiral.Controllers;
 
-internal sealed class MedievalConstructionMenuPresenter : IDisposable
+internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
 {
     [Dependency] private EntityManager _entManager = default!;
     [Dependency] private IEntitySystemManager _systemManager = default!;
