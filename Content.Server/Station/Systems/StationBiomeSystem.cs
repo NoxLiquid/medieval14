@@ -12,7 +12,7 @@ public sealed partial class StationBiomeSystem : EntitySystem
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private SharedMapSystem _map = default!;
-    [Dependency] private readonly IRobustRandom _random = default!; // Respiral-ProcGen-Add
+    [Dependency] private IRobustRandom _random = default!; // Respiral-ProcGen-Add
 
     public override void Initialize()
     {

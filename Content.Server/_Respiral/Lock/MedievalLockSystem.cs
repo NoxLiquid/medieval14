@@ -9,7 +9,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Server._Respiral.Lock;
 
-public sealed class MedievalLockSystem : SharedMedievalLockSystem
+public sealed partial class MedievalLockSystem : SharedMedievalLockSystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private AudioSystem _audio = default!;

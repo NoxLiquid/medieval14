@@ -1,4 +1,4 @@
-using Content.Server.Cargo.Components;
+using Content.Shared.Cargo.Components;
 using Content.Server.Station.Events;
 using Content.Server._Respiral.Trade.Components;
 

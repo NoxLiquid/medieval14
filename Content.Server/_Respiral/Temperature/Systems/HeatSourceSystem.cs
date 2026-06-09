@@ -5,7 +5,7 @@ using Content.Shared.Temperature.Systems;
 
 namespace Content.Server.Temperature.Systems;
 
-public sealed class HeatSourceSystem : SharedHeatSourceSystem
+public sealed partial class HeatSourceSystem : SharedHeatSourceSystem
 {
     [Dependency] private TemperatureSystem _temperature = default!;
 

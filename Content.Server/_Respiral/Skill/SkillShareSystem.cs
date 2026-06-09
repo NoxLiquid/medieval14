@@ -129,7 +129,7 @@ public sealed partial class SkillShareSystem : EntitySystem
         if (!accepted)
             return;
 
-        if (!EntityManager.EntityExists(requester))
+        if (!Exists(requester))
             return;
 
         var requesterXform = Transform(requester);

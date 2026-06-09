@@ -31,8 +31,9 @@ public sealed partial class WearSystem : EntitySystem
             || !TryComp<DestructibleComponent>(uid, out var destructible))
             return;
 
-        var remainingBreak = GetThresholdAt(destructible, ThresholdActs.Breakage) - damageable.TotalDamage;
-        var remainingDestroy = GetThresholdAt(destructible, ThresholdActs.Destruction) - damageable.TotalDamage;
+        var totalDamage = _damage.GetTotalDamage((uid, damageable));
+        var remainingBreak = GetThresholdAt(destructible, ThresholdActs.Breakage) - totalDamage;
+        var remainingDestroy = GetThresholdAt(destructible, ThresholdActs.Destruction) - totalDamage;
 
         if (remainingBreak <= FixedPoint2.Zero || component.State == WearState.Broken)
         {
@@ -73,7 +74,7 @@ public sealed partial class WearSystem : EntitySystem
 
         var destroyedAt = GetThresholdAt(destructible, ThresholdActs.Destruction);
 
-        return FixedPoint2.Max(destroyedAt - damageable.TotalDamage, FixedPoint2.Zero);
+        return FixedPoint2.Max(destroyedAt - _damage.GetTotalDamage((uid, damageable)), FixedPoint2.Zero);
     }
 
     public FixedPoint2 GetRemainingBreakDurability(EntityUid uid, DamageableComponent? damageable = null, DestructibleComponent? destructible = null)
@@ -86,7 +87,7 @@ public sealed partial class WearSystem : EntitySystem
 
         var brokenAt = GetThresholdAt(destructible, ThresholdActs.Breakage);
 
-        return FixedPoint2.Max(brokenAt - damageable.TotalDamage, FixedPoint2.Zero);
+        return FixedPoint2.Max(brokenAt - _damage.GetTotalDamage((uid, damageable)), FixedPoint2.Zero);
     }
 
     private static FixedPoint2 GetThresholdAt(DestructibleComponent destructible, ThresholdActs act)

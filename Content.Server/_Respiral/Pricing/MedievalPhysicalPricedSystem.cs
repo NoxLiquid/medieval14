@@ -11,6 +11,7 @@ public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
 {
     [Dependency] private PricingSystem _pricing = default!;
     [Dependency] private DestructibleSystem _destructible = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
 
     public override void Initialize()
     {
@@ -36,7 +37,7 @@ public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
         if (maxHealth <= 0)
             return;
 
-        var damageFraction = (double)damageComp.TotalDamage / (double)maxHealth;
+        var damageFraction = (double)_damageable.GetTotalDamage((ent.Owner, damageComp)) / (double)maxHealth;
 
         ent.Comp.AddedValue = ent.Comp.BasePrice * ent.Comp.Markup - ent.Comp.BasePrice * damageFraction;
     }

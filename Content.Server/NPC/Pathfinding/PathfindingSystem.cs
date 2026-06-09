@@ -56,7 +56,7 @@ namespace Content.Server.NPC.Pathfinding
         // _Respiral-start
         // Нужен доступ к описанию тайлов, чтобы pathfinding мог учитывать их флаги
         // и отдельно помечать прозрачные тайлы как нежелательные для маршрута.
-        [Dependency] private readonly ITileDefinitionManager _tileDefs = default!;
+        [Dependency] private ITileDefinitionManager _tileDefs = default!;
         // _Respiral-end
 
         [Dependency] private EntityQuery<AccessReaderComponent> _accessReaderQuery = default!;

@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._Respiral.Commands;
 
 [AdminCommand(AdminFlags.Mapping)]
-public sealed class MedievalTileWallsCommand : IConsoleCommand
+public sealed partial class MedievalTileWallsCommand : IConsoleCommand
 {
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private ITileDefinitionManager _tileDefManager = default!;
