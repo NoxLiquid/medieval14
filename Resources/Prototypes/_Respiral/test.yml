@@ -70,7 +70,6 @@
   id: MedievalTestSword
   name: мифриловый тесак
   components:
-  - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
@@ -100,7 +99,6 @@
   id: MedievalTestSwordIron
   name: железный тесак
   components:
-  - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
