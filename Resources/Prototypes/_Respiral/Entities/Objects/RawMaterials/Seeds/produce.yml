@@ -12,15 +12,14 @@
   - type: FlavorProfile
     flavors:
       - apple
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Vitamin
-          Quantity: 2
+  - type: Solution
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 3
+      - ReagentId: Vitamin
+        Quantity: 2
   - type: Sprite
     sprite: _Respiral/Objects/Materials/Seeds/apple.rsi
   - type: Item
@@ -59,13 +58,12 @@
   - type: FlavorProfile
     flavors:
       - cabbage
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 12
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 12
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
   - type: Sprite
     sprite: _Respiral/Objects/Materials/Seeds/cabbage.rsi
   - type: Item
@@ -104,15 +102,14 @@
   - type: FlavorProfile
     flavors:
       - berry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Sugar
-          Quantity: 5
-        - ReagentId: Nutriment
-          Quantity: 2
+  - type: Solution
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Sugar
+        Quantity: 5
+      - ReagentId: Nutriment
+        Quantity: 2
   - type: Sprite
     sprite: _Respiral/Objects/Materials/Seeds/berries.rsi
   - type: Item
@@ -151,15 +148,14 @@
   - type: FlavorProfile
     flavors:
       - carrot
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: JuiceCarrot
-          Quantity: 4
-        - ReagentId: Vitamin
-          Quantity: 2
+  - type: Solution
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: JuiceCarrot
+        Quantity: 4
+      - ReagentId: Vitamin
+        Quantity: 2
   - type: Sprite
     sprite: _Respiral/Objects/Materials/Seeds/carrot.rsi
   - type: Item
@@ -198,15 +194,14 @@
   - type: FlavorProfile
     flavors:
       - cherry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: Sugar
-          Quantity: 4
+  - type: Solution
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 2
+      - ReagentId: Sugar
+        Quantity: 4
   - type: Sprite
     sprite: _Respiral/Objects/Materials/Seeds/cherry.rsi
   - type: Item
@@ -246,13 +241,12 @@
   - type: FlavorProfile
     flavors:
       - cotton
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 8
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 4
+  - type: Solution
+    solution:
+      maxVol: 8
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 4
   - type: Sprite
     sprite: _Respiral/Objects/Materials/Seeds/flax.rsi
   - type: Item
@@ -312,13 +306,12 @@
   - type: FlavorProfile
     flavors:
       - potato
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 12
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 4
+  - type: Solution
+    solution:
+      maxVol: 12
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 4
   - type: Sprite
     sprite: _Respiral/Objects/Materials/Seeds/potato.rsi
   - type: Item
@@ -357,15 +350,14 @@
   - type: FlavorProfile
     flavors:
       - tomato
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Vitamin
-          Quantity: 1
+  - type: Solution
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 3
+      - ReagentId: Vitamin
+        Quantity: 1
   - type: Sprite
     sprite: _Respiral/Objects/Materials/Seeds/tomato.rsi
   - type: Item
@@ -404,13 +396,12 @@
   - type: FlavorProfile
     flavors:
       - wheat
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Flour
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Flour
+        Quantity: 5
   - type: Sprite
     sprite: _Respiral/Objects/Materials/Seeds/wheat.rsi
   - type: Item

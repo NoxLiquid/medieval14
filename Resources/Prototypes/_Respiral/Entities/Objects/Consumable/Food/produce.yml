@@ -7,15 +7,14 @@
   - type: FlavorProfile
     flavors:
       - berry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 4
+  - type: Solution
+    solution:
+      maxVol: 11
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Vitamin
+        Quantity: 4
   - type: Sprite
     sprite: _Respiral/Objects/Specific/Produce/troynika.rsi
     state: berry
@@ -40,15 +39,14 @@
   - type: FlavorProfile
     flavors:
       - berry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 4
+  - type: Solution
+    solution:
+      maxVol: 11
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Vitamin
+        Quantity: 4
   - type: Sprite
     sprite: _Respiral/Objects/Specific/Produce/blacktail.rsi
     state: berry
@@ -72,15 +70,14 @@
   - type: FlavorProfile
     flavors:
       - berry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 4
+  - type: Solution
+    solution:
+      maxVol: 11
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Vitamin
+        Quantity: 4
   - type: Sprite
     sprite: _Respiral/Objects/Specific/Produce/feolika.rsi
     state: berry
@@ -104,15 +101,14 @@
   - type: FlavorProfile
     flavors:
       - berry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: SodiumHydroxide
-          Quantity: 6
+  - type: Solution
+    solution:
+      maxVol: 11
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: SodiumHydroxide
+        Quantity: 6
   - type: Sprite
     sprite: _Respiral/Objects/Specific/Produce/sinyachka.rsi
     state: berry
@@ -139,17 +135,16 @@
   - type: FlavorProfile
     flavors:
       - berry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 23
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Fresium
-          Quantity: 10
-        - ReagentId: FrostOil
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 23
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 3
+      - ReagentId: Fresium
+        Quantity: 10
+      - ReagentId: FrostOil
+        Quantity: 10
   - type: Sprite
     sprite: _Respiral/Objects/Specific/Produce/tyaflika.rsi
     state: berry-unsaturated
@@ -174,15 +169,14 @@
   - type: FlavorProfile
     flavors:
       - berry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 13
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Fresium
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 13
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 3
+      - ReagentId: Fresium
+        Quantity: 10
   - type: Sprite
     sprite: _Respiral/Objects/Specific/Produce/tyaflika.rsi
     state: berry-normalsaturated
@@ -207,15 +201,14 @@
   - type: FlavorProfile
     flavors:
       - berry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 8
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Fresium
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 8
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 3
+      - ReagentId: Fresium
+        Quantity: 5
   - type: Sprite
     sprite: _Respiral/Objects/Specific/Produce/tyaflika.rsi
     state: berry-saturated
@@ -239,15 +232,14 @@
   - type: FlavorProfile
     flavors:
       - berry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Gold
-          Quantity: 4
+  - type: Solution
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Gold
+        Quantity: 4
   - type: Sprite
     sprite: _Respiral/Objects/Specific/Produce/zlatka.rsi
     state: berry

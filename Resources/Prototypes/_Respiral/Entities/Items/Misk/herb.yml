@@ -5,7 +5,6 @@
   suffix: Средневековье
   abstract: true
   components:
-  - type: SolutionContainerManager
   - type: Sprite
     sprite: _Respiral/Objects/Flora/herbs.rsi
     state: krovavaya_roza2
@@ -20,13 +19,12 @@
     flavors:
       - bitter
       - metallic
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalGlaznica
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalGlaznica
+        Quantity: 5
   - type: Sprite
     state: glaznica2
   - type: Extractable
@@ -44,13 +42,12 @@
     flavors:
       - earthy
       - mineral
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalKamnelepestnik
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalKamnelepestnik
+        Quantity: 5
   - type: Sprite
     state: kamnelepestnik2
   - type: Extractable
@@ -69,13 +66,12 @@
       - floral
       - metallic
       - bitter
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalKrovavayaRoza
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalKrovavayaRoza
+        Quantity: 5
   - type: Sprite
     state: krovavaya_roza2
   - type: Extractable
@@ -93,13 +89,12 @@
     flavors:
       - sweet
       - magical
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalLunocvet
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalLunocvet
+        Quantity: 5
   - type: Sprite
     state: lunocvet2
   - type: Extractable
@@ -117,13 +112,12 @@
     flavors:
       - spicy
       - bitter
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalOgneCvet
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalOgneCvet
+        Quantity: 5
   - type: Sprite
     state: ogne_cvet2
   - type: Extractable
@@ -141,13 +135,12 @@
     flavors:
       - earthy
       - floral
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalPihta
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalPihta
+        Quantity: 5
   - type: Sprite
     state: pihta2
   - type: Extractable
@@ -165,13 +158,12 @@
     flavors:
       - floral
       - calming
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalRomashka
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalRomashka
+        Quantity: 5
   - type: Sprite
     state: romashka2
   - type: Extractable
@@ -189,13 +181,12 @@
     flavors:
       - bitter
       - thorny
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalShipovec
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalShipovec
+        Quantity: 5
   - type: Sprite
     state: shipovec2
   - type: Extractable
@@ -213,13 +204,12 @@
     flavors:
       - dry
       - earthy
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalSuhoCvet
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalSuhoCvet
+        Quantity: 5
   - type: Sprite
     state: suho_cvet2
   - type: Extractable
@@ -237,13 +227,12 @@
     flavors:
       - bitter
       - spooky
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalTernovnik
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalTernovnik
+        Quantity: 5
   - type: Sprite
     state: ternovnik2
   - type: Extractable
@@ -261,13 +250,12 @@
     flavors:
       - floral
       - sweet
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalVeresk
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalVeresk
+        Quantity: 5
   - type: Sprite
     state: veresk2
   - type: Extractable
@@ -285,13 +273,12 @@
     flavors:
       - earthy
       - tangy
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalViunka
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalViunka
+        Quantity: 5
   - type: Sprite
     state: viunka2
   - type: Extractable
@@ -309,13 +296,12 @@
     flavors:
       - bitter
       - sour
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalVorosnik
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalVorosnik
+        Quantity: 5
   - type: Sprite
     state: vorosnik2
   - type: Extractable
