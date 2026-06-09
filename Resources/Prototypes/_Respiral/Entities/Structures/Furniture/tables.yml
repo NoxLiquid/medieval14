@@ -135,8 +135,9 @@
   components:
   - type: MedievalPhysicalPriced
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Sprite
     sprite: _Respiral/Structures/Furniture/Tables/marble.rsi
   - type: Icon

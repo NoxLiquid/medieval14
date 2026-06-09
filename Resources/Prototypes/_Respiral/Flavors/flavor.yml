@@ -43,3 +43,18 @@
   id: mystical
   flavorType: Base
   description: flavor-base-mystical
+
+- type: flavor
+  id: earthy
+  flavorType: Base
+  description: flavor-base-earthy
+
+- type: flavor
+  id: wheat
+  flavorType: Base
+  description: flavor-base-wheat
+
+- type: flavor
+  id: potato
+  flavorType: Base
+  description: flavor-base-potato

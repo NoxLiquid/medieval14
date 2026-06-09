@@ -12,8 +12,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Hands/black.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -38,8 +39,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Hands/chain.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -64,8 +66,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Hands/leather.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -90,8 +93,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Hands/rags.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:

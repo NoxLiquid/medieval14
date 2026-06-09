@@ -28,6 +28,7 @@
   - type: Produce
     seedId: MedievalApple
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:
@@ -72,6 +73,7 @@
   - type: Produce
     seedId: MedievalCabbage
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:
@@ -118,6 +120,7 @@
   - type: Produce
     seedId: MedievalBerries
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:
@@ -164,6 +167,7 @@
   - type: Produce
     seedId: MedievalCarrot
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:
@@ -210,6 +214,7 @@
   - type: Produce
     seedId: MedievalCherry
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:
@@ -255,6 +260,7 @@
   - type: Produce
     seedId: MedievalFlax
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:
@@ -320,6 +326,7 @@
   - type: Produce
     seedId: MedievalPotato
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:
@@ -366,6 +373,7 @@
   - type: Produce
     seedId: MedievalTomato
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:
@@ -410,6 +418,7 @@
   - type: Produce
     seedId: MedievalWheat
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:

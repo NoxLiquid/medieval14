@@ -25,8 +25,9 @@
   - type: InteractionOutline
   - type: Physics
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Construction
     graph: MedievalStandingTarget
     node: target

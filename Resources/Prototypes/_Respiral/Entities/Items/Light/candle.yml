@@ -43,8 +43,9 @@
   - type: ToggleableVisuals
     spriteLayer: flame
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

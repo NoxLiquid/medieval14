@@ -56,9 +56,10 @@
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
     damage:
-      groups:
-        Brute: 15
-
+      types:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
 - type: entity
   parent: MedievalMobHog
   id: MedievalMobHog2

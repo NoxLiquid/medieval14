@@ -25,8 +25,9 @@
       types:
         Structural: 5
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -85,8 +86,9 @@
         Structural: 10
   - type: Wear
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -122,8 +124,9 @@
     size: Small
     sprite: _Respiral/Objects/Items/key.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Storage
     maxItemSize: Small
     grid:

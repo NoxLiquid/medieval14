@@ -6,8 +6,9 @@
     sprite: Structures/barricades.rsi
     state: barricade
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

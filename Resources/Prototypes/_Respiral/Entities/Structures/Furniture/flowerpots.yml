@@ -28,8 +28,9 @@
     - state: plant1
   - type: Pullable
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

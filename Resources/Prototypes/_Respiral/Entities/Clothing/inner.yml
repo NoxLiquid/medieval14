@@ -12,8 +12,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Uniforms/Jumpsuit/dress.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -38,8 +39,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Uniforms/Jumpsuit/long_shirt.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -64,8 +66,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant-rags.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -90,8 +93,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Uniforms/Jumpsuit/shirt.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -116,8 +120,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Uniforms/Jumpsuit/shirt2.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:

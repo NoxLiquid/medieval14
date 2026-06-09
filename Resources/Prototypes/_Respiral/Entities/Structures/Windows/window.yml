@@ -41,8 +41,9 @@
         layer:
         - GlassLayer
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: ExaminableDamage
     messages: WindowMessages
   - type: Repairable
@@ -110,18 +111,20 @@
   parent: MedievalBaseWindowBroken
   components:
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
 
+  - type: Injurable
+    damageContainer: MedievalInorganic
 - type: entity
   id: MedievalBaseStoneBrokenWindow
   abstract: true
   parent: MedievalBaseWindowBroken
   components:
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
 
+  - type: Injurable
+    damageContainer: MedievalInorganic
 - type: entity
   id: MedievalWindowWooden
   parent: MedievalBaseWindow

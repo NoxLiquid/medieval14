@@ -37,8 +37,9 @@
       - state: trinkets-equipped-INNERCLOTHING
   - type: Wear
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Destructible
     thresholds:
     - trigger:

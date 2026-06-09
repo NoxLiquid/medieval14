@@ -21,8 +21,9 @@
   parent: MedievalBaseInstantDoor
   components:
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Door
     openDrawDepth: Mobs
     closedDrawDepth: Mobs
@@ -75,8 +76,9 @@
   parent: MedievalBaseDoorFrame
   components:
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -95,8 +97,9 @@
   parent: MedievalBaseDoorFrame
   components:
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

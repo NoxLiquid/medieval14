@@ -40,8 +40,9 @@
     materialComposition:
       MedievalProcessedGold: 10
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -98,8 +99,9 @@
     materialComposition:
       MedievalProcessedSilver: 10
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -148,6 +150,7 @@
       tags:
         - MedievalCoin
   - type: Damageable
+  - type: Injurable
     damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:

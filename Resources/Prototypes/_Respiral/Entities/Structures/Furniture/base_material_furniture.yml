@@ -5,8 +5,9 @@
   components:
   - type: MedievalPhysicalPriced
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

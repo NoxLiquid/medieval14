@@ -31,8 +31,9 @@
         Blunt: 1
   - type: Wear
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalBook
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

@@ -11,8 +11,10 @@
     - state: handle
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 10
+      types:
+        Blunt: 3.33
+        Slash: 3.34
+        Piercing: 3.33
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -63,8 +65,9 @@
       - state: inhand-right
         color: "#8B4513"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -90,8 +93,10 @@
     - state: handle
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 12.5
+      types:
+        Blunt: 4.17
+        Slash: 4.16
+        Piercing: 4.17
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -103,8 +108,9 @@
       - state: inhand-right
         color: "#B0C4DE"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -131,9 +137,10 @@
     - state: handle
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 10
       types:
+        Blunt: 3.33
+        Slash: 3.34
+        Piercing: 3.33
         Holy: 10
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
@@ -146,8 +153,9 @@
       - state: inhand-right
         color: "#C0C0FF"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalSilver
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -174,8 +182,10 @@
     - state: handle
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 15
+      types:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -187,8 +197,9 @@
       - state: inhand-right
         color: "#9370DB"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalMithril
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -215,8 +226,10 @@
     - state: handle
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 17.5
+      types:
+        Blunt: 5.83
+        Slash: 5.84
+        Piercing: 5.83
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -228,8 +241,9 @@
       - state: inhand-right
         color: "#4B0000"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalAdamantine
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

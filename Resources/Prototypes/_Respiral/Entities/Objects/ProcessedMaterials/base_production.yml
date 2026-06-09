@@ -13,6 +13,7 @@
     sprite: _Respiral/Objects/Materials/misk.rsi
     size: Normal
   - type: Damageable
+  - type: Injurable
     damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:

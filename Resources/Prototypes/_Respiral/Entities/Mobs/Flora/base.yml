@@ -13,8 +13,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: MedievalBiological
     damageModifierSet: MobFlora
+  - type: Injurable
+    damageContainer: MedievalBiological
   - type: Hunger
     thresholds:
       Overfed: 100

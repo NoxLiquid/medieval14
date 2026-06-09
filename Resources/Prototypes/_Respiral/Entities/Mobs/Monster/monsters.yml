@@ -31,8 +31,10 @@
     angle: 0
     animation: WeaponArcBite
     damage:
-      groups:
-        Brute: 8
+      types:
+        Blunt: 2.67
+        Slash: 2.66
+        Piercing: 2.67
   - type: Fixtures
     fixtures:
       fix1:
@@ -75,8 +77,10 @@
     angle: 0
     animation: WeaponArcBite
     damage:
-      groups:
-        Brute: 6
+      types:
+        Blunt: 2
+        Slash: 2
+        Piercing: 2
   - type: Fixtures
     fixtures:
       fix1:
@@ -119,8 +123,10 @@
     angle: 30
     animation: WeaponArcBite
     damage:
-      groups:
-        Brute: 10
+      types:
+        Blunt: 3.33
+        Slash: 3.34
+        Piercing: 3.33
   - type: Fixtures
     fixtures:
       fix1:
@@ -265,8 +271,10 @@
     angle: 0
     animation: WeaponArcBite
     damage:
-      groups:
-        Brute: 12
+      types:
+        Blunt: 4
+        Slash: 4
+        Piercing: 4
   - type: Fixtures
     fixtures:
       fix1:
@@ -360,8 +368,10 @@
     angle: 0
     animation: WeaponArcBite
     damage:
-      groups:
-        Brute: 15
+      types:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
   - type: Fixtures
     fixtures:
       fix1:
@@ -404,8 +414,10 @@
     angle: 0
     animation: WeaponArcClaw
     damage:
-      groups:
-        Brute: 8
+      types:
+        Blunt: 2.67
+        Slash: 2.66
+        Piercing: 2.67
   - type: Fixtures
     fixtures:
       fix1:
@@ -505,8 +517,10 @@
     angle: 30
     animation: WeaponArcClaw
     damage:
-      groups:
-        Brute: 18
+      types:
+        Blunt: 6
+        Slash: 6
+        Piercing: 6
   - type: Fixtures
     fixtures:
       fix1:
