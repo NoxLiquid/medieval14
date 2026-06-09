@@ -26,7 +26,7 @@ namespace Content.Shared.Throwing
         [Dependency] private SharedBroadphaseSystem _broadphase = default!;
         [Dependency] private SharedPhysicsSystem _physics = default!;
         [Dependency] private SharedGravitySystem _gravity = default!;
-        [Dependency] private readonly CESharedZLevelsSystem _zLevels = default!; // Respiral-ZLeveling
+        [Dependency] private CESharedZLevelsSystem _zLevels = default!; // Respiral-ZLeveling
 
         private const string ThrowingFixture = "throw-fixture";
 
