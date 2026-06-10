@@ -45,9 +45,8 @@
           tags:
           - Bottle
           - PillCanister
-  - type: SolutionContainerManager
-    solutions:
-      buffer: {}
+  - type: Solution
+    id: buffer
   - type: DumpableSolution
     solution: buffer
     unlimited: true

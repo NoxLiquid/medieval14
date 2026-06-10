@@ -51,10 +51,10 @@
   - type: EntityStorageVisuals
     stateBaseClosed: icon
     stateBaseOpen: barrel_open
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 500
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 500
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq

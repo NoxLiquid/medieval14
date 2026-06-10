@@ -39,10 +39,10 @@
     noRot: true
   - type: PlantHolder
     drawWarnings: false
-  - type: SolutionContainerManager
-    solutions:
-      soil:
-        maxVol: 200
+  - type: Solution
+    id: soil
+    solution:
+      maxVol: 200
   - type: RefillableSolution
     solution: soil
     maxRefill: 50

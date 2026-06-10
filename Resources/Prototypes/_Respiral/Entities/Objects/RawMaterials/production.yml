@@ -310,13 +310,13 @@
     radius: 2
     energy: 2.5
     color: "#47f8ff"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: MedievalMana
-          Quantity: 5
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: MedievalMana
+        Quantity: 5
   - type: Extractable
     juiceSolution:
       reagents:
