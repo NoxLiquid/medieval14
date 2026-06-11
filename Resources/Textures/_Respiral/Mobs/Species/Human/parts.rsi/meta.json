@@ -11,6 +11,12 @@
       "name": "full"
     },
     {
+      "name": "full4_f"
+    },
+    {
+      "name": "full4_m"
+    },
+    {
       "name": "head_f",
       "directions": 4
     },
