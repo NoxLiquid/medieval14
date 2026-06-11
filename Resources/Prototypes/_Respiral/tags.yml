@@ -11,7 +11,7 @@
   id: MedievalQuarryMaterialStorage
 
 - type: Tag
-  id: CarpenterTableMaterialStorage
+  id: MedievalCarpenterTableMaterialStorage
 
 - type: Tag
   id: MedievalFlax

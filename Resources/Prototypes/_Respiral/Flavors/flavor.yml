@@ -1,60 +1,60 @@
 - type: flavor
-  id: mineral
+  id: MedievalMineral
   flavorType: Base
   description: flavor-base-mineral
 
 - type: flavor
-  id: floral
+  id: MedievalFloral
   flavorType: Base
   description: flavor-base-floral
 
 - type: flavor
-  id: calming
+  id: MedievalCalming
   flavorType: Base
   description: flavor-base-calming
 
 - type: flavor
-  id: thorny
+  id: MedievalThorny
   flavorType: Base
   description: flavor-base-thorny
 
 - type: flavor
-  id: dry
+  id: MedievalDry
   flavorType: Base
   description: flavor-base-dry
 
 - type: flavor
-  id: tangy
+  id: MedievalTangy
   flavorType: Base
   description: flavor-base-tangy
 
 
 - type: flavor
-  id: acrid
+  id: MedievalAcrid
   flavorType: Base
   description: flavor-base-acrid
 
 - type: flavor
-  id: invigorating
+  id: MedievalInvigorating
   flavorType: Base
   description: flavor-base-invigorating
 
 - type: flavor
-  id: mystical
+  id: MedievalMystical
   flavorType: Base
   description: flavor-base-mystical
 
 - type: flavor
-  id: earthy
+  id: MedievalEarthy
   flavorType: Base
   description: flavor-base-earthy
 
 - type: flavor
-  id: wheat
+  id: MedievalWheat
   flavorType: Base
   description: flavor-base-wheat
 
 - type: flavor
-  id: potato
+  id: MedievalPotato
   flavorType: Base
   description: flavor-base-potato

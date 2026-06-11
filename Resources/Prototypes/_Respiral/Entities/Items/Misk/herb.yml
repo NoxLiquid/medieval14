@@ -40,8 +40,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - earthy
-      - mineral
+      - MedievalEarthy
+      - MedievalMineral
   - type: Solution
     solution:
       maxVol: 5
@@ -63,7 +63,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - floral
+      - MedievalFloral
       - metallic
       - bitter
   - type: Solution
@@ -133,8 +133,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - earthy
-      - floral
+      - MedievalEarthy
+      - MedievalFloral
   - type: Solution
     solution:
       maxVol: 5
@@ -156,8 +156,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - floral
-      - calming
+      - MedievalFloral
+      - MedievalCalming
   - type: Solution
     solution:
       maxVol: 5
@@ -180,7 +180,7 @@
   - type: FlavorProfile
     flavors:
       - bitter
-      - thorny
+      - MedievalThorny
   - type: Solution
     solution:
       maxVol: 5
@@ -202,8 +202,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - dry
-      - earthy
+      - MedievalDry
+      - MedievalEarthy
   - type: Solution
     solution:
       maxVol: 5
@@ -248,7 +248,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - floral
+      - MedievalFloral
       - sweet
   - type: Solution
     solution:
@@ -271,8 +271,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - earthy
-      - tangy
+      - MedievalEarthy
+      - MedievalTangy
   - type: Solution
     solution:
       maxVol: 5

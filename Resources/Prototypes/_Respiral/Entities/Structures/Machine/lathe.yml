@@ -90,7 +90,7 @@
     ignoreColor: true
     whitelist:
       tags:
-        - CarpenterTableMaterialStorage
+        - MedievalCarpenterTableMaterialStorage
   - type: Lathe
     idleState: icon
     runningState: building

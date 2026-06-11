@@ -1,5 +1,5 @@
 - type: entity
-  id: MedivalWoodenSign
+  id: MedievalWoodenSign
   name: указатель
   suffix: Средневековье
   abstract: true
@@ -38,110 +38,110 @@
         acts: ["Destruction"]
 
 - type: entity
-  id: MedivalWoodenSign1
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign1
+  parent: MedievalWoodenSign
 
 - type: entity
-  id: MedivalWoodenSign2
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign2
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign2
 
 - type: entity
-  id: MedivalWoodenSign3
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign3
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign3
 
 - type: entity
-  id: MedivalWoodenSign4
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign4
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign4
 
 - type: entity
-  id: MedivalWoodenSign5
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign5
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign5
 
 - type: entity
-  id: MedivalWoodenSign6
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign6
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign6
 
 - type: entity
-  id: MedivalWoodenSign7
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign7
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign7
 
 - type: entity
-  id: MedivalWoodenSign8
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign8
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign8
 
 - type: entity
-  id: MedivalWoodenSign9
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign9
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign9
 
 - type: entity
-  id: MedivalWoodenSign10
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign10
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign10
 
 - type: entity
-  id: MedivalWoodenSign11
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign11
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign11
 
 - type: entity
-  id: MedivalWoodenSign12
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign12
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign12
 
 - type: entity
-  id: MedivalWoodenSign13
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign13
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign13
 
 - type: entity
-  id: MedivalWoodenSign14
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign14
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign14
 
 - type: entity
-  id: MedivalWoodenSign15
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign15
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign15
 
 - type: entity
-  id: MedivalWoodenSign16
-  parent: MedivalWoodenSign
+  id: MedievalWoodenSign16
+  parent: MedievalWoodenSign
   components:
   - type: Sprite
     state: sign16

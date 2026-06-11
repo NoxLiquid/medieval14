@@ -1,7 +1,7 @@
 - type: npcFaction
-  id: TownPeople
+  id: MedievalTownPeople
   friendly:
-  - TownPeople
+  - MedievalTownPeople
   hostile:
   - MedievalHerbivoreFlora
   - MedievalWolf
@@ -16,7 +16,7 @@
   friendly:
   - MedievalHerbivoreFlora
   hostile:
-  - TownPeople
+  - MedievalTownPeople
   - MedievalWolf
   - MedievalCat
   - MedievalBear
@@ -29,7 +29,7 @@
   friendly:
   - MedievalWolf
   hostile:
-  - TownPeople
+  - MedievalTownPeople
   - MedievalCat
   - MedievalBear
   - MedievalFox
@@ -42,7 +42,7 @@
   - MedievalCat
   hostile:
   - MedievalWolf
-  - TownPeople
+  - MedievalTownPeople
   - MedievalBear
   - MedievalFox
   - MedievalHog
@@ -54,7 +54,7 @@
   - MedievalBear
   hostile:
   - MedievalWolf
-  - TownPeople
+  - MedievalTownPeople
   - MedievalCat
   - MedievalFox
   - MedievalHog
@@ -66,7 +66,7 @@
   - MedievalFox
   hostile:
   - MedievalWolf
-  - TownPeople
+  - MedievalTownPeople
   - MedievalBear
   - MedievalCat
   - MedievalHog
@@ -78,7 +78,7 @@
   - MedievalHog
   hostile:
   - MedievalWolf
-  - TownPeople
+  - MedievalTownPeople
   - MedievalBear
   - MedievalFox
   - MedievalCat
@@ -89,7 +89,7 @@
   friendly:
   - MedievalMonster
   hostile:
-  - TownPeople
+  - MedievalTownPeople
   - MedievalHerbivoreFlora
   - MedievalWolf
   - MedievalCat

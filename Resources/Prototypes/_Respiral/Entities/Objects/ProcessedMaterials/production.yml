@@ -24,7 +24,7 @@
   - type: Tag
     tags:
     - MedievalAnvilMaterialStorage
-    - CarpenterTableMaterialStorage
+    - MedievalCarpenterTableMaterialStorage
   - type: Appearance
   - type: PhysicalComposition
     materialComposition:

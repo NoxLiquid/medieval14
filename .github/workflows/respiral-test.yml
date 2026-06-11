@@ -1,0 +1,82 @@
+name: Respiral Build & Test
+
+# Respiral - отдельный workflow, проверяющий ТОЛЬКО контент _Respiral:
+#   * сборку проекта;
+#   * текстуры/RSI под Resources/Textures/_Respiral;
+#   * прототипы и карты _Respiral (интеграционные тесты Content.IntegrationTests/Tests/_Respiral).
+# Оригинальную сборку целиком проверяет build-test-debug.yml — его не трогаем.
+
+on:
+  push:
+    branches: [ master, staging, stable ]
+  merge_group:
+  pull_request:
+    types: [ opened, reopened, synchronize, ready_for_review ]
+    branches: [ master, staging, stable ]
+
+jobs:
+  build:
+    if: github.actor != 'PJBot' && github.event.pull_request.draft == false
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout Master
+      uses: actions/checkout@v4.2.2
+
+    - name: Setup Submodule
+      run: |
+        git submodule update --init --recursive
+
+    - name: Pull engine updates
+      uses: space-wizards/submodule-dependency@v0.1.5
+
+    - name: Update Engine Submodules
+      run: |
+        cd RobustToolbox/
+        git submodule update --init --recursive
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4.1.0
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build Project
+      run: dotnet build --configuration DebugOpt --no-restore /m
+
+    # Respiral - текстуры: формат .rsi/meta.json, размеры PNG, наличие состояний.
+    - name: Validate Respiral RSIs
+      run: |
+        pip3 install --ignore-installed --user pillow jsonschema
+        python3 RobustToolbox/Schemas/validate_rsis.py Resources/Textures/_Respiral/
+
+    # Respiral - прототипы (RespiralEntityTest) + карты (RespiralMapTest).
+    # Фильтр гонит только тесты из namespace Content.IntegrationTests.Tests._Respiral.
+    - name: Run Respiral IntegrationTests
+      shell: pwsh
+      run: |
+        $env:DOTNET_gcServer=1
+        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj --filter "FullyQualifiedName~Tests._Respiral" -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
+
+    - name: Archive NUnit3 test results.
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: respiral-nunit3-results-${{ matrix.os }}
+        path: test_results/*
+        retention-days: 7
+        compression-level: 9
+  respiral-ci-success:
+    name: Respiral Build & Test
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - name: CI succeeded
+        run: exit 0

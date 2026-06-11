@@ -52,7 +52,7 @@
         Piercing: 3.67
   - type: NpcFactionMember
     factions:
-    - TownPeople
+    - MedievalTownPeople
   - type: HTN
     rootTask:
       task: MedievalHostileFloraCompound

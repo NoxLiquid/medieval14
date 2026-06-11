@@ -305,7 +305,7 @@
     price: 12.7
   - type: FlavorProfile
     flavors:
-      - potato
+      - MedievalPotato
   - type: Solution
     solution:
       maxVol: 12
@@ -395,7 +395,7 @@
     price: 7
   - type: FlavorProfile
     flavors:
-      - wheat
+      - MedievalWheat
   - type: Solution
     solution:
       maxVol: 10
