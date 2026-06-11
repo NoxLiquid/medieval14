@@ -3,7 +3,7 @@
   name: reagent-name-medieval-stamina-potion
   group: Medicine
   desc: reagent-desc-medieval-stamina-potion
-  flavor: invigorating
+  flavor: MedievalInvigorating
   color: "#FFFF00"
   physicalDesc: reagent-physical-desc-bubbly
   boilingPoint: 212.0  # Dexosyephedrine vape when?
