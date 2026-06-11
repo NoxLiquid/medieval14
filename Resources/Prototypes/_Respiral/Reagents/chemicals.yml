@@ -10,7 +10,7 @@
       effects:
       - !type:HealthChange
         damage:
-          groups:
-            Airloss: 2
           types:
-              Poison: 1
+            Asphyxiation: 1
+            Bloodloss: 1
+            Poison: 1

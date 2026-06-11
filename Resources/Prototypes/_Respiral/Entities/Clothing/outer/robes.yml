@@ -12,8 +12,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/robes/Monks-robe.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -38,8 +39,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/robes/nuns_robe.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -64,8 +66,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/robes/Strict_robe.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -90,8 +93,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/robes/terrifying_robe.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -116,8 +120,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/robes/terrifying_robe_white.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -142,8 +147,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/robes/wanderers_robe.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:

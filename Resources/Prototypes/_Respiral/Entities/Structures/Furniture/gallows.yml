@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseStructure
-  id: Gallows
+  id: MedievalGallows
   name: виселица
   description: позависаем?
   components:

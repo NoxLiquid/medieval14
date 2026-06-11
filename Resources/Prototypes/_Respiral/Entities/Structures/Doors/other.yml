@@ -30,8 +30,9 @@
   - type: Sprite
     sprite: _Respiral/Structures/Doors/iron_colits.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

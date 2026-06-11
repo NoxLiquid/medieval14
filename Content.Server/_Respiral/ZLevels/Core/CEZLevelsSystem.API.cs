@@ -12,7 +12,7 @@ namespace Content.Server._CE.ZLevels.Core;
 
 public sealed partial class CEZLevelsSystem
 {
-    [Dependency] private readonly PvsOverrideSystem _pvs = default!;
+    [Dependency] private PvsOverrideSystem _pvs = default!;
 
     /// <summary>
     /// Creates a new entity zLevelNetwork

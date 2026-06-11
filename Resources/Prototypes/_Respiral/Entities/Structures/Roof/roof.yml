@@ -39,8 +39,9 @@
     sprite: _Respiral/Structures/Roof/wooden.rsi
     state: full
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -72,8 +73,9 @@
     sprite: _Respiral/Structures/Roof/birch.rsi
     state: full
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -106,8 +108,9 @@
     sprite: _Respiral/Structures/Roof/stone.rsi
     state: full
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

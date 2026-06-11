@@ -666,7 +666,7 @@
 
 - type: latheRecipe
   parent: MedievalMaterialProcessingRecipe
-  id: MedievaHammerAmmoRecipe
+  id: MedievalHammerAmmoRecipe
   result: MedievalConstructionToolsAmmo
   materials:
     MedievalProcessedWood: 100

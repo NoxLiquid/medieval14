@@ -291,7 +291,7 @@ entities:
         direction: 3,-0.1
         ratio: 0.75
     - type: Parallax
-      parallax: Black
+      parallax: MedievalBlack
     - type: Roof
       data: {}
     - type: MapAtmosphere

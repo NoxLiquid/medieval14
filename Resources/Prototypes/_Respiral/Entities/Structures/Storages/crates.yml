@@ -41,8 +41,9 @@
   - type: PlaceableSurface
     isPlaceable: false
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -255,8 +256,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Storages/Crates/wardrobe2.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -318,8 +320,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Storages/Crates/basket.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

@@ -16,8 +16,9 @@
     attachSound:
       path: /Audio/_Respiral/Lock/padlock.ogg
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

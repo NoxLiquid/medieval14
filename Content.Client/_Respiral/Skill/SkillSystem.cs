@@ -6,10 +6,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Respiral.Skill;
 
-public sealed class SkillSystem : EntitySystem
+public sealed partial class SkillSystem : EntitySystem
 {
-    [Dependency] private readonly CharacterInfoSystem _characterInfo = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private CharacterInfoSystem _characterInfo = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     private SkillsListWindow? _skillsWindow;
     private List<SkillInfo> _currentSkills = new();

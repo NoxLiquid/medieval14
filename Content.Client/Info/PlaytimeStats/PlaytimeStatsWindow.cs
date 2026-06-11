@@ -11,7 +11,7 @@ namespace Content.Client.Info.PlaytimeStats;
 [GenerateTypedNameReferences]
 public sealed partial class PlaytimeStatsWindow : FancyWindow
 {
-    [Dependency] private readonly JobRequirementsManager _jobRequirementsManager = default!;
+    [Dependency] private JobRequirementsManager _jobRequirementsManager = default!;
     private ISawmill _sawmill = Logger.GetSawmill("PlaytimeStatsWindow");
     private readonly Color _altColor = Color.FromHex("#3D382E"); // Respiral-Stylization
     private readonly Color _defaultColor = Color.FromHex("#2E2A25"); // Respiral-Stylization

@@ -2,7 +2,7 @@ using Content.Shared.Burning;
 
 namespace Content.Server.Burning.Systems;
 
-public sealed class FuelSystem : EntitySystem
+public sealed partial class FuelSystem : EntitySystem
 {
     public FuelType MixFuels(FuelType fuelA, FuelType fuelB, float amountA, float amountB)
     {

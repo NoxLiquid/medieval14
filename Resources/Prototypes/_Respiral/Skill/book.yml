@@ -31,8 +31,9 @@
         Blunt: 1
   - type: Wear
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalBook
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -79,7 +80,7 @@
     points:
       MedievalBasicBlacksmithing: 0.01
     sound:
-      collection: LearnBook
+      collection: MedievalLearnBook
 
 - type: entity
   parent: MedievalSkillBookBase
@@ -111,7 +112,7 @@
     points:
       MedievalWoodProcessing: 0.01
     sound:
-      collection: LearnBook
+      collection: MedievalLearnBook
 
 - type: entity
   parent: MedievalSkillBookBase
@@ -143,7 +144,7 @@
     points:
       MedievalAlchem: 0.01
     sound:
-      collection: LearnBook
+      collection: MedievalLearnBook
 
 - type: entity
   parent: MedievalSkillBookBase
@@ -175,7 +176,7 @@
     points:
       MedievalStoneProcessing: 0.01
     sound:
-      collection: LearnBook
+      collection: MedievalLearnBook
 
 - type: entity
   parent: MedievalSkillBookBase
@@ -207,7 +208,7 @@
     points:
       MedievalTailor: 0.01
     sound:
-      collection: LearnBook
+      collection: MedievalLearnBook
 
 - type: entity
   parent: MedievalSkillBookBase
@@ -239,4 +240,4 @@
     points:
       MedievalJewelry: 0.01
     sound:
-      collection: LearnBook
+      collection: MedievalLearnBook

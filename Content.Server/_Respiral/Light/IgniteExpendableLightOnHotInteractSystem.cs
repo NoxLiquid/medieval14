@@ -7,9 +7,9 @@ using Content.Shared.Temperature;
 
 namespace Content.Server._Respiral.Light;
 
-public sealed class IgniteExpendableLightOnHotInteractSystem : EntitySystem
+public sealed partial class IgniteExpendableLightOnHotInteractSystem : EntitySystem
 {
-    [Dependency] private readonly ExpendableLightSystem _expendableLight = default!;
+    [Dependency] private ExpendableLightSystem _expendableLight = default!;
 
     public override void Initialize()
     {

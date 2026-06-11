@@ -22,8 +22,9 @@
       MedievalProcessedWood: 100
   - type: DnaSubstanceTrace
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

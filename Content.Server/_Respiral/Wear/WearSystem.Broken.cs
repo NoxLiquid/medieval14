@@ -47,7 +47,7 @@ public sealed partial class WearSystem : EntitySystem
             && Resolve(ent, ref damageable, false))
         {
             var breakAt = GetThresholdAt(destructible, ThresholdActs.Breakage);
-            isBroken = breakAt != FixedPoint2.MaxValue && damageable.TotalDamage >= breakAt;
+            isBroken = breakAt != FixedPoint2.MaxValue && _damage.GetTotalDamage((ent.Owner, damageable)) >= breakAt;
         }
 
         ent.Comp.State = isBroken ? WearState.Broken : WearState.Normal;

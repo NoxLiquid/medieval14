@@ -91,17 +91,20 @@
           factor: 0.5
         - !type:HealthChange
           damage:
-            groups:
-              Brute: -0.1
+            types:
+              Blunt: -0.03
+              Slash: -0.04
+              Piercing: -0.03
         - !type:HealthChange
           conditions:
             - !type:ReagentCondition
               reagent: MedievalLunocvet
               min: 20
           damage:
-            groups:
-              Brute: 1.0
-
+            types:
+              Blunt: 0.33
+              Slash: 0.34
+              Piercing: 0.33
 - type: reagent
   id: MedievalOgneCvet
   name: reagent-name-medieval-ognecvet
@@ -181,9 +184,9 @@
               reagent: MedievalRomashka
               min: 20
           damage:
-            groups:
-              Toxin: 1.0
-
+            types:
+              Poison: 0.5
+              Radiation: 0.5
 - type: reagent
   id: MedievalShipovec
   name: reagent-name-medieval-shipovec
@@ -271,8 +274,9 @@
           factor: 0.4
         - !type:HealthChange
           damage:
-            groups:
-              Toxin: -0.1
+            types:
+              Poison: -0.05
+              Radiation: -0.05
         - !type:HealthChange
           conditions:
             - !type:ReagentCondition

@@ -16,15 +16,15 @@ namespace Content.Server._Respiral.Blacksmithing.Systems;
 
 public sealed partial class ForgeSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly FuelBurnerSystem _burner = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly UseDelaySystem _useDelay = default!;
-    [Dependency] private readonly SharedPointLightSystem _light = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly QuenchingSystem _quenching = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private FuelBurnerSystem _burner = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private UseDelaySystem _useDelay = default!;
+    [Dependency] private SharedPointLightSystem _light = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private QuenchingSystem _quenching = default!;
+    [Dependency] private StaminaSystem _stamina = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {

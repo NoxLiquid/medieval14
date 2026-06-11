@@ -26,8 +26,9 @@
   - type: InteractionOutline
   - type: Physics
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Construction
     graph: MedievalStatue
     node: angelStatue1
@@ -110,8 +111,9 @@
   - type: InteractionOutline
   - type: Physics
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Construction
     graph: MedievalStatue
     node: wizardStatue
@@ -175,8 +177,9 @@
   - type: InteractionOutline
   - type: Physics
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Construction
     graph: MedievalTombstone
     node: cross

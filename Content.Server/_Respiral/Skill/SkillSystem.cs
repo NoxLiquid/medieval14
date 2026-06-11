@@ -9,10 +9,10 @@ using Content.Shared.Cloning.Events;
 
 namespace Content.Server._Respiral.Skill;
 
-public sealed class SkillSystem : EntitySystem
+public sealed partial class SkillSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private PopupSystem _popup = default!;
     private ISawmill _sawmill = default!;
     public override void Initialize()
     {

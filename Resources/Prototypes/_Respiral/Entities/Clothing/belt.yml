@@ -12,8 +12,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/chain.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -38,8 +39,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/gold.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalGold
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -64,8 +66,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/leather.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -90,8 +93,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/leather_black.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -116,8 +120,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/leather_red.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -142,8 +147,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/rope.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -168,8 +174,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/silver.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalSilver
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:

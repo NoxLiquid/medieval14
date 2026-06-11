@@ -46,8 +46,10 @@
     soundHit:
       path: /Audio/Effects/bite.ogg
     damage:
-      groups:
-        Brute: 11
+      types:
+        Blunt: 3.67
+        Slash: 3.66
+        Piercing: 3.67
   - type: NpcFactionMember
     factions:
     - MedievalWolf
@@ -88,8 +90,10 @@
     soundHit:
       path: /Audio/Effects/bite.ogg
     damage:
-      groups:
-        Brute: 17
+      types:
+        Blunt: 5.67
+        Slash: 5.66
+        Piercing: 5.67
   - type: MobThresholds
     thresholds:
       0: Alive

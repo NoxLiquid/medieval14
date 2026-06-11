@@ -14,10 +14,10 @@ namespace Content.Server._Respiral.Blacksmithing.Systems;
 
 public sealed partial class QuenchingSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
 
     public bool TryQuench(EntityUid user, EntityUid ingot, EntityUid bucket, [NotNullWhen(true)] out EntityUid? result,
         HeatedComponent? heated = null, QuenchingComponent? quenching = null)

@@ -28,8 +28,9 @@
       collection: ChurchBell
   - type: Physics
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Construction
     graph: MedievalGuardBell
     node: bell1

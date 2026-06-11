@@ -148,8 +148,9 @@
     drawdepth: Mobs
     offset: 0,0.5
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Construction
     graph: MedievalLadder
     node: straightStone
@@ -170,8 +171,9 @@
     drawdepth: Mobs
     offset: 0,0.5
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Construction
     graph: MedievalLadder
     node: straightMarble

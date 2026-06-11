@@ -9,12 +9,12 @@ using Robust.Shared.Containers;
 
 namespace Content.Server._Respiral.Lock;
 
-public sealed class MedievalLockSystem : SharedMedievalLockSystem
+public sealed partial class MedievalLockSystem : SharedMedievalLockSystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly MedievalKeySystem _medievalKey = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private MedievalKeySystem _medievalKey = default!;
     public override void Initialize()
     {
         base.Initialize();

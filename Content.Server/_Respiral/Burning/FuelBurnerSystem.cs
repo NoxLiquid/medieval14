@@ -19,17 +19,17 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Burning.Systems;
 
-public sealed class FuelBurnerSystem : EntitySystem
+public sealed partial class FuelBurnerSystem : EntitySystem
 {
-    [Dependency] private readonly AmbientSoundSystem _ambient = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
-    [Dependency] private readonly FuelSystem _fuel = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly SharedPointLightSystem _light = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
+    [Dependency] private AmbientSoundSystem _ambient = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private DamageableSystem _damage = default!;
+    [Dependency] private FuelSystem _fuel = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private SharedPointLightSystem _light = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private StackSystem _stack = default!;
 
     private static readonly ProtoId<DamageTypePrototype> Damage = "Heat";
 

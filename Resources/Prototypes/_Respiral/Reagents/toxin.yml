@@ -17,7 +17,7 @@
           time: 10
         - !type:HealthChange
           damage:
-            groups:
-              Airloss: 10
             types:
+              Asphyxiation: 5
+              Bloodloss: 5
               Poison: 2

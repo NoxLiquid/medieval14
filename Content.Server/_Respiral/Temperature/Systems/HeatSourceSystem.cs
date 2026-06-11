@@ -5,9 +5,9 @@ using Content.Shared.Temperature.Systems;
 
 namespace Content.Server.Temperature.Systems;
 
-public sealed class HeatSourceSystem : SharedHeatSourceSystem
+public sealed partial class HeatSourceSystem : SharedHeatSourceSystem
 {
-    [Dependency] private readonly TemperatureSystem _temperature = default!;
+    [Dependency] private TemperatureSystem _temperature = default!;
 
     public override void Initialize()
     {
