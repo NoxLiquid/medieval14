@@ -2,7 +2,7 @@ using Content.Shared.Armor;
 using Content.Shared.Cargo;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Materials;
+using Content.Shared.Materials; // _Respiral-Add
 
 namespace Content.Server.Armor;
 
