@@ -24,7 +24,7 @@
   - type: Tag
     tags:
     - MedievalAnvilMaterialStorage
-    - CarpenterTableMaterialStorage
+    - MedievalCarpenterTableMaterialStorage
   - type: Appearance
   - type: PhysicalComposition
     materialComposition:
@@ -305,8 +305,9 @@
   components:
   - type: MedievalPhysicalPriced
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

@@ -42,6 +42,7 @@
     tags:
     - MedievalRawMaterial
   - type: Damageable
+  - type: Injurable
     damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
@@ -61,7 +62,9 @@
   components:
   - type: MedievalPhysicalPriced
   - type: Material
-  - type: Sharp
+  - type: Tool
+    qualities:
+    - Slicing
   - type: Execution
     doAfterDuration: 4.0
   - type: Sprite
@@ -76,8 +79,9 @@
       types:
         Slash: 3.5
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

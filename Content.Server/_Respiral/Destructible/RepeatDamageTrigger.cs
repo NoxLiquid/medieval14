@@ -17,7 +17,7 @@ namespace Content.Server._Respiral.Destructible
 
         public bool Reached(Entity<DamageableComponent> damageable, SharedDestructibleSystem system)
         {
-            var total = (int)damageable.Comp.TotalDamage;
+            var total = (int)system.Damageable.GetTotalDamage(damageable.AsNullable());
 
             var level = total / Step;
 

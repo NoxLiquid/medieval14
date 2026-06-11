@@ -1,6 +1,7 @@
 using Content.Server.Destructible;
 using Content.Shared.Construction;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
 
 namespace Content.Server._Respiral.Construction.Conditions;
@@ -25,7 +26,8 @@ public sealed partial class MinHealthPercent : IGraphCondition
         if (maxHealth <= 0)
             return true;
 
-        var curHealth = maxHealth - damageComp.TotalDamage;
+        var damageableSys = entMan.System<DamageableSystem>();
+        var curHealth = maxHealth - damageableSys.GetTotalDamage((uid, damageComp));
         var percent = (float)(curHealth / maxHealth) * 100f;
 
         return percent >= Value;

@@ -13,4 +13,4 @@
     nameSegments: [MedievalNames]
   - type: NpcFactionMember
     factions:
-    - TownPeople
+    - MedievalTownPeople

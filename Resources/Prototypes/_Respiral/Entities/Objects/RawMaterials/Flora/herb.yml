@@ -265,7 +265,7 @@
 
 - type: entity
   parent: MedievalBaseHerb
-  id: Medievalvorosnik
+  id: MedievalVorosnik
   name: воросник
   abstract: true
   components:

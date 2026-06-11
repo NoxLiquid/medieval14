@@ -103,8 +103,9 @@
     radius: 2.2
     energy: 2.8
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -148,8 +149,9 @@
     radius: 2.6
     energy: 3.2
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -202,8 +204,9 @@
     radius: 3.8
     energy: 4.6
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -256,8 +259,9 @@
     radius: 3.2
     energy: 4.0
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -310,8 +314,9 @@
     radius: 2.7
     energy: 3.3
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

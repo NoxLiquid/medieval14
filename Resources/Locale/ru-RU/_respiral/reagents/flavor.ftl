@@ -8,3 +8,6 @@ flavor-base-tangy = терпко
 flavor-base-acrid = резко
 flavor-base-invigorating = бодряще
 flavor-base-mystical = мистически
+flavor-base-earthy = землисто
+flavor-base-wheat = пшенично
+flavor-base-potato = картофельно

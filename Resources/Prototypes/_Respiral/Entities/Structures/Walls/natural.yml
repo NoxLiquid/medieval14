@@ -34,8 +34,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/cave_stone.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -67,8 +68,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/cave_stone_strong.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -100,8 +102,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/cave_stone_coal.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -223,8 +226,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/cave_stone_gold.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -346,8 +350,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/cave_stone_iron.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -469,8 +474,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/cave_stone_mithril.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -592,8 +598,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/cave_stone_silver.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -715,8 +722,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/quartz.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalQuartz
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -748,8 +756,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/dirt_wall.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalDirt
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -778,8 +787,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/leaf.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalGrass
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -806,8 +816,9 @@
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/snow_wall.rsi
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalSnow
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

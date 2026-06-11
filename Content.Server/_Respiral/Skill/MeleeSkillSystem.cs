@@ -6,10 +6,10 @@ using Content.Shared.Whitelist;
 
 namespace Content.Server._Respiral.Skill;
 
-public sealed class MeleeSkillSystem : EntitySystem
+public sealed partial class MeleeSkillSystem : EntitySystem
 {
-    [Dependency] private readonly SkillSystem _skillSystem = default!;
-    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
+    [Dependency] private SkillSystem _skillSystem = default!;
+    [Dependency] private EntityWhitelistSystem _entityWhitelist = default!;
 
     public override void Initialize()
     {

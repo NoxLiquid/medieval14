@@ -12,8 +12,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/armor/armorwithgold.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalGold
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -38,8 +39,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/armor/chain_armor.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -64,8 +66,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/armor/copper_armor.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -90,8 +93,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/armor/Differentiated_armor.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -116,8 +120,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/armor/example.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -142,8 +147,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/armor/lamellar_armor.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -168,8 +174,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/armor/leather_armor.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -194,8 +201,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/armor/light_lamellar_armor.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:

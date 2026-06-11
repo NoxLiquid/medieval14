@@ -9,13 +9,13 @@ using Robust.Server.Audio;
 
 namespace Content.Server._Respiral.Skill;
 
-public sealed class LearnSkillWhenUsingSystem : EntitySystem
+public sealed partial class LearnSkillWhenUsingSystem : EntitySystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SkillSystem _skillSystem = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    // [Dependency] private readonly LanguageSystem _languageSystem = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SkillSystem _skillSystem = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    // [Dependency] private LanguageSystem _languageSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -91,7 +91,7 @@ public sealed class LearnSkillWhenUsingSystem : EntitySystem
 
     private void OnDoAfter(EntityUid uid, LearnSkillWhenUsingComponent component, LearnDoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled || !EntityManager.EntityExists(args.Used))
+        if (args.Cancelled || args.Handled || !Exists(args.Used))
             return;
 
         foreach (var skill in component.Skills)

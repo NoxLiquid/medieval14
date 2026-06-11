@@ -19,6 +19,7 @@
     rootTask:
       task: MedievalHostileFloraCompound
   - type: Damageable
+  - type: Injurable
     damageContainer: MedievalBiological
   - type: StatusEffects
     allowed:

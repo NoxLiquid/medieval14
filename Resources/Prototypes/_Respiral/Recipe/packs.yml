@@ -71,7 +71,7 @@
 - type: latheRecipePack
   id: MedievalAnvil
   recipes:
-  - MedievaHammerAmmoRecipe
+  - MedievalHammerAmmoRecipe
   - MedievalSawmillDetailRecipe
   - MedievalQuarryDetailRecipe
   - MedievalConstructionToolsRecipe

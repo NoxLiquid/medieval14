@@ -11,10 +11,14 @@
       effects:
         - !type:HealthChange
           damage:
-            groups:
-              Brute: -2
-              Burn: -2
             types:
+              Blunt: -0.67
+              Slash: -0.66
+              Piercing: -0.67
+              Heat: -0.5
+              Shock: -0.5
+              Cold: -0.5
+              Caustic: -0.5
               Asphyxiation: -0.5
               Bloodloss: -0.5
         - !type:HealthChange
@@ -23,9 +27,10 @@
               reagent: MedievalHealingPotion
               min: 15
           damage:
-            groups:
-              Brute: 1.0
-
+            types:
+              Blunt: 0.33
+              Slash: 0.34
+              Piercing: 0.33
 - type: reagent
   id: MedievalAntitoxin
   name: reagent-name-medieval-antitoxin
@@ -39,8 +44,9 @@
       effects:
         - !type:HealthChange
           damage:
-            groups:
-              Toxin: -2
+            types:
+              Poison: -1
+              Radiation: -1
         - !type:HealthChange
           conditions:
             - !type:ReagentCondition
@@ -55,7 +61,7 @@
   name: reagent-name-medieval-mana-potion
   group: Medicine
   desc: reagent-desc-medieval-mana-potion
-  flavor: mystical
+  flavor: MedievalMystical
   color: "#6633cc"
   physicalDesc: reagent-physical-desc-glowing
   metabolisms:
@@ -70,5 +76,6 @@
               reagent: MedievalManaPotion
               min: 15
           damage:
-            groups:
-              Toxin: 0.5
+            types:
+              Poison: 0.25
+              Radiation: 0.25

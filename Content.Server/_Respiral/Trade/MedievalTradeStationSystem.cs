@@ -1,11 +1,11 @@
-using Content.Server.Cargo.Components;
+using Content.Shared.Cargo.Components;
 using Content.Server.Station.Events;
 using Content.Server._Respiral.Trade.Components;
 
 namespace Content.Server._Respiral.Trade;
 
 // Respiral - помечает все гриды станции как TradeStation при инициализации
-public sealed class MedievalTradeStationSystem : EntitySystem
+public sealed partial class MedievalTradeStationSystem : EntitySystem
 {
     public override void Initialize()
     {

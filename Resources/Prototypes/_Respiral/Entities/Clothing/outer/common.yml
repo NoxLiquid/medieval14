@@ -12,8 +12,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/bad_shirt_long.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -38,8 +39,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/bib_barrel.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -64,8 +66,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/bigarmor_blood.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -90,8 +93,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/big_armorn.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -116,8 +120,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/blue_pharaon.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:
@@ -142,8 +147,9 @@
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/padded_jacket.rsi
   - type: Damageable
-    damageContainer: MedievalClothing
     damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
   - type: Armor
     modifiers:
       coefficients:

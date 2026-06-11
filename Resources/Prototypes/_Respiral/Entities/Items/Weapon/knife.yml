@@ -75,8 +75,9 @@
       - state: inhand-right
         color: "#8B4513"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -120,8 +121,9 @@
       - state: inhand-right
         color: "#B0C4DE"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -166,8 +168,9 @@
       - state: inhand-right
         color: "#C0C0FF"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalSilver
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -211,8 +214,9 @@
       - state: inhand-right
         color: "#9370DB"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalMithril
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -256,8 +260,9 @@
       - state: inhand-right
         color: "#4B0000"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalAdamantine
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

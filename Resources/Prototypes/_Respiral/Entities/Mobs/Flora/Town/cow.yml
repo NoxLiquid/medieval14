@@ -42,13 +42,9 @@
         Base: dead
       Dead:
         Base: dead
-  - type: SolutionContainerManager
+  - type: SolutionManager
     solutions:
-      udder:
-        maxVol: 250
-        reagents:
-        - ReagentId: Milk
-          Quantity: 30
+    - MedievalSolutionUdderCow
   - type: Udder
     reagentId: Milk
     quantityPerUpdate: 25
@@ -83,3 +79,16 @@
       0: Alive
       100: Critical
       200: Dead
+
+- type: entity
+  parent: SolutionLarge
+  id: MedievalSolutionUdderCow
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: udder
+    solution:
+      maxVol: 250
+      reagents:
+      - ReagentId: Milk
+        Quantity: 30

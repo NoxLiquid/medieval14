@@ -27,8 +27,9 @@
     delay: 2
     fx: EffectRCDDeconstruct2
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

@@ -1,5 +1,5 @@
 - type: parallax
-  id: Water
+  id: MedievalWater
   layers:
     - texture:
         !type:ImageParallaxTextureSource
@@ -10,7 +10,7 @@
       shader: ""
 
 - type: parallax
-  id: Stone
+  id: MedievalStone
   layers:
     - texture:
         !type:ImageParallaxTextureSource
@@ -20,7 +20,7 @@
       shader: ""
 
 - type: parallax
-  id: Black
+  id: MedievalBlack
   layers:
     - texture:
         !type:ImageParallaxTextureSource

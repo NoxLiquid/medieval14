@@ -18,6 +18,8 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `communications.md` | Связующий магический шар (средневековая консоль коммуникаций) |
 | `biomes.md` | Биомы, процедурная генерация карт, слои, маркеры, Gateway |
 | `zlevels.md` | Z-уровни (вертикальные карты), CEZLevelsSystem, ZNetwork |
+| `localization.md` | Локализация (FTL), синхронизация ru-RU с en-US, паритет переменных и message ID |
+| `testing.md` | Интеграционные тесты, CI-стратегия (Respiral блокирующий / апстрим неблокирующий), `--filter`, префиксы ID |
 
 ## Key Architectural Rules
 

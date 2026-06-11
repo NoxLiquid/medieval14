@@ -3,10 +3,9 @@
   parent: DrinkBase
   id: MedievalDrinkBaseCup
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 20
+  - type: Solution
+    solution:
+      maxVol: 20
   - type: FitsInDispenser
     solution: drink
   - type: SolutionTransfer
@@ -20,8 +19,9 @@
   components:
   - type: MedievalPhysicalPriced
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -150,10 +150,9 @@
     closeable: true
     closeSound:
       collection: bottleCloseSounds
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 50
+  - type: Solution
+    solution:
+      maxVol: 50
   - type: FitsInDispenser
     solution: drink
   - type: Tool

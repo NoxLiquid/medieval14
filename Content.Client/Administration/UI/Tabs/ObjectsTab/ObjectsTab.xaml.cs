@@ -13,9 +13,9 @@ namespace Content.Client.Administration.UI.Tabs.ObjectsTab;
 [GenerateTypedNameReferences]
 public sealed partial class ObjectsTab : Control
 {
-    [Dependency] private readonly IClientAdminManager _admin = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IClientConsoleHost _console = default!;
+    [Dependency] private IClientAdminManager _admin = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IClientConsoleHost _console = default!;
 
     private readonly Color _altColor = Color.FromHex("#3D382E"); // Respiral-Stylization
     private readonly Color _defaultColor = Color.FromHex("#2E2A25"); // Respiral-Stylization

@@ -17,8 +17,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: IconSmooth
     key: walls
     base: stonebricks
@@ -29,8 +30,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: IconSmooth
     key: woods
     base: wood
@@ -68,8 +70,9 @@
   - type: PlacementReplacement
     key: walls
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -279,8 +282,9 @@
     sprite: Objects/Decoration/mines.rsi
     state: support_wall
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Physics
     bodyType: Static
   - type: Fixtures

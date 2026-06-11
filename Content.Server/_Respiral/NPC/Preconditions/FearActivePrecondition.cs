@@ -6,8 +6,8 @@ namespace Content._Respiral.NPC.Preconditions;
 
 public sealed partial class FearActivePrecondition : HTNPrecondition
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     [DataField]
     public string Key = MedievalNPCBlackboard.FearEndTime;

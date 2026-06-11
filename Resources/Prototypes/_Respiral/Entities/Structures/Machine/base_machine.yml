@@ -25,8 +25,9 @@
         layer:
         - MachineLayer
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalLathe
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

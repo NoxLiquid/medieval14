@@ -13,12 +13,16 @@
       map: [ handle ]
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 9.5
+      types:
+        Blunt: 3.17
+        Slash: 3.16
+        Piercing: 3.17
   - type: IncreaseDamageOnWield
     damage:
-      groups:
-        Brute: 19
+      types:
+        Blunt: 6.33
+        Slash: 6.34
+        Piercing: 6.33
   - type: Item
     inhandVisuals:
       left:
@@ -65,8 +69,10 @@
         Blunt: 2.7
   - type: IncreaseDamageOnWield
     damage:
-      groups:
-        Brute: 4.75
+      types:
+        Blunt: 1.58
+        Slash: 1.58
+        Piercing: 1.59
   - type: Item
     inhandVisuals:
       left:
@@ -78,8 +84,9 @@
         scale: 0.5, 0.5
         color: "#8B4513"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -106,12 +113,16 @@
     - state: handle
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 13
+      types:
+        Blunt: 4.33
+        Slash: 4.34
+        Piercing: 4.33
   - type: IncreaseDamageOnWield
     damage:
-      groups:
-        Brute: 23.75
+      types:
+        Blunt: 7.92
+        Slash: 7.92
+        Piercing: 7.91
   - type: Item
     inhandVisuals:
       left:
@@ -123,8 +134,9 @@
         scale: 0.5, 0.5
         color: "#B0C4DE"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -151,14 +163,17 @@
     - state: handle
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 19
       types:
+        Blunt: 6.33
+        Slash: 6.34
+        Piercing: 6.33
         Holy: 19
   - type: IncreaseDamageOnWield
     damage:
-      groups:
-        Brute: 24
+      types:
+        Blunt: 8
+        Slash: 8
+        Piercing: 8
   - type: Item
     inhandVisuals:
       left:
@@ -170,8 +185,9 @@
         scale: 0.5, 0.5
         color: "#C0C0FF"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalSilver
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -198,12 +214,16 @@
     - state: handle
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 15
+      types:
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
   - type: IncreaseDamageOnWield
     damage:
-      groups:
-        Brute: 28.5
+      types:
+        Blunt: 9.5
+        Slash: 9.5
+        Piercing: 9.5
   - type: Item
     inhandVisuals:
       left:
@@ -215,8 +235,9 @@
         scale: 0.5, 0.5
         color: "#9370DB"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalMithril
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -243,12 +264,16 @@
     - state: handle
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 17
+      types:
+        Blunt: 5.67
+        Slash: 5.66
+        Piercing: 5.67
   - type: IncreaseDamageOnWield
     damage:
-      groups:
-        Brute: 17
+      types:
+        Blunt: 5.67
+        Slash: 5.66
+        Piercing: 5.67
   - type: Item
     inhandVisuals:
       left:
@@ -260,8 +285,9 @@
         scale: 0.5, 0.5
         color: "#4B0000"
   - type: Damageable
-    damageContainer: MedievalInorganic
     damageModifierSet: MedievalAdamantine
+  - type: Injurable
+    damageContainer: MedievalInorganic
   - type: Destructible
     thresholds:
     - trigger:

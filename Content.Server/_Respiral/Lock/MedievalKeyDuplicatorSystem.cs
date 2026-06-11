@@ -14,13 +14,13 @@ using Content.Shared._Respiral.Lock.Components;
 
 namespace Content.Server._Respiral.Lock;
 
-public sealed class MedievalKeyDuplicatorSystem : EntitySystem
+public sealed partial class MedievalKeyDuplicatorSystem : EntitySystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly SharedMedievalLockSystem _medLock = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly MedievalKeySystem _key = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private SharedMedievalLockSystem _medLock = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private MedievalKeySystem _key = default!;
     public override void Initialize()
     {
         base.Initialize();
