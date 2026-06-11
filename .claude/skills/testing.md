@@ -50,12 +50,6 @@ Required-статус в branch protection назначать на `respiral-tes
   НЕ менялись (id ≠ loc-key, ссылки на ключи валидны).
 - ВАЖНО при переименовании коротких id (`dry`, `wheat`, `Stone`): ссылки менять только в их контексте
   (`flavors:`-блоки, `parallax:`-поле), а не слепым substring-replace — иначе заденет другие слова.
-- ⚠️ `FlavorPrototype` ссылается ДВУМЯ полями: `flavors:` (список, компонент `FlavorProfile`) И
-  `flavor:` (одиночное, в `ReagentPrototype`). При переименовании вкуса править ОБА — иначе YAML-линтер
-  падает `No FlavorPrototype found with id ...`. Урок: после любого переименования id ОБЯЗАТЕЛЬНО гонять
-  `dotnet run --project Content.YAMLLinter --no-build` (ловит все формы ссылок, которые grep пропускает).
-- RSI-схема (`validate_rsis.py`) разрешает внутри `.rsi` только `meta.json` + `.png`. Лицензия/атрибуция —
-  в `meta.json` (`license`/`copyright`). Посторонние файлы (`attribution.yml` и т.п.) внутри `.rsi` = ошибка.
 - НЕ трогать ZLevels/CE-неймспейс (`ZLevelEye`, `ZBlur`, `ActionZLevel*`) — это MIT-порт со своей конвенцией `CE`.
 
 ## Замечания
