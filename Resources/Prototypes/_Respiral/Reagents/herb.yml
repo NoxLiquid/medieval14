@@ -29,7 +29,7 @@
   name: reagent-name-medieval-kamnelepestnik
   group: Foods
   desc: reagent-desc-medieval-kamnelepestnik
-  flavor: mineral
+  flavor: MedievalMineral
   color: "#6c6c6c"
   physicalDesc: reagent-physical-desc-powdery
   metabolisms:
@@ -135,7 +135,7 @@
   name: reagent-name-medieval-pihta
   group: Foods
   desc: reagent-desc-medieval-pihta
-  flavor: floral
+  flavor: MedievalFloral
   color: "#e2d14f"
   physicalDesc: reagent-physical-desc-aromatic
   metabolisms:
@@ -161,7 +161,7 @@
   name: reagent-name-medieval-romashka
   group: Foods
   desc: reagent-desc-medieval-romashka
-  flavor: calming
+  flavor: MedievalCalming
   color: "#fff6c4"
   physicalDesc: reagent-physical-desc-soothing
   metabolisms:
@@ -192,7 +192,7 @@
   name: reagent-name-medieval-shipovec
   group: Foods
   desc: reagent-desc-medieval-shipovec
-  flavor: thorny
+  flavor: MedievalThorny
   color: "#4d3f29"
   physicalDesc: reagent-physical-desc-strong-smelling
   metabolisms:
@@ -218,7 +218,7 @@
   name: reagent-name-medieval-suhocvet
   group: Foods
   desc: reagent-desc-medieval-suhocvet
-  flavor: dry
+  flavor: MedievalDry
   color: "#d6c19c"
   physicalDesc: reagent-physical-desc-powdery
   metabolisms:
@@ -291,7 +291,7 @@
   name: reagent-name-medieval-viunka
   group: Foods
   desc: reagent-desc-medieval-viunka
-  flavor: tangy
+  flavor: MedievalTangy
   color: "#2fa36b"
   physicalDesc: reagent-physical-desc-tangy
   metabolisms:

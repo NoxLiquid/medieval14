@@ -61,7 +61,7 @@
   name: reagent-name-medieval-mana-potion
   group: Medicine
   desc: reagent-desc-medieval-mana-potion
-  flavor: mystical
+  flavor: MedievalMystical
   color: "#6633cc"
   physicalDesc: reagent-physical-desc-glowing
   metabolisms:

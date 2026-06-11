@@ -2,7 +2,7 @@
   id: MedievalMana
   name: reagent-name-medieval-mana
   desc: reagent-desc-medieval-mana
-  flavor: tangy
+  flavor: MedievalTangy
   color: "#47f8ff"
   physicalDesc: reagent-physical-desc-glowing
   metabolisms:

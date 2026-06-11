@@ -3,7 +3,7 @@
   name: reagent-name-medieval-blindness-potion
   group: Toxins
   desc: reagent-desc-medieval-blindness-potion
-  flavor: acrid
+  flavor: MedievalAcrid
   color: "#000000"
   physicalDesc: reagent-physical-desc-smoky
   metabolisms:
