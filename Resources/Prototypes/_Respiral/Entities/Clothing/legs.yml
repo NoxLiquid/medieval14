@@ -1,0 +1,109 @@
+# Medieval legs-slot (pants) clothing prototypes generated from _Respiral/Clothing/Legs/*.rsi
+
+- type: entity
+  parent: MedievalBasePants
+  id: MedievalClothingLegsLightArmor
+  suffix: Средневековье
+  name: лёгкие латные поножи
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/Light_Armor_Pants.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/Light_Armor_Pants.rsi
+  - type: Damageable
+    damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.94
+        Heat: 0.9
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 100
+
+- type: entity
+  parent: MedievalBasePants
+  id: MedievalClothingLegsMiddleArmor
+  suffix: Средневековье
+  name: латные поножи
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/Middle_Armor_Pants.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/Middle_Armor_Pants.rsi
+  - type: Damageable
+    damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.86
+        Slash: 0.86
+        Piercing: 0.92
+        Heat: 0.86
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 100
+
+- type: entity
+  parent: MedievalBasePants
+  id: MedievalClothingLegsArmored
+  suffix: Средневековье
+  name: укреплённые штаны
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/armored_pants.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/armored_pants.rsi
+  - type: Damageable
+    damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.92
+        Slash: 0.92
+        Piercing: 0.95
+        Heat: 0.9
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBasePants
+  id: MedievalClothingLegsLeather
+  suffix: Средневековье
+  name: кожаные штаны
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/leather_pants.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/leather_pants.rsi
+  - type: Damageable
+    damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100

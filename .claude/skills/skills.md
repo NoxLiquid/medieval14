@@ -12,6 +12,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `bureaucracy.md` | Бумага, свитки, папки, паспорт, штампы (средневековые) |
 | `economy.md` | Монеты, кошелёк, драгоценные камни как материалы |
 | `inventory.md` | Слоты инвентаря, визуализация одежды, sex-specific спрайты |
+| `clothing.md` | Прототипы одежды (Medieval*), RSI state-конвенции, материал→урон/состав, импорт паков, стартовое снаряжение профессий |
 | `skill_system.md` | Система навыков, MeleeSkill, модификаторы изучения |
 | `mobs.md` | NPC, монстры, фракции, базовые прототипы мобов |
 | `trade_console.md` | Торговая система: заказ через CargoOrderConsole, доставка через CargoPallet (Buy/Sell), продажа через CargoPalletConsole |

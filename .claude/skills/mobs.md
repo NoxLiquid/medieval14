@@ -66,3 +66,21 @@ Respiral добавляет свои базы:
 - `MeleeWeapon` — атака ближнего боя
 - `Fixtures` — физика (коллайдер, масса)
 - `MovementSpeedModifier` — скорость передвижения
+
+## Спавнеры профессий (RandomHumanoidSpawner)
+
+Файл: `Resources/Prototypes/_Respiral/Roles/spawners.yml`. Образец — `Entities/Mobs/Player/humanoid.yml`.
+
+Спавнер профессии = пара прототипов:
+1. `type: entity` (наследует `BaseMedievalHumanoidSpawner` → спрайт-маркер `Markers/jobs.rsi state: green`)
+   с компонентом `RandomHumanoidSpawner` (`settings: <id>`). При MapInit заменяет себя гуманоидом.
+2. `type: randomHumanoidSettings` (`id` совпадает с id профессии, как в апстриме ERTLeader) с
+   компонентами `RandomHumanoidAppearance` (RandomizeName=true по умолчанию) и
+   `Loadout` (`prototypes: [ <Medieval*Gear> ]`).
+
+`Loadout.prototypes` — это `List<ProtoId<StartingGearPrototype>>`, ссылается на `startingGear` из
+`_Respiral/Roles/Jobs/*` (которые задают `equipment:` по слотам). Так спавнер одевает гуманоида в
+снаряжение профессии. Покрыты все 17 ролей (Nobles/Craftsman/Villager/Commoner).
+
+Не добавлен `GhostRole` (нет ghost-role локали для medieval-профессий) — спавнят инертного NPC, не
+ghost-роль. Если нужны ghost-роли — добавить `GhostRole` в settings + строки `ghost-role-information-*`.

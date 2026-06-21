@@ -13,8 +13,26 @@
 - Add flag to `SlotFlags.cs` if needed (LEGS already exists)
 - Add entry in `human_inventory_template.yml` with unique `uiWindowPos` and `strippingWindowPos`
 - Add mapping in `TemporarySlotMap` in `ClientClothingSystem.cs`
+- **Add a layer "bookmark" `- map: ["<slot>"]` in `Resources/Prototypes/Body/species_appearance.yml`** (prototype `BaseSpeciesLayers`) at the desired draw depth — ОБЯЗАТЕЛЬНО, иначе одежда этого слота рисуется поверх всего (см. ниже)
 - Create slot icon PNG in each theme's `Slots/` directory (or reuse existing texture name)
 - Clothing items use `equipped-{STATE_PREFIX}` RSI state (e.g. `equipped-LEGS`)
+
+## Draw order одежды на персонаже (КРИТИЧНО)
+
+Глубину отрисовки надетой одежды задаёт ПОРЯДОК слоёв-закладок в `Body/species_appearance.yml`
+(`BaseSpeciesLayers` → `Sprite.layers`, каждый `- map: ["<slotName>"]`). Раньше в списке = ниже.
+
+`ClientClothingSystem.RenderEquipment`: для слота ищется слой-закладка с ключом = имя слота.
+- **закладка есть** → слой одежды вставляется сразу после неё (фиксированная глубина);
+- **закладки НЕТ** → `LayerMapReserve` добавляет слой в КОНЕЦ списка → одежда рисуется **поверх всего**
+  (рук, брони, головы). Это типичный баг при добавлении нового слота.
+
+Пример (исправленный баг слота `pants`): без `- map: ["pants"]` штаны рисовались поверх рубахи,
+кистей рук и `outerClothing`. Закладка добавлена **перед** `jumpsuit` (между бельём и нательной
+одеждой) → рубаха/туника рисуется поверх штанов, а сами штаны — под кистями рук, обувью и бронёй.
+Положение pants ОТНОСИТЕЛЬНО jumpsuit определяет, что поверх чего: `pants` перед `jumpsuit` =
+рубаха поверх штанов; после = штаны поверх рубахи. `uiWindowPos`/`TemporarySlotMap` на это НЕ
+влияют — только порядок в `species_appearance.yml`.
 
 ## Current Respiral Additions
 
@@ -37,7 +55,25 @@
 | eyes | 0,3 | 0,0 |
 | head | 1,3 | 1,0 |
 
+## Bottom hotbar layout (slotGroup)
+
+Слоты с `slotGroup` (НЕ `null`) не попадают в окно-куклу экипировки, а рендерятся в нижнем
+хотбаре. Контейнеры заданы в `Content.Client/.../Hotbar/Widgets/HotbarGui.xaml`:
+два `ItemSlotButtonContainer` — `MainHotbar` и `SecondHotbar` — стоят по бокам от рук.
+
+**Порядок кнопок внутри группы = порядок определения слотов в шаблоне инвентаря** (не `uiWindowPos`!).
+Рендер: `InventoryUIController.AddSlot` → `container.TryAddButton` → `AddChild` в порядке итерации
+`SlotData` (= порядок слотов в YAML). `uiWindowPos`/`strippingWindowPos` для сгруппированных слотов
+на хотбар-раскладку **не влияют** (используются только окном раздевания и тогл-баром экипировки).
+
+Текущая раскладка (Respiral):
+- `MainHotbar`: `pocket1, pocket2, id, back` — id/PDA и рюкзак стоят сразу после карманов.
+- `SecondHotbar`: `belt, suitstorage`.
+
+Чтобы переставить слот в хотбаре — менять его `slotGroup` и/или его позицию среди определений
+слотов в `human_inventory_template.yml`, а не `uiWindowPos`.
+
 ## Known Gaps
 
 - Pants slot uses `uniform` placeholder texture — needs dedicated `pants.png` icons for all UI themes
-- No base pants clothing entity/prototype created yet
+- Базовые прототипы и контент одежды теперь есть — см. `clothing.md`

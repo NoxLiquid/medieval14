@@ -91,27 +91,29 @@
       dependsOn: jumpsuit
       displayName: Pocket 2
       stripHidden: true
-    - name: suitstorage
-      slotTexture: suit_storage
-      slotFlags:   SUITSTORAGE
-      slotGroup: MainHotbar
-      stripTime: 3
-      uiWindowPos: 2,0
-      strippingWindowPos: 2,5
-      dependsOn: outerClothing
-      dependsOnComponents:
-      - type: AllowSuitStorage
-      displayName: Suit Storage
+    # Respiral-Start - id/PDA и рюкзак стоят сразу после карманов (один блок хотбара: pocket, id, back)
     - name: id
       slotTexture: id
       fullTextureName: template_small
       slotFlags: IDCARD
-      slotGroup: SecondHotbar
+      slotGroup: MainHotbar
       stripTime: 6
       uiWindowPos: 2,1
       strippingWindowPos: 2,4
       dependsOn: jumpsuit
       displayName: ID
+    - name: back
+      slotTexture: back
+      fullTextureName: template_small
+      slotFlags: BACK
+      slotGroup: MainHotbar
+      stripTime: 6
+      uiWindowPos: 3,0
+      strippingWindowPos: 0,5
+      displayName: Back
+      blacklist:
+        tags:
+        - PetOnly
     - name: belt
       slotTexture: belt
       fullTextureName: template_small
@@ -121,15 +123,15 @@
       uiWindowPos: 3,1
       strippingWindowPos: 1,5
       displayName: Belt
-    - name: back
-      slotTexture: back
-      fullTextureName: template_small
-      slotFlags: BACK
+    - name: suitstorage
+      slotTexture: suit_storage
+      slotFlags:   SUITSTORAGE
       slotGroup: SecondHotbar
-      stripTime: 6
-      uiWindowPos: 3,0
-      strippingWindowPos: 0,5
-      displayName: Back
-      blacklist:
-        tags:
-        - PetOnly
+      stripTime: 3
+      uiWindowPos: 2,0
+      strippingWindowPos: 2,5
+      dependsOn: outerClothing
+      dependsOnComponents:
+      - type: AllowSuitStorage
+      displayName: Suit Storage
+    # Respiral-End

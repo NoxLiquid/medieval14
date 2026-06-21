@@ -1325,13 +1325,6 @@
 
 - type: latheRecipe
   parent: MedievalBaseMetalClothingRecipe
-  id: MedievalClothingOuterArmorCopperRecipe
-  result: MedievalClothingOuterArmorCopper
-  materials:
-    MedievalProcessedIron: 100
-
-- type: latheRecipe
-  parent: MedievalBaseMetalClothingRecipe
   id: MedievalClothingOuterArmorSegmentedRecipe
   result: MedievalClothingOuterArmorSegmented
   materials:

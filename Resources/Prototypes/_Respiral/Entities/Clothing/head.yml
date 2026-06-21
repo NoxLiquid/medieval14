@@ -360,3 +360,56 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadHood
+  suffix: Средневековье
+  name: простой капюшон
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/Simple_hood.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/Simple_hood.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseHead
+  id: MedievalClothingHeadTraderHat
+  suffix: Средневековье
+  name: шляпа торговца
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hats/trader_hat.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hats/trader_hat.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100

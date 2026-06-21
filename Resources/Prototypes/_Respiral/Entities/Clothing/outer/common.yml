@@ -61,10 +61,10 @@
   name: окровавленный латный доспех
   components:
   - type: Sprite
-    sprite: _Respiral/Clothing/OuterClothing/bigarmor_blood.rsi
+    sprite: _Respiral/Clothing/OuterClothing/Armor/bigarmor_blood.rsi
     state: icon
   - type: Clothing
-    sprite: _Respiral/Clothing/OuterClothing/bigarmor_blood.rsi
+    sprite: _Respiral/Clothing/OuterClothing/Armor/bigarmor_blood.rsi
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable
@@ -88,10 +88,10 @@
   name: тяжёлый латный доспех
   components:
   - type: Sprite
-    sprite: _Respiral/Clothing/OuterClothing/big_armorn.rsi
+    sprite: _Respiral/Clothing/OuterClothing/Armor/big_armorn.rsi
     state: icon
   - type: Clothing
-    sprite: _Respiral/Clothing/OuterClothing/big_armorn.rsi
+    sprite: _Respiral/Clothing/OuterClothing/Armor/big_armorn.rsi
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable

@@ -134,3 +134,78 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
+# === Elite noble shirt (elite_short.rsi) — single RSI with 4 visual variants ===
+- type: entity
+  parent: MedievalBaseInnerClothing
+  id: MedievalClothingInnerEliteCloth
+  suffix: Средневековье
+  name: парадная рубаха
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/elite_short.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/elite_short.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING-cloth
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.96
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalClothingInnerEliteCloth
+  id: MedievalClothingInnerEliteHalf
+  suffix: Средневековье
+  name: расшитая парадная рубаха
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/elite_short.rsi
+    state: icon-half
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/elite_short.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING-halfcloth
+
+- type: entity
+  parent: MedievalClothingInnerEliteCloth
+  id: MedievalClothingInnerEliteManjete
+  suffix: Средневековье
+  name: камзол с манжетами
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/elite_short.rsi
+    state: icon-manjete
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/elite_short.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING-manjete
+
+- type: entity
+  parent: MedievalClothingInnerEliteCloth
+  id: MedievalClothingInnerEliteMetal
+  suffix: Средневековье
+  name: парадный поддоспешник
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/elite_short.rsi
+    state: icon-metal
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/elite_short.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING-metal

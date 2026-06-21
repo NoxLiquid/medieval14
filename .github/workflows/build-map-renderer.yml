@@ -13,7 +13,7 @@ jobs:
     if: github.actor != 'PJBot' && github.event.pull_request.draft == false
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [[self-hosted, nox-home]]
 
     runs-on: ${{ matrix.os }}
 
@@ -51,7 +51,7 @@ jobs:
     name: Build & Test Debug
     needs:
       - build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, nox-home]
     steps:
       - name: CI succeeded
         run: exit 0

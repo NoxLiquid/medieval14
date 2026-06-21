@@ -188,3 +188,62 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedPelt: 100
+- type: entity
+  parent: MedievalBaseShoes
+  id: MedievalClothingShoesHigh
+  suffix: Средневековье
+  name: высокие сапоги
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/high_boot.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/high_boot.rsi
+    clothingVisuals:
+      shoes-Female:
+      - state: equipped-FEET-female
+  - type: Damageable
+    damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseShoes
+  id: MedievalClothingShoesRich
+  suffix: Средневековье
+  name: богатые сапоги
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/rich_boot.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/rich_boot.rsi
+    clothingVisuals:
+      shoes-Female:
+      - state: equipped-FEET-female
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
