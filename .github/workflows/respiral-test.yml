@@ -19,7 +19,7 @@ jobs:
     if: github.actor != 'PJBot' && github.event.pull_request.draft == false
     strategy:
       matrix:
-        os: [[self-hosted, nox-home]]
+        os: [ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
 
@@ -76,7 +76,7 @@ jobs:
     name: Respiral Build & Test
     needs:
       - build
-    runs-on: [self-hosted, nox-home]
+    runs-on: ubuntu-latest
     steps:
       - name: CI succeeded
         run: exit 0

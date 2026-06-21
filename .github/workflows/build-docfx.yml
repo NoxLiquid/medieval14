@@ -6,7 +6,7 @@ on:
 
 jobs:
   docfx:
-   runs-on: [self-hosted, nox-home]
+   runs-on: ubuntu-latest
    steps:
     - uses: actions/checkout@v4.2.2
     - name: Setup submodule
