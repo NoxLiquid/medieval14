@@ -7,6 +7,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
+using Content.Shared.DirtVisuals; // Respiral-Dirtable
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
@@ -22,6 +23,7 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
     [Dependency] private DestructibleSystem _destructibleSystem = default!;
     [Dependency] private GunSystem _guns = default!;
     [Dependency] private SharedCameraRecoilSystem _sharedCameraRecoil = default!;
+    [Dependency] private SharedDirtSystem _dirt = default!; // Respiral-Dirtable
 
     public override void Initialize()
     {
@@ -60,6 +62,8 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
 
         if (_damageableSystem.TryChangeDamage((target, damageableComponent), ev.Damage, out var damage, component.IgnoreResistances, origin: component.Shooter) && Exists(component.Shooter))
         {
+            _dirt.AddBloodDirtFromDamage(target, component.Shooter.Value, damage, true); // Respiral-Dirtable
+
             if (!deleted)
             {
                 _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, Filter.Pvs(target, entityManager: EntityManager));

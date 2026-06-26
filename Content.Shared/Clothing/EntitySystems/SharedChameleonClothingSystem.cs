@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Access.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Contraband;
+using Content.Shared.DirtVisuals; // Respiral-Dirtable
 using Content.Shared.Emp;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
@@ -116,6 +117,19 @@ public abstract partial class SharedChameleonClothingSystem : EntitySystem
         {
             _clothingSystem.CopyVisuals(uid, otherClothing, clothing);
         }
+
+        // Respiral-Dirtable-start
+        // dirtable logic
+        if (TryComp(uid, out DirtableComponent? dirtable) &&
+            proto.TryGetComponent(out DirtableComponent? protoDirtable, Factory))
+        {
+            dirtable.DirtSpritePath = protoDirtable.DirtSpritePath;
+            dirtable.DirtState = protoDirtable.DirtState;
+            dirtable.FoldingDirtState = protoDirtable.FoldingDirtState;
+            dirtable.EquippedDirtState = protoDirtable.EquippedDirtState;
+            Dirty(uid, dirtable);
+        }
+        // Respiral-Dirtable-end
 
         // appearance data logic
         if (TryComp(uid, out AppearanceComponent? appearance) &&

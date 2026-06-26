@@ -183,6 +183,7 @@
   - type: EdgeSpreader
     id: Puddle
   - type: StepTrigger
+  - type: DirtSource # Respiral-Dirtable
   - type: Edible
     edible: Drink
     delay: 3

@@ -5,6 +5,7 @@ using Content.Client.Inventory;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
+using Content.Shared.DirtVisuals; // Respiral-Dirtable
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
@@ -355,6 +356,73 @@ public sealed partial class ClientClothingSystem : ClothingSystem
                 }
             }
         }
+
+        // Respiral-Dirtable-start
+        if (TryComp<DirtableComponent>(equipment, out var dirtable) &&
+            dirtable.IsDirty &&
+            !revealedLayers.Contains($"dirt_{equipment}"))
+        {
+            RSI? dirtRsi = null;
+            if (dirtable.DirtSpritePath != null)
+            {
+                dirtRsi = _cache.GetResource<RSIResource>(
+                    SpriteSpecifierSerializer.TextureRoot / dirtable.DirtSpritePath).RSI;
+            }
+
+            if (dirtRsi != null)
+            {
+                var state = dirtable.EquippedDirtState;
+                if (!string.IsNullOrEmpty(clothingComponent.EquippedPrefix))
+                    state = $"{clothingComponent.EquippedPrefix}-{state}";
+                if (inventory.SpeciesId != null && dirtRsi.TryGetState($"{state}-{inventory.SpeciesId}", out _))
+                    state = $"{state}-{inventory.SpeciesId}";
+
+                if (dirtRsi.TryGetState(state, out _))
+                {
+                    var dirtLayer = new PrototypeLayerData
+                    {
+                        RsiPath = dirtable.DirtSpritePath,
+                        State = state,
+                        Color = dirtable.DirtColor
+                    };
+
+                    var dirtKey = $"dirt_{equipment}";
+                    if (slotLayerExists)
+                    {
+                        index++;
+                        _sprite.AddBlankLayer((equipee, sprite), index);
+                        _sprite.LayerMapSet((equipee, sprite), dirtKey, index);
+                    }
+                    else
+                    {
+                        index = _sprite.LayerMapReserve((equipee, sprite), dirtKey);
+                    }
+
+                    // Accounting for a displacements
+                    if (sprite[index] is Layer layer)
+                    {
+                        _sprite.LayerSetData((equipee, sprite), index, dirtLayer);
+                        _sprite.LayerSetOffset(layer, layer.Offset + slotDef.Offset);
+                        revealedLayers.Add(dirtKey);
+
+                        if (displacementData is not null)
+                        {
+                            if (_displacement.TryAddDisplacement(
+                                displacementData,
+                                (equipee, sprite),
+                                index,
+                                dirtKey,
+                                out var displacementKey))
+                            {
+                                revealedLayers.Add(displacementKey);
+                                index++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // Respiral-Dirtable-end
 
         RaiseLocalEvent(equipment, new EquipmentVisualsUpdatedEvent(equipee, slot, revealedLayers), true);
     }
