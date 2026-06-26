@@ -194,6 +194,11 @@ binds:
 - function: OpenEmotesMenu
   type: State
   key: Y
+# Respiral-Add-start
+- function: OfferItem
+  type: State
+  key: F
+# Respiral-Add-end
 - function: TextCursorSelect
   # TextCursorSelect HAS to be above ExamineEntity
   # So that LineEdit receives it correctly.
