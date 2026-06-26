@@ -84,7 +84,7 @@
     global: true
   - type: RadarConsole
     followEntity: true
-  - type: CargoOrderConsole
+  # - type: CargoOrderConsole # Respiral-Edit
   - type: CrewMonitoringConsole
   - type: GeneralStationRecordConsole
     canDeleteEntries: true
@@ -110,6 +110,10 @@
   - type: BypassInteractionChecks
   - type: ExplosionResistance
     damageCoefficient: 0
+  # Respiral-start
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 30
+  # Respiral-end
 
 - type: entity
   abstract: true
