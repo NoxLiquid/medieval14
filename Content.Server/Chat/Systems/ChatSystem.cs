@@ -275,6 +275,21 @@ public sealed partial class ChatSystem : SharedChatSystem
                 break;
         }
     }
+
+    // Respiral-start
+    /// <inheritdoc/>
+    public override void SendMessageToOne(
+        EntityUid target, string message,
+        Color? colorOverride = null)
+    {
+        if (!TryComp<ActorComponent>(target, out var actor))
+            return;
+
+        var color = colorOverride ?? Color.White;
+        _chatManager.ChatMessageToOne(ChatChannel.Server, message,
+            message, target, false, actor.PlayerSession.Channel, color);
+    }
+    // Respiral-end
 }
 
 /// <summary>
