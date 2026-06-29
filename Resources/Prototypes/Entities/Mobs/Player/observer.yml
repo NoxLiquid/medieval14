@@ -31,6 +31,7 @@
   - type: CEZLevelGhostMover
   - type: CEZPhysics
     autoStep: false
+    velocityGravity: false
   # Respiral-ZLeveling-end
 
 # shared parent between aghosts, replay spectators and normal observers

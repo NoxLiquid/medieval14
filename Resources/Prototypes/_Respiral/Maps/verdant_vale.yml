@@ -22,6 +22,9 @@
         - type: StationJobs
           availableJobs:
             MedievalPilligrim: [ -1, -1 ]
+        - type: Gravity
+          enabled: true
+        - type: CEAutoGridGravity
 
 - type: zMap
   id: MedievalVerdantVale

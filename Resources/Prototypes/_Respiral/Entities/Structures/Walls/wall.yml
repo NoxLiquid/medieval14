@@ -1,43 +1,4 @@
 - type: entity
-  parent: MedievalBaseStructureWall
-  id: MedievalBaseWall
-  abstract: true
-  components:
-  - type: Occluder
-  - type: Sprite
-    drawdepth: Mobs
-  - type: SpriteFade
-  - type: Tag
-    tags:
-    - MedievalWall
-
-- type: entity
-  parent: MedievalBaseWall
-  id: MedievalBaseStoneWall
-  abstract: true
-  components:
-  - type: Damageable
-    damageModifierSet: MedievalStone
-  - type: Injurable
-    damageContainer: MedievalInorganic
-  - type: IconSmooth
-    key: walls
-    base: stonebricks
-
-- type: entity
-  parent: MedievalBaseWall
-  id: MedievalBaseWoodWall
-  abstract: true
-  components:
-  - type: Damageable
-    damageModifierSet: MedievalWood
-  - type: Injurable
-    damageContainer: MedievalInorganic
-  - type: IconSmooth
-    key: woods
-    base: wood
-
-- type: entity
   abstract: true
   parent: BaseStructure
   id: MedievalBaseStructureWall
@@ -91,6 +52,47 @@
     resistance: 2
   - type: BlockWeather
   - type: SunShadowCast
+  - type: CEZLevelHighGround
+  - type: CEZGridConnector
+
+- type: entity
+  parent: MedievalBaseStructureWall
+  id: MedievalBaseWall
+  abstract: true
+  components:
+  - type: Occluder
+  - type: Sprite
+    drawdepth: Mobs
+  - type: SpriteFade
+  - type: Tag
+    tags:
+    - MedievalWall
+
+- type: entity
+  parent: MedievalBaseWall
+  id: MedievalBaseStoneWall
+  abstract: true
+  components:
+  - type: Damageable
+    damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: IconSmooth
+    key: walls
+    base: stonebricks
+
+- type: entity
+  parent: MedievalBaseWall
+  id: MedievalBaseWoodWall
+  abstract: true
+  components:
+  - type: Damageable
+    damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: IconSmooth
+    key: woods
+    base: wood
 
 - type: entity
   parent: MedievalBaseWoodWall
