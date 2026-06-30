@@ -453,6 +453,13 @@ public abstract partial class SharedChatSystem : EntitySystem
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null)
     { }
+
+    // Respiral-start
+    public virtual void SendMessageToOne(
+        EntityUid target, string message,
+        Color? colorOverride = null)
+    { }
+    // Respiral-end
 }
 
 /// <summary>

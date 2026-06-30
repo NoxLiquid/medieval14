@@ -1,0 +1,203 @@
+# Средневековый мусоропровод (disposal), работающий без электричества.
+# Каркас и юнит наследуют немощную базу BaseMachine (без ApcPowerReceiver),
+# поэтому SharedPowerReceiverSystem.IsPowered возвращает true и слив пневматики
+# работает чисто по таймеру давления, без питания. Спрайты продублированы в
+# namespace _Respiral, электронные слои каркаса (cables/electronics) удалены.
+
+# --- Каркас (рама) ---
+- type: entity
+  id: MedievalDisposalMachineFrame
+  name: каркас мусоропровода
+  description: Деревянный каркас, рассчитанный на давление пневматической системы сброса.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Anchorable
+  - type: Pullable
+  - type: Construction
+    graph: MedievalDisposalMachine
+    node: frame
+  - type: Damageable
+    damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:ChangeConstructionNodeBehavior
+        node: start
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    sprite: _Respiral/Structures/Piping/high_pressure_machine_frame.rsi
+    layers:
+    - state: frame
+      map: [ "enum.ConstructionVisuals.Layer" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ConstructionVisuals.Key:
+        enum.ConstructionVisuals.Layer:
+          frame_unit: { state: frame_unit }
+          frame_inlet: { state: frame_inlet }
+          frame_outlet: { state: frame_outlet }
+  - type: MedievalPhysicalPriced
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200 # 2 доски
+
+# --- База юнита мусоропровода (без питания) ---
+- type: entity
+  abstract: true
+  id: MedievalDisposalUnitBase
+  parent: BaseMachine
+  description: Пневматический мусоропровод, сбрасывающий содержимое в трубы.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Disposal
+  components:
+  - type: DisposalUnit
+    container:
+      occludes: true
+      showEnts: false
+      ents: []
+    whitelist:
+      components:
+      - Item
+      - Body
+  - type: Climbable
+    vaultable: false
+  - type: Sprite
+    sprite: _Respiral/Structures/Piping/disposal.rsi
+    layers:
+    - map: [ "enum.DisposalUnitVisualLayers.Base" ]
+      state: disposal
+    - map: [ "enum.DisposalUnitVisualLayers.OverlayFlushing" ]
+      state: disposal
+      visible: false
+    - map: [ "enum.DisposalUnitVisualLayers.OverlayCharging" ]
+      state: dispover-ready
+    - map: [ "enum.DisposalUnitVisualLayers.OverlayFull" ]
+      state: dispover-full
+      visible: false
+    - map: [ "enum.DisposalUnitVisualLayers.OverlayEngaged" ]
+      state: dispover-handle
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.DisposalUnitVisuals.IsReady:
+        enum.DisposalUnitVisualLayers.Base:
+          True: { state: disposal }
+          False: { state: disposal-charging }
+      enum.DisposalUnitVisuals.IsFlushing:
+        enum.DisposalUnitVisualLayers.OverlayFlushing:
+          True: { visible: true }
+          False: { visible: false }
+      enum.DisposalUnitVisuals.IsEngaged:
+        enum.DisposalUnitVisualLayers.OverlayEngaged:
+          True: { visible: true }
+          False: { visible: false }
+      enum.DisposalUnitVisuals.IsCharging:
+        enum.DisposalUnitVisualLayers.OverlayCharging:
+          True: { state: dispover-charge, visible: true }
+          False: { state: dispover-ready, visible: true }
+      enum.DisposalUnitVisuals.IsFull:
+        enum.DisposalUnitVisualLayers.OverlayFull:
+          True: { visible: true }
+          False: { visible: false }
+      enum.AnchorVisuals.Anchored:
+        enum.DisposalUnitVisualLayers.Base:
+          True: { state: disposal }
+          False: { state: condisposal }
+        enum.DisposalUnitVisualLayers.OverlayEngaged:
+          False: { visible: false }
+        enum.DisposalUnitVisualLayers.OverlayCharging:
+          False: { visible: false }
+        enum.DisposalUnitVisualLayers.OverlayFull:
+          False: { visible: false }
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Damageable
+    damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalBoard:
+            min: 1
+            max: 1
+  - type: Appearance
+  - type: UserInterface
+    interfaces:
+      enum.DisposalUnitUiKey.Key:
+        type: DisposalUnitBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      DisposalUnitComponent: !type:Container
+  - type: MedievalPhysicalPriced
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300 # 3 доски (каркас 2 + юнит 1)
+
+- type: entity
+  id: MedievalDisposalUnit
+  parent: MedievalDisposalUnitBase
+  name: мусоропровод
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Piping/disposal.rsi
+    snapCardinals: true
+  - type: Construction
+    graph: MedievalDisposalMachine
+    node: disposal_unit
+  - type: ThrowInsertContainer
+    containerId: DisposalUnitComponent
+    probability: 0.67
+  - type: RequireProjectileTarget

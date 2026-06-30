@@ -1,0 +1,84 @@
+# Магические мечи из адамантина и магических кристаллов.
+# Не крафтятся — появляются только как лут/спавн.
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalFireBlade
+  name: огненный клинок
+  description: Меч из адамантина, напитанный магическими кристаллами. Его лезвие пылает вечным пламенем.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/fire_blade.rsi
+    state: icon
+    layers:
+    - state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 24
+        Heat: 12
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Damageable
+    damageModifierSet: MedievalAdamantine
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 200
+      MedievalRawManaCrystal: 100
+
+- type: entity
+  parent: MedievalBaseSword
+  id: MedievalSpectralBlade
+  name: призрачный клинок
+  description: Меч из адамантина, напитанный магическими кристаллами. От его лезвия веет могильным холодом.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/spectral_blade.rsi
+    state: icon
+    layers:
+    - state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 24
+        Cold: 12
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Damageable
+    damageModifierSet: MedievalAdamantine
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedAdamantine: 200
+      MedievalRawManaCrystal: 100

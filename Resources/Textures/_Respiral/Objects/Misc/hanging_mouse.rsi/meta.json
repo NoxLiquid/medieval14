@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "by ledniky (discord:726481288713732147) for Respiral",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "mouse_hanged",
+      "directions": 1
+    }
+  ]
+}

@@ -8,19 +8,25 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 |---|---|
 | `construction.md` | Construction graphs, recipes, structure prototypes |
 | `combat.md` | Damage system, modifiers, Destructible balance |
-| `containers.md` | EntityStorage, бочки (Barrel), SolutionContainer на структурах, визуализаторы |
-| `bureaucracy.md` | Бумага, свитки, папки, паспорт, штампы (средневековые) |
-| `economy.md` | Монеты, кошелёк, драгоценные камни как материалы |
-| `inventory.md` | Слоты инвентаря, визуализация одежды, sex-specific спрайты |
-| `clothing.md` | Прототипы одежды (Medieval*), RSI state-конвенции, материал→урон/состав, импорт паков, стартовое снаряжение профессий |
-| `skill_system.md` | Система навыков, MeleeSkill, модификаторы изучения |
-| `mobs.md` | NPC, монстры, фракции, базовые прототипы мобов |
-| `trade_console.md` | Торговая система: заказ через CargoOrderConsole, доставка через CargoPallet (Buy/Sell), продажа через CargoPalletConsole |
-| `communications.md` | Связующий магический шар (средневековая консоль коммуникаций) |
-| `biomes.md` | Биомы, процедурная генерация карт, слои, маркеры, Gateway |
-| `zlevels.md` | Z-уровни (вертикальные карты), CEZLevelsSystem, ZNetwork |
-| `localization.md` | Локализация (FTL), синхронизация ru-RU с en-US, паритет переменных и message ID |
-| `testing.md` | Интеграционные тесты, CI-стратегия (Respiral блокирующий / апстрим неблокирующий), `--filter`, префиксы ID |
+| `interface.md` | UI/HUD: custom alert icons (health, crit, death, bleed, stamina) |
+| `mana.md` | Mana system: pool, spending, regeneration via TimeWindow, alert indicator |
+| `spell.md` | Spells (Action + form event) and elements (first-class), data-driven, ball as example |
+| `containers.md` | EntityStorage, barrels (Barrel), SolutionContainer on structures, visualizers |
+| `bureaucracy.md` | Paper, scrolls, folders, passport, stamps (medieval) |
+| `identity.md` | Entity recognition: heraldry, passport, Model B (binding by description). DESIGN, partially implemented |
+| `economy.md` | Coins, wallet, gemstones as materials |
+| `inventory.md` | Inventory slots, clothing visualization, sex-specific sprites |
+| `clothing.md` | Clothing prototypes (Medieval*), RSI state conventions, material→damage/composition, pack imports, profession starting gear |
+| `flora.md` | Trees and bushes, `MedievalBaseTree`, RandomSprite convention, flora sprite-pack imports |
+| `skill_system.md` | Skill system, NeededSkillForMelee, learning modifiers |
+| `mobs.md` | NPCs, monsters, factions, base mob prototypes |
+| `trade_console.md` | Trade system: ordering via CargoOrderConsole, delivery via CargoPallet (Buy/Sell), selling via CargoPalletConsole |
+| `communications.md` | Connecting magic ball (medieval communications console) |
+| `disposal.md` | Power-free disposal, link between disposal pipes and tiles |
+| `biomes.md` | Biomes, procedural map generation, layers, markers, Gateway |
+| `zlevels.md` | Z-levels (vertical maps), CEZLevelsSystem, ZNetwork |
+| `localization.md` | Localization (FTL), syncing ru-RU with en-US, parity of variables and message IDs |
+| `testing.md` | Integration tests, CI strategy (Respiral blocking / upstream non-blocking), `--filter`, ID prefixes |
 
 ## Key Architectural Rules
 
@@ -31,6 +37,6 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 
 ## Prototype Inheritance Rules (SS14)
 
-- **Словари** (dict/map) при наследовании **мержатся** — дочерний прототип добавляет только новые ключи, родительские сохраняются автоматически. НЕ дублировать апстримные ключи.
-- **Списки** (sequence/list) при наследовании **заменяются** — если нужно сохранить родительские элементы, перечислять их явно.
-- Это критично для `StationCargoOrderDatabase.orders` (dict) vs `.markets` (list) и аналогичных компонентов.
+- **Dictionaries** (dict/map) are **merged** on inheritance — a child prototype only adds new keys, parent keys are preserved automatically. Do NOT duplicate upstream keys.
+- **Lists** (sequence/list) are **replaced** on inheritance — if you need to keep parent elements, list them explicitly.
+- This is critical for `StationCargoOrderDatabase.orders` (dict) vs `.markets` (list) and similar components.

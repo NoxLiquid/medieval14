@@ -133,6 +133,23 @@ public sealed partial class SkillSystem : EntitySystem
             component.Skills[prototypeId] = Math.Min(1f, progress);
     }
 
+    /// <summary>
+    ///     Собирает названия навыков в одну строку через запятую (для описаний при осмотре).
+    ///     Пропускает прототипы, которых нет.
+    /// </summary>
+    public string GetSkillNames(List<ProtoId<SkillPrototype>> skills)
+    {
+        var names = new List<string>();
+
+        foreach (var skill in skills)
+        {
+            if (_prototypeManager.TryIndex(skill, out var skillPrototype) && skillPrototype != null)
+                names.Add(skillPrototype.Name);
+        }
+
+        return string.Join(", ", names);
+    }
+
     public bool CheckRequiredSkills(EntityUid user, List<ProtoId<SkillPrototype>> neededSkills)
     {
         if (!TryComp<SkillComponent>(user, out var skillComponent))

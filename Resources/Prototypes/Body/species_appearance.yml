@@ -22,7 +22,6 @@
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     # Respiral-Start - слой штанов (LEGS): над бельём, но ПОД нательной одеждой (рубаха/туника поверх штанов)
-    # и под конечностями/экипировкой. Без этой закладки pants рендерится в конец списка — поверх всего.
     - map: ["pants"]
     # Respiral-End
     - map: ["jumpsuit"]

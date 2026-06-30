@@ -42,6 +42,12 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Reactive
+    reactions:
+    - reagents: [Water, SpaceCleaner]
+      methods: [Touch]
+      effects:
+      - !type:WashDirt
 
 # === BASE INNER CLOTHING ===
 - type: entity
@@ -397,5 +403,4 @@
     clothingVisuals:
       underwearb:
       - state: equipped-UNDERWEARB
-
 

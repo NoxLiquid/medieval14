@@ -110,6 +110,10 @@
   - type: BypassInteractionChecks
   - type: ExplosionResistance
     damageCoefficient: 0
+  # Respiral-start
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 30
+  # Respiral-end
 
 - type: entity
   abstract: true

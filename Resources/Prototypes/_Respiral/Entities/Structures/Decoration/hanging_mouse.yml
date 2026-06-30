@@ -1,0 +1,41 @@
+# Подвешенная мышь — декорация (можно уничтожить). Спрайт ledniky для Respiral.
+- type: entity
+  parent: BaseStructure
+  id: MedievalHangingMouse
+  suffix: Средневековье
+  name: подвешенная мышь
+  description: Дохлая мышь, подвешенная за хвост. Чьё-то предупреждение или просто запасы на чёрный день.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Misc/hanging_mouse.rsi
+    state: mouse_hanged
+    noRot: true
+    drawdepth: Mobs
+  - type: SpriteFade
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  # Декорация не блокирует проход
+  - type: Fixtures
+    fixtures: {}
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: "/Audio/Effects/bite.ogg"
+  - type: Damageable
+    damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+  - type: Appearance

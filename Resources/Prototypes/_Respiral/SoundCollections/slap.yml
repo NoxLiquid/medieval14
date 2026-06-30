@@ -1,0 +1,7 @@
+- type: soundCollection
+  id: Slaps
+  files:
+    - /Audio/_Respiral/Interacrtions/Slaps/woman-slap.ogg
+    - /Audio/_Respiral/Interacrtions/Slaps/clap1.ogg
+    - /Audio/_Respiral/Interacrtions/Slaps/clap2.ogg
+    - /Audio/_Respiral/Interacrtions/Slaps/pat_1.ogg

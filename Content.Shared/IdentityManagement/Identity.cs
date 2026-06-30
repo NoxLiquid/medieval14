@@ -1,4 +1,5 @@
-﻿using Content.Shared.Ghost;
+﻿using Content.Shared._Respiral.Identity.Components; // Respiral - KnownFacesComponent: знакомые «видят сквозь» аноним
+using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement.Components;
 
 namespace Content.Shared.IdentityManagement;
@@ -38,16 +39,27 @@ public static class Identity
             return uidName;
 
         var identName = ent.GetComponent<MetaDataComponent>(ident.Value).EntityName;
-        if (viewer == null || !CanSeeThroughIdentity(uid, viewer.Value, ent))
-        {
+
+        // Respiral-Start - себя/призрак видят настоящее имя; знакомые — имя из предъявленного им
+        // паспорта (KnownFaces); остальные — аноним. Имя из паспорта может быть ложным.
+        if (viewer == null)
             return identName;
-        }
-        if (uidName == identName)
+
+        if (uid == viewer.Value || ent.HasComponent<GhostComponent>(viewer.Value))
+            return uidName == identName ? uidName : $"{uidName} ({identName})";
+
+        if (ent.TryGetComponent<KnownFacesComponent>(viewer.Value, out var known)
+            && known.Known.TryGetValue(ent.GetNetEntity(uid), out var face))
         {
-            return uidName;
+            // Истинное имя (если известно) важнее показанного по паспорту; иначе — последнее показанное.
+            if (face.TrueName is { } trueName)
+                return trueName;
+            if (face.ShownNames.Count > 0)
+                return face.ShownNames[^1];
         }
 
-        return $"{uidName} ({identName})";
+        return identName;
+        // Respiral-End
     }
 
     /// <summary>
@@ -72,9 +84,20 @@ public static class Identity
 
     public static bool CanSeeThroughIdentity(EntityUid uid, EntityUid viewer, IEntityManager ent)
     {
-        // Would check for uid == viewer here but I think it's better for you to see yourself
-        // how everyone else will see you, otherwise people will probably get confused and think they aren't disguised
-        return ent.HasComponent<GhostComponent>(viewer);
+        // Respiral-Start - себя знаешь всегда; знакомые «видят сквозь» аноним и читают настоящее имя.
+        if (ent.HasComponent<GhostComponent>(viewer))
+            return true;
+
+        // Упрощение: пока НЕ проверяем, скрыто ли лицо (знакомый под маской должен бы не узнаваться).
+        // uid == viewer заменяет прежнее «видеть себя как все».
+        if (uid == viewer)
+            return true;
+        if (ent.TryGetComponent<KnownFacesComponent>(viewer, out var known)
+            && known.Known.ContainsKey(ent.GetNetEntity(uid)))
+            return true;
+
+        return false;
+        // Respiral-End
     }
 
 }

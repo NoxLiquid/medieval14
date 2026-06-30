@@ -11,11 +11,8 @@
   id: MedievalLordGear
   equipment:
     jumpsuit: MedievalClothingInnerEliteManjete
-    outerClothing: MedievalClothingOuterArmorLord
     neck: MedievalClothingNeckLordCape
     head: MedievalClothingHeadCrown
-    pants: MedievalClothingLegsMiddleArmor
-    shoes: MedievalClothingShoesRich
 
 - type: job
   id: MedievalKnight
@@ -30,10 +27,7 @@
   id: MedievalKnightGear
   equipment:
     jumpsuit: MedievalClothingInnerEliteMetal
-    outerClothing: MedievalClothingOuterArmorMedium
     head: MedievalClothingHeadHelmet
-    pants: MedievalClothingLegsLightArmor
-    shoes: MedievalClothingShoesLeather
 
 - type: job
   id: MedievalCitySteward
@@ -50,7 +44,6 @@
     jumpsuit: MedievalClothingInnerEliteCloth
     head: MedievalClothingHeadFeatherHat
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesRich
 
 - type: job
   id: MedievalTreasurer
@@ -66,4 +59,3 @@
   equipment:
     jumpsuit: MedievalClothingInnerEliteHalf
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesRich

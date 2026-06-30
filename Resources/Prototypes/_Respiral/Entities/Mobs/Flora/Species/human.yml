@@ -47,7 +47,7 @@
 
 - type: entity
   parent: BaseSpeciesAppearance
-  id: AppearanceMedievalHuman
+  id: MedievalAppearanceHuman
   name: medieval human appearance
   components:
   - type: Inventory
@@ -83,9 +83,15 @@
     species: MedievalHuman
 
 - type: entity
+  parent: BaseSpeciesMobOrganic
+  id: MedievalBaseSpeciesMobOrganic
+  components:
+  - type: Mana
+
+- type: entity
   parent:
-  - AppearanceMedievalHuman
-  - BaseSpeciesMobOrganic
+  - MedievalAppearanceHuman
+  - MedievalBaseSpeciesMobOrganic
   id: MedievalMobHuman
   name: человек
   components:

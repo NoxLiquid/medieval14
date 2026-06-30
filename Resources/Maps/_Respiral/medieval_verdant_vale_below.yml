@@ -272,7 +272,7 @@ entities:
     - type: Transform
       pos: -28.5,-8.5
       parent: 1
-- proto: MedievalClothingUniformTest
+- proto: MedievalMappingMarker
   entities:
   - uid: 20
     components:

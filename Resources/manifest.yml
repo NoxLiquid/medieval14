@@ -1,5 +1,6 @@
-﻿defaultWindowTitle: Space Station 14
-windowIconSet: /Textures/Logo/icon
-splashLogo: /Textures/Logo/logo.png
-
+﻿# Respiral-Start - брендинг: иконка окна и заставка берутся из _Respiral/Logo
+defaultWindowTitle: RESPIRAL
+windowIconSet: /Textures/_Respiral/Logo/icon
+splashLogo: /Textures/_Respiral/Logo/logo.png
+# Respiral-End
 # PJB PLEASE

@@ -38,7 +38,7 @@
   suffix: Большой, Без ягод
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Big/big_bush.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Big/big_bush.rsi
     layers:
     - state: big_bush01
       map: ["random"]
@@ -59,7 +59,7 @@
   suffix: Большой, Тройника
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Big/big_troynika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Big/big_troynika.rsi
     layers:
     - state: big_troynika_b
       map: ["flora"]
@@ -67,8 +67,9 @@
     harvestPrototype: FoodBerriesTroynika
     maxYield: 5
     minYield: 3
-    minGrowthTime: 600
-    maxGrowthTime: 1200 # От 10 до 20 минут
+    growthWindow:
+      min: 10m
+      max: 20m # От 10 до 20 минут
     harvestDuration: 25
   - type: GenericVisualizer
     visuals:
@@ -84,7 +85,7 @@
   suffix: Большой, Феолика
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Big/big_feolika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Big/big_feolika.rsi
     layers:
     - state: big_feolika_b
       map: ["flora"]
@@ -92,8 +93,9 @@
     harvestPrototype: FoodBerriesFeolika
     maxYield: 5
     minYield: 3
-    minGrowthTime: 600
-    maxGrowthTime: 1200 # От 10 до 20 минут
+    growthWindow:
+      min: 10m
+      max: 20m # От 10 до 20 минут
     harvestDuration: 25
   - type: GenericVisualizer
     visuals:
@@ -109,7 +111,7 @@
   suffix: Большой, Чернохвостка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Big/big_chernohvostka.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Big/big_chernohvostka.rsi
     layers:
     - state: big_chernohvostka_b
       map: ["flora"]
@@ -117,8 +119,9 @@
     harvestPrototype: FoodBerriesBlacktail
     maxYield: 5
     minYield: 3
-    minGrowthTime: 600
-    maxGrowthTime: 1200 # От 10 до 20 минут
+    growthWindow:
+      min: 10m
+      max: 20m # От 10 до 20 минут
     harvestDuration: 25
   - type: GenericVisualizer
     visuals:
@@ -134,7 +137,7 @@
   suffix: Большой, Синячка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Big/big_sinyachka.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Big/big_sinyachka.rsi
     layers:
     - state: big_sinyachka_b
       map: ["flora"]
@@ -142,8 +145,9 @@
     harvestPrototype: FoodBerriesSinyachka
     maxYield: 5
     minYield: 3
-    minGrowthTime: 600
-    maxGrowthTime: 1200 # От 10 до 20 минут
+    growthWindow:
+      min: 10m
+      max: 20m # От 10 до 20 минут
     harvestDuration: 25
   - type: GenericVisualizer
     visuals:
@@ -159,7 +163,7 @@
   suffix: Большой, Тяфлика, Насыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Big/big_tyaflika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Big/big_tyaflika.rsi
     layers:
     - state: big_tyaflika_b
       map: ["flora"]
@@ -167,8 +171,9 @@
     harvestPrototype: FoodBerriesTyaflikaSaturated
     maxYield: 5
     minYield: 3
-    minGrowthTime: 600
-    maxGrowthTime: 1200 # От 10 до 20 минут
+    growthWindow:
+      min: 10m
+      max: 20m # От 10 до 20 минут
     harvestDuration: 25
   - type: GenericVisualizer
     visuals:
@@ -184,7 +189,7 @@
   suffix: Большой, Тяфлика, Средняя
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Big/big_tyaflika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Big/big_tyaflika.rsi
     layers:
     - state: big_tyaflika_b
       map: ["flora"]
@@ -192,8 +197,9 @@
     harvestPrototype: FoodBerriesTyaflikaNormalSaturated
     maxYield: 5
     minYield: 3
-    minGrowthTime: 600
-    maxGrowthTime: 1200 # От 10 до 20 минут
+    growthWindow:
+      min: 10m
+      max: 20m # От 10 до 20 минут
     harvestDuration: 25
   - type: GenericVisualizer
     visuals:
@@ -209,7 +215,7 @@
   suffix: Большой, Тяфлика, Ненасыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Big/big_tyaflika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Big/big_tyaflika.rsi
     layers:
     - state: big_tyaflika_b
       map: ["flora"]
@@ -217,8 +223,9 @@
     harvestPrototype: FoodBerriesTyaflikaUnsaturated
     maxYield: 5
     minYield: 3
-    minGrowthTime: 600
-    maxGrowthTime: 1200 # От 10 до 20 минут
+    growthWindow:
+      min: 10m
+      max: 20m # От 10 до 20 минут
     harvestDuration: 25
   - type: GenericVisualizer
     visuals:
@@ -236,7 +243,7 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: _Respiral/Objects/Misc/Bushes/Big/big_tyaflika.rsi
+      - sprite: _Respiral/Objects/Flora/Bushes/Big/big_tyaflika.rsi
         state: big_tyaflika_b
   - type: RandomSpawner
     prototypes:
@@ -251,7 +258,7 @@
   suffix: Большой, Златка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Big/big_zlatka.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Big/big_zlatka.rsi
     layers:
     - state: big_zlatka_b
       map: ["flora"]
@@ -259,8 +266,9 @@
     harvestPrototype: FoodBerriesZlatka
     maxYield: 5
     minYield: 3
-    minGrowthTime: 600
-    maxGrowthTime: 1200 # От 10 до 20 минут
+    growthWindow:
+      min: 10m
+      max: 20m # От 10 до 20 минут
     harvestDuration: 25
   - type: GenericVisualizer
     visuals:
@@ -277,7 +285,7 @@
   suffix: Средний, Без ягод
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_bush.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_bush.rsi
     layers:
     - state: medium_bush01
       map: ["random"]
@@ -298,7 +306,7 @@
   suffix: Средний, Тройника
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_troynika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_troynika.rsi
     layers:
     - state: medium_troynika_b
       map: ["flora"]
@@ -306,8 +314,9 @@
     harvestPrototype: FoodBerriesTroynika
     maxYield: 3
     minYield: 2
-    minGrowthTime: 480
-    maxGrowthTime: 900 # От 8 до 15 минут
+    growthWindow:
+      min: 8m
+      max: 15m # От 8 до 15 минут
     harvestDuration: 15
   - type: GenericVisualizer
     visuals:
@@ -323,7 +332,7 @@
   suffix: Средний, Феолика
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_feolika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_feolika.rsi
     layers:
     - state: medium_feolika_b
       map: ["flora"]
@@ -331,8 +340,9 @@
     harvestPrototype: FoodBerriesFeolika
     maxYield: 3
     minYield: 2
-    minGrowthTime: 480
-    maxGrowthTime: 900 # От 8 до 15 минут
+    growthWindow:
+      min: 8m
+      max: 15m # От 8 до 15 минут
     harvestDuration: 15
   - type: GenericVisualizer
     visuals:
@@ -348,7 +358,7 @@
   suffix: Средний, Чернохвостка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_chernohvostka.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_chernohvostka.rsi
     layers:
     - state: medium_chernohvostka_b
       map: ["flora"]
@@ -356,8 +366,9 @@
     harvestPrototype: FoodBerriesBlacktail
     maxYield: 3
     minYield: 2
-    minGrowthTime: 480
-    maxGrowthTime: 900 # От 8 до 15 минут
+    growthWindow:
+      min: 8m
+      max: 15m # От 8 до 15 минут
     harvestDuration: 15
   - type: GenericVisualizer
     visuals:
@@ -373,7 +384,7 @@
   suffix: Средний, Синячка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_sinyachka.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_sinyachka.rsi
     layers:
     - state: medium_sinyachka_b
       map: ["flora"]
@@ -381,8 +392,9 @@
     harvestPrototype: FoodBerriesSinyachka
     maxYield: 3
     minYield: 2
-    minGrowthTime: 480
-    maxGrowthTime: 900 # От 8 до 15 минут
+    growthWindow:
+      min: 8m
+      max: 15m # От 8 до 15 минут
     harvestDuration: 15
   - type: GenericVisualizer
     visuals:
@@ -398,7 +410,7 @@
   suffix: Средний, Тяфлика, Насыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_tyaflika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_tyaflika.rsi
     layers:
     - state: medium_tyaflika_b
       map: ["flora"]
@@ -406,8 +418,9 @@
     harvestPrototype: FoodBerriesTyaflikaSaturated
     maxYield: 3
     minYield: 2
-    minGrowthTime: 480
-    maxGrowthTime: 900 # От 8 до 15 минут
+    growthWindow:
+      min: 8m
+      max: 15m # От 8 до 15 минут
     harvestDuration: 15
   - type: GenericVisualizer
     visuals:
@@ -423,7 +436,7 @@
   suffix: Средний, Тяфлика, Средне насыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_tyaflika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_tyaflika.rsi
     layers:
     - state: medium_tyaflika_b
       map: ["flora"]
@@ -431,8 +444,9 @@
     harvestPrototype: FoodBerriesTyaflikaNormalSaturated
     maxYield: 3
     minYield: 2
-    minGrowthTime: 480
-    maxGrowthTime: 900 # От 8 до 15 минут
+    growthWindow:
+      min: 8m
+      max: 15m # От 8 до 15 минут
     harvestDuration: 15
   - type: GenericVisualizer
     visuals:
@@ -448,7 +462,7 @@
   suffix: Средний, Тяфлика, Ненасыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_tyaflika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_tyaflika.rsi
     layers:
     - state: medium_tyaflika_b
       map: ["flora"]
@@ -456,8 +470,9 @@
     harvestPrototype: FoodBerriesTyaflikaUnsaturated
     maxYield: 3
     minYield: 2
-    minGrowthTime: 480
-    maxGrowthTime: 900 # От 8 до 15 минут
+    growthWindow:
+      min: 8m
+      max: 15m # От 8 до 15 минут
     harvestDuration: 15
   - type: GenericVisualizer
     visuals:
@@ -475,7 +490,7 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_tyaflika.rsi
+      - sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_tyaflika.rsi
         state: medium_tyaflika_b
   - type: RandomSpawner
     prototypes:
@@ -490,7 +505,7 @@
   suffix: Средний, Златка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Medium/medium_zlatka.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Medium/medium_zlatka.rsi
     layers:
     - state: medium_zlatka_b
       map: ["flora"]
@@ -498,8 +513,9 @@
     harvestPrototype: FoodBerriesZlatka
     maxYield: 3
     minYield: 2
-    minGrowthTime: 480
-    maxGrowthTime: 900 # От 8 до 15 минут
+    growthWindow:
+      min: 8m
+      max: 15m # От 8 до 15 минут
     harvestDuration: 15
   - type: GenericVisualizer
     visuals:
@@ -516,7 +532,7 @@
   suffix: Маленький, Без ягод
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Small/small_bush.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Small/small_bush.rsi
     layers:
     - state: small_bush01
       map: ["random"]
@@ -537,7 +553,7 @@
   suffix: Маленький, Тройника
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Small/small_troynika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Small/small_troynika.rsi
     layers:
     - state: small_troynika_b
       map: ["flora"]
@@ -545,8 +561,9 @@
     harvestPrototype: FoodBerriesTroynika
     maxYield: 2
     minYield: 1
-    minGrowthTime: 300
-    maxGrowthTime: 480 # От 5 до 8 минут
+    growthWindow:
+      min: 5m
+      max: 8m # От 5 до 8 минут
     harvestDuration: 10
   - type: GenericVisualizer
     visuals:
@@ -562,7 +579,7 @@
   suffix: Маленький, Феолика
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Small/small_feolika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Small/small_feolika.rsi
     layers:
     - state: small_feolika_b
       map: ["flora"]
@@ -570,8 +587,9 @@
     harvestPrototype: FoodBerriesFeolika
     maxYield: 2
     minYield: 1
-    minGrowthTime: 300
-    maxGrowthTime: 480 # От 5 до 8 минут
+    growthWindow:
+      min: 5m
+      max: 8m # От 5 до 8 минут
     harvestDuration: 10
   - type: GenericVisualizer
     visuals:
@@ -587,7 +605,7 @@
   suffix: Маленький, Чернохвостка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Small/small_blacktail.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Small/small_blacktail.rsi
     layers:
     - state: small_blacktail_b
       map: ["flora"]
@@ -595,8 +613,9 @@
     harvestPrototype: FoodBerriesBlacktail
     maxYield: 2
     minYield: 1
-    minGrowthTime: 300
-    maxGrowthTime: 480 # От 5 до 8 минут
+    growthWindow:
+      min: 5m
+      max: 8m # От 5 до 8 минут
     harvestDuration: 10
   - type: GenericVisualizer
     visuals:
@@ -613,7 +632,7 @@
   suffix: Маленький, Синячка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Small/small_sinyachka.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Small/small_sinyachka.rsi
     layers:
     - state: small_sinyachka_b
       map: ["flora"]
@@ -621,8 +640,9 @@
     harvestPrototype: FoodBerriesSinyachka
     maxYield: 2
     minYield: 1
-    minGrowthTime: 300
-    maxGrowthTime: 480 # От 5 до 8 минут
+    growthWindow:
+      min: 5m
+      max: 8m # От 5 до 8 минут
     harvestDuration: 10
   - type: GenericVisualizer
     visuals:
@@ -638,7 +658,7 @@
   suffix: Маленький, Тяфлика, Насыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Small/small_tyaflika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Small/small_tyaflika.rsi
     layers:
     - state: small_tyaflika_b
       map: ["flora"]
@@ -646,8 +666,9 @@
     harvestPrototype: FoodBerriesTyaflikaSaturated
     maxYield: 2
     minYield: 1
-    minGrowthTime: 300
-    maxGrowthTime: 480 # От 5 до 8 минут
+    growthWindow:
+      min: 5m
+      max: 8m # От 5 до 8 минут
     harvestDuration: 10
   - type: GenericVisualizer
     visuals:
@@ -663,7 +684,7 @@
   suffix: Маленький, Тяфлика, Средне насыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Small/small_tyaflika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Small/small_tyaflika.rsi
     layers:
     - state: small_tyaflika_b
       map: ["flora"]
@@ -671,8 +692,9 @@
     harvestPrototype: FoodBerriesTyaflikaNormalSaturated
     maxYield: 2
     minYield: 1
-    minGrowthTime: 300
-    maxGrowthTime: 480 # От 5 до 8 минут
+    growthWindow:
+      min: 5m
+      max: 8m # От 5 до 8 минут
     harvestDuration: 10
   - type: GenericVisualizer
     visuals:
@@ -688,7 +710,7 @@
   suffix: Маленький, Тяфлика, Ненасыщенная
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Small/small_tyaflika.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Small/small_tyaflika.rsi
     layers:
     - state: small_tyaflika_b
       map: ["flora"]
@@ -696,8 +718,9 @@
     harvestPrototype: FoodBerriesTyaflikaUnsaturated
     maxYield: 2
     minYield: 1
-    minGrowthTime: 300
-    maxGrowthTime: 480 # От 5 до 8 минут
+    growthWindow:
+      min: 5m
+      max: 8m # От 5 до 8 минут
     harvestDuration: 10
   - type: GenericVisualizer
     visuals:
@@ -715,7 +738,7 @@
   - type: Sprite
     layers:
       - state: green
-      - sprite: _Respiral/Objects/Misc/Bushes/Small/small_tyaflika.rsi
+      - sprite: _Respiral/Objects/Flora/Bushes/Small/small_tyaflika.rsi
         state: small_tyaflika_b
   - type: RandomSpawner
     prototypes:
@@ -730,7 +753,7 @@
   suffix: Маленький, Златка
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Misc/Bushes/Small/small_zlatka.rsi
+    sprite: _Respiral/Objects/Flora/Bushes/Small/small_zlatka.rsi
     layers:
     - state: small_zlatka_b
       map: ["flora"]
@@ -738,8 +761,9 @@
     harvestPrototype: FoodBerriesZlatka
     maxYield: 2
     minYield: 1
-    minGrowthTime: 300
-    maxGrowthTime: 480 # От 5 до 8 минут
+    growthWindow:
+      min: 5m
+      max: 8m # От 5 до 8 минут
     harvestDuration: 10
   - type: GenericVisualizer
     visuals:

@@ -82,8 +82,8 @@ public sealed partial class ItemSystem : SharedItemSystem
         }
     }
 
+    // Respiral-Start
     /// <summary>
-    ///     Respiral-Start
     ///     Пытается создать предварительно настроенные версии визуальных слоев explicit inhand, используя HeldPrefix.
     ///     Возвращается к исходным слоям, если предварительно настроенные состояния не существуют.
     /// </summary>
@@ -129,7 +129,7 @@ public sealed partial class ItemSystem : SharedItemSystem
 
         return prefixed;
     }
-    /// Respiral-end
+    // Respiral-end
 
     /// <summary>
     ///     If no explicit in-hand visuals were specified, this attempts to populate with default values.

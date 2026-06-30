@@ -1,0 +1,25 @@
+using Content.Shared._Respiral.Dirt.Components;
+using Content.Shared.Chemistry.EntitySystems;
+using Robust.Shared.Physics.Events;
+
+namespace Content.Shared._Respiral.Dirt;
+
+public sealed partial class PuddleContactSystem : EntitySystem
+{
+    [Dependency] private SharedDirtSystem _dirt = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<DirtSourceComponent, StartCollideEvent>(OnCollide);
+    }
+
+    private void OnCollide(EntityUid uid, DirtSourceComponent comp, ref StartCollideEvent args)
+    {
+        if (!_solution.TryGetSolution(uid, "puddle", out _, out var puddleSolution))
+            return;
+
+        _dirt.ApplyDirtToClothing(args.OtherEntity, puddleSolution);
+    }
+}

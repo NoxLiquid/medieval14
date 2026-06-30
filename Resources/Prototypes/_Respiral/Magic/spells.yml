@@ -1,0 +1,71 @@
+# Базовое шаровое заклинание: вся механика снаряда — здесь, один раз. Конкретные заклинания
+# (огненный/водяной шар) — дети, меняют только элемент, ману, иконку и звук каста.
+- type: entity
+  parent: BaseAction
+  id: MedievalActionSpellFireball
+  name: spell-fireball-name
+  description: spell-fireball-desc
+  components:
+  - type: Spell
+    manaCost: 20
+  - type: Action
+    useDelay: 3
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/fireball.ogg
+    icon:
+      sprite: _Respiral/Actions/Spells/fire.rsi
+      state: fireball
+  - type: TargetAction
+    range: 30
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: MedievalProjFireBall
+
+# Заклинание «истинное имя»: нацелено на человека, через DoAfter раскрывает кастеру его
+# истинное имя (обходит аноним и ложный паспорт). Форма «ритуал по цели» — своя система.
+- type: entity
+  parent: BaseAction
+  id: MedievalActionSpellRevealTrueName
+  name: spell-reveal-truename-name
+  description: spell-reveal-truename-desc
+  components:
+  - type: Spell
+    manaCost: 25
+  - type: Action
+    useDelay: 10
+    itemIconStyle: BigAction
+    # TODO: свой значок прозрения/истинного имени (пока плейсхолдер из огня).
+    icon:
+      sprite: _Respiral/Actions/Spells/fire.rsi
+      state: fire_music
+  - type: TargetAction
+    range: 4
+    checkCanAccess: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - Identity
+    event: !type:RevealTrueNameSpellEvent
+      delay: 5
+
+- type: entity
+  parent: MedievalActionSpellFireball
+  id: MedievalActionSpellWaterball
+  name: spell-waterball-name
+  description: spell-waterball-desc
+  components:
+  - type: Spell
+    manaCost: 15
+  - type: Action
+    # TODO: свой звук водяного заклинания (пока плейсхолдер).
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/fireball.ogg
+    icon:
+      sprite: _Respiral/Actions/Spells/water.rsi
+      state: ice_shards
+  # Переопределяем снаряд на водяной (элемент зашит в самом снаряде).
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: MedievalProjWaterBall

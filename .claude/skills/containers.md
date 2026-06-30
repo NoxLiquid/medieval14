@@ -2,25 +2,25 @@
 
 ## EntityStorage (Crates, Barrels, Lockers)
 
-`EntityStorageComponent` — хранение сущностей внутри (не UI-инвентарь, а физическое исчезновение внутри).
+`EntityStorageComponent` — stores entities inside (not a UI inventory, but physical disappearance inside).
 
-### Ключевые поля
-| Поле | Умолчание | Описание |
+### Key fields
+| Field | Default | Description |
 |---|---|---|
-| `airtight` | `true` | Герметичность: если `true` — запирает воздух, человек задохнётся |
-| `open` | `false` | Состояние открыт/закрыт |
-| `capacity` | 30 | Макс. кол-во предметов |
+| `airtight` | `true` | Airtightness: if `true` — traps the air, a person suffocates |
+| `open` | `false` | Open/closed state |
+| `capacity` | 30 | Max number of items |
 
-### Визуал открытия/закрытия (EntityStorageVisuals)
+### Open/close visuals (EntityStorageVisuals)
 
-**Критически важно:** `EntityStorageVisualizerSystem` проверяет наличие слоя `StorageVisualLayers.Door` в спрайте. Если слой отсутствует — весь блок визуализации пропускается, спрайт не меняется.
+**Critically important:** `EntityStorageVisualizerSystem` checks for the presence of a `StorageVisualLayers.Door` layer in the sprite. If the layer is absent — the entire visualization block is skipped, the sprite doesn't change.
 
-Два подхода:
-1. **Base + Door** (как у MedievalBaseCrate): Base — корпус, Door — крышка/дверца
-2. **Base swap** (как у бочки): Door присутствует формально (hidden), Base меняется через `stateBaseClosed`/`stateBaseOpen`
+Two approaches:
+1. **Base + Door** (like MedievalBaseCrate): Base — body, Door — lid/door
+2. **Base swap** (like the barrel): Door is present formally (hidden), Base is swapped via `stateBaseClosed`/`stateBaseOpen`
 
 ```yaml
-# Паттерн сундуков (MedievalBaseCrate):
+# Crate pattern (MedievalBaseCrate):
 layers:
 - state: base
   map: ["enum.StorageVisualLayers.Base"]
@@ -30,7 +30,7 @@ layers:
 stateDoorOpen: open
 stateDoorClosed: closed
 
-# Паттерн бочки (MedievalBarrel):
+# Barrel pattern (MedievalBarrel):
 layers:
 - state: icon
   map: ["enum.StorageVisualLayers.Base"]
@@ -42,35 +42,35 @@ stateBaseClosed: icon
 stateBaseOpen: barrel_open
 ```
 
-### Коллизия
-Сундуки используют `CrateMask`, не `MachineMask`.
+### Collision
+Crates use `CrateMask`, not `MachineMask`.
 
-## Barrel — гибрид EntityStorage + SolutionContainer
+## Barrel — hybrid EntityStorage + SolutionContainer
 
-`BarrelComponent` (маркер) — `Content.Shared/_Respiral/Barrel/`.
+`BarrelComponent` (marker) — `Content.Shared/_Respiral/Barrel/`.
 
-### Требования
-1. Хранение предметов (EntityStorage)
-2. Хранение жидкости (SolutionContainer: `drink`, 500u)
-3. Закрытая бочка: нельзя наливать/выливать жидкость, слой заполнения скрыт
-4. Открытая бочка: можно наливать/выливать, слой виден
-5. `airtight: false` — человек внутри не задохнётся
+### Requirements
+1. Stores items (EntityStorage)
+2. Stores liquid (SolutionContainer: `drink`, 500u)
+3. Closed barrel: can't pour in/out, fill layer hidden
+4. Open barrel: can pour in/out, layer visible
+5. `airtight: false` — a person inside doesn't suffocate
 
-### Реализация блокировки переливания
+### Implementing the transfer block
 
-`BarrelSystem` (Shared) подписывается на `SolutionTransferAttemptEvent` — отменяет трансфер если `EntityStorageComponent.Open == false`.
+`BarrelSystem` (Shared) subscribes to `SolutionTransferAttemptEvent` — cancels the transfer if `EntityStorageComponent.Open == false`.
 
-### Реализация скрытия Fill-слоя
+### Implementing the Fill-layer hide
 
-**Проблема порядка визуализаторов:**
-- `SolutionContainerVisualsSystem` безусловно ставит `Fill` → `visible: true` при наличии жидкости
-- Если наш визуализатор отработает раньше — `SolutionContainerVisualsSystem` перетрёт скрытие
+**Visualizer ordering problem:**
+- `SolutionContainerVisualsSystem` unconditionally sets `Fill` → `visible: true` when liquid is present
+- If our visualizer runs first — `SolutionContainerVisualsSystem` overrides the hide
 
-**Решение:** `BarrelVisualizerSystem` (Client, `EntitySystem`, НЕ `VisualizerSystem<T>`) подписывается на `AppearanceChangeEvent` с `after: [typeof(SolutionContainerVisualsSystem)]`.
+**Solution:** `BarrelVisualizerSystem` (Client, an `EntitySystem`, NOT `VisualizerSystem<T>`) subscribes to `AppearanceChangeEvent` with `after: [typeof(SolutionContainerVisualsSystem)]`.
 
-**Почему не `VisualizerSystem<T>`:** базовый `Initialize()` подписывает обработчик без параметра `after:`. Пропуск `base.Initialize()` нарушает `RA0028`. Единственный корректный вариант — `EntitySystem` с ручными `[Dependency]` и явным ordering.
+**Why not `VisualizerSystem<T>`:** the base `Initialize()` subscribes the handler without an `after:` parameter. Skipping `base.Initialize()` violates `RA0028`. The only correct option is an `EntitySystem` with manual `[Dependency]` and explicit ordering.
 
-### Паттерн SolutionContainer на структурах
+### SolutionContainer-on-structures pattern
 
 ```yaml
 - type: SolutionContainerManager
@@ -79,7 +79,7 @@ stateBaseOpen: barrel_open
       maxVol: 500
 - type: SolutionContainerVisuals
   maxFillLevels: 5
-  fillBaseName: liq       # спрайты: liq1, liq2, liq3, liq4, liq5
+  fillBaseName: liq       # sprites: liq1, liq2, liq3, liq4, liq5
   changeColor: true
 - type: RefillableSolution
   solution: drink
@@ -92,24 +92,24 @@ stateBaseOpen: barrel_open
   maxTransferAmount: 50
 ```
 
-Для вычерпывания из бочки: предмет в руке должен иметь `SolutionTransferComponent` + `RefillableSolutionComponent` (кубки и кружки имеют через `DrinkBaseCup`).
+To scoop from the barrel: the item in hand must have `SolutionTransferComponent` + `RefillableSolutionComponent` (cups and mugs have them via `DrinkBaseCup`).
 
-### Solutions Refactor (апстрим #43412) — новая модель растворов
+### Solutions Refactor (upstream #43412) — new solution model
 
-Апстрим перешёл с `SolutionContainerManager.solutions.<id>` на компонент-на-раствор
-`Solution`. Базы еды/питья теперь сами дают раствор нужного id:
-- `SolutionFood` → `- type: Solution` с `id: food`; входит в `FoodBase`/`FoodProduceBase`.
-- `SolutionDrink` → `- type: Solution` с `id: drink`; входит в `DrinkBase`.
+Upstream moved from `SolutionContainerManager.solutions.<id>` to a per-solution component
+`Solution`. Food/drink bases now provide the needed solution id themselves:
+- `SolutionFood` → `- type: Solution` with `id: food`; part of `FoodBase`/`FoodProduceBase`.
+- `SolutionDrink` → `- type: Solution` with `id: drink`; part of `DrinkBase`.
 
-**Симптом конфликта:** если сущность наследует такую базу И при этом задаёт старый
-`SolutionContainerManager.solutions.food/drink`, движок при портировании логирует
+**Conflict symptom:** if an entity inherits such a base AND also sets the old
+`SolutionContainerManager.solutions.food/drink`, the engine logs during porting
 `[WARN] system.solution_container: Attempted to port a solution id: food ... but the
-entity already had a solution with that id`. В пуле интеграционных тестов WARN = падение.
+entity already had a solution with that id`. In the integration test pool a WARN = failure.
 
-**Фикс — заменить старый блок на новый компонент `Solution` (на один уровень меньше вложенности):**
+**Fix — replace the old block with the new `Solution` component (one level less nesting):**
 
 ```yaml
-# было (легаси):
+# was (legacy):
 - type: SolutionContainerManager
   solutions:
     food:
@@ -117,7 +117,7 @@ entity already had a solution with that id`. В пуле интеграцион�
       reagents:
       - ReagentId: JuiceCarrot
         Quantity: 4
-# стало (апстримный паттерн, ср. FoodCarrot):
+# now (upstream pattern, cf. FoodCarrot):
 - type: Solution
   solution:
     maxVol: 10
@@ -126,23 +126,23 @@ entity already had a solution with that id`. В пуле интеграцион�
       Quantity: 4
 ```
 
-`id` (`food`/`drink`) подтягивается из базы; `maxVol`/`reagents` мёржатся в неё.
-Для нескольких растворов на одной сущности — несколько компонентов `Solution` с разными `id`.
+`id` (`food`/`drink`) is pulled from the base; `maxVol`/`reagents` are merged into it.
+For multiple solutions on one entity — multiple `Solution` components with different `id`s.
 
-**Когда НЕ трогать:** `SolutionContainerManager` остаётся корректным, если сущность
-сама определяет собственный раствор и НЕ наследует базу с таким же `Solution.id`
-(бочки/структуры в `barrel.yml`, `alchem_table.yml`, `soil.yml`, `production.yml`,
-`cow.yml`, `goat.yml` — конфликта нет, их не конвертировали).
+**When NOT to touch:** `SolutionContainerManager` stays correct if the entity
+defines its own solution AND does NOT inherit a base with the same `Solution.id`
+(barrels/structures in `barrel.yml`, `alchem_table.yml`, `soil.yml`, `production.yml`,
+`cow.yml`, `goat.yml` — no conflict, they weren't converted).
 
-Конвертированы (упомянутые в варнингах middle-food/drink): `herb.yml`, `drinks.yml`
-(2 базы — `MedievalDrinkBaseCup`, `MedievalDrinkBaseBottle` — чинят всех детей-кружек/бутылок),
+Converted (mentioned in middle-food/drink warnings): `herb.yml`, `drinks.yml`
+(2 bases — `MedievalDrinkBaseCup`, `MedievalDrinkBaseBottle` — fix all their child cups/bottles),
 `Consumable/Food/produce.yml`, `RawMaterials/Seeds/produce.yml`.
 
-### Файлы
-| Путь | Содержимое |
+### Files
+| Path | Contents |
 |---|---|
-| `Content.Shared/_Respiral/Barrel/BarrelComponent.cs` | Маркер-компонент `[NetworkedComponent]` |
-| `Content.Shared/_Respiral/Barrel/BarrelSystem.cs` | Блокировка `SolutionTransferAttemptEvent` при закрытом хранилище |
-| `Content.Client/_Respiral/Barrel/BarrelVisualizerSystem.cs` | Скрытие Fill-слоя при закрытом хранилище |
-| `Resources/Prototypes/_Respiral/Entities/Structures/Furniture/barrel.yml` | Прототип `MedievalBarrel` |
-| `Resources/Locale/ru-RU/_Respiral/barrel.ftl` | Локализация popup |
+| `Content.Shared/_Respiral/Barrel/BarrelComponent.cs` | Marker component `[NetworkedComponent]` |
+| `Content.Shared/_Respiral/Barrel/BarrelSystem.cs` | Block `SolutionTransferAttemptEvent` when storage closed |
+| `Content.Client/_Respiral/Barrel/BarrelVisualizerSystem.cs` | Hide Fill layer when storage closed |
+| `Resources/Prototypes/_Respiral/Entities/Structures/Furniture/barrel.yml` | `MedievalBarrel` prototype |
+| `Resources/Locale/ru-RU/_Respiral/barrel.ftl` | Popup localization |

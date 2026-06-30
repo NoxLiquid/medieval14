@@ -1,0 +1,166 @@
+# Граф крафта средневековых труб мусоропровода.
+# Материал — MedievalBoard (обработанное дерево) ×2. Деконструкция через Prying (возврат досок).
+# Тройники переключаются между собой через Screwing (как в апстриме).
+# Электронные сегменты не портированы.
+
+- type: constructionGraph
+  id: MedievalDisposalPipe
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: pipe
+          steps:
+            - material: MedievalBoard
+              amount: 2
+              doAfter: 1
+        - to: trunk
+          steps:
+            - material: MedievalBoard
+              amount: 2
+              doAfter: 1
+        - to: bend
+          steps:
+            - material: MedievalBoard
+              amount: 2
+              doAfter: 1
+        - to: junction
+          steps:
+            - material: MedievalBoard
+              amount: 2
+              doAfter: 1
+        - to: junctionflipped
+          steps:
+            - material: MedievalBoard
+              amount: 2
+              doAfter: 1
+        - to: yJunction
+          steps:
+            - material: MedievalBoard
+              amount: 2
+              doAfter: 1
+        - to: xJunction
+          steps:
+            - material: MedievalBoard
+              amount: 2
+              doAfter: 1
+
+    - node: broken
+      entity: MedievalDisposalPipeBroken
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 1
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+
+    - node: pipe
+      entity: MedievalDisposalPipe
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+
+    - node: trunk
+      entity: MedievalDisposalTrunk
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+
+    - node: bend
+      entity: MedievalDisposalBend
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+
+    - node: junction
+      entity: MedievalDisposalJunction
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+        - to: yJunction
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: yJunction
+      entity: MedievalDisposalYJunction
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+        - to: junctionflipped
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: junctionflipped
+      entity: MedievalDisposalJunctionFlipped
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+        - to: xJunction
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: xJunction
+      entity: MedievalDisposalXJunction
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MedievalBoard
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+        - to: junction
+          steps:
+            - tool: Screwing
+              doAfter: 1

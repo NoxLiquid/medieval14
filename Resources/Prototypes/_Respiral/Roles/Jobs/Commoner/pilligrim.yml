@@ -10,8 +10,6 @@
 - type: startingGear
   id: MedievalPilligrimGear
   equipment:
-    jumpsuit: MedievalClothingInnerPeasantRags
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 

@@ -157,6 +157,10 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  # Respiral-Start
+  - type: OfferGiver # Offer
+  - type: InteractionActions # Interactions
+  # Respiral-End
 
 - type: entity
   abstract: true

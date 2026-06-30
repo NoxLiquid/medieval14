@@ -10,11 +10,9 @@
 - type: startingGear
   id: MedievalBlacksmithGear
   equipment:
-    jumpsuit: MedievalClothingInnerSimpleShirt
     gloves: MedievalClothingHandsSmithGloves
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 
 - type: job
   id: MedievalCarpenter
@@ -28,11 +26,9 @@
 - type: startingGear
   id: MedievalCarpenterGear
   equipment:
-    jumpsuit: MedievalClothingInnerSimpleShirt
     gloves: MedievalClothingHandsSmithGloves
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 
 - type: job
   id: MedievalMason
@@ -46,11 +42,9 @@
 - type: startingGear
   id: MedievalMasonGear
   equipment:
-    jumpsuit: MedievalClothingInnerSimpleShirt
     gloves: MedievalClothingHandsSmithGloves
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 
 - type: job
   id: MedievalEngineer
@@ -64,11 +58,9 @@
 - type: startingGear
   id: MedievalEngineerGear
   equipment:
-    jumpsuit: MedievalClothingInnerSimpleShirt
     gloves: MedievalClothingHandsSmithGloves
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 
 - type: job
   id: MedievalInnkeeper
@@ -82,9 +74,7 @@
 - type: startingGear
   id: MedievalInnkeeperGear
   equipment:
-    jumpsuit: MedievalClothingInnerTrimmedShirt
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 
 - type: job
   id: MedievalHerbalist
@@ -98,10 +88,8 @@
 - type: startingGear
   id: MedievalHerbalistGear
   equipment:
-    jumpsuit: MedievalClothingInnerSimpleShirt
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 
 - type: job
   id: MedievalCitizen
@@ -115,10 +103,8 @@
 - type: startingGear
   id: MedievalCitizenGear
   equipment:
-    jumpsuit: MedievalClothingInnerSimpleShirt
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 
 - type: job
   id: MedievalMerchant
@@ -132,10 +118,8 @@
 - type: startingGear
   id: MedievalMerchantGear
   equipment:
-    jumpsuit: MedievalClothingInnerTrimmedShirt
     head: MedievalClothingHeadTraderHat
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesLeather
 
 - type: job
   id: MedievalGuard
@@ -149,8 +133,6 @@
 - type: startingGear
   id: MedievalGuardGear
   equipment:
-    jumpsuit: MedievalClothingInnerSimpleShirt
     outerClothing: MedievalClothingOuterArmorIronChainmail
     head: MedievalClothingHeadHelmet
     pants: MedievalClothingLegsArmored
-    shoes: MedievalClothingShoesLeather

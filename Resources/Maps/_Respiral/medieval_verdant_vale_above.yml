@@ -1147,7 +1147,7 @@ entities:
     - type: Transform
       pos: -101.38339,-3.156479
       parent: 1
-- proto: MedievalClothingUniformTest
+- proto: MedievalMappingMarker
   entities:
   - uid: 128
     components:

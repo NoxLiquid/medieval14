@@ -178,23 +178,16 @@
   - MedievalWoodBrassKnucklesRecipe
   - MedievalIronBrassKnucklesRecipe
   # Броня
-  - MedievalClothingOuterBloodPlateArmorRecipe
-  - MedievalClothingOuterHeavyPlateArmorRecipe
-  - MedievalClothingOuterArmorGildedRecipe
-  - MedievalClothingOuterArmorChainmailRecipe
-  - MedievalClothingOuterArmorSegmentedRecipe
-  - MedievalClothingOuterArmorPracticeRecipe
-  - MedievalClothingOuterArmorLamellarRecipe
-  - MedievalClothingOuterArmorLightLamellarRecipe
   - MedievalClothingBeltChainRecipe
   - MedievalClothingBeltGoldRecipe
   - MedievalClothingBeltSilverRecipe
-  - MedievalClothingHandsChainGlovesRecipe
   - MedievalClothingHeadCrownRecipe
   - MedievalClothingHeadHeavyHelmetRecipe
   - MedievalClothingHeadHelmetRecipe
   - MedievalClothingMaskGlassesRecipe
-  - MedievalClothingShoesChainRecipe
+  - MedievalClothingShoesArmoredBootsRecipe
+  - MedievalClothingShoesHeavyArmoredBootsRecipe
+  - MedievalClothingHandsHeavyArmoredRecipe
 
 - type: latheRecipePack
   id: MedievalAnvilCandel
@@ -229,31 +222,7 @@
   - MedievalCarpetOrangeRecipe
   - MedievalCarpetPurpleRecipe
   - MedievalCarpetYellowRecipe
-  - MedievalClothingInnerDressRecipe
   - MedievalClothingInnerLongTunicRecipe
-  - MedievalClothingInnerPeasantRagsRecipe
-  - MedievalClothingInnerSimpleShirtRecipe
-  - MedievalClothingInnerTrimmedShirtRecipe
-  - MedievalClothingOuterWornTunicRecipe
-  - MedievalClothingOuterBluePharaohRobeRecipe
-  - MedievalClothingOuterGambesonRecipe
-  - MedievalClothingOuterArmorLeatherRecipe
-  - MedievalClothingOuterTravelCoatRecipe
-  - MedievalClothingOuterBattleMantleRecipe
-  - MedievalClothingOuterBlueMageMantleRecipe
-  - MedievalClothingOuterBlackLeatherCoatRecipe
-  - MedievalClothingOuterDarkLeatherMantleRecipe
-  - MedievalClothingOuterPaddedMantleRecipe
-  - MedievalClothingOuterJerkinRecipe
-  - MedievalClothingOuterKimonoRecipe
-  - MedievalClothingOuterLeatherMantleRecipe
-  - MedievalClothingOuterSleevelessTunicRecipe
-  - MedievalClothingOuterMonkRobeRecipe
-  - MedievalClothingOuterNunRobeRecipe
-  - MedievalClothingOuterAustereRobeRecipe
-  - MedievalClothingOuterDreadRobeRecipe
-  - MedievalClothingOuterWhiteDreadRobeRecipe
-  - MedievalClothingOuterWandererRobeRecipe
   - MedievalClothingBackBackpackRecipe
   - MedievalClothingBackDuffelRecipe
   - MedievalClothingBackSatchelRecipe
@@ -261,26 +230,9 @@
   - MedievalClothingBeltLeatherBlackRecipe
   - MedievalClothingBeltLeatherRedRecipe
   - MedievalClothingBeltRopeRecipe
-  - MedievalClothingHandsBlackGlovesRecipe
-  - MedievalClothingHandsLeatherGlovesRecipe
-  - MedievalClothingHandsRagGlovesRecipe
-  - MedievalClothingHeadBandanaRecipe
-  - MedievalClothingHeadCapRecipe
-  - MedievalClothingHeadCoifRecipe
   - MedievalClothingHeadFeatherHatRecipe
-  - MedievalClothingHeadHatRecipe
-  - MedievalClothingHeadJesterCapRecipe
-  - MedievalClothingHeadMinstrelCapRecipe
-  - MedievalClothingHeadWideHatRecipe
-  - MedievalClothingMaskBandanaRecipe
   - MedievalClothingMaskExecutionerRecipe
   - MedievalClothingMaskPlagueDoctorRecipe
-  - MedievalClothingShoesBlackRecipe
-  - MedievalClothingShoesJesterRecipe
-  - MedievalClothingShoesLeatherRecipe
-  - MedievalClothingShoesSimpleRecipe
-  - MedievalClothingShoesStrawRecipe
-  - MedievalClothingShoesWarmRecipe
 
 - type: latheRecipePack
   id: MedievalTannery

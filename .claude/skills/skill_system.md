@@ -1,45 +1,45 @@
-# Skill System (прокачка навыков)
+# Skill System (skill progression)
 
-## Архитектура
+## Architecture
 
-- **SkillSystem** (`Content.Server/_Respiral/Skill/SkillSystem.cs`) — основная система: `AddSkillProgress`, `GetSkillProgress`, `CanLearn`
-- **MeleeSkillSystem** (`Content.Server/_Respiral/Skill/MeleeSkillSystem.cs`) — объединённая система для боевых навыков: модификация урона + изучение навыков при ударе
-- **SkillPrototype** (`Content.Shared/_Respiral/Skills/Prototypes/SkillPrototype.cs`) — прототип навыка
+- **SkillSystem** (`Content.Server/_Respiral/Skill/SkillSystem.cs`) — the main system: `AddSkillProgress`, `GetSkillProgress`, `CanLearn`
+- **NeededSkillForMeleeSystem** (`Content.Server/_Respiral/Skill/NeededSkillForMeleeSystem.cs`) — a unified system for combat skills: damage modification + learning skills on hit
+- **SkillPrototype** (`Content.Shared/_Respiral/Skills/Prototypes/SkillPrototype.cs`) — the skill prototype
 
-## Компоненты
+## Components
 
-### MeleeSkillComponent
-Путь: `Content.Server/_Respiral/Skill/Components/MeleeSkillComponent.cs`
+### NeededSkillForMeleeComponent
+Path: `Content.Server/_Respiral/Skill/Components/NeededSkillForMeleeComponent.cs`
 
-| Поле | Тип | Описание |
+| Field | Type | Description |
 |---|---|---|
-| `Skills` | `List<ProtoId<SkillPrototype>>` | Требуемые навыки (обязательно) |
-| `Points` | `List<Dictionary<ProtoId, float>>` | Очки за удар по навыкам (обязательно) |
-| `LearnModifiers` | `List<SkillLearnModifier>` | Множители очков по белому списку цели; если цель не подходит ни под один — очки не начисляются |
-| `DamageModifiers` | `Dictionary<ProtoId, float>` | Множители урона от прогресса навыка |
+| `Skills` | `List<ProtoId<SkillPrototype>>` | Required skills (mandatory) |
+| `Points` | `List<Dictionary<ProtoId, float>>` | Points per hit by skill (mandatory) |
+| `LearnModifiers` | `List<SkillLearnModifier>` | Point multipliers by the target's whitelist; if the target matches none — no points are awarded |
+| `DamageModifiers` | `Dictionary<ProtoId, float>` | Damage multipliers from skill progress |
 
 ### SkillLearnModifier (`[DataDefinition]`)
-Путь: определён в `MeleeSkillComponent.cs`
+Path: defined in `NeededSkillForMeleeComponent.cs`
 
-| Поле | Тип | Описание |
+| Field | Type | Description |
 |---|---|---|
-| `Whitelist` | `EntityWhitelist` | Белый список цели (обязательно) |
-| `Modifier` | `float` | Множитель очков (обязательно) |
+| `Whitelist` | `EntityWhitelist` | Target whitelist (mandatory) |
+| `Modifier` | `float` | Point multiplier (mandatory) |
 
-Модификаторы стекаются мультипликативно.
+Modifiers stack multiplicatively.
 
-## Логика MeleeSkillSystem.OnMeleeSkillHit
+## NeededSkillForMeleeSystem.OnNeededSkillForMeleeHit logic
 
-1. **Урон**: `BaseDamage` умножается на `GetSkillProgress` для каждого навыка
-2. **Изучение**: для каждой попавшей сущности:
-   - Пропуск если бьёшь сам себя
-   - Вычисление множителя из `LearnModifiers` (суммирование совпавших); если 0 — пропуск
-   - Начисление `value * modifier` очков за каждый навык
+1. **Damage**: `BaseDamage` is multiplied by `GetSkillProgress` for each skill
+2. **Learning**: for each hit entity:
+   - Skip if hitting yourself
+   - Compute the multiplier from `LearnModifiers` (summing matches); if 0 — skip
+   - Award `value * modifier` points for each skill
 
-## Пример YAML
+## YAML example
 
 ```yaml
-- type: MeleeSkill
+- type: NeededSkillForMelee
   skills:
   - MedievalOneSword
   points:
@@ -51,29 +51,95 @@
     modifier: 2.0
 ```
 
-## Ремесленные навыки
+## Crafting skills
 
-| Skill ID | Название | Станок | Книга |
+| Skill ID | Name | Machine | Book |
 |---|---|---|---|
-| MedievalWoodProcessing | обработка дерева | MedievalSawmill, MedievalCarpenterTable | MedievalSkillBookWoodProcessing |
-| MedievalStoneProcessing | обработка камня | MedievalQuarry | MedievalSkillBookStoneProcessing |
-| MedievalBasicBlacksmithing | кузнечное дело | MedievalAnvil | MedievalSkillBookBasicBlacksmithing |
-| MedievalTailor | портное дело | MedievalSewing, MedievalLoom | MedievalSkillBookTailor |
-| MedievalAlchem | алхимия | MedievalAlchemTable | MedievalSkillBookAlchem |
-| MedievalJewelry | ювелирное дело | MedievalJeweler | MedievalSkillBookJewelry |
+| MedievalWoodProcessing | wood processing | MedievalSawmill, MedievalCarpenterTable | MedievalSkillBookWoodProcessing |
+| MedievalStoneProcessing | stone processing | MedievalQuarry | MedievalSkillBookStoneProcessing |
+| MedievalBasicBlacksmithing | blacksmithing | MedievalAnvil | MedievalSkillBookBasicBlacksmithing |
+| MedievalTailor | tailoring | MedievalSewing, MedievalLoom | MedievalSkillBookTailor |
+| MedievalAlchem | alchemy | MedievalAlchemTable | MedievalSkillBookAlchem |
+| MedievalJewelry | jewelry | MedievalJeweler | MedievalSkillBookJewelry |
 
-## Паттерн создания нового станка
+## Pattern for creating a new machine
 
 1. Skill → `skill.yml` (type: skill, pointsNeeded: 100)
 2. Tag → `tags.yml` (Medieval[Machine]MaterialStorage)
-3. Category → `Recipe/category.yml` (type: latheCategory) + locale в `lathe/category.ftl`
+3. Category → `Recipe/category.yml` (type: latheCategory) + locale in `lathe/category.ftl`
 4. Recipe pack → `Recipe/packs.yml` (type: latheRecipePack)
 5. Machine detail → `Parts/production.yml` (parent: MedievalBaseMachineDetail, type: MachineBoard)
 6. Machine entity → `Structures/Machine/lathe.yml` (parent: MedievalBaseLathe, NeededSkillForInteract)
-7. Книга → `Skill/book.yml` (parent: MedievalSkillBookBase, LearnSkillWhenUsing)
-8. Тег на входные материалы → добавить Medieval[Machine]MaterialStorage к нужным сущностям
-9. Граф строительства — общий MedievalMachine (не нужен кастомный)
+7. Book → `Skill/book.yml` (parent: MedievalSkillBookBase, LearnSkillWhenUsing)
+8. Tag on the input materials → add Medieval[Machine]MaterialStorage to the needed entities
+9. Construction graph — shared MedievalMachine (no custom one needed)
 
-## История
+## Skill-based usage gates
 
-- `LearnSkillWhenMeleeAttackSystem` и `LearnSkillWhenMeleeAttackComponent` — удалены, функциональность перенесена в `MeleeSkillSystem` и `MeleeSkillComponent`
+Two components (`Content.Server/_Respiral/Skill/`), both call `SkillSystem.CheckRequiredSkills`
+(which ITSELF shows the popup `skill-need-skill-message` and returns false when lacking;
+if the user has no `SkillComponent` at all — it's skipped, i.e. NPCs aren't blocked):
+
+| Component | Event (engine) | What to attach to | What it blocks |
+|---|---|---|---|
+| `NeededSkillForInteract` | `BeforeInteractionActivate` + `InteractHandEvent` | the target (machine) | activation / hand-click on the object |
+| `NeededSkillForInteractUsing` | `BeforeRangedInteractEvent` | the **used item** | applying the item TO something |
+
+- The YAML field for both — `neededSkills: [ ... ]`.
+- **Examine description (ExaminedEvent, 2026-06):** all four skill components
+  (`NeededSkillForInteract`, `NeededSkillForInteractUsing`, `NeededSkillForMelee`, `LearnSkillWhenUsing`)
+  subscribe to `ExaminedEvent` and push a string via `args.PushMarkup`. Skill names are collected by the
+  shared helper `SkillSystem.GetSkillNames(List<ProtoId<SkillPrototype>>)` (names from `SkillPrototype.Name`,
+  comma-separated). Locale `ru-RU/_respiral/skill.ftl`: `skill-exm-needed-skills` ("Using requires
+  the following skills: …") for the three "needed" components (field `NeededSkills`),
+  `skill-exm-learn-skills` ("Teaches the following skills: …") for the book (field `Skills`).
+  There's no en-US version of skill.ftl — the original is ru only (as before).
+- **`NeededSkillForInteractUsing` (2026-06):** it used to subscribe to a custom Respiral event
+  `BeforeInteractUsingEvent`, which was raised NOWHERE (never existed in any commit) → the gate was
+  dead. Switched to the engine `BeforeRangedInteractEvent` (`Content.Shared/Interaction/BeforeInteract.cs`,
+  "raised directed on the used object when clicking on another object") — the exact built-in equivalent,
+  requiring NO edits to upstream `SharedInteractionSystem`. The custom `Events/BeforeInteractUsing.cs` was removed.
+  `Handled=true` on lacking a skill → `RangedInteractDoBefore` returns true → `InteractUsingEvent`
+  on the target isn't raised (application blocked). Picking up/carrying the item is NOT blocked.
+
+## Literacy (MedievalLiteracy)
+
+- The `MedievalLiteracy` skill (`skill.yml`, `pointsNeeded: 100`, mastery = progress ≥ 1.0).
+- The book `MedievalSkillBookLiteracy` (`book.yml`, icon `book5`, `LearnSkillWhenUsing` 0.01/use → 100 reads).
+- `MedievalPen` carries `NeededSkillForInteractUsing: [MedievalLiteracy]` → without learned literacy
+  you can't write with the pen (apply it on paper/anything).
+
+### Reading paper by literacy (character substitution, 2026-06)
+
+The paper text is displayed as "scribbles", more so the lower the READER's literacy.
+
+- **Why on the client, not the server:** `PaperSystem` (Shared) sends the text via
+  `SharedUserInterfaceSystem.SetUiState` — **one state for all viewers** (there's NO per-session
+  variant in the engine). The server can't show one paper to two readers differently. So the
+  substitution is on the client at render time, based on the local `SkillComponent` (it's `[NetworkedComponent]`,
+  the client knows its own level). Tradeoff: the raw text still goes to the client (normal for SS14).
+- **Algorithm:** `Content.Shared/_Respiral/Skill/LiteracyScramble.cs` —
+  `Apply(string markup, float progress)`. The fraction of substituted letters ≈ `(1 - progress)`. Deterministic
+  (FNV-1a seed by text → no flicker), **monotonic** (literacy growth only reveals letters),
+  substitutes letters with random ones of the same alphabet/case (Cyrillic/Latin), doesn't touch spaces/punctuation/
+  digits/`[...]` tags.
+- **Hook:** `Content.Client/Paper/UI/PaperWindow.xaml.cs`, `Populate()` — Read mode only
+  (`isEditing == false`); the input field is not scrambled. The local player's literacy is taken in
+  `GetLocalLiteracy()` (`IPlayerManager.LocalEntity` → `SkillComponent.Skills[MedievalLiteracy]`;
+  no entity/component → reads everything; no skill → illiterate). Edits marked `// Respiral`.
+- **Reactivity v1:** the picture updates when the UI state updates; raised literacy with the paper open
+  → reopen. Auto-refresh on `SkillComponent` change — not done.
+- The old `_Respiral/Illiteracy` (server-side `ScrambleText` in `PaperSystem`) was reverted to upstream earlier;
+  this is a NEW, separate client-side implementation (no more binary "literate/not" — it's a gradient).
+
+### Guidebook
+The "Skills" tab (`MedievalSkills`) — child of the root `Medieval` (see identity.md about the guidebook
+structure). `Prototypes/_Respiral/Guidebook/guidebook.yml`: `MedievalSkills` (Skills.xml, overview) +
+child `MedievalSkillsLiteracy` (SkillsLiteracy.xml, literacy: learning from a primer, gradient reading,
+writing with a pen). XML in `ServerInfo/Guidebook/_Respiral/`, tab names in
+`Locale/{ru-RU,en-US}/_Respiral/guidebook.ftl` (`guide-entry-medieval-skills{,-literacy}`).
+Embed entities: `MedievalSkillBookLiteracy`, `MedievalPen`.
+
+## History
+
+- `LearnSkillWhenMeleeAttackSystem` and `LearnSkillWhenMeleeAttackComponent` — removed, functionality moved into `NeededSkillForMeleeSystem` and `NeededSkillForMeleeComponent`

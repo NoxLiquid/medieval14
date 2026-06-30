@@ -16,6 +16,9 @@
     tags:
     - Write
     - Pen
+  - type: NeededSkillForInteractUsing
+    neededSkills:
+    - MedievalLiteracy
   - type: Fixtures
     fixtures:
       fix1:

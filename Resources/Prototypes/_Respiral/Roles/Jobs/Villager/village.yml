@@ -13,7 +13,6 @@
     jumpsuit: MedievalClothingInnerLongTunic
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 
 - type: job
   id: MedievalFarmer
@@ -27,10 +26,8 @@
 - type: startingGear
   id: MedievalFarmerGear
   equipment:
-    jumpsuit: MedievalClothingInnerSimpleShirt
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesHigh
 
 - type: job
   id: MedievalPeasant
@@ -44,7 +41,5 @@
 - type: startingGear
   id: MedievalPeasantGear
   equipment:
-    jumpsuit: MedievalClothingInnerPeasantRags
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
-    shoes: MedievalClothingShoesStraw

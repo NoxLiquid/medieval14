@@ -12,6 +12,13 @@ using Robust.Shared.Utility;
 using Robust.Client.UserInterface.RichText;
 using Content.Client.UserInterface.RichText;
 using Robust.Shared.Input;
+// Respiral-Start - подмена символов на бумаге по уровню грамотности
+using Content.Shared._Respiral.Skills;
+using Content.Shared._Respiral.Skills.Components;
+using Content.Shared._Respiral.Skills.Prototypes;
+using Robust.Client.Player;
+using Robust.Shared.Prototypes;
+// Respiral-End
 
 namespace Content.Client.Paper.UI
 {
@@ -20,6 +27,13 @@ namespace Content.Client.Paper.UI
     {
         [Dependency] private IInputManager _inputManager = default!;
         [Dependency] private IResourceCache _resCache = default!;
+        // Respiral-Start - доступ к локальному игроку для чтения его грамотности
+        [Dependency] private IPlayerManager _player = default!;
+        [Dependency] private IEntityManager _entMan = default!;
+
+        // Навык грамотности, от которого зависит читаемость бумаги
+        private static readonly ProtoId<SkillPrototype> LiteracySkill = "MedievalLiteracy";
+        // Respiral-End
 
         private static Color DefaultTextColor = new(25, 25, 25);
 
@@ -251,7 +265,11 @@ namespace Content.Client.Paper.UI
             EditButtons.Visible = isEditing;
 
             var msg = new FormattedMessage();
-            msg.AddMarkupPermissive(state.Text);
+            // Respiral-Start - в режиме чтения подменяем символы по грамотности локального игрока.
+            // Поле ввода (state.Text ниже) не трогаем: писать без грамоты всё равно нельзя (перо гейтнуто).
+            var displayText = isEditing ? state.Text : LiteracyScramble.Apply(state.Text, GetLocalLiteracy());
+            msg.AddMarkupPermissive(displayText);
+            // Respiral-End 
 
             // For premade documents, we want to be able to edit them rather than
             // replace them.
@@ -319,6 +337,18 @@ namespace Content.Client.Paper.UI
             }
             return mode & _allowedResizeModes;
         }
+
+        // Respiral-Start - грамотность локального игрока (0..1) для подмены текста бумаги.
+        // Нет сущности (призрак) или нет SkillComponent → читаем всё; нет навыка в словаре → неграмотный.
+        private float GetLocalLiteracy()
+        {
+            var ent = _player.LocalEntity;
+            if (ent == null || !_entMan.TryGetComponent<SkillComponent>(ent, out var skill))
+                return 1f;
+
+            return skill.Skills.TryGetValue(LiteracySkill, out var progress) ? progress : 0f;
+        }
+        // Respiral-End 
 
         private void RunOnSaved()
         {

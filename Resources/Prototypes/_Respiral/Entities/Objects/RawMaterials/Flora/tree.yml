@@ -65,3 +65,73 @@
         tree04: ""
         tree05: ""
         tree06: ""
+
+# Фэнтезийные деревья (mini_trees.rsi, автор mars33_2.0 для Respiral)
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalTreeMini
+  name: пышное дерево
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/mini_trees.rsi
+    layers:
+    - state: green01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        green01: ""
+        green02: ""
+        green03: ""
+        green04: ""
+        green05: ""
+        green06: ""
+        green07: ""
+        green08: ""
+        green09: ""
+        green10: ""
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalTreeMiniBlack
+  name: чёрное дерево
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/mini_trees.rsi
+    layers:
+    - state: black01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        black01: ""
+        black02: ""
+        black03: ""
+        black04: ""
+        black05: ""
+        black06: ""
+        black07: ""
+        black08: ""
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalTreeMiniWhite
+  name: белое дерево
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/mini_trees.rsi
+    layers:
+    - state: white01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        white01: ""
+        white02: ""
+        white03: ""
+        white04: ""
+        white05: ""
+        white06: ""
+        white07: ""
+        white08: ""
+        white09: ""
