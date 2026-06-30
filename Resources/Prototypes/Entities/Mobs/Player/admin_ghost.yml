@@ -84,7 +84,7 @@
     global: true
   - type: RadarConsole
     followEntity: true
-  - type: CargoOrderConsole
+  # - type: CargoOrderConsole # Respiral-Edit
   - type: CrewMonitoringConsole
   - type: GeneralStationRecordConsole
     canDeleteEntries: true
