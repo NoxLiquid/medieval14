@@ -34,10 +34,11 @@ public sealed partial class FloraSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var floraQuery = EntityQueryEnumerator<FloraComponent>();
-        while (floraQuery.MoveNext(out var uid, out var flora))
+        var floraQuery = EntityQueryEnumerator<FloraComponent, MetaDataComponent>();
+        while (floraQuery.MoveNext(out var uid, out var flora, out var meta))
         {
-            if (flora.IsGrown)
+            // Не тикаем на паузе / до инициализации карты.
+            if (flora.IsGrown || meta.EntityPaused)
                 continue;
 
             if (_timedWindow.IsExpired(flora.GrowthWindow))
@@ -47,6 +48,10 @@ public sealed partial class FloraSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, FloraComponent component, MapInitEvent args)
     {
+        // Куст, размещённый уже собранным, запускает отсчёт отрастания при инициализации карты.
+        if (!component.IsGrown)
+            _timedWindow.Reset(component.GrowthWindow);
+
         UpdateAppearance(uid, component);
     }
 

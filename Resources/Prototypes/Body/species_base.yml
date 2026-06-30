@@ -103,7 +103,6 @@
   - type: SleepEmitSound
   - type: SSDIndicator
   - type: StandingState
-  - type: OfferGiver # Respiral-Offer
   - type: Crawler
   - type: Dna
   - type: MindContainer
@@ -114,7 +113,6 @@
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
-  - type: InteractionActions # Respiral-Interactions
   - type: CanHostGuardian
   - type: NpcFactionMember
     factions:

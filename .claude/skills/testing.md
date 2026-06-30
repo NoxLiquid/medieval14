@@ -71,6 +71,19 @@ Assign the required status in branch protection to `respiral-test.yml`, the upst
   (`MultipleAssertException`): missing states in an RSI or deleted RSIs. E.g.
   `fire_blade/spectral_blade` looked for `blade/handle` (see combat.md), and `test.yml`
   (`MedievalClothingUniformTest`) references the deleted `_Respiral/Clothing/Test/color.rsi`.
+- **`upstream/master` merges keep resurrecting deleted Respiral code → load crashes (2026-06).** A merge can
+  re-add files/blocks that `path` had deleted, producing duplicate registrations that crash prototype loading
+  (surface ONE at a time, `Unhandled exception` before the report — fix, rebuild, repeat):
+  - `ArgumentException: same key ... ComponentRegistration(OfferGiver/InteractionActions...)` — TWO `- type: X`
+    blocks of the same component in one prototype (`Body/species_base.yml`, `BaseSpeciesMob`: a merge duplicated
+    Respiral's `OfferGiver`/`InteractionActions`). Fix: delete the duplicate block (keep one). Detect all at once:
+    `sed -n '<proto-range>p' file | grep '- type:' | sort | uniq -d`.
+  - `InvalidOperationException: FriendlyFaction is already registered` — a merge resurrected the old
+    `Content.Server/_Respiral/Friendly/Components/Component.cs` (ns `Content.Shared.Friendly.Faction`) that the
+    refactor had replaced with `Content.Shared/_Respiral/FriendlyFaction/`. Two classes → same component name.
+    Fix: delete the resurrected old-namespace file (requires rebuild, not `--no-build`).
+  - After a merge, run the linter and clear these crashes first; the YAMLLinter exercises the same
+    prototype-load path as `RespiralMapsLoadableTest`/integration tests, so fixing it green fixes those too.
 - **As of 2026-06 the linter is CLEAN (`No errors found`).** History of what was fixed to get there:
 - The 2 `Magic/spells.yml` errors (`ProjMagicBall` not found; `element` field not on `SpellComponent`) were
   FIXED by aligning YAML to the actual code (the element abstraction is unbuilt, see [[spell]]): point each
