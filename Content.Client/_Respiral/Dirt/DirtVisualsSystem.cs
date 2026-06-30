@@ -6,7 +6,6 @@ using Content.Shared.DisplacementMap;
 using Content.Shared.Foldable;
 using Content.Shared.Inventory;
 using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
