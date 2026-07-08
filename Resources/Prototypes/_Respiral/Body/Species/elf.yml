@@ -1,0 +1,175 @@
+- type: markingsGroup
+  parent: None
+  id: MedievalElf
+  limits:
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ MedievalElfLongEars ]
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Special:
+      limit: 0
+      required: false
+
+- type: entity
+  parent: AppearanceMedievalHuman
+  id: AppearanceMedievalElf
+  categories: [ HideSpawnMenu ]
+  name: elf appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganMedievalElfTorso
+      Head: OrganMedievalElfHead
+      ArmLeft: OrganMedievalElfArmLeft
+      ArmRight: OrganMedievalElfArmRight
+      HandRight: OrganMedievalElfHandRight
+      HandLeft: OrganMedievalElfHandLeft
+      LegLeft: OrganMedievalElfLegLeft
+      LegRight: OrganMedievalElfLegRight
+      FootLeft: OrganMedievalElfFootLeft
+      FootRight: OrganMedievalElfFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: MedievalElf
+  - type: ScaleVisuals
+    scale: 1, 1.1
+
+- type: entity
+  parent:
+  - AppearanceMedievalElf
+  - MedievalMobHuman
+  id: MedievalMobElf
+  name: эльф
+  components:
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damage:
+      types:
+        Blunt: -0.07
+        Piercing: -0.07
+        Slash: -0.07
+        Heat: -0.05
+        Shock: -0.05
+        Cold: -0.05
+        Caustic: -0.05
+        Poison: -0.03
+
+- type: entity
+  parent: OrganHuman
+  id: OrganMedievalElf
+  abstract: true
+  suffix: medieval human
+
+- type: entity
+  parent: OrganMedievalElf
+  id: OrganMedievalElfExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: MedievalElf
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganMedievalElfExternal ]
+  id: OrganMedievalElfTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganMedievalElfExternal ]
+  id: OrganMedievalElfHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.FacialHair
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.Snout
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganMedievalElfExternal ]
+  id: OrganMedievalElfArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganMedievalElfExternal ]
+  id: OrganMedievalElfArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganMedievalElfExternal ]
+  id: OrganMedievalElfHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganMedievalElfExternal ]
+  id: OrganMedievalElfHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganMedievalElfExternal ]
+  id: OrganMedievalElfLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganMedievalElfExternal ]
+  id: OrganMedievalElfLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganMedievalElfExternal ]
+  id: OrganMedievalElfFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganMedievalElfExternal ]
+  id: OrganMedievalElfFootRight

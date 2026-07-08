@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Sprited by erhardsteinhauer (discord)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "nose_default",
+            "directions": 4
+        },
+        {
+            "name": "nose_crooked",
+            "directions": 4
+        },
+        {
+            "name": "nose_long",
+            "directions": 4
+        }
+    ]
+}

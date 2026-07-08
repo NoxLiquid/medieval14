@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: MedievalNamesGoblinLast
+  values:
+    prefix: names-goblin-last-dataset-
+    count: 210

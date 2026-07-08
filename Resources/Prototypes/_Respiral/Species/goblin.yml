@@ -1,0 +1,11 @@
+- type: species
+  id: MedievalGoblin
+  name: species-name-goblin
+  roundStart: true
+  prototype: MedievalMobGoblin
+  defaultSkinTone: "#7e9763"
+  dollPrototype: AppearanceMedievalGoblin
+  skinColoration: VoxFeathers
+  maleFirstNames: MedievalNamesGoblinFirstMale
+  femaleFirstNames: MedievalNamesGoblinFirstFemale
+  lastNames: MedievalNamesGoblinLast

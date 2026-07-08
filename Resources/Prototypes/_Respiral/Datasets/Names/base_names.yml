@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: MedievalNames
+  values:
+    prefix: names-medieval-dataset-
+    count: 59

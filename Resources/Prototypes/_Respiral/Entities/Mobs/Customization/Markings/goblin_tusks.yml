@@ -1,0 +1,27 @@
+- type: marking
+  id: MedievalGoblinTusksSmall
+  bodyPart: SnoutCover
+  forcedColoring: true
+  groupWhitelist: [MedievalGoblin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/goblin_tusks.rsi
+    state: tusks_small
+
+- type: marking
+  id: MedievalGoblinTusksBig
+  bodyPart: SnoutCover
+  forcedColoring: true
+  groupWhitelist: [MedievalGoblin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/goblin_tusks.rsi
+    state: tusks_big

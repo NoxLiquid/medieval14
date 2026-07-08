@@ -1,0 +1,62 @@
+- type: marking
+  id: MedievalElfLongEars
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalElf]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/elf_ears.rsi
+    state: long_ears_standard
+
+- type: marking
+  id: MedievalElfLongEarsWide
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalElf]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/elf_ears.rsi
+    state: long_ears_wide
+
+- type: marking
+  id: MedievalElfLongEarsSmall
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalElf]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/elf_ears.rsi
+    state: long_ears_small
+
+- type: marking
+  id: MedievalElfLongEarsUp
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalElf]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/elf_ears.rsi
+    state: long_ears_up
+
+- type: marking
+  id: MedievalElfLongEarsUpwards
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalElf]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/elf_ears.rsi
+    state: long_ears_upwards
+
+- type: marking
+  id: MedievalElfLongEarsTall
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalElf]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/elf_ears.rsi
+    state: long_ears_tall
+
+- type: marking
+  id: MedievalElfLongEarsThin
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalElf]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/elf_ears.rsi
+    state: long_ears_thin

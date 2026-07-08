@@ -1,0 +1,26 @@
+- type: marking
+  id: MedievalGoblinNoseBasic
+  bodyPart: Snout
+  forcedColoring: true
+  groupWhitelist: [MedievalGoblin]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/goblin_noses.rsi
+    state: nose_default
+
+- type: marking
+  id: MedievalGoblinNoseLong
+  bodyPart: Snout
+  forcedColoring: true
+  groupWhitelist: [MedievalGoblin]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/goblin_noses.rsi
+    state: nose_long
+
+- type: marking
+  id: MedievalGoblinNoseCrooked
+  bodyPart: Snout
+  forcedColoring: true
+  groupWhitelist: [MedievalGoblin]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/goblin_noses.rsi
+    state: nose_crooked
