@@ -1,0 +1,20 @@
+- files:
+  - birch_double_edge_E.png
+  - birch_double_edge_N.png
+  - birch_double_edge_S.png
+  - birch_double_edge_W.png
+  - birch_single_edge_NE.png
+  - birch_single_edge_NW.png
+  - birch_single_edge_SE.png
+  - birch_single_edge_SW.png
+  - birch_woodplanks.png
+  - birch_woodplanks_big.png
+  - birch_woodplanks_big_broken.png
+  - birch_woodplanks_broken.png
+  - birch_woodplanks_cruciform.png
+  - birch_woodplanks_cruciform_broken.png
+  - birch_woodplanks_stairways.png
+  - birch_woodplanks_stairways_broken.png
+  license: "CC-BY-SA-3.0"
+  copyright: "tgstation, Wood tiles are new tg tiles, sprited by Meowstushka and full resprited by Jaraten and Shelkarian"
+  source: "https://github.com/tgstation/tgstation"

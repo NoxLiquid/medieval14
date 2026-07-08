@@ -1,4 +1,4 @@
-- type: tile
+﻿- type: tile
   id: MedievalDirt
   name: tiles-dirt-medieval-floor
   sprite: /Textures/Tiles/dirt.png
@@ -269,7 +269,6 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
-
 
 # Камень
 
@@ -599,66 +598,6 @@
 ## Дерево
 
 - type: tile
-  id: MedievalFloorWood
-  name: tiles-wood
-  sprite: /Textures/Tiles/wood.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWood
-  heatCapacity: 10000
-
-- type: tile
-  id: MedievalFloorWoodChess
-  name: tiles-wood-chess
-  sprite: /Textures/_Respiral/Tiles/wood_chess.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodChess
-  heatCapacity: 10000
-
-- type: tile
-  id: MedievalFloorWoodChessDark
-  name: tiles-wood-chess-dark
-  sprite: /Textures/_Respiral/Tiles/wood_chess_dark.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodChessDark
-  heatCapacity: 10000
-
-- type: tile
   id: MedievalFloorWoodTile2
   name: tiles-wood2
   sprite: /Textures/Tiles/wood_tile.png
@@ -701,36 +640,108 @@
   itemDrop: MedievalPartRodWood1
   heatCapacity: 10000
 
+## Resprited wood floors
 - type: tile
+  id: MedievalDeadWoodPlanksBase
+  abstract: true
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  heatCapacity: 10000
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_double_edge_S.png
+    East: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_double_edge_E.png
+    North: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_double_edge_N.png
+    West: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_double_edge_W.png
+
+- type: tile
+  parent: MedievalDeadWoodPlanksBase
+  id: MedievalFloorWood
+  name: tiles-wood
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks.png
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWood
+
+- type: tile
+  parent: MedievalDeadWoodPlanksBase
   id: MedievalFloorWoodLarge
   name: tiles-wood-large
-  sprite: /Textures/Tiles/wood_large.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_big.png
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLarge
-  heatCapacity: 10000
 
 - type: tile
-  id: MedievalFloorWoodBlack
-  name: tiles-wood-black
-  sprite: /Textures/_Respiral/Tiles/wood_black.png
+  parent: MedievalDeadWoodPlanksBase
+  id: MedievalFloorWoodParquet
+  name: tiles-wood-parquet
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_cruciform.png
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodParquet
+
+- type: tile
+  parent: MedievalDeadWoodPlanksBase
+  id: MedievalFloorWoodChess
+  name: tiles-wood-chess
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_stairways.png
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodChess
+
+- type: tile
+  parent: MedievalDeadWoodPlanksBase
+  id: MedievalFloorWoodBroken
+  name: tiles-wood-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_broken.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodBroken
+
+- type: tile
+  parent: MedievalDeadWoodPlanksBase
+  id: MedievalFloorWoodLargeBroken
+  name: tiles-wood-large-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_big_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodLargeBroken
+
+- type: tile
+  parent: MedievalDeadWoodPlanksBase
+  id: MedievalFloorWoodParquetBroken
+  name: tiles-wood-parquet-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_cruciform_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodParquetBroken
+
+- type: tile
+  parent: MedievalDeadWoodPlanksBase
+  id: MedievalFloorWoodChessBroken
+  name: tiles-wood-chess-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_stairways_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodChessBroken
+
+- type: tile
+  id: MedievalBirchWoodPlanksBase
+  abstract: true
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -738,219 +749,95 @@
     collection: FootstepWood
   barestepSounds:
     collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodBlack
   heatCapacity: 10000
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_double_edge_S.png
+    East: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_double_edge_E.png
+    North: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_double_edge_N.png
+    West: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
 
 - type: tile
-  id: MedievalFloorWoodLargeBlack
-  name: tiles-wood-large-black
-  sprite: /Textures/_Respiral/Tiles/wood_large_black.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodBlack
-  heatCapacity: 10000
-
-- type: tile
-  id: MedievalFloorWoodParquetBlack
-  name: tiles-wood-parquet-black
-  sprite: /Textures/_Respiral/Tiles/wood_parquet_black.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodParquetBlack
-  heatCapacity: 10000
-
-- type: tile
-  id: MedievalFloorWoodChessBlack
-  name: tiles-wood-chess-black
-  sprite: /Textures/_Respiral/Tiles/wood_chess_black.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodChessBlack
-  heatCapacity: 10000
-
-- type: tile
-  id: MedievalFloorWoodDark
-  name: tiles-wood-dark
-  sprite: /Textures/_Respiral/Tiles/wood_dark.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodDark
-  heatCapacity: 10000
-
-- type: tile
-  id: MedievalFloorWoodLargeDark
-  name: tiles-wood-large-dark
-  sprite: /Textures/_Respiral/Tiles/wood_large_dark.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodLargeDark
-  heatCapacity: 10000
-
-- type: tile
-  id: MedievalFloorWoodParquetDark
-  name: tiles-wood-parquet-dark
-  sprite: /Textures/_Respiral/Tiles/wood_parquet_dark.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodParquetDark
-  heatCapacity: 10000
-
-- type: tile
+  parent: MedievalBirchWoodPlanksBase
   id: MedievalFloorWoodLight
-  name: tiles-wood-light
-  sprite: /Textures/_Respiral/Tiles/wood_light.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
+  name: tiles-wood-birch
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks.png
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLight
-  heatCapacity: 10000
 
 - type: tile
+  parent: MedievalBirchWoodPlanksBase
   id: MedievalFloorWoodLargeLight
-  name: tiles-wood-large-light
-  sprite: /Textures/_Respiral/Tiles/wood_large_light.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
+  name: tiles-wood-birch-large
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_big.png
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeLight
-  heatCapacity: 10000
 
 - type: tile
+  parent: MedievalBirchWoodPlanksBase
   id: MedievalFloorWoodParquetLight
-  name: tiles-wood-parquet-light
-  sprite: /Textures/_Respiral/Tiles/wood_parquet_light.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
+  name: tiles-wood-birch-parquet
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_cruciform.png
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetLight
-  heatCapacity: 10000
 
 - type: tile
+  parent: MedievalBirchWoodPlanksBase
   id: MedievalFloorWoodChessLight
-  name: tiles-wood-chess-light
-  sprite: /Textures/_Respiral/Tiles/wood_chess_light.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
+  name: tiles-wood-birch-chess
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_stairways.png
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChessLight
-  heatCapacity: 10000
 
 - type: tile
-  id: MedievalFloorWoodRed
-  name: tiles-wood-red
-  sprite: /Textures/_Respiral/Tiles/wood_red.png
+  parent: MedievalBirchWoodPlanksBase
+  id: MedievalFloorWoodBrokenLight
+  name: tiles-wood-birch-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_broken.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodBrokenLight
+
+- type: tile
+  parent: MedievalBirchWoodPlanksBase
+  id: MedievalFloorWoodLargeBrokenLight
+  name: tiles-wood-birch-large-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_big_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodLargeBrokenLight
+
+- type: tile
+  parent: MedievalBirchWoodPlanksBase
+  id: MedievalFloorWoodParquetBrokenLight
+  name: tiles-wood-birch-parquet-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_cruciform_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodParquetBrokenLight
+
+- type: tile
+  parent: MedievalBirchWoodPlanksBase
+  id: MedievalFloorWoodChessBrokenLight
+  name: tiles-wood-birch-chess-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_stairways_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodChessBrokenLight
+
+- type: tile
+  id: MedievalSwampWoodPlanksBase
+  abstract: true
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -958,19 +845,95 @@
     collection: FootstepWood
   barestepSounds:
     collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodRed
   heatCapacity: 10000
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_double_edge_S.png
+    East: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_double_edge_E.png
+    North: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_double_edge_N.png
+    West: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_double_edge_W.png
 
 - type: tile
-  id: MedievalFloorWoodLargeRed
-  name: tiles-wood-large-red
-  sprite: /Textures/_Respiral/Tiles/wood_large_red.png
+  parent: MedievalSwampWoodPlanksBase
+  id: MedievalFloorWoodDark
+  name: tiles-wood-swamp
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_woodplanks.png
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodDark
+
+- type: tile
+  parent: MedievalSwampWoodPlanksBase
+  id: MedievalFloorWoodLargeDark
+  name: tiles-wood-swamp-large
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_woodplanks_big.png
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodLargeDark
+
+- type: tile
+  parent: MedievalSwampWoodPlanksBase
+  id: MedievalFloorWoodParquetDark
+  name: tiles-wood-swamp-parquet
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_woodplanks_cruciform.png
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodParquetDark
+
+- type: tile
+  parent: MedievalSwampWoodPlanksBase
+  id: MedievalFloorWoodChessDark
+  name: tiles-wood-swamp-chess
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_woodplanks_stairways.png
+  variants: 12
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodChessDark
+
+- type: tile
+  parent: MedievalSwampWoodPlanksBase
+  id: MedievalFloorWoodBrokenDark
+  name: tiles-wood-swamp-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_woodplanks_broken.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodBrokenDark
+
+- type: tile
+  parent: MedievalSwampWoodPlanksBase
+  id: MedievalFloorWoodLargeBrokenDark
+  name: tiles-wood-swamp-large-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_woodplanks_big_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodLargeBrokenDark
+
+- type: tile
+  parent: MedievalSwampWoodPlanksBase
+  id: MedievalFloorWoodParquetBrokenDark
+  name: tiles-wood-swamp-parquet-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_woodplanks_cruciform_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodParquetBrokenDark
+
+- type: tile
+  parent: MedievalSwampWoodPlanksBase
+  id: MedievalFloorWoodChessBrokenDark
+  name: tiles-wood-swamp-chess-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_woodplanks_stairways_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodChessBrokenDark
+
+- type: tile
+  id: MedievalDarkWoodPlanksBase
+  abstract: true
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -978,45 +941,87 @@
     collection: FootstepWood
   barestepSounds:
     collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodLargeRed
   heatCapacity: 10000
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_double_edge_S.png
+    East: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_double_edge_E.png
+    North: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_double_edge_N.png
+    West: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
 
 - type: tile
-  id: MedievalFloorWoodParquetRed
-  name: tiles-wood-parquet-red
-  sprite: /Textures/_Respiral/Tiles/wood_parquet_red.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodParquetRed
-  heatCapacity: 10000
+  parent: MedievalDarkWoodPlanksBase
+  id: MedievalFloorWoodBlack
+  name: tiles-wood-dark
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks.png
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodBlack
 
 - type: tile
-  id: MedievalFloorWoodChessRed
-  name: tiles-wood-chess-red
-  sprite: /Textures/_Respiral/Tiles/wood_chess_red.png
+  parent: MedievalDarkWoodPlanksBase
+  id: MedievalFloorWoodLargeBlack
+  name: tiles-wood-dark-large
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_big.png
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodLargeBlack
+
+- type: tile
+  parent: MedievalDarkWoodPlanksBase
+  id: MedievalFloorWoodParquetBlack
+  name: tiles-wood-dark-parquet
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_cruciform.png
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodParquetBlack
+
+- type: tile
+  parent: MedievalDarkWoodPlanksBase
+  id: MedievalFloorWoodChessBlack
+  name: tiles-wood-dark-chess
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_stairways.png
+  variants: 8
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodChessBlack
+
+- type: tile
+  parent: MedievalDarkWoodPlanksBase
+  id: MedievalFloorWoodBrokenBlack
+  name: tiles-wood-dark-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_broken.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: MedievalLattice
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  barestepSounds:
-    collection: BarestepWood
-  itemDrop: MedievalFloorTileItemWoodChessRed
-  heatCapacity: 10000
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodBrokenBlack
+
+- type: tile
+  parent: MedievalDarkWoodPlanksBase
+  id: MedievalFloorWoodLargeBrokenBlack
+  name: tiles-wood-dark-large-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_big_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodLargeBrokenBlack
+
+- type: tile
+  parent: MedievalDarkWoodPlanksBase
+  id: MedievalFloorWoodParquetBrokenBlack
+  name: tiles-wood-dark-parquet-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_cruciform_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodParquetBrokenBlack
+
+- type: tile
+  parent: MedievalDarkWoodPlanksBase
+  id: MedievalFloorWoodChessBrokenBlack
+  name: tiles-wood-dark-chess-broken
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_stairways_broken.png
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
+  itemDrop: MedievalFloorTileItemWoodChessBrokenBlack
+

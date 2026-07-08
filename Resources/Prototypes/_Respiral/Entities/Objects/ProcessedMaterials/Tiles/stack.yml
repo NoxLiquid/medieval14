@@ -1,4 +1,4 @@
-# Трава
+﻿# Трава
 
 - type: stack
   id: MedievalFloorTileGrass
@@ -138,127 +138,201 @@
 # Дерево
 
 - type: stack
-  id: MedievalFloorTileItemWood
-  name: stack-medieval-wood-tile
-  spawn: MedievalFloorTileItemWood
-  maxCount: 15
-
-- type: stack
   id: MedievalFloorTileItemWoodPattern
   name: stack-medieval-wood-pat-tile
   spawn: MedievalFloorTileItemWoodPattern
   maxCount: 15
 
+# Resprited wood floor tiles
 - type: stack
-  id: MedievalFloorTileItemWoodChess
-  name: stack-chess-floor-tile
-  spawn: MedievalFloorTileItemWoodChess
+  id: MedievalFloorTileItemWood
+  name: stack-medieval-floor-wood
+  spawn: MedievalFloorTileItemWood
   maxCount: 15
 
 - type: stack
   id: MedievalFloorTileItemWoodLarge
-  name: stack-large-wood-floor
+  name: stack-medieval-floor-wood-large
   spawn: MedievalFloorTileItemWoodLarge
   maxCount: 15
 
 - type: stack
-  id: MedievalFloorTileItemWoodBlack
-  name: stack-black-floor-tile
-  spawn: MedievalFloorTileItemWoodBlack
-  maxCount: 15
-
-- type: stack
-  id: MedievalFloorTileItemWoodDark
-  name: stack-dark-floor-tile
-  spawn: MedievalFloorTileItemWoodDark
-  maxCount: 15
-
-- type: stack
-  id: MedievalFloorTileItemWoodLight
-  name: stack-light-floor-tile
-  spawn: MedievalFloorTileItemWoodLight
-  maxCount: 15
-
-- type: stack
-  id: MedievalFloorTileItemWoodRed
-  name: stack-red-floor-tile
-  spawn: MedievalFloorTileItemWoodRed
-  maxCount: 15
-
-- type: stack
-  id: MedievalFloorTileItemWoodLargeBlack
-  name: stack-large-black-floor-tile
-  spawn: MedievalFloorTileItemWoodLargeBlack
-  maxCount: 15
-
-- type: stack
-  id: MedievalFloorTileItemWoodLargeDark
-  name: stack-large-dark-floor-tile
-  spawn: MedievalFloorTileItemWoodLargeDark
-  maxCount: 15
-
-- type: stack
-  id: MedievalFloorTileItemWoodLargeLight
-  name: stack-large-light-floor-tile
-  spawn: MedievalFloorTileItemWoodLargeLight
-  maxCount: 15
-
-- type: stack
-  id: MedievalFloorTileItemWoodLargeRed
-  name: stack-large-red-floor-tile
-  spawn: MedievalFloorTileItemWoodLargeRed
-  maxCount: 15
-
-- type: stack
   id: MedievalFloorTileItemWoodParquet
-  name: stack-parquet-floor-tile
+  name: stack-medieval-floor-wood-parquet
   spawn: MedievalFloorTileItemWoodParquet
   maxCount: 15
 
 - type: stack
-  id: MedievalFloorTileItemWoodParquetBlack
-  name: stack-parquet-black-floor-tile
-  spawn: MedievalFloorTileItemWoodParquetBlack
+  id: MedievalFloorTileItemWoodChess
+  name: stack-medieval-floor-wood-chess
+  spawn: MedievalFloorTileItemWoodChess
   maxCount: 15
 
 - type: stack
-  id: MedievalFloorTileItemWoodParquetDark
-  name: stack-parquet-dark-floor-tile
-  spawn: MedievalFloorTileItemWoodParquetDark
+  id: MedievalFloorTileItemWoodBroken
+  name: stack-medieval-floor-wood-broken
+  spawn: MedievalFloorTileItemWoodBroken
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeBroken
+  name: stack-medieval-floor-wood-large-broken
+  spawn: MedievalFloorTileItemWoodLargeBroken
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetBroken
+  name: stack-medieval-floor-wood-parquet-broken
+  spawn: MedievalFloorTileItemWoodParquetBroken
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessBroken
+  name: stack-medieval-floor-wood-chess-broken
+  spawn: MedievalFloorTileItemWoodChessBroken
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLight
+  name: stack-medieval-floor-wood-birch
+  spawn: MedievalFloorTileItemWoodLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeLight
+  name: stack-medieval-floor-wood-birch-large
+  spawn: MedievalFloorTileItemWoodLargeLight
   maxCount: 15
 
 - type: stack
   id: MedievalFloorTileItemWoodParquetLight
-  name: stack-parquet-light-floor-tile
+  name: stack-medieval-floor-wood-birch-parquet
   spawn: MedievalFloorTileItemWoodParquetLight
   maxCount: 15
 
 - type: stack
-  id: MedievalFloorTileItemWoodParquetRed
-  name: stack-parquet-red-floor-tile
-  spawn: MedievalFloorTileItemWoodParquetRed
-  maxCount: 15
-
-- type: stack
-  id: MedievalFloorTileItemWoodChessBlack
-  name: stack-chess-black-floor-tile
-  spawn: MedievalFloorTileItemWoodChessBlack
-  maxCount: 15
-
-- type: stack
-  id: MedievalFloorTileItemWoodChessDark
-  name: stack-chess-dark-floor-tile
-  spawn: MedievalFloorTileItemWoodChessDark
-  maxCount: 15
-
-- type: stack
   id: MedievalFloorTileItemWoodChessLight
-  name: stack-chess-light-floor-tile
+  name: stack-medieval-floor-wood-birch-chess
   spawn: MedievalFloorTileItemWoodChessLight
   maxCount: 15
 
 - type: stack
-  id: MedievalFloorTileItemWoodChessRed
-  name: stack-chess-red-floor-tile
-  spawn: MedievalFloorTileItemWoodChessRed
+  id: MedievalFloorTileItemWoodBrokenLight
+  name: stack-medieval-floor-wood-birch-broken
+  spawn: MedievalFloorTileItemWoodBrokenLight
   maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeBrokenLight
+  name: stack-medieval-floor-wood-birch-large-broken
+  spawn: MedievalFloorTileItemWoodLargeBrokenLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetBrokenLight
+  name: stack-medieval-floor-wood-birch-parquet-broken
+  spawn: MedievalFloorTileItemWoodParquetBrokenLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessBrokenLight
+  name: stack-medieval-floor-wood-birch-chess-broken
+  spawn: MedievalFloorTileItemWoodChessBrokenLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodDark
+  name: stack-medieval-floor-wood-swamp
+  spawn: MedievalFloorTileItemWoodDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeDark
+  name: stack-medieval-floor-wood-swamp-large
+  spawn: MedievalFloorTileItemWoodLargeDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetDark
+  name: stack-medieval-floor-wood-swamp-parquet
+  spawn: MedievalFloorTileItemWoodParquetDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessDark
+  name: stack-medieval-floor-wood-swamp-chess
+  spawn: MedievalFloorTileItemWoodChessDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodBrokenDark
+  name: stack-medieval-floor-wood-swamp-broken
+  spawn: MedievalFloorTileItemWoodBrokenDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeBrokenDark
+  name: stack-medieval-floor-wood-swamp-large-broken
+  spawn: MedievalFloorTileItemWoodLargeBrokenDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetBrokenDark
+  name: stack-medieval-floor-wood-swamp-parquet-broken
+  spawn: MedievalFloorTileItemWoodParquetBrokenDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessBrokenDark
+  name: stack-medieval-floor-wood-swamp-chess-broken
+  spawn: MedievalFloorTileItemWoodChessBrokenDark
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodBlack
+  name: stack-medieval-floor-wood-dark
+  spawn: MedievalFloorTileItemWoodBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeBlack
+  name: stack-medieval-floor-wood-dark-large
+  spawn: MedievalFloorTileItemWoodLargeBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetBlack
+  name: stack-medieval-floor-wood-dark-parquet
+  spawn: MedievalFloorTileItemWoodParquetBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessBlack
+  name: stack-medieval-floor-wood-dark-chess
+  spawn: MedievalFloorTileItemWoodChessBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodBrokenBlack
+  name: stack-medieval-floor-wood-dark-broken
+  spawn: MedievalFloorTileItemWoodBrokenBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodLargeBrokenBlack
+  name: stack-medieval-floor-wood-dark-large-broken
+  spawn: MedievalFloorTileItemWoodLargeBrokenBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodParquetBrokenBlack
+  name: stack-medieval-floor-wood-dark-parquet-broken
+  spawn: MedievalFloorTileItemWoodParquetBrokenBlack
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileItemWoodChessBrokenBlack
+  name: stack-medieval-floor-wood-dark-chess-broken
+  spawn: MedievalFloorTileItemWoodChessBrokenBlack
+  maxCount: 15
+

@@ -1,0 +1,20 @@
+- files:
+  - dead_double_edge_E.png
+  - dead_double_edge_N.png
+  - dead_double_edge_S.png
+  - dead_double_edge_W.png
+  - dead_single_edge_NE.png
+  - dead_single_edge_NW.png
+  - dead_single_edge_SE.png
+  - dead_single_edge_SW.png
+  - dead_woodplanks.png
+  - dead_woodplanks_big.png
+  - dead_woodplanks_big_broken.png
+  - dead_woodplanks_broken.png
+  - dead_woodplanks_cruciform.png
+  - dead_woodplanks_cruciform_broken.png
+  - dead_woodplanks_stairways.png
+  - dead_woodplanks_stairways_broken.png
+  license: "CC-BY-SA-3.0"
+  copyright: "tgstation, Wood tiles are new tg tiles, sprited by Meowstushka and full resprited by Jaraten and Shelkarian"
+  source: "https://github.com/tgstation/tgstation"
