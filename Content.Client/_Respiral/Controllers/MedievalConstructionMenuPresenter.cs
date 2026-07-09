@@ -41,7 +41,7 @@ internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
     private ConstructionSystem? _constructionSystem;
     private ConstructionPrototype? _selected;
     private List<ConstructionPrototype> _favoritedRecipes = [];
-    private readonly Dictionary<string, ContainerButton> _recipeButtons = new();
+    private readonly Dictionary<ProtoId<ConstructionPrototype>, ContainerButton> _recipeButtons = new();
     private string _selectedCategory = string.Empty;
     private bool _prefixFilterEnabled;
 
@@ -175,7 +175,7 @@ internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
             return;
         }
 
-        _selected = item.Prototype;
+        _selected = item.ConstructionProto;
 
         if (_placementManager is { IsActive: true, Eraser: false })
             UpdateGhostPlacement();
@@ -207,12 +207,12 @@ internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
 
         var actualRecipes = GetAndSortRecipes(args);
 
-        var recipesList = _constructionView.Recipes;
-        var recipesGrid = _constructionView.RecipesGrid;
+        var recipesList = _constructionView.ListViewRecipes;
+        var recipesGrid = _constructionView.GridViewRecipes;
         recipesGrid.RemoveAllChildren();
 
-        _constructionView.RecipesGridScrollContainer.Visible = _constructionView.GridViewButtonPressed;
-        _constructionView.Recipes.Visible = !_constructionView.GridViewButtonPressed;
+        _constructionView.GridViewRecipesScrollContainer.Visible = _constructionView.GridViewButtonPressed;
+        _constructionView.ListViewRecipes.Visible = !_constructionView.GridViewButtonPressed;
 
         if (_constructionView.GridViewButtonPressed)
         {
@@ -235,13 +235,13 @@ internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
             {
                 Scale = new Vector2(1.2f),
             };
-            protoView.SetPrototype(recipe.TargetPrototype);
+            protoView.SetPrototype(recipe.EntityProto);
 
             var itemButton = new ContainerButton()
             {
                 VerticalAlignment = Control.VAlignment.Center,
-                Name = recipe.Prototype.Name,
-                ToolTip = recipe.Prototype.Name,
+                Name = recipe.ConstructionProto.Name,
+                ToolTip = recipe.ConstructionProto.Name,
                 ToggleMode = true,
                 Children = { protoView },
             };
@@ -264,12 +264,12 @@ internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
                     SelectGridButton(oldButton, false);
                 }
 
-                OnGridViewRecipeSelected(this, buttonToggledEventArgs.Pressed ? recipe.Prototype : null);
+                OnGridViewRecipeSelected(this, buttonToggledEventArgs.Pressed ? recipe.ConstructionProto : null);
             };
 
             recipesGrid.AddChild(itemButtonPanelContainer);
-            _recipeButtons[recipe.Prototype.ID] = itemButton;
-            var isCurrentButtonSelected = _selected == recipe.Prototype;
+            _recipeButtons[recipe.ConstructionProto.ID] = itemButton;
+            var isCurrentButtonSelected = _selected == recipe.ConstructionProto;
             itemButton.Pressed = isCurrentButtonSelected;
             SelectGridButton(itemButton, isCurrentButtonSelected);
         }
@@ -324,7 +324,7 @@ internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
         }
 
         recipes.Sort((a, b) =>
-            string.Compare(a.Prototype.Name, b.Prototype.Name, StringComparison.InvariantCulture));
+            string.Compare(a.ConstructionProto.Name, b.ConstructionProto.Name, StringComparison.InvariantCulture));
 
         return recipes;
     }

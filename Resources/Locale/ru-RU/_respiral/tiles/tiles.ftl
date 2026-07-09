@@ -25,14 +25,14 @@ tiles-stone-floor-6 = каменная плитка 6
 tiles-empty = пустота
 
 # Resprited wood floors
-tiles-wood = деревянный пол из мёртвого дерева
-tiles-wood-large = большой деревянный пол из мёртвого дерева
-tiles-wood-parquet = паркетный деревянный пол из мёртвого дерева
-tiles-wood-chess = узорчатый деревянный пол из мёртвого дерева
-tiles-wood-broken = сломанный деревянный пол из мёртвого дерева
-tiles-wood-large-broken = сломанный большой деревянный пол из мёртвого дерева
-tiles-wood-parquet-broken = сломанный паркетный деревянный пол из мёртвого дерева
-tiles-wood-chess-broken = сломанный узорчатый деревянный пол из мёртвого дерева
+tiles-wood-dead = деревянный пол из мёртвого дерева
+tiles-wood-dead-large = большой деревянный пол из мёртвого дерева
+tiles-wood-dead-parquet = паркетный деревянный пол из мёртвого дерева
+tiles-wood-dead-chess = узорчатый деревянный пол из мёртвого дерева
+tiles-wood-dead-broken = сломанный деревянный пол из мёртвого дерева
+tiles-wood-dead-large-broken = сломанный большой деревянный пол из мёртвого дерева
+tiles-wood-dead-parquet-broken = сломанный паркетный деревянный пол из мёртвого дерева
+tiles-wood-dead-chess-broken = сломанный узорчатый деревянный пол из мёртвого дерева
 tiles-wood-birch = деревянный пол из берёзового дерева
 tiles-wood-birch-large = большой деревянный пол из берёзового дерева
 tiles-wood-birch-parquet = паркетный деревянный пол из берёзового дерева

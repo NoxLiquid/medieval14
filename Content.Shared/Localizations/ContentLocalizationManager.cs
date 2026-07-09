@@ -32,6 +32,7 @@ namespace Content.Shared.Localizations
             _loc.LoadCulture(culture);
             _loc.LoadCulture(fallbackCulture); // Respiral-Localization
             _loc.SetFallbackCluture(fallbackCulture); // Respiral-Localization
+            _loc.AddFunction(culture, "MANY", FormatMany); // Respiral-Localization
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
@@ -52,18 +53,6 @@ namespace Content.Shared.Localizations
              */
             var cultureEn = new CultureInfo("en-US");
 
-            // _Respiral-start
-            _loc.AddFunction(cultureEn, "PRESSURE", FormatPressure);
-            _loc.AddFunction(cultureEn, "POWERWATTS", FormatPowerWatts);
-            _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
-            _loc.AddFunction(cultureEn, "ENERGYWATTHOURS", FormatEnergyWattHours);
-            _loc.AddFunction(cultureEn, "UNITS", FormatUnits);
-            _loc.AddFunction(cultureEn, "TOSTRING", args => FormatToString(cultureEn, args));
-            _loc.AddFunction(cultureEn, "LOC", FormatLoc);
-            _loc.AddFunction(cultureEn, "NATURALFIXED", FormatNaturalFixed);
-            _loc.AddFunction(cultureEn, "NATURALPERCENT", FormatNaturalPercent);
-            _loc.AddFunction(cultureEn, "PLAYTIME", FormatPlaytime);
-            // _Respiral-end
             _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
             _loc.AddFunction(cultureEn, "MANY", FormatMany);
         }

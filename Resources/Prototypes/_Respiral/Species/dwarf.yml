@@ -5,3 +5,10 @@
   prototype: MedievalMobDwarf
   dollPrototype: AppearanceMedievalDwarf
   skinColoration: HumanToned
+  defaultSoundsBySex:
+  - UnisexDwarf
+  - FemaleDwarf
+  - UnisexDwarf
+  voices:
+  - UnisexDwarf
+  - FemaleDwarf

@@ -13,7 +13,6 @@ namespace Content._Respiral.NPC.Operators;
 public sealed partial class FleeTargetOperator : HTNOperator
 {
     [Dependency] private IEntityManager _entManager = default!;
-    [Dependency] private IMapManager _mapManager = default!;
     private SharedMapSystem _map = default!;
     private SharedTransformSystem _transform = default!;
 
@@ -55,7 +54,7 @@ public sealed partial class FleeTargetOperator : HTNOperator
         var fleeWorldPos = ownerPos + fleeDirection * Math.Max(Distance, 0.5f);
 
         EntityCoordinates fleeCoordinates;
-        if (_mapManager.TryFindGridAt(ownerXform.MapID, fleeWorldPos, out var gridUid, out var mapGrid))
+        if (_map.TryFindGridAt(ownerXform.MapID, fleeWorldPos, out var gridUid, out var mapGrid))
         {
             fleeCoordinates = new EntityCoordinates(gridUid, _map.WorldToLocal(gridUid, mapGrid, fleeWorldPos));
         }

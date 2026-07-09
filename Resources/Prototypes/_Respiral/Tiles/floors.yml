@@ -668,7 +668,7 @@
 - type: tile
   parent: MedievalDeadWoodPlanksBase
   id: MedievalFloorWood
-  name: tiles-wood
+  name: tiles-wood-dead
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks.png
   variants: 8
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
@@ -677,7 +677,7 @@
 - type: tile
   parent: MedievalDeadWoodPlanksBase
   id: MedievalFloorWoodLarge
-  name: tiles-wood-large
+  name: tiles-wood-dead-large
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_big.png
   variants: 8
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
@@ -686,7 +686,7 @@
 - type: tile
   parent: MedievalDeadWoodPlanksBase
   id: MedievalFloorWoodParquet
-  name: tiles-wood-parquet
+  name: tiles-wood-dead-parquet
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_cruciform.png
   variants: 8
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
@@ -695,7 +695,7 @@
 - type: tile
   parent: MedievalDeadWoodPlanksBase
   id: MedievalFloorWoodChess
-  name: tiles-wood-chess
+  name: tiles-wood-dead-chess
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_stairways.png
   variants: 8
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
@@ -704,7 +704,7 @@
 - type: tile
   parent: MedievalDeadWoodPlanksBase
   id: MedievalFloorWoodBroken
-  name: tiles-wood-broken
+  name: tiles-wood-dead-broken
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_broken.png
   variants: 4
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
@@ -713,7 +713,7 @@
 - type: tile
   parent: MedievalDeadWoodPlanksBase
   id: MedievalFloorWoodLargeBroken
-  name: tiles-wood-large-broken
+  name: tiles-wood-dead-large-broken
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_big_broken.png
   variants: 4
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
@@ -722,7 +722,7 @@
 - type: tile
   parent: MedievalDeadWoodPlanksBase
   id: MedievalFloorWoodParquetBroken
-  name: tiles-wood-parquet-broken
+  name: tiles-wood-dead-parquet-broken
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_cruciform_broken.png
   variants: 4
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
@@ -731,7 +731,7 @@
 - type: tile
   parent: MedievalDeadWoodPlanksBase
   id: MedievalFloorWoodChessBroken
-  name: tiles-wood-chess-broken
+  name: tiles-wood-dead-chess-broken
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_stairways_broken.png
   variants: 4
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
