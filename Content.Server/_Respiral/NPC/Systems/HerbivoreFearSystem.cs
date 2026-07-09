@@ -12,7 +12,6 @@ public sealed partial class HerbivoreFearSystem : EntitySystem
 {
     [Dependency] private HTNSystem _htn = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IMapManager _mapManager = default!;
     [Dependency] private Robust.Shared.Random.IRobustRandom _random = default!;
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
@@ -58,7 +57,7 @@ public sealed partial class HerbivoreFearSystem : EntitySystem
         fleeDirection = Vector2.Normalize(fleeDirection);
         var fleeWorldPos = ownerPos + fleeDirection * Math.Max(distance, 0.5f);
 
-        if (_mapManager.TryFindGridAt(ownerXform.MapID, fleeWorldPos, out var gridUid, out var mapGrid))
+        if (_map.TryFindGridAt(ownerXform.MapID, fleeWorldPos, out var gridUid, out var mapGrid))
             return new EntityCoordinates(gridUid, _map.WorldToLocal(gridUid, mapGrid, fleeWorldPos));
 
         return new EntityCoordinates(ownerXform.MapUid.Value, fleeWorldPos);

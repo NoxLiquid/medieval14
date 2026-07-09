@@ -123,13 +123,13 @@ public abstract partial class SharedBiomeSystem : EntitySystem
             if (value < layer.Threshold)
                 continue;
 
-            // Respiral-start 
-            // проверка координатного региона: если тайл попадает в область BiomeRegionLayer, 
+            // Respiral-start
+            // проверка координатного региона: если тайл попадает в область BiomeRegionLayer,
             // генерируем тайл из вложенного шаблона биома
             if (layer is BiomeRegionLayer region)
             {
                 if (region.ContainsPoint(indices) &&
-                    TryGetBiomeTile(indices, ProtoManager.Index(region.Template).Layers, seed, grid, out tile))
+                    TryGetBiomeTile(indices, ProtoMan.Index(region.Template).Layers, seed, grid, out tile))
                 {
                     return true;
                 }
@@ -259,13 +259,13 @@ public abstract partial class SharedBiomeSystem : EntitySystem
             if (value < layer.Threshold)
                 continue;
 
-            // Respiral-start 
-            // проверка координатного региона: если тайл попадает в область BiomeRegionLayer, 
+            // Respiral-start
+            // проверка координатного региона: если тайл попадает в область BiomeRegionLayer,
             // спавним сущность из вложенного шаблона биома
             if (layer is BiomeRegionLayer region)
             {
                 if (region.ContainsPoint(indices) &&
-                    TryGetEntity(indices, ProtoManager.Index(region.Template).Layers, tileRef, seed, grid, out entity))
+                    TryGetEntity(indices, ProtoMan.Index(region.Template).Layers, tileRef, seed, grid, out entity))
                 {
                     return true;
                 }
@@ -351,13 +351,13 @@ public abstract partial class SharedBiomeSystem : EntitySystem
             if (value < layer.Threshold)
                 continue;
 
-            // Respiral-start 
-            // проверка координатного региона: если тайл попадает в область BiomeRegionLayer, 
+            // Respiral-start
+            // проверка координатного региона: если тайл попадает в область BiomeRegionLayer,
             // размещаем декали из вложенного шаблона биома
             if (layer is BiomeRegionLayer region)
             {
                 if (region.ContainsPoint(indices) &&
-                    TryGetDecals(indices, ProtoManager.Index(region.Template).Layers, seed, grid, out decals))
+                    TryGetDecals(indices, ProtoMan.Index(region.Template).Layers, seed, grid, out decals))
                 {
                     return true;
                 }

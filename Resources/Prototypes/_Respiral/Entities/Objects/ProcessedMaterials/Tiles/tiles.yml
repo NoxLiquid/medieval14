@@ -401,7 +401,7 @@
 - type: entity
   id: MedievalFloorTileItemWood
   parent: MedievalFloorTileItemBase
-  name: tiles-wood
+  name: деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -427,7 +427,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodLarge
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-large
+  name: большой деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -453,7 +453,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodParquet
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-parquet
+  name: паркетный деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -479,7 +479,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodChess
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-chess
+  name: узорчатый деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -505,7 +505,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodBroken
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-broken
+  name: сломанный деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -531,7 +531,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodLargeBroken
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-large-broken
+  name: сломанный большой деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -557,7 +557,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodParquetBroken
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-parquet-broken
+  name: сломанный паркетный деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -583,7 +583,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodChessBroken
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-chess-broken
+  name: сломанный узорчатый деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -609,7 +609,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodLight
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-birch
+  name: деревянный пол из берёзового дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -636,7 +636,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodLargeLight
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-birch-large
+  name: большой деревянный пол из берёзового дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -663,7 +663,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodParquetLight
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-birch-parquet
+  name: паркетный деревянный пол из берёзового дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -690,7 +690,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodChessLight
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-birch-chess
+  name: узорчатый деревянный пол из берёзового дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -717,7 +717,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodBrokenLight
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-birch-broken
+  name: сломанный деревянный пол из берёзового дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -744,7 +744,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodLargeBrokenLight
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-birch-large-broken
+  name: сломанный большой деревянный пол из берёзового дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -771,7 +771,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodParquetBrokenLight
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-birch-parquet-broken
+  name: сломанный паркетный деревянный пол из берёзового дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -798,7 +798,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodChessBrokenLight
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-birch-chess-broken
+  name: сломанный узорчатый деревянный пол из берёзового дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -825,7 +825,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodDark
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-swamp
+  name: деревянный пол из болотного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -852,7 +852,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodLargeDark
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-swamp-large
+  name: большой деревянный пол из болотного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -879,7 +879,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodParquetDark
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-swamp-parquet
+  name: паркетный деревянный пол из болотного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -906,7 +906,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodChessDark
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-swamp-chess
+  name: узорчатый деревянный пол из болотного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -933,7 +933,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodBrokenDark
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-swamp-broken
+  name: сломанный деревянный пол из болотного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -960,7 +960,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodLargeBrokenDark
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-swamp-large-broken
+  name: сломанный большой деревянный пол из болотного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -987,7 +987,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodParquetBrokenDark
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-swamp-parquet-broken
+  name: сломанный паркетный деревянный пол из болотного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -1014,7 +1014,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodChessBrokenDark
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-swamp-chess-broken
+  name: сломанный узорчатый деревянный пол из болотного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -1041,7 +1041,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodBlack
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-dark
+  name: деревянный пол из тёмного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -1068,7 +1068,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodLargeBlack
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-dark-large
+  name: большой деревянный пол из тёмного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -1095,7 +1095,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodParquetBlack
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-dark-parquet
+  name: паркетный деревянный пол из тёмного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -1122,7 +1122,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodChessBlack
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-dark-chess
+  name: узорчатый деревянный пол из тёмного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -1149,7 +1149,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodBrokenBlack
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-dark-broken
+  name: сломанный деревянный пол из тёмного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -1176,7 +1176,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodLargeBrokenBlack
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-dark-large-broken
+  name: сломанный большой деревянный пол из тёмного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -1203,7 +1203,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodParquetBrokenBlack
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-dark-parquet-broken
+  name: сломанный паркетный деревянный пол из тёмного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
@@ -1230,7 +1230,7 @@
 - type: entity
   id: MedievalFloorTileItemWoodChessBrokenBlack
   parent: MedievalFloorTileItemBase
-  name: tiles-wood-dark-chess-broken
+  name: сломанный узорчатый деревянный пол из тёмного дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
