@@ -123,7 +123,7 @@
   sprite: /Textures/_Respiral/Tiles/GrassNormalLight/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 7
+  edgeSpritePriority: 10
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/GrassNormalLight/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/GrassNormalLight/single_edge_NE.png
@@ -149,7 +149,7 @@
   sprite: /Textures/_Respiral/Tiles/GrassNormalTall/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 8
+  edgeSpritePriority: 14
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/GrassNormalTall/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/GrassNormalTall/single_edge_NE.png
@@ -175,7 +175,7 @@
   sprite: /Textures/_Respiral/Tiles/Grass/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 9
+  edgeSpritePriority: 7
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/Grass/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/Grass/single_edge_NE.png
@@ -201,7 +201,7 @@
   sprite: /Textures/_Respiral/Tiles/GrassDarkLight/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 10
+  edgeSpritePriority: 11
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/GrassDarkLight/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/GrassDarkLight/single_edge_NE.png
@@ -227,7 +227,7 @@
   sprite: /Textures/_Respiral/Tiles/Grass2/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 16
+  edgeSpritePriority: 13
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/Grass2/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/Grass2/single_edge_NE.png
@@ -279,7 +279,7 @@
   sprite: /Textures/_Respiral/Tiles/Grass3/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 12
+  edgeSpritePriority: 8
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/Grass3/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/Grass3/single_edge_NE.png
@@ -305,7 +305,7 @@
   sprite: /Textures/_Respiral/Tiles/GrassAutumnLight/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 13
+  edgeSpritePriority: 12
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/GrassAutumnLight/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/GrassAutumnLight/single_edge_NE.png
@@ -331,7 +331,7 @@
   sprite: /Textures/_Respiral/Tiles/GrassAutumnTall/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 14
+  edgeSpritePriority: 16
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/GrassAutumnTall/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/GrassAutumnTall/single_edge_NE.png
@@ -357,7 +357,7 @@
   sprite: /Textures/_Respiral/Tiles/Grass4/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 11
+  edgeSpritePriority: 15
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/Grass4/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/Grass4/single_edge_NE.png
@@ -383,7 +383,7 @@
   sprite: /Textures/_Respiral/Tiles/Grass5/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
-  edgeSpritePriority: 15
+  edgeSpritePriority: 9
   edgeSprites:
     SouthEast: /Textures/_Respiral/Tiles/Grass5/single_edge_SE.png
     NorthEast: /Textures/_Respiral/Tiles/Grass5/single_edge_NE.png
