@@ -44,10 +44,7 @@
     speechVerb: SmallMob
     allowedEmotes: ['Squeak']
   - type: Vocal
-    sounds:
-      Male: Mouse
-      Female: Mouse
-      Unsexed: Mouse
+    emoteSounds: Mouse
     wilhelmProbability: 0.001
   - type: MeleeWeapon
     soundHit:
@@ -105,7 +102,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       color: '#6d7b8d'
       state: alive
-  
+
 - type: entity
   id: MedievalMobRat3
   parent: MedievalMobRat

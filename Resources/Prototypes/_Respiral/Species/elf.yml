@@ -1,0 +1,7 @@
+- type: species
+  id: MedievalElf
+  name: species-name-elf
+  roundStart: true
+  prototype: MedievalMobElf
+  dollPrototype: AppearanceMedievalElf
+  skinColoration: HumanToned

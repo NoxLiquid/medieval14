@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   parent: FloorTileItemBase
   id: MedievalFloorTileItemBase
   suffix: Средневековье
@@ -373,52 +373,7 @@
   - type: Stack
     stackType: MedievalFloorTileAsh
 
-
 # Дерево
-
-- type: entity
-  name: large wood floor
-  parent: FloorTileItemBase
-  id: MedievalFloorTileItemWoodLarge
-  components:
-  - type: Sprite
-    state: wood-large
-  - type: Item
-    heldPrefix: wood
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodLarge
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodLarge
-
-- type: entity
-  parent: MedievalFloorTileItemWoodLarge
-  id: MedievalFloorTileItemWoodLarge5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: деревянная плитка
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWood
-  components:
-  - type: Sprite
-    state: wood
-  - type: Item
-    heldPrefix: wood
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWood
-  - type: Stack
-    stackType: MedievalFloorTileItemWood
-
-- type: entity
-  parent: MedievalFloorTileItemWood
-  id: MedievalFloorTileItemWood5
-  components:
-  - type: Stack
-    count: 5
 
 - type: entity
   name: деревянный пол с рисунком
@@ -442,20 +397,72 @@
   - type: Stack
     count: 5
 
+# Resprited wood floor tile items
 - type: entity
-  name: деревянный паркет
+  id: MedievalFloorTileItemWood
   parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodParquet
+  name: деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_parquet
+    state: wood
   - type: Item
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood
   - type: FloorTile
     outputs:
-      - MedievalFloorWood
+    - MedievalFloorWood
+  - type: Stack
+    stackType: MedievalFloorTileItemWood
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWood
+  id: MedievalFloorTileItemWood5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodLarge
+  parent: MedievalFloorTileItemBase
+  name: большой деревянный пол из мёртвого дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_big
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodLarge
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodLarge
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodLarge
+  id: MedievalFloorTileItemWoodLarge5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodParquet
+  parent: MedievalFloorTileItemBase
+  name: паркетный деревянный пол из мёртвого дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_cruciform
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodParquet
   - type: Stack
     stackType: MedievalFloorTileItemWoodParquet
   - type: PhysicalComposition
@@ -470,343 +477,18 @@
     count: 5
 
 - type: entity
-  name: напольная плитка из черного дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodBlack
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_black
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-black
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodBlack
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodBlack
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodBlack
-  id: MedievalFloorTileItemWoodBlack5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: напольная плитка из темного дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodDark
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_dark
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-dark
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodDark
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodDark
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodDark
-  id: MedievalFloorTileItemWoodDark5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: напольная плитка из светлого дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodLight
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_light
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-light
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodLight
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodLight
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodLight
-  id: MedievalFloorTileItemWoodLight5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: напольная плитка из красного дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodRed
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_red
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-red
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodRed
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodRed
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodRed
-  id: MedievalFloorTileItemWoodRed5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: большой пол из черного дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodLargeBlack
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_large_black
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-black
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodLargeBlack
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodLargeBlack
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodLargeBlack
-  id: MedievalFloorTileItemWoodLargeBlack5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: большой пол из темного дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodLargeDark
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_large_dark
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-dark
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodLargeDark
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodLargeDark
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodLargeDark
-  id: MedievalFloorTileItemWoodLargeDark5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: большой пол из светлого дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodLargeLight
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_large_light
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-light
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodLargeLight
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodLargeLight
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodLargeLight
-  id: MedievalFloorTileItemWoodLargeLight5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: большой пол из красного дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodLargeRed
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_large_red
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-red
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodLargeRed
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodLargeRed
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodLargeRed
-  id: MedievalFloorTileItemWoodLargeRed5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: паркетный пол из черного дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodParquetBlack
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_parquet_black
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-black
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodParquetBlack
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodParquetBlack
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodParquetBlack
-  id: MedievalFloorTileItemWoodParquetBlack5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: паркетный пол из темного дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodParquetDark
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_parquet_dark
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-dark
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodParquetDark
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodParquetDark
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodParquetDark
-  id: MedievalFloorTileItemWoodParquetDark5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: паркетный пол из светлого дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodParquetLight
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_parquet_light
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-light
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodParquetLight
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodParquetLight
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodParquetLight
-  id: MedievalFloorTileItemWoodParquetLight5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: паркетный пол из красного дерева
-  parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodParquetRed
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_parquet_red
-  - type: Item
-    sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-red
-  - type: FloorTile
-    outputs:
-      - MedievalFloorWoodParquetRed
-  - type: Stack
-    stackType: MedievalFloorTileItemWoodParquetRed
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalProcessedWood: 20
-
-- type: entity
-  parent: MedievalFloorTileItemWoodParquetRed
-  id: MedievalFloorTileItemWoodParquetRed5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  name: шахматный деревянный пол
-  parent: MedievalFloorTileItemBase
   id: MedievalFloorTileItemWoodChess
+  parent: MedievalFloorTileItemBase
+  name: узорчатый деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_chess
+    state: wood_stairways
   - type: Item
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood
   - type: FloorTile
     outputs:
-      - MedievalFloorWoodChess
+    - MedievalFloorWoodChess
   - type: Stack
     stackType: MedievalFloorTileItemWoodChess
   - type: PhysicalComposition
@@ -821,73 +503,204 @@
     count: 5
 
 - type: entity
-  name: шахматный пол из черного дерева
+  id: MedievalFloorTileItemWoodBroken
   parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodChessBlack
+  name: сломанный деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_chess_black
+    state: wood_broken
   - type: Item
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-black
   - type: FloorTile
     outputs:
-      - MedievalFloorWoodChessBlack
+    - MedievalFloorWoodBroken
   - type: Stack
-    stackType: MedievalFloorTileItemWoodChessBlack
+    stackType: MedievalFloorTileItemWoodBroken
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 20
 
 - type: entity
-  parent: MedievalFloorTileItemWoodChessBlack
-  id: MedievalFloorTileItemWoodChessBlack5
+  parent: MedievalFloorTileItemWoodBroken
+  id: MedievalFloorTileItemWoodBroken5
   components:
   - type: Stack
     count: 5
 
 - type: entity
-  name: шахматный пол из темного дерева
+  id: MedievalFloorTileItemWoodLargeBroken
   parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodChessDark
+  name: сломанный большой деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_chess_dark
+    state: wood_big_broken
   - type: Item
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-dark
   - type: FloorTile
     outputs:
-      - MedievalFloorWoodChessDark
+    - MedievalFloorWoodLargeBroken
   - type: Stack
-    stackType: MedievalFloorTileItemWoodChessDark
+    stackType: MedievalFloorTileItemWoodLargeBroken
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 20
 
 - type: entity
-  parent: MedievalFloorTileItemWoodChessDark
-  id: MedievalFloorTileItemWoodChessDark5
+  parent: MedievalFloorTileItemWoodLargeBroken
+  id: MedievalFloorTileItemWoodLargeBroken5
   components:
   - type: Stack
     count: 5
 
 - type: entity
-  name: шахматный пол из светлого дерева
+  id: MedievalFloorTileItemWoodParquetBroken
   parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodChessLight
+  name: сломанный паркетный деревянный пол из мёртвого дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_chess_light
+    state: wood_cruciform_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodParquetBroken
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodParquetBroken
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodParquetBroken
+  id: MedievalFloorTileItemWoodParquetBroken5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodChessBroken
+  parent: MedievalFloorTileItemBase
+  name: сломанный узорчатый деревянный пол из мёртвого дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_stairways_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodChessBroken
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodChessBroken
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodChessBroken
+  id: MedievalFloorTileItemWoodChessBroken5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodLight
+  parent: MedievalFloorTileItemBase
+  name: деревянный пол из берёзового дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_light
   - type: Item
     sprite: _Respiral/Objects/Tiles/wood.rsi
     heldPrefix: wood-light
   - type: FloorTile
     outputs:
-      - MedievalFloorWoodChessLight
+    - MedievalFloorWoodLight
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodLight
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodLight
+  id: MedievalFloorTileItemWoodLight5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodLargeLight
+  parent: MedievalFloorTileItemBase
+  name: большой деревянный пол из берёзового дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_light_big
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-light
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodLargeLight
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodLargeLight
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodLargeLight
+  id: MedievalFloorTileItemWoodLargeLight5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodParquetLight
+  parent: MedievalFloorTileItemBase
+  name: паркетный деревянный пол из берёзового дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_light_cruciform
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-light
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodParquetLight
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodParquetLight
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodParquetLight
+  id: MedievalFloorTileItemWoodParquetLight5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodChessLight
+  parent: MedievalFloorTileItemBase
+  name: узорчатый деревянный пол из берёзового дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_light_stairways
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-light
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodChessLight
   - type: Stack
     stackType: MedievalFloorTileItemWoodChessLight
   - type: PhysicalComposition
@@ -902,28 +715,542 @@
     count: 5
 
 - type: entity
-  name: шахматный пол из красного дерева
+  id: MedievalFloorTileItemWoodBrokenLight
   parent: MedievalFloorTileItemBase
-  id: MedievalFloorTileItemWoodChessRed
+  name: сломанный деревянный пол из берёзового дерева
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    state: wood_chess_red
+    state: wood_light_broken
   - type: Item
     sprite: _Respiral/Objects/Tiles/wood.rsi
-    heldPrefix: wood-red
+    heldPrefix: wood-light
   - type: FloorTile
     outputs:
-      - MedievalFloorWoodChessRed
+    - MedievalFloorWoodBrokenLight
   - type: Stack
-    stackType: MedievalFloorTileItemWoodChessRed
+    stackType: MedievalFloorTileItemWoodBrokenLight
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 20
 
 - type: entity
-  parent: MedievalFloorTileItemWoodChessRed
-  id: MedievalFloorTileItemWoodChessRed5
+  parent: MedievalFloorTileItemWoodBrokenLight
+  id: MedievalFloorTileItemWoodBrokenLight5
   components:
   - type: Stack
     count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodLargeBrokenLight
+  parent: MedievalFloorTileItemBase
+  name: сломанный большой деревянный пол из берёзового дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_light_big_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-light
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodLargeBrokenLight
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodLargeBrokenLight
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodLargeBrokenLight
+  id: MedievalFloorTileItemWoodLargeBrokenLight5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodParquetBrokenLight
+  parent: MedievalFloorTileItemBase
+  name: сломанный паркетный деревянный пол из берёзового дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_light_cruciform_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-light
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodParquetBrokenLight
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodParquetBrokenLight
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodParquetBrokenLight
+  id: MedievalFloorTileItemWoodParquetBrokenLight5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodChessBrokenLight
+  parent: MedievalFloorTileItemBase
+  name: сломанный узорчатый деревянный пол из берёзового дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_light_stairways_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-light
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodChessBrokenLight
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodChessBrokenLight
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodChessBrokenLight
+  id: MedievalFloorTileItemWoodChessBrokenLight5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodDark
+  parent: MedievalFloorTileItemBase
+  name: деревянный пол из болотного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_dark
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-dark
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodDark
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodDark
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodDark
+  id: MedievalFloorTileItemWoodDark5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodLargeDark
+  parent: MedievalFloorTileItemBase
+  name: большой деревянный пол из болотного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_dark_big
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-dark
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodLargeDark
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodLargeDark
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodLargeDark
+  id: MedievalFloorTileItemWoodLargeDark5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodParquetDark
+  parent: MedievalFloorTileItemBase
+  name: паркетный деревянный пол из болотного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_dark_cruciform
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-dark
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodParquetDark
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodParquetDark
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodParquetDark
+  id: MedievalFloorTileItemWoodParquetDark5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodChessDark
+  parent: MedievalFloorTileItemBase
+  name: узорчатый деревянный пол из болотного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_dark_stairways
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-dark
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodChessDark
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodChessDark
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodChessDark
+  id: MedievalFloorTileItemWoodChessDark5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodBrokenDark
+  parent: MedievalFloorTileItemBase
+  name: сломанный деревянный пол из болотного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_dark_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-dark
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodBrokenDark
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodBrokenDark
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodBrokenDark
+  id: MedievalFloorTileItemWoodBrokenDark5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodLargeBrokenDark
+  parent: MedievalFloorTileItemBase
+  name: сломанный большой деревянный пол из болотного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_dark_big_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-dark
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodLargeBrokenDark
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodLargeBrokenDark
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodLargeBrokenDark
+  id: MedievalFloorTileItemWoodLargeBrokenDark5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodParquetBrokenDark
+  parent: MedievalFloorTileItemBase
+  name: сломанный паркетный деревянный пол из болотного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_dark_cruciform_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-dark
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodParquetBrokenDark
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodParquetBrokenDark
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodParquetBrokenDark
+  id: MedievalFloorTileItemWoodParquetBrokenDark5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodChessBrokenDark
+  parent: MedievalFloorTileItemBase
+  name: сломанный узорчатый деревянный пол из болотного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_dark_stairways_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-dark
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodChessBrokenDark
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodChessBrokenDark
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodChessBrokenDark
+  id: MedievalFloorTileItemWoodChessBrokenDark5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodBlack
+  parent: MedievalFloorTileItemBase
+  name: деревянный пол из тёмного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_black
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-black
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodBlack
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodBlack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodBlack
+  id: MedievalFloorTileItemWoodBlack5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodLargeBlack
+  parent: MedievalFloorTileItemBase
+  name: большой деревянный пол из тёмного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_black_big
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-black
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodLargeBlack
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodLargeBlack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodLargeBlack
+  id: MedievalFloorTileItemWoodLargeBlack5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodParquetBlack
+  parent: MedievalFloorTileItemBase
+  name: паркетный деревянный пол из тёмного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_black_cruciform
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-black
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodParquetBlack
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodParquetBlack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodParquetBlack
+  id: MedievalFloorTileItemWoodParquetBlack5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodChessBlack
+  parent: MedievalFloorTileItemBase
+  name: узорчатый деревянный пол из тёмного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_black_stairways
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-black
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodChessBlack
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodChessBlack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodChessBlack
+  id: MedievalFloorTileItemWoodChessBlack5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodBrokenBlack
+  parent: MedievalFloorTileItemBase
+  name: сломанный деревянный пол из тёмного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_black_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-black
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodBrokenBlack
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodBrokenBlack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodBrokenBlack
+  id: MedievalFloorTileItemWoodBrokenBlack5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodLargeBrokenBlack
+  parent: MedievalFloorTileItemBase
+  name: сломанный большой деревянный пол из тёмного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_black_big_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-black
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodLargeBrokenBlack
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodLargeBrokenBlack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodLargeBrokenBlack
+  id: MedievalFloorTileItemWoodLargeBrokenBlack5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodParquetBrokenBlack
+  parent: MedievalFloorTileItemBase
+  name: сломанный паркетный деревянный пол из тёмного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_black_cruciform_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-black
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodParquetBrokenBlack
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodParquetBrokenBlack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodParquetBrokenBlack
+  id: MedievalFloorTileItemWoodParquetBrokenBlack5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: MedievalFloorTileItemWoodChessBrokenBlack
+  parent: MedievalFloorTileItemBase
+  name: сломанный узорчатый деревянный пол из тёмного дерева
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    state: wood_black_stairways_broken
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/wood.rsi
+    heldPrefix: wood-black
+  - type: FloorTile
+    outputs:
+    - MedievalFloorWoodChessBrokenBlack
+  - type: Stack
+    stackType: MedievalFloorTileItemWoodChessBrokenBlack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 20
+
+- type: entity
+  parent: MedievalFloorTileItemWoodChessBrokenBlack
+  id: MedievalFloorTileItemWoodChessBrokenBlack5
+  components:
+  - type: Stack
+    count: 5
+

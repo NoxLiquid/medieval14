@@ -1,0 +1,20 @@
+- files:
+  - swamp_double_edge_E.png
+  - swamp_double_edge_N.png
+  - swamp_double_edge_S.png
+  - swamp_double_edge_W.png
+  - swamp_single_edge_NE.png
+  - swamp_single_edge_NW.png
+  - swamp_single_edge_SE.png
+  - swamp_single_edge_SW.png
+  - swamp_woodplanks.png
+  - swamp_woodplanks_big.png
+  - swamp_woodplanks_big_broken.png
+  - swamp_woodplanks_broken.png
+  - swamp_woodplanks_cruciform.png
+  - swamp_woodplanks_cruciform_broken.png
+  - swamp_woodplanks_stairways.png
+  - swamp_woodplanks_stairways_broken.png
+  license: "CC-BY-SA-3.0"
+  copyright: "tgstation, Wood tiles are new tg tiles, sprited by Meowstushka and full resprited by Jaraten and Shelkarian"
+  source: "https://github.com/tgstation/tgstation"

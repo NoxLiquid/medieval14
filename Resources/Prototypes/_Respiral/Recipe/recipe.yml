@@ -232,108 +232,8 @@
 
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodRecipe
-  result: MedievalFloorTileItemWood5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodLargeRecipe
-  result: MedievalFloorTileItemWoodLarge5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodPatternRecipe
   result: MedievalFloorTileItemWoodPattern5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodChessRecipe
-  result: MedievalFloorTileItemWoodChess5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodParquetRecipe
-  result: MedievalFloorTileItemWoodParquet5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodBlackRecipe
-  result: MedievalFloorTileItemWoodBlack5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodDarkRecipe
-  result: MedievalFloorTileItemWoodDark5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodLightRecipe
-  result: MedievalFloorTileItemWoodLight5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodRedRecipe
-  result: MedievalFloorTileItemWoodRed5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodLargeBlackRecipe
-  result: MedievalFloorTileItemWoodLargeBlack5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodLargeDarkRecipe
-  result: MedievalFloorTileItemWoodLargeDark5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodLargeLightRecipe
-  result: MedievalFloorTileItemWoodLargeLight5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodLargeRedRecipe
-  result: MedievalFloorTileItemWoodLargeRed5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodParquetBlackRecipe
-  result: MedievalFloorTileItemWoodParquetBlack5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodParquetDarkRecipe
-  result: MedievalFloorTileItemWoodParquetDark5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodParquetLightRecipe
-  result: MedievalFloorTileItemWoodParquetLight5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodParquetRedRecipe
-  result: MedievalFloorTileItemWoodParquetRed5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodChessBlackRecipe
-  result: MedievalFloorTileItemWoodChessBlack5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodChessDarkRecipe
-  result: MedievalFloorTileItemWoodChessDark5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodChessLightRecipe
-  result: MedievalFloorTileItemWoodChessLight5
-
-- type: latheRecipe
-  parent: MedievalBaseTileRecipe
-  id: MedievalFloorTileItemWoodChessRedRecipe
-  result: MedievalFloorTileItemWoodChessRed5
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
@@ -1489,4 +1389,271 @@
   result: MedievalClothingMaskPlagueDoctor
   materials:
     MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingShoesBlackRecipe
+  result: MedievalClothingShoesBlack
+  materials:
+    MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingShoesJesterRecipe
+  result: MedievalClothingShoesJester
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingShoesLeatherRecipe
+  result: MedievalClothingShoesLeather
+  materials:
+    MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingShoesSimpleRecipe
+  result: MedievalClothingShoesSimple
+  materials:
+    MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingShoesStrawRecipe
+  result: MedievalClothingShoesStraw
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingShoesWarmRecipe
+  result: MedievalClothingShoesWarm
+  materials:
+    MedievalProcessedPelt: 100
+
+## Resprited wood tiles
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodRecipe
+  result: MedievalFloorTileItemWood5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodLargeRecipe
+  result: MedievalFloorTileItemWoodLarge5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodParquetRecipe
+  result: MedievalFloorTileItemWoodParquet5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodChessRecipe
+  result: MedievalFloorTileItemWoodChess5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodBrokenRecipe
+  result: MedievalFloorTileItemWoodBroken5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodLargeBrokenRecipe
+  result: MedievalFloorTileItemWoodLargeBroken5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodParquetBrokenRecipe
+  result: MedievalFloorTileItemWoodParquetBroken5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodChessBrokenRecipe
+  result: MedievalFloorTileItemWoodChessBroken5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodLightRecipe
+  result: MedievalFloorTileItemWoodLight5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodLargeLightRecipe
+  result: MedievalFloorTileItemWoodLargeLight5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodParquetLightRecipe
+  result: MedievalFloorTileItemWoodParquetLight5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodChessLightRecipe
+  result: MedievalFloorTileItemWoodChessLight5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodBrokenLightRecipe
+  result: MedievalFloorTileItemWoodBrokenLight5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodLargeBrokenLightRecipe
+  result: MedievalFloorTileItemWoodLargeBrokenLight5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodParquetBrokenLightRecipe
+  result: MedievalFloorTileItemWoodParquetBrokenLight5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodChessBrokenLightRecipe
+  result: MedievalFloorTileItemWoodChessBrokenLight5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodDarkRecipe
+  result: MedievalFloorTileItemWoodDark5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodLargeDarkRecipe
+  result: MedievalFloorTileItemWoodLargeDark5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodParquetDarkRecipe
+  result: MedievalFloorTileItemWoodParquetDark5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodChessDarkRecipe
+  result: MedievalFloorTileItemWoodChessDark5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodBrokenDarkRecipe
+  result: MedievalFloorTileItemWoodBrokenDark5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodLargeBrokenDarkRecipe
+  result: MedievalFloorTileItemWoodLargeBrokenDark5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodParquetBrokenDarkRecipe
+  result: MedievalFloorTileItemWoodParquetBrokenDark5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodChessBrokenDarkRecipe
+  result: MedievalFloorTileItemWoodChessBrokenDark5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodBlackRecipe
+  result: MedievalFloorTileItemWoodBlack5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodLargeBlackRecipe
+  result: MedievalFloorTileItemWoodLargeBlack5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodParquetBlackRecipe
+  result: MedievalFloorTileItemWoodParquetBlack5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodChessBlackRecipe
+  result: MedievalFloorTileItemWoodChessBlack5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodBrokenBlackRecipe
+  result: MedievalFloorTileItemWoodBrokenBlack5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodLargeBrokenBlackRecipe
+  result: MedievalFloorTileItemWoodLargeBrokenBlack5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodParquetBrokenBlackRecipe
+  result: MedievalFloorTileItemWoodParquetBrokenBlack5
+  materials:
+    MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseTileRecipe
+  id: MedievalFloorTileItemWoodChessBrokenBlackRecipe
+  result: MedievalFloorTileItemWoodChessBrokenBlack5
+  materials:
+    MedievalProcessedWood: 50
 

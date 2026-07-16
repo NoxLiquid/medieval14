@@ -1,7 +1,6 @@
 using Content.Server.Parallax;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random; // Respiral-ProcGen-Add
 
 namespace Content.Server.Station.Systems;
@@ -9,7 +8,6 @@ namespace Content.Server.Station.Systems;
 public sealed partial class StationBiomeSystem : EntitySystem
 {
     [Dependency] private BiomeSystem _biome = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private IRobustRandom _random = default!; // Respiral-ProcGen-Add
@@ -36,7 +34,7 @@ public sealed partial class StationBiomeSystem : EntitySystem
         var randomMinutes = minTime.TotalMinutes + _random.NextDouble() * (maxTime.TotalMinutes - minTime.TotalMinutes);
         var offset = TimeSpan.FromMinutes(randomMinutes);
 
-        _biome.EnsurePlanet(mapUid, _proto.Index(map.Comp.Biome), map.Comp.Seed, offset, mapLight: map.Comp.MapLightColor);
+        _biome.EnsurePlanet(mapUid, ProtoMan.Index(map.Comp.Biome), map.Comp.Seed, offset, mapLight: map.Comp.MapLightColor);
         // Respiral-ProcGen-Edit-end
     }
 }

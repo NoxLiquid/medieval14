@@ -1,4 +1,4 @@
-- type: latheRecipePack
+﻿- type: latheRecipePack
   id: MedievalSawmillPack
   recipes:
   - MedievalBoardRecipe
@@ -31,28 +31,39 @@
   - MedievalAlchemTableDetailRecipe
   - MedievalReagentGrinderDetailRecipe
   - MedievalHotplateDetailRecipe
-  - MedievalFloorTileItemWoodParquetRecipe
-  - MedievalFloorTileItemWoodBlackRecipe
-  - MedievalFloorTileItemWoodLightRecipe
-  - MedievalFloorTileItemWoodRedRecipe
-  - MedievalFloorTileItemWoodLargeBlackRecipe
-  - MedievalFloorTileItemWoodLargeDarkRecipe
-  - MedievalFloorTileItemWoodLargeLightRecipe
-  - MedievalFloorTileItemWoodLargeRedRecipe
-  - MedievalFloorTileItemWoodParquetBlackRecipe
-  - MedievalFloorTileItemWoodParquetDarkRecipe
-  - MedievalFloorTileItemWoodParquetLightRecipe
-  - MedievalFloorTileItemWoodParquetRedRecipe
-  - MedievalFloorTileItemWoodChessRecipe
-  - MedievalFloorTileItemWoodChessBlackRecipe
-  - MedievalFloorTileItemWoodChessDarkRecipe
-  - MedievalFloorTileItemWoodChessLightRecipe
-  - MedievalFloorTileItemWoodChessRedRecipe
-  - MedievalFloorTileItemWoodRecipe
   - MedievalFloorTileItemWoodPatternRecipe
-  - MedievalFloorTileItemWoodChessRecipe
+  - MedievalFloorTileItemWoodRecipe
   - MedievalFloorTileItemWoodLargeRecipe
-
+  - MedievalFloorTileItemWoodParquetRecipe
+  - MedievalFloorTileItemWoodChessRecipe
+  - MedievalFloorTileItemWoodBrokenRecipe
+  - MedievalFloorTileItemWoodLargeBrokenRecipe
+  - MedievalFloorTileItemWoodParquetBrokenRecipe
+  - MedievalFloorTileItemWoodChessBrokenRecipe
+  - MedievalFloorTileItemWoodLightRecipe
+  - MedievalFloorTileItemWoodLargeLightRecipe
+  - MedievalFloorTileItemWoodParquetLightRecipe
+  - MedievalFloorTileItemWoodChessLightRecipe
+  - MedievalFloorTileItemWoodBrokenLightRecipe
+  - MedievalFloorTileItemWoodLargeBrokenLightRecipe
+  - MedievalFloorTileItemWoodParquetBrokenLightRecipe
+  - MedievalFloorTileItemWoodChessBrokenLightRecipe
+  - MedievalFloorTileItemWoodDarkRecipe
+  - MedievalFloorTileItemWoodLargeDarkRecipe
+  - MedievalFloorTileItemWoodParquetDarkRecipe
+  - MedievalFloorTileItemWoodChessDarkRecipe
+  - MedievalFloorTileItemWoodBrokenDarkRecipe
+  - MedievalFloorTileItemWoodLargeBrokenDarkRecipe
+  - MedievalFloorTileItemWoodParquetBrokenDarkRecipe
+  - MedievalFloorTileItemWoodChessBrokenDarkRecipe
+  - MedievalFloorTileItemWoodBlackRecipe
+  - MedievalFloorTileItemWoodLargeBlackRecipe
+  - MedievalFloorTileItemWoodParquetBlackRecipe
+  - MedievalFloorTileItemWoodChessBlackRecipe
+  - MedievalFloorTileItemWoodBrokenBlackRecipe
+  - MedievalFloorTileItemWoodLargeBrokenBlackRecipe
+  - MedievalFloorTileItemWoodParquetBrokenBlackRecipe
+  - MedievalFloorTileItemWoodChessBrokenBlackRecipe
 - type: latheRecipePack
   id: MedievalSmelter
   recipes:

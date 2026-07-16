@@ -1,0 +1,88 @@
+- type: entity
+  parent: AppearanceMedievalHuman
+  id: AppearanceMedievalDwarf
+  categories: [ HideSpawnMenu ]
+  name: dwarf appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganMedievalHumanTorso
+      Head: OrganMedievalHumanHead
+      ArmLeft: OrganMedievalHumanArmLeft
+      ArmRight: OrganMedievalHumanArmRight
+      HandRight: OrganMedievalHumanHandRight
+      HandLeft: OrganMedievalHumanHandLeft
+      LegLeft: OrganMedievalHumanLegLeft
+      LegRight: OrganMedievalHumanLegRight
+      FootLeft: OrganMedievalHumanFootLeft
+      FootRight: OrganMedievalHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganMedievalDwarfHeart
+      Stomach: OrganMedievalDwarfStomach
+      Liver: OrganMedievalDwarfLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: MedievalDwarf
+  - type: ScaleVisuals
+    scale: 1, 0.8
+
+- type: entity
+  parent:
+  - AppearanceMedievalDwarf
+  - MedievalMobHuman
+  id: MedievalMobDwarf
+  name: дварф
+  components:
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        # they r smaller
+        density: 120
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Vocal
+    emoteSounds: UnisexDwarf
+  - type: ReplacementAccent
+    accent: scottish
+  - type: Speech
+    speechSounds: Bass
+
+- type: entity
+  id: OrganMedievalDwarfMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Dwarf ]
+
+- type: entity
+  parent: [ OrganMedievalDwarfMetabolizer, OrganHumanStomach ]
+  id: OrganMedievalDwarfStomach
+  components:
+  - type: Metabolizer
+    maxReagents: 5
+
+- type: entity
+  parent: [ OrganMedievalDwarfMetabolizer, OrganHumanLiver ]
+  id: OrganMedievalDwarfLiver
+
+- type: entity
+  parent: [ OrganMedievalDwarfMetabolizer, OrganHumanHeart ]
+  id: OrganMedievalDwarfHeart

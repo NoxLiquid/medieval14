@@ -1,0 +1,35 @@
+- type: marking
+  id: MedievalGoblinEarsBasic
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalGoblin]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/goblin_ears.rsi
+    state: ears_default
+
+- type: marking
+  id: MedievalGoblinEarsBasicAlt
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalGoblin]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/goblin_ears.rsi
+    state: ears_default_alt
+
+- type: marking
+  id: MedievalGoblinEarsLong01
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalGoblin]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/goblin_ears.rsi
+    state: ears_long_01
+
+- type: marking
+  id: MedievalGoblinEarsLong02
+  bodyPart: HeadTop
+  forcedColoring: true
+  groupWhitelist: [MedievalGoblin]
+  sprites:
+  - sprite: _Respiral/Mobs/Customization/goblin_ears.rsi
+    state: ears_long_02

@@ -1,0 +1,20 @@
+- files:
+  - dark_double_edge_E.png
+  - dark_double_edge_N.png
+  - dark_double_edge_S.png
+  - dark_double_edge_W.png
+  - dark_single_edge_NE.png
+  - dark_single_edge_NW.png
+  - dark_single_edge_SE.png
+  - dark_single_edge_SW.png
+  - dark_woodplanks.png
+  - dark_woodplanks_big.png
+  - dark_woodplanks_big_broken.png
+  - dark_woodplanks_broken.png
+  - dark_woodplanks_cruciform.png
+  - dark_woodplanks_cruciform_broken.png
+  - dark_woodplanks_stairways.png
+  - dark_woodplanks_stairways_broken.png
+  license: "CC-BY-SA-3.0"
+  copyright: "tgstation, Wood tiles are new tg tiles, sprited by Meowstushka and full resprited by Jaraten and Shelkarian"
+  source: "https://github.com/tgstation/tgstation"

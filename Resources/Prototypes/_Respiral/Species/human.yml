@@ -3,5 +3,5 @@
   name: species-name-human
   roundStart: true
   prototype: MedievalMobHuman
-  dollPrototype: MedievalAppearanceHuman
+  dollPrototype: AppearanceMedievalHuman
   skinColoration: HumanToned

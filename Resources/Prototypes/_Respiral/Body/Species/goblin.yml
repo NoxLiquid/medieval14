@@ -1,0 +1,274 @@
+- type: markingsGroup
+  parent: None
+  id: MedievalGoblin
+  limits:
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ MedievalGoblinEarsBasic ]
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: true
+      default: [ MedievalGoblinNoseBasic ]
+    enum.HumanoidVisualLayers.SnoutCover:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceMedievalGoblin
+  categories: [ HideSpawnMenu ]
+  name: goblin appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganMedievalGoblinTorso
+      Head: OrganMedievalGoblinHead
+      ArmLeft: OrganMedievalGoblinArmLeft
+      ArmRight: OrganMedievalGoblinArmRight
+      HandRight: OrganMedievalGoblinHandRight
+      HandLeft: OrganMedievalGoblinHandLeft
+      LegLeft: OrganMedievalGoblinLegLeft
+      LegRight: OrganMedievalGoblinLegRight
+      FootLeft: OrganMedievalGoblinFootLeft
+      FootRight: OrganMedievalGoblinFootRight
+      Brain: OrganMedievalGoblinBrain
+      Eyes: OrganMedievalGoblinEyes
+      Tongue: OrganMedievalGoblinTongue
+      Appendix: OrganMedievalGoblinAppendix
+      Ears: OrganMedievalGoblinEars
+      Lungs: OrganMedievalGoblinLungs
+      Heart: OrganMedievalGoblinHeart
+      Stomach: OrganMedievalGoblinStomach
+      Liver: OrganMedievalGoblinLiver
+      Kidneys: OrganMedievalGoblinKidneys
+  - type: HumanoidProfile
+    species: MedievalGoblin
+  - type: ScaleVisuals
+    scale: 0.86, 0.75
+
+- type: entity
+  parent:
+  - AppearanceMedievalGoblin
+  - BaseSpeciesMobOrganic
+  id: MedievalMobGoblin
+  name: гоблин
+  components:
+  - type: Fixtures
+    fixtures: # Smaller hitbox & less weight
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 185
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Damageable
+    damageModifierSet: MedievalGoblin
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damage:
+      types:
+        Blunt: -0.2
+        Piercing: -0.2
+        Slash: -0.2
+        Heat: -0.2
+        Shock: -0.2
+        Cold: -0.2
+        Caustic: -0.05
+        Poison: -0.05
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 3
+        Poison: 1
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 1
+  - type: Speech
+    speechSounds: Alto
+    # speechVerb: Goblin TODO: ПОТОМА
+  - type: TypingIndicator
+    proto: goblin
+  - type: Stamina
+    baseCritThreshold: 120
+    stunTime: 4
+    decay: 5
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.85
+      80: 0.75
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganMedievalGoblin
+  abstract: true
+  suffix: goblin
+
+- type: entity
+  id: OrganMedievalGoblinMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: OrganMedievalGoblin
+  id: OrganMedievalGoblinInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Respiral/Mobs/Species/Goblin/organs.rsi
+
+- type: entity
+  id: OrganMedievalGoblinVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _Respiral/Mobs/Species/Goblin/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: MedievalGoblin
+
+- type: entity
+  parent: [ OrganMedievalGoblin, OrganMedievalGoblinVisual ]
+  id: OrganMedievalGoblinExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Respiral/Mobs/Species/Goblin/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.Snout
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Snout:
+      - enum.HumanoidVisualLayers.SnoutCover
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinArmRight
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinHandRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinHandLeft
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganMedievalGoblinExternal ]
+  id: OrganMedievalGoblinFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganMedievalGoblinInternal ]
+  id: OrganMedievalGoblinBrain
+
+- type: entity
+  parent: [ OrganMedievalGoblinVisual, OrganBaseEyes, OrganMedievalGoblinInternal ]
+  id: OrganMedievalGoblinEyes
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganMedievalGoblinInternal ]
+  id: OrganMedievalGoblinTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganMedievalGoblinInternal ]
+  id: OrganMedievalGoblinAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganMedievalGoblinInternal ]
+  id: OrganMedievalGoblinEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganMedievalGoblinInternal, OrganMedievalGoblinMetabolizer ]
+  id: OrganMedievalGoblinLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganMedievalGoblinInternal, OrganMedievalGoblinMetabolizer ]
+  id: OrganMedievalGoblinHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganMedievalGoblinInternal, OrganMedievalGoblinMetabolizer ]
+  id: OrganMedievalGoblinStomach
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganMedievalGoblinInternal, OrganMedievalGoblinMetabolizer ]
+  id: OrganMedievalGoblinLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganMedievalGoblinInternal, OrganMedievalGoblinMetabolizer ]
+  id: OrganMedievalGoblinKidneys

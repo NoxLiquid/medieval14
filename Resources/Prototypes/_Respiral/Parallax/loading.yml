@@ -1,0 +1,76 @@
+- type: parallax
+  id: RespiralLoading
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/LobbyScreens/loading_tavern.webp"
+      slowness: 0.02
+      scale: "1.35, 1.35"
+      tiled: false
+
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Parallaxes/LoadingFog.png"
+      slowness: 0.12
+      scale: "1.05, 1.05"
+      tiled: false
+
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Parallaxes/LoadingFirefliesFar.png"
+      slowness: 0.22
+      scale: "1.05, 1.05"
+      scrolling: "5, -2"
+
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Parallaxes/LoadingFirefliesMid.png"
+      slowness: 0.31
+      scale: "1.06, 1.06"
+      scrolling: "-4, -3"
+
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Parallaxes/Shadows.png"
+      slowness: 0.18
+      scale: "1.3, 1.3"
+      tiled: false
+
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Parallaxes/LoadingFirefliesNear.png"
+      slowness: 0.42
+      scale: "1.08, 1.08"
+      scrolling: "8, 4"
+  layersLQ:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/LobbyScreens/loading_tavern.webp"
+      slowness: 0.02
+      scale: "1.35, 1.35"
+      tiled: false
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Parallaxes/LoadingFog.png"
+      slowness: 0.12
+      scale: "1.05, 1.05"
+      tiled: false
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Parallaxes/LoadingFirefliesFar.png"
+      slowness: 0.22
+      scale: "1.05, 1.05"
+      scrolling: "5, -2"
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Parallaxes/LoadingFirefliesMid.png"
+      slowness: 0.31
+      scale: "1.06, 1.06"
+      scrolling: "-4, -3"
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Respiral/Parallaxes/LoadingFirefliesNear.png"
+      slowness: 0.42
+      scale: "1.08, 1.08"
+      scrolling: "8, 4"
+  layersLQUseHQ: false

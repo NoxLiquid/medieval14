@@ -67,7 +67,8 @@ public sealed partial class ParallaxControl : Control
             if (layer.Config.Tiled)
             {
                 // Multiply offset by slowness to match normal parallax
-                var scaledOffset = (offset * layer.Config.Slowness).Floored();
+                var layerScroll = layer.Config.Scrolling * currentTime; // Respiral-LoadScreen
+                var scaledOffset = (offset * layer.Config.Slowness + layerScroll).Floored(); // Respiral-LoadScreen
 
                 // Then modulo the scaled offset by the size to prevent drawing a bunch of offscreen tiles for really small images.
                 scaledOffset.X %= texSize.X;
@@ -86,7 +87,8 @@ public sealed partial class ParallaxControl : Control
             }
             else
             {
-                var origin = ((ourSize - texSize) / 2) + layer.Config.ControlHomePosition;
+                var layerScroll = layer.Config.Scrolling * currentTime; // Respiral-LoadScreen
+                var origin = ((ourSize - texSize) / 2) + layer.Config.ControlHomePosition + layerScroll; // Respiral-LoadScreen
                 handle.DrawTextureRect(tex, UIBox2.FromDimensions(origin, texSize));
             }
         }
