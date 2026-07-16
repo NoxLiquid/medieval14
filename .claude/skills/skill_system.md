@@ -132,6 +132,31 @@ The paper text is displayed as "scribbles", more so the lower the READER's liter
 - The old `_Respiral/Illiteracy` (server-side `ScrambleText` in `PaperSystem`) was reverted to upstream earlier;
   this is a NEW, separate client-side implementation (no more binary "literate/not" — it's a gradient).
 
+### Viewing skills (client UI)
+
+- **Own skills — character menu button.** Client `SkillSystem`
+  (`Content.Client/_Respiral/Skill/SkillSystem.cs`) hooks the upstream character menu via
+  `CharacterInfoSystem.GetCharacterInfoControlsEvent` (raised from
+  `Content.Client/CharacterInfo/CharacterInfoSystem.cs:GetCharacterInfoControls`, added to the Objectives
+  box in `CharacterUIController.CharacterUpdated`). It adds a "Навыки" button (`skill-character-button`)
+  that opens `SkillsListWindow` for the local player. **The button is always shown** (2026-07): the old
+  `_currentSkills.Count == 0` early-returns (both in the add-button handler and the press handler) were
+  removed — with 0 skills the window opens showing `skills-list-no-skills`. `SkillsListWindow.SetSkills`
+  already handles the empty list.
+- **Other players' skills** — via the `SkillComponent` verb (`SkillShareSystem`, server): sends a
+  share-request EUI to the target (accept → `SkillsListEui`); admin-ghost opens directly. The verb
+  early-returns when `User == Target`, so it is NOT the path for own skills (that's the character button).
+
+### Console command: addskill (2026-07)
+
+`Content.Server/_Respiral/Commands/AddSkillCommand.cs`, `[AdminCommand(AdminFlags.Debug)]`.
+Usage: `addskill <target|self> <skillId> [progress]`.
+- `target`: a NetEntity, or the literal `self` (the running player's attached entity).
+- `progress`: optional float 0..1 (default 1 = fully learned), clamped.
+- `EnsureComponent<SkillComponent>` on the target (works on entities without one), sets
+  `Skills[skillId] = progress`, then `Dirty` so it networks to the client (needed for the character-menu
+  skills button to reflect it). Tab-completion lists all `SkillPrototype` IDs on arg 2.
+
 ### Guidebook
 The "Skills" tab (`MedievalSkills`) — child of the root `Medieval` (see identity.md about the guidebook
 structure). `Prototypes/_Respiral/Guidebook/guidebook.yml`: `MedievalSkills` (Skills.xml, overview) +
