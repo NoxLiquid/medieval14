@@ -172,19 +172,19 @@
 - type: tile
   id: MedievalFloorGrassDarkGreen
   name: tiles-medieval-grass-dark-green
-  sprite: /Textures/_Respiral/Tiles/Grass/grass.png
+  sprite: /Textures/_Respiral/Tiles/GrassDark/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   edgeSpritePriority: 7
   edgeSprites:
-    SouthEast: /Textures/_Respiral/Tiles/Grass/single_edge_SE.png
-    NorthEast: /Textures/_Respiral/Tiles/Grass/single_edge_NE.png
-    NorthWest: /Textures/_Respiral/Tiles/Grass/single_edge_NW.png
-    SouthWest: /Textures/_Respiral/Tiles/Grass/single_edge_SW.png
-    South: /Textures/_Respiral/Tiles/Grass/double_edge_S.png
-    East: /Textures/_Respiral/Tiles/Grass/double_edge_E.png
-    North: /Textures/_Respiral/Tiles/Grass/double_edge_N.png
-    West: /Textures/_Respiral/Tiles/Grass/double_edge_W.png
+    SouthEast: /Textures/_Respiral/Tiles/GrassDark/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/GrassDark/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/GrassDark/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/GrassDark/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/GrassDark/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/GrassDark/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/GrassDark/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/GrassDark/double_edge_W.png
   baseTurf: MedievalDirt
   isSubfloor: false
   deconstructTools: [ MedievalDigging ]
@@ -224,19 +224,19 @@
 - type: tile
   id: MedievalFloorGrassCrystal
   name: tiles-medieval-grass-crystal
-  sprite: /Textures/_Respiral/Tiles/Grass2/grass.png
+  sprite: /Textures/_Respiral/Tiles/GrassShadowLight/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   edgeSpritePriority: 13
   edgeSprites:
-    SouthEast: /Textures/_Respiral/Tiles/Grass2/single_edge_SE.png
-    NorthEast: /Textures/_Respiral/Tiles/Grass2/single_edge_NE.png
-    NorthWest: /Textures/_Respiral/Tiles/Grass2/single_edge_NW.png
-    SouthWest: /Textures/_Respiral/Tiles/Grass2/single_edge_SW.png
-    South: /Textures/_Respiral/Tiles/Grass2/double_edge_S.png
-    East: /Textures/_Respiral/Tiles/Grass2/double_edge_E.png
-    North: /Textures/_Respiral/Tiles/Grass2/double_edge_N.png
-    West: /Textures/_Respiral/Tiles/Grass2/double_edge_W.png
+    SouthEast: /Textures/_Respiral/Tiles/GrassShadowLight/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/GrassShadowLight/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/GrassShadowLight/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/GrassShadowLight/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/GrassShadowLight/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/GrassShadowLight/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/GrassShadowLight/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/GrassShadowLight/double_edge_W.png
   baseTurf: MedievalDirt
   isSubfloor: false
   deconstructTools: [ MedievalDigging ]
@@ -276,19 +276,19 @@
 - type: tile
   id: MedievalFloorGrassRed
   name: tiles-medieval-grass-red
-  sprite: /Textures/_Respiral/Tiles/Grass3/grass.png
+  sprite: /Textures/_Respiral/Tiles/GrassAutumn/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   edgeSpritePriority: 8
   edgeSprites:
-    SouthEast: /Textures/_Respiral/Tiles/Grass3/single_edge_SE.png
-    NorthEast: /Textures/_Respiral/Tiles/Grass3/single_edge_NE.png
-    NorthWest: /Textures/_Respiral/Tiles/Grass3/single_edge_NW.png
-    SouthWest: /Textures/_Respiral/Tiles/Grass3/single_edge_SW.png
-    South: /Textures/_Respiral/Tiles/Grass3/double_edge_S.png
-    East: /Textures/_Respiral/Tiles/Grass3/double_edge_E.png
-    North: /Textures/_Respiral/Tiles/Grass3/double_edge_N.png
-    West: /Textures/_Respiral/Tiles/Grass3/double_edge_W.png
+    SouthEast: /Textures/_Respiral/Tiles/GrassAutumn/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/GrassAutumn/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/GrassAutumn/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/GrassAutumn/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/GrassAutumn/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/GrassAutumn/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/GrassAutumn/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/GrassAutumn/double_edge_W.png
   baseTurf: MedievalDirt
   isSubfloor: false
   deconstructTools: [ MedievalDigging ]
@@ -354,19 +354,19 @@
 - type: tile
   id: MedievalFloorGrassDark
   name: tiles-medieval-grass-dark
-  sprite: /Textures/_Respiral/Tiles/Grass4/grass.png
+  sprite: /Textures/_Respiral/Tiles/GrassDarkTall/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   edgeSpritePriority: 15
   edgeSprites:
-    SouthEast: /Textures/_Respiral/Tiles/Grass4/single_edge_SE.png
-    NorthEast: /Textures/_Respiral/Tiles/Grass4/single_edge_NE.png
-    NorthWest: /Textures/_Respiral/Tiles/Grass4/single_edge_NW.png
-    SouthWest: /Textures/_Respiral/Tiles/Grass4/single_edge_SW.png
-    South: /Textures/_Respiral/Tiles/Grass4/double_edge_S.png
-    East: /Textures/_Respiral/Tiles/Grass4/double_edge_E.png
-    North: /Textures/_Respiral/Tiles/Grass4/double_edge_N.png
-    West: /Textures/_Respiral/Tiles/Grass4/double_edge_W.png
+    SouthEast: /Textures/_Respiral/Tiles/GrassDarkTall/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/GrassDarkTall/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/GrassDarkTall/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/GrassDarkTall/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/GrassDarkTall/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/GrassDarkTall/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/GrassDarkTall/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/GrassDarkTall/double_edge_W.png
   baseTurf: MedievalDirt
   isSubfloor: false
   deconstructTools: [ MedievalDigging ]
@@ -380,19 +380,19 @@
 - type: tile
   id: MedievalFloorGrassDark2
   name: tiles-medieval-grass-dark2
-  sprite: /Textures/_Respiral/Tiles/Grass5/grass.png
+  sprite: /Textures/_Respiral/Tiles/GrassShadow/grass.png
   variants: 6
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   edgeSpritePriority: 9
   edgeSprites:
-    SouthEast: /Textures/_Respiral/Tiles/Grass5/single_edge_SE.png
-    NorthEast: /Textures/_Respiral/Tiles/Grass5/single_edge_NE.png
-    NorthWest: /Textures/_Respiral/Tiles/Grass5/single_edge_NW.png
-    SouthWest: /Textures/_Respiral/Tiles/Grass5/single_edge_SW.png
-    South: /Textures/_Respiral/Tiles/Grass5/double_edge_S.png
-    East: /Textures/_Respiral/Tiles/Grass5/double_edge_E.png
-    North: /Textures/_Respiral/Tiles/Grass5/double_edge_N.png
-    West: /Textures/_Respiral/Tiles/Grass5/double_edge_W.png
+    SouthEast: /Textures/_Respiral/Tiles/GrassShadow/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/GrassShadow/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/GrassShadow/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/GrassShadow/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/GrassShadow/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/GrassShadow/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/GrassShadow/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/GrassShadow/double_edge_W.png
   baseTurf: MedievalDirt
   isSubfloor: false
   deconstructTools: [ MedievalDigging ]
