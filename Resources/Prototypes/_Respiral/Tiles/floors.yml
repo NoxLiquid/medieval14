@@ -93,7 +93,7 @@
 
 - type: tile
   id: MedievalFloorGrass
-  name: tiles-medieval-grass
+  name: tiles-medieval-grass-normal
   sprite: /Textures/_Respiral/Tiles/GrassNormal/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -119,7 +119,7 @@
 
 - type: tile
   id: MedievalFloorGrassLight
-  name: tiles-medieval-grass-light
+  name: tiles-medieval-grass-normal-light
   sprite: /Textures/_Respiral/Tiles/GrassNormalLight/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -145,7 +145,7 @@
 
 - type: tile
   id: MedievalFloorGrassTall
-  name: tiles-medieval-grass-tall
+  name: tiles-medieval-grass-normal-tall
   sprite: /Textures/_Respiral/Tiles/GrassNormalTall/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -171,7 +171,7 @@
 
 - type: tile
   id: MedievalFloorGrassDarkGreen
-  name: tiles-medieval-grass-dark-green
+  name: tiles-medieval-grass-dark
   sprite: /Textures/_Respiral/Tiles/GrassDark/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -223,7 +223,7 @@
 
 - type: tile
   id: MedievalFloorGrassCrystal
-  name: tiles-medieval-grass-crystal
+  name: tiles-medieval-grass-shadow-light
   sprite: /Textures/_Respiral/Tiles/GrassShadowLight/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -249,7 +249,7 @@
 
 - type: tile
   id: MedievalFloorGrassCrystalTall
-  name: tiles-medieval-grass-crystal-tall
+  name: tiles-medieval-grass-shadow-tall
   sprite: /Textures/_Respiral/Tiles/GrassShadowTall/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -275,7 +275,7 @@
 
 - type: tile
   id: MedievalFloorGrassRed
-  name: tiles-medieval-grass-red
+  name: tiles-medieval-grass-autumn
   sprite: /Textures/_Respiral/Tiles/GrassAutumn/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -301,7 +301,7 @@
 
 - type: tile
   id: MedievalFloorGrassRedLight
-  name: tiles-medieval-grass-red-light
+  name: tiles-medieval-grass-autumn-light
   sprite: /Textures/_Respiral/Tiles/GrassAutumnLight/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -327,7 +327,7 @@
 
 - type: tile
   id: MedievalFloorGrassRedTall
-  name: tiles-medieval-grass-red-tall
+  name: tiles-medieval-grass-autumn-tall
   sprite: /Textures/_Respiral/Tiles/GrassAutumnTall/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -353,7 +353,7 @@
 
 - type: tile
   id: MedievalFloorGrassDark
-  name: tiles-medieval-grass-dark
+  name: tiles-medieval-grass-dark-tall
   sprite: /Textures/_Respiral/Tiles/GrassDarkTall/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
@@ -379,7 +379,7 @@
 
 - type: tile
   id: MedievalFloorGrassDark2
-  name: tiles-medieval-grass-dark2
+  name: tiles-medieval-grass-shadow
   sprite: /Textures/_Respiral/Tiles/GrassShadow/grass.png
   variants: 6
   placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
