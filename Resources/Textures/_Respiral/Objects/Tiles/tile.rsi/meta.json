@@ -30,61 +30,6 @@
             "directions": 4
         },
 		{
-            "name": "crysgrass"
-        },
-        {
-            "name": "crysgrass-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "crysgrass-inhand-left",
-            "directions": 4
-        },
-		{
-            "name": "darkgrass"
-        },
-        {
-            "name": "darkgrass-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "darkgrass-inhand-left",
-            "directions": 4
-        },
-		{
-            "name": "darkgrass2"
-        },
-        {
-            "name": "darkgrass2-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "darkgrass2-inhand-left",
-            "directions": 4
-        },
-		{
-            "name": "darkgreengrass"
-        },
-        {
-            "name": "darkgreengrass-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "darkgreengrass-inhand-left",
-            "directions": 4
-        },
-		{
-            "name": "redgrass"
-        },
-        {
-            "name": "redgrass-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "redgrass-inhand-left",
-            "directions": 4
-        },
-		{
             "name": "snow"
         },
         {
