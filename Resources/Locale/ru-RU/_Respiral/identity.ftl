@@ -10,6 +10,14 @@ stamp-component-stamped-name-medieval-house-crown = Печать дома Кор
 # Предъявление паспорта одному человеку
 medieval-credential-present-one-success = Вы показываете паспорт, и вас узнают.
 medieval-credential-present-one-fail = Паспорт не сходится с тем, кто его предъявляет.
+medieval-credential-present-one-self = Ни к чему предъявлять паспорт самому себе.
+
+# Заверение паспорта: выбор будущего владельца и постановка печати
+medieval-credential-target-selected = Паспорт готов принять печать на этого человека.
+medieval-credential-certify-no-target = Сначала выберите, на кого выписывается паспорт.
+
+# Приметы владельца, автоматически вписываемые в бумагу при заверении печатью
+medieval-credential-description = Приметы: { $gender }, { $species }, { $age }.
 
 # Личные заметки об именах (верб осмотра, как список брони)
 medieval-identity-notes-verb-text = Имена

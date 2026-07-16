@@ -19,6 +19,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `clothing.md` | Clothing prototypes (Medieval*), RSI state conventions, material→damage/composition, pack imports, profession starting gear |
 | `flora.md` | Trees and bushes, `MedievalBaseTree`, RandomSprite convention, flora sprite-pack imports |
 | `skill_system.md` | Skill system, NeededSkillForMelee, learning modifiers |
+| `professions.md` | Roles map: departments/jobs ↔ skills ↔ machines (lathes), starting gear, gaps |
 | `mobs.md` | NPCs, monsters, factions, base mob prototypes |
 | `trade_console.md` | Trade system: ordering via CargoOrderConsole, delivery via CargoPallet (Buy/Sell), selling via CargoPalletConsole |
 | `communications.md` | Connecting magic ball (medieval communications console) |

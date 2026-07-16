@@ -35,4 +35,17 @@ public sealed partial class MedievalCredentialComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public ProtoId<HouseSealPrototype>? Seal;
+
+    /// <summary>
+    /// Выбранный будущий владелец. Пока паспорт не заверён, применение его на человека
+    /// (через DoAfter) фиксирует сюда цель; при постановке печати с неё снимается описание.
+    /// </summary>
+    [AutoNetworkedField]
+    public EntityUid? Target;
+
+    /// <summary>
+    /// Длительность применения паспорта на человека (выбор цели заверения либо предъявление одному).
+    /// </summary>
+    [DataField]
+    public TimeSpan Delay = TimeSpan.FromSeconds(2);
 }

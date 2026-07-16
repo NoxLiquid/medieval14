@@ -25,6 +25,31 @@ Custom sprites live in `Resources/Textures/_Respiral/Interface/Alerts/` (ported 
 severity via `MathHelper.Lerp(minSeverity, maxSeverity, percentage)`. So increasing
 `maxSeverity` + adding icon frames automatically gives a smoother gradation (10 levels for health).
 
+> **⚠️ Health severity axis is INVERTED vs mana/stamina.** For health `percentage = damage / threshold`
+> (`TryGetPercentageForState`), so **full health → severity 0**, near-crit → severity 9. Mana/stamina use
+> `ratio = value / max` (full → max severity). Therefore the health art must run the OPPOSITE way:
+> `health0` = FULL orb (shown at full HP), `health9` = empty orb (near death). The CrystallEdge art shipped
+> reversed (health0 empty … health9 full, matching mana/stamina) → at full HP you saw an empty orb.
+> **Fix:** swapped the PNG files in `alive.rsi` pairwise (`health{i}` ↔ `health{9-i}`); meta.json state names
+> and the `alerts.yml` icon list are unchanged (severity still indexes `health{severity}`). If health art is
+> ever re-imported, remember to reverse it.
+
+### Alert icon overlap (48×48 sprites)
+`AlertControl` (`Content.Client/.../Alerts/Controls/AlertControl.cs`) draws each alert via a `SpriteView`
+with `Scale=2`, `Stretch=None`. Upstream alert icons are 32×32 → 64px drawn = fits the `MaxSize`.
+Respiral icons are **48×48 → 96px drawn**, which overflowed the old `MaxSize=64`: the sprite is drawn
+centered at its full 96px and bled 16px past the reserved cell, overlapping neighbouring alerts in the
+vertical stack. **Fix:** `MaxSize` bumped 64→**96** (marked `// Respiral`). The control now reserves the
+real drawn size, so 48px icons no longer overlap; 32px upstream icons (64px < 96) are unaffected
+(their `MeasureOverride` size stays 64). The `_cooldownGraphic` MaxSize is left at 64 (these three alerts
+have no cooldown).
+
+### Alert stack right margin
+The whole alert stack sits in a `PanelContainer` (`HorizontalAlignment=Right`) inside `AlertsUI.xaml`.
+A small right `Margin="0 0 8 0"` (marked `<!-- Respiral -->`) offsets the stack from the screen edge.
+Adjust the third value to change the gap; the individual `AlertControl` is `HAlignment.Left` and shouldn't
+be used for this.
+
 ### Untouched / for the future
 - `BorgHealth/BorgCrit/BorgDead` — borg health, no custom sprites, left upstream.
 - `Debug1–6` — debug alerts, reference `human_alive.rsi`, not touched.

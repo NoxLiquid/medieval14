@@ -104,6 +104,34 @@ Write the name via the Paper UI + certify with an **official seal** (the `Stamp`
 `PaperVisualizerSystem` system already exists). Stamping with the house seal = a trigger that copies the name +
 a description snapshot into the readable field. Forgery = stealing the seal AND resembling the owner.
 
+> **UPDATED — target selection + DoAfter (IMPLEMENTED).** The old snapshot source `GetHolder`
+> (whoever physically holds the passport during stamping) is REMOVED: you can't click an item held in
+> *another* person's hands, so "owner holds, official stamps" was unreachable. New flow, all on the
+> passport's single `AfterInteractEvent` → `MedievalCredentialDoAfterEvent` (both branches go through a
+> DoAfter, `MedievalCredentialComponent.Delay`, default 2s, `BreakOnMove`/`BreakOnDamage`/`NeedHand`):
+> - **Passport not sealed (`Seal == null`)** → apply passport on a person (needs `HumanoidProfileComponent`)
+>   → records that person into new field `MedievalCredentialComponent.Target` (`EntityUid?`, `AutoNetworkedField` —
+>   the source generator auto-converts `EntityUid`↔`NetEntity`, so NOT a raw `NetEntity` field; matches
+>   `PresentingCredentialComponent.Passport`). Ranged, the future owner need not hold the passport.
+> - **Passport sealed** → same interaction becomes "present to one" (unchanged logic, now behind the DoAfter).
+> `OnInteractUsing` (seal on passport) now snapshots `OwnerDescription` from `Target` (not the holder) and
+> ONLY sets `Seal` when `Target` is a valid humanoid — otherwise pops `medieval-credential-certify-no-target`
+> and leaves the passport unsealed (avoids the soft-lock: sealed-but-descriptionless + can no longer pick a target).
+> New locale: `medieval-credential-target-selected`, `medieval-credential-certify-no-target` (`identity.ftl`).
+> Guidebook `Identity.xml` "Как создать паспорт" now has 3 steps (write → pick owner → seal).
+> Removed the now-unused `_container` dependency + `GetHolder` helper. `Content.Shared` build clean.
+>
+> **UPDATED — auto-fill of the description on certification (IMPLEMENTED).** When the seal snapshots
+> `OwnerDescription` in `OnInteractUsing`, it now ALSO writes those traits (sex, species, age bracket)
+> into the paper's readable `Content` via `PaperSystem.SetContent`. The written name is read into
+> `cred.Name` BEFORE appending (order matters, otherwise the appended block would become the name).
+> Content becomes `"<name>\n\n<description>"` (or just the description if the paper was blank). Deps:
+> `PaperSystem _paper`; private `GetGenderRepresentation(Gender)` mirrors the upstream
+> `identity-gender-*` keys (`using Robust.Shared.Enums`). Locale `medieval-credential-description`
+> ("Приметы: { $gender }, { $species }, { $age }.") in `ru-RU/_Respiral/identity.ftl`. Species via
+> `HumanoidProfileSystem.GetSpeciesRepresentation(...).ToLower()`, age via `GetAgeRepresentation`
+> (same call reused for the snapshot). `Content.Shared` build clean.
+
 ## Presenting the passport — TWO modes (both chosen)
 One act of "unfolding the charter", two visibility scopes, different lifetime of the knowledge:
 
