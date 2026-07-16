@@ -1,6 +1,8 @@
 using Content.Server._Respiral.Skill.Components;
+using Content.Shared._Respiral.Skills.Prototypes;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Respiral.Skill;
 
@@ -23,17 +25,19 @@ public sealed partial class NeededSkillForInteractUsingSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!_skillSystem.CheckRequiredSkills(args.User, component.NeededSkills))
+        if (!_skillSystem.CheckRequiredSkillsProgress(args.User, component.NeededSkillsProgress))
             args.Handled = true;
     }
 
     private void OnExamine(EntityUid uid, NeededSkillForInteractUsingComponent component, ExaminedEvent args)
     {
-        if (component.NeededSkills.Count == 0)
+        if (component.NeededSkillsProgress.Count == 0)
             return;
 
+        var skills = new List<ProtoId<SkillPrototype>>(component.NeededSkillsProgress.Keys);
+
         args.PushMarkup(Loc.GetString("skill-exm-needed-skills",
-            ("skills", _skillSystem.GetSkillNames(component.NeededSkills))));
+            ("skills", _skillSystem.GetSkillNames(skills))));
     }
 
 }

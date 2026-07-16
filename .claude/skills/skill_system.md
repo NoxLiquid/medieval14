@@ -106,8 +106,20 @@ if the user has no `SkillComponent` at all — it's skipped, i.e. NPCs aren't bl
 
 - The `MedievalLiteracy` skill (`skill.yml`, `pointsNeeded: 100`, mastery = progress ≥ 1.0).
 - The book `MedievalSkillBookLiteracy` (`book.yml`, icon `book5`, `LearnSkillWhenUsing` 0.01/use → 100 reads).
-- `MedievalPen` carries `NeededSkillForInteractUsing: [MedievalLiteracy]` → without learned literacy
-  you can't write with the pen (apply it on paper/anything).
+- `MedievalPen` carries `NeededSkillForInteractUsing` → without enough literacy you can't write with the
+  pen (apply it on paper/anything). **As of 2026-07 it uses the progress-threshold field (see below):
+  `neededSkillsProgress: { MedievalLiteracy: 0.8 }`** — writing unlocks at 80% literacy, not full mastery.
+
+### `NeededSkillForInteractUsing` — progress-threshold gate
+- Single field `neededSkillsProgress: { SkillId: threshold }` (`required: true`, 2026-07) — requires
+  **progress ≥ threshold** per skill, via `SkillSystem.CheckRequiredSkillsProgress`. Full mastery is just
+  threshold `1.0`, so the old `neededSkills` list (which required ≥ 1.0 via `CheckRequiredSkills`) was
+  **removed as redundant** — the pen was the only user. Failing blocks the interaction (`args.Handled = true`),
+  shows popup `skill-need-skill-message`, and is skipped if the user has no `SkillComponent` (NPCs unaffected).
+  Examine (`skill-exm-needed-skills`) lists the gated skill names.
+- NOTE: the sibling component `NeededSkillForInteract` (machines) still uses `neededSkills: [ ... ]` +
+  `CheckRequiredSkills` (full mastery). That method stays — it's also used by `CanLearn`. Only the
+  `...InteractUsing` variant switched to thresholds.
 
 ### Reading paper by literacy (character substitution, 2026-06)
 

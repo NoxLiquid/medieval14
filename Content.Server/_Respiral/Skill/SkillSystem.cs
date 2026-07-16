@@ -183,4 +183,43 @@ public sealed partial class SkillSystem : EntitySystem
         return true;
     }
 
+    /// <summary>
+    ///     Проверяет, что у пользователя прогресс каждого навыка не ниже указанного порога (0..1).
+    ///     Аналог <see cref="CheckRequiredSkills"/>, но с настраиваемым порогом вместо полного освоения.
+    ///     Нет <see cref="SkillComponent"/> (например, NPC) — проверка пропускается. Сам показывает попап.
+    /// </summary>
+    public bool CheckRequiredSkillsProgress(EntityUid user, Dictionary<ProtoId<SkillPrototype>, float> neededSkills)
+    {
+        if (neededSkills.Count == 0)
+            return true;
+
+        if (!TryComp<SkillComponent>(user, out var skillComponent))
+            return true;
+
+        var missingSkills = new List<string>();
+
+        foreach (var (skill, requiredProgress) in neededSkills)
+        {
+            if (!_prototypeManager.TryIndex(skill, out var skillPrototype) || skillPrototype == null)
+            {
+                _sawmill.Warning($"Прототип навыка {skill} не найден");
+                continue;
+            }
+
+            if (GetSkillProgress(user, skill, skillComponent) < requiredProgress)
+                missingSkills.Add(skillPrototype.Name);
+        }
+
+        if (missingSkills.Count > 0)
+        {
+            var skillsText = string.Join(", ", missingSkills.Select(s => Loc.GetString($"{s}")));
+            var message = Loc.GetString("skill-need-skill-message", ("skills", skillsText));
+
+            _popup.PopupEntity(message, user, user);
+            return false;
+        }
+
+        return true;
+    }
+
 }

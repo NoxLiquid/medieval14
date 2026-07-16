@@ -7,8 +7,8 @@ namespace Content.Server._Respiral.Skill.Components;
 public sealed partial class NeededSkillForInteractUsingComponent : Component
 {
     /// <summary>
-    ///     Требуемые навыки
+    ///     Требуемые навыки с минимальным прогрессом изучения (0..1).
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<SkillPrototype>> NeededSkills;
+    public Dictionary<ProtoId<SkillPrototype>, float> NeededSkillsProgress = new();
 }
