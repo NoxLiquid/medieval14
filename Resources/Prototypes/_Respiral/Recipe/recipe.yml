@@ -1390,48 +1390,6 @@
   materials:
     MedievalProcessedPelt: 100
 
-- type: latheRecipe
-  parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingShoesBlackRecipe
-  result: MedievalClothingShoesBlack
-  materials:
-    MedievalProcessedPelt: 100
-
-- type: latheRecipe
-  parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingShoesJesterRecipe
-  result: MedievalClothingShoesJester
-  materials:
-    MedievalCloth: 100
-
-- type: latheRecipe
-  parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingShoesLeatherRecipe
-  result: MedievalClothingShoesLeather
-  materials:
-    MedievalProcessedPelt: 100
-
-- type: latheRecipe
-  parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingShoesSimpleRecipe
-  result: MedievalClothingShoesSimple
-  materials:
-    MedievalProcessedPelt: 100
-
-- type: latheRecipe
-  parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingShoesStrawRecipe
-  result: MedievalClothingShoesStraw
-  materials:
-    MedievalCloth: 100
-
-- type: latheRecipe
-  parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingShoesWarmRecipe
-  result: MedievalClothingShoesWarm
-  materials:
-    MedievalProcessedPelt: 100
-
 ## Resprited wood tiles
 - type: latheRecipe
   parent: MedievalBaseTileRecipe

@@ -20,7 +20,7 @@
     range: 30
     checkCanAccess: false
   - type: WorldTargetAction
-    event: !type:ProjectileSpellEvent
+    event: !type:BallSpellEvent
       prototype: MedievalProjFireBall
 
 # Заклинание «истинное имя»: нацелено на человека, через DoAfter раскрывает кастеру его
@@ -67,5 +67,5 @@
       state: ice_shards
   # Переопределяем снаряд на водяной (элемент зашит в самом снаряде).
   - type: WorldTargetAction
-    event: !type:ProjectileSpellEvent
+    event: !type:BallSpellEvent
       prototype: MedievalProjWaterBall

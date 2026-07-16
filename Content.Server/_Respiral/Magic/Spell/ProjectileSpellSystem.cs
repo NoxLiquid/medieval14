@@ -5,7 +5,7 @@ using Robust.Shared.Physics.Systems;
 namespace Content.Server._Respiral.Magic.Spell;
 
 /// <summary>
-/// Форма «шар»: обрабатывает <see cref="ProjectileSpellEvent"/>
+/// Форма «шар»: обрабатывает <see cref="BallSpellEvent"/>
 /// </summary>
 public sealed partial class ProjectileSpellSystem : EntitySystem
 {
@@ -18,10 +18,10 @@ public sealed partial class ProjectileSpellSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ProjectileSpellEvent>(OnProjectileSpell);
+        SubscribeLocalEvent<BallSpellEvent>(OnProjectileSpell);
     }
 
-    private void OnProjectileSpell(ProjectileSpellEvent args)
+    private void OnProjectileSpell(BallSpellEvent args)
     {
         if (args.Handled)
             return;

@@ -35,11 +35,11 @@ A Respiral theme. The umbrella folder for magic systems — `_Respiral/Magic/` (
 | `Content.Shared/_Respiral/Magic/Element/ElementPrototype.cs` | `[Prototype]` element: `Name`, `Color`, `Damage` (DamageSpecifier). First-class, groundwork for reactions |
 | `Content.Shared/_Respiral/Magic/Element/ElementComponent.cs` | Networked: carries `ProtoId<ElementPrototype>?` on the projectile (the client reads it to tint) |
 | `Content.Shared/_Respiral/Magic/Spell/SpellComponent.cs` | On the action entity (NOT networked): `ManaCost`, `Element`. Read only by the server |
-| `Content.Shared/_Respiral/Magic/Spell/ProjectileSpellEvent.cs` | `WorldTargetActionEvent` with `Prototype` (projectile). The "ball" form |
+| `Content.Shared/_Respiral/Magic/Spell/BallSpellEvent.cs` | `WorldTargetActionEvent` with `Prototype` (projectile). The "ball" form. **Renamed from `ProjectileSpellEvent`** to avoid a short-type-name collision with upstream `Content.Shared.Magic.Events.ProjectileSpellEvent` — the collision made `!type:ProjectileSpellEvent` in upstream prototypes (dragon fire-breath, wizard fireball) resolve to the Respiral event and fail |
 | `Content.Shared/_Respiral/Magic/Spell/RevealTrueNameSpellEvent.cs` | `EntityTargetActionEvent` with `Delay` (TimeSpan). The "ritual on target" form |
 | `Content.Shared/_Respiral/Magic/Spell/RevealTrueNameDoAfterEvent.cs` | `SimpleDoAfterEvent` (NetSerializable). Concentration completion |
 | `Content.Server/_Respiral/Magic/Spell/SpellSystem.cs` | `TryCast(action, performer)`: mana check/spend ([[mana]]), popup. The shared core of all forms |
-| `Content.Server/_Respiral/Magic/Spell/ProjectileSpellSystem.cs` | `ProjectileSpellEvent` handler: spawn the projectile, stamp the element, `ShootProjectile`. Server-only |
+| `Content.Server/_Respiral/Magic/Spell/ProjectileSpellSystem.cs` | `BallSpellEvent` handler: spawn the projectile, stamp the element, `ShootProjectile`. Server-only |
 | `Content.Server/_Respiral/Magic/Spell/RevealTrueNameSpellSystem.cs` | `RevealTrueNameSpellEvent` + DoAfter handler: reveals the target's true name into the caster's `KnownFaces` ([[identity]]). Server-only |
 | `Content.Server/_Respiral/Magic/Element/ElementSystem.cs` | `ApplyElement(uid, id)`: sets `ElementComponent` + transfers the element's damage onto `ProjectileComponent` |
 | `Content.Client/_Respiral/Magic/Element/ElementVisualsSystem.cs` | Tints the sprite to `ElementPrototype.Color` (on ComponentStartup + AfterAutoHandleState) |
@@ -49,7 +49,7 @@ A Respiral theme. The umbrella folder for magic systems — `_Respiral/Magic/` (
 ## Cast flow (ball)
 
 1. The player presses the action → the engine predictively plays `Action.Sound` and sets the cooldown, raises
-   `ProjectileSpellEvent` (Performer, Target, Action).
+   `BallSpellEvent` (Performer, Target, Action).
 2. `ProjectileSpellSystem` (server-only) catches the event → `SpellSystem.TryCast` (spend mana; if
    not enough — popup, exit).
 3. Spawns the shared `ProjMagicBall`, `ElementSystem.ApplyElement` sets `ElementComponent` (color on
