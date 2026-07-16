@@ -41,6 +41,42 @@
   spawn: MedievalFloorTileItemGrassDark2
   maxCount: 15
 
+- type: stack
+  id: MedievalFloorTileGrassLight
+  name: stack-medieval-grass-light-floor
+  spawn: MedievalFloorTileItemGrassLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileGrassTall
+  name: stack-medieval-grass-tall-floor
+  spawn: MedievalFloorTileItemGrassTall
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileGrassDarkLight
+  name: stack-medieval-grass-dark-light-floor
+  spawn: MedievalFloorTileItemGrassDarkLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileGrassCrystalTall
+  name: stack-medieval-grass-crystal-tall-floor
+  spawn: MedievalFloorTileItemGrassCrystalTall
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileGrassRedLight
+  name: stack-medieval-grass-red-light-floor
+  spawn: MedievalFloorTileItemGrassRedLight
+  maxCount: 15
+
+- type: stack
+  id: MedievalFloorTileGrassRedTall
+  name: stack-medieval-grass-red-tall-floor
+  spawn: MedievalFloorTileItemGrassRedTall
+  maxCount: 15
+
 # ❄️ Снег
 - type: stack
   id: MedievalFloorTileSnow

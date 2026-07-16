@@ -108,6 +108,104 @@
   - type: Stack
     stackType: MedievalFloorTileGrassDark2
 
+- type: entity
+  id: MedievalFloorTileItemGrassLight
+  parent: MedievalFloorTileItemBase
+  name: светлая трава
+  components:
+  - type: Sprite
+    state: astrograss
+  - type: Item
+    heldPrefix: grass
+  - type: FloorTile
+    outputs:
+    - MedievalFloorGrassLight
+  - type: Stack
+    stackType: MedievalFloorTileGrassLight
+
+- type: entity
+  id: MedievalFloorTileItemGrassTall
+  parent: MedievalFloorTileItemBase
+  name: высокая трава
+  components:
+  - type: Sprite
+    state: astrograss
+  - type: Item
+    heldPrefix: grass
+  - type: FloorTile
+    outputs:
+    - MedievalFloorGrassTall
+  - type: Stack
+    stackType: MedievalFloorTileGrassTall
+
+- type: entity
+  id: MedievalFloorTileItemGrassDarkLight
+  parent: MedievalFloorTileItemBase
+  name: светлая тёмная трава
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: darkgreengrass
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    heldPrefix: darkgreengrass
+  - type: FloorTile
+    outputs:
+    - MedievalFloorGrassDarkLight
+  - type: Stack
+    stackType: MedievalFloorTileGrassDarkLight
+
+- type: entity
+  id: MedievalFloorTileItemGrassCrystalTall
+  parent: MedievalFloorTileItemBase
+  name: высокая кристаллическая трава
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: crysgrass
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    heldPrefix: crysgrass
+  - type: FloorTile
+    outputs:
+    - MedievalFloorGrassCrystalTall
+  - type: Stack
+    stackType: MedievalFloorTileGrassCrystalTall
+
+- type: entity
+  id: MedievalFloorTileItemGrassRedLight
+  parent: MedievalFloorTileItemBase
+  name: светлая красная трава
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: redgrass
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    heldPrefix: redgrass
+  - type: FloorTile
+    outputs:
+    - MedievalFloorGrassRedLight
+  - type: Stack
+    stackType: MedievalFloorTileGrassRedLight
+
+- type: entity
+  id: MedievalFloorTileItemGrassRedTall
+  parent: MedievalFloorTileItemBase
+  name: высокая красная трава
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    state: redgrass
+  - type: Item
+    sprite: _Respiral/Objects/Tiles/tile.rsi
+    heldPrefix: redgrass
+  - type: FloorTile
+    outputs:
+    - MedievalFloorGrassRedTall
+  - type: Stack
+    stackType: MedievalFloorTileGrassRedTall
+
 # Снег
 
 - type: entity

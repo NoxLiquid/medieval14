@@ -70,9 +70,15 @@ stack-medieval-nail = гвоздь
 stack-medieval-mana-crystal = кристалл маны
 
 stack-medieval-grass-floor = трава
+stack-medieval-grass-light-floor = светлая трава
+stack-medieval-grass-tall-floor = высокая трава
 stack-medieval-grass-dark-green-floor = тёмно-зелёная трава
+stack-medieval-grass-dark-light-floor = светлая тёмная трава
 stack-medieval-grass-crystal-floor = кристаллическая трава
+stack-medieval-grass-crystal-tall-floor = высокая кристаллическая трава
 stack-medieval-grass-red-floor = красная трава
+stack-medieval-grass-red-light-floor = светлая красная трава
+stack-medieval-grass-red-tall-floor = высокая красная трава
 stack-medieval-grass-dark-floor = тёмная трава
 stack-medieval-grass-dark2-floor = тёмная трава 2
 
