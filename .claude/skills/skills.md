@@ -28,6 +28,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `zlevels.md` | Z-levels (vertical maps), CEZLevelsSystem, ZNetwork |
 | `localization.md` | Localization (FTL), syncing ru-RU with en-US, parity of variables and message IDs |
 | `testing.md` | Integration tests, CI strategy (Respiral blocking / upstream non-blocking), `--filter`, ID prefixes |
+| `engine_submodule.md` | RobustToolbox engine pin, `no-submodule-update` guard, upstream-merge policy, slnx/engine-version coupling |
 
 ## Key Architectural Rules
 
