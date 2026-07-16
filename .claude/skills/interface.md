@@ -39,10 +39,20 @@ severity via `MathHelper.Lerp(minSeverity, maxSeverity, percentage)`. So increas
 with `Scale=2`, `Stretch=None`. Upstream alert icons are 32×32 → 64px drawn = fits the `MaxSize`.
 Respiral icons are **48×48 → 96px drawn**, which overflowed the old `MaxSize=64`: the sprite is drawn
 centered at its full 96px and bled 16px past the reserved cell, overlapping neighbouring alerts in the
-vertical stack. **Fix:** `MaxSize` bumped 64→**96** (marked `// Respiral`). The control now reserves the
+vertical stack. **Fix:** `MaxSize` bumped 64→96 (marked `// Respiral`). The control now reserves the
 real drawn size, so 48px icons no longer overlap; 32px upstream icons (64px < 96) are unaffected
 (their `MeasureOverride` size stays 64). The `_cooldownGraphic` MaxSize is left at 64 (these three alerts
 have no cooldown).
+
+### Alert icon right-edge clipping (48×48 sprites) — MaxSize 96→104
+After the overlap fix, medieval icons were still clipped a few px on the right. Cause: engine
+`SpriteView` (`RobustToolbox/.../Controls/SpriteView.cs`) sets `RectClipContent = true`, and its
+`Draw` renders the sprite at its true 96px **centered** in the box. `MeasureOverride` returns the sprite's
+*diagonal* (`(x+y)/√2` ≈ 135 for a view without fixed world rotation), but we clamp with `MaxSize`. At
+`MaxSize=96` — exactly the 96px draw — there is **zero tolerance**, so the clip rect trims edge pixels
+(worst on the right, where the orb art reaches the frame edge). **Fix:** `MaxSize` 96→**104** (+8px
+headroom) so the box is a touch larger than the drawn sprite. The stack's right `Margin` alone does NOT
+help — the clipping is internal to the control, not against the screen edge.
 
 ### Alert stack right margin
 The whole alert stack sits in a `PanelContainer` (`HorizontalAlignment=Right`) inside `AlertsUI.xaml`.

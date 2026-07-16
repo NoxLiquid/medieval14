@@ -165,6 +165,28 @@ writing with a pen). XML in `ServerInfo/Guidebook/_Respiral/`, tab names in
 `Locale/{ru-RU,en-US}/_Respiral/guidebook.ftl` (`guide-entry-medieval-skills{,-literacy}`).
 Embed entities: `MedievalSkillBookLiteracy`, `MedievalPen`.
 
+## Bugfixes (2026-07)
+
+- **`AddSkillProgress` didn't network.** `SkillComponent.Skills` is an `AutoNetworkedField`, but
+  `SkillSystem.AddSkillProgress` (server) mutated the dictionary WITHOUT `Dirty` → the client never got
+  the update, so a skill learned from a book (e.g. `MedievalLiteracy`) never appeared in the character-menu
+  skills list even with progress > 0. Fixed: `Dirty(uid, component)` at the end of `AddSkillProgress`.
+- **Skills-list window title untranslated.** `skills-list-window-title` (and `skills-list-no-skills`)
+  were missing from `Locale/ru-RU/_respiral/skill.ftl` → raw key shown. Added ("Навыки").
+- **Skills-list icons too small.** `SkillsListWindow.SetSkills` rendered at `skill.IconSize` (default 16px).
+  Now `Math.Max(skill.IconSize, 32)` — min 32px display (explicit larger sizes still respected).
+- **Skill books took no wear on reading.** `AddWearAfterUseSystem.OnLearnDoAfter` (the `WearTrigger.Learn`
+  handler) + its `LearnDoAfterEvent` subscription + the `Content.Shared._Respiral.Skills.Events` import were
+  all commented out → reading a book (`AddWearAfterUse triggers: [Learn, MeleeHit]`) never applied its
+  `Slash: 1` damage, so the book never degraded. Re-enabled; added an `args.Cancelled` guard so an
+  interrupted read (BreakOnMove/BreakOnDamage) doesn't damage the book.
+- **Wear examine showed a huge "до поломки" number.** `WearSystem.OnExamine` reads a `Breakage` threshold,
+  but NO Respiral Wear item defines one (weapons/tools/books all use only `Destruction`) →
+  `GetThresholdAt(Breakage)` returns `FixedPoint2.MaxValue`. Fixed: when there's no breakage threshold
+  (`breakThreshold == FixedPoint2.MaxValue`), show only the destroy durability (`wear-exm-destroy-info`)
+  instead of the break/destroy pair. The "N до разрушения" from the `Destruction` threshold (books: 100)
+  is the real durability.
+
 ## History
 
 - `LearnSkillWhenMeleeAttackSystem` and `LearnSkillWhenMeleeAttackComponent` — removed, functionality moved into `NeededSkillForMeleeSystem` and `NeededSkillForMeleeComponent`

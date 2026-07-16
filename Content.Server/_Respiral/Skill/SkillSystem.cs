@@ -131,6 +131,8 @@ public sealed partial class SkillSystem : EntitySystem
             component.Skills[prototypeId] = Math.Min(1f, currentProgress + progress);
         else
             component.Skills[prototypeId] = Math.Min(1f, progress);
+
+        Dirty(uid, component);
     }
 
     /// <summary>
