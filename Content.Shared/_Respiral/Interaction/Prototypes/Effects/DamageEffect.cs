@@ -1,7 +1,7 @@
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The effect of dealing damage.

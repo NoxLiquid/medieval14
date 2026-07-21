@@ -1,4 +1,4 @@
-namespace Content.Server_Respiral.ClothingDamage.Components;
+namespace Content.Server._Respiral.Wear.Components;
 
 /// <summary>
 ///     Добавьте носителю одежды этот компонент, чтобы он получал урон по одежде при получении определенного количества урона.

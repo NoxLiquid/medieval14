@@ -2,7 +2,7 @@ using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Offer;
+namespace Content.Shared._Respiral.Offer.Components;
 
 [RegisterComponent, NetworkedComponent]
 [Access(typeof(SharedOfferItemSystem))]

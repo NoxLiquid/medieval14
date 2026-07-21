@@ -1,4 +1,4 @@
-using Content.Shared._Respiral.Skills.Prototypes;
+using Content.Shared._Respiral.Skill.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 

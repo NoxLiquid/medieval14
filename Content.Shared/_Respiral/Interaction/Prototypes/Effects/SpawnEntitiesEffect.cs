@@ -4,7 +4,7 @@ using Content.Shared.Throwing;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The effect of spawning entities near the target.

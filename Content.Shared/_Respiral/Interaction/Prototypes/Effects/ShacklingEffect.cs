@@ -2,7 +2,7 @@ using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Hands.EntitySystems;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The effect of handcuffs/shackles.

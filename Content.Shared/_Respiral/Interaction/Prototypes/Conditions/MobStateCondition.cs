@@ -1,7 +1,7 @@
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The condition checks the status of the mob.

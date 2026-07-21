@@ -1,6 +1,6 @@
 using Content.Shared.Whitelist;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// Condition that checks whether a chosen entity passes the given <see cref="EntityWhitelist"/>.

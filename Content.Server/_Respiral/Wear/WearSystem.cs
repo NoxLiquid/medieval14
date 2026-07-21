@@ -1,4 +1,4 @@
-using Content.Server_Respiral.Wear.Components;
+using Content.Server._Respiral.Wear.Components;
 using Content.Server.Destructible;
 using Content.Server.Destructible.Thresholds.Behaviors;
 using Content.Shared.Damage;
@@ -10,7 +10,7 @@ using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Robust.Server.Audio;
 
-namespace Content.Server_Respiral.Wear;
+namespace Content.Server._Respiral.Wear;
 
 public sealed partial class WearSystem : EntitySystem
 {

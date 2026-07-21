@@ -1,13 +1,13 @@
-using Content.Server_Respiral.Wear.Components;
+using Content.Server._Respiral.Wear.Components;
 using Content.Shared._Respiral.Lock.Events;
-using Content.Shared._Respiral.Skills.Events;
+using Content.Shared._Respiral.Skill.Events;
 using Content.Shared.Interaction;
 using Content.Shared.RCD.Systems;
 using Content.Shared.Tools.Components;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
 
-namespace Content.Server_Respiral.Wear;
+namespace Content.Server._Respiral.Wear;
 
 public sealed partial class AddWearAfterUseSystem : EntitySystem
 {

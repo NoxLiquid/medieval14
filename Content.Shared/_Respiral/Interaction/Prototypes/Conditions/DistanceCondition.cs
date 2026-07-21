@@ -1,4 +1,4 @@
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The maximum distance between the user and the target.

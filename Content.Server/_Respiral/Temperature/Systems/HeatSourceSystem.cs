@@ -1,9 +1,12 @@
+using Content.Shared._Respiral.Temperature.Components;
+using Content.Server.Temperature.Systems;
+using Content.Shared._Respiral.Temperature.Systems;
 using Content.Server.Temperature.Components;
 using Content.Shared.Placeable;
 using Content.Shared.Temperature.Components;
 using Content.Shared.Temperature.Systems;
 
-namespace Content.Server.Temperature.Systems;
+namespace Content.Server._Respiral.Temperature.Systems;
 
 public sealed partial class HeatSourceSystem : SharedHeatSourceSystem
 {

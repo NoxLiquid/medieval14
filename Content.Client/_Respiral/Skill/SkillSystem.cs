@@ -1,6 +1,6 @@
 using Content.Client.CharacterInfo;
-using Content.Shared._Respiral.Skills;
-using Content.Shared._Respiral.Skills.Components;
+using Content.Shared._Respiral.Skill;
+using Content.Shared._Respiral.Skill.Components;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 

@@ -1,6 +1,6 @@
 using Content.Shared.Stunnable;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The effect of stunning the target's fall.

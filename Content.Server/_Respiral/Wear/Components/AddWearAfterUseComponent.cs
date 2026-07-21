@@ -1,7 +1,7 @@
 using Content.Shared.Damage;
 using Content.Shared.Whitelist;
 
-namespace Content.Server_Respiral.Wear.Components;
+namespace Content.Server._Respiral.Wear.Components;
 
 [RegisterComponent]
 public sealed partial class AddWearAfterUseComponent : Component

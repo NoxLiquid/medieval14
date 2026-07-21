@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared._Respiral.Blacksmithing;
 using Content.Shared._Respiral.Blacksmithing.Components;
-using Content.Shared.Burning.Components;
+using Content.Shared._Respiral.Burning.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Popups;
@@ -10,7 +10,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Respiral.Blacksmithing.Systems;
+namespace Content.Server._Respiral.Blacksmithing;
 
 public sealed partial class QuenchingSystem : EntitySystem
 {

@@ -1,5 +1,5 @@
 using Content.Server.EUI;
-using Content.Shared._Respiral.Skills.Events;
+using Content.Shared._Respiral.Skill.Events;
 using Content.Shared.Eui;
 
 namespace Content.Server._Respiral.Skill;

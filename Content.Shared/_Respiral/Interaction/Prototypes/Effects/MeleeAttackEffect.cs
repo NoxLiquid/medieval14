@@ -1,7 +1,7 @@
 using Content.Shared.CombatMode;
 using Content.Shared.Weapons.Melee;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// An effect that simulates a light melee attack with the user's weapon.

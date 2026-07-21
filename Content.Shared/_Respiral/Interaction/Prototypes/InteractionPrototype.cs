@@ -2,7 +2,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 [Prototype]
 public sealed partial class InteractionActionPrototype : IPrototype, IInheritingPrototype

@@ -6,9 +6,9 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Destructible;
 using Content.Shared.FixedPoint;
 using Content.Server.Destructible;
-using Content.Server_Respiral.Wear.Components;
+using Content.Server._Respiral.Wear.Components;
 
-namespace Content.Server_Respiral.Wear;
+namespace Content.Server._Respiral.Wear;
 
 public sealed partial class WearSystem : EntitySystem
 {

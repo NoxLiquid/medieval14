@@ -1,4 +1,4 @@
-namespace Content.Shared.Burning;
+namespace Content.Shared._Respiral.Burning;
 
 [DataRecord]
 public partial record struct FuelType(

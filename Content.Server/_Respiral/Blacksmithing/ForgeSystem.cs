@@ -1,9 +1,9 @@
 using System.Linq;
-using Content.Server.Burning.Systems;
+using Content.Server._Respiral.Burning;
 using Content.Server.Damage.Systems;
 using Content.Shared._Respiral.Blacksmithing;
 using Content.Shared._Respiral.Blacksmithing.Components;
-using Content.Shared.Burning.Components;
+using Content.Shared._Respiral.Burning.Components;
 using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Placeable;
@@ -12,7 +12,7 @@ using Content.Shared.Timing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 
-namespace Content.Server._Respiral.Blacksmithing.Systems;
+namespace Content.Server._Respiral.Blacksmithing;
 
 public sealed partial class ForgeSystem : EntitySystem
 {

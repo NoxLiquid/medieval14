@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Respiral.Blacksmithing;
+namespace Content.Shared._Respiral.Blacksmithing.Components;
 
 [RegisterComponent]
 public sealed partial class EntityQualityComponent : Component

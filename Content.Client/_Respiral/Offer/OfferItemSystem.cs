@@ -1,4 +1,5 @@
-using Content.Shared.Offer;
+using Content.Shared._Respiral.Offer.Components;
+using Content.Shared._Respiral.Offer;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;

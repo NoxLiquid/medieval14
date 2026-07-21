@@ -1,7 +1,7 @@
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The target must be handcuffed/bound.

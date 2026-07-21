@@ -2,7 +2,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The condition checks whether the target belongs to one of the specified races.

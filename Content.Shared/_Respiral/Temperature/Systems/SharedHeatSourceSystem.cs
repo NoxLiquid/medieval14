@@ -1,4 +1,4 @@
-namespace Content.Shared.Temperature.Systems;
+namespace Content.Shared._Respiral.Temperature.Systems;
 
 public abstract partial class SharedHeatSourceSystem : EntitySystem
 {

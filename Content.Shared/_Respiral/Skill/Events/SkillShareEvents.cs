@@ -1,7 +1,7 @@
 using Content.Shared.Eui;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Respiral.Skills.Events;
+namespace Content.Shared._Respiral.Skill.Events;
 
 /// <summary>
 /// EUI state for showing the skills list of another player.

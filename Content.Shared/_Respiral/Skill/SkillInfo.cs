@@ -1,7 +1,7 @@
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._Respiral.Skills;
+namespace Content.Shared._Respiral.Skill;
 
 /// <summary>
 /// Name - название навыка.

@@ -1,6 +1,6 @@
 using Content.Shared._Respiral.TimeWindow;
 
-namespace Content._Respiral.NPC.Components;
+namespace Content.Server._Respiral.NPC.Components;
 
 [RegisterComponent]
 public sealed partial class HerbivoreFearComponent : Component

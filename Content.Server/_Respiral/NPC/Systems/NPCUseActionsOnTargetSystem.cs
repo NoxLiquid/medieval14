@@ -1,3 +1,5 @@
+using Content.Server.NPC.Systems;
+using Content.Server._Respiral.NPC.Components;
 using System.Linq;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
@@ -8,7 +10,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server.NPC.Systems;
+namespace Content.Server._Respiral.NPC.Systems;
 
 public sealed partial class NPCUseActionsOnTargetSystem : EntitySystem
 {

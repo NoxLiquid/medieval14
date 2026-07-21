@@ -6,7 +6,7 @@ using Content.Shared.Cargo;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 
-namespace Content.Server._Respiral.Trade;
+namespace Content.Server._Respiral.Pricing;
 
 public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
 {

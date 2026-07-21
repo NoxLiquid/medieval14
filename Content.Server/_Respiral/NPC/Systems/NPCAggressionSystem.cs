@@ -1,10 +1,11 @@
+using Content.Server._Respiral.NPC.Components;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Shared.Damage.Systems;
 using Content.Shared.NPC;
 using Robust.Shared.Player;
 
-namespace Content.Server.NPC.Systems;
+namespace Content.Server._Respiral.NPC.Systems;
 
 public sealed partial class NPCAggressionSystem : EntitySystem
 {

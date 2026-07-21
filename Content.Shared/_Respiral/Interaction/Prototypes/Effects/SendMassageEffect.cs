@@ -1,7 +1,7 @@
 using Content.Shared.Chat;
 using Content.Shared.IdentityManagement;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The effect of sending a message to the in-game chat (IC).
@@ -39,7 +39,7 @@ public sealed partial class SendMessageEffect : InteractionEffect
         var entity = Sender == EffectTarget.User ? user : target;
 
         var chatSystem = entityManager.System<SharedChatSystem>();
-        chatSystem.TrySendInGameICMessage(entity, Loc.GetString(Message, ("user", Identity.Name(user, entityManager, entity)),
-                ("target", Identity.Name(target, entityManager, entity))), Chat, HideMessage);
+        chatSystem.TrySendInGameICMessage(entity, Loc.GetString(Message, ("user", Content.Shared.IdentityManagement.Identity.Name(user, entityManager, entity)),
+                ("target", Content.Shared.IdentityManagement.Identity.Name(target, entityManager, entity))), Chat, HideMessage);
     }
 }

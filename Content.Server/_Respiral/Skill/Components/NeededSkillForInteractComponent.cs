@@ -1,4 +1,4 @@
-using Content.Shared._Respiral.Skills.Prototypes;
+using Content.Shared._Respiral.Skill.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Respiral.Skill.Components;

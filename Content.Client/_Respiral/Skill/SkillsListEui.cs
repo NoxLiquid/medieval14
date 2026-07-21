@@ -1,5 +1,5 @@
 using Content.Client.Eui;
-using Content.Shared._Respiral.Skills.Events;
+using Content.Shared._Respiral.Skill.Events;
 using Content.Shared.Eui;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;

@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared.Mountable.Components;
+using Content.Shared._Respiral.Mount.Components;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Mobs;
@@ -9,7 +9,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.NPC;
 using Content.Shared.Standing;
 
-namespace Content.Shared.Mountable;
+namespace Content.Shared._Respiral.Mount;
 
 /// <summary>
 /// The system responsible for mount management

@@ -1,7 +1,7 @@
 using Content.Shared.Body;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The target must have the specified body part.

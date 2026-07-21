@@ -1,6 +1,6 @@
-using Content.Shared.Burning;
+using Content.Shared._Respiral.Burning;
 
-namespace Content.Server.Burning.Systems;
+namespace Content.Server._Respiral.Burning;
 
 public sealed partial class FuelSystem : EntitySystem
 {

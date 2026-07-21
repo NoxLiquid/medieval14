@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
-using Content.Shared._Respiral.Skills;
-using Content.Shared._Respiral.Skills.Prototypes;
-using Content.Shared._Respiral.Skills.Components;
+using Content.Shared._Respiral.Skill;
+using Content.Shared._Respiral.Skill.Prototypes;
+using Content.Shared._Respiral.Skill.Components;
 using Content.Server.Popups;
 using System.Linq;
 using Content.Shared.Polymorph;

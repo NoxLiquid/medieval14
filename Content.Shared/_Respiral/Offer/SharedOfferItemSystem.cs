@@ -1,3 +1,4 @@
+using Content.Shared._Respiral.Offer.Components;
 using Content.Shared.Alert;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
@@ -8,7 +9,7 @@ using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Offer;
+namespace Content.Shared._Respiral.Offer;
 
 public abstract partial class SharedOfferItemSystem : EntitySystem
 {

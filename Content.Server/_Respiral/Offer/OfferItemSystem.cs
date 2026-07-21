@@ -1,9 +1,10 @@
+using Content.Shared._Respiral.Offer.Components;
 using Content.Shared.Alert;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
-using Content.Shared.Offer;
+using Content.Shared._Respiral.Offer;
 using Content.Shared.Popups;
 
 namespace Content.Server._Respiral.Offer;
@@ -57,10 +58,10 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
         if (offer.Item is { } item)
         {
             _popup.PopupEntity(Loc.GetString("offer-item-try-give",
-                ("item", Name(item)), ("target", Identity.Name(args.Target, EntityManager, args.User))), args.User, args.User);
+                ("item", Name(item)), ("target", Content.Shared.IdentityManagement.Identity.Name(args.Target, EntityManager, args.User))), args.User, args.User);
 
             _popup.PopupEntity(Loc.GetString("offer-item-try-give-target",
-                ("user", Identity.Name(args.User, EntityManager, args.Target)), ("item", Name(item))), args.Target, args.Target);
+                ("user", Content.Shared.IdentityManagement.Identity.Name(args.User, EntityManager, args.Target)), ("item", Name(item))), args.Target, args.Target);
         }
     }
 
@@ -89,15 +90,15 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
             if (_hands.TryPickupAnyHand(acceptor, item))
             {
                 _popup.PopupEntity(Loc.GetString("offer-item-give",
-                    ("item", Name(item)), ("target", Identity.Name(acceptor, EntityManager, offerer))), offerer, offerer);
+                    ("item", Name(item)), ("target", Content.Shared.IdentityManagement.Identity.Name(acceptor, EntityManager, offerer))), offerer, offerer);
 
                 _popup.PopupEntity(Loc.GetString("offer-item-give-target",
-                    ("item", Name(item)), ("target", Identity.Name(offerer, EntityManager, acceptor))), acceptor, acceptor);
+                    ("item", Name(item)), ("target", Content.Shared.IdentityManagement.Identity.Name(offerer, EntityManager, acceptor))), acceptor, acceptor);
             }
             else
             {
                 _popup.PopupEntity(Loc.GetString("offer-item-no-give",
-                    ("item", Name(item)), ("target", Identity.Name(acceptor, EntityManager, offerer))), offerer, offerer);
+                    ("item", Name(item)), ("target", Content.Shared.IdentityManagement.Identity.Name(acceptor, EntityManager, offerer))), offerer, offerer);
             }
         }
 

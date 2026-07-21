@@ -1,6 +1,6 @@
 using Content.Shared.Damage.Systems;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// An effect that depletes the target's stamina.

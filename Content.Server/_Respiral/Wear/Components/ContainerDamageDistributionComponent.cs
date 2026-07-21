@@ -1,4 +1,4 @@
-namespace Content.Server_Respiral.Wear.Components;
+namespace Content.Server._Respiral.Wear.Components;
 
 [RegisterComponent]
 public sealed partial class ContainerDamageDistributionComponent : Component

@@ -1,6 +1,6 @@
 using Robust.Shared.Random;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// An effect that applies a set of other effects with a given probability.

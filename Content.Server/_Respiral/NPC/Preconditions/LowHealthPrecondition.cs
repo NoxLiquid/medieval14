@@ -5,7 +5,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Systems;
 
-namespace Content._Respiral.NPC.Preconditions;
+namespace Content.Server._Respiral.NPC.Preconditions;
 
 /// <summary>
 ///     Возвращает значение true, если процент оставшегося здоровья владельца находится на уровне или ниже заданного порога.

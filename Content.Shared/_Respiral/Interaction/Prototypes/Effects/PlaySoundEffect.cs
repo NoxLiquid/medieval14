@@ -1,7 +1,7 @@
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The sound playback effect in the PVS target.

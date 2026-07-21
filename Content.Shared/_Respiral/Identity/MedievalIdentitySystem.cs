@@ -1,7 +1,7 @@
 using System.Linq;
 using Content.Shared._Respiral.Identity.Components;
 using Content.Shared._Respiral.Identity.Events;
-using Content.Shared._Respiral.Skills;
+using Content.Shared._Respiral.Skill;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Hands;

@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Content.Shared._Respiral.Skills;
+namespace Content.Shared._Respiral.Skill;
 
 /// <summary>
 ///     Подмена букв в тексте бумаги в зависимости от уровня грамотности читателя (0..1).

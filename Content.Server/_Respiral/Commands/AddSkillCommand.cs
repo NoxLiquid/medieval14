@@ -2,8 +2,8 @@ using System.Globalization;
 using System.Linq;
 using Content.Server.Administration;
 using Content.Shared.Administration;
-using Content.Shared._Respiral.Skills.Components;
-using Content.Shared._Respiral.Skills.Prototypes;
+using Content.Shared._Respiral.Skill.Components;
+using Content.Shared._Respiral.Skill.Prototypes;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 

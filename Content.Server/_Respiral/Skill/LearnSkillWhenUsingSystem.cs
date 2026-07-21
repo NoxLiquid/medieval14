@@ -1,7 +1,7 @@
 using Content.Server._Respiral.Skill.Components;
 using Content.Server.Inventory;
 using Content.Server.Popups;
-using Content.Shared._Respiral.Skills.Events;
+using Content.Shared._Respiral.Skill.Events;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;

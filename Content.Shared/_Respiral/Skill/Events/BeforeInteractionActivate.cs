@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._Respiral.Skills.Events;
+namespace Content.Shared._Respiral.Skill.Events;
 
 [PublicAPI]
 public sealed class BeforeInteractionActivate : HandledEntityEventArgs

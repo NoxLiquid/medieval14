@@ -1,8 +1,8 @@
-using Content.Shared._Respiral.Skills.Components;
-using Content.Shared._Respiral.Skills.Prototypes;
+using Content.Shared._Respiral.Skill.Components;
+using Content.Shared._Respiral.Skill.Prototypes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Respiral.Skills;
+namespace Content.Shared._Respiral.Skill;
 
 public static class Literacy
 {

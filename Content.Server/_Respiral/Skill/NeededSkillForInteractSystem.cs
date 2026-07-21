@@ -1,5 +1,5 @@
 using Content.Server._Respiral.Skill.Components;
-using Content.Shared._Respiral.Skills.Events;
+using Content.Shared._Respiral.Skill.Events;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 

@@ -3,7 +3,7 @@ using Content.Shared.Hands.EntitySystems;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The effect of removing a body part from the target (for example: chopping off).

@@ -1,6 +1,6 @@
 using Content.Shared._Respiral.TimeWindow;
 
-namespace Content._Respiral.NPC;
+namespace Content.Server._Respiral.NPC;
 
 public static class MedievalNPCBlackboard
 {

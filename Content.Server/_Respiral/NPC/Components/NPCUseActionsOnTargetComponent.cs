@@ -1,8 +1,9 @@
+using Content.Server._Respiral.NPC.Systems;
 using Content.Server.NPC.Systems;
 using Content.Shared.Actions.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.NPC.Components;
+namespace Content.Server._Respiral.NPC.Components;
 
 /// <summary>
 /// This is used for an NPC that constantly tries to use an actions on a given target.

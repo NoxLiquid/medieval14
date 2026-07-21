@@ -13,7 +13,7 @@ using Robust.Client.UserInterface.RichText;
 using Content.Client.UserInterface.RichText;
 using Robust.Shared.Input;
 // Respiral-Start - подмена символов на бумаге по уровню грамотности
-using Content.Shared._Respiral.Skills;
+using Content.Shared._Respiral.Skill;
 using Robust.Client.Player;
 // Respiral-End
 

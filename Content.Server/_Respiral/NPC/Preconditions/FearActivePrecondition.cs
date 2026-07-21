@@ -2,7 +2,7 @@ using Content.Server.NPC;
 using Content.Server.NPC.HTN.Preconditions;
 using Robust.Shared.Timing;
 
-namespace Content._Respiral.NPC.Preconditions;
+namespace Content.Server._Respiral.NPC.Preconditions;
 
 public sealed partial class FearActivePrecondition : HTNPrecondition
 {

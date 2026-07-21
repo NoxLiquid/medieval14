@@ -4,7 +4,7 @@ using Content.Server.NPC;
 using Content.Server.NPC.HTN.PrimitiveTasks;
 using Content.Shared._Respiral.TimeWindow;
 
-namespace Content._Respiral.NPC.Operators;
+namespace Content.Server._Respiral.NPC.Operators;
 
 public sealed partial class RefreshFearTimerOperator : HTNOperator
 {

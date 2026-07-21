@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 [Access(typeof(InteractionActionSystem))]
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]

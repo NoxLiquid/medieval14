@@ -1,7 +1,7 @@
 using Content.Server.Audio;
 using Content.Server.Stack;
-using Content.Shared.Burning;
-using Content.Shared.Burning.Components;
+using Content.Shared._Respiral.Burning;
+using Content.Shared._Respiral.Burning.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
@@ -17,7 +17,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Burning.Systems;
+namespace Content.Server._Respiral.Burning;
 
 public sealed partial class FuelBurnerSystem : EntitySystem
 {

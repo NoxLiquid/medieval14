@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._Respiral.Skills.Prototypes;
+namespace Content.Shared._Respiral.Skill.Prototypes;
 
 [Prototype]
 public sealed partial class SkillPrototype : IPrototype

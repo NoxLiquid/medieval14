@@ -1,3 +1,5 @@
+using Content.Server._Respiral.NPC.Components;
+using Content.Server.NPC.Systems;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Shared.CCVar;
@@ -11,7 +13,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server.NPC.Systems;
+namespace Content.Server._Respiral.NPC.Systems;
 
 public sealed partial class NPCOptimizationSystem : EntitySystem
 {

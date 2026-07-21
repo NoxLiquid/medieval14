@@ -1,7 +1,7 @@
-using Content.Server_Respiral.Wear.Components;
+using Content.Server._Respiral.Wear.Components;
 using Content.Shared.Lathe;
 
-namespace Content.Server_Respiral.Wear;
+namespace Content.Server._Respiral.Wear;
 
 public sealed partial class LatheWearSystem : EntitySystem
 {

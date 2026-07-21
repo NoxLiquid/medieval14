@@ -3,7 +3,7 @@ using Content.Shared._Respiral.Blacksmithing;
 using Content.Shared._Respiral.Blacksmithing.Components;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._Respiral.Blacksmithing.Systems;
+namespace Content.Client._Respiral.Blacksmithing;
 
 public sealed partial class ForgingSystem : EntitySystem
 {

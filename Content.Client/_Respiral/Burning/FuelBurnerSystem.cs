@@ -1,8 +1,8 @@
-using Content.Shared.Burning;
-using Content.Shared.Burning.Components;
+using Content.Shared._Respiral.Burning;
+using Content.Shared._Respiral.Burning.Components;
 using Robust.Client.GameObjects;
 
-namespace Content.Client.Burning.Systems;
+namespace Content.Client._Respiral.Burning;
 
 public sealed partial class FuelBurnerSystem : EntitySystem
 {

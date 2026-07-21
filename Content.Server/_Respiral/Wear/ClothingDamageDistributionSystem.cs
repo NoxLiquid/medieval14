@@ -1,13 +1,11 @@
-using Content.Server_Respiral.ClothingDamage.Components;
-using Content.Server_Respiral.Wear;
-using Content.Server_Respiral.Wear.Components;
+using Content.Server._Respiral.Wear.Components;
 using Content.Server.Inventory;
 using Robust.Shared.Random;
 using Content.Shared.Damage.Systems;
 
-namespace Content.Server_Respiral.ClothingDamage;
+namespace Content.Server._Respiral.Wear;
 
-public sealed partial class ContainerDamageDistributionSystem : EntitySystem
+public sealed partial class ClothingDamageDistributionSystem : EntitySystem
 {
     [Dependency] private ServerInventorySystem _inventory = default!;
     [Dependency] private IRobustRandom _random = default!;

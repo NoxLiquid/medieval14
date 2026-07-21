@@ -11,7 +11,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 public sealed partial class InteractionActionSystem : EntitySystem
 {
@@ -115,8 +115,8 @@ public sealed partial class InteractionActionSystem : EntitySystem
         {
             if (!string.IsNullOrWhiteSpace(action.DelayStartUserMessage))
             {
-                var message = Loc.GetString(action.DelayStartUserMessage, ("user", Identity.Name(user, EntityManager, user)),
-                    ("target", Identity.Name(target, EntityManager, user)));
+                var message = Loc.GetString(action.DelayStartUserMessage, ("user", Content.Shared.IdentityManagement.Identity.Name(user, EntityManager, user)),
+                    ("target", Content.Shared.IdentityManagement.Identity.Name(target, EntityManager, user)));
 
                 var popupType = action.DelayStartColorMessage == Color.Red ? PopupType.SmallCaution : PopupType.Small;
                 _popup.PopupEntity(message, user, user, popupType);
@@ -125,8 +125,8 @@ public sealed partial class InteractionActionSystem : EntitySystem
 
             if (!string.IsNullOrWhiteSpace(action.DelayStartTargetMessage))
             {
-                var message = Loc.GetString(action.DelayStartTargetMessage, ("user", Identity.Name(user, EntityManager, target)),
-                    ("target", Identity.Name(target, EntityManager, target)));
+                var message = Loc.GetString(action.DelayStartTargetMessage, ("user", Content.Shared.IdentityManagement.Identity.Name(user, EntityManager, target)),
+                    ("target", Content.Shared.IdentityManagement.Identity.Name(target, EntityManager, target)));
 
                 var popupType = action.DelayStartColorMessage == Color.Red ? PopupType.SmallCaution : PopupType.Small;
                 _popup.PopupEntity(message, target, target, popupType);
@@ -139,8 +139,8 @@ public sealed partial class InteractionActionSystem : EntitySystem
                     .RemoveWhereAttachedEntity(uid => uid == target);
 
                 var popupType = action.DelayStartColorMessage == Color.Red ? PopupType.SmallCaution : PopupType.Small;
-                _popup.PopupEntity(Loc.GetString(action.DelayStartOtherMessage, ("user", Identity.Name(user, EntityManager)),
-                    ("target", Identity.Name(target, EntityManager))), target, filter, false, popupType);
+                _popup.PopupEntity(Loc.GetString(action.DelayStartOtherMessage, ("user", Content.Shared.IdentityManagement.Identity.Name(user, EntityManager)),
+                    ("target", Content.Shared.IdentityManagement.Identity.Name(target, EntityManager))), target, filter, false, popupType);
             }
 
             var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(action.Delay),

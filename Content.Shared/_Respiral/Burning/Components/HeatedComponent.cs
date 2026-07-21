@@ -1,4 +1,4 @@
-namespace Content.Shared.Burning.Components;
+namespace Content.Shared._Respiral.Burning.Components;
 
 [RegisterComponent]
 public sealed partial class HeatedComponent : Component

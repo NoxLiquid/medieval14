@@ -1,6 +1,6 @@
 using Content.Shared.Inventory;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The condition checks the availability of items in the specified target equipment slots.

@@ -5,7 +5,7 @@ using Content.Server.NPC;
 using Content.Server.NPC.HTN.PrimitiveTasks;
 using Robust.Shared.Map;
 
-namespace Content._Respiral.NPC.Operators;
+namespace Content.Server._Respiral.NPC.Operators;
 
 /// <summary>
 ///     Вычисляет координаты на удалении от цели и сохраняет их на доске для перемещения

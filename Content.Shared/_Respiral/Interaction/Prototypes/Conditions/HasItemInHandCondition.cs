@@ -4,7 +4,7 @@ using Content.Shared.Tools.Systems;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The specified entity must have an item in its hand

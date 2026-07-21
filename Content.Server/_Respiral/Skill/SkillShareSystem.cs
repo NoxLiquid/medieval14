@@ -1,8 +1,8 @@
 using Content.Server.Administration.Managers;
 using Content.Server.EUI;
 using Content.Server.Mind;
-using Content.Shared._Respiral.Skills;
-using Content.Shared._Respiral.Skills.Components;
+using Content.Shared._Respiral.Skill;
+using Content.Shared._Respiral.Skill.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Verbs;
 using Robust.Server.Player;

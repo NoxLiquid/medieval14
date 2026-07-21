@@ -1,12 +1,12 @@
 using System.Numerics;
-using Content._Respiral.NPC.Components;
+using Content.Server._Respiral.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Shared._Respiral.TimeWindow;
 using Content.Shared.Damage.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
-namespace Content._Respiral.NPC.Systems;
+namespace Content.Server._Respiral.NPC.Systems;
 
 public sealed partial class HerbivoreFearSystem : EntitySystem
 {

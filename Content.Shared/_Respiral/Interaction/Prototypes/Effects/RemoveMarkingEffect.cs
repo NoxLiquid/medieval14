@@ -1,7 +1,7 @@
 using Content.Shared.Body;
 using Content.Shared.Humanoid;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The effect of removing labels from the target.

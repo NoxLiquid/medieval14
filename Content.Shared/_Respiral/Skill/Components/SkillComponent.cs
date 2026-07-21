@@ -1,8 +1,8 @@
-using Content.Shared._Respiral.Skills.Prototypes;
+using Content.Shared._Respiral.Skill.Prototypes;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Respiral.Skills.Components;
+namespace Content.Shared._Respiral.Skill.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(raiseAfterAutoHandleState: true)]
 public sealed partial class SkillComponent : Component

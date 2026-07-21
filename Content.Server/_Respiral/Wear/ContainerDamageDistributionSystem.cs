@@ -1,11 +1,11 @@
-using Content.Server_Respiral.Wear.Components;
+using Content.Server._Respiral.Wear.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Random;
 
-namespace Content.Server_Respiral.Wear;
+namespace Content.Server._Respiral.Wear;
 
 public sealed partial class ContainerDamageDistributionSystem : EntitySystem
 {

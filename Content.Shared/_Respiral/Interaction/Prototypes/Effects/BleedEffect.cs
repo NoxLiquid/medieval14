@@ -1,6 +1,6 @@
 using Content.Shared.Body.Systems;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// An effect that increases the target's bleeding.

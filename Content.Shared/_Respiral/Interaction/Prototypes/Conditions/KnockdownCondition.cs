@@ -1,7 +1,7 @@
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 
-namespace Content.Shared.Interaction;
+namespace Content.Shared._Respiral.Interaction;
 
 /// <summary>
 /// The condition checks that the target is not standing and supports the flip.
