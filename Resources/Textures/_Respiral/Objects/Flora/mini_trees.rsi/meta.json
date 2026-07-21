@@ -1,0 +1,92 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by mars33_2.0 for Space Station 14 project Respiral",
+    "size": {
+        "x": 192,
+        "y": 256
+    },
+    "states": [
+        {
+            "name": "green01"
+        },
+        {
+            "name": "green02"
+        },
+        {
+            "name": "green03"
+        },
+        {
+            "name": "green04"
+        },
+        {
+            "name": "green05"
+        },
+        {
+            "name": "green06"
+        },
+        {
+            "name": "green07"
+        },
+        {
+            "name": "green08"
+        },
+        {
+            "name": "green09"
+        },
+        {
+            "name": "green10"
+        },
+        {
+            "name": "black01"
+        },
+        {
+            "name": "black02"
+        },
+        {
+            "name": "black03"
+        },
+        {
+            "name": "black04"
+        },
+        {
+            "name": "black05"
+        },
+        {
+            "name": "black06"
+        },
+        {
+            "name": "black07"
+        },
+        {
+            "name": "black08"
+        },
+        {
+            "name": "white01"
+        },
+        {
+            "name": "white02"
+        },
+        {
+            "name": "white03"
+        },
+        {
+            "name": "white04"
+        },
+        {
+            "name": "white05"
+        },
+        {
+            "name": "white06"
+        },
+        {
+            "name": "white07"
+        },
+        {
+            "name": "white08"
+        },
+        {
+            "name": "white09"
+        }
+    ]
+}

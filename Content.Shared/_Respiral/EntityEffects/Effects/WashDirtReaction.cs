@@ -1,7 +1,9 @@
-using Content.Shared.DirtVisuals;
+using Content.Shared._Respiral.Dirt;
+using Content.Shared._Respiral.Dirt.Components;
+using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.EntityEffects.Effects;
+namespace Content.Shared._Respiral.EntityEffects.Effects;
 
 /// <summary>
 /// Cleans dirt from dirtable entities.

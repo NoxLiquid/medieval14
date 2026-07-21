@@ -1,0 +1,28 @@
+# Гайдбук Респирала — Respiral, см. .claude/skills/identity.md
+# Корневая вкладка «Средневековье» (не является ничьим child → попадает в корень дерева гайдбука).
+
+- type: guideEntry
+  id: Medieval
+  name: guide-entry-medieval
+  priority: -10
+  text: "/ServerInfo/Guidebook/_Respiral/Medieval.xml"
+  children:
+  - MedievalIdentity
+  - MedievalSkills
+
+- type: guideEntry
+  id: MedievalIdentity
+  name: guide-entry-medieval-identity
+  text: "/ServerInfo/Guidebook/_Respiral/Identity.xml"
+
+- type: guideEntry
+  id: MedievalSkills
+  name: guide-entry-medieval-skills
+  text: "/ServerInfo/Guidebook/_Respiral/Skills.xml"
+  children:
+  - MedievalSkillsLiteracy
+
+- type: guideEntry
+  id: MedievalSkillsLiteracy
+  name: guide-entry-medieval-skills-literacy
+  text: "/ServerInfo/Guidebook/_Respiral/SkillsLiteracy.xml"

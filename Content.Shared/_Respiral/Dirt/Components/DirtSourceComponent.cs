@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.DirtVisuals;
+namespace Content.Shared._Respiral.Dirt.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class DirtSourceComponent : Component;

@@ -3,6 +3,7 @@ using Content.Server.Inventory;
 using Content.Server.Popups;
 using Content.Shared._Respiral.Skills.Events;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Nutrition.EntitySystems;
 using Robust.Server.Audio;
@@ -22,6 +23,16 @@ public sealed partial class LearnSkillWhenUsingSystem : EntitySystem
 
         SubscribeLocalEvent<LearnSkillWhenUsingComponent, UseInHandEvent>(OnUseInHand, after: new[] { typeof(OpenableSystem), typeof(ServerInventorySystem) });
         SubscribeLocalEvent<LearnSkillWhenUsingComponent, LearnDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<LearnSkillWhenUsingComponent, ExaminedEvent>(OnExamine);
+    }
+
+    private void OnExamine(EntityUid uid, LearnSkillWhenUsingComponent component, ExaminedEvent args)
+    {
+        if (component.Skills.Count == 0)
+            return;
+
+        args.PushMarkup(Loc.GetString("skill-exm-learn-skills",
+            ("skills", _skillSystem.GetSkillNames(component.Skills))));
     }
 
     private void OnUseInHand(EntityUid uid, LearnSkillWhenUsingComponent component, UseInHandEvent args)

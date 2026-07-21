@@ -1,0 +1,318 @@
+# Средневековые трубы мусоропровода (subfloor, без электричества).
+# Деревянные трубы: видны на subfloor-тайлах (MedievalLattice/MedievalDirt),
+# прячутся под настоящим полом (MedievalFloorStone) — механика SubFloorHide.
+# Спрайт продублирован в _Respiral/Structures/Piping/disposal.rsi (юзер заменит позже).
+# Электронные/сетевые сегменты (tagger/signaller/router/signal-router) не портированы:
+# они требуют DeviceNetwork/DeviceLink, что противоречит беспитательной концепции.
+
+# --- База ---
+- type: entity
+  id: MedievalDisposalPipeBase
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Disposal
+  components:
+  - type: Sprite
+    drawdepth: ThickPipe
+    sprite: _Respiral/Structures/Piping/disposal.rsi
+    visible: false
+  - type: Appearance
+  - type: Visibility
+    layer: 1
+  - type: SubFloorHide
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.5,0.25,0.5"
+        mask:
+        - SubfloorMask
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+  - type: Damageable
+    damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+      - !type:ChangeConstructionNodeBehavior
+        node: broken
+  - type: Rotatable
+  - type: Pullable
+  - type: CollideOnAnchor
+  - type: DisposalTube
+  - type: MedievalPhysicalPriced
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200 # 2 доски
+
+# --- Сломанная труба ---
+- type: entity
+  id: MedievalDisposalPipeBroken
+  parent: MedievalDisposalPipeBase
+  name: сломанная труба мусоропровода
+  description: Большая треснувшая труба.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "pipe" ]
+      state: pipe-b
+  - type: Construction
+    graph: MedievalDisposalPipe
+    node: broken
+
+# --- Прямая труба ---
+- type: entity
+  id: MedievalDisposalPipe
+  parent: MedievalDisposalPipeBase
+  name: труба мусоропровода
+  description: Большой сегмент трубы для постройки систем сброса мусора.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-s
+  - type: DisposalTube
+    exits:
+    - South
+    - North
+  - type: GenericVisualizer
+    visuals:
+      enum.AnchorVisuals.Anchored:
+        pipe:
+          False: { state: conpipe-s }
+          True: { state: pipe-s }
+  - type: Construction
+    graph: MedievalDisposalPipe
+    node: pipe
+
+# --- Trunk (вход в сеть под юнитом) ---
+- type: entity
+  id: MedievalDisposalTrunk
+  parent: MedievalDisposalPipeBase
+  name: приёмная труба мусоропровода
+  description: Приёмный узел трубы — точка входа в систему сброса мусора.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-t
+  - type: DisposalTube
+  - type: DisposalEntry
+  - type: GenericVisualizer
+    visuals:
+      enum.AnchorVisuals.Anchored:
+        pipe:
+          False: { state: conpipe-t }
+          True: { state: pipe-t }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.5,0.25,0.4"
+        mask:
+        - SubfloorMask
+  - type: Construction
+    graph: MedievalDisposalPipe
+    node: trunk
+
+# --- Изгиб 90° ---
+- type: entity
+  id: MedievalDisposalBend
+  parent: MedievalDisposalPipeBase
+  name: изгиб трубы мусоропровода
+  description: Труба, согнутая под прямым углом.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-c
+  - type: DisposalTube
+    exits:
+    - South
+    - West
+  - type: GenericVisualizer
+    visuals:
+      enum.AnchorVisuals.Anchored:
+        pipe:
+          False: { state: conpipe-c }
+          True: { state: pipe-c }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.25,0.25"
+        mask:
+        - SubfloorMask
+  - type: Construction
+    graph: MedievalDisposalPipe
+    node: bend
+
+# --- Тройник ---
+- type: entity
+  id: MedievalDisposalJunction
+  parent: MedievalDisposalPipeBase
+  name: тройник мусоропровода
+  description: Тройник. Стрелка указывает, куда выходят предметы.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-j1
+    visible: true
+  - type: DisposalTube
+    exits:
+    - South
+    - West
+    - North
+  - type: GenericVisualizer
+    visuals:
+      enum.AnchorVisuals.Anchored:
+        pipe:
+          False: { state: conpipe-j1 }
+          True: { state: pipe-j1 }
+  - type: Flippable
+    mirrorEntity: MedievalDisposalJunctionFlipped
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.25,0.5"
+        mask:
+        - SubfloorMask
+  - type: Construction
+    graph: MedievalDisposalPipe
+    node: junction
+
+- type: entity
+  id: MedievalDisposalJunctionFlipped
+  parent: MedievalDisposalJunction
+  name: тройник мусоропровода
+  description: Тройник. Стрелка указывает, куда выходят предметы.
+  suffix: flipped
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-j2
+  - type: DisposalTube
+    exits:
+    - South
+    - East
+    - North
+  - type: GenericVisualizer
+    visuals:
+      enum.AnchorVisuals.Anchored:
+        pipe:
+          False: { state: conpipe-j2 }
+          True: { state: pipe-j2 }
+  - type: Flippable
+    mirrorEntity: MedievalDisposalJunction
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.5,0.5,0.5"
+        mask:
+        - SubfloorMask
+  - type: Construction
+    graph: MedievalDisposalPipe
+    node: junctionflipped
+
+# --- Y-тройник ---
+- type: entity
+  id: MedievalDisposalYJunction
+  parent: MedievalDisposalPipeBase
+  name: Y-тройник мусоропровода
+  description: Тройник с дополнительным выходом.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-y
+  - type: DisposalTube
+    exits:
+    - South
+    - West
+    - East
+  - type: GenericVisualizer
+    visuals:
+      enum.AnchorVisuals.Anchored:
+        pipe:
+          False: { state: conpipe-y }
+          True: { state: pipe-y }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.25"
+        mask:
+        - SubfloorMask
+  - type: Construction
+    graph: MedievalDisposalPipe
+    node: yJunction
+
+# --- X-перекрёсток ---
+- type: entity
+  id: MedievalDisposalXJunction
+  parent: MedievalDisposalPipeBase
+  name: перекрёсток мусоропровода
+  description: Четырёхсторонний перекрёсток. Стрелка указывает, куда выходят предметы.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "pipe" ]
+      state: conpipe-x
+    visible: true
+  - type: DisposalTube
+    exits:
+    - South
+    - East
+    - North
+    - West
+  - type: GenericVisualizer
+    visuals:
+      enum.AnchorVisuals.Anchored:
+        pipe:
+          False: { state: conpipe-x }
+          True: { state: pipe-x }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - SubfloorMask
+  - type: Construction
+    graph: MedievalDisposalPipe
+    node: xJunction

@@ -1,0 +1,99 @@
+# Рецепты постройки перил (дерево / камень)
+
+# --- Дерево ---
+- type: construction
+  id: MedievalRailingWoodSide
+  graph: MedievalRailingWood
+  startNode: start
+  targetNode: side
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalRailingWoodCorner
+  graph: MedievalRailingWood
+  startNode: start
+  targetNode: corner
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalRailingWoodCornerSmall
+  graph: MedievalRailingWood
+  startNode: start
+  targetNode: corner_small
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalRailingWoodRound
+  graph: MedievalRailingWood
+  startNode: start
+  targetNode: round
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+# --- Камень ---
+- type: construction
+  id: MedievalRailingStoneSide
+  graph: MedievalRailingStone
+  startNode: start
+  targetNode: side
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalRailingStoneCorner
+  graph: MedievalRailingStone
+  startNode: start
+  targetNode: corner
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalRailingStoneCornerSmall
+  graph: MedievalRailingStone
+  startNode: start
+  targetNode: corner_small
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MedievalRailingStoneRound
+  graph: MedievalRailingStone
+  startNode: start
+  targetNode: round
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

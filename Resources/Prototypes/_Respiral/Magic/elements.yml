@@ -1,0 +1,10 @@
+# Природные элементы заклинаний. Добавление нового элемента = один прототип здесь
+# + по одному мини-прототипу заклинания на нужную форму. Нового C#-кода не требуется.
+
+- type: element
+  id: MedievalFire
+  name: element-fire
+
+- type: element
+  id: MedievalWater
+  name: element-water

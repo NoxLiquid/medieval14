@@ -12,7 +12,6 @@ using Robust.Shared.Audio.Systems;
 using static Content.Shared.Paper.PaperComponent;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Shared.Illiteracy.Components; // Respiral-Illiteracy
 
 namespace Content.Shared.Paper;
 
@@ -37,12 +36,14 @@ public sealed partial class PaperSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<PaperComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<PaperComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<PaperComponent, BeforeActivatableUIOpenEvent>(BeforeUIOpen);
         SubscribeLocalEvent<PaperComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<PaperComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<PaperComponent, PaperInputTextMessage>(OnInputTextMessage);
+
         SubscribeLocalEvent<RandomPaperContentComponent, MapInitEvent>(OnRandomPaperContentMapInit);
 
         SubscribeLocalEvent<ActivateOnPaperOpenedComponent, PaperWriteEvent>(OnPaperWrite);
@@ -74,7 +75,7 @@ public sealed partial class PaperSystem : EntitySystem
     private void BeforeUIOpen(Entity<PaperComponent> entity, ref BeforeActivatableUIOpenEvent args)
     {
         entity.Comp.Mode = PaperAction.Read;
-        UpdateUserInterface(entity, args.User); // Respiral-Illiteracy-Edit
+        UpdateUserInterface(entity);
     }
 
     private void OnExamined(Entity<PaperComponent> entity, ref ExaminedEvent args)
@@ -144,7 +145,7 @@ public sealed partial class PaperSystem : EntitySystem
 
                 entity.Comp.Mode = PaperAction.Write;
                 _uiSystem.OpenUi(entity.Owner, PaperUiKey.Key, args.User);
-                UpdateUserInterface(entity, args.User); // Respiral-Illiteracy-Edit
+                UpdateUserInterface(entity);
             }
             args.Handled = true;
             return;
@@ -167,7 +168,7 @@ public sealed partial class PaperSystem : EntitySystem
 
             _audio.PlayPredicted(stampComp.Sound, entity, args.User);
 
-            UpdateUserInterface(entity, args.User); // Respiral-Illiteracy-Edit
+            UpdateUserInterface(entity);
         }
     }
 
@@ -189,14 +190,7 @@ public sealed partial class PaperSystem : EntitySystem
 
         if (args.Text.Length <= entity.Comp.ContentSize)
         {
-            // Respiral-Illiteracy-Edit-start
-            var content = args.Text;
-            if (HasComp<IlliteracyComponent>(args.Actor))
-            {
-                content = ScrambleText(content, 12345);
-            }
-            SetContent(entity, content);
-            // Respiral-Illiteracy-Edit-end
+            SetContent(entity, args.Text);
 
             var paperStatus = string.IsNullOrWhiteSpace(args.Text) ? PaperStatus.Blank : PaperStatus.Written;
 
@@ -308,42 +302,9 @@ public sealed partial class PaperSystem : EntitySystem
         _appearance.SetData(entity, PaperVisuals.Status, status, appearance);
     }
 
-    // Respiral-Illiteracy-start
-    //Логика перемешивания текста. Возвращает перемешанную строку
-    private string ScrambleText(string input, int seed)
+    private void UpdateUserInterface(Entity<PaperComponent> entity)
     {
-
-        if (string.IsNullOrEmpty(input))
-        {
-            return input;
-        }
-        char[] characters = input.ToCharArray();
-        var nonSpaceIndices = Enumerable.Range(0, characters.Length).Where(i => !char.IsWhiteSpace(characters[i])).ToList();
-        _random.SetSeed(seed);
-
-        for (int i = nonSpaceIndices.Count - 1; i > 0; i--)
-        {
-            int j = _random.Next(i + 1);
-            (characters[nonSpaceIndices[i]], characters[nonSpaceIndices[j]]) = (characters[nonSpaceIndices[j]], characters[nonSpaceIndices[i]]);
-        }
-
-        return new string(characters);
-    }
-    // Respiral-Illiteracy-end
-
-    private void UpdateUserInterface(Entity<PaperComponent> entity, EntityUid? user = null)
-    {
-        // Respiral-Illiteracy-Edit-start
-        string content = entity.Comp.Content;
-        if (user != null && HasComp<IlliteracyComponent>(user))
-        {
-            content = ScrambleText(content, 12345);
-        }
-        _uiSystem.SetUiState(
-        entity.Owner,
-        PaperUiKey.Key,
-        new PaperBoundUserInterfaceState(content, entity.Comp.StampedBy, entity.Comp.Mode));
-        // Respiral-Illiteracy-Edit-end
+        _uiSystem.SetUiState(entity.Owner, PaperUiKey.Key, new PaperBoundUserInterfaceState(entity.Comp.Content, entity.Comp.StampedBy, entity.Comp.Mode));
     }
 }
 

@@ -1,0 +1,20 @@
+# Картографическая метка: всегда видимая подпись для разметки карт. Имя комнаты задаётся
+# в MetaData на конкретной сущности карты. Замена прежнему хаку на MedievalClothingUniformTest.
+# Видна всегда (нет компонента Marker, который прячет обычные маркеры в игре), не мешает проходу.
+- type: entity
+  id: MedievalMappingMarker
+  name: метка
+  suffix: Средневековье, разметка
+  description: Картографическая метка для разметки карты. Видна всегда.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: Overdoors
+    noRot: true
+    sprite: Markers/cross.rsi
+    state: red
+  - type: Clickable
+  - type: InteractionOutline

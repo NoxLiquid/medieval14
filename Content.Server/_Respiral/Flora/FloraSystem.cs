@@ -1,22 +1,24 @@
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
-using Content.Shared.Flora.Components;
-using Content.Shared.Flora;
+using Content.Server._Respiral.Flora.Components;
+using Content.Shared._Respiral.Flora;
+using Content.Shared._Respiral.TimeWindow;
 using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
-namespace Content.Server.Flora;
+namespace Content.Server._Respiral.Flora;
 
+// Зачем нужна эта система?
+// TODO нужна пояснительная записка или комментарий: для чего писался код.
 public sealed partial class FloraSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private IGameTiming _gameTiming = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedToolSystem _tool = default!;
+    [Dependency] private TimedWindowSystem _timedWindow = default!;
 
     public override void Initialize()
     {
@@ -32,20 +34,24 @@ public sealed partial class FloraSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var floraQuery = EntityQueryEnumerator<FloraComponent>();
-        while (floraQuery.MoveNext(out var uid, out var flora))
+        var floraQuery = EntityQueryEnumerator<FloraComponent, MetaDataComponent>();
+        while (floraQuery.MoveNext(out var uid, out var flora, out var meta))
         {
-            if (flora.IsGrown)
+            // Не тикаем на паузе / до инициализации карты.
+            if (flora.IsGrown || meta.EntityPaused)
                 continue;
 
-            if ((float)_gameTiming.CurTime.TotalSeconds >= flora.NextGrowthTick)
+            if (_timedWindow.IsExpired(flora.GrowthWindow))
                 CompleteGrowth(uid, flora);
         }
     }
 
     private void OnMapInit(EntityUid uid, FloraComponent component, MapInitEvent args)
     {
-        component.GrowthTime = _random.NextFloat(component.MinGrowthTime, component.MaxGrowthTime);
+        // Куст, размещённый уже собранным, запускает отсчёт отрастания при инициализации карты.
+        if (!component.IsGrown)
+            _timedWindow.Reset(component.GrowthWindow);
+
         UpdateAppearance(uid, component);
     }
 
@@ -72,10 +78,10 @@ public sealed partial class FloraSystem : EntitySystem
         if (args.Handled || !component.IsGrown)
             return;
 
-        if (component.SpecialTool != null)
+        if (component.SpecialTool != null
+            && !_tool.HasQuality(args.Used, component.SpecialTool))
         {
-            if (!_tool.HasQuality(args.Used, component.SpecialTool))
-                return;
+            return;
         }
 
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, TimeSpan.FromSeconds(component.HarvestDuration),
@@ -96,10 +102,11 @@ public sealed partial class FloraSystem : EntitySystem
         if (args.Cancelled || args.Handled || !component.IsGrown || args.Used == null)
             return;
 
-        if (component.SpecialTool != null && args.Used.Value.Valid)
+        if (component.SpecialTool != null
+            && args.Used.Value.Valid
+            && !_tool.HasQuality(args.Used.Value, component.SpecialTool.Value))
         {
-            if (!_tool.HasQuality(args.Used.Value, component.SpecialTool.Value))
-                return;
+            return;
         }
 
         HarvestFlora(uid, component, args.User);
@@ -125,7 +132,7 @@ public sealed partial class FloraSystem : EntitySystem
         }
 
         component.IsGrown = false;
-        component.NextGrowthTick = (float)_gameTiming.CurTime.TotalSeconds + component.GrowthTime;
+        _timedWindow.Reset(component.GrowthWindow);
 
         _audio.PlayPvs(component.HarvestSound, uid);
 
@@ -133,14 +140,13 @@ public sealed partial class FloraSystem : EntitySystem
         Dirty(uid, component);
     }
 
+    // избыточно дублировать на клиент, т.к. 100 мс. не повлияют на игровой опыт в данном случаи
     private void UpdateAppearance(EntityUid uid, FloraComponent component)
     {
         if (!TryComp<AppearanceComponent>(uid, out var appearance))
             return;
 
-        FloraState state = FloraState.Grown;
-        if (!component.IsGrown)
-            state = FloraState.Harvested;
+        var state = component.IsGrown ? FloraState.Grown : FloraState.Harvested;
 
         _appearance.SetData(uid, FloraVisuals.State, state, appearance);
     }

@@ -21,6 +21,9 @@
     # Underwear & clothing
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
+    # Respiral-Start - слой штанов (LEGS): над бельём, но ПОД нательной одеждой (рубаха/туника поверх штанов)
+    - map: ["pants"]
+    # Respiral-End
     - map: ["jumpsuit"]
 
     # Extremities

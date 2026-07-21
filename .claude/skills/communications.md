@@ -1,36 +1,36 @@
-# Communications Console (Средневековье)
+# Communications Console (Medieval)
 
-## Связующий магический шар
+## Connecting magic ball
 
 **Entity:** `MedievalConnectingMagicBall`
 **Detail:** `MedievalConnectingMagicBallDetail`
 
-Средневековая замена консоли коммуникаций. Позволяет отправлять объявления на станцию без электричества.
+A medieval replacement for the communications console. Allows broadcasting announcements to the station without electricity.
 
-### Ключевые решения
+### Key decisions
 
-- Наследуется от `MedievalConstructibleMachine` + `MedievalBaseMachine` (стандартный граф `MedievalMachine`)
-- Работает **без электричества** (нет `ApcPowerReceiver`, `Computer`, `PowerState`)
-- `canShuttle: false` — шаттл не вызвать (средневековье)
-- Нет `AccessReader` — шар доступен всем
-- Спрайт: `_Respiral/Structures/Machines/connecting_magic_ball.rsi` (анимация `running`)
-- Свечение: фиолетовое `#7b68ee`
+- Inherits `MedievalConstructibleMachine` + `MedievalBaseMachine` (standard `MedievalMachine` graph)
+- Works **without electricity** (no `ApcPowerReceiver`, `Computer`, `PowerState`)
+- `canShuttle: false` — can't call a shuttle (medieval)
+- No `AccessReader` — the ball is available to everyone
+- Sprite: `_Respiral/Structures/Machines/connecting_magic_ball.rsi` (animation `running`)
+- Glow: purple `#7b68ee`
 
-### Крафт
+### Crafting
 
-Использует стандартный граф `MedievalMachine`:
-1. Поставить `MedievalUnfinishedMachineFrame` (камень в составе каркаса)
-2. Добавить `MedievalManaCrystal` (магический кристалл)
-3. Вставить `MedievalConnectingMagicBallDetail` (деталь)
-4. Закрутить (Screwing)
+Uses the standard `MedievalMachine` graph:
+1. Place `MedievalUnfinishedMachineFrame` (stone in the frame composition)
+2. Add `MedievalManaCrystal` (magic crystal)
+3. Insert `MedievalConnectingMagicBallDetail` (detail)
+4. Screw (Screwing)
 
-### Деталь
+### Detail
 
-`MedievalConnectingMagicBallDetail` — наследует `MedievalBaseMachineDetail`, содержит `MachineBoard` с `prototype: MedievalConnectingMagicBall`. Состав: `MedievalProcessedStone: 300`, `MedievalRawManaCrystal: 200`.
+`MedievalConnectingMagicBallDetail` — inherits `MedievalBaseMachineDetail`, contains `MachineBoard` with `prototype: MedievalConnectingMagicBall`. Composition: `MedievalProcessedStone: 300`, `MedievalRawManaCrystal: 200`.
 
-### Файлы
+### Files
 
-| Файл | Содержимое |
+| File | Contents |
 |---|---|
-| `Entities/Structures/Machine/connecting_magic_ball.yml` | Прототип сущности |
-| `Entities/Objects/Parts/production.yml` | Деталь (MedievalConnectingMagicBallDetail) |
+| `Entities/Structures/Machine/connecting_magic_ball.yml` | Entity prototype |
+| `Entities/Objects/Parts/production.yml` | Detail (MedievalConnectingMagicBallDetail) |

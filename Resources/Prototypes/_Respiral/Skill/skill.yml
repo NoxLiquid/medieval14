@@ -35,6 +35,12 @@
   pointsNeeded: 100
 
 - type: skill
+  id: MedievalLiteracy
+  name: грамотность
+  description: Грамота
+  pointsNeeded: 100
+
+- type: skill
   id: MedievalOneSword
   name: одноручный клинок
   description: Бой

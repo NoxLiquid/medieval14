@@ -1,0 +1,4 @@
+# Дома, чьи печати заверяют грамоты — Respiral Identity, см. .claude/skills/identity.md
+- type: houseSeal
+  id: HouseSealCrown
+  name: дом Короны

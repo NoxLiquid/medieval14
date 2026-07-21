@@ -1,0 +1,81 @@
+# Рецепт постройки средневекового мусоропровода.
+# Имя/иконка берутся из целевой сущности MedievalDisposalUnit.
+
+- type: construction
+  id: MedievalDisposalUnit
+  graph: MedievalDisposalMachine
+  startNode: start
+  targetNode: disposal_unit
+  category: construction-category-utilities
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+# --- Трубы мусоропровода ---
+# Без TileNotBlocked: трубы — subfloor-сегменты, строятся на голой решётке
+# (MedievalLattice/MedievalDirt) и уходят под настоящий пол.
+
+- type: construction
+  id: MedievalDisposalPipe
+  graph: MedievalDisposalPipe
+  startNode: start
+  targetNode: pipe
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: MedievalDisposalTrunk
+  graph: MedievalDisposalPipe
+  startNode: start
+  targetNode: trunk
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: MedievalDisposalBend
+  graph: MedievalDisposalPipe
+  startNode: start
+  targetNode: bend
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: MedievalDisposalJunction
+  graph: MedievalDisposalPipe
+  startNode: start
+  targetNode: junction
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: MedievalDisposalJunctionFlipped
+  graph: MedievalDisposalPipe
+  startNode: start
+  targetNode: junctionflipped
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: MedievalDisposalYJunction
+  graph: MedievalDisposalPipe
+  startNode: start
+  targetNode: yJunction
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: MedievalDisposalXJunction
+  graph: MedievalDisposalPipe
+  startNode: start
+  targetNode: xJunction
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false

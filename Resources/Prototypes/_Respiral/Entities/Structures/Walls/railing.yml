@@ -1,0 +1,335 @@
+# Перила (grayscale railing.rsi от ledniky). Дерево и камень — цвет через Sprite.color.
+# Крафт: Construction/Graph/Structure/railing.yml + Construction/railing.yml.
+
+# === БАЗА ===
+- type: entity
+  parent: BaseStructure
+  id: MedievalBaseRailing
+  suffix: Средневековье
+  abstract: true
+  name: перила
+  description: Невысокое ограждение. Через него можно перелезть.
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: "/Audio/Weapons/boxingpunch1.ogg"
+  - type: Sprite
+    sprite: _Respiral/Structures/railing.rsi
+    drawdepth: Mobs
+    offset: 0,0.25
+  - type: SpriteFade
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Climbable
+    delay: 2.0
+  - type: Appearance
+
+# === ДЕРЕВО ===
+- type: entity
+  parent: MedievalBaseRailing
+  id: MedievalBaseRailingWood
+  abstract: true
+  name: деревянные перила
+  components:
+  - type: Tag
+    tags:
+    - Wooden
+  - type: Sprite
+    color: "#8B4513"
+  - type: Damageable
+    damageModifierSet: MedievalWood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+
+- type: entity
+  parent: MedievalBaseRailingWood
+  id: MedievalRailingWoodSide
+  name: деревянные перила
+  components:
+  - type: Construction
+    graph: MedievalRailingWood
+    node: side
+  - type: Icon
+    sprite: _Respiral/Structures/railing.rsi
+    state: side
+  - type: Sprite
+    layers:
+    - state: side
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.35"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+- type: entity
+  parent: MedievalBaseRailingWood
+  id: MedievalRailingWoodCorner
+  name: угловые деревянные перила
+  components:
+  - type: Construction
+    graph: MedievalRailingWood
+    node: corner
+  - type: Icon
+    sprite: _Respiral/Structures/railing.rsi
+    state: corner
+  - type: Sprite
+    layers:
+    - state: corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.35"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,-0.35,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+- type: entity
+  parent: MedievalBaseRailingWood
+  id: MedievalRailingWoodCornerSmall
+  name: малые угловые деревянные перила
+  components:
+  - type: Construction
+    graph: MedievalRailingWood
+    node: corner_small
+  - type: Icon
+    sprite: _Respiral/Structures/railing.rsi
+    state: corner_small
+  - type: Sprite
+    layers:
+    - state: corner_small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.35"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,-0.35,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+- type: entity
+  parent: MedievalBaseRailingWood
+  id: MedievalRailingWoodRound
+  name: круглые деревянные перила
+  components:
+  - type: Construction
+    graph: MedievalRailingWood
+    node: round
+  - type: Icon
+    sprite: _Respiral/Structures/railing.rsi
+    state: round
+  - type: Sprite
+    layers:
+    - state: round
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+# === КАМЕНЬ ===
+- type: entity
+  parent: MedievalBaseRailing
+  id: MedievalBaseRailingStone
+  abstract: true
+  name: каменные перила
+  components:
+  - type: Sprite
+    color: "#808080"
+  - type: Damageable
+    damageModifierSet: MedievalStone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+
+- type: entity
+  parent: MedievalBaseRailingStone
+  id: MedievalRailingStoneSide
+  name: каменные перила
+  components:
+  - type: Construction
+    graph: MedievalRailingStone
+    node: side
+  - type: Icon
+    sprite: _Respiral/Structures/railing.rsi
+    state: side
+  - type: Sprite
+    layers:
+    - state: side
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.35"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+- type: entity
+  parent: MedievalBaseRailingStone
+  id: MedievalRailingStoneCorner
+  name: угловые каменные перила
+  components:
+  - type: Construction
+    graph: MedievalRailingStone
+    node: corner
+  - type: Icon
+    sprite: _Respiral/Structures/railing.rsi
+    state: corner
+  - type: Sprite
+    layers:
+    - state: corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.35"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,-0.35,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+- type: entity
+  parent: MedievalBaseRailingStone
+  id: MedievalRailingStoneCornerSmall
+  name: малые угловые каменные перила
+  components:
+  - type: Construction
+    graph: MedievalRailingStone
+    node: corner_small
+  - type: Icon
+    sprite: _Respiral/Structures/railing.rsi
+    state: corner_small
+  - type: Sprite
+    layers:
+    - state: corner_small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.35"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,-0.35,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+- type: entity
+  parent: MedievalBaseRailingStone
+  id: MedievalRailingStoneRound
+  name: круглые каменные перила
+  components:
+  - type: Construction
+    graph: MedievalRailingStone
+    node: round
+  - type: Icon
+    sprite: _Respiral/Structures/railing.rsi
+    state: round
+  - type: Sprite
+    layers:
+    - state: round
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - MidImpassable
+        - LowImpassable

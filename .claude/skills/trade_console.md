@@ -1,74 +1,74 @@
-# Trade Console (Торговая табличка)
+# Trade Console (Trade sign)
 
 ## Overview
-Средневековая торговая система — таблички для заказа и продажи товаров.
-Использует существующую систему `CargoOrderConsole` + `CargoPallet` + `CargoPalletConsole` без кастомного C# (кроме маркера TradeStation).
+A medieval trade system — signs for ordering and selling goods.
+Uses the existing `CargoOrderConsole` + `CargoPallet` + `CargoPalletConsole` system without custom C# (except the TradeStation marker).
 
 ## Architecture
 
-### Покупка (заказ товаров)
-- `MedievalTradeConsole` — табличка с `CargoOrderConsole` для оформления заказов
-- `MedievalTradePalletBuy` — палета с `CargoPallet (palletType: buy)` — сюда спавнятся заказанные товары
-- Доставка через `TryFulfillOrder()` — система ищет гриды с `TradeStationComponent`, находит свободные Buy-палеты и спавнит товары на них
+### Buying (ordering goods)
+- `MedievalTradeConsole` — a sign with `CargoOrderConsole` for placing orders
+- `MedievalTradePalletBuy` — a pallet with `CargoPallet (palletType: buy)` — ordered goods spawn here
+- Delivery via `TryFulfillOrder()` — the system finds grids with `TradeStationComponent`, finds free Buy pallets and spawns goods on them
 
-### Продажа
-- `MedievalTradePalletSell` — палета с `CargoPallet (palletType: sell)` — положить товар для продажи
-- `MedievalTradePalletConsole` — табличка с `CargoPalletConsole` — оценка и продажа товаров на Sell-палетах **на том же гриде**
+### Selling
+- `MedievalTradePalletSell` — a pallet with `CargoPallet (palletType: sell)` — place goods here to sell
+- `MedievalTradePalletConsole` — a sign with `CargoPalletConsole` — appraisal and selling of goods on Sell pallets **on the same grid**
 
-### TradeStation на гридах
-- `MedievalTradeStationComponent` — маркер на станции (`Content.Shared/_Respiral/Trade/`)
-- `MedievalTradeStationSystem` — при `StationPostInitEvent` добавляет `TradeStationComponent` на все гриды станции (`Content.Server/_Respiral/Trade/`)
-- Без `TradeStationComponent` на гриде `TryFulfillOrder()` не найдёт палеты и товары не доставятся
+### TradeStation on grids
+- `MedievalTradeStationComponent` — a marker on the station (`Content.Shared/_Respiral/Trade/`)
+- `MedievalTradeStationSystem` — on `StationPostInitEvent` adds `TradeStationComponent` to all station grids (`Content.Server/_Respiral/Trade/`)
+- Without `TradeStationComponent` on a grid, `TryFulfillOrder()` won't find pallets and goods won't be delivered
 
 ## Key Design Decisions
-- **НЕ используется DeviceLink/телепад** — доставка через Trade Station палеты (TryFulfillOrder), не через телепортацию
-- Питание не требуется: `StaticPowerSystem.IsPowered()` возвращает `true` если нет `ApcPowerReceiver`
-- Отдельный `CargoMarket` (`MedievalMarket`) и `CargoAccount` (`MedievalTrade`)
+- **DeviceLink/telepad is NOT used** — delivery is via Trade Station pallets (TryFulfillOrder), not via teleportation
+- No power required: `StaticPowerSystem.IsPowered()` returns `true` if there's no `ApcPowerReceiver`
+- A separate `CargoMarket` (`MedievalMarket`) and `CargoAccount` (`MedievalTrade`)
 
-## Механизм доставки (как работает в коде)
-1. Игрок одобряет заказ через `MedievalTradeConsole`
-2. Поднимается `FulfillCargoOrderEvent`
-3. Телепад не обрабатывает (нет DeviceLink) → fallback на `TryFulfillOrder()`
-4. `GetTradeStations()` ищет гриды станции с `TradeStationComponent`
-5. `GetCargoPallets(grid, Buy)` находит Buy-палеты
-6. `GetFreeCargoPallets()` фильтрует незанятые
-7. `FulfillOrder()` спавнит товары на свободных палетах
+## Delivery mechanism (how it works in code)
+1. The player approves an order via `MedievalTradeConsole`
+2. `FulfillCargoOrderEvent` is raised
+3. The telepad doesn't handle it (no DeviceLink) → fallback to `TryFulfillOrder()`
+4. `GetTradeStations()` finds station grids with `TradeStationComponent`
+5. `GetCargoPallets(grid, Buy)` finds Buy pallets
+6. `GetFreeCargoPallets()` filters the unoccupied ones
+7. `FulfillOrder()` spawns goods on the free pallets
 
 ## File Locations
-- Сущности: `Resources/Prototypes/_Respiral/Entities/Structures/trade_console.yml`
-- Рынок + товары: `Resources/Prototypes/_Respiral/Catalog/medieval_trade.yml`
-- Станция: `Resources/Prototypes/_Respiral/Stations/base.yml`
-- Маркер: `Content.Server/_Respiral/Trade/Components/MedievalTradeStationComponent.cs`
-- Система: `Content.Server/_Respiral/Trade/MedievalTradeStationSystem.cs`
-- Ценообразование: `Content.Server/_Respiral/Pricing/MedievalPhysicalPricedComponent.cs`
-- Локализация RU: `Resources/Locale/ru-RU/_Respiral/cargo/medieval-trade.ftl`
-- Локализация EN: `Resources/Locale/en-US/_Respiral/cargo/medieval-trade.ftl`
+- Entities: `Resources/Prototypes/_Respiral/Entities/Structures/trade_console.yml`
+- Market + goods: `Resources/Prototypes/_Respiral/Catalog/medieval_trade.yml`
+- Station: `Resources/Prototypes/_Respiral/Stations/base.yml`
+- Marker: `Content.Server/_Respiral/Trade/Components/MedievalTradeStationComponent.cs`
+- System: `Content.Server/_Respiral/Trade/MedievalTradeStationSystem.cs`
+- Pricing: `Content.Server/_Respiral/Pricing/MedievalPhysicalPricedComponent.cs`
+- Localization RU: `Resources/Locale/ru-RU/_Respiral/cargo/medieval-trade.ftl`
+- Localization EN: `Resources/Locale/en-US/_Respiral/cargo/medieval-trade.ftl`
 
 ## Station Setup
-`MedievalStandardTerritory` имеет:
-- `StationBankAccount` — баланс станции
-- `StationCargoOrderDatabase` — `MedievalTrade` в orders, `MedievalMarket` в markets
-- `MedievalTradeStation` — маркер, добавляет `TradeStationComponent` на гриды при старте
+`MedievalStandardTerritory` has:
+- `StationBankAccount` — the station balance
+- `StationCargoOrderDatabase` — `MedievalTrade` in orders, `MedievalMarket` in markets
+- `MedievalTradeStation` — a marker, adds `TradeStationComponent` to grids at start
 
-## Сущности
-| ID | Назначение |
+## Entities
+| ID | Purpose |
 |---|---|
-| `MedievalTradeConsole` | Заказ товаров (CargoOrderConsole) |
-| `MedievalTradePalletBuy` | Палета приёма (Buy) |
-| `MedievalTradePalletSell` | Палета продажи (Sell) |
-| `MedievalTradePalletConsole` | Консоль продажи (CargoPalletConsole) |
+| `MedievalTradeConsole` | Ordering goods (CargoOrderConsole) |
+| `MedievalTradePalletBuy` | Receiving pallet (Buy) |
+| `MedievalTradePalletSell` | Selling pallet (Sell) |
+| `MedievalTradePalletConsole` | Selling console (CargoPalletConsole) |
 
 ## Adding New Products
-Добавить `cargoProduct` в `medieval_trade.yml` с `group: MedievalMarket` и добавить loc-строки (ru-RU + en-US).
+Add a `cargoProduct` to `medieval_trade.yml` with `group: MedievalMarket` and add loc strings (ru-RU + en-US).
 
-### Ценообразование
-- Цена продажи (sell) = material_value × 1.2 (MedievalPhysicalPriced markup 20%)
-- material_value = сумма (material_price_per_unit × quantity) из PhysicalComposition
-- Цена покупки (cost в cargoProduct) = 2 × sell price (временное правило до динамических рынков)
-- Формула: cost = round(material_value × 2.4)
+### Pricing
+- Sell price = material_value × 1.2 (MedievalPhysicalPriced 20% markup)
+- material_value = sum of (material_price_per_unit × quantity) from PhysicalComposition
+- Buy price (cost in cargoProduct) = 2 × sell price (a temporary rule until dynamic markets)
+- Formula: cost = round(material_value × 2.4)
 
-### Категории
-- `medieval-trade-category-materials` — сырьё (руды, брёвна)
-- `medieval-trade-category-processed` — обработанные материалы (доски, слитки, ткань, кожа, стекло)
-- `medieval-trade-category-parts` — детали механизмов (MachineBoard)
-- `medieval-trade-category-seeds` — семена
+### Categories
+- `medieval-trade-category-materials` — raw materials (ore, logs)
+- `medieval-trade-category-processed` — processed materials (boards, ingots, cloth, leather, glass)
+- `medieval-trade-category-parts` — machine parts (MachineBoard)
+- `medieval-trade-category-seeds` — seeds

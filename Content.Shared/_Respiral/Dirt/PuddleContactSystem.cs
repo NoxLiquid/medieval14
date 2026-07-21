@@ -1,7 +1,8 @@
+using Content.Shared._Respiral.Dirt.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.Physics.Events;
 
-namespace Content.Shared.DirtVisuals;
+namespace Content.Shared._Respiral.Dirt;
 
 public sealed partial class PuddleContactSystem : EntitySystem
 {

@@ -3,7 +3,7 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 
-namespace Content.Client.Offer;
+namespace Content.Client._Respiral.Offer;
 
 public sealed partial class OfferItemSystem : SharedOfferItemSystem
 {

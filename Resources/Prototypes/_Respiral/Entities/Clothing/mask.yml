@@ -2,33 +2,6 @@
 
 - type: entity
   parent: MedievalBaseMask
-  id: MedievalClothingMaskBandana
-  suffix: Средневековье
-  name: бандана на лицо
-  components:
-  - type: Sprite
-    sprite: _Respiral/Clothing/Head/Hats/bandana.rsi
-    state: icon_mask
-  - type: Clothing
-    sprite: _Respiral/Clothing/Head/Hats/bandana.rsi
-  - type: Damageable
-    damageModifierSet: MedievalFlax
-  - type: Injurable
-    damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalCloth: 100
-
-- type: entity
-  parent: MedievalBaseMask
   id: MedievalClothingMaskExecutioner
   suffix: Средневековье
   name: колпак палача
@@ -38,6 +11,9 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Mask/executioner.rsi
+  # Respiral - колпак палача полностью скрывает лицо: окружающие не узнают носителя в лицо
+  - type: IdentityBlocker
+    coverage: FULL
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -92,6 +68,9 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Mask/plague_doctor.rsi
+  # Respiral - маска чумного доктора полностью скрывает лицо: окружающие не узнают носителя в лицо
+  - type: IdentityBlocker
+    coverage: FULL
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable

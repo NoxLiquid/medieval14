@@ -2361,19 +2361,7 @@ entities:
     - type: Transform
       pos: 5.619563,2.9324422
       parent: 1
-- proto: MedievalClothingOuterBarrelBib
-  entities:
-  - uid: 269
-    components:
-    - type: Transform
-      pos: 11.271746,-69.34842
-      parent: 1
-  - uid: 270
-    components:
-    - type: Transform
-      pos: 11.623308,-70.02811
-      parent: 1
-- proto: MedievalClothingUniformTest
+- proto: MedievalMappingMarker
   entities:
   - uid: 271
     components:

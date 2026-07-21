@@ -52,6 +52,38 @@
 
 - type: entity
   parent: MedievalSkillBookBase
+  id: MedievalSkillBookLiteracy
+  name: обучение грамоте
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: book5
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - MedievalLiteracy
+    points:
+      MedievalLiteracy: 0.01
+    sound:
+      collection: MedievalLearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
   id: MedievalSkillBookBasicBlacksmithing
   name: основы кузнечного дела
   components:

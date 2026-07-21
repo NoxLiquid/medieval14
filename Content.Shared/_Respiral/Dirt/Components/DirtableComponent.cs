@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.DirtVisuals;
+namespace Content.Shared._Respiral.Dirt.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class DirtableComponent : Component

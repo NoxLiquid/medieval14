@@ -9,6 +9,10 @@
 
 - type: startingGear
   id: MedievalElderGear
+  equipment:
+    jumpsuit: MedievalClothingInnerLongTunic
+    head: MedievalClothingHeadHood
+    pants: MedievalClothingLegsLeather
 
 - type: job
   id: MedievalFarmer
@@ -21,6 +25,9 @@
 
 - type: startingGear
   id: MedievalFarmerGear
+  equipment:
+    head: MedievalClothingHeadHood
+    pants: MedievalClothingLegsLeather
 
 - type: job
   id: MedievalPeasant
@@ -33,3 +40,6 @@
 
 - type: startingGear
   id: MedievalPeasantGear
+  equipment:
+    head: MedievalClothingHeadHood
+    pants: MedievalClothingLegsLeather

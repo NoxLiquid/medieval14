@@ -27,9 +27,6 @@ public sealed partial class SkillSystem : EntitySystem
         _currentSkills = GetSkills(ev.Entity);
         _currentTargetName = Name(ev.Entity);
 
-        if (_currentSkills.Count == 0)
-            return;
-
         var button = new Button
         {
             Text = Loc.GetString("skill-character-button")
@@ -41,9 +38,6 @@ public sealed partial class SkillSystem : EntitySystem
 
     private void OnSkillsButtonPressed(BaseButton.ButtonEventArgs args)
     {
-        if (_currentSkills.Count == 0)
-            return;
-
         _skillsWindow?.Close();
         _skillsWindow = new SkillsListWindow();
         _skillsWindow.SetSkills(_currentSkills, _currentTargetName);

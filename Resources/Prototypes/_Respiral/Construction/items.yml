@@ -5,3 +5,19 @@
   targetNode: torch
   category: construction-category-tools
   objectType: Item
+
+- type: construction
+  id: MedievalCraftStoneAxe
+  graph: MedievalCraftStoneAxe
+  startNode: start
+  targetNode: axe
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
+  id: MedievalCraftHandmadeSpear
+  graph: MedievalCraftHandmadeSpear
+  startNode: start
+  targetNode: spear
+  category: construction-category-tools
+  objectType: Item

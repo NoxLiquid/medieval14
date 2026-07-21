@@ -1,6 +1,6 @@
 using Content.Server_Respiral.Wear.Components;
 using Content.Shared._Respiral.Lock.Events;
-// using Content.Shared._Respiral.Skills.Events;
+using Content.Shared._Respiral.Skills.Events;
 using Content.Shared.Interaction;
 using Content.Shared.RCD.Systems;
 using Content.Shared.Tools.Components;
@@ -20,7 +20,7 @@ public sealed partial class AddWearAfterUseSystem : EntitySystem
         SubscribeLocalEvent<AddWearAfterUseComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<AddWearAfterUseComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
         SubscribeLocalEvent<AddWearAfterUseComponent, TileToolDoAfterEvent>(OnToolTileComplete);
-        // SubscribeLocalEvent<AddWearAfterUseComponent, LearnDoAfterEvent>(OnLearnDoAfter);
+        SubscribeLocalEvent<AddWearAfterUseComponent, LearnDoAfterEvent>(OnLearnDoAfter);
         SubscribeLocalEvent<AddWearAfterUseComponent, RCDDoAfterEvent>(OnRCDDoAfter);
         SubscribeLocalEvent<AddWearAfterUseComponent, UseKeyDoAfterEvent>(OnUseKeyDoAfter);
         SubscribeLocalEvent<AddWearAfterUseComponent, DuplicateKeyDoAfterEvent>(OnKeyDuplicateDoAfter);
@@ -68,17 +68,21 @@ public sealed partial class AddWearAfterUseSystem : EntitySystem
             _wear.AddWear(uid, component.Damage, wearComp);
     }
 
-    // private void OnLearnDoAfter(EntityUid uid, AddWearAfterUseComponent component, LearnDoAfterEvent args)
-    // {
-    //     if ((component.Triggers & WearTrigger.Learn) == 0)
-    //         return;
+    private void OnLearnDoAfter(EntityUid uid, AddWearAfterUseComponent component, LearnDoAfterEvent args)
+    {
+        // Прерванное чтение (движение/урон) не должно изнашивать книгу.
+        if (args.Cancelled)
+            return;
 
-    //     if (component.Whitelist != null && _whitelist.IsWhitelistFail(component.Whitelist, uid))
-    //         return;
+        if ((component.Triggers & WearTrigger.Learn) == 0)
+            return;
 
-    //     if (TryComp<WearComponent>(uid, out var wearComp))
-    //         _wear.AddWear(uid, component.Damage, wearComp);
-    // }
+        if (component.Whitelist != null && _whitelist.IsWhitelistFail(component.Whitelist, uid))
+            return;
+
+        if (TryComp<WearComponent>(uid, out var wearComp))
+            _wear.AddWear(uid, component.Damage, wearComp);
+    }
 
     private void OnRCDDoAfter(EntityUid uid, AddWearAfterUseComponent component, RCDDoAfterEvent args)
     {

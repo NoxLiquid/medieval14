@@ -6,7 +6,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Offer;
 using Content.Shared.Popups;
 
-namespace Content.Server.Offer;
+namespace Content.Server._Respiral.Offer;
 
 public sealed partial class OfferItemSystem : SharedOfferItemSystem
 {

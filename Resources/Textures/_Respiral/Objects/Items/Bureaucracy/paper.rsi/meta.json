@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Stamps taken from tgstation at https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432. Created by Max Gab passport by TheShuEd, on paper by viator1748",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "paper"
+    },
+    {
+      "name": "paper_words"
+    },
+    {
+      "name": "paper_stamp-deny"
+    },
+    {
+      "name": "paper_stamp-ok"
+    },
+    {
+      "name": "paper_stamp-generic"
+    },
+    {
+      "name": "passport_close"
+    },
+    {
+      "name": "passport_icon"
+    },
+    {
+      "name": "passport_open"
+    },
+    {
+      "name": "passport_open_words"
+    }
+  ]
+}

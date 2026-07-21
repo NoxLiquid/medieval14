@@ -1,1 +1,31 @@
-# Reserved for medieval neck-slot clothing prototypes.
+# Medieval neck-slot clothing prototypes generated from _Respiral/Clothing/Neck/*.rsi
+
+- type: entity
+  parent: MedievalBaseNeck
+  id: MedievalClothingNeckLordCape
+  suffix: Средневековье
+  name: плащ лорда
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/lord_cape.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/lord_cape.rsi
+    clothingVisuals:
+      neck-Female:
+      - state: equipped-NECK-female
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+        Structural: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
