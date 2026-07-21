@@ -1,200 +1,298 @@
 - type: entity
   parent: MedievalBaseTree
-  id: MedievalTreeFir
-  name: ель
+  id: MedievalTreeRespiralBase
+  abstract: true
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.18,-0.35,0.18,0.35"
+        density: 2000
+        layer:
+        - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 3
+            max: 5
+
+- type: entity
+  parent: MedievalTreeRespiralBase
+  id: MedievalTreeFirBase
+  abstract: true
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Flora/flora_trees_fir.rsi
     scale: 0.7,0.7
-    layers:
-    - state: tree01
-      map: ["random"]
     offset: 0,2.64
-  - type: RandomSprite
-    available:
-    - random:
-        tree01: ""
-        tree02: ""
-        tree03: ""
-        tree04: ""
-        tree05: ""
-        tree06: ""
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
-        density: 2000
-        layer:
-        - WallLayer
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 500
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/tree_fell.ogg
-          params:
-            volume: 5
-            variation: 0.05
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          MedievalLog:
-            min: 3
-            max: 5
 
 - type: entity
-  parent: MedievalBaseTree
-  id: MedievalTreeBirch
-  name: берёза
+  parent: MedievalTreeFirBase
+  id: MedievalTreeFir1
+  name: ель 1
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: MedievalTreeFirBase
+  id: MedievalTreeFir2
+  name: ель 2
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: MedievalTreeFirBase
+  id: MedievalTreeFir3
+  name: ель 3
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: MedievalTreeFirBase
+  id: MedievalTreeFir4
+  name: ель 4
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: MedievalTreeFirBase
+  id: MedievalTreeFir5
+  name: ель 5
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: MedievalTreeFirBase
+  id: MedievalTreeFir6
+  name: ель 6
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree06
+
+- type: entity
+  parent: MedievalTreeRespiralBase
+  id: MedievalTreeBirchBase
+  abstract: true
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Flora/flora_trees_birch.rsi
     scale: 0.75,0.75
-    layers:
-    - state: tree01
-      map: ["random"]
     offset: 0,2.14
-  - type: RandomSprite
-    available:
-    - random:
-        tree01: ""
-        tree02: ""
-        tree03: ""
-        tree04: ""
-        tree05: ""
-        tree06: ""
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
-        density: 2000
-        layer:
-        - WallLayer
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 500
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/tree_fell.ogg
-          params:
-            volume: 5
-            variation: 0.05
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          MedievalLog:
-            min: 3
-            max: 5
 
 - type: entity
-  parent: MedievalBaseTree
-  id: MedievalTreeSwamp
-  name: болотное дерево
+  parent: MedievalTreeBirchBase
+  id: MedievalTreeBirch1
+  name: берёза 1
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: MedievalTreeBirchBase
+  id: MedievalTreeBirch2
+  name: берёза 2
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: MedievalTreeBirchBase
+  id: MedievalTreeBirch3
+  name: берёза 3
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: MedievalTreeBirchBase
+  id: MedievalTreeBirch4
+  name: берёза 4
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: MedievalTreeBirchBase
+  id: MedievalTreeBirch5
+  name: берёза 5
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: MedievalTreeBirchBase
+  id: MedievalTreeBirch6
+  name: берёза 6
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree06
+
+- type: entity
+  parent: MedievalTreeRespiralBase
+  id: MedievalTreeSwampBase
+  abstract: true
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Flora/flora_trees_swamp.rsi
     scale: 0.9,0.9
-    layers:
-    - state: tree01
-      map: ["random"]
     offset: 0,1.39
-  - type: RandomSprite
-    available:
-    - random:
-        tree01: ""
-        tree02: ""
-        tree03: ""
-        tree04: ""
-        tree05: ""
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
-        density: 2000
-        layer:
-        - WallLayer
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 500
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/tree_fell.ogg
-          params:
-            volume: 5
-            variation: 0.05
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          MedievalLog:
-            min: 3
-            max: 5
 
 - type: entity
-  parent: MedievalBaseTree
-  id: MedievalTreeOak
-  name: дуб
+  parent: MedievalTreeSwampBase
+  id: MedievalTreeSwamp1
+  name: болотное дерево 1
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: MedievalTreeSwampBase
+  id: MedievalTreeSwamp2
+  name: болотное дерево 2
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: MedievalTreeSwampBase
+  id: MedievalTreeSwamp3
+  name: болотное дерево 3
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: MedievalTreeSwampBase
+  id: MedievalTreeSwamp4
+  name: болотное дерево 4
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: MedievalTreeSwampBase
+  id: MedievalTreeSwamp5
+  name: болотное дерево 5
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: MedievalTreeRespiralBase
+  id: MedievalTreeOakBase
+  abstract: true
   components:
   - type: Sprite
     sprite: _Respiral/Objects/Flora/flora_trees_oak.rsi
     scale: 0.9,0.9
-    layers:
-    - state: tree01
-      map: ["random"]
     offset: 0,2.29
-  - type: RandomSprite
-    available:
-    - random:
-        tree01: ""
-        tree02: ""
-        tree03: ""
-        tree04: ""
-        tree05: ""
-        tree06: ""
-        tree07: ""
-        tree08: ""
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
-        density: 2000
-        layer:
-        - WallLayer
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 500
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/tree_fell.ogg
-          params:
-            volume: 5
-            variation: 0.05
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          MedievalLog:
-            min: 3
-            max: 5
+
+- type: entity
+  parent: MedievalTreeOakBase
+  id: MedievalTreeOak1
+  name: дуб 1
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: MedievalTreeOakBase
+  id: MedievalTreeOak2
+  name: дуб 2
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: MedievalTreeOakBase
+  id: MedievalTreeOak3
+  name: дуб 3
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: MedievalTreeOakBase
+  id: MedievalTreeOak4
+  name: дуб 4
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: MedievalTreeOakBase
+  id: MedievalTreeOak5
+  name: дуб 5
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: MedievalTreeOakBase
+  id: MedievalTreeOak6
+  name: дуб 6
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree06
+
+- type: entity
+  parent: MedievalTreeOakBase
+  id: MedievalTreeOak7
+  name: дуб 7
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree07
+
+- type: entity
+  parent: MedievalTreeOakBase
+  id: MedievalTreeOak8
+  name: дуб 8
+  suffix: Дерево
+  components:
+  - type: Sprite
+    state: tree08
