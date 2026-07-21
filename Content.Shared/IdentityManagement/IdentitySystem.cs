@@ -1,3 +1,4 @@
+using Content.Shared._Respiral.Identity; // Respiral - средневековые грамоты/гербы переопределяют предполагаемое имя
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Clothing;
@@ -243,7 +244,17 @@ public sealed partial class IdentitySystem : EntitySystem
         var ev = new SeeIdentityAttemptEvent();
 
         RaiseLocalEvent(target, ev);
-        return representation.ToStringKnown(!ev.Cancelled, ev.NameOverride);
+
+        // Respiral-Start - даём средневековым грамотам/гербам переопределить предполагаемое имя (см. _Respiral/Identity)
+        var credentialEv = new GetMedievalCredentialEvent(representation);
+        RaiseLocalEvent(target, ref credentialEv);
+        // Respiral-End
+
+        // Respiral-Start - публичная идентичность всегда анонимна (открытое лицо больше не выдаёт имя).
+        // Настоящее имя видят только знакомые через Identity.Name(viewer)/CanSeeThroughIdentity.
+        // Откатить = вернуть `!ev.Cancelled` вместо `false`.
+        return representation.ToStringKnown(false, ev.NameOverride);
+        // Respiral-End
     }
 
     /// <summary>

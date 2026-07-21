@@ -18,7 +18,7 @@ public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, MapInitEvent>(OnMapInit, after: [typeof(PricingSystem)]);
-        SubscribeLocalEvent<MedievalPhysicalPricedComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<MedievalPhysicalPricedComponent, DamageDealtEvent>(OnDamageChanged);
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, PriceCalculationEvent>(OnPriceCalculation);
     }
 
@@ -28,7 +28,7 @@ public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
         ent.Comp.AddedValue = ent.Comp.BasePrice * ent.Comp.Markup;
     }
 
-    private void OnDamageChanged(Entity<MedievalPhysicalPricedComponent> ent, ref DamageChangedEvent args)
+    private void OnDamageChanged(Entity<MedievalPhysicalPricedComponent> ent, ref DamageDealtEvent args)
     {
         if (!TryComp<DamageableComponent>(ent, out var damageComp))
             return;
@@ -37,7 +37,11 @@ public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
         if (maxHealth <= 0)
             return;
 
+        // GetTotalDamage помечен Obsolete (движок отходит от численной модели урона), но цена
+        // средневекового предмета по задумке зависит от доли урона, а функциональной замены нет.
+#pragma warning disable CS0618
         var damageFraction = (double)_damageable.GetTotalDamage((ent.Owner, damageComp)) / (double)maxHealth;
+#pragma warning restore CS0618
 
         ent.Comp.AddedValue = ent.Comp.BasePrice * ent.Comp.Markup - ent.Comp.BasePrice * damageFraction;
     }

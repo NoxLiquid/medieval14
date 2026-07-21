@@ -1,0 +1,291 @@
+# Спавнеры средневековых профессий: создают гуманоида с стартовым снаряжением профессии.
+# По образцу Entities/Mobs/Player/humanoid.yml (RandomHumanoidSpawner + randomHumanoidSettings + Loadout).
+# Loadout.prototypes ссылается на startingGear из _Respiral/Roles/Jobs/*.
+
+- type: entity
+  abstract: true
+  id: MedievalBaseHumanoidSpawner
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: green
+
+# === Знать (Nobles) ===
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerLord
+  name: лорд
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalLord
+
+- type: randomHumanoidSettings
+  id: MedievalLord
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalLordGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerKnight
+  name: рыцарь
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalKnight
+
+- type: randomHumanoidSettings
+  id: MedievalKnight
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalKnightGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerCitySteward
+  name: управляющий
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalCitySteward
+
+- type: randomHumanoidSettings
+  id: MedievalCitySteward
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalCityStewardGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerTreasurer
+  name: казначей
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalTreasurer
+
+- type: randomHumanoidSettings
+  id: MedievalTreasurer
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalTreasurerGear ]
+
+# === Ремесленники (Craftsman) ===
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerBlacksmith
+  name: кузнец
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalBlacksmith
+
+- type: randomHumanoidSettings
+  id: MedievalBlacksmith
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalBlacksmithGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerCarpenter
+  name: плотник
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalCarpenter
+
+- type: randomHumanoidSettings
+  id: MedievalCarpenter
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalCarpenterGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerMason
+  name: каменщик
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalMason
+
+- type: randomHumanoidSettings
+  id: MedievalMason
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalMasonGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerEngineer
+  name: инженер
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalEngineer
+
+- type: randomHumanoidSettings
+  id: MedievalEngineer
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalEngineerGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerInnkeeper
+  name: трактирщик
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalInnkeeper
+
+- type: randomHumanoidSettings
+  id: MedievalInnkeeper
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalInnkeeperGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerHerbalist
+  name: травник
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalHerbalist
+
+- type: randomHumanoidSettings
+  id: MedievalHerbalist
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalHerbalistGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerCitizen
+  name: горожанин
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalCitizen
+
+- type: randomHumanoidSettings
+  id: MedievalCitizen
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalCitizenGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerMerchant
+  name: торговец
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalMerchant
+
+- type: randomHumanoidSettings
+  id: MedievalMerchant
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalMerchantGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerGuard
+  name: стражник
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalGuard
+
+- type: randomHumanoidSettings
+  id: MedievalGuard
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalGuardGear ]
+
+# === Деревенские (Villager) ===
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerElder
+  name: старейшина
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalElder
+
+- type: randomHumanoidSettings
+  id: MedievalElder
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalElderGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerFarmer
+  name: фермер
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalFarmer
+
+- type: randomHumanoidSettings
+  id: MedievalFarmer
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalFarmerGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerPeasant
+  name: крестьянин
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalPeasant
+
+- type: randomHumanoidSettings
+  id: MedievalPeasant
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalPeasantGear ]
+
+# === Простолюдины (Commoner) ===
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerPilligrim
+  name: пилигрим
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalPilligrim
+
+- type: randomHumanoidSettings
+  id: MedievalPilligrim
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalPilligrimGear ]

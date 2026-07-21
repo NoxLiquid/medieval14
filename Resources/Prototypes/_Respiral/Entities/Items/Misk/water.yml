@@ -2,3 +2,8 @@
   id: MedievalFloorWaterEntity
   name: вода
   parent: FloorWaterEntity
+  components:
+  - type: TileEntityEffect
+    effects:
+    - !type:Extinguish
+    - !type:WashDirt

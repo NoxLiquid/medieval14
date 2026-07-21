@@ -1,0 +1,126 @@
+# Примитивное крафтовое оружие (камень + палки), автор спрайтов mars33_2.0 для Respiral.
+# Крафтится через Construction (не через lathe) — см. Construction/items.yml + Graph/Items/weapons.yml.
+
+- type: entity
+  parent: BaseItem
+  id: MedievalStoneAxe
+  suffix: Средневековье
+  name: каменный топор
+  description: Грубый топор из обтёсанного камня, примотанного к палке. Лучше, чем ничего.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    attackRate: 1
+    angle: 50
+    range: 1.5
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 4
+        Slash: 2
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/stone_axe.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Clothing
+    slots: [back]
+    quickEquip: false
+    clothingVisuals:
+      back:
+      - state: equipped-BACKPACK
+  - type: NeededSkillForMelee
+    neededSkills:
+    - MedievalOneSword
+    points:
+    - MedievalOneSword: 0.01
+    learnModifiers:
+    - whitelist:
+        components:
+        - MobState
+      modifier: 1
+  - type: Damageable
+    damageModifierSet: MedievalStone
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Wear
+  - type: AddWearAfterUse
+    triggers: [MeleeHit, Interact]
+    damage:
+      types:
+        Structural: 15
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 50
+      MedievalProcessedWood: 50
+  - type: Construction
+    graph: MedievalCraftStoneAxe
+    node: axe
+
+- type: entity
+  parent: MedievalBaseSpear
+  id: MedievalHandmadeSpear
+  name: самодельное копьё
+  description: Заострённый камень, примотанный к палке. Хрупкое, но колет на расстоянии.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Weapon/handmade_spear.rsi
+    state: icon
+    layers:
+    - state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 2.5
+        Blunt: 0.5
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 2
+        Blunt: 1
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Clothing
+    slots: [back]
+    quickEquip: false
+    clothingVisuals:
+      back:
+      - state: equipped-BACKPACK
+  - type: Damageable
+    damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedStone: 50
+      MedievalProcessedWood: 100
+  - type: Construction
+    graph: MedievalCraftHandmadeSpear
+    node: spear

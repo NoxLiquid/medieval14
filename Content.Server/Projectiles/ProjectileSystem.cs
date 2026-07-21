@@ -7,7 +7,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
-using Content.Shared.DirtVisuals; // Respiral-Dirtable
+using Content.Shared._Respiral.Dirt; // Respiral-Dirtable
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;

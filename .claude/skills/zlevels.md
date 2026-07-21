@@ -1,22 +1,22 @@
-# ZLevels (Z-уровни)
+# ZLevels (Z-levels)
 
-Система вертикальных уровней, портированная из CrystallEdge (MIT).
+A system of vertical levels, ported from CrystallEdge (MIT).
 
-## Архитектура
+## Architecture
 
-- Код: `Content.Server/_Respiral/ZLevels/Core/CEZLevelsSystem.cs`, компоненты с префиксом `CE`
-- При `StationPostInitEvent` система загружает карты из `CEStationZLevelsComponent.MapsBelow` / `MapsAbove`
-- Каждая карта добавляется как отдельный grid к станции через `StationSystem.AddGridToStation()`
-- Все Z-уровни объединяются в `ZNetwork` с соответствующими уровнями глубины
+- Code: `Content.Server/_Respiral/ZLevels/Core/CEZLevelsSystem.cs`, components prefixed `CE`
+- On `StationPostInitEvent` the system loads maps from `CEStationZLevelsComponent.MapsBelow` / `MapsAbove`
+- Each map is added as a separate grid to the station via `StationSystem.AddGridToStation()`
+- All Z-levels are combined into a `ZNetwork` with the corresponding depth levels
 
-## Прототипы
+## Prototypes
 
-- Определяются в YAML-файле карты (например `verdant_vale.yml`)
-- Компонент `CEStationZLevels` задаёт списки карт выше/ниже основной
-- Также объявляется `zMap` прототип со всеми картами для Z-навигации
+- Defined in the map's YAML file (e.g. `verdant_vale.yml`)
+- The `CEStationZLevels` component sets the lists of maps above/below the main one
+- A `zMap` prototype is also declared with all the maps for Z-navigation
 
-## Известные проблемы и решения
+## Known issues and solutions
 
-### `Required properties not provided for` в логах Serilog
-**Причина:** `StationNameSetup.mapNameTemplate` содержит плейсхолдеры `{0}`, `{1}` без задания `nameGenerator`. Имя станции остаётся неформатированным. При логировании `StationSystem.AddGridToStation` (строка 350) Serilog интерпретирует `{0}` и `{1}` как именованные параметры шаблона.
-**Решение:** Либо убрать плейсхолдеры из `mapNameTemplate`, либо добавить `nameGenerator` в прототип.
+### `Required properties not provided for` in Serilog logs
+**Cause:** `StationNameSetup.mapNameTemplate` contains placeholders `{0}`, `{1}` without setting a `nameGenerator`. The station name stays unformatted. When `StationSystem.AddGridToStation` logs (line 350), Serilog interprets `{0}` and `{1}` as named template parameters.
+**Solution:** Either remove the placeholders from `mapNameTemplate`, or add a `nameGenerator` to the prototype.

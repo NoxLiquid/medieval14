@@ -1,0 +1,35 @@
+# Графы крафта примитивного оружия (сырой камень + палки)
+
+- type: constructionGraph
+  id: MedievalCraftStoneAxe
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: axe
+          steps:
+            - material: MedievalRawStone
+              amount: 1
+              doAfter: 3
+            - material: MedievalRodWood
+              amount: 1
+              doAfter: 3
+    - node: axe
+      entity: MedievalStoneAxe
+
+- type: constructionGraph
+  id: MedievalCraftHandmadeSpear
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: spear
+          steps:
+            - material: MedievalRawStone
+              amount: 1
+              doAfter: 3
+            - material: MedievalRodWood
+              amount: 2
+              doAfter: 3
+    - node: spear
+      entity: MedievalHandmadeSpear

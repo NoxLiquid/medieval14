@@ -5,7 +5,7 @@ using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
 
-namespace Content.Client.Offer;
+namespace Content.Client._Respiral.Offer;
 
 public sealed partial class OfferItemIndicatorsOverlay : Overlay
 {

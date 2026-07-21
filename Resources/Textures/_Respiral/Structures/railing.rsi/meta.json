@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "by ledniky (discord:726481288713732147) for Respiral",
+    "size": {
+      "x": 32,
+      "y": 48
+    },
+  "states": [
+    {
+      "name": "side",
+      "directions": 4
+    },
+    {
+      "name": "corner",
+      "directions": 4
+    },
+    {
+        "name": "corner_small",
+        "directions": 4
+    },
+    {
+        "name": "round",
+        "directions": 4
+    }
+  ]
+}

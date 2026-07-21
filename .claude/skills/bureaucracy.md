@@ -1,46 +1,50 @@
-# Bureaucracy (Бумага, свитки, штампы)
+# Bureaucracy (Paper, scrolls, stamps)
 
-## Иерархия прототипов
+## Prototype hierarchy
 
 ```
 BasePaper (upstream, abstract)
-└── MedievalBasePaper (abstract, добавляет MedievalPhysicalPriced)
-    ├── MedievalPaper (записываемая бумага)
-    │   └── MedievalPaperWritten (для маппинга, HideSpawnMenu)
-    ├── MedievalScroll (свиток пергамента)
-    │   └── MedievalScrollMagic (магический свиток)
-    └── MedievalPassport (паспорт)
+└── MedievalBasePaper (abstract, adds MedievalPhysicalPriced)
+    ├── MedievalPaper (writable paper)
+    │   └── MedievalPaperWritten (for mapping, HideSpawnMenu)
+    ├── MedievalScroll (parchment scroll)
+    │   └── MedievalScrollMagic (magic scroll)
+    └── MedievalPassport (passport, + MedievalCredential/Visualizer)   # implemented, see identity.md
 
 BoxBase (upstream)
-└── MedievalFolderBlue (папка-хранилище)
+└── MedievalFolderBlue (storage folder)
     └── MedievalFolderRed
 
 RubberStampBase (upstream)
-├── MedievalStampBank (bank_on_paper, нейтральная)
-├── MedievalStampApproved (approved_on_paper, зелёная)
-└── MedievalStampDenied (denied_on_paper, красная)
+├── MedievalStampBank (bank_on_paper, neutral)
+├── MedievalStampApproved (approved_on_paper, green)
+└── MedievalStampDenied (denied_on_paper, red)
 ```
 
 ## Sprite RSI
 
-`_Respiral/Objects/Items/Bureaucracy/paper.rsi`
+`_Respiral/Objects/Items/Bureaucracy/paper.rsi` — Respiral's own copy of the upstream
+`Objects/Misc/bureaucracy.rsi` (CC-BY-SA-3.0, copyright = base tgstation attribution;
+special attributions removed together with their states) + own passport sprites:
 
-| State | Назначение |
+| State | Purpose |
 |---|---|
-| `paper` | Чистый лист |
-| `paper_filled` | Лист с текстом (Writing layer) |
-| `bank_on_paper` | Печать на бумаге (нейтральная, поддерживает color) |
-| `approved_on_paper` | Печать одобрения |
-| `denied_on_paper` | Печать отказа |
-| `folder_blue` | Синяя папка |
-| `folder_red` | Красная папка |
-| `passport` | Паспорт |
-| `scrolls` | Свиток |
-| `magic` | Магический свиток |
+| `paper` | Base sheet of ordinary paper |
+| `paper_words` | Text of ordinary paper (layer `PaperVisualLayers.Writing`) |
+| `paper_stamp-generic` | Neutral stamp (bank, house seal) |
+| `paper_stamp-ok` | Approval stamp |
+| `paper_stamp-deny` | Denial stamp |
+| `passport_close` | Folded credential, cover; visualizer's `ClosedState` |
+| `passport_icon` | Seal icon over the cover (layer `MedievalCredentialVisualLayers.Icon`) |
+| `passport_open` | Unfolded credential; visualizer's `OpenState` |
+| `passport_open_words` | Text of unfolded credential (layer `PaperVisualLayers.Writing`) |
 
-## Паттерн Paper (записываемая сущность)
+The passport has 4 of its own states. Layer-visibility logic (icon only when folded;
+text and stamp only when unfolded) lives in `MedievalCredentialVisualizerSystem`, see identity.md.
 
-Для создания записываемой бумаги нужны:
+## Paper pattern (writable entity)
+
+To create writable paper you need:
 ```yaml
 - type: Paper
 - type: PaperLabelType
@@ -54,34 +58,34 @@ RubberStampBase (upstream)
 - type: PaperVisuals
 ```
 
-### Слои спрайта
+### Sprite layers
 ```yaml
 layers:
-- state: paper                    # Базовый вид
-- state: paper_filled             # Текст (PaperVisualLayers.Writing), visible: false
+- state: paper                    # Base appearance
+- state: paper_filled             # Text (PaperVisualLayers.Writing), visible: false
   map: ["enum.PaperVisualLayers.Writing"]
   visible: false
-- state: bank_on_paper            # Штамп (PaperVisualLayers.Stamp), visible: false
+- state: bank_on_paper            # Stamp (PaperVisualLayers.Stamp), visible: false
   map: ["enum.PaperVisualLayers.Stamp"]
   visible: false
 ```
 
-## Система штампов
+## Stamp system
 
-`StampComponent` на сущности штампа определяет:
-- `stampState` — state из RSI бумаги, отображаемый на спрайте бумаги при штамповке
-- `stampedColor` — цвет печати в UI бумаги
-- `stampedName` — loc-строка, отображаемая при осмотре бумаги
+`StampComponent` on the stamp entity defines:
+- `stampState` — state from the paper's RSI shown on the paper sprite when stamped
+- `stampedColor` — stamp color in the paper UI
+- `stampedName` — loc string shown when examining the paper
 
-Штамп-стейты должны быть в RSI **бумаги** (не штампа), т.к. `PaperVisualizerSystem` меняет state слоя `PaperVisualLayers.Stamp`.
+Stamp states must be in the **paper's** RSI (not the stamp's), because `PaperVisualizerSystem` changes the state of the `PaperVisualLayers.Stamp` layer.
 
-## Папки (Storage)
+## Folders (Storage)
 
-Папки наследуют `BoxBase` (grid storage), фильтруют по тегу `Document`. Средневековые папки — цельные спрайты (не colormap + base как оригинальные).
+Folders inherit `BoxBase` (grid storage), filter by the `Document` tag. Medieval folders are single-piece sprites (not colormap + base like the originals).
 
-## Файлы
-| Путь | Содержимое |
+## Files
+| Path | Contents |
 |---|---|
-| `Resources/Prototypes/_Respiral/Entities/Objects/Bureaucracy/paper.yml` | Все прототипы бумаги, свитков, папок, штампов |
-| `Resources/Locale/ru-RU/_Respiral/paper.ftl` | Локализация stampedName |
-| `Resources/Textures/_Respiral/Objects/Items/Bureaucracy/paper.rsi` | Все спрайты |
+| `Resources/Prototypes/_Respiral/Entities/Objects/Bureaucracy/paper.yml` | All paper, scroll, folder, stamp prototypes |
+| `Resources/Locale/ru-RU/_Respiral/paper.ftl` | Localization of stampedName |
+| `Resources/Textures/_Respiral/Objects/Items/Bureaucracy/paper.rsi` | All sprites |

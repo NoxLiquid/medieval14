@@ -1,68 +1,86 @@
-# Mobs — NPC и монстры
+# Mobs — NPCs and monsters
 
-## Архитектура мобов
+## Mob architecture
 
-Мобы наследуют от цепочки базовых прототипов SS14:
+Mobs inherit from the SS14 base prototype chain:
 `BaseMob` → `BaseSimpleMob` → `SimpleSpaceMobBase` / `SimpleMobBase`
 
-Respiral добавляет свои базы:
-- `MedievalFloraMobBase` — животные (Flora), используют `MedievalBiological` damageContainer
-- `MedievalMonsterMobBase` — монстры, враждебные ко всем фракциям
+Respiral adds its own bases:
+- `MedievalFloraMobBase` — animals (Flora), use the `MedievalBiological` damageContainer
+- `MedievalMonsterMobBase` — monsters, hostile to all factions
 
-## Фракции (NPC Factions)
+## NPC Factions
 
-Файл: `Resources/Prototypes/_Respiral/NPC/factions.yml`
+File: `Resources/Prototypes/_Respiral/NPC/factions.yml`
 
-| Фракция | Поведение |
+| Faction | Behavior |
 |---|---|
-| `TownPeople` | Жители города |
-| `MedievalHerbivoreFlora` | Травоядные |
-| `MedievalWolf` | Волки |
-| `MedievalCat` | Коты |
-| `MedievalBear` | Медведи |
-| `MedievalFox` | Лисы |
-| `MedievalHog` | Кабаны |
-| `MedievalMonster` | Монстры — враждебны ко всем остальным фракциям |
+| `TownPeople` | Townsfolk |
+| `MedievalHerbivoreFlora` | Herbivores |
+| `MedievalWolf` | Wolves |
+| `MedievalCat` | Cats |
+| `MedievalBear` | Bears |
+| `MedievalFox` | Foxes |
+| `MedievalHog` | Boars |
+| `MedievalMonster` | Monsters — hostile to all other factions |
 
-Все фракции взаимно враждебны с `MedievalMonster`.
+All factions are mutually hostile with `MedievalMonster`.
 
-## Монстры
+## Monsters
 
-Файлы:
-- База: `Resources/Prototypes/_Respiral/Entities/Mobs/Monster/base.yml`
-- Прототипы: `Resources/Prototypes/_Respiral/Entities/Mobs/Monster/monsters.yml`
-- Спрайты: `Resources/Textures/_Respiral/Mobs/Monster/{name}.rsi`
+Files:
+- Base: `Resources/Prototypes/_Respiral/Entities/Mobs/Monster/base.yml`
+- Prototypes: `Resources/Prototypes/_Respiral/Entities/Mobs/Monster/monsters.yml`
+- Sprites: `Resources/Textures/_Respiral/Mobs/Monster/{name}.rsi`
 
-Все монстры используют фракцию `MedievalMonster` и AI `MedievalHostileFloraCompound` (из `_Respiral/NPC/flora.yml`).
+All monsters use the `MedievalMonster` faction and the AI `MedievalHostileFloraCompound` (from `_Respiral/NPC/flora.yml`).
 
-**ВАЖНО:** сущности из `_Respiral` никогда не должны использовать HTN-компаунды из оригинальной сборки (например `SimpleHostileCompound`). Только Respiral-компаунды: `MedievalHostileFloraCompound` (враждебные), `MedievalHerbivoreFloraCompound` (травоядные).
+**IMPORTANT:** entities from `_Respiral` must never use HTN compounds from the original build (e.g. `SimpleHostileCompound`). Only Respiral compounds: `MedievalHostileFloraCompound` (hostile), `MedievalHerbivoreFloraCompound` (herbivore).
 
-| ID | Название | HP | Скорость | Урон |
+| ID | Name | HP | Speed | Damage |
 |---|---|---|---|---|
-| `MobMedievalBoneHound` | Костяной пёс | 80 | 6 | Brute 8 |
-| `MobMedievalCackle` | Кудахта | 60 | 5 | Brute 6 |
-| `MobMedievalFlem` | Флем | 100 | 3 | Brute 10 |
-| `MobMedievalFlyagaric` | Мухомор | 50 | 3 | Poison 8 |
-| `MobMedievalIceSpectre` | Ледяной призрак | 70 | 5 | Cold 10 |
-| `MobMedievalInvisibleWhistler` | Невидимый свистун | 40 | 7 | Brute 12 |
-| `MobMedievalLumish` | Люмиш | 30 | 3 | Poison 5 |
-| `MobMedievalLurker` | Скрытень | 120 | 5 | Brute 15 |
-| `MobMedievalMole` | Крот | 60 | 4 | Brute 8 |
-| `MobMedievalMosquito` | Комар | 20 | 7 | Piercing 4 |
-| `MobMedievalSpineguard` | Шипохвост | 150 | 3.5 | Brute 18 |
+| `MobMedievalBoneHound` | Bone hound | 80 | 6 | Brute 8 |
+| `MobMedievalCackle` | Cackle | 60 | 5 | Brute 6 |
+| `MobMedievalFlem` | Flem | 100 | 3 | Brute 10 |
+| `MobMedievalFlyagaric` | Flyagaric | 50 | 3 | Poison 8 |
+| `MobMedievalIceSpectre` | Ice spectre | 70 | 5 | Cold 10 |
+| `MobMedievalInvisibleWhistler` | Invisible whistler | 40 | 7 | Brute 12 |
+| `MobMedievalLumish` | Lumish | 30 | 3 | Poison 5 |
+| `MobMedievalLurker` | Lurker | 120 | 5 | Brute 15 |
+| `MobMedievalMole` | Mole | 60 | 4 | Brute 8 |
+| `MobMedievalMosquito` | Mosquito | 20 | 7 | Piercing 4 |
+| `MobMedievalSpineguard` | Spineguard | 150 | 3.5 | Brute 18 |
 
 ## DamageStateVisuals
 
-Стандартная конфигурация из базы: state `alive` для Alive, state `dead` для Dead.
-Исключения (нет state `dead` в RSI): `ice_spectre`, `mosquito` — используют `alive` для обоих состояний.
-`lumish` — при смерти показывает state `lumishroom`.
+Standard configuration from the base: state `alive` for Alive, state `dead` for Dead.
+Exceptions (no `dead` state in the RSI): `ice_spectre`, `mosquito` — use `alive` for both states.
+`lumish` — shows state `lumishroom` on death.
 
-## Ключевые компоненты моба
+## Key mob components
 
-- `MobState` + `MobThresholds` — состояния Alive/Dead с порогом HP
-- `DamageStateVisuals` — переключение спрайтов по состоянию
-- `NpcFactionMember` — принадлежность к фракции
-- `HTN` — AI дерево поведения
-- `MeleeWeapon` — атака ближнего боя
-- `Fixtures` — физика (коллайдер, масса)
-- `MovementSpeedModifier` — скорость передвижения
+- `MobState` + `MobThresholds` — Alive/Dead states with an HP threshold
+- `DamageStateVisuals` — sprite switching by state
+- `NpcFactionMember` — faction membership
+- `HTN` — AI behavior tree
+- `MeleeWeapon` — melee attack
+- `Fixtures` — physics (collider, mass)
+- `MovementSpeedModifier` — movement speed
+
+## Profession spawners (RandomHumanoidSpawner)
+
+File: `Resources/Prototypes/_Respiral/Roles/spawners.yml`. Model — `Entities/Mobs/Player/humanoid.yml`.
+
+A profession spawner = a pair of prototypes:
+1. `type: entity` (inherits `BaseMedievalHumanoidSpawner` → sprite marker `Markers/jobs.rsi state: green`)
+   with a `RandomHumanoidSpawner` component (`settings: <id>`). On MapInit it replaces itself with a humanoid.
+2. `type: randomHumanoidSettings` (`id` matches the profession id, like upstream ERTLeader) with
+   the components `RandomHumanoidAppearance` (RandomizeName=true by default) and
+   `Loadout` (`prototypes: [ <Medieval*Gear> ]`).
+
+`Loadout.prototypes` is a `List<ProtoId<StartingGearPrototype>>`, referencing the `startingGear` from
+`_Respiral/Roles/Jobs/*` (which define `equipment:` by slot). This is how the spawner dresses the humanoid in
+the profession's gear. All 17 roles covered (Nobles/Craftsman/Villager/Commoner).
+
+No `GhostRole` added (no ghost-role locale for medieval professions) — they spawn an inert NPC, not a
+ghost role. If ghost roles are needed — add `GhostRole` to the settings + `ghost-role-information-*` strings.

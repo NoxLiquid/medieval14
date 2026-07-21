@@ -1,23 +1,23 @@
-# Локализация (FTL)
+# Localization (FTL)
 
-## Где лежит
+## Where it lives
 
-- `Resources/Locale/<culture>/...` — FTL-файлы по культурам (`en-US`, `ru-RU`).
-- Структура подкаталогов в `ru-RU` зеркалит `en-US`.
+- `Resources/Locale/<culture>/...` — FTL files per culture (`en-US`, `ru-RU`).
+- The subdirectory structure in `ru-RU` mirrors `en-US`.
 
-## Главное правило: паритет с en-US
+## Main rule: parity with en-US
 
-При апстрим-мерже текст сообщения в `en-US` может поменять **схему аргументов**, а
-не только слова. Перевод `ru-RU` обязан повторять **форму аргументов/функций**
-английского сообщения, иначе FTL на рантайме кидает `Unknown variable: $...`, и
-интеграционные тесты падают (пул сервера репортит это как `[ERRO] loc: "ru-RU"/...`).
+On an upstream merge, a message's text in `en-US` can change its **argument scheme**, not
+just the words. The `ru-RU` translation must repeat the **form of arguments/functions** of the
+English message, otherwise FTL throws `Unknown variable: $...` at runtime, and the
+integration tests fail (the server pool reports it as `[ERRO] loc: "ru-RU"/...`).
 
-Тест проверяет именно рантайм-резолв строк, а не сам YAML — `dotnet build` это не
-ловит. Сверять руками.
+The test checks the runtime resolution of strings, not the YAML itself — `dotnet build` doesn't
+catch this. Verify by hand.
 
-### Проверки
+### Checks
 
-Паритет message ID между культурами:
+Message-ID parity between cultures:
 
 ```sh
 diff \
@@ -25,40 +25,40 @@ diff \
   <(grep -oE '^[a-z0-9-]+ =' Resources/Locale/ru-RU/<path>.ftl | sort)
 ```
 
-Должно быть пусто. Если в ru не хватает ID (новые сообщения апстрима) — добавить и
-перевести; лишние ID в ru — удалить.
+Should be empty. If ru is missing IDs (new upstream messages) — add and
+translate them; extra IDs in ru — remove.
 
-Проверка отсутствия устаревших переменных после правки:
+Check for absence of stale variables after an edit:
 
 ```sh
 grep -oE '\$[a-z]+' Resources/Locale/ru-RU/<path>.ftl | sort -u
 ```
 
-Набор `$`-переменных должен совпадать с en-US (с поправкой только на статический текст).
+The set of `$` variables must match en-US (allowing only for static text).
 
-## Кейс: ion-storm (AI-законы)
+## Case: ion-storm (AI laws)
 
 `Resources/Locale/{en-US,ru-RU}/station-events/events/ion-storm.ftl`.
 
-Апстрим (Wizard's Den) переписал систему ион-штормовых законов. Раньше каждое
-сообщение получало много отдельных переменных (`$who`, `$joined`, `$subjects`,
-`$adjective`, `$thing`, ...). Теперь каждому закону передаётся **один аргумент
-`$ion`**, а динамические части резолвятся через FTL-term-функции:
+Upstream (Wizard's Den) rewrote the ion-storm law system. Previously each
+message received many separate variables (`$who`, `$joined`, `$subjects`,
+`$adjective`, `$thing`, ...). Now each law is passed **a single argument
+`$ion`**, and the dynamic parts are resolved via FTL term functions:
 `ION-WHO($ion)`, `ION-NUMBER-BASE($ion)`, `ION-NUMBER-MOD($ion)`,
 `ION-ADJECTIVE($ion)`, `ION-SUBJECT($ion)`, `ION-THING($ion)`, `ION-MUST($ion)`,
-`ION-PLURAL($ion)`, `ION-PART($ion)` и т.д.
+`ION-PLURAL($ion)`, `ION-PART($ion)`, etc.
 
-Функции регистрируются для `DefaultCulture` в
-`Content.Server/Silicons/Laws/IonLawLocalizationSystem.cs` (значения берутся из
-`IonLawSystem.GetOrGenerateValue`). Аргумент `$ion` функции игнорируют (`_ =>`),
-он лишь маркер.
+The functions are registered for `DefaultCulture` in
+`Content.Server/Silicons/Laws/IonLawLocalizationSystem.cs` (values taken from
+`IonLawSystem.GetOrGenerateValue`). The functions ignore the `$ion` argument (`_ =>`),
+it's only a marker.
 
-Перевод `ru-RU` был оставлен на старой схеме переменных → `Unknown variable`.
-Фикс: переписать `ru-RU/.../ion-storm.ftl`, зеркаля структуру `en-US` —
-сохранить вызовы `{ION-X($ion)}` и ссылки на term `{ion-storm-part}`, перевести
-только статический текст и ветки select-выражений (`{ION-PLURAL($ion) -> [true] ТРЕБУЮТ *[false] ТРЕБУЕТ}`).
-Хелпер-термы (`ion-storm-you`, `ion-storm-the-job`, `ion-storm-adjective-things`,
-`ion-storm-x-and-y`) сохраняют свои исходные аргументы — их не трогать.
+The `ru-RU` translation was left on the old variable scheme → `Unknown variable`.
+Fix: rewrite `ru-RU/.../ion-storm.ftl`, mirroring the `en-US` structure —
+keep the `{ION-X($ion)}` calls and references to the term `{ion-storm-part}`, translate
+only the static text and the branches of select expressions (`{ION-PLURAL($ion) -> [true] ТРЕБУЮТ *[false] ТРЕБУЕТ}`).
+The helper terms (`ion-storm-you`, `ion-storm-the-job`, `ion-storm-adjective-things`,
+`ion-storm-x-and-y`) keep their original arguments — don't touch them.
 
-Новые сообщения, которые отсутствовали в ru и были добавлены: `ion-storm-law-who-dagd`
-и блок `ion-law-error-*` (фолбэк-строки на случай сбоя генерации закона).
+New messages that were absent in ru and were added: `ion-storm-law-who-dagd`
+and the `ion-law-error-*` block (fallback strings in case law generation fails).

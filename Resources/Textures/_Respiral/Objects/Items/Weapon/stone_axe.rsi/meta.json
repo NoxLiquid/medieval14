@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by mars33_2.0 for Space Station 14 project Respiral",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "inhand-left"
+        },
+        {
+            "name": "inhand-right"
+        },
+        {
+            "name": "equipped-BACKPACK"
+        },
+        {
+            "name": "wielded"
+        }
+    ]
+}

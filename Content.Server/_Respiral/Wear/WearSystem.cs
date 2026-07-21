@@ -32,12 +32,23 @@ public sealed partial class WearSystem : EntitySystem
             return;
 
         var totalDamage = _damage.GetTotalDamage((uid, damageable));
-        var remainingBreak = GetThresholdAt(destructible, ThresholdActs.Breakage) - totalDamage;
+        var breakThreshold = GetThresholdAt(destructible, ThresholdActs.Breakage);
+        var remainingBreak = breakThreshold - totalDamage;
         var remainingDestroy = GetThresholdAt(destructible, ThresholdActs.Destruction) - totalDamage;
 
-        if (remainingBreak <= FixedPoint2.Zero || component.State == WearState.Broken)
+        // У предмета может не быть порога поломки (только разрушение) — тогда GetThresholdAt
+        // возвращает FixedPoint2.MaxValue, и показывать "до поломки" бессмысленно (огромное число).
+        var hasBreak = breakThreshold != FixedPoint2.MaxValue;
+
+        if (component.State == WearState.Broken || (hasBreak && remainingBreak <= FixedPoint2.Zero))
         {
             args.PushMarkup(Loc.GetString("wear-exm-broken"));
+            args.PushMarkup(Loc.GetString("wear-exm-destroy-info", ("points", Math.Round(FixedPoint2.Max(remainingDestroy, FixedPoint2.Zero).Float()).ToString())));
+            return;
+        }
+
+        if (!hasBreak)
+        {
             args.PushMarkup(Loc.GetString("wear-exm-destroy-info", ("points", Math.Round(FixedPoint2.Max(remainingDestroy, FixedPoint2.Zero).Float()).ToString())));
             return;
         }

@@ -9,4 +9,7 @@
 
 - type: startingGear
   id: MedievalPilligrimGear
+  equipment:
+    head: MedievalClothingHeadHood
+    pants: MedievalClothingLegsLeather
 

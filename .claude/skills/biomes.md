@@ -1,121 +1,121 @@
-# Biome System (Процедурная генерация карт)
+# Biome System (Procedural map generation)
 
-## Архитектура
+## Architecture
 
-### Основные компоненты
+### Core components
 
-| Класс | Назначение |
+| Class | Purpose |
 |---|---|
-| `BiomeComponent` | Компонент на map-entity. Содержит seed, layers, загруженные чанки |
-| `BiomeTemplatePrototype` | YAML-прототип: список `IBiomeLayer` — определение биома |
-| `BiomeSystem` (Server) | Загрузка/выгрузка чанков по proximity к игрокам |
-| `SharedBiomeSystem` | Логика определения тайлов/сущностей/декалей по noise |
+| `BiomeComponent` | Component on the map entity. Holds seed, layers, loaded chunks |
+| `BiomeTemplatePrototype` | YAML prototype: list of `IBiomeLayer` — biome definition |
+| `BiomeSystem` (Server) | Loads/unloads chunks based on proximity to players |
+| `SharedBiomeSystem` | Logic for determining tiles/entities/decals from noise |
 
-### Типы слоёв (`IBiomeLayer`)
+### Layer types (`IBiomeLayer`)
 
-| Тип | Что делает |
+| Type | What it does |
 |---|---|
-| `BiomeTileLayer` | Генерирует тайлы по noise (`Tile`, `Threshold`, `Noise`) |
-| `BiomeEntityLayer` | Спавнит сущности на разрешённых тайлах (`Entities`, `AllowedTiles`) |
-| `BiomeDecalLayer` | Размещает декали (`Decals`, `AllowedTiles`, `Divisions`) |
-| `BiomeMetaLayer` | Вложенный биом: делегирует к другому `BiomeTemplatePrototype` |
-| `BiomeDummyLayer` | Маркер-заглушка для инъекции слоёв из кода |
+| `BiomeTileLayer` | Generates tiles from noise (`Tile`, `Threshold`, `Noise`) |
+| `BiomeEntityLayer` | Spawns entities on allowed tiles (`Entities`, `AllowedTiles`) |
+| `BiomeDecalLayer` | Places decals (`Decals`, `AllowedTiles`, `Divisions`) |
+| `BiomeMetaLayer` | Nested biome: delegates to another `BiomeTemplatePrototype` |
+| `BiomeDummyLayer` | Placeholder marker for injecting layers from code |
 
-### Каждый слой имеет
+### Each layer has
 
 - `Noise` — `FastNoiseLite` (seed, noiseType, frequency, fractalType, octaves...)
-- `Threshold` — значение noise, выше которого слой активен
-- `Invert` — инвертировать noise
+- `Threshold` — noise value above which the layer is active
+- `Invert` — invert the noise
 
-### Порядок обработки
+### Processing order
 
-Слои обрабатываются **снизу вверх** (от последнего к первому). Первый совпавший слой побеждает. В YAML: нижние слои — базовые тайлы, верхние — декали/сущности.
+Layers are processed **bottom-up** (from last to first). The first matching layer wins. In YAML: lower layers are base tiles, upper layers are decals/entities.
 
-## Процесс генерации
+## Generation process
 
-1. `BiomeSystem.Update()` — каждый тик находит позиции игроков
-2. Вычисляет активные чанки (в радиусе `_loadRange` от игроков, ChunkSize=8)
-3. `LoadChunk()` — для каждого тайла 8×8 проходит по layers, ставит тайлы → сущности → декали
-4. `UnloadChunk()` — удаляет неизменённые тайлы/сущности/декали при удалении от игрока
-5. `ModifiedTiles` — тайлы, изменённые игроками, никогда не перезаписываются
+1. `BiomeSystem.Update()` — each tick finds player positions
+2. Computes active chunks (within `_loadRange` of players, ChunkSize=8)
+3. `LoadChunk()` — for each 8×8 tile, iterates layers, places tiles → entities → decals
+4. `UnloadChunk()` — removes unmodified tiles/entities/decals when the player moves away
+5. `ModifiedTiles` — tiles changed by players are never overwritten
 
-## Маркеры (BiomeMarkerLayerPrototype)
+## Markers (BiomeMarkerLayerPrototype)
 
-Отдельная система для спавна групп сущностей (руды, мобы):
-- `Size` — размер чанка маркера (обычно 128)
-- `Radius` — минимальное расстояние между группами
-- `MaxCount` — максимум групп
-- `MinGroupSize`/`MaxGroupSize` — размер группы
-- `EntityMask` — замена существующих сущностей (напр. стена → руда)
-- `Prototype` — что спавнить
+A separate system for spawning groups of entities (ore, mobs):
+- `Size` — marker chunk size (usually 128)
+- `Radius` — minimum distance between groups
+- `MaxCount` — maximum number of groups
+- `MinGroupSize`/`MaxGroupSize` — group size
+- `EntityMask` — replacement of existing entities (e.g. wall → ore)
+- `Prototype` — what to spawn
 
-## Создание планеты
+## Creating a planet
 
-`BiomeSystem.EnsurePlanet()` — создаёт карту с биомом:
-- Добавляет `BiomeComponent` с template и seed
-- Gravity, MapLight, LightCycle, Roof, SunShadow, атмосфера
+`BiomeSystem.EnsurePlanet()` — creates a map with a biome:
+- Adds `BiomeComponent` with template and seed
+- Gravity, MapLight, LightCycle, Roof, SunShadow, atmosphere
 
-## Gateway (генерация планет-порталов)
+## Gateway (portal-planet generation)
 
 `GatewayGeneratorSystem.GenerateDestination()`:
-1. Создаёт новую карту
-2. Вызывает `EnsurePlanet()` с биомом
-3. Добавляет маркерные слои (руда, мобы)
-4. При открытии портала — генерирует данжен через `DungeonSystem`
+1. Creates a new map
+2. Calls `EnsurePlanet()` with a biome
+3. Adds marker layers (ore, mobs)
+4. When the portal opens — generates a dungeon via `DungeonSystem`
 
-## Файлы прототипов
+## Prototype files
 
-| Файл | Содержимое |
+| File | Contents |
 |---|---|
-| `Prototypes/Procedural/biome_templates.yml` | Апстрим биомы (Continental, Lava, Snow...) |
-| `Prototypes/_Respiral/Procedural/biome_templates.yml` | `MedievalGrasslands` — средневековый биом |
+| `Prototypes/Procedural/biome_templates.yml` | Upstream biomes (Continental, Lava, Snow...) |
+| `Prototypes/_Respiral/Procedural/biome_templates.yml` | `MedievalGrasslands` — medieval biome |
 
-## Ограничения системы
+## System limitations
 
-- **Нет поддержки координатных ограничений** — ни один `IBiomeLayer` не имеет полей bounds/region/area
-- Биом применяется ко **всей карте** бесконечно
-- Генерация определяется исключительно **noise-функциями** и **threshold**
-- `BiomeMetaLayer` позволяет вложенные биомы, но всё равно через noise, не координаты
+- **No support for coordinate constraints** — no `IBiomeLayer` has bounds/region/area fields
+- A biome applies to the **whole map** infinitely
+- Generation is determined solely by **noise functions** and **thresholds**
+- `BiomeMetaLayer` allows nested biomes, but still via noise, not coordinates
 
 ## BiomeRegionLayer (Respiral)
 
-Кастомный `IBiomeLayer` для координатно-ограниченных вложенных биомов.
+A custom `IBiomeLayer` for coordinate-constrained nested biomes.
 
-### Файлы
+### Files
 
-| Файл | Назначение |
+| File | Purpose |
 |---|---|
-| `Content.Shared/_Respiral/Parallax/Biomes/Layers/BiomeRegionLayer.cs` | Тип слоя + enum `BiomeRegionShape` |
-| `Content.Shared/Parallax/Biomes/SharedBiomeSystem.cs` | Обработка в TryGetTile/TryGetEntity/TryGetDecals (комментарии `// Respiral`) |
+| `Content.Shared/_Respiral/Parallax/Biomes/Layers/BiomeRegionLayer.cs` | Layer type + `BiomeRegionShape` enum |
+| `Content.Shared/Parallax/Biomes/SharedBiomeSystem.cs` | Handling in TryGetTile/TryGetEntity/TryGetDecals (`// Respiral` comments) |
 
-### Формы
+### Shapes
 
-- `Rectangle` — задаётся через `origin` (левый нижний) и `end` (правый верхний, не включительно)
-- `Circle` — задаётся через `center` и `radius`
+- `Rectangle` — defined by `origin` (bottom-left) and `end` (top-right, exclusive)
+- `Circle` — defined by `center` and `radius`
 
-### Приоритет
+### Priority
 
-Определяется позицией в списке `layers` шаблона биома. Слои позже в списке имеют более высокий приоритет (обрабатываются первыми из-за обратной итерации).
+Determined by position in the biome template's `layers` list. Layers later in the list have higher priority (processed first due to reverse iteration).
 
-### Пример YAML
+### YAML example
 
 ```yaml
 - type: biomeTemplate
   id: MyWorldBiome
   layers:
-    # Базовые тайлы (низший приоритет)
+    # Base tiles (lowest priority)
     - !type:BiomeTileLayer
       threshold: -1.0
       tile: MedievalFloorGrass
 
-    # Лесная зона 100×100 тайлов
+    # Forest zone 100×100 tiles
     - !type:BiomeRegionLayer
       template: ForestBiome
       shape: Rectangle
       origin: 0, 0
       end: 100, 100
 
-    # Озеро внутри леса (выше приоритет — рисуется поверх)
+    # Lake inside the forest (higher priority — drawn on top)
     - !type:BiomeRegionLayer
       template: LakeBiome
       shape: Circle

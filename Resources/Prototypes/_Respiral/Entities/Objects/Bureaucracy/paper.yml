@@ -8,7 +8,7 @@
   components:
   - type: MedievalPhysicalPriced
   - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
+    sprite: _Respiral/Objects/Items/Bureaucracy/paper.rsi
 
 # Бумага (записываемая)
 - type: entity
@@ -18,7 +18,7 @@
   description: Лист грубой бумаги. На нём можно писать.
   components:
   - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
+    sprite: _Respiral/Objects/Items/Bureaucracy/paper.rsi
     layers:
     - state: paper
       color: "#bbb19e"
@@ -50,6 +50,50 @@
     layers:
     - state: paper_words
       color: "#bbb19e"
+
+# Паспорт — Respiral Identity, см. .claude/skills/identity.md
+# RSI — собственная копия Respiral (_Respiral/.../paper.rsi, CC-BY-SA из bureaucracy.rsi).
+# Спрайты: свёрнутая обложка (passport_close) + иконка-печатка поверх (passport_icon),
+# раскрытый паспорт (passport_open) + текст (passport_open_words). Слои текста и печати
+# видны только когда паспорт раскрыт — этим управляет MedievalCredentialVisualizer.
+- type: entity
+  name: паспорт
+  parent: MedievalBasePaper
+  id: MedievalPassport
+  description: Сложенная книжица, удостоверяющая личность. Имя в ней обретает силу лишь под печатью дома.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Bureaucracy/paper.rsi
+    layers:
+    # Обложка: свёрнутая (passport_close) ↔ развёрнутая (passport_open) — переключает визуализатор
+    - state: passport_close
+      map: ["enum.MedievalCredentialVisualLayers.Base"]
+    # Иконка поверх обложки — видна только у свёрнутого паспорта
+    - state: passport_icon
+      map: ["enum.MedievalCredentialVisualLayers.Icon"]
+    # Текст — видим только когда паспорт раскрыт и заполнен
+    - state: passport_open_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    # Печать дома — видна только когда паспорт раскрыт
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: Paper
+  - type: PaperLabelType
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: PaperVisuals
+  - type: MedievalCredential
+  # Раскрытие паспорта меняет обложку и открывает слои текста/печати
+  - type: MedievalCredentialVisualizer
+    closedState: passport_close
+    openState: passport_open
 
 # Штампы
 
@@ -85,3 +129,17 @@
     stampedName: stamp-component-stamped-name-medieval-denied
     stampState: paper_stamp-deny
     stampedColor: "#8B0000"
+
+# Печати домов — заверяют паспорта (Respiral Identity). Несут и косметический Stamp, и MedievalHouseSeal.
+- type: entity
+  name: печать дома Короны
+  parent: RubberStampBase
+  id: MedievalHouseSealCrown
+  description: Личная печать дома Короны. Заверяет паспорта, придавая имени силу.
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-medieval-house-crown
+    stampState: paper_stamp-generic
+    stampedColor: "#c8a13a"
+  - type: MedievalHouseSeal
+    house: HouseSealCrown

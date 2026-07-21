@@ -1,3 +1,4 @@
+using Content.Shared._Respiral.Dirt.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
@@ -12,7 +13,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Shared.DirtVisuals;
+namespace Content.Shared._Respiral.Dirt;
 
 public sealed partial class SharedDirtSystem : EntitySystem
 {
@@ -24,6 +25,12 @@ public sealed partial class SharedDirtSystem : EntitySystem
     public const float MaxDirtLevel = 100f;
     private const float DirtAccumulationRate = 0.01f;
     private static readonly ProtoId<ReagentPrototype> Water = "Water";
+
+    /// <summary>
+    /// Слоты одежды, на которые попадает грязь/кровь при загрязнении всего тела.
+    /// </summary>
+    private static readonly string[] BodyDirtSlots = {
+        "outerClothing", "jumpsuit", "pants", "gloves", "belt", "mask", "head", "shoes" };
 
     public override void Initialize()
     {
@@ -48,7 +55,6 @@ public sealed partial class SharedDirtSystem : EntitySystem
 
     private void OnFolded(EntityUid uid, DirtableComponent comp, ref FoldedEvent args)
     {
-        // Finally update this shit
         Dirty(uid, comp);
     }
 
@@ -100,8 +106,7 @@ public sealed partial class SharedDirtSystem : EntitySystem
         var bloodSolution = new Solution();
         bloodSolution.AddReagent(bloodReagentId, bloodAmount * (0.2f / DirtAccumulationRate));
 
-        var slots = new List<string> { "outerClothing", "jumpsuit", "gloves", "belt", "mask", "head" };
-        ApplyDirtToClothing(target, bloodSolution, _random.Pick(slots));
+        ApplyDirtToClothing(target, bloodSolution, _random.Pick(BodyDirtSlots));
 
         if (attacker != target)
         {
@@ -113,19 +118,17 @@ public sealed partial class SharedDirtSystem : EntitySystem
                 if (distance > 2.5f)
                     return;
             }
-            ApplyDirtToClothing(attacker, bloodSolution, _random.Pick(slots));
+            ApplyDirtToClothing(attacker, bloodSolution, _random.Pick(BodyDirtSlots));
         }
     }
 
     public void ApplyDirtToClothing(EntityUid wearer, Solution solution)
     {
-        var slots = new List<string> { "shoes" };
-
+        // Стоя пачкается только обувь; лёжа — всё тело (обувь уже входит в BodyDirtSlots).
         var isLyingDown = TryComp<StandingStateComponent>(wearer, out var standing) && !standing.Standing;
-        if (isLyingDown)
-        {
-            slots.AddRange(new[] { "outerClothing", "jumpsuit", "gloves", "belt", "mask", "head" });
-        }
+        var slots = isLyingDown
+            ? new List<string>(BodyDirtSlots)
+            : new List<string> { "shoes" };
 
         foreach (var slot in slots)
         {

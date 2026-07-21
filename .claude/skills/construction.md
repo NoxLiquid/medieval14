@@ -97,43 +97,43 @@ Sound collections on destroy:
 
 ## Key/Lock System
 
-**Компоненты:**
-- `MedievalKeyComponent.KeyId` — строка-идентификатор ключа
-- `MedievalLockComponent.KeyId` — требуемый ключ; `Locked` — заблокирован ли замок
-- `MedievalLockableComponent` — на двери/сундуке: разрешает блокировку
-- Замок ищется через `lock-container` (`ContainerSlot`) на двери, ИЛИ через `MedievalLockComponent` прямо на двери
+**Components:**
+- `MedievalKeyComponent.KeyId` — key identifier string
+- `MedievalLockComponent.KeyId` — required key; `Locked` — whether the lock is locked
+- `MedievalLockableComponent` — on a door/chest: allows locking
+- The lock is found via `lock-container` (`ContainerSlot`) on the door, OR via `MedievalLockComponent` directly on the door
 
-**Файлы прототипов:**
-| Файл | Содержимое |
+**Prototype files:**
+| File | Contents |
 |---|---|
-| `Entities/Items/Misk/key.yml` | Базовые прототипы (`MedievalBaseKey`, `MedievalKey`, отмычки) |
-| `Entities/Items/Misk/key_sets.yml` | 37 ключей по keyId |
-| `Entities/Items/Misk/lock.yml` | Базовые прототипы замков |
-| `Entities/Items/Misk/lock_sets.yml` | 37 замков по keyId (`locked: true`) |
-| `Entities/Structures/Doors/locked_door.yml` | 222 двери = 6 типов × 37 keyId |
+| `Entities/Items/Misk/key.yml` | Base prototypes (`MedievalBaseKey`, `MedievalKey`, lockpicks) |
+| `Entities/Items/Misk/key_sets.yml` | 37 keys by keyId |
+| `Entities/Items/Misk/lock.yml` | Base lock prototypes |
+| `Entities/Items/Misk/lock_sets.yml` | 37 locks by keyId (`locked: true`) |
+| `Entities/Structures/Doors/locked_door.yml` | 222 doors = 6 types × 37 keyId |
 
-**Именование:** `MedievalKey{Latin}` / `MedievalLock{Latin}` / `MedievalWoodenDoor{Latin}`, suffix = кириллический keyId.
+**Naming:** `MedievalKey{Latin}` / `MedievalLock{Latin}` / `MedievalWoodenDoor{Latin}`, suffix = Cyrillic keyId.
 
-**Список keyId:** кузнец, портной, алхимик, плотник, каменщик, торговец, таверна, таверна1–6, лорд, казарма, тюрьма, староста, амбар, склад, казна, стража, дом1–10, управляющий, рыцарь1–5.
+**keyId list:** blacksmith, tailor, alchemist, carpenter, mason, merchant, tavern, tavern1–6, lord, barracks, prison, elder, granary, warehouse, treasury, guard, house1–10, steward, knight1–5.
 
-**Locked door:** наследует тип двери + `ContainerContainer` с пустым `lock-container: !type:ContainerSlot`. Замок (`MedievalLockKuznec` и т.д.) кладётся в слот на карте, НЕ через прототип (ContainerSlot.ent — EntityUid, не прото-ID). Имя компонента в YAML: `ContainerContainer` (т.к. `[ComponentProtoName("ContainerContainer")]`). `SharedMedievalLockSystem` обращается только к замку внутри контейнера через `GetLock()`, `MedievalLock` на двери не нужен.
+**Locked door:** inherits the door type + `ContainerContainer` with an empty `lock-container: !type:ContainerSlot`. The lock (`MedievalLockKuznec` etc.) is placed in the slot on the map, NOT via prototype (ContainerSlot.ent is an EntityUid, not a proto ID). The component name in YAML: `ContainerContainer` (because `[ComponentProtoName("ContainerContainer")]`). `SharedMedievalLockSystem` only accesses the lock inside the container via `GetLock()`; `MedievalLock` on the door is not needed.
 
-## Stairs (ZLevel лестницы)
+## Stairs (ZLevel ladders)
 
-Сущности в `Resources/Prototypes/_Respiral/ZLevels/stairs.yml`.
-Граф крафта: `MedievalLadder` (`Construction/Graph/Structure/stairs.yml`).
-Рецепты: `Construction/other.yml`.
+Entities in `Resources/Prototypes/_Respiral/ZLevels/stairs.yml`.
+Crafting graph: `MedievalLadder` (`Construction/Graph/Structure/stairs.yml`).
+Recipes: `Construction/other.yml`.
 
-| ID | Спрайт state | color | Материал крафта |
+| ID | Sprite state | color | Crafting material |
 |---|---|---|---|
-| `MedievalCEZLevelLadder` | `stairs_wood` | — (без color) | MedievalBoard ×2 |
+| `MedievalCEZLevelLadder` | `stairs_wood` | — (no color) | MedievalBoard ×2 |
 | `MedievalCEZLevelLadderStone` | `stairs_stone` | `#808080` | MedievalProcessedStone ×2 |
 | `MedievalCEZLevelLadderMarble` | `stairs_stone` | `#E8E0C8` | MedievalProcessedStone ×3 |
 
-- Спрайты нейтрального цвета — цвет материала задаётся через `color` в компоненте `Sprite`.
-- Мрамор использует тот же спрайт `stairs_stone`, что и камень, но с ivory-цветом `#E8E0C8`.
-- Мрамор дороже в постройке (×3 камня) и демонтаже.
-- Цвета берутся из `materials.yml`: `MedievalProcessedStone → #808080`.
+- Neutral-colored sprites — the material color is set via `color` in the `Sprite` component.
+- Marble uses the same `stairs_stone` sprite as stone, but with the ivory color `#E8E0C8`.
+- Marble is more expensive to build (×3 stone) and to dismantle.
+- Colors come from `materials.yml`: `MedievalProcessedStone → #808080`.
 
 ## Roof System
 
@@ -152,3 +152,45 @@ RSI sprite states: `roof0`–`roof7` (4 directions each) + `full` (icon).
 
 Construction graph: `MedievalRoof` (`Construction/Graph/Structure/roof.yml`).
 Construction recipes: `Construction/roof.yml`.
+
+## Crafting items (objectType: Item) rather than structures
+
+Items can also be crafted via Construction (not only structures/lathe):
+- Recipes: `Construction/items.yml` (`objectType: Item`, `category: construction-category-tools`,
+  no `placementMode`/`conditions`).
+- Graphs: `Construction/Graph/Items/*.yml` (`torch.yml`, `weapons.yml`).
+- The result entity (`node.entity`) **must** have `- type: Construction graph: <graph> node: <node>`.
+- The `material:` step references a **stack prototype** (id from `Entities/Objects/**/stack.yml`), e.g.
+  `MedievalRawStone`, `MedievalRodWood`, `MedievalRawCoal`, `MedievalBoard`.
+
+Examples: torch (`MedievalSimpleLightTorch`), primitive weapons
+(`MedievalCraftStoneAxe`/`MedievalCraftHandmadeSpear` → `MedievalStoneAxe`/`MedievalHandmadeSpear`,
+raw material `MedievalRawStone` + `MedievalRodWood`; see combat.md).
+
+## Railings — wood and stone from one grayscale RSI (2026-06)
+
+Sprite `_Respiral/Structures/railing.rsi` (ledniky, CC-BY-SA-3.0) — **grayscale**, size 32×48,
+states `side`/`corner`/`corner_small`/`round` (4 directions each; PNG 64×96 = 2×2 frame grid).
+
+- **Wood and stone = the same RSI + `Sprite.color`** (like ladders/`stairs.yml`):
+  wood `#8B4513` (= `MedievalProcessedWood.color`), stone `#808080` (= `MedievalProcessedStone.color`).
+- Entities: `Entities/Structures/Walls/railing.yml`. Bases `MedievalBaseRailing` →
+  `MedievalBaseRailingWood`/`MedievalBaseRailingStone` (set color, `damageModifierSet`,
+  `Destructible`: wood 300/`WoodDestroy`, stone 500/`WoodDestroyHeavy`), 4 shapes per material
+  (`MedievalRailing{Wood,Stone}{Side,Corner,CornerSmall,Round}`).
+- Sprite height 48px → `Sprite.offset: 0,0.25` so the railing stands on the tile (can be tweaked).
+- Climbable (`Climbable`), doesn't block sight/bullets (collision only `MidImpassable`+
+  `LowImpassable`). Each shape carries `- type: Construction graph/node` (mandatory).
+- Crafting: graphs `Construction/Graph/Structure/railing.yml` (`MedievalRailingWood` —
+  `MedievalBoard`×1; `MedievalRailingStone` — `MedievalProcessedStone`×1, each node
+  deconstructs via `Prying` returning the material), recipes `Construction/railing.yml`
+  (`category: construction-category-structures`, `objectType: Structure`, no `name` →
+  name taken from the entity). Recipe id = entity id (valid: different prototype types).
+
+## Decorations without crafting (destructible)
+
+`MedievalHangingMouse` (`Entities/Structures/Decoration/hanging_mouse.yml`, sprite
+`_Respiral/Objects/Misc/hanging_mouse.rsi`) — just a destructible decoration, **without `Construction`**
+(placed on the map, not crafted). Pattern: `parent: BaseStructure` + overriding
+`Fixtures: {}` (remove the base's blocking collision) + `Damageable`/`Injurable: MedievalInorganic` +
+`Destructible` (40 HP → `Destruction` + sound). Placed only on maps.
