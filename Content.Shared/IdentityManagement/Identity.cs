@@ -82,22 +82,21 @@ public static class Identity
         return identity.IdentityEntitySlot?.ContainedEntity ?? uid;
     }
 
+    // Respiral-Start
     public static bool CanSeeThroughIdentity(EntityUid uid, EntityUid viewer, IEntityManager ent)
     {
-        // Respiral-Start - себя знаешь всегда; знакомые «видят сквозь» аноним и читают настоящее имя.
         if (ent.HasComponent<GhostComponent>(viewer))
             return true;
 
-        // Упрощение: пока НЕ проверяем, скрыто ли лицо (знакомый под маской должен бы не узнаваться).
-        // uid == viewer заменяет прежнее «видеть себя как все».
         if (uid == viewer)
             return true;
+
         if (ent.TryGetComponent<KnownFacesComponent>(viewer, out var known)
-            && known.Known.ContainsKey(ent.GetNetEntity(uid)))
+            && known.Known.TryGetValue(ent.GetNetEntity(uid), out var face)
+            && face.TrueName != null)
             return true;
 
         return false;
-        // Respiral-End
     }
-
+    // Respiral-End
 }

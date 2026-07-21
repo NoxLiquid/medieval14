@@ -300,6 +300,40 @@ recognized for now); `KnownFaces` without forgetting and starting acquaintance.
 > The server keeps a full copy. This closes the "other people's notes are visible to all clients" leak.
 > NB: this is NOT phase 3 — phase 3 is about the leak of the identity name itself (MetaData is replicated to all).
 
+## Review fixes (2026-07)
+Code review of `_Respiral/Identity`. Fixed (per user triage — points 2/8/10 intentionally NOT changed):
+- **[P1] See-through inconsistency (Identity.cs).** `CanSeeThroughIdentity` returned `true` on a
+  mere `KnownFaces.ContainsKey`, so `Identity.Entity(uid, ent, viewer)` returned the REAL entity →
+  real `MetaData.EntityName` leaked into any loc that threads `viewer` (currently only 1 site,
+  `GuardianSystem.cs:213` — latent). Now see-through requires knowing the **true name**
+  (self / ghost / `face.TrueName != null`). A passport-only acquaintance gets the anonymous identity
+  entity for loc grammar (fail-closed; grammar still matches, Model B guarantees sex/species). The
+  shown/passport name still reaches them via `Identity.Name`.
+- **[P1] Reprint / empty seal (`OnInteractUsing`, state model Draft→Sealed).** Certification is now
+  ONE-SHOT: `Seal != null` → reject (`medieval-credential-already-sealed`). Blank paper → reject
+  (`medieval-credential-empty`). On seal: read name from paper (`SanitizeName`), snapshot description,
+  append traits ONCE, set `paper.EditingDisabled = true` (tamper-proof even vs cyberpen), set `Seal`.
+  Removed the old "seal blank passport" softlock and the double-append name-corruption bug.
+- **[P1] Presented passport not hand-bound (`OnGetCredential` + events).** `OnGetCredential` now
+  requires `_hands.IsHolding(carrier, passport)` (fail-safe every identity assembly). `DroppedEvent`
+  → replaced with `GotUnequippedHandEvent` (covers drop / handoff / theft / container). `SetPresenting`
+  now folds the sprite of a PREVIOUSLY presented passport when switching to a new one.
+- **[P2] Markup injection (`BuildNotesMarkup`).** Player-controlled names are now
+  `FormattedMessage.EscapeText`-ed before `AddMarkupOrThrow`; source name is single-line + length-capped
+  (`SanitizeName`, `MaxNameLength = 64`). Chat already escaped (`ChatSystem.PrivateAPI:107`).
+- **[P2] Literacy bypass (`OnCredentialDoAfter`).** "Present to one" now gates on the RECIPIENT's
+  `MedievalLiteracy` ≥ `MedievalCredentialComponent.ReadingLiteracy` (default 0.5) via `GetLiteracy`
+  (reads `SkillComponent` directly, mirrors client `PaperWindow.GetLocalLiteracy`; no `SkillComponent`
+  → treated as literate). Illiterate reader learns nothing (`medieval-credential-present-one-illiterate`).
+- **[P2] Age bracket as enum.** `CredentialDescription.AgeBracket`: `string` → `enum AgeBracket`
+  (`Young/MiddleAged/Old`). `GetAgeBracket(species, age)` computes from `SpeciesPrototype.YoungAge/OldAge`;
+  `GetAgeBracketRepresentation` localizes only at display. Locale change no longer desyncs passport↔owner.
+
+**Intentionally NOT changed:** [P1] "closed passport still readable" (by design — paper UI opens in
+hand; unfolded = present to all); [P2] memory on body not mind (by design — memory should reset on
+body swap); [P2/P3] secrets in PVS (`AutoNetworkedField`) — deferred: hiding component fields is moot
+while `PaperComponent.Content` is networked; true fix (gate paper content) is phase 3.
+
 ## Open questions
 - The mechanic of revoking charters / "expiring" seals.
 - Where `OwnerDescription` comes from on issuance (a snapshot of the presenter at the moment of stamping?).
