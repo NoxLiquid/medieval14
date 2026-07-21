@@ -48,9 +48,11 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<IdentityComponent, GetMedievalCredentialEvent>(OnGetCredential);
+        SubscribeLocalEvent<IdentityComponent, ModifyPresumedIdentityEvent>(OnGetCredential);
         SubscribeLocalEvent<IdentityComponent, GetVerbsEvent<ExamineVerb>>(OnIdentityExamineVerb);
         SubscribeLocalEvent<KnownFacesComponent, ComponentGetStateAttemptEvent>(OnKnownFacesGetStateAttempt);
+        SubscribeLocalEvent<KnownFacesComponent, ResolveIdentityNameEvent>(OnResolveName);
+        SubscribeLocalEvent<KnownFacesComponent, CanSeeThroughIdentityEvent>(OnCanSeeThrough);
         SubscribeLocalEvent<MedievalCredentialComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<MedievalCredentialComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<MedievalCredentialComponent, GotUnequippedHandEvent>(OnUnequippedHand);
@@ -186,6 +188,25 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
             && face.TrueName != null;
     }
 
+    // Заменяем показанное имя: истинное важнее показанного по паспорту, иначе — последнее показанное
+    private void OnResolveName(Entity<KnownFacesComponent> ent, ref ResolveIdentityNameEvent args)
+    {
+        if (!ent.Comp.Known.TryGetValue(GetNetEntity(args.Target), out var face))
+            return;
+
+        if (face.TrueName is { } trueName)
+            args.Name = trueName;
+        else if (face.ShownNames.Count > 0)
+            args.Name = face.ShownNames[^1];
+    }
+
+    // Сквозь аноним видно только знающему истинное имя
+    private void OnCanSeeThrough(Entity<KnownFacesComponent> ent, ref CanSeeThroughIdentityEvent args)
+    {
+        if (ent.Comp.Known.TryGetValue(GetNetEntity(args.Target), out var face) && face.TrueName != null)
+            args.CanSee = true;
+    }
+
     /// <summary>
     /// Личные заметки об именах — приватные: их состояние уходит только клиенту-владельцу
     /// (сервер всегда держит полную копию).
@@ -252,7 +273,7 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
     /// <summary>
     /// Работает только при скрытом лице — иначе движок и так показывает настоящее имя.
     /// </summary>
-    private void OnGetCredential(Entity<IdentityComponent> ent, ref GetMedievalCredentialEvent args)
+    private void OnGetCredential(Entity<IdentityComponent> ent, ref ModifyPresumedIdentityEvent args)
     {
         if (!TryComp<PresentingCredentialComponent>(ent, out var presenting))
             return;

@@ -39,6 +39,20 @@ public sealed partial class SharedDirtSystem : EntitySystem
         SubscribeLocalEvent<DirtableComponent, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<DirtableComponent, FoldedEvent>(OnFolded);
         SubscribeLocalEvent<DirtableComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<DirtableComponent, ChameleonClothingUpdatedEvent>(OnChameleonUpdated);
+    }
+
+    // Копируем настройки грязи с прототипа-образца хамелеона
+    private void OnChameleonUpdated(EntityUid uid, DirtableComponent dirtable, ref ChameleonClothingUpdatedEvent args)
+    {
+        if (!args.Proto.TryGetComponent(out DirtableComponent? protoDirtable, Factory))
+            return;
+
+        dirtable.DirtSpritePath = protoDirtable.DirtSpritePath;
+        dirtable.DirtState = protoDirtable.DirtState;
+        dirtable.FoldingDirtState = protoDirtable.FoldingDirtState;
+        dirtable.EquippedDirtState = protoDirtable.EquippedDirtState;
+        Dirty(uid, dirtable);
     }
 
     private void OnInit(EntityUid uid, DirtableComponent comp, ref ComponentInit args)

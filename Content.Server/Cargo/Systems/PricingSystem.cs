@@ -15,7 +15,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-using Content.Server._Respiral.Pricing.Components; // _Respiral-Add
+using Content.Server._Respiral.Pricing; // _Respiral - события расчёта цены по составу
 
 namespace Content.Server.Cargo.Systems;
 
@@ -238,8 +238,10 @@ public sealed partial class PricingSystem : EntitySystem
     {
         double price = 0;
 
-        // _Respiral-start: MedievalPhysicalPricedComponent позволяет считать цену через PhysicalComposition без MaterialComponent
-        if ((HasComp<MaterialComponent>(uid) || HasComp<MedievalPhysicalPricedComponent>(uid)) &&
+        // _Respiral-start: событием спрашиваем, считать ли цену по составу без MaterialComponent
+        var byCompEv = new GetPricedByCompositionEvent();
+        RaiseLocalEvent(uid, ref byCompEv);
+        if ((HasComp<MaterialComponent>(uid) || byCompEv.ByComposition) &&
             TryComp<PhysicalCompositionComponent>(uid, out var composition))
         {
             var matPrice = GetMaterialPrice(composition);
@@ -257,9 +259,11 @@ public sealed partial class PricingSystem : EntitySystem
     {
         double price = 0;
 
-        // _Respiral-start: MedievalPhysicalPricedComponent позволяет считать цену через PhysicalComposition без MaterialComponent
+        // _Respiral-start: событием спрашиваем, считать ли цену прототипа по составу без MaterialComponent
+        var byCompEv = new GetEstimatedPricedByCompositionEvent(prototype);
+        RaiseLocalEvent(ref byCompEv);
         if ((prototype.Components.ContainsKey(Factory.GetComponentName<MaterialComponent>()) ||
-             prototype.Components.ContainsKey(Factory.GetComponentName<MedievalPhysicalPricedComponent>())) &&
+             byCompEv.ByComposition) &&
             prototype.Components.TryGetValue(Factory.GetComponentName<PhysicalCompositionComponent>(), out var composition))
         {
             var compositionComp = (PhysicalCompositionComponent) composition.Component;

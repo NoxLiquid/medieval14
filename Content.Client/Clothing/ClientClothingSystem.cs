@@ -4,6 +4,7 @@ using Content.Client.DisplacementMap;
 using Content.Client.Inventory;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
+using Content.Client._Respiral.Dirt; // Respiral-Dirtable
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
@@ -15,7 +16,6 @@ using Robust.Client.ResourceManagement;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Utility;
 using static Robust.Client.GameObjects.SpriteComponent;
-using Content.Client._Respiral.Dirt; // Respiral-Dirtable
 
 namespace Content.Client.Clothing;
 
@@ -52,7 +52,6 @@ public sealed partial class ClientClothingSystem : ClothingSystem
     [Dependency] private InventorySystem _inventorySystem = default!;
     [Dependency] private DisplacementMapSystem _displacement = default!;
     [Dependency] private SpriteSystem _sprite = default!;
-    [Dependency] private DirtVisualsSystem _dirtVisuals = default!; // Respiral-Dirtable
 
     public override void Initialize()
     {
@@ -358,9 +357,11 @@ public sealed partial class ClientClothingSystem : ClothingSystem
             }
         }
 
-        // Respiral-Start-Dirtable: слой грязи на надетой одежде
-        _dirtVisuals.TryAddEquipmentDirtLayer((equipee, sprite), equipment, clothingComponent, inventory,
-            slotDef, displacementData, slotLayerExists, revealedLayers, ref index);
+        // Respiral-Start-Dirtable: событием даём системе грязи добавить слой (upstream не знает её тип)
+        var dirtEv = new AddEquipmentDirtLayerEvent((equipee, sprite), clothingComponent, inventory,
+            slotDef, displacementData, slotLayerExists, revealedLayers, index);
+        RaiseLocalEvent(equipment, ref dirtEv);
+        index = dirtEv.Index;
         // Respiral-End-Dirtable
 
         RaiseLocalEvent(equipment, new EquipmentVisualsUpdatedEvent(equipee, slot, revealedLayers), true);

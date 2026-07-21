@@ -26,6 +26,16 @@ public sealed partial class DirtVisualsSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<DirtableComponent, ComponentHandleState>(OnHandleState);
+        SubscribeLocalEvent<DirtableComponent, AddEquipmentDirtLayerEvent>(OnAddEquipmentDirtLayer);
+    }
+
+    // Слой грязи поверх надетой одежды (инвертировано из ClientClothingSystem)
+    private void OnAddEquipmentDirtLayer(Entity<DirtableComponent> ent, ref AddEquipmentDirtLayerEvent args)
+    {
+        var index = args.Index;
+        TryAddEquipmentDirtLayer(args.Equipee, ent.Owner, args.Clothing, args.Inventory,
+            args.SlotDef, args.DisplacementData, args.SlotLayerExists, args.RevealedLayers, ref index);
+        args.Index = index;
     }
 
     private void OnHandleState(EntityUid uid, DirtableComponent comp, ref ComponentHandleState args)

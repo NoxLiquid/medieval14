@@ -1,5 +1,6 @@
 using Content.Server.Cargo.Systems;
 using Content.Server.Destructible;
+using Content.Server._Respiral.Pricing;
 using Content.Server._Respiral.Pricing.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Damage.Components;
@@ -20,6 +21,21 @@ public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, MapInitEvent>(OnMapInit, after: [typeof(PricingSystem)]);
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, DamageDealtEvent>(OnDamageChanged);
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, PriceCalculationEvent>(OnPriceCalculation);
+        SubscribeLocalEvent<MedievalPhysicalPricedComponent, GetPricedByCompositionEvent>(OnGetPricedByComposition);
+        SubscribeLocalEvent<GetEstimatedPricedByCompositionEvent>(OnGetEstimatedPricedByComposition);
+    }
+
+    // Разрешаем расчёт цены по составу для сущности с маркером
+    private void OnGetPricedByComposition(Entity<MedievalPhysicalPricedComponent> ent, ref GetPricedByCompositionEvent args)
+    {
+        args.ByComposition = true;
+    }
+
+    // То же для прототипа с маркером
+    private void OnGetEstimatedPricedByComposition(ref GetEstimatedPricedByCompositionEvent args)
+    {
+        if (args.Prototype.Components.ContainsKey(Factory.GetComponentName<MedievalPhysicalPricedComponent>()))
+            args.ByComposition = true;
     }
 
     private void OnMapInit(Entity<MedievalPhysicalPricedComponent> ent, ref MapInitEvent args)

@@ -3,7 +3,6 @@ using Content.Shared.Access.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Contraband;
 using Content.Shared._Respiral.Dirt; // Respiral-Dirtable
-using Content.Shared._Respiral.Dirt.Components; // Respiral-Dirtable
 using Content.Shared.Emp;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
@@ -119,16 +118,9 @@ public abstract partial class SharedChameleonClothingSystem : EntitySystem
         }
 
         // Respiral-Dirtable-start
-        // dirtable logic
-        if (TryComp(uid, out DirtableComponent? dirtable) &&
-            proto.TryGetComponent(out DirtableComponent? protoDirtable, Factory))
-        {
-            dirtable.DirtSpritePath = protoDirtable.DirtSpritePath;
-            dirtable.DirtState = protoDirtable.DirtState;
-            dirtable.FoldingDirtState = protoDirtable.FoldingDirtState;
-            dirtable.EquippedDirtState = protoDirtable.EquippedDirtState;
-            Dirty(uid, dirtable);
-        }
+        // Respiral: событием оповещаем систему грязи (upstream не знает про её тип)
+        var dirtEv = new ChameleonClothingUpdatedEvent(proto);
+        RaiseLocalEvent(uid, ref dirtEv);
         // Respiral-Dirtable-end
 
         // appearance data logic

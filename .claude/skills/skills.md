@@ -30,7 +30,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `testing.md` | Integration tests, CI strategy (Respiral blocking / upstream non-blocking), `--filter`, ID prefixes |
 | `engine_submodule.md` | RobustToolbox engine pin, `no-submodule-update` guard, upstream-merge policy, slnx/engine-version coupling |
 | `upstream_patches.md` | Map of 56 inline `// Respiral` edits to upstream files; why `_Respiral` can't be a separate `.csproj`; merge-review checklist |
-| `respiral_csproj_split.md` | PLANNED future work: extract `_Respiral`/`_CE` into `Content.Respiral.*` assemblies; Phase 0 decoupling (13 refs + 4 partials), blockers, execution plan |
+| `respiral_csproj_split.md` | IN PROGRESS: extract `_Respiral` (GPL) into `Content.Respiral.*`; `_CE` stays in upstream (2026-07). `Content.Respiral.Shared` created + all 14 shared leaf subsystems moved (Lock/Flora/Blacksmithing/Barrel/Burning/Magic/Interaction/…); remaining coupled (Identity/Dirt/Skill/Parallax) need Phase 0; assembly-load recipe & live checklist in-file |
 
 ## Key Architectural Rules
 

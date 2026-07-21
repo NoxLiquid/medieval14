@@ -1,4 +1,4 @@
-﻿using Content.Shared._Respiral.Identity.Components; // Respiral - KnownFacesComponent: знакомые «видят сквозь» аноним
+﻿using Content.Shared._Respiral.Identity; // Respiral - события знакомых лиц (KnownFaces)
 using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement.Components;
 
@@ -40,25 +40,17 @@ public static class Identity
 
         var identName = ent.GetComponent<MetaDataComponent>(ident.Value).EntityName;
 
-        // Respiral-Start - себя/призрак видят настоящее имя; знакомые — имя из предъявленного им
-        // паспорта (KnownFaces); остальные — аноним. Имя из паспорта может быть ложным.
+        // Respiral-Start - себя/призрак видят настоящее имя; остальные — аноним, если подписчик не заменит
         if (viewer == null)
             return identName;
 
         if (uid == viewer.Value || ent.HasComponent<GhostComponent>(viewer.Value))
             return uidName == identName ? uidName : $"{uidName} ({identName})";
 
-        if (ent.TryGetComponent<KnownFacesComponent>(viewer.Value, out var known)
-            && known.Known.TryGetValue(ent.GetNetEntity(uid), out var face))
-        {
-            // Истинное имя (если известно) важнее показанного по паспорту; иначе — последнее показанное.
-            if (face.TrueName is { } trueName)
-                return trueName;
-            if (face.ShownNames.Count > 0)
-                return face.ShownNames[^1];
-        }
-
-        return identName;
+        // Знакомые (KnownFaces) заменяют имя через событие — сам тип живёт в Respiral
+        var ev = new ResolveIdentityNameEvent(uid, viewer.Value, identName);
+        ent.EventBus.RaiseLocalEvent(viewer.Value, ref ev);
+        return ev.Name;
         // Respiral-End
     }
 
@@ -91,12 +83,9 @@ public static class Identity
         if (uid == viewer)
             return true;
 
-        if (ent.TryGetComponent<KnownFacesComponent>(viewer, out var known)
-            && known.Known.TryGetValue(ent.GetNetEntity(uid), out var face)
-            && face.TrueName != null)
-            return true;
-
-        return false;
+        var ev = new CanSeeThroughIdentityEvent(uid, viewer);
+        ent.EventBus.RaiseLocalEvent(viewer, ref ev);
+        return ev.CanSee;
     }
     // Respiral-End
 }
