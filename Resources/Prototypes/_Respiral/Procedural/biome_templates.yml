@@ -75,31 +75,10 @@
       allowedTiles:
         - MedievalFloorGrass
       entities:
-        - MedievalTreeFir1
-        - MedievalTreeFir2
-        - MedievalTreeFir3
-        - MedievalTreeFir4
-        - MedievalTreeFir5
-        - MedievalTreeFir6
-        - MedievalTreeBirch1
-        - MedievalTreeBirch2
-        - MedievalTreeBirch3
-        - MedievalTreeBirch4
-        - MedievalTreeBirch5
-        - MedievalTreeBirch6
-        - MedievalTreeSwamp1
-        - MedievalTreeSwamp2
-        - MedievalTreeSwamp3
-        - MedievalTreeSwamp4
-        - MedievalTreeSwamp5
-        - MedievalTreeOak1
-        - MedievalTreeOak2
-        - MedievalTreeOak3
-        - MedievalTreeOak4
-        - MedievalTreeOak5
-        - MedievalTreeOak6
-        - MedievalTreeOak7
-        - MedievalTreeOak8
+        - MedievalTreeFirRandomSpawner
+        - MedievalTreeBirchRandomSpawner
+        - MedievalTreeSwampRandomSpawner
+        - MedievalTreeOakRandomSpawner
     # Плитки
     - !type:BiomeTileLayer
       threshold: -1.0

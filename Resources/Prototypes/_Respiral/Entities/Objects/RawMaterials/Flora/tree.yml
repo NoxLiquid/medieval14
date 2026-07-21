@@ -296,3 +296,68 @@
   components:
   - type: Sprite
     state: tree08
+
+- type: entity
+  parent: MarkerBase
+  id: MedievalTreeFirRandomSpawner
+  name: случайная ель
+  categories: [HideSpawnMenu]
+  components:
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - MedievalTreeFir1
+    - MedievalTreeFir2
+    - MedievalTreeFir3
+    - MedievalTreeFir4
+    - MedievalTreeFir5
+    - MedievalTreeFir6
+
+- type: entity
+  parent: MarkerBase
+  id: MedievalTreeBirchRandomSpawner
+  name: случайная берёза
+  categories: [HideSpawnMenu]
+  components:
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - MedievalTreeBirch1
+    - MedievalTreeBirch2
+    - MedievalTreeBirch3
+    - MedievalTreeBirch4
+    - MedievalTreeBirch5
+    - MedievalTreeBirch6
+
+- type: entity
+  parent: MarkerBase
+  id: MedievalTreeSwampRandomSpawner
+  name: случайное болотное дерево
+  categories: [HideSpawnMenu]
+  components:
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - MedievalTreeSwamp1
+    - MedievalTreeSwamp2
+    - MedievalTreeSwamp3
+    - MedievalTreeSwamp4
+    - MedievalTreeSwamp5
+
+- type: entity
+  parent: MarkerBase
+  id: MedievalTreeOakRandomSpawner
+  name: случайный дуб
+  categories: [HideSpawnMenu]
+  components:
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - MedievalTreeOak1
+    - MedievalTreeOak2
+    - MedievalTreeOak3
+    - MedievalTreeOak4
+    - MedievalTreeOak5
+    - MedievalTreeOak6
+    - MedievalTreeOak7
+    - MedievalTreeOak8
