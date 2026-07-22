@@ -1,4 +1,172 @@
 - type: entity
+  id: MedievalTreeDrop1
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 1
+            max: 1
+
+- type: entity
+  id: MedievalTreeDrop1To2
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 1
+            max: 2
+
+- type: entity
+  id: MedievalTreeDrop2
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 2
+            max: 2
+
+- type: entity
+  id: MedievalTreeDrop2To3
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 2
+            max: 3
+
+- type: entity
+  id: MedievalTreeDrop2To4
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 2
+            max: 4
+
+- type: entity
+  id: MedievalTreeDrop3To4
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 3
+            max: 4
+
+- type: entity
+  id: MedievalTreeDrop4
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 4
+            max: 4
+
+- type: entity
   parent: MedievalBaseTree
   id: MedievalTreeFirBase
   abstract: true
@@ -9,7 +177,7 @@
     offset: 0,2.64
 
 - type: entity
-  parent: MedievalTreeFirBase
+  parent: [MedievalTreeFirBase, MedievalTreeDrop2To3]
   id: MedievalTreeFir1
   name: ель
   suffix: Дерево 4
@@ -18,7 +186,7 @@
     state: tree01
 
 - type: entity
-  parent: MedievalTreeFirBase
+  parent: [MedievalTreeFirBase, MedievalTreeDrop1To2]
   id: MedievalTreeFir2
   name: ель
   suffix: Дерево 5
@@ -27,7 +195,7 @@
     state: tree02
 
 - type: entity
-  parent: MedievalTreeFirBase
+  parent: [MedievalTreeFirBase, MedievalTreeDrop2To4]
   id: MedievalTreeFir3
   name: ель
   suffix: Дерево 3
@@ -36,7 +204,7 @@
     state: tree03
 
 - type: entity
-  parent: MedievalTreeFirBase
+  parent: [MedievalTreeFirBase, MedievalTreeDrop3To4]
   id: MedievalTreeFir4
   name: ель
   suffix: Дерево 1
@@ -45,7 +213,7 @@
     state: tree04
 
 - type: entity
-  parent: MedievalTreeFirBase
+  parent: [MedievalTreeFirBase, MedievalTreeDrop2To4]
   id: MedievalTreeFir5
   name: ель
   suffix: Дерево 2
@@ -54,7 +222,7 @@
     state: tree05
 
 - type: entity
-  parent: MedievalTreeFirBase
+  parent: [MedievalTreeFirBase, MedievalTreeDrop1To2]
   id: MedievalTreeFir6
   name: ель
   suffix: Дерево 6
@@ -73,7 +241,7 @@
     offset: 0,2.14
 
 - type: entity
-  parent: MedievalTreeBirchBase
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop1To2]
   id: MedievalTreeBirch1
   name: берёза
   suffix: Дерево 5
@@ -82,7 +250,7 @@
     state: tree01
 
 - type: entity
-  parent: MedievalTreeBirchBase
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop1To2]
   id: MedievalTreeBirch2
   name: берёза
   suffix: Дерево 6
@@ -91,7 +259,7 @@
     state: tree02
 
 - type: entity
-  parent: MedievalTreeBirchBase
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
   id: MedievalTreeBirch3
   name: берёза
   suffix: Дерево 1
@@ -100,7 +268,7 @@
     state: tree03
 
 - type: entity
-  parent: MedievalTreeBirchBase
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
   id: MedievalTreeBirch4
   name: берёза
   suffix: Дерево 2
@@ -109,7 +277,7 @@
     state: tree04
 
 - type: entity
-  parent: MedievalTreeBirchBase
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
   id: MedievalTreeBirch5
   name: берёза
   suffix: Дерево 3
@@ -118,7 +286,7 @@
     state: tree05
 
 - type: entity
-  parent: MedievalTreeBirchBase
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
   id: MedievalTreeBirch6
   name: берёза
   suffix: Дерево 4
@@ -137,7 +305,7 @@
     offset: 0,1.39
 
 - type: entity
-  parent: MedievalTreeSwampBase
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1To2]
   id: MedievalTreeSwamp1
   name: болотное дерево
   suffix: Дерево 2
@@ -146,7 +314,7 @@
     state: tree01
 
 - type: entity
-  parent: MedievalTreeSwampBase
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1To2]
   id: MedievalTreeSwamp2
   name: болотное дерево
   suffix: Дерево 1
@@ -155,7 +323,7 @@
     state: tree02
 
 - type: entity
-  parent: MedievalTreeSwampBase
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1]
   id: MedievalTreeSwamp3
   name: болотное дерево
   suffix: Дерево 3
@@ -164,7 +332,7 @@
     state: tree03
 
 - type: entity
-  parent: MedievalTreeSwampBase
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1]
   id: MedievalTreeSwamp4
   name: болотное дерево
   suffix: Дерево 4
@@ -173,7 +341,7 @@
     state: tree04
 
 - type: entity
-  parent: MedievalTreeSwampBase
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1]
   id: MedievalTreeSwamp5
   name: болотное дерево
   suffix: Дерево 5
@@ -192,7 +360,7 @@
     offset: 0,2.29
 
 - type: entity
-  parent: MedievalTreeOakBase
+  parent: [MedievalTreeOakBase, MedievalTreeDrop1To2]
   id: MedievalTreeOak1
   name: дуб
   suffix: Дерево 7
@@ -201,7 +369,7 @@
     state: tree01
 
 - type: entity
-  parent: MedievalTreeOakBase
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2To3]
   id: MedievalTreeOak2
   name: дуб
   suffix: Дерево 4
@@ -210,7 +378,7 @@
     state: tree02
 
 - type: entity
-  parent: MedievalTreeOakBase
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2]
   id: MedievalTreeOak3
   name: дуб
   suffix: Дерево 6
@@ -219,7 +387,7 @@
     state: tree03
 
 - type: entity
-  parent: MedievalTreeOakBase
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2To3]
   id: MedievalTreeOak4
   name: дуб
   suffix: Дерево 3
@@ -228,7 +396,7 @@
     state: tree04
 
 - type: entity
-  parent: MedievalTreeOakBase
+  parent: [MedievalTreeOakBase, MedievalTreeDrop1To2]
   id: MedievalTreeOak5
   name: дуб
   suffix: Дерево 8
@@ -237,7 +405,7 @@
     state: tree05
 
 - type: entity
-  parent: MedievalTreeOakBase
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2]
   id: MedievalTreeOak6
   name: дуб
   suffix: Дерево 5
@@ -246,7 +414,7 @@
     state: tree06
 
 - type: entity
-  parent: MedievalTreeOakBase
+  parent: [MedievalTreeOakBase, MedievalTreeDrop4]
   id: MedievalTreeOak7
   name: дуб
   suffix: Дерево 1
@@ -255,7 +423,7 @@
     state: tree07
 
 - type: entity
-  parent: MedievalTreeOakBase
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2To3]
   id: MedievalTreeOak8
   name: дуб
   suffix: Дерево 2
