@@ -12,3 +12,4 @@
   isSpace: true
   itemDrop: MedievalBoard
   heatCapacity: 10000
+  absorbent: true

@@ -17,6 +17,7 @@
   weather: true
   indestructible: true
   sturdy: false
+  absorbent: true
 
 - type: tile
   id: MedievalCaveDrought
@@ -40,6 +41,7 @@
   # itemDrop:
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 - type: tile
   id: MedievalFloorWasteland
@@ -67,6 +69,7 @@
   # itemDrop:
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 - type: tile
   id: MedievalFloorPlanetDirt
@@ -88,6 +91,7 @@
   weather: true
   indestructible: true
   sturdy: false
+  absorbent: true
 
 # Травушка
 
@@ -119,6 +123,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 - type: tile
   id: MedievalFloorGrassDarkGreen
@@ -144,6 +149,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 - type: tile
   id: MedievalFloorGrassCrystal
@@ -169,6 +175,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 - type: tile
   id: MedievalFloorGrassRed
@@ -194,6 +201,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 - type: tile
   id: MedievalFloorGrassDark
@@ -219,6 +227,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 - type: tile
   id: MedievalFloorGrassDark2
@@ -244,6 +253,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 # Снег
 
@@ -269,6 +279,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 # Камень
 
@@ -420,6 +431,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStone1

@@ -140,12 +140,18 @@ namespace Content.Shared.Maps
             TileId = id;
         }
 
-        // Respiral-ZLeveling-start
+        // Respiral-start
         /// <summary>
         /// Used for lightning calculation through zlevels
         /// </summary>
         [DataField]
         public bool Transparent;
-        // Respiral-ZLeveling-end
+
+        /// <summary>
+        /// может ли тайл впитывать жидкости
+        /// </summary>
+        [DataField]
+        public bool Absorbent;
+        // Respiral-end
     }
 }
