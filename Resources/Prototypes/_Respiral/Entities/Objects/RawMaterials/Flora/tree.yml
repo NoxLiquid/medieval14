@@ -45,8 +45,8 @@
 - type: entity
   parent: MedievalTreeFirBase
   id: MedievalTreeFir1
-  name: ель 1
-  suffix: Дерево
+  name: ель
+  suffix: Дерево 4
   components:
   - type: Sprite
     state: tree01
@@ -54,8 +54,8 @@
 - type: entity
   parent: MedievalTreeFirBase
   id: MedievalTreeFir2
-  name: ель 2
-  suffix: Дерево
+  name: ель
+  suffix: Дерево 5
   components:
   - type: Sprite
     state: tree02
@@ -63,8 +63,8 @@
 - type: entity
   parent: MedievalTreeFirBase
   id: MedievalTreeFir3
-  name: ель 3
-  suffix: Дерево
+  name: ель
+  suffix: Дерево 3
   components:
   - type: Sprite
     state: tree03
@@ -72,8 +72,8 @@
 - type: entity
   parent: MedievalTreeFirBase
   id: MedievalTreeFir4
-  name: ель 4
-  suffix: Дерево
+  name: ель
+  suffix: Дерево 1
   components:
   - type: Sprite
     state: tree04
@@ -81,8 +81,8 @@
 - type: entity
   parent: MedievalTreeFirBase
   id: MedievalTreeFir5
-  name: ель 5
-  suffix: Дерево
+  name: ель
+  suffix: Дерево 2
   components:
   - type: Sprite
     state: tree05
@@ -90,8 +90,8 @@
 - type: entity
   parent: MedievalTreeFirBase
   id: MedievalTreeFir6
-  name: ель 6
-  suffix: Дерево
+  name: ель
+  suffix: Дерево 6
   components:
   - type: Sprite
     state: tree06
@@ -109,8 +109,8 @@
 - type: entity
   parent: MedievalTreeBirchBase
   id: MedievalTreeBirch1
-  name: берёза 1
-  suffix: Дерево
+  name: берёза
+  suffix: Дерево 5
   components:
   - type: Sprite
     state: tree01
@@ -118,8 +118,8 @@
 - type: entity
   parent: MedievalTreeBirchBase
   id: MedievalTreeBirch2
-  name: берёза 2
-  suffix: Дерево
+  name: берёза
+  suffix: Дерево 6
   components:
   - type: Sprite
     state: tree02
@@ -127,8 +127,8 @@
 - type: entity
   parent: MedievalTreeBirchBase
   id: MedievalTreeBirch3
-  name: берёза 3
-  suffix: Дерево
+  name: берёза
+  suffix: Дерево 1
   components:
   - type: Sprite
     state: tree03
@@ -136,8 +136,8 @@
 - type: entity
   parent: MedievalTreeBirchBase
   id: MedievalTreeBirch4
-  name: берёза 4
-  suffix: Дерево
+  name: берёза
+  suffix: Дерево 2
   components:
   - type: Sprite
     state: tree04
@@ -145,8 +145,8 @@
 - type: entity
   parent: MedievalTreeBirchBase
   id: MedievalTreeBirch5
-  name: берёза 5
-  suffix: Дерево
+  name: берёза
+  suffix: Дерево 3
   components:
   - type: Sprite
     state: tree05
@@ -154,8 +154,8 @@
 - type: entity
   parent: MedievalTreeBirchBase
   id: MedievalTreeBirch6
-  name: берёза 6
-  suffix: Дерево
+  name: берёза
+  suffix: Дерево 4
   components:
   - type: Sprite
     state: tree06
@@ -173,8 +173,8 @@
 - type: entity
   parent: MedievalTreeSwampBase
   id: MedievalTreeSwamp1
-  name: болотное дерево 1
-  suffix: Дерево
+  name: болотное дерево
+  suffix: Дерево 2
   components:
   - type: Sprite
     state: tree01
@@ -182,8 +182,8 @@
 - type: entity
   parent: MedievalTreeSwampBase
   id: MedievalTreeSwamp2
-  name: болотное дерево 2
-  suffix: Дерево
+  name: болотное дерево
+  suffix: Дерево 1
   components:
   - type: Sprite
     state: tree02
@@ -191,8 +191,8 @@
 - type: entity
   parent: MedievalTreeSwampBase
   id: MedievalTreeSwamp3
-  name: болотное дерево 3
-  suffix: Дерево
+  name: болотное дерево
+  suffix: Дерево 3
   components:
   - type: Sprite
     state: tree03
@@ -200,8 +200,8 @@
 - type: entity
   parent: MedievalTreeSwampBase
   id: MedievalTreeSwamp4
-  name: болотное дерево 4
-  suffix: Дерево
+  name: болотное дерево
+  suffix: Дерево 4
   components:
   - type: Sprite
     state: tree04
@@ -209,8 +209,8 @@
 - type: entity
   parent: MedievalTreeSwampBase
   id: MedievalTreeSwamp5
-  name: болотное дерево 5
-  suffix: Дерево
+  name: болотное дерево
+  suffix: Дерево 5
   components:
   - type: Sprite
     state: tree05
@@ -228,8 +228,8 @@
 - type: entity
   parent: MedievalTreeOakBase
   id: MedievalTreeOak1
-  name: дуб 1
-  suffix: Дерево
+  name: дуб
+  suffix: Дерево 7
   components:
   - type: Sprite
     state: tree01
@@ -237,8 +237,8 @@
 - type: entity
   parent: MedievalTreeOakBase
   id: MedievalTreeOak2
-  name: дуб 2
-  suffix: Дерево
+  name: дуб
+  suffix: Дерево 4
   components:
   - type: Sprite
     state: tree02
@@ -246,8 +246,8 @@
 - type: entity
   parent: MedievalTreeOakBase
   id: MedievalTreeOak3
-  name: дуб 3
-  suffix: Дерево
+  name: дуб
+  suffix: Дерево 6
   components:
   - type: Sprite
     state: tree03
@@ -255,8 +255,8 @@
 - type: entity
   parent: MedievalTreeOakBase
   id: MedievalTreeOak4
-  name: дуб 4
-  suffix: Дерево
+  name: дуб
+  suffix: Дерево 3
   components:
   - type: Sprite
     state: tree04
@@ -264,8 +264,8 @@
 - type: entity
   parent: MedievalTreeOakBase
   id: MedievalTreeOak5
-  name: дуб 5
-  suffix: Дерево
+  name: дуб
+  suffix: Дерево 8
   components:
   - type: Sprite
     state: tree05
@@ -273,8 +273,8 @@
 - type: entity
   parent: MedievalTreeOakBase
   id: MedievalTreeOak6
-  name: дуб 6
-  suffix: Дерево
+  name: дуб
+  suffix: Дерево 5
   components:
   - type: Sprite
     state: tree06
@@ -282,8 +282,8 @@
 - type: entity
   parent: MedievalTreeOakBase
   id: MedievalTreeOak7
-  name: дуб 7
-  suffix: Дерево
+  name: дуб
+  suffix: Дерево 1
   components:
   - type: Sprite
     state: tree07
@@ -291,8 +291,8 @@
 - type: entity
   parent: MedievalTreeOakBase
   id: MedievalTreeOak8
-  name: дуб 8
-  suffix: Дерево
+  name: дуб
+  suffix: Дерево 2
   components:
   - type: Sprite
     state: tree08
