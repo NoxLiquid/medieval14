@@ -48,6 +48,12 @@ entities:
       id: VerdantVale
     - type: Map
       mapPaused: True
+    - type: MapPrecipitation
+      possible:
+      - Rain
+      interval:
+        min: 3m
+        max: 8m
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree

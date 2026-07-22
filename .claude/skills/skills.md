@@ -25,6 +25,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `communications.md` | Connecting magic ball (medieval communications console) |
 | `disposal.md` | Power-free disposal, link between disposal pipes and tiles |
 | `fluids.md` | Liquids: evaporation (EvaporationSpeed), tile absorption of puddles (ContentTileDefinition.Absorbent, PuddleAbsorptionSystem, TileAbsorbingComponent marker) |
+| `precipitation.md` | Weather-driven rain: PrecipitationPrototype, MapPrecipitationComponent auto-cycle, PrecipitationSystem, reuses upstream Weather (parallax+sound) and spills reagent on open-sky tiles |
 | `biomes.md` | Biomes, procedural map generation, layers, markers, Gateway |
 | `zlevels.md` | Z-levels (vertical maps), CEZLevelsSystem, ZNetwork |
 | `localization.md` | Localization (FTL), syncing ru-RU with en-US, parity of variables and message IDs |
