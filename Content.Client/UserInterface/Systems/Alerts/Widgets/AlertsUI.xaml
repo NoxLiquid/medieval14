@@ -1,8 +1,7 @@
 ﻿<widgets:AlertsUI xmlns="https://spacestation14.io"
                   xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Alerts.Widgets"
-                  MinSize="64 64">
-    <!-- Respiral - небольшой отступ всего стека алертов от правого края экрана -->
-    <PanelContainer HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 0 8 0">
+                  MinSize="96 96"> <--Respiral-Edit-->
+    <PanelContainer HorizontalAlignment="Right" VerticalAlignment="Top">
         <BoxContainer Name="AlertContainer" Access="Public" Orientation="Vertical" />
     </PanelContainer>
 </widgets:AlertsUI>

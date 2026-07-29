@@ -93,6 +93,32 @@
   - type: ToolTileCompatible
 
 - type: entity
+  id: MedievalPliers
+  parent: BaseItem
+  name: клещи
+  suffix: Средневековье
+  description: Кузнечные клещи для удержания раскалённого металла.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Tools/pliers.rsi
+    state: icon
+  - type: Item
+    size: Small
+
+- type: entity
+  id: MedievalBellows
+  parent: BaseItem
+  name: кузнечные меха
+  suffix: Средневековье
+  description: Меха для нагнетания воздуха в кузнечный горн.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Tools/bellows.rsi
+    state: icon
+  - type: Item
+    size: Normal
+
+- type: entity
   id: MedievalHammer
   parent: BaseItem
   name: строительные инструменты

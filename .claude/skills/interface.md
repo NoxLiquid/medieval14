@@ -54,11 +54,29 @@ After the overlap fix, medieval icons were still clipped a few px on the right. 
 headroom) so the box is a touch larger than the drawn sprite. The stack's right `Margin` alone does NOT
 help — the clipping is internal to the control, not against the screen edge.
 
-### Alert stack right margin
-The whole alert stack sits in a `PanelContainer` (`HorizontalAlignment=Right`) inside `AlertsUI.xaml`.
-A small right `Margin="0 0 8 0"` (marked `<!-- Respiral -->`) offsets the stack from the screen edge.
-Adjust the third value to change the gap; the individual `AlertControl` is `HAlignment.Left` and shouldn't
-be used for this.
+### Alert stack overflows the RIGHT screen edge — `AlertsUI.xaml` `MinSize`
+Symptom: the whole alert stack sticks ~20px past the right edge of the screen.
+
+Cause (NOT `alerts.yml`, NOT `AlertControl.cs` — both identical to CP14). The widget is anchored via
+`DefaultGameScreen.xaml.cs`: `SetAnchorAndMarginPreset(Alerts, LayoutPreset.TopRight, margin: 10)`. The
+`TopRight` preset computes the widget's **left edge from the right screen edge using `MinSize.X`**:
+`left = screen_right − 10 − MinSize.X`. If `MinSize.X` is smaller than the real content width, the widget
+still expands to content size but grows *rightward* off-screen.
+
+Content width = one 48×48 icon drawn at `Scale=2` = **96px** (`Bleed` 32×32 → 64px, narrower). So
+`MinSize.X` must be **≥ 96**. CP14 ships `MinSize="96 96"` and no inner margin — the `margin:10` of the
+preset already gives the 10px gap from the edge.
+
+**Bug we hit:** someone had set `MinSize="64 64"` + an inner `PanelContainer Margin="0 0 8 0"`. 64 < 96 →
+box placed at `screen_right − 74`, 96px content → right edge `screen_right + 22` (overflow). The added right
+margin does NOT help — the overflow comes from the `MinSize` mismatch driving the layout box, not from the
+inner offset. **Fix:** file reverted to be byte-identical to CP14 — `MinSize="96 96"`, plain
+`PanelContainer` with no margin (no `// Respiral` marker needed, since nothing diverges from CP14).
+
+> **Coupling:** `AlertsUI.xaml` `MinSize.X` must track the widest `AlertControl`. The control width equals
+> `AlertControl` `SpriteView.MaxSize` (currently 96). If `MaxSize` is ever bumped (the section above once
+> proposed 104 for internal right-edge clipping — currently NOT applied, code is 96), raise `MinSize.X` by
+> the same amount, or the stack drifts off-screen again.
 
 ### Untouched / for the future
 - `BorgHealth/BorgCrit/BorgDead` — borg health, no custom sprites, left upstream.

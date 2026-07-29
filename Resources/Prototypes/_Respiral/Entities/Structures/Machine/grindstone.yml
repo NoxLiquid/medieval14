@@ -1,0 +1,10 @@
+- type: entity
+  id: MedievalGrindstone
+  parent: BaseStructureDynamic
+  name: точильный камень
+  suffix: Средневековье
+  description: Вращающийся каменный круг для заточки инструментов и оружия.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/grindstone.rsi
+    state: icon
