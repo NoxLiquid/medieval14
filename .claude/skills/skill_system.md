@@ -105,6 +105,12 @@ if the user has no `SkillComponent` at all — it's skipped, i.e. NPCs aren't bl
 ## Literacy (MedievalLiteracy)
 
 - The `MedievalLiteracy` skill (`skill.yml`, `pointsNeeded: 100`, mastery = progress ≥ 1.0).
+- **Shared helper `Content.Shared/_Respiral/Skill/Literacy.cs`** (static, 2026-07): single source for the
+  skill ProtoId `Literacy.Skill = "MedievalLiteracy"` + `Literacy.GetLevel(EntityUid, IEntityManager)` →
+  level 0..1 (resolves `SkillComponent` itself, like `Identity.Name`; no comp → `1f` = fully literate,
+  e.g. NPCs/ghosts; comp without the skill → `0f`). Consumers:
+  `PaperWindow.GetLocalLiteracy` (reading scramble) and `MedievalIdentitySystem` (passport "present to one"
+  gate). Replaced the two duplicated `"MedievalLiteracy"` literals.
 - The book `MedievalSkillBookLiteracy` (`book.yml`, icon `book5`, `LearnSkillWhenUsing` 0.01/use → 100 reads).
 - `MedievalPen` carries `NeededSkillForInteractUsing` → without enough literacy you can't write with the
   pen (apply it on paper/anything). **As of 2026-07 it uses the progress-threshold field (see below):
@@ -137,8 +143,8 @@ The paper text is displayed as "scribbles", more so the lower the READER's liter
   digits/`[...]` tags.
 - **Hook:** `Content.Client/Paper/UI/PaperWindow.xaml.cs`, `Populate()` — Read mode only
   (`isEditing == false`); the input field is not scrambled. The local player's literacy is taken in
-  `GetLocalLiteracy()` (`IPlayerManager.LocalEntity` → `SkillComponent.Skills[MedievalLiteracy]`;
-  no entity/component → reads everything; no skill → illiterate). Edits marked `// Respiral`.
+  `GetLocalLiteracy()` (`IPlayerManager.LocalEntity` → `Literacy.GetLevel(SkillComponent?)`, see the
+  shared helper above; no entity → reads everything). Edits marked `// Respiral`.
 - **Reactivity v1:** the picture updates when the UI state updates; raised literacy with the paper open
   → reopen. Auto-refresh on `SkillComponent` change — not done.
 - The old `_Respiral/Illiteracy` (server-side `ScrambleText` in `PaperSystem`) was reverted to upstream earlier;

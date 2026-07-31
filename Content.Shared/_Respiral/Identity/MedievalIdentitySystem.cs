@@ -1,8 +1,13 @@
+using System.Linq;
 using Content.Shared._Respiral.Identity.Components;
 using Content.Shared._Respiral.Identity.Events;
+using Content.Shared._Respiral.Skills;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
+using Content.Shared.Hands;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Interaction;
@@ -32,6 +37,12 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
     [Dependency] private ExamineSystemShared _examine = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private PaperSystem _paper = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+
+    /// <summary>
+    /// Имя с бумаги приводится к одной строке не длиннее этого
+    /// </summary>
+    private const int MaxNameLength = 64;
 
     public override void Initialize()
     {
@@ -42,7 +53,7 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
         SubscribeLocalEvent<KnownFacesComponent, ComponentGetStateAttemptEvent>(OnKnownFacesGetStateAttempt);
         SubscribeLocalEvent<MedievalCredentialComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<MedievalCredentialComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<MedievalCredentialComponent, DroppedEvent>(OnDropped);
+        SubscribeLocalEvent<MedievalCredentialComponent, GotUnequippedHandEvent>(OnUnequippedHand);
         SubscribeLocalEvent<MedievalCredentialComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<MedievalCredentialComponent, MedievalCredentialDoAfterEvent>(OnCredentialDoAfter);
     }
@@ -66,7 +77,7 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
             // Предъявлять заверённый паспорт самому себе бессмысленно
             if (target == args.User)
             {
-                _popup.PopupClient(Loc.GetString("medieval-credential-present-one-self"), args.User, args.User);
+                _popup.PopupEntity(Loc.GetString("medieval-credential-present-one-self"), args.User, args.User);
                 return;
             }
 
@@ -101,7 +112,15 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
         {
             ent.Comp.Target = target;
             Dirty(ent);
-            _popup.PopupClient(Loc.GetString("medieval-credential-target-selected"), target, presenter);
+            _popup.PopupEntity(Loc.GetString("medieval-credential-target-selected"), target, presenter);
+            args.Handled = true;
+            return;
+        }
+
+        // Читатель должен уметь читать: неграмотный не разберёт имя на бумаге и ничего не запомнит.
+        if (Literacy.GetLevel(target, EntityManager) < ent.Comp.ReadingLiteracy)
+        {
+            _popup.PopupEntity(Loc.GetString("medieval-credential-present-one-illiterate"), target, presenter);
             args.Handled = true;
             return;
         }
@@ -110,7 +129,7 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
             || !IsSealValid(ent.Comp)
             || !MatchesDescription(presenter, ent.Comp.OwnerDescription))
         {
-            _popup.PopupClient(Loc.GetString("medieval-credential-present-one-fail"), target, presenter);
+            _popup.PopupEntity(Loc.GetString("medieval-credential-present-one-fail"), target, presenter);
             args.Handled = true;
             return;
         }
@@ -125,7 +144,7 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
 
         Dirty(target, known);
 
-        _popup.PopupClient(Loc.GetString("medieval-credential-present-one-success"), target, presenter);
+        _popup.PopupEntity(Loc.GetString("medieval-credential-present-one-success"), target, presenter);
         args.Handled = true;
     }
 
@@ -196,7 +215,9 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
             Loc.GetString("medieval-identity-notes-verb-message"));
     }
 
-    /// <summary>Собирает текст заметки об именах человека.</summary>
+    /// <summary>
+    /// Собирает текст заметки об именах человека.
+    /// </summary>
     private FormattedMessage BuildNotesMarkup(KnownFace face)
     {
         var msg = new FormattedMessage();
@@ -206,13 +227,14 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
         {
             msg.PushNewline();
             msg.AddMarkupOrThrow(Loc.GetString("medieval-identity-notes-current",
-                ("name", face.ShownNames[^1])));
+                ("name", FormattedMessage.EscapeText(face.ShownNames[^1]))));
         }
 
         if (face.ShownNames.Count > 1)
         {
             // Прежние имена, без текущего, в порядке предъявления.
-            var previous = string.Join(", ", face.ShownNames.GetRange(0, face.ShownNames.Count - 1));
+            var previous = string.Join(", ",
+                face.ShownNames.GetRange(0, face.ShownNames.Count - 1).Select(FormattedMessage.EscapeText));
             msg.PushNewline();
             msg.AddMarkupOrThrow(Loc.GetString("medieval-identity-notes-previous", ("names", previous)));
         }
@@ -220,7 +242,8 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
         if (face.TrueName is { } trueName)
         {
             msg.PushNewline();
-            msg.AddMarkupOrThrow(Loc.GetString("medieval-identity-notes-true", ("name", trueName)));
+            msg.AddMarkupOrThrow(Loc.GetString("medieval-identity-notes-true",
+                ("name", FormattedMessage.EscapeText(trueName))));
         }
 
         return msg;
@@ -237,6 +260,10 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
         if (!TryComp<MedievalCredentialComponent>(presenting.Passport, out var cred))
             return;
 
+        // Лишь пока носитель держит его в руке. Если его убрали/украли/
+        if (!_hands.IsHolding(ent.Owner, presenting.Passport))
+            return;
+
         // Аффилиация (ливрея) — без сверки описания, как униформа.
         if (cred.Affiliation is { } affiliation)
             args.Representation.PresumedJob = Loc.GetString(affiliation);
@@ -251,7 +278,9 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
         args.Representation.PresumedName = name;
     }
 
-    /// <summary>Грубая сверка описания владельца грамоты с носителем (пол + возрастная группа + вид).</summary>
+    /// <summary>
+    /// Грубая сверка описания владельца грамоты с носителем (пол + возрастная группа + вид).
+    /// </summary>
     private bool MatchesDescription(EntityUid uid, CredentialDescription? description)
     {
         if (description is not { } desc)
@@ -263,7 +292,31 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
         if (profile.Gender != desc.Gender || profile.Species != desc.Species)
             return false;
 
-        return _humanoidProfile.GetAgeRepresentation(profile.Species, profile.Age) == desc.AgeBracket;
+        return GetAgeBracket(profile.Species, profile.Age) == desc.AgeBracket;
+    }
+
+    /// <summary>
+    /// Возрастная группа сущности: пороги из <see cref="SpeciesPrototype"/>.
+    /// </summary>
+    private AgeBracket GetAgeBracket(ProtoId<SpeciesPrototype> species, int age)
+    {
+        if (!_proto.TryIndex(species, out var speciesProto) || age < speciesProto.YoungAge)
+            return AgeBracket.Young;
+
+        return age < speciesProto.OldAge ? AgeBracket.MiddleAged : AgeBracket.Old;
+    }
+
+    /// <summary>
+    /// Локализованное название возрастной группы.
+    /// </summary>
+    private string GetAgeBracketRepresentation(AgeBracket bracket)
+    {
+        return bracket switch
+        {
+            AgeBracket.Young => Loc.GetString("identity-age-young"),
+            AgeBracket.MiddleAged => Loc.GetString("identity-age-middle-aged"),
+            AgeBracket.Old or _ => Loc.GetString("identity-age-old"),
+        };
     }
 
     /// <summary>Печать валидна, если заверена существующим домом. 
@@ -294,6 +347,9 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
     {
         if (present)
         {
+            if (TryComp<PresentingCredentialComponent>(user, out var old) && old.Passport != passport)
+                _appearance.SetData(old.Passport, MedievalCredentialVisuals.Presented, false);
+
             var comp = EnsureComp<PresentingCredentialComponent>(user);
             comp.Passport = passport;
             Dirty(user, comp);
@@ -303,13 +359,11 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
             RemComp<PresentingCredentialComponent>(user);
         }
 
-        // Разворачивание грамоты меняет её спрайт (см. MedievalCredentialVisualizerSystem).
         _appearance.SetData(passport, MedievalCredentialVisuals.Presented, present);
         _identity.QueueIdentityUpdate(user);
     }
 
-    /// <summary>Развёрнутая грамота, выпавшая из рук, перестаёт предъявляться.</summary>
-    private void OnDropped(Entity<MedievalCredentialComponent> ent, ref DroppedEvent args)
+    private void OnUnequippedHand(Entity<MedievalCredentialComponent> ent, ref GotUnequippedHandEvent args)
     {
         if (!TryComp<PresentingCredentialComponent>(args.User, out var pc) || pc.Passport != ent.Owner)
             return;
@@ -328,15 +382,32 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
         if (!TryComp<MedievalHouseSealComponent>(args.Used, out var seal))
             return;
 
-        // Печать заверяет паспорт лишь на заранее выбранного владельца — иначе некого описывать.
-        if (ent.Comp.Target is not { } owner || !TryComp<HumanoidProfileComponent>(owner, out var profile))
+        // Паспорт заверяется 1 раз.
+        if (ent.Comp.Seal != null)
         {
-            _popup.PopupClient(Loc.GetString("medieval-credential-certify-no-target"), args.User, args.User);
+            _popup.PopupEntity(Loc.GetString("medieval-credential-already-sealed"), args.User, args.User);
+            args.Handled = true;
             return;
         }
 
+        // Печать заверяет паспорт лишь на заранее выбранного владельца — иначе некого описывать.
+        if (ent.Comp.Target is not { } owner || !TryComp<HumanoidProfileComponent>(owner, out var profile))
+        {
+            _popup.PopupEntity(Loc.GetString("medieval-credential-certify-no-target"), args.User, args.User);
+            return;
+        }
+
+        // Пустой паспорт заверять нельзя: иначе печать есть, а имени нет — и цель уже не выбрать (тупик).
+        if (!TryComp<PaperComponent>(ent.Owner, out var paper) || string.IsNullOrWhiteSpace(paper.Content))
+        {
+            _popup.PopupEntity(Loc.GetString("medieval-credential-empty"), args.User, args.User);
+            return;
+        }
+
+        ent.Comp.Name = SanitizeName(paper.Content);
+
         // Снимок описания владельца — по нему потом сверяется предъявитель.
-        var ageBracket = _humanoidProfile.GetAgeRepresentation(profile.Species, profile.Age);
+        var ageBracket = GetAgeBracket(profile.Species, profile.Age);
         ent.Comp.OwnerDescription = new CredentialDescription
         {
             Gender = profile.Gender,
@@ -344,31 +415,45 @@ public sealed partial class MedievalIdentitySystem : EntitySystem
             AgeBracket = ageBracket,
         };
 
-        if (TryComp<PaperComponent>(ent.Owner, out var paper))
-        {
-            // Имя — из написанного на бумаге (читаем ДО автодописывания примет).
-            if (!string.IsNullOrWhiteSpace(paper.Content))
-                ent.Comp.Name = paper.Content.Trim();
+        // Заверение автоматически вписывает в бумагу приметы владельца:
+        // пол, расу и возрастную группу (по ним потом и сверяется предъявитель).
+        var description = Loc.GetString("medieval-credential-description",
+            ("gender", GetGenderRepresentation(profile.Gender)),
+            ("species", _humanoidProfile.GetSpeciesRepresentation(profile.Species).ToLower()),
+            ("age", GetAgeBracketRepresentation(ageBracket)));
 
-            // Заверение автоматически вписывает в бумагу приметы владельца:
-            // пол, расу и возрастную группу (по ним потом и сверяется предъявитель).
-            var description = Loc.GetString("medieval-credential-description",
-                ("gender", GetGenderRepresentation(profile.Gender)),
-                ("species", _humanoidProfile.GetSpeciesRepresentation(profile.Species).ToLower()),
-                ("age", ageBracket));
+        _paper.SetContent((ent.Owner, paper), $"{paper.Content.TrimEnd()}\n\n{description}");
 
-            var content = string.IsNullOrWhiteSpace(paper.Content)
-                ? description
-                : $"{paper.Content.TrimEnd()}\n\n{description}";
-            _paper.SetContent((ent.Owner, paper), content);
-        }
+        // Заверённый паспорт больше не редактируется: имя зафиксировано и не должно
+        // расходиться с механическим cred.Name.
+        paper.EditingDisabled = true;
+        Dirty(ent.Owner, paper);
 
         ent.Comp.Seal = seal.House;
         Dirty(ent);
-        // args.Handled PaperSystem ниже наносит косметический штамп.
+        // args.Handled не ставим: PaperSystem ниже наносит косметический штамп.
     }
 
-    /// <summary>Локализованное название пола для примет паспорта (как в осмотре скрытой личности).</summary>
+    /// <summary>
+    /// Имя с бумаги: обрезаем до одной строки и по длине.
+    /// </summary>
+    private static string SanitizeName(string content)
+    {
+        var name = content.Trim();
+
+        var newline = name.IndexOfAny(new[] { '\n', '\r' });
+        if (newline >= 0)
+            name = name[..newline].Trim();
+
+        if (name.Length > MaxNameLength)
+            name = name[..MaxNameLength].Trim();
+
+        return name;
+    }
+
+    /// <summary>
+    /// Локализованное название пола для примет паспорта
+    /// </summary>
     private string GetGenderRepresentation(Gender gender)
     {
         return gender switch

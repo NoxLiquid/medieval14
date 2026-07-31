@@ -3,24 +3,19 @@ using Content.Shared.Access.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Contraband;
 using Content.Shared._Respiral.Dirt; // Respiral-Dirtable
+using Content.Shared._Respiral.Dirt.Components; // Respiral-Dirtable
 using Content.Shared.Emp;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Item;
-using Content.Shared._Respiral.Dirt; // Respiral-Dirtable
-using Content.Shared._Respiral.Dirt.Components; // Respiral-Dirtable
- using Content.Shared.Emp;
- using Content.Shared.Inventory;
- using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Lock;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
- using Robust.Shared.Random;
- using Robust.Shared.Timing;
- using Robust.Shared.Utility;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Clothing.EntitySystems;
 

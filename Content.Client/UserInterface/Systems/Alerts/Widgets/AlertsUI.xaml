@@ -1,6 +1,6 @@
 ﻿<widgets:AlertsUI xmlns="https://spacestation14.io"
                   xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Alerts.Widgets"
-                  MinSize="96 96"> <--Respiral-Edit-->
+                  MinSize="96 96"> <!-- Respiral - иконки алертов 48x48 не влезают в 64x64 -->
     <PanelContainer HorizontalAlignment="Right" VerticalAlignment="Top">
         <BoxContainer Name="AlertContainer" Access="Public" Orientation="Vertical" />
     </PanelContainer>

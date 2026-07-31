@@ -14,10 +14,7 @@ using Content.Client.UserInterface.RichText;
 using Robust.Shared.Input;
 // Respiral-Start - подмена символов на бумаге по уровню грамотности
 using Content.Shared._Respiral.Skills;
-using Content.Shared._Respiral.Skills.Components;
-using Content.Shared._Respiral.Skills.Prototypes;
 using Robust.Client.Player;
-using Robust.Shared.Prototypes;
 // Respiral-End
 
 namespace Content.Client.Paper.UI
@@ -30,9 +27,6 @@ namespace Content.Client.Paper.UI
         // Respiral-Start - доступ к локальному игроку для чтения его грамотности
         [Dependency] private IPlayerManager _player = default!;
         [Dependency] private IEntityManager _entMan = default!;
-
-        // Навык грамотности, от которого зависит читаемость бумаги
-        private static readonly ProtoId<SkillPrototype> LiteracySkill = "MedievalLiteracy";
         // Respiral-End
 
         private static Color DefaultTextColor = new(25, 25, 25);
@@ -343,13 +337,12 @@ namespace Content.Client.Paper.UI
         // Нет сущности (призрак) или нет SkillComponent → читаем всё; нет навыка в словаре → неграмотный.
         private float GetLocalLiteracy()
         {
-            var ent = _player.LocalEntity;
-            if (ent == null || !_entMan.TryGetComponent<SkillComponent>(ent, out var skill))
+            if (_player.LocalEntity is not { } ent)
                 return 1f;
 
-            return skill.Skills.TryGetValue(LiteracySkill, out var progress) ? progress : 0f;
+            return Literacy.GetLevel(ent, _entMan);
         }
-        // Respiral-End 
+        // Respiral-End
 
         private void RunOnSaved()
         {

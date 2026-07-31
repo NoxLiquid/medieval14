@@ -48,4 +48,10 @@ public sealed partial class MedievalCredentialComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan Delay = TimeSpan.FromSeconds(2);
+
+    /// <summary>
+    /// Порог грамотности (0..1), нужный получателю, чтобы разобрать имя при предъявлении паспорта
+    /// </summary>
+    [DataField]
+    public float ReadingLiteracy = 0.5f;
 }

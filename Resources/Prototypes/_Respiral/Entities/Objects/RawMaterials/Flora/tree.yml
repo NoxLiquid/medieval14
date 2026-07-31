@@ -1,37 +1,12 @@
 - type: entity
-  parent: MedievalBaseTree
-  id: MedievalTreeLarge
-  name: большое дерево
+  id: MedievalTreeDrop1
+  abstract: true
   components:
-  - type: Sprite
-    sprite: Objects/Decoration/Flora/flora_treeslarge.rsi
-    layers:
-    - state: treelarge01
-      map: ["random"]
-    offset: 0,1.55
-  - type: RandomSprite
-    available:
-    - random:
-        treelarge01: ""
-        treelarge02: ""
-        treelarge03: ""
-        treelarge04: ""
-        treelarge05: ""
-        treelarge06: ""
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
-        density: 2000
-        layer:
-        - WallLayer
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1000
+        damage: 500
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -40,7 +15,103 @@
             volume: 5
             variation: 0.05
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 1
+            max: 1
+
+- type: entity
+  id: MedievalTreeDrop1To2
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 1
+            max: 2
+
+- type: entity
+  id: MedievalTreeDrop2
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 2
+            max: 2
+
+- type: entity
+  id: MedievalTreeDrop2To3
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 2
+            max: 3
+
+- type: entity
+  id: MedievalTreeDrop2To4
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
       - !type:SpawnEntitiesBehavior
         spawn:
           MedievalLog:
@@ -48,90 +119,379 @@
             max: 4
 
 - type: entity
-  parent: MedievalBaseTree
-  id: MedievalTree
-  name: дерево
+  id: MedievalTreeDrop3To4
+  abstract: true
   components:
-  - type: Sprite
-    layers:
-    - state: tree01
-      map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        tree01: ""
-        tree02: ""
-        tree03: ""
-        tree04: ""
-        tree05: ""
-        tree06: ""
-
-# Фэнтезийные деревья (mini_trees.rsi, автор mars33_2.0 для Respiral)
-- type: entity
-  parent: MedievalBaseTree
-  id: MedievalTreeMini
-  name: пышное дерево
-  components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Flora/mini_trees.rsi
-    layers:
-    - state: green01
-      map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        green01: ""
-        green02: ""
-        green03: ""
-        green04: ""
-        green05: ""
-        green06: ""
-        green07: ""
-        green08: ""
-        green09: ""
-        green10: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 3
+            max: 4
 
 - type: entity
-  parent: MedievalBaseTree
-  id: MedievalTreeMiniBlack
-  name: чёрное дерево
+  id: MedievalTreeDrop4
+  abstract: true
   components:
-  - type: Sprite
-    sprite: _Respiral/Objects/Flora/mini_trees.rsi
-    layers:
-    - state: black01
-      map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        black01: ""
-        black02: ""
-        black03: ""
-        black04: ""
-        black05: ""
-        black06: ""
-        black07: ""
-        black08: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalLog:
+            min: 4
+            max: 4
 
 - type: entity
   parent: MedievalBaseTree
-  id: MedievalTreeMiniWhite
-  name: белое дерево
+  id: MedievalTreeFirBase
+  abstract: true
   components:
   - type: Sprite
-    sprite: _Respiral/Objects/Flora/mini_trees.rsi
-    layers:
-    - state: white01
-      map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        white01: ""
-        white02: ""
-        white03: ""
-        white04: ""
-        white05: ""
-        white06: ""
-        white07: ""
-        white08: ""
-        white09: ""
+    sprite: _Respiral/Objects/Flora/flora_trees_fir.rsi
+    scale: 0.7,0.7
+    offset: 0,2.64
+
+- type: entity
+  parent: [MedievalTreeFirBase, MedievalTreeDrop2To3]
+  id: MedievalTreeFir1
+  name: ель
+  suffix: Дерево 4
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: [MedievalTreeFirBase, MedievalTreeDrop1To2]
+  id: MedievalTreeFir2
+  name: ель
+  suffix: Дерево 5
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: [MedievalTreeFirBase, MedievalTreeDrop2To4]
+  id: MedievalTreeFir3
+  name: ель
+  suffix: Дерево 3
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: [MedievalTreeFirBase, MedievalTreeDrop3To4]
+  id: MedievalTreeFir4
+  name: ель
+  suffix: Дерево 1
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: [MedievalTreeFirBase, MedievalTreeDrop2To4]
+  id: MedievalTreeFir5
+  name: ель
+  suffix: Дерево 2
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: [MedievalTreeFirBase, MedievalTreeDrop1To2]
+  id: MedievalTreeFir6
+  name: ель
+  suffix: Дерево 6
+  components:
+  - type: Sprite
+    state: tree06
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalTreeBirchBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_trees_birch.rsi
+    scale: 0.75,0.75
+    offset: 0,2.14
+
+- type: entity
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop1To2]
+  id: MedievalTreeBirch1
+  name: берёза
+  suffix: Дерево 5
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop1To2]
+  id: MedievalTreeBirch2
+  name: берёза
+  suffix: Дерево 6
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
+  id: MedievalTreeBirch3
+  name: берёза
+  suffix: Дерево 1
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
+  id: MedievalTreeBirch4
+  name: берёза
+  suffix: Дерево 2
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
+  id: MedievalTreeBirch5
+  name: берёза
+  suffix: Дерево 3
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
+  id: MedievalTreeBirch6
+  name: берёза
+  suffix: Дерево 4
+  components:
+  - type: Sprite
+    state: tree06
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalTreeSwampBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_trees_swamp.rsi
+    scale: 0.9,0.9
+    offset: 0,1.39
+
+- type: entity
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1To2]
+  id: MedievalTreeSwamp1
+  name: болотное дерево
+  suffix: Дерево 2
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1To2]
+  id: MedievalTreeSwamp2
+  name: болотное дерево
+  suffix: Дерево 1
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1]
+  id: MedievalTreeSwamp3
+  name: болотное дерево
+  suffix: Дерево 3
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1]
+  id: MedievalTreeSwamp4
+  name: болотное дерево
+  suffix: Дерево 4
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: [MedievalTreeSwampBase, MedievalTreeDrop1]
+  id: MedievalTreeSwamp5
+  name: болотное дерево
+  suffix: Дерево 5
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalTreeOakBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Flora/flora_trees_oak.rsi
+    scale: 0.9,0.9
+    offset: 0,2.29
+
+- type: entity
+  parent: [MedievalTreeOakBase, MedievalTreeDrop1To2]
+  id: MedievalTreeOak1
+  name: дуб
+  suffix: Дерево 7
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2To3]
+  id: MedievalTreeOak2
+  name: дуб
+  suffix: Дерево 4
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2]
+  id: MedievalTreeOak3
+  name: дуб
+  suffix: Дерево 6
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2To3]
+  id: MedievalTreeOak4
+  name: дуб
+  suffix: Дерево 3
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: [MedievalTreeOakBase, MedievalTreeDrop1To2]
+  id: MedievalTreeOak5
+  name: дуб
+  suffix: Дерево 8
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2]
+  id: MedievalTreeOak6
+  name: дуб
+  suffix: Дерево 5
+  components:
+  - type: Sprite
+    state: tree06
+
+- type: entity
+  parent: [MedievalTreeOakBase, MedievalTreeDrop4]
+  id: MedievalTreeOak7
+  name: дуб
+  suffix: Дерево 1
+  components:
+  - type: Sprite
+    state: tree07
+
+- type: entity
+  parent: [MedievalTreeOakBase, MedievalTreeDrop2To3]
+  id: MedievalTreeOak8
+  name: дуб
+  suffix: Дерево 2
+  components:
+  - type: Sprite
+    state: tree08
+
+- type: entity
+  parent: MarkerBase
+  id: MedievalTreeFirRandomSpawner
+  name: случайная ель
+  categories: [HideSpawnMenu]
+  components:
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - MedievalTreeFir1
+    - MedievalTreeFir2
+    - MedievalTreeFir3
+    - MedievalTreeFir4
+    - MedievalTreeFir5
+    - MedievalTreeFir6
+
+- type: entity
+  parent: MarkerBase
+  id: MedievalTreeBirchRandomSpawner
+  name: случайная берёза
+  categories: [HideSpawnMenu]
+  components:
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - MedievalTreeBirch1
+    - MedievalTreeBirch2
+    - MedievalTreeBirch3
+    - MedievalTreeBirch4
+    - MedievalTreeBirch5
+    - MedievalTreeBirch6
+
+- type: entity
+  parent: MarkerBase
+  id: MedievalTreeSwampRandomSpawner
+  name: случайное болотное дерево
+  categories: [HideSpawnMenu]
+  components:
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - MedievalTreeSwamp1
+    - MedievalTreeSwamp2
+    - MedievalTreeSwamp3
+    - MedievalTreeSwamp4
+    - MedievalTreeSwamp5
+
+- type: entity
+  parent: MarkerBase
+  id: MedievalTreeOakRandomSpawner
+  name: случайный дуб
+  categories: [HideSpawnMenu]
+  components:
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+    - MedievalTreeOak1
+    - MedievalTreeOak2
+    - MedievalTreeOak3
+    - MedievalTreeOak4
+    - MedievalTreeOak5
+    - MedievalTreeOak6
+    - MedievalTreeOak7
+    - MedievalTreeOak8

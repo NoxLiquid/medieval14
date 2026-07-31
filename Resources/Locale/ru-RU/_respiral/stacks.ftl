@@ -70,11 +70,6 @@ stack-medieval-nail = гвоздь
 stack-medieval-mana-crystal = кристалл маны
 
 stack-medieval-grass-floor = трава
-stack-medieval-grass-dark-green-floor = тёмно-зелёная трава
-stack-medieval-grass-crystal-floor = кристаллическая трава
-stack-medieval-grass-red-floor = красная трава
-stack-medieval-grass-dark-floor = тёмная трава
-stack-medieval-grass-dark2-floor = тёмная трава 2
 
 stack-medieval-snow-floor = снег
 stack-medieval-ash-floor = пепел

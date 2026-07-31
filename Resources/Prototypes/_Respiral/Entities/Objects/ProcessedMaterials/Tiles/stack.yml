@@ -6,41 +6,6 @@
   spawn: MedievalFloorTileItemGrass
   maxCount: 15
 
-# 🌿 Тёмно-зелёная трава
-- type: stack
-  id: MedievalFloorTileGrassDarkGreen
-  name: stack-medieval-grass-dark-green-floor
-  spawn: MedievalFloorTileItemGrassDarkGreen
-  maxCount: 15
-
-# 🌿 Кристаллическая трава
-- type: stack
-  id: MedievalFloorTileGrassCrystal
-  name: stack-medieval-grass-crystal-floor
-  spawn: MedievalFloorTileItemGrassCrystal
-  maxCount: 15
-
-# 🌿 Красная трава
-- type: stack
-  id: MedievalFloorTileGrassRed
-  name: stack-medieval-grass-red-floor
-  spawn: MedievalFloorTileItemGrassRed
-  maxCount: 15
-
-# 🌿 Тёмная трава
-- type: stack
-  id: MedievalFloorTileGrassDark
-  name: stack-medieval-grass-dark-floor
-  spawn: MedievalFloorTileItemGrassDark
-  maxCount: 15
-
-# 🌿 Тёмная трава 2
-- type: stack
-  id: MedievalFloorTileGrassDark2
-  name: stack-medieval-grass-dark2-floor
-  spawn: MedievalFloorTileItemGrassDark2
-  maxCount: 15
-
 # ❄️ Снег
 - type: stack
   id: MedievalFloorTileSnow
