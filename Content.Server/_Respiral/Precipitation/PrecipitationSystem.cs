@@ -1,13 +1,9 @@
-using System.Diagnostics.CodeAnalysis;
 using Content.Server._Respiral.Precipitation.Components;
-using Content.Server.Fluids.EntitySystems;
 using Content.Server.Weather;
 using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared._CE.ZLevels.Core.EntitySystems;
 using Content.Shared._Respiral.Precipitation;
 using Content.Shared._Respiral.TimeWindow;
-using Content.Shared.Chemistry.Components;
-using Content.Shared.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
@@ -18,27 +14,20 @@ namespace Content.Server._Respiral.Precipitation;
 
 /// <summary>
 /// Respiral: осадки на карте (дождь и т.п.). На время осадка включает upstream weather
-/// (parallax + звук) и периодически поливает случайные открытые небу тайлы реагентом.
+/// (parallax + звук).
 ///
 /// Интеграция с ZLevels: если карта входит в z-сеть, осадок распространяется на все её уровни —
-/// погода ставится на каждую карту, а тайлы для разлива выбираются со всех карт сети.
-/// Перекрытие уровней проверять вручную не нужно: CESharedZLevelsRoofSystem уже проставляет
-/// нижним тайлам RoofComponent, поэтому CanWeatherAffect сам исключает перекрытые тайлы.
+/// погода ставится на каждую карту сети.
 /// </summary>
 public sealed partial class PrecipitationSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private IPrototypeManager _proto = default!;
-    [Dependency] private SharedMapSystem _map = default!;
-    [Dependency] private TurfSystem _turf = default!;
-    [Dependency] private PuddleSystem _puddle = default!;
     [Dependency] private WeatherSystem _weather = default!;
     [Dependency] private TimedWindowSystem _timedWindow = default!;
     [Dependency] private CESharedZLevelsSystem _zLevels = default!;
 
-    // Гриды всех покрытых осадком карт (переиспользуется каждый тик разлива)
-    private readonly List<Entity<MapGridComponent>> _grids = new();
     // Карты, покрытые текущим осадком: вся z-сеть либо одна карта
     private readonly List<EntityUid> _maps = new();
 
@@ -75,14 +64,7 @@ public sealed partial class PrecipitationSystem : EntitySystem
 
             // Осадок закончился — выключаем
             if (now >= comp.EndTime)
-            {
                 StopPrecipitation((uid, comp));
-                continue;
-            }
-
-            // Поливаем тайлы порциями
-            if (now >= comp.NextSpill)
-                SpillTick((uid, comp));
         }
     }
 
@@ -110,7 +92,6 @@ public sealed partial class PrecipitationSystem : EntitySystem
 
         ent.Comp.Active = protoId;
         ent.Comp.EndTime = _timing.CurTime + duration;
-        ent.Comp.NextSpill = _timing.CurTime;
         return true;
     }
 
@@ -157,29 +138,6 @@ public sealed partial class PrecipitationSystem : EntitySystem
         return false;
     }
 
-    private void SpillTick(Entity<MapPrecipitationComponent> ent)
-    {
-        if (ent.Comp.Active == null || !_proto.TryIndex(ent.Comp.Active.Value, out var proto))
-            return;
-
-        CollectGrids(ent.Owner);
-
-        if (_grids.Count > 0)
-        {
-            for (var i = 0; i < proto.TilesPerTick; i++)
-            {
-                if (!TryPickExposedTile(out var tileRef))
-                    continue;
-
-                // Каждому тайлу — своя порция реагента
-                var solution = new Solution(proto.Reagent, proto.PuddleAmount);
-                _puddle.TrySpillAt(tileRef.Value, solution, out _, sound: false);
-            }
-        }
-
-        ent.Comp.NextSpill = _timing.CurTime + proto.SpillInterval;
-    }
-
     // Карты, на которые действует осадок: вся z-сеть, если карта в ней, иначе только она сама
     private void GetPrecipitationMaps(EntityUid mapUid, List<EntityUid> result)
     {
@@ -191,56 +149,5 @@ public sealed partial class PrecipitationSystem : EntitySystem
             result.AddRange(_zLevels.GetAllMapsAbove((mapUid, zMap)));
             result.AddRange(_zLevels.GetAllMapsBelow((mapUid, zMap)));
         }
-    }
-
-    // Собирает гриды всех покрытых осадком карт в _grids
-    private void CollectGrids(EntityUid mapUid)
-    {
-        GetPrecipitationMaps(mapUid, _maps);
-
-        _grids.Clear();
-        var gridQuery = EntityQueryEnumerator<MapGridComponent, TransformComponent>();
-        while (gridQuery.MoveNext(out var gridUid, out var grid, out var xform))
-        {
-            if (xform.MapUid is { } gridMap && _maps.Contains(gridMap))
-                _grids.Add((gridUid, grid));
-        }
-    }
-
-    // Случайный тайл на одном из собранных гридов: не пустой, открыт небу и не впитывающий
-    private bool TryPickExposedTile([NotNullWhen(true)] out TileRef? tile)
-    {
-        tile = null;
-
-        if (_grids.Count == 0)
-            return false;
-
-        var (chosenUid, chosenGrid) = _random.Pick(_grids);
-        var aabb = chosenGrid.LocalAABB;
-
-        // Несколько попыток попасть в подходящий тайл в пределах грида
-        for (var attempt = 0; attempt < 5; attempt++)
-        {
-            var x = _random.Next((int)MathF.Floor(aabb.Left), (int)MathF.Ceiling(aabb.Right));
-            var y = _random.Next((int)MathF.Floor(aabb.Bottom), (int)MathF.Ceiling(aabb.Top));
-            var tileRef = _map.GetTileRef(chosenUid, chosenGrid, new Vector2i(x, y));
-
-            if (tileRef.Tile.IsEmpty)
-                continue;
-
-            // Крыша (в т.ч. проставленная ZLevels нижним тайлам под перекрытием), Weather-флаг и BlockWeather —
-            // всё учтено в CanWeatherAffect, поэтому перекрытые верхними уровнями тайлы сюда не попадут
-            if (!_weather.CanWeatherAffect((chosenUid, chosenGrid, null), tileRef))
-                continue;
-
-            // Впитывающие тайлы дождь не мочит (по ТЗ)
-            if (_turf.GetContentTileDefinition(tileRef).Absorbent)
-                continue;
-
-            tile = tileRef;
-            return true;
-        }
-
-        return false;
     }
 }

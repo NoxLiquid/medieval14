@@ -34,10 +34,4 @@ public sealed partial class MapPrecipitationComponent : Component
     /// </summary>
     [ViewVariables]
     public TimeSpan EndTime;
-
-    /// <summary>
-    /// Когда полить тайлы в следующий раз.
-    /// </summary>
-    [ViewVariables]
-    public TimeSpan NextSpill;
 }

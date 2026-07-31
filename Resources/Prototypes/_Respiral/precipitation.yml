@@ -1,10 +1,6 @@
 - type: precipitation
   id: Rain
   weather: WeatherRain      # parallax + звук дождя (upstream WeatherStatusEffect)
-  reagent: Water
-  puddleAmount: 20
-  tilesPerTick: 20
-  spillInterval: 1
   duration:
     min: 1m
     max: 3m
