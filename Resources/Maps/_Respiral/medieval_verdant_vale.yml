@@ -481,11 +481,6 @@ entities:
           version: 7
     - type: SpreaderGrid
     - type: GridPathfinding
-    - type: Gravity
-      gravityShakeSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/alert.ogg
-      inherent: True
-      enabled: True
     - type: DecalGrid
       chunkCollection:
         version: 2
@@ -700,8 +695,6 @@ entities:
             174: -38.83044,-32.32735
             175: -38.895134,-32.637077
             176: -38.879723,-32.208298
-    - type: MapLight
-      ambientLightColor: '#D8B059FF'
     - type: Roof
       data:
         0,1: 16420971977793323457
@@ -839,30 +832,6 @@ entities:
         -3,-3: 12632256
         -2,-8: 16204198711956340736
         -1,-8: 18446744069936709632
-    - type: LightCycle
-      offset: 1200
-    - type: SunShadow
-    - type: SunShadowCycle
-      directions:
-      - direction: 0,3
-      - alpha: 0.5
-        direction: -3,-0.1
-        ratio: 0.25
-      - alpha: 0.8
-        direction: 0,-3
-        ratio: 0.5
-      - alpha: 0.5
-        direction: 3,-0.1
-        ratio: 0.75
-    - type: MapAtmosphere
-      space: False
-      mixture:
-        volume: 2500
-        immutable: True
-        temperature: 293.15
-        moles:
-          Oxygen: 21.82478
-          Nitrogen: 82.10312
     - type: RadiationGridResistance
     - type: ExplosionAirtightGrid
     - type: NavMap

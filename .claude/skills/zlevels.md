@@ -15,6 +15,27 @@ A system of vertical levels, ported from CrystallEdge (MIT).
 - The `CEStationZLevels` component sets the lists of maps above/below the main one
 - A `zMap` prototype is also declared with all the maps for Z-navigation
 
+## Shared components across the whole z-network
+
+Instead of putting a map-scoped component (e.g. `LightCycle`, day/night) on every level by hand, declare it once and let the network fan it out to every level map:
+
+- **Round start (real game):** `CEStationZLevels.zLevelsComponentOverrides` (a `ComponentRegistry`) on the `gameMap` station. `CEZLevelsSystem.OnStationPostInit` → `CreateMapNetwork(ZLevelsComponentOverrides)` stores it on `CEZMapNetworkComponent.Components`.
+- **Mapping command:** `zMap` prototype's `components:` registry (used by `CEMappingZNetworkCommand` / `CEGameMapMappingZNetworkCommand` → `CreateMapNetwork(indexedZMap.Components)`). Keep it in sync with the station overrides if you rely on the mapping path.
+- **Application:** `CEZLevelMappingSystem` calls `EntityManager.AddComponents(mapUid, network.Comp.Components)` on each map's `MapInitEvent` / when a map is added to the network — so every level (above/core/below) gets the component.
+
+`AddComponents` uses `removeExisting: true` (default), so a registry component **overwrites** any same-named component the level's map file already defines — the shared value always wins at round start.
+
+Example — VerdantVale shares its whole surface environment via `verdant_vale.yml` → `CEStationZLevels.zLevelsComponentOverrides`: `LightCycle`, `MapLight`, `SunShadow`, `SunShadowCycle`, `Gravity`, `MapAtmosphere`. These were removed from the three map files (`medieval_verdant_vale{,_above,_below}.yml`) so there is a single source of truth.
+
+What to share vs keep per-map:
+- **Share** (identical/global across levels): `LightCycle`, `SunShadow`/`SunShadowCycle` (global sun), `Gravity`, `MapAtmosphere`. Env-look components like `MapLight` can be shared **only if all levels should look the same** — sharing forces the same ambient onto every level (e.g. an underground level goes bright). Here below is treated as an open/surface level, so `MapLight` is shared.
+- **Never share** (per-map data): `Roof` (its `data:` is that level's own roof tilemap), `Parallax` (per-level sky), `MapGrid`/`Map`/`Transform` (per-entity), `MapPrecipitation` (single network-wide driver — put on one map only).
+
+Caveats:
+- `LightCycle` needs `MapLight` on the same map to have any effect (it drives `MapLightComponent.AmbientLightColor`); `OriginalColor` is captured per-map. Sharing `MapLight` too gives every level the same base tint + synchronized cycle.
+- Sync: all levels compute from `RoundStartTime + Offset`; identical config ⇒ synchronized. `InitialOffset: true` re-randomizes per map ⇒ desync.
+- Gameplay-critical shared comps (`Gravity`, `MapAtmosphere`) now live **only** in the override registry. A level map opened **standalone in the editor** (outside the z-network) will lack gravity/air until the network applies them. In production these maps always load via the station z-network, so it's fine; mirror them into the `zMap` `components:` if you edit via the mapping command.
+
 ## Known issues and solutions
 
 ### `Required properties not provided for` in Serilog logs
