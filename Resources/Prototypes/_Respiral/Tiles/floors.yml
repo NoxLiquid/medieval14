@@ -16,8 +16,8 @@
   isSubfloor: true
   indestructible: true
   sturdy: false
-  absorbent: true
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalCaveDrought
@@ -41,8 +41,8 @@
   # itemDrop:
   heatCapacity: 10000
   sturdy: false
-  absorbent: true
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorWasteland
@@ -70,8 +70,8 @@
   # itemDrop:
   heatCapacity: 10000
   sturdy: false
-  absorbent: true
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorPlanetDirt
@@ -92,8 +92,8 @@
   heatCapacity: 10000
   indestructible: true
   sturdy: false
-  absorbent: true
   weather: true
+  absorbent: true
 
 # Травушка
 
@@ -121,6 +121,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
+  absorbent: true
   sturdy: false
 
 - type: tile
@@ -147,6 +148,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
+  absorbent: true
   sturdy: false
 
 - type: tile
@@ -173,9 +175,8 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
-  sturdy: false
   absorbent: true
-  weather: true
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassDarkGreen
@@ -201,6 +202,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
+  absorbent: true
   sturdy: false
 
 - type: tile
@@ -227,9 +229,8 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
-  sturdy: false
   absorbent: true
-  weather: true
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassCrystal
@@ -255,6 +256,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
+  absorbent: true
   sturdy: false
 
 - type: tile
@@ -281,9 +283,8 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
-  sturdy: false
   absorbent: true
-  weather: true
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassRed
@@ -309,6 +310,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
+  absorbent: true
   sturdy: false
 
 - type: tile
@@ -335,6 +337,7 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
+  absorbent: true
   sturdy: false
 
 - type: tile
@@ -361,9 +364,8 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
-  sturdy: false
   absorbent: true
-  weather: true
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassDark
@@ -389,9 +391,8 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
-  sturdy: false
   absorbent: true
-  weather: true
+  sturdy: false
 
 - type: tile
   id: MedievalFloorGrassDark2
@@ -417,9 +418,8 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
-  sturdy: false
   absorbent: true
-  weather: true
+  sturdy: false
 
 # Снег
 
@@ -445,8 +445,8 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
-  absorbent: true
   weather: true
+  absorbent: true
 
 # Камень
 
@@ -462,6 +462,7 @@
   itemDrop: MedievalFloorTileItemStone
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorMarbleSmallBricks
@@ -486,6 +487,7 @@
   itemDrop: MedievalFloorTileItemMarbleSmallBricks
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorMarble
@@ -507,6 +509,7 @@
   itemDrop: MedievalFloorTileItemMarble
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneBrickSmallCarved
@@ -520,6 +523,7 @@
   itemDrop: MedievalFloorTileItemStoneBrickSmallCarved
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneBrickSmallCarved2
@@ -533,6 +537,7 @@
   itemDrop: MedievalFloorTileItemStoneBrickSmallCarved2
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneBrickSquareCarved
@@ -552,6 +557,7 @@
   itemDrop: MedievalFloorTileItemStoneBrickSquareCarved
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneBrick
@@ -576,6 +582,7 @@
   itemDrop: MedievalFloorTileItemStoneBrick
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorAsh
@@ -605,8 +612,8 @@
   itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   sturdy: false
-  absorbent: true
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStone1
@@ -631,6 +638,7 @@
   heatCapacity: 10000
   sturdy: false
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStone2
@@ -654,6 +662,7 @@
   itemDrop: MedievalStoneOre1
   sturdy: false
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStone3
@@ -683,6 +692,7 @@
   itemDrop: MedievalStoneOre1
   sturdy: false
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneTile1
@@ -705,6 +715,7 @@
     collection: FootstepTile
   itemDrop: MedievalFlo
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneTile2
@@ -724,6 +735,7 @@
   itemDrop: MedievalFloorTileItemStoneTile2
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneTile3
@@ -743,6 +755,7 @@
   itemDrop: MedievalFloorTileItemStoneTile3
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneTile4
@@ -761,6 +774,7 @@
   itemDrop: MedievalFloorTileItemStoneTile4
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneTile5
@@ -774,6 +788,7 @@
   itemDrop: MedievalFloorTileItemStoneTile5
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorStoneTile6
@@ -787,6 +802,7 @@
   itemDrop: MedievalFloorTileItemStoneTile6
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 ## Дерево
 
@@ -810,6 +826,7 @@
   itemDrop: MedievalFloorTileItemWoodPattern
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalFloorBrokenWood
@@ -834,6 +851,7 @@
   itemDrop: MedievalPartRodWood1
   heatCapacity: 10000
   weather: true
+  absorbent: true
 
 ## Resprited wood floors
 - type: tile
@@ -860,6 +878,7 @@
     North: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_double_edge_N.png
     West: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_double_edge_W.png
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDeadWoodPlanksBase
@@ -879,6 +898,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLarge
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDeadWoodPlanksBase
@@ -889,6 +909,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquet
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDeadWoodPlanksBase
@@ -899,6 +920,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChess
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDeadWoodPlanksBase
@@ -909,6 +931,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodBroken
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDeadWoodPlanksBase
@@ -919,6 +942,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeBroken
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDeadWoodPlanksBase
@@ -929,6 +953,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetBroken
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDeadWoodPlanksBase
@@ -939,6 +964,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChessBroken
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalBirchWoodPlanksBase
@@ -964,6 +990,7 @@
     North: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_double_edge_N.png
     West: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalBirchWoodPlanksBase
@@ -983,6 +1010,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeLight
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalBirchWoodPlanksBase
@@ -993,6 +1021,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetLight
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalBirchWoodPlanksBase
@@ -1003,6 +1032,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChessLight
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalBirchWoodPlanksBase
@@ -1013,6 +1043,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodBrokenLight
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalBirchWoodPlanksBase
@@ -1023,6 +1054,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeBrokenLight
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalBirchWoodPlanksBase
@@ -1033,6 +1065,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetBrokenLight
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalBirchWoodPlanksBase
@@ -1067,6 +1100,7 @@
     North: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_double_edge_N.png
     West: /Textures/_Respiral/Tiles/WoodPlanks/SwampWood/swamp_double_edge_W.png
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalSwampWoodPlanksBase
@@ -1077,6 +1111,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodDark
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalSwampWoodPlanksBase
@@ -1087,6 +1122,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeDark
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalSwampWoodPlanksBase
@@ -1097,6 +1133,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetDark
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalSwampWoodPlanksBase
@@ -1107,6 +1144,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChessDark
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalSwampWoodPlanksBase
@@ -1117,6 +1155,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodBrokenDark
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalSwampWoodPlanksBase
@@ -1127,6 +1166,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeBrokenDark
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalSwampWoodPlanksBase
@@ -1137,6 +1177,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetBrokenDark
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalSwampWoodPlanksBase
@@ -1147,6 +1188,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChessBrokenDark
   weather: true
+  absorbent: true
 
 - type: tile
   id: MedievalDarkWoodPlanksBase
@@ -1172,6 +1214,7 @@
     North: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_double_edge_N.png
     West: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDarkWoodPlanksBase
@@ -1182,6 +1225,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodBlack
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDarkWoodPlanksBase
@@ -1192,6 +1236,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeBlack
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDarkWoodPlanksBase
@@ -1202,6 +1247,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetBlack
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDarkWoodPlanksBase
@@ -1212,6 +1258,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChessBlack
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDarkWoodPlanksBase
@@ -1222,6 +1269,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodBrokenBlack
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDarkWoodPlanksBase
@@ -1232,6 +1280,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeBrokenBlack
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDarkWoodPlanksBase
@@ -1242,6 +1291,7 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetBrokenBlack
   weather: true
+  absorbent: true
 
 - type: tile
   parent: MedievalDarkWoodPlanksBase
@@ -1252,4 +1302,5 @@
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChessBrokenBlack
   weather: true
+  absorbent: true
 
