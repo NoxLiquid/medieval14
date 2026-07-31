@@ -1,4 +1,4 @@
-﻿using Content.Shared._Respiral.Identity; // Respiral - события знакомых лиц (KnownFaces)
+﻿using Content.Shared._Respiral.Identity;
 using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement.Components;
 

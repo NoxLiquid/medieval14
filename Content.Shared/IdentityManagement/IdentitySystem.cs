@@ -1,4 +1,4 @@
-using Content.Shared._Respiral.Identity; // Respiral - ModifyPresumedIdentityEvent (грамоты/гербы)
+using Content.Shared._Respiral.Identity;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Clothing;

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created for Respiral by melissandravov and mars33_2.0",
+  "size": {
+    "x": 128,
+    "y": 256
+  },
+  "states": [
+    { "name": "tree01" },
+    { "name": "tree02" },
+    { "name": "tree03" },
+    { "name": "tree04" },
+    { "name": "tree05" },
+    { "name": "tree06" }
+  ]
+}

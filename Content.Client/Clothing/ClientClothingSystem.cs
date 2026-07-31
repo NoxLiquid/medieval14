@@ -16,6 +16,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Utility;
 using static Robust.Client.GameObjects.SpriteComponent;
+using Content.Client._Respiral.Dirt; // Respiral-Dirtable
 
 namespace Content.Client.Clothing;
 
@@ -52,6 +53,7 @@ public sealed partial class ClientClothingSystem : ClothingSystem
     [Dependency] private InventorySystem _inventorySystem = default!;
     [Dependency] private DisplacementMapSystem _displacement = default!;
     [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private DirtVisualsSystem _dirtVisuals = default!; // Respiral-Dirtable
 
     public override void Initialize()
     {
