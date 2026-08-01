@@ -150,6 +150,8 @@
   name: Наковальня
   description: Тяжёлая железная наковальня, используемая для ковки и обработки металла. Необходимый инструмент кузнеца для создания оружия, брони и инструментов.
   components:
+  - type: Transform
+    noRot: false
   - type: Sprite
     sprite: _Respiral/Structures/Machines/anvil.rsi
     layers:
