@@ -30,6 +30,14 @@
 		{
             "name": "chair6",
             "directions": 4
+        },
+		{
+            "name": "wooden",
+            "directions": 4
+		},
+		{
+            "name": "wooden-birch",
+            "directions": 4
         }
 
     ]
