@@ -16,7 +16,6 @@ using Robust.Client.ResourceManagement;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Utility;
 using static Robust.Client.GameObjects.SpriteComponent;
-using Content.Client._Respiral.Dirt; // Respiral-Dirtable
 
 namespace Content.Client.Clothing;
 
