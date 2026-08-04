@@ -113,3 +113,9 @@ Assign the required status in branch protection to `respiral-test.yml`, the upst
   log after it there's `Error: The operation was canceled` — it's not it that failed, the process was killed (OOM/timeout);
   it's just the last line before stdout was cut off.
 - Do YAML validation with the YAML linter, not `dotnet build` (see project memory).
+- **RSI size mismatch fails the YAMLLinter, not just `validate_rsis.py` (2026-08)** — the linter loads client
+  sprites, so a bad `.rsi/meta.json` `size` crashes it. `loom.rsi` declared `size: 32x32` while all frames
+  were 48x48 (icon/inserting = single 48px frames, `building` = 3x3 grid of 48px = 9 frames matching its 9
+  delays). Both `validate_rsis.py` ("sprite sheet … not size multiple of RSI size") and the YAMLLinter failed;
+  fixing `size` to 48x48 cleared both. Rule: `meta.json` `size` must equal one frame's pixel dimensions, and
+  every sheet's width/height must be an integer multiple of it.
