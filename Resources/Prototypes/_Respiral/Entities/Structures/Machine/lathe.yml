@@ -119,6 +119,10 @@
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: fire
+        map: ["enum.LatheVisualLayers.RunningUnlit"]
+        shader: unshaded
+        visible: false
       - state: inserting
         map: ["enum.MaterialStorageVisualLayers.Inserting"]
   - type: Machine

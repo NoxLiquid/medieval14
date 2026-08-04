@@ -25,6 +25,23 @@ Confirmed against upstream `MedievalShovel`/`shovel.rsi` (same bare `inhand-left
 naming, no `heldPrefix` set). Only set `heldPrefix` when states are prefixed, e.g. `MedievalHammer`
 → `heldPrefix: hammer2` for `hammer2-inhand-left` etc.
 
+## Smelter running-fire overlay (2026-08-04)
+
+`MedievalSmelter` (`Entities/Structures/Machine/lathe.yml`) shows an animated, unshaded fire layer
+only while the lathe is producing. Medieval lathes are **power-free**, so the upstream visualizer's
+`PowerDeviceVisualLayers.Powered` glow path never fires. Instead a small IsRunning-gated visibility
+toggle was added:
+
+- **Client visualizer** `Content.Client/Lathe/LatheSystem.cs` — new enum member
+  `LatheVisualLayers.RunningUnlit`; inside `OnAppearanceChange` (the `LatheVisuals.IsRunning` block)
+  a mapped `RunningUnlit` layer has its visibility set to `isRunning`. Marked `// Respiral -`
+  (upstream inline patch — see `upstream_patches.md`). Layer state is left untouched, so it stays
+  whatever the prototype set (unshaded `fire`).
+- **Prototype**: add a sprite layer `state: fire`, `map: ["enum.LatheVisualLayers.RunningUnlit"]`,
+  `shader: unshaded`, `visible: false`, placed **after** the `IsRunning` (icon/building) base layer
+  so it overlays. `smelter.rsi` `fire` state is 4-dir animated (0.3s delays).
+- Reusable for any lathe wanting a "glow while working" overlay without power (map the same enum).
+
 ## Gaps
 
 - No forge/heat/quenching system implemented yet (see CLAUDE.md's description of the planned

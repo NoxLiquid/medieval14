@@ -66,7 +66,10 @@ See also `localization.md`. Namertvo (const/static inside upstream types).
 `Content.Shared/Light/Components/ImplicitRoofComponent.cs` (`Disabled` field) + consumer
 `Content.Client/Light/RoofOverlay.cs`,
 `Content.Shared/Light/Components/LightCycleComponent.cs` (`Duration`, `InitialOffset`) + consumer
-`Content.Server/Light/EntitySystems/LightCycleSystem.cs`.
+`Content.Server/Light/EntitySystems/LightCycleSystem.cs`,
+`Content.Client/Lathe/LatheSystem.cs` (`LatheVisualLayers.RunningUnlit` enum member + a visibility
+toggle for that layer gated on `IsRunning`, for the power-free `MedievalSmelter` fire overlay — see
+`blacksmithing.md`).
 Namertvo — cannot extend an upstream static class or component from another assembly.
 
 ### D — Deep edits to upstream method bodies / signatures (~27)
