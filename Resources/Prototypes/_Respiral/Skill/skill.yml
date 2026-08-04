@@ -5,6 +5,12 @@
   pointsNeeded: 100
 
 - type: skill
+  id: MedievalEngineering
+  name: инженерия
+  description: Ремесло
+  pointsNeeded: 100
+
+- type: skill
   id: MedievalStoneProcessing
   name: обработка камня
   description: Ремесло

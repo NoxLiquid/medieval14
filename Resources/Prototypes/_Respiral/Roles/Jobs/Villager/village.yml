@@ -6,6 +6,12 @@
   startingGear: MedievalElderGear
   icon: JobIconHeadOfPersonnel
   supervisors: job-supervisors-medieval-lord
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalLiteracy: 1
 
 - type: startingGear
   id: MedievalElderGear
@@ -22,6 +28,12 @@
   startingGear: MedievalFarmerGear
   icon: JobIconBotanist
   supervisors: job-supervisors-medieval-elder
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalFistFight: 1
 
 - type: startingGear
   id: MedievalFarmerGear
@@ -37,6 +49,12 @@
   startingGear: MedievalPeasantGear
   icon: JobIconPassenger
   supervisors: job-supervisors-medieval-elder
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalFistFight: 1
 
 - type: startingGear
   id: MedievalPeasantGear

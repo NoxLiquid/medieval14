@@ -6,6 +6,12 @@
   startingGear: MedievalBlacksmithGear
   icon: JobIconStationEngineer
   supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalBasicBlacksmithing: 1
 
 - type: startingGear
   id: MedievalBlacksmithGear
@@ -22,6 +28,12 @@
   startingGear: MedievalCarpenterGear
   icon: JobIconStationEngineer
   supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalWoodProcessing: 1
 
 - type: startingGear
   id: MedievalCarpenterGear
@@ -38,6 +50,12 @@
   startingGear: MedievalMasonGear
   icon: JobIconStationEngineer
   supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalStoneProcessing: 1
 
 - type: startingGear
   id: MedievalMasonGear
@@ -54,6 +72,12 @@
   startingGear: MedievalEngineerGear
   icon: JobIconStationEngineer
   supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalEngineering: 1
 
 - type: startingGear
   id: MedievalEngineerGear
@@ -70,6 +94,12 @@
   startingGear: MedievalInnkeeperGear
   icon: JobIconBartender
   supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalAlchem: 1
 
 - type: startingGear
   id: MedievalInnkeeperGear
@@ -84,9 +114,36 @@
   startingGear: MedievalHerbalistGear
   icon: JobIconBotanist
   supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalAlchem: 1
 
 - type: startingGear
   id: MedievalHerbalistGear
+  equipment:
+    head: MedievalClothingHeadHood
+    pants: MedievalClothingLegsLeather
+
+- type: job
+  id: MedievalTailor
+  name: job-name-medieval-tailor
+  description: job-description-medieval-tailor
+  playTimeTracker: JobMedievalTailor
+  startingGear: MedievalTailorGear
+  icon: JobIconServiceWorker
+  supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalTailor: 1
+
+- type: startingGear
+  id: MedievalTailorGear
   equipment:
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
@@ -99,6 +156,12 @@
   startingGear: MedievalCitizenGear
   icon: JobIconPassenger
   supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalFistFight: 1
 
 - type: startingGear
   id: MedievalCitizenGear
@@ -114,6 +177,12 @@
   startingGear: MedievalMerchantGear
   icon: JobIconCargoTechnician
   supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalLiteracy: 1
 
 - type: startingGear
   id: MedievalMerchantGear
@@ -129,6 +198,13 @@
   startingGear: MedievalGuardGear
   icon: JobIconSecurityOfficer
   supervisors: job-supervisors-medieval-steward
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalOneSword: 1
+        MedievalMace: 1
 
 - type: startingGear
   id: MedievalGuardGear

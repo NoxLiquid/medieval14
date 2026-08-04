@@ -183,6 +183,27 @@ writing with a pen). XML in `ServerInfo/Guidebook/_Respiral/`, tab names in
 `Locale/{ru-RU,en-US}/_Respiral/guidebook.ftl` (`guide-entry-medieval-skills{,-literacy}`).
 Embed entities: `MedievalSkillBookLiteracy`, `MedievalPen`.
 
+## Engineering skill + build hammer (2026-08)
+
+- **`MedievalEngineering`** skill (`skill.yml`, `pointsNeeded: 100`) — construction skill for the
+  build hammer.
+- **`MedievalHammer`** (`Entities/Items/Tools/tool.yml`) is now a pure construction tool
+  (`Tool` quality `MedievalScore`); its **RCD was removed** (deleted the `UserInterface`
+  `RcdUiKey`/`RCDMenuBoundUserInterface` + `ActivatableUI` blocks, and the `RCD` entry from
+  `AddWearAfterUse.triggers`). Structures are built via the Tool quality on construction graphs.
+- **Skill gate:** `- type: NeededSkillForInteractUsing` with `neededSkillsProgress: { MedievalEngineering: 1 }`.
+  Works because applying the hammer to a construction ghost/frame is an `InteractUsing`, which raises
+  `BeforeRangedInteractEvent` on the used hammer BEFORE the target's `InteractUsingEvent` (construction).
+  Gate handles it → build blocked; skipped for entities without `SkillComponent` (NPCs).
+- The **Engineer job** carries `MedievalEngineering: 1` (see [[professions.md]]) so it can build.
+- **Tool wear on construction** — new `WearTrigger.Tool` (`1 << 7`) in `AddWearAfterUseComponent`.
+  `AddWearAfterUseSystem` subscribes to `ToolUsingFinishedEvent` (the empty `[ByRefEvent]` in
+  upstream `SharedToolSystem.OnDoAfter`, marked `// Respiral-Wear`, previously raised but UNSUBSCRIBED).
+  Every tool DoAfter (construction/pry/anchor/etc.) raises it on the tool → handler adds wear when the
+  `Tool` flag is set. `ToolUsingFinishedEvent` was extended with a `bool Cancelled` (fed from
+  `args.Cancelled`) so an interrupted DoAfter doesn't wear the tool (mirrors the `Learn` guard). Hammer
+  triggers = `[MeleeHit, Tool]`. See [[upstream_patches.md]] for the `SharedToolSystem` patch.
+
 ## Bugfixes (2026-07)
 
 - **`AddSkillProgress` didn't network.** `SkillComponent.Skills` is an `AutoNetworkedField`, but

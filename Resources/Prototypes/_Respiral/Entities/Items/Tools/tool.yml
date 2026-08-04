@@ -121,7 +121,7 @@
 - type: entity
   id: MedievalHammer
   parent: BaseItem
-  name: строительные инструменты
+  name: строительный молот
   suffix: Средневековье
   description: Инструмент установки различных конструкций и приспособлений.
   components:
@@ -140,13 +140,6 @@
     materialComposition:
       MedievalProcessedIron: 100
       MedievalProcessedWood: 100
-  - type: UserInterface
-    interfaces:
-      enum.RcdUiKey.Key:
-        type: RCDMenuBoundUserInterface
-  - type: ActivatableUI
-    inHandsOnly: true
-    key: enum.RcdUiKey.Key
   - type: Wear
   - type: Damageable
     damageModifierSet: MedievalIron
@@ -161,7 +154,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: AddWearAfterUse
-    triggers: [RCD, MeleeHit]
+    triggers: [MeleeHit, Tool]
     damage:
       types:
         Structural: 5
@@ -170,3 +163,6 @@
       - MedievalScore
     useSound:
       path: /Audio/_Respiral/Hammer/sound_effects_hit_punch.ogg
+  - type: NeededSkillForInteractUsing
+    neededSkillsProgress:
+      MedievalEngineering: 1

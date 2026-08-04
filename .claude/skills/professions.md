@@ -13,18 +13,60 @@ Content split across `src/professions/{overview,design-plan}.md` and `src/depart
 | Department id | Roles |
 |---|---|
 | MedievalNobles | Lord, Knight, CitySteward, Treasurer |
-| MedievalCraftsman | Blacksmith, Carpenter, Mason, Engineer, Innkeeper, Herbalist, Citizen, Merchant, Guard |
+| MedievalCraftsman | Blacksmith, Carpenter, Mason, Engineer, Innkeeper, Herbalist, Tailor, Citizen, Merchant, Guard |
 | MedievalVillager | Elder, Farmer, Peasant |
 | MedievalCommoner (weight -10) | Pilligrim |
 
 Supervisor chain: Lord → Knight/CitySteward/Treasurer/Elder; CitySteward → all craftsmen;
 Elder → Farmer/Peasant; authority → Pilligrim.
 
-## Jobs = starting gear only
+## Jobs = starting gear + starting skills (2026-08)
 
-Each `type: job` references a `startingGear` that grants ONLY clothing (mostly hood + leather
-pants). **No job grants a skill, book, or machine.** Spawners (`Roles/spawners.yml`) create
-`RandomHumanoidSpawner` + `Loadout` NPC variants of every job (suffix "Средневековье").
+Each `type: job` references a `startingGear` that grants clothing (mostly hood + leather pants).
+Spawners (`Roles/spawners.yml`) create `RandomHumanoidSpawner` + `Loadout` NPC variants of every
+job (suffix "Средневековье").
+
+**Starting skills** are granted on spawn via `special: - !type:AddComponentSpecial` adding
+`- type: Skill` (`SkillComponent`, `skills: { SkillId: progress }`). All at progress `1` (full
+mastery) so a professional can immediately use their gated machine (`NeededSkillForInteract` +
+`CheckRequiredSkills` needs ≥ 1.0). `SkillComponent.Skills` is an `AutoNetworkedField`, so the
+YAML-set values network to the client on spawn automatically.
+
+| Job | Starting skill(s) |
+|---|---|
+| Blacksmith | BasicBlacksmithing |
+| Carpenter | WoodProcessing |
+| Mason | StoneProcessing |
+| Engineer | Engineering + WoodProcessing + StoneProcessing |
+| Innkeeper, Herbalist | Alchem |
+| Tailor | Tailor (Tannery/Loom/Sewing machines) |
+| Merchant, CitySteward, Elder | Literacy |
+| Guard | OneSword + Mace |
+| Lord | Literacy + OneSword |
+| Knight | OneSword + AncientWeapons |
+| Treasurer | Literacy + Jewelry |
+| Citizen, Peasant, Farmer, Pilligrim | FistFight (commoner default — no craft skill fits the role) |
+
+Files: `Roles/Jobs/{Craftsman/city,Nobles/nobles,Villager/village,Commoner/pilligrim}.yml`.
+NPC spawner variants don't get a `SkillComponent` (they use the job's gear loadout, not `special`),
+so NPCs still bypass skill gates by design.
+
+### Adding a new job — the 5 coordinated files (Tailor added 2026-08)
+
+`MedievalTailor` (портной, owns the `MedievalTailor` skill → Tannery/Loom/Sewing) was added as the
+worked example. A new job needs edits in **all** of:
+1. `Roles/Jobs/<dept>/*.yml` — the `type: job` (+ its `type: startingGear`), with the `Skill` special.
+2. `Roles/Jobs/departments.yml` — add the job id to the department's `roles:` list (else it never
+   appears in lobby).
+3. `Roles/play_time_trackers.yml` — a `type: playTimeTracker` matching the job's `playTimeTracker:`.
+4. `Locale/ru-RU/_respiral/job/job.ftl` — `job-name-…` + `job-description-…` (ru-only; there is NO
+   en-US job.ftl, matching the existing convention).
+5. `Roles/spawners.yml` — `MedievalBaseHumanoidSpawner` entity + `randomHumanoidSettings` (id = job
+   id, `Loadout.prototypes: [ <Gear> ]`) for the NPC variant.
+
+Note: the `job`, the `randomHumanoidSettings`, and the `skill` can all share the id `MedievalTailor`
+— different prototype types don't collide. Job icon `JobIconServiceWorker` (no medieval-specific
+tailor icon exists; reuses an upstream `jobIcon`).
 
 ## Skills (`Skill/skill.yml`, all pointsNeeded: 100)
 
@@ -62,10 +104,13 @@ crafted at CarpenterTable/Anvil (`MedievalCarpenterTableDetailRecipe` etc.).
 
 ## Known gaps / balance notes
 
-1. **Job grants no skill** → roles are cosmetic; anyone with a book becomes any craftsman.
-   Design decision pending: grant starting skill/book per job, or keep "everyone learns from zero".
-2. **MedievalJeweler empty pack** + no Jeweler job in any department (skill exists, role doesn't).
-3. Jobs with no gameplay loop/skill: Engineer, Innkeeper, Citizen, Guard, Peasant, all Nobles.
+1. ~~Job grants no skill~~ **RESOLVED (2026-08):** every job now grants a starting `SkillComponent`
+   via `AddComponentSpecial` (see "Jobs = starting gear + starting skills" above). Books still let
+   anyone learn any craft from zero — starting skills just give professionals a head start at mastery.
+2. **MedievalJeweler empty pack** + no Jeweler job in any department (skill exists, role doesn't) —
+   Treasurer now carries `MedievalJewelry`, but the Jeweler machine's pack is still empty.
+3. Commoner roles (Citizen, Peasant, Farmer, Pilligrim) have no craft skill that fits → all given
+   `MedievalFistFight` as a placeholder. Farmer has no farming skill in `skill.yml` at all.
 4. Combat skills have no training books (melee-only); `MedievalAncientWeapons` name typo ("древкое").
 5. Alchemy only partially gated (Table gated; Grinder + Hotplate open to all).
 6. NPCs bypass all skill gates by design (no SkillComponent).
