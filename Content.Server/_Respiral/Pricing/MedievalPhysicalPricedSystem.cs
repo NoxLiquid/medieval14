@@ -1,9 +1,12 @@
+using System;
 using Content.Server.Cargo.Systems;
 using Content.Server.Destructible;
 using Content.Server._Respiral.Pricing.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Examine;
+using Content.Shared._Respiral.Trade.Components;
 
 namespace Content.Server._Respiral.Trade;
 
@@ -20,6 +23,17 @@ public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, MapInitEvent>(OnMapInit, after: [typeof(PricingSystem)]);
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, DamageDealtEvent>(OnDamageChanged);
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, PriceCalculationEvent>(OnPriceCalculation);
+        SubscribeLocalEvent<MedievalPhysicalPricedComponent, ExaminedEvent>(OnExamine);
+    }
+
+    // Цену видит только осматривающий, умеющий оценивать товары (PriceAppraisalComponent, выдаётся навыком).
+    private void OnExamine(Entity<MedievalPhysicalPricedComponent> ent, ref ExaminedEvent args)
+    {
+        if (!HasComp<PriceAppraisalComponent>(args.Examiner))
+            return;
+
+        var price = _pricing.GetPrice(ent.Owner);
+        args.PushMarkup(Loc.GetString("trade-appraisal-price", ("price", Math.Round(price))));
     }
 
     private void OnMapInit(Entity<MedievalPhysicalPricedComponent> ent, ref MapInitEvent args)

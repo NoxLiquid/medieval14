@@ -40,7 +40,8 @@ YAML-set values network to the client on spawn automatically.
 | Engineer | Engineering + WoodProcessing + StoneProcessing |
 | Innkeeper, Herbalist | Alchem |
 | Tailor | Tailor (Tannery/Loom/Sewing machines) |
-| Merchant, CitySteward, Elder | Literacy |
+| Merchant | Trading (→ price appraisal on examine) + Literacy |
+| CitySteward, Elder | Literacy |
 | Guard | OneSword + Mace |
 | Lord | Literacy + OneSword |
 | Knight | OneSword + AncientWeapons |

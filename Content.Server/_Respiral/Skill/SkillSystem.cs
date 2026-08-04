@@ -29,23 +29,63 @@ public sealed partial class SkillSystem : EntitySystem
     {
         var skill = EnsureComp<SkillComponent>(args.CloneUid);
         skill.Skills = new Dictionary<ProtoId<SkillPrototype>, float>(ent.Comp.Skills);
+        RefreshSkillGrants(args.CloneUid, skill);
     }
 
     private void OnPolymorphed(EntityUid uid, SkillComponent component, PolymorphedEvent args)
     {
         var skill = EnsureComp<SkillComponent>(args.NewEntity);
         skill.Skills = new Dictionary<ProtoId<SkillPrototype>, float>(component.Skills);
+        RefreshSkillGrants(args.NewEntity, skill);
     }
 
     private void OnInit(Entity<SkillComponent> entity, ref ComponentInit args)
     {
-        if (!_prototypeManager.TryIndex(entity.Comp.Group, out var group))
+        if (_prototypeManager.TryIndex(entity.Comp.Group, out var group))
+        {
+            foreach (var skill in group.Skills)
+            {
+                if (!entity.Comp.Skills.ContainsKey(skill))
+                    entity.Comp.Skills[skill] = 1f;
+            }
+        }
+
+        RefreshSkillGrants(entity.Owner, entity.Comp);
+    }
+
+    /// <summary>
+    ///     Пересчитывает все выдаваемые навыками компоненты (<see cref="SkillPrototype.GrantComponent"/>):
+    ///     навык на уровне порога и выше — компоненты выдаются, иначе снимаются.
+    /// </summary>
+    public void RefreshSkillGrants(EntityUid uid, SkillComponent? component = null)
+    {
+        if (!Resolve(uid, ref component, false))
             return;
 
-        foreach (var skill in group.Skills)
+        foreach (var skillId in component.Skills.Keys)
         {
-            if (!entity.Comp.Skills.ContainsKey(skill))
-                entity.Comp.Skills[skill] = 1f;
+            if (_prototypeManager.TryIndex(skillId, out var prototype))
+                UpdateSkillGrant(uid, prototype, component);
+        }
+    }
+
+    /// <summary>
+    ///     Выдаёт или снимает <see cref="SkillPrototype.GrantComponent"/> одного навыка в зависимости
+    ///     от того, достигнут ли его порог <see cref="SkillPrototype.GrantThreshold"/>.
+    /// </summary>
+    private void UpdateSkillGrant(EntityUid uid, SkillPrototype prototype, SkillComponent component)
+    {
+        if (prototype.GrantComponents == null)
+            return;
+
+        var progress = GetSkillProgress(uid, prototype.ID, component);
+
+        foreach (var (threshold, registry) in prototype.GrantComponents)
+        {
+            if (progress >= threshold)
+                EntityManager.AddComponents(uid, registry, removeExisting: false);
+            else
+                EntityManager.RemoveComponents(uid, registry);
         }
     }
 
@@ -121,7 +161,7 @@ public sealed partial class SkillSystem : EntitySystem
         if (!Resolve(uid, ref component, false))
             return;
 
-        if (!_prototypeManager.TryIndex(prototypeId, out _))
+        if (!_prototypeManager.TryIndex(prototypeId, out var prototype))
         {
             _sawmill.Warning($"Прототип навыка {prototypeId} не найден");
             return;
@@ -133,6 +173,8 @@ public sealed partial class SkillSystem : EntitySystem
             component.Skills[prototypeId] = Math.Min(1f, progress);
 
         Dirty(uid, component);
+
+        UpdateSkillGrant(uid, prototype, component);
     }
 
     /// <summary>

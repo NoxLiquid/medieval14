@@ -36,4 +36,12 @@ public sealed partial class SkillPrototype : IPrototype
     [DataField]
     public int PointsNeeded = 1;
 
+    /// <summary>
+    ///     Компоненты, выдаваемые владельцу навыка по порогам прогресса: ключ — порог (0..1),
+    ///     значение — набор компонентов. Когда прогресс навыка достигает порога, компоненты выдаются;
+    ///     если опускается ниже — снимаются. Позволяет открывать разные компоненты на разных уровнях
+    ///     освоения. Проверка выполняется при инициализации <c>SkillComponent</c> и при изменении прогресса.
+    /// </summary>
+    [DataField]
+    public Dictionary<float, ComponentRegistry>? GrantComponents;
 }

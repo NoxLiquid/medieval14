@@ -383,6 +383,16 @@
   category: medieval-trade-category-books
   group: MedievalMarket
 
+- type: cargoProduct
+  id: MedievalTradeBookTrading
+  parent: MedievalTradeBase
+  name: medieval-trade-product-book-trading
+  description: medieval-trade-product-book-trading-desc
+  product: MedievalSkillBookTrading
+  cost: 1000
+  category: medieval-trade-category-books
+  group: MedievalMarket
+
 # Семена
 - type: cargoProduct
   id: MedievalTradeWheatSeeds

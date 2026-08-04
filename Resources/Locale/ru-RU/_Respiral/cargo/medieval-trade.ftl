@@ -91,6 +91,8 @@ medieval-trade-product-book-tailor = Книга: Портное дело
 medieval-trade-product-book-tailor-desc = Учебник по шитью и портному ремеслу.
 medieval-trade-product-book-jewelry = Книга: Ювелирное дело
 medieval-trade-product-book-jewelry-desc = Учебник по огранке камней и ювелирному ремеслу.
+medieval-trade-product-book-trading = Книга: Торговое дело
+medieval-trade-product-book-trading-desc = Учебник по торговле и оценке стоимости товаров.
 
 # Семена
 medieval-trade-product-wheat-seeds = Семена пшеницы

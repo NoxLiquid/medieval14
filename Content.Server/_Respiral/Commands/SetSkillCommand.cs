@@ -10,17 +10,18 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._Respiral.Commands;
 
 /// <summary>
-///     Выдаёт сущности навык с заданным прогрессом изучения (по умолчанию 1 — полностью изучен).
-///     Если у сущности нет <see cref="SkillComponent"/>, он добавляется.
+///     Устанавливает сущности точный прогресс навыка (по умолчанию 1 — полностью изучен; можно и
+///     понизить, вплоть до 0). В отличие от SkillSystem.AddSkillProgress задаёт абсолютное значение,
+///     а не прибавляет. Если у сущности нет <see cref="SkillComponent"/>, он добавляется.
 /// </summary>
 [AdminCommand(AdminFlags.Debug)]
-public sealed partial class AddSkillCommand : IConsoleCommand
+public sealed partial class SetSkillCommand : IConsoleCommand
 {
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IPrototypeManager _protoManager = default!;
 
-    public string Command => "addskill";
-    public string Description => "Выдаёт навык сущности (прогресс опционально 0..1).";
+    public string Command => "setskill";
+    public string Description => "Устанавливает точный прогресс навыка сущности (0..1).";
     public string Help => $"Usage: {Command} <target|self> <skillId> [progress]";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -74,6 +75,9 @@ public sealed partial class AddSkillCommand : IConsoleCommand
         var comp = _entManager.EnsureComponent<SkillComponent>(target);
         comp.Skills[skillId] = progress;
         _entManager.Dirty(target, comp);
+
+        // Пересчитать компоненты, выдаваемые навыком (SkillPrototype.GrantComponents).
+        _entManager.System<Content.Server._Respiral.Skill.SkillSystem>().RefreshSkillGrants(target, comp);
 
         shell.WriteLine($"Set skill '{skillId}' to {progress.ToString("0.##", CultureInfo.InvariantCulture)} " +
                         $"on {_entManager.ToPrettyString(target)}.");

@@ -165,10 +165,12 @@ The paper text is displayed as "scribbles", more so the lower the READER's liter
   share-request EUI to the target (accept → `SkillsListEui`); admin-ghost opens directly. The verb
   early-returns when `User == Target`, so it is NOT the path for own skills (that's the character button).
 
-### Console command: addskill (2026-07)
+### Console command: setskill (2026-07, renamed from `addskill` 2026-08)
 
-`Content.Server/_Respiral/Commands/AddSkillCommand.cs`, `[AdminCommand(AdminFlags.Debug)]`.
-Usage: `addskill <target|self> <skillId> [progress]`.
+`Content.Server/_Respiral/Commands/SetSkillCommand.cs`, `[AdminCommand(AdminFlags.Debug)]`.
+Usage: `setskill <target|self> <skillId> [progress]`. **Sets** an absolute progress (can lower it,
+even to 0 — unlike `SkillSystem.AddSkillProgress` which only increments/clamps up); the "set" semantics
+are why it isn't built on `AddSkillProgress`. Named `setskill` to match that.
 - `target`: a NetEntity, or the literal `self` (the running player's attached entity).
 - `progress`: optional float 0..1 (default 1 = fully learned), clamped.
 - `EnsureComponent<SkillComponent>` on the target (works on entities without one), sets
@@ -203,6 +205,47 @@ Embed entities: `MedievalSkillBookLiteracy`, `MedievalPen`.
   `Tool` flag is set. `ToolUsingFinishedEvent` was extended with a `bool Cancelled` (fed from
   `args.Cancelled`) so an interrupted DoAfter doesn't wear the tool (mirrors the `Learn` guard). Hammer
   triggers = `[MeleeHit, Tool]`. See [[upstream_patches.md]] for the `SharedToolSystem` patch.
+
+## Skill-granted components (`grantComponents`, 2026-08)
+
+A skill can add/remove components on its owner based on mastery — the mechanism for turning "flavour"
+skills into real capabilities.
+
+- **`SkillPrototype.GrantComponents`** — `Dictionary<float, ComponentRegistry>` (key = progress
+  threshold 0..1, value = component set). Progress ≥ threshold → the components are granted; below →
+  removed. Multiple thresholds = tiered unlocks (e.g. 0.5 → A, 1.0 → A+B). YAML:
+  ```yaml
+  grantComponents:
+    1:
+    - type: PriceAppraisal
+  ```
+- **Grant/revoke lives in server `SkillSystem`** (`RefreshSkillGrants(uid)` iterates all skills →
+  `UpdateSkillGrant` per skill). Called from: `OnInit` (ComponentInit — covers job `AddComponentSpecial`
+  spawns), `AddSkillProgress` (per-skill, after `Dirty`), `OnCloning`/`OnPolymorphed` (after copying
+  Skills), and the `setskill` command (via `_entManager.System<SkillSystem>().RefreshSkillGrants`).
+- **Idempotency is required** (RefreshSkillGrants runs on every progress tick): uses
+  `EntityManager.AddComponents(uid, registry, removeExisting: false)` — already-present components are
+  **skipped** (no overwrite, no field reset), and `RemoveComponents` no-ops if absent. Never pass
+  `removeExisting: true` here or each tick would wipe the component's runtime state.
+- **Granted components must be SHARED** (`[RegisterComponent]` in `Content.Shared`), because
+  `SkillPrototype` is a shared prototype — its `ComponentRegistry` is validated on BOTH client and
+  server (YAMLLinter). A server-only component name would fail client prototype load.
+
+### Merchant price appraisal (first use case)
+
+- Skill **`MedievalTrading`** (`skill.yml`, "торговое дело") grants `PriceAppraisalComponent` at
+  progress 1. The **Merchant** job carries `MedievalTrading: 1` (+ Literacy). See [[professions.md]].
+  Learnable like other crafts: book **`MedievalSkillBookTrading`** (`book.yml`, icon `book6`,
+  `LearnSkillWhenUsing` +0.01/use), sold in the market as `MedievalTradeBookTrading`
+  (`Catalog/medieval_trade.yml`, cost 1000, locale `medieval-trade-product-book-trading{,-desc}` in
+  BOTH ru-RU + en-US `cargo/medieval-trade.ftl`).
+- **`PriceAppraisalComponent`** — shared marker (`Content.Shared/_Respiral/Trade/Components/`).
+- **Display is on the PRICED entity, not the merchant.** `MedievalPhysicalPricedSystem` (server,
+  `_Respiral/Pricing/`) subscribes to `ExaminedEvent` on `MedievalPhysicalPricedComponent`; if
+  `args.Examiner` has `PriceAppraisalComponent` it `PushMarkup`s the price (`_pricing.GetPrice(ent)`,
+  locale `trade-appraisal-price` in `ru-RU/_respiral/trade.ftl`). Rationale: `ExaminedEvent` is directed
+  at the examined target, so a component on the examiner can't receive it — the target checks the
+  examiner instead (the approach the requester suggested).
 
 ## Bugfixes (2026-07)
 

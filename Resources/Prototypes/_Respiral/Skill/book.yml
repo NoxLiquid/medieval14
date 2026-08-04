@@ -273,3 +273,35 @@
       MedievalJewelry: 0.01
     sound:
       collection: MedievalLearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookTrading
+  name: торговое дело
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: book6
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - MedievalTrading
+    points:
+      MedievalTrading: 0.01
+    sound:
+      collection: MedievalLearnBook

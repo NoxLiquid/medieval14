@@ -91,6 +91,8 @@ medieval-trade-product-book-tailor = Book: Tailoring
 medieval-trade-product-book-tailor-desc = A textbook on sewing and tailoring.
 medieval-trade-product-book-jewelry = Book: Jewelry Making
 medieval-trade-product-book-jewelry-desc = A textbook on gemcutting and jewelry crafting.
+medieval-trade-product-book-trading = Book: Trading
+medieval-trade-product-book-trading-desc = A textbook on trade and appraising the value of goods.
 
 # Seeds
 medieval-trade-product-wheat-seeds = Wheat Seeds
