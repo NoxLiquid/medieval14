@@ -713,7 +713,7 @@
   deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
-  itemDrop: MedievalFlo
+  itemDrop: MedievalFloorTileItemStoneTile1
   weather: true
   absorbent: true
 
