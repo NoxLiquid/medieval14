@@ -118,4 +118,14 @@ Assign the required status in branch protection to `respiral-test.yml`, the upst
   were 48x48 (icon/inserting = single 48px frames, `building` = 3x3 grid of 48px = 9 frames matching its 9
   delays). Both `validate_rsis.py` ("sprite sheet … not size multiple of RSI size") and the YAMLLinter failed;
   fixing `size` to 48x48 cleared both. Rule: `meta.json` `size` must equal one frame's pixel dimensions, and
-  every sheet's width/height must be an integer multiple of it.
+  every sheet's width/height must be an integer multiple of it. Recurred 2026-08 on `passport_office.rsi`
+  (same fix: 32x32→48x48); it also had a stray `building` `delays: [[0.25, 0.25]]` (2 frames) over a
+  single-frame 48x48 sheet — `validate_rsis.py` reports this separately ("too small … can only fit 1 at
+  most"); no sibling 48x48 machine (carpenter_table/jewelry/sewing/tannery) animates `building`, so the fix
+  was to drop `delays` rather than resize the sheet.
+- **Unquoted colon inside a plain scalar `name:` value crashes the linter (2026-08)** — YAML parses a bare
+  `key: value` where `value` itself contains `: ` as a nested mapping, not text. `Skill/book.yml` had
+  `name: кузнечное дело: том 1` (and vols 2-5) → `PrototypeLoadException: ... found invalid mapping` at
+  parse time (whole file fails, same class as the `Flora/Species/human.yml` colon-less-`components` crash
+  above). Fix: quote the value (`name: "кузнечное дело: том 1"`). Rule: any localized `name`/`description`
+  containing a literal `: ` (e.g. "book: volume N", subtitle-style names) must be quoted in YAML.
