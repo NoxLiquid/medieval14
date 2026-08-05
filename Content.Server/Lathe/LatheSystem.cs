@@ -496,6 +496,14 @@ namespace Content.Server.Lathe
         {
             if (ProtoMan.TryIndex(args.ID, out LatheRecipePrototype? recipe))
             {
+                // Respiral-Start - блокировка производства без нужного навыка (popup показывает сам гейт)
+                if (!CheckRecipeSkill(args.Actor, recipe))
+                {
+                    UpdateUserInterfaceState(uid, component);
+                    return;
+                }
+                // Respiral-End
+
                 if (TryAddToQueue(uid, recipe, args.Quantity, component))
                 {
                     _adminLogger.Add(LogType.Action,

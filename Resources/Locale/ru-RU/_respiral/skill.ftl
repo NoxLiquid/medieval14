@@ -20,3 +20,7 @@ skill-knowledge-confident = уверенное владение
 skill-knowledge-deep = глубокие знания
 skill-knowledge-mastery = мастерство
 skill-knowledge-cant-evaluate = Знания в этой области шире ваших — вы не в состоянии их оценить.
+
+# Требования навыка для рецептов станка (LatheMenu)
+skill-lathe-needed = Требуется навык: { $skills }.
+skill-lathe-needed-entry = { $skill } ({ $level })

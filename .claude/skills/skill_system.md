@@ -182,6 +182,38 @@ each item is now an object, not a bare skill id).
 - **YAML migration:** `skills: [X]` + `points: { X: 0.01 }` → `skills: [{ skill: X, points: 0.01 }]` across
   all 8 entries in `book.yml` (`MaxLevel`/`RequiredLevel` left at defaults — behaviour-preserving).
 
+## Per-recipe lathe skill gate (2026-08)
+
+Skill requirement **per lathe recipe** (finer than the machine-level `NeededSkillForInteract`), with UI
+feedback. Integration is deliberately minimal (chosen over forking the whole Lathe system): all new logic
+lives in `_Respiral/` partial files, upstream is touched in only 3 marked spots.
+
+- **`LatheRecipePrototype.NeededSkills`** (`Content.Shared/Research/Prototypes/LatheRecipePrototype.cs`,
+  upstream file, `// Respiral`) — `Dictionary<ProtoId<SkillPrototype>, SkillKnowledgeLevel>?`. Nullable, so
+  existing recipes are unaffected. It's an `IInheritingPrototype` and this is a dict, so it **merges down
+  inheritance** — setting it on an abstract base recipe applies to all children.
+- **`SkillRequirement.Meets(user, required, entMan)`** (`Content.Shared/_Respiral/Skill/SkillRequirement.cs`)
+  — shared static, popup-free check (mirrors `CheckRequiredSkillsProgress` semantics: null/empty → true,
+  no `SkillComponent` → true). Used by the client UI. The server reuses the popup-bearing
+  `SkillSystem.CheckRequiredSkillsProgress` instead.
+- **Server gate** — `Content.Server/_Respiral/Lathe/LatheSystem.Skill.cs` is a `partial class LatheSystem`
+  (same class/assembly as upstream) adding `[Dependency] SkillSystem _skill` + `CheckRecipeSkill(user,
+  recipe)`. Upstream `LatheSystem.OnLatheQueueRecipeMessage` calls it (`// Respiral`, 4 lines): on failure
+  it refreshes the UI and returns without queueing. `args.Actor` = the player who clicked. Shows the
+  `skill-need-skill-message` popup via the reused check.
+- **Client UI** — `Content.Client/_Respiral/Lathe/LatheMenu.Skill.cs` is a `partial class LatheMenu` adding
+  `[Dependency] IPlayerManager` + `MeetsRecipeSkill(recipe)` (local player) and `GetRecipeSkillTooltip(recipe)`
+  (builds the missing-skill string, else null). Upstream `LatheMenu.PopulateRecipes` ANDs `canProduce` with
+  `MeetsRecipeSkill` (greys the button), and `GenerateTooltipText` appends `GetRecipeSkillTooltip`
+  (`// Respiral`, both minimal). Locale `skill-lathe-needed` / `skill-lathe-needed-entry` in ru-only
+  `_respiral/skill.ftl` (uses `SkillKnowledge.GetLevelName` for the level word).
+- **Content applied (blacksmithing, `Recipe/recipe.yml`):** `neededSkills` on the abstract bases →
+  `MedievalBaseToolsRecipe: Basic` (том 1), `MedievalBaseWeaponRecipe: Understanding` (том 2),
+  `MedievalBaseMetalClothingRecipe: Confident` (том 3). To make this reachable, the two blacksmithing
+  machines' own `NeededSkillForInteract` gate (`MedievalSmelter`, `MedievalAnvil` in `Structures/Machine/lathe.yml`)
+  was **lowered Mastery→Basic** — otherwise you couldn't open the anvil UI without full mastery, and the
+  per-recipe tiers would be invisible. Machine gate = minimum to approach the forge; per-recipe = per-item tier.
+
 ## Knowledge levels (`SkillKnowledge`, 2026-08)
 
 Maps a raw skill progress 0..1 into a named "knowledge type" — used both in the skills UI (see

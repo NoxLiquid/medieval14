@@ -19,6 +19,8 @@
   completetime: 10
   categories:
   - MedievalToolsCategory
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
 
 - type: latheRecipe
   abstract: true
@@ -58,6 +60,8 @@
   completetime: 10
   categories:
   - MedievalWeaponCategory
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
 
 - type: latheRecipe
   abstract: true
@@ -72,6 +76,8 @@
   completetime: 10
   categories:
   - MedievalMetalClothingCategory
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
 
 - type: latheRecipe
   abstract: true

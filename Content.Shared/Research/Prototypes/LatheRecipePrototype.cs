@@ -1,3 +1,5 @@
+using Content.Shared._Respiral.Skills; // Respiral
+using Content.Shared._Respiral.Skills.Prototypes; // Respiral
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Lathe.Prototypes;
@@ -69,5 +71,10 @@ namespace Content.Shared.Research.Prototypes
         /// </summary>
         [DataField]
         public List<ProtoId<LatheCategoryPrototype>> Categories = new();
+
+        // Respiral - навыки и минимальный уровень знания, требуемые для производства этого рецепта.
+        // Проверяется на сервере (блок постановки в очередь) и на клиенте (недоступность + подсказка в UI).
+        [DataField]
+        public Dictionary<ProtoId<SkillPrototype>, SkillKnowledgeLevel>? NeededSkills;
     }
 }

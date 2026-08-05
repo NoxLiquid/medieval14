@@ -140,7 +140,7 @@
     - MedievalSmelter
   - type: NeededSkillForInteract
     neededSkillsProgress:
-      MedievalBasicBlacksmithing: Mastery
+      MedievalBasicBlacksmithing: Basic
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
@@ -178,7 +178,7 @@
     - MedievalAnvil
   - type: NeededSkillForInteract
     neededSkillsProgress:
-      MedievalBasicBlacksmithing: Mastery
+      MedievalBasicBlacksmithing: Basic
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
