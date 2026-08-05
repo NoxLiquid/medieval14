@@ -76,9 +76,8 @@
   - type: LearnSkillWhenUsing
     duration: 2
     skills:
-    - MedievalLiteracy
-    points:
-      MedievalLiteracy: 0.01
+    - skill: MedievalLiteracy
+      points: 0.01
     sound:
       collection: MedievalLearnBook
 
@@ -108,9 +107,8 @@
   - type: LearnSkillWhenUsing
     duration: 2
     skills:
-    - MedievalBasicBlacksmithing
-    points:
-      MedievalBasicBlacksmithing: 0.01
+    - skill: MedievalBasicBlacksmithing
+      points: 0.01
     sound:
       collection: MedievalLearnBook
 
@@ -140,9 +138,8 @@
   - type: LearnSkillWhenUsing
     duration: 2
     skills:
-    - MedievalWoodProcessing
-    points:
-      MedievalWoodProcessing: 0.01
+    - skill: MedievalWoodProcessing
+      points: 0.01
     sound:
       collection: MedievalLearnBook
 
@@ -172,9 +169,8 @@
   - type: LearnSkillWhenUsing
     duration: 2
     skills:
-    - MedievalAlchem
-    points:
-      MedievalAlchem: 0.01
+    - skill: MedievalAlchem
+      points: 0.01
     sound:
       collection: MedievalLearnBook
 
@@ -204,9 +200,8 @@
   - type: LearnSkillWhenUsing
     duration: 2
     skills:
-    - MedievalStoneProcessing
-    points:
-      MedievalStoneProcessing: 0.01
+    - skill: MedievalStoneProcessing
+      points: 0.01
     sound:
       collection: MedievalLearnBook
 
@@ -236,9 +231,8 @@
   - type: LearnSkillWhenUsing
     duration: 2
     skills:
-    - MedievalTailor
-    points:
-      MedievalTailor: 0.01
+    - skill: MedievalTailor
+      points: 0.01
     sound:
       collection: MedievalLearnBook
 
@@ -268,9 +262,8 @@
   - type: LearnSkillWhenUsing
     duration: 2
     skills:
-    - MedievalJewelry
-    points:
-      MedievalJewelry: 0.01
+    - skill: MedievalJewelry
+      points: 0.01
     sound:
       collection: MedievalLearnBook
 
@@ -300,8 +293,7 @@
   - type: LearnSkillWhenUsing
     duration: 2
     skills:
-    - MedievalTrading
-    points:
-      MedievalTrading: 0.01
+    - skill: MedievalTrading
+      points: 0.01
     sound:
       collection: MedievalLearnBook

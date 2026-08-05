@@ -156,7 +156,11 @@ public sealed partial class SkillSystem : EntitySystem
         return !CnowThisSkill(uid, prototypeId, component);
     }
 
-    public void AddSkillProgress(EntityUid uid, ProtoId<SkillPrototype> prototypeId, float progress, SkillComponent? component = null)
+    /// <summary>
+    ///     Добавляет прогресс навыка, не превышая <paramref name="maxProgress"/> (0..1, по умолчанию — полное освоение).
+    ///     Используется, например, чтобы ограничить потолок изучения конкретным источником обучения (книгой).
+    /// </summary>
+    public void AddSkillProgress(EntityUid uid, ProtoId<SkillPrototype> prototypeId, float progress, float maxProgress = 1f, SkillComponent? component = null)
     {
         if (!Resolve(uid, ref component, false))
             return;
@@ -168,9 +172,9 @@ public sealed partial class SkillSystem : EntitySystem
         }
 
         if (component.Skills.TryGetValue(prototypeId, out var currentProgress))
-            component.Skills[prototypeId] = Math.Min(1f, currentProgress + progress);
+            component.Skills[prototypeId] = Math.Min(maxProgress, currentProgress + progress);
         else
-            component.Skills[prototypeId] = Math.Min(1f, progress);
+            component.Skills[prototypeId] = Math.Min(maxProgress, progress);
 
         Dirty(uid, component);
 

@@ -124,6 +124,41 @@ if the user has no `SkillComponent` at all — it's skipped, i.e. NPCs aren't bl
   `Handled=true` on lacking a skill → `RangedInteractDoBefore` returns true → `InteractUsingEvent`
   on the target isn't raised (application blocked). Picking up/carrying the item is NOT blocked.
 
+## LearnSkillWhenUsingComponent — tiered book learning (2026-08)
+
+`Content.Server/_Respiral/Skill/Components/LearnSkillWhenUsingComponent.cs`. Used by skill books
+(`Skill/book.yml`) and any other "use this to learn" item. Replaced the old flat `skills: [...]` list +
+separate `points: { SkillId: float }` dict (which could desync — a skill in `skills` missing from `points`
+threw `KeyNotFoundException` in `OnDoAfter`) with a single list of self-contained entries:
+
+| Field (`LearnSkillEntry`, `[DataDefinition]`) | Type | Description |
+|---|---|---|
+| `Skill` | `ProtoId<SkillPrototype>` | Skill this entry teaches (mandatory) |
+| `Points` | `float` | Progress granted per successful use (mandatory) |
+| `MaxLevel` | `SkillKnowledgeLevel` | Ceiling this entry can raise the skill to (default `Mastery` = no cap, old behaviour) |
+| `RequiredLevel` | `SkillKnowledgeLevel` | Minimum CURRENT level of the same skill needed to start learning via this entry (default `Vague` = always usable, old behaviour) |
+
+`LearnSkillWhenUsingComponent.Skills` is now `List<LearnSkillEntry>` (YAML key unchanged: `skills:`, but
+each item is now an object, not a bare skill id).
+
+- **Why `RequiredLevel`+`MaxLevel` on the same skill:** models a tiered book series — "Volume 1"
+  (`requiredLevel: Vague, maxLevel: Basic`) teaches a beginner up to Basic; "Volume 2"
+  (`requiredLevel: Basic, maxLevel: Confident`) only works once you've already read Volume 1 to Basic,
+  and caps at Confident. No prototype uses tiers yet (all current books use the defaults, i.e. untiered
+  single-shot learning to Mastery) — this is a lever for future content, not a retrofit of existing books.
+- **`LearnSkillWhenUsingSystem.CanLearnEntry(uid, entry)`** — the gate used by both `OnUseInHand` (decides
+  whether to even start the DoAfter) and `OnDoAfter` (decides whether to actually grant points, entry by
+  entry — previously it granted ALL entries unconditionally once the DoAfter completed, even ones the user
+  could no longer learn). Combines `SkillSystem.CanLearn` (the unrelated cross-skill `RequiredSkills`
+  prerequisite from `SkillPrototype`, plus a global "not already fully mastered" check) with
+  `progress >= GetMinProgress(RequiredLevel) && progress < GetMinProgress(MaxLevel)`.
+- **`SkillSystem.AddSkillProgress` gained an optional `maxProgress = 1f` parameter** (inserted between
+  `progress` and `component`, both existing call sites are positional-only so this is non-breaking) —
+  clamps `Math.Min(maxProgress, ...)` instead of the previous hardcoded `Math.Min(1f, ...)`. `OnDoAfter`
+  passes `SkillKnowledge.GetMinProgress(entry.MaxLevel)`.
+- **YAML migration:** `skills: [X]` + `points: { X: 0.01 }` → `skills: [{ skill: X, points: 0.01 }]` across
+  all 8 entries in `book.yml` (`MaxLevel`/`RequiredLevel` left at defaults — behaviour-preserving).
+
 ## Knowledge levels (`SkillKnowledge`, 2026-08)
 
 Maps a raw skill progress 0..1 into a named "knowledge type" — used both in the skills UI (see

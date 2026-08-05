@@ -1,12 +1,15 @@
 using Content.Server._Respiral.Skill.Components;
 using Content.Server.Inventory;
 using Content.Server.Popups;
+using Content.Shared._Respiral.Skills;
 using Content.Shared._Respiral.Skills.Events;
+using Content.Shared._Respiral.Skills.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Nutrition.EntitySystems;
 using Robust.Server.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Respiral.Skill;
 
@@ -31,8 +34,29 @@ public sealed partial class LearnSkillWhenUsingSystem : EntitySystem
         if (component.Skills.Count == 0)
             return;
 
+        var skills = new List<ProtoId<SkillPrototype>>();
+        foreach (var entry in component.Skills)
+            skills.Add(entry.Skill);
+
         args.PushMarkup(Loc.GetString("skill-exm-learn-skills",
-            ("skills", _skillSystem.GetSkillNames(component.Skills))));
+            ("skills", _skillSystem.GetSkillNames(skills))));
+    }
+
+    /// <summary>
+    ///     Можно ли учиться по конкретной записи: навык не заблокирован общими предпосылками
+    ///     (<see cref="SkillSystem.CanLearn"/>), текущий уровень не ниже требуемого для начала
+    ///     и ещё не достиг потолка этой записи.
+    /// </summary>
+    private bool CanLearnEntry(EntityUid uid, LearnSkillEntry entry)
+    {
+        if (!_skillSystem.CanLearn(uid, entry.Skill))
+            return false;
+
+        var progress = _skillSystem.GetSkillProgress(uid, entry.Skill);
+        var required = SkillKnowledge.GetMinProgress(entry.RequiredLevel);
+        var max = SkillKnowledge.GetMinProgress(entry.MaxLevel);
+
+        return progress >= required && progress < max;
     }
 
     private void OnUseInHand(EntityUid uid, LearnSkillWhenUsingComponent component, UseInHandEvent args)
@@ -80,9 +104,9 @@ public sealed partial class LearnSkillWhenUsingSystem : EntitySystem
 
         int unknown = 0;
 
-        foreach (var skill in component.Skills)
+        foreach (var entry in component.Skills)
         {
-            if (_skillSystem.CanLearn(args.User, skill))
+            if (CanLearnEntry(args.User, entry))
                 unknown += 1;
         }
 
@@ -105,9 +129,13 @@ public sealed partial class LearnSkillWhenUsingSystem : EntitySystem
         if (args.Cancelled || args.Handled || !Exists(args.Used))
             return;
 
-        foreach (var skill in component.Skills)
+        foreach (var entry in component.Skills)
         {
-            _skillSystem.AddSkillProgress(args.User, skill, component.Points[skill]);
+            if (!CanLearnEntry(args.User, entry))
+                continue;
+
+            var maxProgress = SkillKnowledge.GetMinProgress(entry.MaxLevel);
+            _skillSystem.AddSkillProgress(args.User, entry.Skill, entry.Points, maxProgress);
         }
 
         if (component.Sound != null)

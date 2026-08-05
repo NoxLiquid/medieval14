@@ -1,3 +1,4 @@
+using Content.Shared._Respiral.Skills;
 using Content.Shared._Respiral.Skills.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -8,16 +9,11 @@ namespace Content.Server._Respiral.Skill.Components;
 public sealed partial class LearnSkillWhenUsingComponent : Component
 {
     /// <summary>
-    ///     Изучаемые навыки
+    ///     Изучаемые навыки: id, до какого уровня можно поднять, очки за использование,
+    ///     минимальный текущий уровень для начала изучения по этой записи.
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<SkillPrototype>> Skills;
-
-    /// <summary>
-    ///     Количество даваемых очков при изучении
-    /// </summary>
-    [DataField]
-    public Dictionary<ProtoId<SkillPrototype>, float> Points { get; set; } = new Dictionary<ProtoId<SkillPrototype>, float>();
+    public List<LearnSkillEntry> Skills = new();
 
     /// <summary>
     ///     Длительность изучения (секунд)
@@ -35,4 +31,35 @@ public sealed partial class LearnSkillWhenUsingComponent : Component
     // [DataField]
     // [ViewVariables(VVAccess.ReadOnly)]
     // public List<ProtoId<LanguagePrototype>>? LanguagesWhitelist = default!;
+}
+
+/// <summary>
+///     Одна запись изучаемого навыка: за что и в каких пределах учит этот предмет.
+/// </summary>
+[DataDefinition]
+public sealed partial class LearnSkillEntry
+{
+    /// <summary>
+    ///     Изучаемый навык
+    /// </summary>
+    [DataField(required: true)]
+    public ProtoId<SkillPrototype> Skill;
+
+    /// <summary>
+    ///     Уровень знания, выше которого эта запись навык не поднимает
+    /// </summary>
+    [DataField]
+    public SkillKnowledgeLevel MaxLevel = SkillKnowledgeLevel.Mastery;
+
+    /// <summary>
+    ///     Очки прогресса за одно успешное изучение
+    /// </summary>
+    [DataField(required: true)]
+    public float Points;
+
+    /// <summary>
+    ///     Минимальный текущий уровень знания навыка, необходимый, чтобы начать изучение по этой записи
+    /// </summary>
+    [DataField]
+    public SkillKnowledgeLevel RequiredLevel = SkillKnowledgeLevel.Vague;
 }
