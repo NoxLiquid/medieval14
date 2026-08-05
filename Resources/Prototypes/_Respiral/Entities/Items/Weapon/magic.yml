@@ -1,5 +1,6 @@
 # Магические мечи из адамантина и магических кристаллов.
-# Не крафтятся — появляются только как лут/спавн.
+# Крафтятся на наковальне (MedievalFireBladeRecipe/MedievalSpectralBladeRecipe в Recipe/recipe.yml),
+# требуют полного мастерства (Mastery) кузнечного дела; также появляются как лут/спавн.
 
 - type: entity
   parent: MedievalBaseSword
@@ -19,6 +20,10 @@
         Heat: 12
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: PointLight
+    color: "#E25822"
+    radius: 2.5
+    energy: 2.5
   - type: Item
     inhandVisuals:
       left:
@@ -60,6 +65,10 @@
         Cold: 12
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: PointLight
+    color: "#47F8FF"
+    radius: 2.5
+    energy: 2.5
   - type: Item
     inhandVisuals:
       left:

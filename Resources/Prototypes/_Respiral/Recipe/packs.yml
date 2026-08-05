@@ -190,6 +190,9 @@
   - MedievalSteelBrassKnucklesRecipe
   - MedievalWoodBrassKnucklesRecipe
   - MedievalIronBrassKnucklesRecipe
+  # Магическое оружие (требует мастерства кузнечного дела)
+  - MedievalFireBladeRecipe
+  - MedievalSpectralBladeRecipe
   # Броня
   - MedievalClothingBeltChainRecipe
   - MedievalClothingBeltGoldRecipe

@@ -208,11 +208,44 @@ lives in `_Respiral/` partial files, upstream is touched in only 3 marked spots.
   (`// Respiral`, both minimal). Locale `skill-lathe-needed` / `skill-lathe-needed-entry` in ru-only
   `_respiral/skill.ftl` (uses `SkillKnowledge.GetLevelName` for the level word).
 - **Content applied (blacksmithing, `Recipe/recipe.yml`):** `neededSkills` on the abstract bases →
-  `MedievalBaseToolsRecipe: Basic` (том 1), `MedievalBaseWeaponRecipe: Understanding` (том 2),
-  `MedievalBaseMetalClothingRecipe: Confident` (том 3). To make this reachable, the two blacksmithing
-  machines' own `NeededSkillForInteract` gate (`MedievalSmelter`, `MedievalAnvil` in `Structures/Machine/lathe.yml`)
-  was **lowered Mastery→Basic** — otherwise you couldn't open the anvil UI without full mastery, and the
-  per-recipe tiers would be invisible. Machine gate = minimum to approach the forge; per-recipe = per-item tier.
+  `MedievalBaseToolsRecipe: Basic`, `MedievalBaseWeaponRecipe: Understanding` (fallback default —
+  overridden per-material on every concrete weapon recipe, see below), `MedievalBaseMetalClothingRecipe:
+  Confident`. To make this reachable, the two blacksmithing machines' own `NeededSkillForInteract` gate
+  (`MedievalSmelter`, `MedievalAnvil` in `Structures/Machine/lathe.yml`) was **lowered Mastery→Basic** —
+  otherwise you couldn't open the anvil UI without full mastery, and the per-recipe tiers would be
+  invisible. Machine gate = minimum to approach the forge; per-recipe = per-item tier.
+
+### Per-material weapon tiers (2026-08)
+
+All 80 concrete recipes parented to `MedievalBaseWeaponRecipe` got an explicit `neededSkills` override
+(dict-merge on the same key replaces the abstract parent's value — see "Prototype Inheritance Rules" at
+the top of this file), keyed off the material in the recipe id, using the price ordering from
+`Entities/Objects/ProcessedMaterials/materials.yml` (Wood 1.41 < Iron 4.43 < Steel 10.76 < Silver 17.87 <
+Mithril 43.02 < Adamantine 75.47) as the tiebreaker for materials the requester didn't name explicitly:
+
+| Material | Level | Source |
+|---|---|---|
+| Wood, Pelt | `Vague` (no real gate) | inferred — cheapest/non-metal, no barrier |
+| Iron | `Basic` | requester |
+| Steel, Silver | `Understanding` | Steel: requester. Silver: inferred, price closer to Steel than Mithril |
+| Mithril | `Confident` | requester |
+| Adamantine | `Deep` | requester |
+| Magic (Fire/Spectral Blade) | `Mastery` | requester |
+
+Applies to every weapon family sharing this material set: BrassKnuckles, Cleaver, Dagger, Eveningstar,
+Halberd, HideDagger, Knife, Mace, Polearm, Spear, Sword, Sword2, Whip (+ `PeltWhip`/`PeltWhip2`, no metal
+variant). Generated via a Python regex pass over `recipe.yml` (id → material prefix → level), not
+hand-edited — see git history for the exact mapping if re-deriving.
+
+### Magic weapons made craftable (`Entities/Items/Weapon/magic.yml`, 2026-08)
+
+`MedievalFireBlade`/`MedievalSpectralBlade` were previously loot/spawn-only (file header said "не
+крафтятся"). Per requester's explicit instruction, added `MedievalFireBladeRecipe`/
+`MedievalSpectralBladeRecipe` to `Recipe/recipe.yml` (parent `MedievalBaseWeaponRecipe`, `neededSkills:
+{ MedievalBasicBlacksmithing: Mastery }`, materials `MedievalProcessedAdamantine: 200,
+MedievalRawManaCrystal: 100` — matching each entity's own `PhysicalComposition`) and registered both in
+the `MedievalAnvil` pack (`Recipe/packs.yml`). The file header comment in `magic.yml` was updated to
+reflect they're now craftable at full mastery (loot/spawn still works too, unaffected).
 
 ## Knowledge levels (`SkillKnowledge`, 2026-08)
 
