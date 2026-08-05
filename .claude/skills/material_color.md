@@ -81,4 +81,43 @@ handle uncolored/default).
 - `crafted.yml`, `magic.yml`, `MedievalPeltWhip`/`MedievalPeltWhip2` in `whip.yml` — never had a
   `color:` override (stone-axe, magic swords, leather whips use their raw RSI art or a pelt tone
   with no hex hardcode), so there was nothing to migrate.
-```
+
+## Migration status: `Entities/Objects/Drinks/drinks.yml` + `Entities/Items/Light/candle.yml` — DONE (2026-08)
+19 more entities: metal beer mugs (`icon-0` layer — kept alongside its existing
+`enum.SolutionContainerLayers.Base` map key; a layer can carry both an enum key, used by
+`SolutionContainerVisualsSystem` for fill levels, and a plain string key, used by `MaterialColorVisuals`
+— see e.g. `Mobs/Flora/*/*.yml`'s `map: ["enum.DamageStateVisualLayers.Base", "movement"]` for existing
+precedent of mixed key types on one layer), wood-bound mugs (`metall` layer), goblets (`iron_goblet`
+layer — only Steel/Silver variants were colored; Iron/Gold goblets use distinct uncolored RSI states
+`iron_goblet`/`gold_goblet` art, nothing to migrate there), and candelabras 1/3/mini
+(`candelabra_metal_1`/`_3`/`_mini` layer + inhand). Added `#FFD700 → MedievalProcessedGold` to the
+hex↔material table for this batch (gold wasn't used in the Weapon folder).
+
+**Explicitly NOT migrated (found during the sweep, left hardcoded per user decision, 2026-08):** these
+need a *different* mechanism than `MaterialColorVisuals` currently supports — the whole `Sprite.color`
+root field, not a named layer — and weren't in scope:
+- `Entities/Objects/ProcessedMaterials/production.yml` — `MedievalPartRodWood` (root `Sprite.color`, no `layers:` at all).
+- `Entities/Structures/Machine/frame.yml` — `MedievalUnfinishedMachineFrame`/`MedievalMachineFrame` (root color).
+- `Entities/Structures/Walls/railing.yml` — `MedievalBaseRailingWood`/`MedievalBaseRailingStone` (root
+  color set on the *abstract parent*, inherited into every concrete railing piece — not dead code, unlike
+  `Weapon/base.yml`, since these concrete children never redefine `Sprite.color`).
+- `ZLevels/stairs.yml` — ladder wood/stone (root color); also MIT-licensed CrystallEdge port, extra
+  reason to leave alone without explicit sign-off (see CLAUDE.md ZLevels licensing note).
+- `Entities/Objects/Bureaucracy/paper.yml` — `MedievalPaper`/`MedievalPaperWritten` (`paper`/`paper_words`
+  layers hardcode `#bbb19e`, which is literally the color chosen for the `MedievalPaper` material —
+  see [[bureaucracy]]).
+
+If any of these get tackled later, `MaterialColorVisualsComponent` needs a new field (e.g. `RootColor:
+ProtoId<MaterialPrototype>?`) applied via `SpriteSystem.SetColor(sprite, material.Color)` instead of
+`LayerSetColor` — no `map:`/layer-key plumbing needed for that path.
+
+**Not migrated, false positives (different subsystem, coincidental color reuse — correctly left alone):**
+- `Roles/Jobs/departments.yml` — `#C0C0C0`/`#8B4513` are **department** UI colors (chat/tabs), unrelated
+  to materials; hue overlap is coincidental.
+- `paper.yml` → `MedievalStampBank.stampedColor: "#8B4513"` — a `Stamp` component field (ink color in
+  the paper UI), not a `Sprite`; not tied to a material semantically.
+- `Reagents/chemicals.yml` (`MedievalMana`) + `RawMaterials/production.yml`
+  (`MedievalManaCrystal`'s `PointLight.color`) both use `#47f8ff` — `Reagent.color` and `PointLight.color`
+  are different rendering paths from `Sprite` layers; conflating reagent/light/material color into one
+  system would be a separate design decision, not a mechanical migration.
+- `test.yml` (`MedievalTestSword` etc.) — appears to be scratch/debug content, not real production entities.
