@@ -245,9 +245,50 @@ hand-edited — see git history for the exact mapping if re-deriving.
 { MedievalBasicBlacksmithing: Mastery }`, materials `MedievalProcessedAdamantine: 200,
 MedievalRawManaCrystal: 100` — matching each entity's own `PhysicalComposition`) and registered both in
 the `MedievalAnvil` pack (`Recipe/packs.yml`). The file header comment in `magic.yml` was updated to
-reflect they're now craftable at full mastery (loot/spawn still works too, unaffected).
+reflect they're now craftable at full mastery (loot/spawn still works too, unaffected). Both entities also
+got a `PointLight` (requester follow-up) — Fire Blade `#E25822` (matches the torch fire color elsewhere in
+`_Respiral`), Spectral Blade `#47F8FF` (matches the mana-fire/ice light color in `Structures/Light/light.yml`);
+`radius: 2.5, energy: 2.5`, always-on (no `ItemTogglePointLight`/`enabled: false` — unlike fuel-based
+torches/candles, these are permanently-enchanted blades, not something you light/extinguish).
 
-## Knowledge levels (`SkillKnowledge`, 2026-08)
+### Machine gate fully retired in favour of per-recipe gating (2026-08)
+
+Per requester's follow-up: **all** `NeededSkillForInteract` components were removed from the 10 lathe
+machines in `Structures/Machine/lathe.yml` (Sawmill, Quarry, CarpenterTable, Smelter, Anvil, Tannery,
+Loom, Sewing, Jeweler, PassportOffice) — opening any lathe UI no longer requires a skill at all; the gate
+now lives entirely on the recipes. **`MedievalAlchemTable` was deliberately left untouched** — it has no
+`Lathe` component (not part of this recipe system at all), so removing its gate would leave it completely
+ungated with nothing to move the requirement to.
+
+To backfill, **every concrete (non-abstract) `latheRecipe`** in `Recipe/recipe.yml` + `Recipe/carpets.yml`
+(220 total) now has an effective `neededSkills`: the ~82 already tiered (80 weapons + 2 magic blades) were
+left as-is; the other 138 got an explicit `{ skill: Mastery }` added directly on the concrete recipe as a
+coarse placeholder ("на будущее — потом можно разбить по уровням, как оружие"), skill derived from
+**which recipe-pack owns the recipe** (pack → machine → skill, same mapping the removed machine gates
+used): `MedievalSawmillPack`/`MedievalCarpenterTable`→`MedievalWoodProcessing`,
+`MedievalQuarryPack`→`MedievalStoneProcessing`, `MedievalSmelter`/`MedievalAnvil`/`MedievalAnvilCandel`
+(unwired orphan pack, anvil-flavoured content)→`MedievalBasicBlacksmithing`,
+`MedievalLoom`/`MedievalSewing`/`MedievalTannery`→`MedievalTailor`, `MedievalJeweler`
+(currently `recipes: []`, no-op)→`MedievalJewelry`, `MedievalPassportOffice`→`MedievalBureaucracy`. One
+recipe (`MedievalSmelterDetailRecipe`) isn't in any pack (orphaned/dead content) — assigned
+`MedievalBasicBlacksmithing` by name. One recipe (`MedievalDrinkMugWoodRecipe`) is listed in TWO packs
+(`MedievalCarpenterTable` and `MedievalAnvil`); resolved to `MedievalWoodProcessing` (first-pack-in-file
+wins, and it's the semantically correct call — it's a **wood** mug regardless of which machine also
+happens to offer it).
+
+**⚠️ Inheritance pitfall hit and fixed while doing this:** the bulk pass initially checked only the raw
+per-recipe YAML for an existing `neededSkills` key, missing that `MedievalBaseToolsRecipe` (`Basic`) and
+`MedievalBaseMetalClothingRecipe` (`Confident`) already supply one **by inheritance** (dict-merge from the
+abstract parent — see "Prototype Inheritance Rules" at the top of this file). That first pass wrongly
+stamped an explicit `Mastery` override onto all 39 of their children (drinking vessels, keys, locks, coins,
+belts/helmets/boots — none of which have their own per-material override), which either silently replaced
+the inherited `Basic`/`Confident` with `Mastery` (same key) or, worse, merged in as a **second** key
+alongside the inherited one — requiring BOTH skills to produce the item. Fixed by reverting the explicit
+override on exactly those 39 (verified via a proper inheritance-resolving walk this time, not raw-YAML
+`.get()`) so they go back to inheriting `Basic`/`Confident` from their abstract parent, untouched. **Lesson:
+when checking "is X already specified" against `IInheritingPrototype` + dict fields, always resolve the
+full parent chain — a raw per-entity YAML check will miss inherited values and can silently double- or
+mis-gate content.**
 
 Maps a raw skill progress 0..1 into a named "knowledge type" — used both in the skills UI (see
 "Demonstration mode" below) and as the value type for every `NeededSkillsProgress` dictionary
