@@ -31,6 +31,7 @@
   - MedievalAlchemTableDetailRecipe
   - MedievalReagentGrinderDetailRecipe
   - MedievalHotplateDetailRecipe
+  - MedievalPassportOfficeDetailRecipe
   - MedievalFloorTileItemWoodPatternRecipe
   - MedievalFloorTileItemWoodRecipe
   - MedievalFloorTileItemWoodLargeRecipe
@@ -253,3 +254,8 @@
 - type: latheRecipePack
   id: MedievalJeweler
   recipes: []
+
+- type: latheRecipePack
+  id: MedievalPassportOffice
+  recipes:
+  - MedievalPassportRecipe

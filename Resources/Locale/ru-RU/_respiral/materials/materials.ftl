@@ -28,3 +28,4 @@ medieval-processed-materials-stone = обработанный камень
 medieval-processed-materials-cloth = ткань
 medieval-processed-materials-pelt = дублёная кожа
 medieval-processed-materials-glass = стекло
+medieval-materials-paper = бумага

@@ -9,6 +9,12 @@
   - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Objects/Items/Bureaucracy/paper.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalPaper: 100
+  - type: Tag
+    tags:
+    - MedievalPassportOfficeMaterialStorage
 
 # Бумага (записываемая)
 - type: entity

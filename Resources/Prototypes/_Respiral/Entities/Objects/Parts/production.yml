@@ -144,3 +144,14 @@
     materialComposition:
       MedievalProcessedStone: 300
       MedievalRawManaCrystal: 200
+
+- type: entity
+  id: MedievalPassportOfficeDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь паспортного стола
+  components:
+  - type: MachineBoard
+    prototype: MedievalPassportOffice
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300

@@ -57,6 +57,12 @@
   pointsNeeded: 100
 
 - type: skill
+  id: MedievalBureaucracy
+  name: бюрократия
+  description: Грамота
+  pointsNeeded: 100
+
+- type: skill
   id: MedievalOneSword
   name: одноручный клинок
   description: Бой

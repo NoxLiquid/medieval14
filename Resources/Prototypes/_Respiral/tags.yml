@@ -35,6 +35,9 @@
   id: MedievalJewelerMaterialStorage
 
 - type: Tag
+  id: MedievalPassportOfficeMaterialStorage
+
+- type: Tag
   id: MedievalGoat
 
 - type: Tag

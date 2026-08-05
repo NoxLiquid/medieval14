@@ -330,3 +330,40 @@
       MedievalRawManaCrystal: 100
       MedievalProcessedIron: 204
       MedievalProcessedGold: 104
+
+# Бюрократия
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalPassportOffice
+  name: паспортный стол
+  description: Деревянная конторка с чернильницей и печатями. Здесь оформляют паспорта из листов бумаги.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/passport_office.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalPassportOfficeDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalPassportOfficeMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalPassportOffice
+  - type: NeededSkillForInteract
+    neededSkills:
+    - MedievalBureaucracy
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 404
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 4
+      MedievalProcessedStone: 6

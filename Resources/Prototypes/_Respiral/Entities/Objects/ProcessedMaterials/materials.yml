@@ -94,3 +94,11 @@
   icon: { sprite: /Textures/Objects/Materials/Sheets/glass.rsi, state: glass }
   color: "#bbe7d2"
   price: 17
+
+- type: material
+  id: MedievalPaper
+  stackEntity: MedievalPaper
+  name: medieval-materials-paper
+  color: "#bbb19e"
+  icon: { sprite: /Textures/_Respiral/Objects/Items/Bureaucracy/paper.rsi, state: paper }
+  price: 0.5

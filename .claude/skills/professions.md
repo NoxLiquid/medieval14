@@ -41,7 +41,8 @@ YAML-set values network to the client on spawn automatically.
 | Innkeeper, Herbalist | Alchem |
 | Tailor | Tailor (Tannery/Loom/Sewing machines) |
 | Merchant | Trading (→ price appraisal on examine) + Literacy |
-| CitySteward, Elder | Literacy |
+| CitySteward | Literacy + Bureaucracy (→ Passport Office) |
+| Elder | Literacy |
 | Guard | OneSword + Mace |
 | Lord | Literacy + OneSword |
 | Knight | OneSword + AncientWeapons |
@@ -73,6 +74,7 @@ tailor icon exists; reuses an upstream `jobIcon`).
 
 Craft (learned via books, `LearnSkillWhenUsing` +0.01/use → 100 uses to master):
 WoodProcessing, StoneProcessing, BasicBlacksmithing, Tailor, Alchem, Jewelry, Literacy.
+Bureaucracy exists as a skill (CitySteward-only, gates the Passport Office) but has **no book yet**.
 Combat (learned in melee, no books): OneSword, Dagger, Mace, FistFight, Whip, AncientWeapons.
 Books in `Skill/book.yml` (parent `MedievalSkillBookBase`); no book for Jewelry-vs... actually
 Jewelry HAS a book (`MedievalSkillBookJewelry`); combat skills have none.
@@ -95,6 +97,7 @@ tag `Medieval<Name>MaterialStorage`.
 | MedievalLoom | Tailor | cloth |
 | MedievalSewing | Tailor | clothes, bags, belts, bedsheets, carpets |
 | MedievalJeweler | Jewelry | ⚠️ **empty pack** (`recipes: []`) — non-functional |
+| MedievalPassportOffice | Bureaucracy | passport (consumes `MedievalPaper` material) |
 | MedievalAlchemTable | Alchem | ChemMaster UI (pills/bottles) |
 | MedievalHotplate | none | SolutionHeater 160/s |
 | MedievalReagentGrinder | none | ReagentGrinder |

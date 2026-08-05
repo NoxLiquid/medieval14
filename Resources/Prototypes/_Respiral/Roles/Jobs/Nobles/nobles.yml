@@ -57,6 +57,7 @@
     - type: Skill
       skills:
         MedievalLiteracy: 1
+        MedievalBureaucracy: 1
 
 - type: startingGear
   id: MedievalCityStewardGear

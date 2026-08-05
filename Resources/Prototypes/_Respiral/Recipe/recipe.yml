@@ -80,6 +80,13 @@
   categories:
   - MedievalTailorClothingCategory
 
+- type: latheRecipe
+  abstract: true
+  id: MedievalBaseBureaucracyRecipe
+  completetime: 10
+  categories:
+  - MedievalBureaucracyCategory
+
 ## Пилорама
 
 - type: latheRecipe
@@ -1614,4 +1621,22 @@
   result: MedievalFloorTileItemWoodChessBrokenBlack5
   materials:
     MedievalProcessedWood: 50
+
+# Бюрократия
+
+# Деталь паспортного стола — из дерева, куётся на столе плотника
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalPassportOfficeDetailRecipe
+  result: MedievalPassportOfficeDetail
+  materials:
+    MedievalProcessedWood: 300
+
+# Оформление паспорта из листа бумаги
+- type: latheRecipe
+  parent: MedievalBaseBureaucracyRecipe
+  id: MedievalPassportRecipe
+  result: MedievalPassport
+  materials:
+    MedievalPaper: 100
 
