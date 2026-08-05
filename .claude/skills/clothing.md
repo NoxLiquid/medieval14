@@ -46,8 +46,62 @@ The equipment slot keys come from `Resources/Prototypes/InventoryTemplates/human
 | Cloth | `MedievalFlax` | `MedievalCloth: 100` |
 
 The standard component set of a clothing prototype (see any existing file): `Sprite` (state: icon) +
-`Clothing` (same sprite) + `Damageable` + `Injurable: MedievalClothing` + `Armor.modifiers.coefficients`
-(Blunt/Slash/Piercing/Heat/Structural) + `PhysicalComposition`. Armor — lower coefficients = more protection.
+`Clothing` (same sprite) + `Damageable` + `Injurable: MedievalClothing` + **armor via inherited parent**
+(see below) + `PhysicalComposition`. Armor — lower coefficients = more protection.
+
+## Armor protection = inherited, NOT inline (2026-08 refactor)
+
+**Do not hand-write `Armor.modifiers.coefficients` on clothing anymore.** The single source of the
+protection numbers is `Entities/Clothing/base_material.yml`: 28 `abstract: true` entity prototypes
+`MedievalArmor{Material}{Region}` (Material ∈ Cloth/Iron/Steel/Silver/Mithril/Gold/Adamantine,
+Region ∈ HeadOrLegs/Body/HeadFeet/Other), each carrying just a `- type: Armor` with its coefficients.
+A real clothing piece gets its protection by **multi-parent inheritance**:
+```yaml
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorIronBody ]   # base + armor mixin
+  id: MedievalClothingOuterArmorIronChainmail
+  # ...no type: Armor block here — inherited from MedievalArmorIronBody
+```
+To change a material/region's protection, edit the one abstract prototype; every piece inheriting it
+updates. To add a new armored piece, pick the matching `MedievalArmor…` parent by material+region.
+
+Why this and not a `damageModifierSet` reference: `ArmorComponent.Modifiers` is an *inline*
+`DamageModifierSet` (not a `ProtoId`), and the component is `[Access(SharedArmorSystem)]`, so neither a
+YAML prototype-reference nor a Respiral component could set it without an **upstream** edit to
+`Content.Shared/Armor/ArmorComponent.cs` (a custom serializer). We deliberately avoided the upstream
+edit; abstract-parent inheritance is pure `_Respiral` YAML. See [[skills]] inheritance rules
+(components merge across multiple parents; only the abstract mixin defines `Armor`, bases define none →
+clean union).
+
+**Deleted:** `Resources/Prototypes/_Respiral/Damage/Modif/clothing.yml` — its 28 `damageModifierSet`
+prototypes (`MedievalIronBody`, `MedievalClothHeadFeet`, …) were fully orphaned (nothing referenced
+them; `ArmorComponent` can't) and were the duplicated copy of these same numbers. Removed to keep one
+source. If a `DamageModifierSet` *prototype* is ever needed again (e.g. for a `Damageable`), re-add just
+that one.
+
+**Migration complete (2026-08, part 2):** the 5 pieces above were reparented too, to their
+*closest-fit* `MedievalArmor…` mixin (picked by summed absolute coefficient difference across all
+4 candidates of the matching material — not an exact match, but nearest). **Zero clothing entities
+in `_Respiral` carry an inline `- type: Armor` anymore** — every one either has no armor or inherits
+one of the 28 abstracts.
+
+This is what revealed the purpose of the `HeadOrLegs` region tier, unused by the first (exact-match)
+pass: it's for **heavy reinforced extremity armor** (gauntlets, greaves, armored boots) — tougher than
+the `HeadFeet` tier (light headwear/footwear) but not full `Body` armor. All 4 metal bespoke pieces
+landed on `…HeadOrLegs`:
+```
+MedievalClothingHandsHeavyArmored      -> MedievalArmorSteelHeadOrLegs  (diff 0.04)
+MedievalClothingLegsArmored            -> MedievalArmorIronHeadOrLegs   (diff 0.02)
+MedievalClothingShoesArmoredBoots      -> MedievalArmorIronHeadOrLegs   (diff 0.03)
+MedievalClothingShoesHeavyArmoredBoots -> MedievalArmorSteelHeadOrLegs  (diff 0.10, weakest fit but still nearest)
+MedievalClothingHandsSmithGloves       -> MedievalArmorClothOther       (diff 0.04)
+```
+`MedievalClothingHandsSmithGloves` (cloth) went to `ClothOther` (accessory tier) instead — its Blunt/
+Slash/Piercing matched `ClothOther` exactly, only Heat differed (0.95 vs 0.99); leather work-gloves fit
+the "light accessory" semantics better than "reinforced limb armor". If exact values matter later, the
+piece's own protection can drift a little from what it used to be — this is a deliberate approximation
+trade for having one source of truth; revert to an inline `- type: Armor` on that one entity if a
+closest-fit isn't good enough for a specific item.
 
 ## Pattern: one .rsi with several visual variants
 

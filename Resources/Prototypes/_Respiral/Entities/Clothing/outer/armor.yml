@@ -1,7 +1,7 @@
 # Medieval armor prototypes generated from _Respiral/Clothing/OuterClothing/Armor/*.rsi
 
 - type: entity
-  parent: MedievalBaseOuterClothing
+  parent: [ MedievalBaseOuterClothing, MedievalArmorIronBody ]
   id: MedievalClothingOuterArmorIronChainmail
   suffix: Средневековье
   name: железная кольчуга
@@ -15,14 +15,6 @@
     damageModifierSet: MedievalIron
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.78
-        Slash: 0.78
-        Piercing: 0.88
-        Heat: 0.75
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100

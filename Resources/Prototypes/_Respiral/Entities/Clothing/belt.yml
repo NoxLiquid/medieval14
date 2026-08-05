@@ -1,7 +1,7 @@
 # Medieval belt-slot clothing prototypes generated from _Respiral/Clothing/Belt/*.rsi
 
 - type: entity
-  parent: MedievalBaseBelt
+  parent: [ MedievalBaseBelt, MedievalArmorIronOther ]
   id: MedievalClothingBeltChain
   suffix: Средневековье
   name: цепной пояс
@@ -15,20 +15,12 @@
     damageModifierSet: MedievalIron
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.98
-        Slash: 0.98
-        Piercing: 0.98
-        Heat: 0.98
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: MedievalBaseBelt
+  parent: [ MedievalBaseBelt, MedievalArmorGoldOther ]
   id: MedievalClothingBeltGold
   suffix: Средневековье
   name: золотой пояс
@@ -42,20 +34,12 @@
     damageModifierSet: MedievalGold
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.98
-        Slash: 0.98
-        Piercing: 0.98
-        Heat: 0.98
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedGold: 100
 
 - type: entity
-  parent: MedievalBaseBelt
+  parent: [ MedievalBaseBelt, MedievalArmorClothOther ]
   id: MedievalClothingBeltLeather
   suffix: Средневековье
   name: кожаный пояс
@@ -69,20 +53,12 @@
     damageModifierSet: MedievalPelt
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: MedievalBaseBelt
+  parent: [ MedievalBaseBelt, MedievalArmorClothOther ]
   id: MedievalClothingBeltLeatherBlack
   suffix: Средневековье
   name: чёрный кожаный пояс
@@ -96,20 +72,12 @@
     damageModifierSet: MedievalPelt
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: MedievalBaseBelt
+  parent: [ MedievalBaseBelt, MedievalArmorClothOther ]
   id: MedievalClothingBeltLeatherRed
   suffix: Средневековье
   name: красный кожаный пояс
@@ -123,20 +91,12 @@
     damageModifierSet: MedievalPelt
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: MedievalBaseBelt
+  parent: [ MedievalBaseBelt, MedievalArmorClothOther ]
   id: MedievalClothingBeltRope
   suffix: Средневековье
   name: верёвочный пояс
@@ -150,20 +110,12 @@
     damageModifierSet: MedievalFlax
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
 
 - type: entity
-  parent: MedievalBaseBelt
+  parent: [ MedievalBaseBelt, MedievalArmorSilverOther ]
   id: MedievalClothingBeltSilver
   suffix: Средневековье
   name: серебряный пояс
@@ -177,14 +129,6 @@
     damageModifierSet: MedievalSilver
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.98
-        Slash: 0.98
-        Piercing: 0.98
-        Heat: 0.98
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedSilver: 100

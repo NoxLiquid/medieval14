@@ -1,7 +1,7 @@
 # Medieval neck-slot clothing prototypes generated from _Respiral/Clothing/Neck/*.rsi
 
 - type: entity
-  parent: MedievalBaseNeck
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
   id: MedievalClothingNeckLordCape
   suffix: Средневековье
   name: плащ лорда
@@ -18,14 +18,6 @@
     damageModifierSet: MedievalFlax
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.98
-        Slash: 0.98
-        Piercing: 0.98
-        Heat: 0.98
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100

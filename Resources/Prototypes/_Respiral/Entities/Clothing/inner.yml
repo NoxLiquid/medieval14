@@ -1,7 +1,7 @@
 # Medieval inner clothing generated from _Respiral/Clothing/Uniforms/Jumpsuit/*.rsi
 
 - type: entity
-  parent: MedievalBaseInnerClothing
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
   id: MedievalClothingInnerLongTunic
   suffix: Средневековье
   name: длинная туника
@@ -15,20 +15,12 @@
     damageModifierSet: MedievalFlax
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.96
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
 # === Elite noble shirt (elite_short.rsi) — single RSI with 4 visual variants ===
 - type: entity
-  parent: MedievalBaseInnerClothing
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
   id: MedievalClothingInnerEliteCloth
   suffix: Средневековье
   name: парадная рубаха
@@ -45,14 +37,6 @@
     damageModifierSet: MedievalFlax
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.96
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100

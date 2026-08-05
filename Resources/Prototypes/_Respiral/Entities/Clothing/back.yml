@@ -1,7 +1,7 @@
 # Medieval back-slot clothing prototypes generated from _Respiral/Clothing/Back/*.rsi
 
 - type: entity
-  parent: ClothingBackpack
+  parent: [ ClothingBackpack, MedievalArmorClothOther ]
   id: MedievalClothingBackBackpack
   suffix: Средневековье
   name: рюкзак
@@ -16,20 +16,12 @@
     damageModifierSet: MedievalFlax
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
 
 - type: entity
-  parent: ClothingBackpackDuffel
+  parent: [ ClothingBackpackDuffel, MedievalArmorClothOther ]
   id: MedievalClothingBackDuffel
   suffix: Средневековье
   name: вещмешок
@@ -44,20 +36,12 @@
     damageModifierSet: MedievalFlax
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
 
 - type: entity
-  parent: ClothingBackpackSatchel
+  parent: [ ClothingBackpackSatchel, MedievalArmorClothOther ]
   id: MedievalClothingBackSatchel
   suffix: Средневековье
   name: сумка через плечо
@@ -72,14 +56,6 @@
     damageModifierSet: MedievalPelt
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedPelt: 100
