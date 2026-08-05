@@ -1,3 +1,4 @@
+using Content.Shared._Respiral.Skills;
 using Content.Shared._Respiral.Skills.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
@@ -8,10 +9,10 @@ namespace Content.Server._Respiral.Skill.Components;
 public sealed partial class NeededSkillForMeleeComponent : Component
 {
     /// <summary>
-    ///     Требуемые навыки
+    ///     Требуемые навыки владения оружием с уровнем знания, дающим полный урон.
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<SkillPrototype>> NeededSkills;
+    public Dictionary<ProtoId<SkillPrototype>, SkillKnowledgeLevel> NeededSkillsProgress = new();
 
     /// <summary>
     ///     Количество даваемых очков при изучении

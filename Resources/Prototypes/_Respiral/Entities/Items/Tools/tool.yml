@@ -165,4 +165,4 @@
       path: /Audio/_Respiral/Hammer/sound_effects_hit_punch.ogg
   - type: NeededSkillForInteractUsing
     neededSkillsProgress:
-      MedievalEngineering: 1
+      MedievalEngineering: Mastery

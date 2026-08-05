@@ -8,7 +8,7 @@ namespace Content.Server._Respiral.Skill.Components;
 public sealed partial class LearnSkillWhenUsingComponent : Component
 {
     /// <summary>
-    ///     Изучаемые навыки навыки
+    ///     Изучаемые навыки
     /// </summary>
     [DataField(required: true)]
     public List<ProtoId<SkillPrototype>> Skills;

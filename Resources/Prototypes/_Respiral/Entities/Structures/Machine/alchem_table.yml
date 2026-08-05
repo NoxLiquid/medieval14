@@ -55,8 +55,8 @@
     - Chemicals
     - Chemist
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalAlchem
+    neededSkillsProgress:
+      MedievalAlchem: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 504

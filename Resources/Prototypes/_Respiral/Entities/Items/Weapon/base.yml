@@ -28,8 +28,8 @@
     qualities:
     - Slicing
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalOneSword
+    neededSkillsProgress:
+      MedievalOneSword: Mastery
     points:
     - MedievalOneSword: 0.01
     learnModifiers:
@@ -86,8 +86,8 @@
     qualities:
     - Slicing
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalDagger
+    neededSkillsProgress:
+      MedievalDagger: Mastery
     points:
     - MedievalDagger: 0.01
     learnModifiers:
@@ -144,8 +144,8 @@
     qualities:
     - Slicing
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalOneSword
+    neededSkillsProgress:
+      MedievalOneSword: Mastery
     points:
     - MedievalOneSword: 0.01
     learnModifiers:
@@ -198,8 +198,8 @@
   - type: Item
     size: Normal
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalFistFight
+    neededSkillsProgress:
+      MedievalFistFight: Mastery
     points:
     - MedievalFistFight: 0.01
     learnModifiers:
@@ -250,8 +250,8 @@
   - type: Item
     size: Normal
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalMace
+    neededSkillsProgress:
+      MedievalMace: Mastery
     points:
     - MedievalMace: 0.01
     learnModifiers:
@@ -306,8 +306,8 @@
   - type: Item
     size: Ginormous
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalMace
+    neededSkillsProgress:
+      MedievalMace: Mastery
     points:
     - MedievalMace: 0.01
     learnModifiers:
@@ -364,8 +364,8 @@
   - type: Item
     size: Ginormous
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalAncientWeapons
+    neededSkillsProgress:
+      MedievalAncientWeapons: Mastery
     points:
     - MedievalAncientWeapons: 0.01
     learnModifiers:
@@ -425,8 +425,8 @@
     unisex: false
     size: Ginormous
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalAncientWeapons
+    neededSkillsProgress:
+      MedievalAncientWeapons: Mastery
     points:
     - MedievalAncientWeapons: 0.01
     learnModifiers:
@@ -484,8 +484,8 @@
     unisex: false
     size: Ginormous
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalAncientWeapons
+    neededSkillsProgress:
+      MedievalAncientWeapons: Mastery
     points:
     - MedievalAncientWeapons: 0.01
     learnModifiers:
@@ -537,8 +537,8 @@
   - type: Item
     size: Normal
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalWhip
+    neededSkillsProgress:
+      MedievalWhip: Mastery
     points:
     - MedievalWhip: 0.01
     learnModifiers:

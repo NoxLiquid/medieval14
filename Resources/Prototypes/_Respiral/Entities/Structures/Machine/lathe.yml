@@ -26,8 +26,8 @@
     staticPacks:
     - MedievalSawmillPack
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalWoodProcessing
+    neededSkillsProgress:
+      MedievalWoodProcessing: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 404
@@ -62,8 +62,8 @@
     staticPacks:
     - MedievalQuarryPack
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalStoneProcessing
+    neededSkillsProgress:
+      MedievalStoneProcessing: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 404
@@ -98,8 +98,8 @@
     staticPacks:
     - MedievalCarpenterTable
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalWoodProcessing
+    neededSkillsProgress:
+      MedievalWoodProcessing: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 404
@@ -139,8 +139,8 @@
     staticPacks:
     - MedievalSmelter
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalBasicBlacksmithing
+    neededSkillsProgress:
+      MedievalBasicBlacksmithing: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
@@ -177,8 +177,8 @@
     staticPacks:
     - MedievalAnvil
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalBasicBlacksmithing
+    neededSkillsProgress:
+      MedievalBasicBlacksmithing: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
@@ -214,8 +214,8 @@
     staticPacks:
     - MedievalTannery
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalTailor
+    neededSkillsProgress:
+      MedievalTailor: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
@@ -250,8 +250,8 @@
     staticPacks:
     - MedievalLoom
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalTailor
+    neededSkillsProgress:
+      MedievalTailor: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
@@ -286,8 +286,8 @@
     staticPacks:
     - MedievalSewing
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalTailor
+    neededSkillsProgress:
+      MedievalTailor: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 4
@@ -322,8 +322,8 @@
     staticPacks:
     - MedievalJeweler
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalJewelry
+    neededSkillsProgress:
+      MedievalJewelry: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 4
@@ -359,8 +359,8 @@
     staticPacks:
     - MedievalPassportOffice
   - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalBureaucracy
+    neededSkillsProgress:
+      MedievalBureaucracy: Mastery
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 404

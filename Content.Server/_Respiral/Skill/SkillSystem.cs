@@ -226,11 +226,11 @@ public sealed partial class SkillSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Проверяет, что у пользователя прогресс каждого навыка не ниже указанного порога (0..1).
+    ///     Проверяет, что у пользователя уровень знания каждого навыка не ниже указанного.
     ///     Аналог <see cref="CheckRequiredSkills"/>, но с настраиваемым порогом вместо полного освоения.
     ///     Нет <see cref="SkillComponent"/> (например, NPC) — проверка пропускается. Сам показывает попап.
     /// </summary>
-    public bool CheckRequiredSkillsProgress(EntityUid user, Dictionary<ProtoId<SkillPrototype>, float> neededSkills)
+    public bool CheckRequiredSkillsProgress(EntityUid user, Dictionary<ProtoId<SkillPrototype>, SkillKnowledgeLevel> neededSkills)
     {
         if (neededSkills.Count == 0)
             return true;
@@ -240,7 +240,7 @@ public sealed partial class SkillSystem : EntitySystem
 
         var missingSkills = new List<string>();
 
-        foreach (var (skill, requiredProgress) in neededSkills)
+        foreach (var (skill, requiredLevel) in neededSkills)
         {
             if (!_prototypeManager.TryIndex(skill, out var skillPrototype) || skillPrototype == null)
             {
@@ -248,6 +248,7 @@ public sealed partial class SkillSystem : EntitySystem
                 continue;
             }
 
+            var requiredProgress = SkillKnowledge.GetMinProgress(requiredLevel);
             if (GetSkillProgress(user, skill, skillComponent) < requiredProgress)
                 missingSkills.Add(skillPrototype.Name);
         }

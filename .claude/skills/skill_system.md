@@ -13,10 +13,12 @@ Path: `Content.Server/_Respiral/Skill/Components/NeededSkillForMeleeComponent.cs
 
 | Field | Type | Description |
 |---|---|---|
-| `Skills` | `List<ProtoId<SkillPrototype>>` | Required skills (mandatory) |
-| `Points` | `List<Dictionary<ProtoId, float>>` | Points per hit by skill (mandatory) |
+| `NeededSkillsProgress` | `Dictionary<ProtoId<SkillPrototype>, SkillKnowledgeLevel>` | Required weapon-skill knowledge level for **full** damage (mandatory) |
+| `Points` | `List<Dictionary<ProtoId, float>>` | Points per hit by skill (mandatory) — unrelated to the gate, always a raw `float` learn-rate, NOT a `SkillKnowledgeLevel` |
 | `LearnModifiers` | `List<SkillLearnModifier>` | Point multipliers by the target's whitelist; if the target matches none — no points are awarded |
-| `DamageModifiers` | `Dictionary<ProtoId, float>` | Damage multipliers from skill progress |
+
+Renamed from `NeededSkills` (a plain `List<ProtoId<SkillPrototype>>`) to `NeededSkillsProgress` (2026-08),
+mirroring `NeededSkillForInteract{,Using}`. See "Knowledge levels" below for `SkillKnowledgeLevel`.
 
 ### SkillLearnModifier (`[DataDefinition]`)
 Path: defined in `NeededSkillForMeleeComponent.cs`
@@ -30,18 +32,29 @@ Modifiers stack multiplicatively.
 
 ## NeededSkillForMeleeSystem.OnNeededSkillForMeleeHit logic
 
-1. **Damage**: `BaseDamage` is multiplied by `GetSkillProgress` for each skill
-2. **Learning**: for each hit entity:
+1. **Damage** (2026-08 formula, per required skill in `NeededSkillsProgress`):
+   ```csharp
+   var required = SkillKnowledge.GetMinProgress(requiredLevel); // e.g. Mastery -> 1.0
+   if (required <= 0f) continue;                                // Vague == no real requirement
+   var actual = _skillSystem.GetSkillProgress(args.User, skill);
+   damage *= Math.Min(required, actual / required);
+   ```
+   This is NOT gating — a hit always lands, only the damage multiplier scales. Picking `required = Mastery`
+   (1.0) reproduces the old plain-linear behaviour (`damage *= actualProgress`), since
+   `min(1, actual/1) == actual`. All existing weapon prototypes were migrated to `Mastery` for this reason
+   (behaviour-preserving). Choosing a lower required level (e.g. `Confident`) lets the weapon reach full
+   damage before full mastery of the skill — a tuning knob, not yet used by any prototype.
+2. **Learning**: for each hit entity (unchanged):
    - Skip if hitting yourself
    - Compute the multiplier from `LearnModifiers` (summing matches); if 0 — skip
-   - Award `value * modifier` points for each skill
+   - Award `value * modifier` points for each skill in `Points`
 
 ## YAML example
 
 ```yaml
 - type: NeededSkillForMelee
-  skills:
-  - MedievalOneSword
+  neededSkillsProgress:
+    MedievalOneSword: Mastery
   points:
   - MedievalOneSword: 0.01
   learnModifiers:
@@ -76,7 +89,7 @@ Modifiers stack multiplicatively.
 
 ## Skill-based usage gates
 
-Two components (`Content.Server/_Respiral/Skill/`), both call `SkillSystem.CheckRequiredSkills`
+Two components (`Content.Server/_Respiral/Skill/`), both call `SkillSystem.CheckRequiredSkillsProgress`
 (which ITSELF shows the popup `skill-need-skill-message` and returns false when lacking;
 if the user has no `SkillComponent` at all — it's skipped, i.e. NPCs aren't blocked):
 
@@ -85,13 +98,22 @@ if the user has no `SkillComponent` at all — it's skipped, i.e. NPCs aren't bl
 | `NeededSkillForInteract` | `BeforeInteractionActivate` + `InteractHandEvent` | the target (machine) | activation / hand-click on the object |
 | `NeededSkillForInteractUsing` | `BeforeRangedInteractEvent` | the **used item** | applying the item TO something |
 
-- The YAML field for both — `neededSkills: [ ... ]`.
+- **The YAML field for both — `neededSkillsProgress: { SkillId: Level, ... }`**, `Dictionary<ProtoId<SkillPrototype>,
+  SkillKnowledgeLevel>` (`required: true`). Requires knowledge **≥ the given `SkillKnowledgeLevel`** per skill
+  (converted to a progress threshold via `SkillKnowledge.GetMinProgress`, see "Knowledge levels" below).
+  Machines previously required full mastery via a plain `neededSkills: [ ... ]` list + `CheckRequiredSkills`
+  (2026-06/07) — **unified onto `NeededSkillsProgress`/`CheckRequiredSkillsProgress` in 2026-08** (all
+  existing machine prototypes migrated to `Mastery`, which is behaviour-identical to the old full-mastery
+  gate). `CheckRequiredSkills(List<ProtoId<SkillPrototype>>)` still exists but is now used ONLY by
+  `CanLearn` (via `SkillPrototype.RequiredSkills` — skill-learning prerequisites, a different concept from
+  usage gates) — don't confuse the two.
 - **Examine description (ExaminedEvent, 2026-06):** all four skill components
   (`NeededSkillForInteract`, `NeededSkillForInteractUsing`, `NeededSkillForMelee`, `LearnSkillWhenUsing`)
   subscribe to `ExaminedEvent` and push a string via `args.PushMarkup`. Skill names are collected by the
   shared helper `SkillSystem.GetSkillNames(List<ProtoId<SkillPrototype>>)` (names from `SkillPrototype.Name`,
-  comma-separated). Locale `ru-RU/_respiral/skill.ftl`: `skill-exm-needed-skills` ("Using requires
-  the following skills: …") for the three "needed" components (field `NeededSkills`),
+  comma-separated; the two `NeededSkillsProgress`-based components pass `.Keys` as that list).
+  Locale `ru-RU/_respiral/skill.ftl`: `skill-exm-needed-skills` ("Using requires
+  the following skills: …") for the three "needed" components,
   `skill-exm-learn-skills` ("Teaches the following skills: …") for the book (field `Skills`).
   There's no en-US version of skill.ftl — the original is ru only (as before).
 - **`NeededSkillForInteractUsing` (2026-06):** it used to subscribe to a custom Respiral event
@@ -101,6 +123,38 @@ if the user has no `SkillComponent` at all — it's skipped, i.e. NPCs aren't bl
   requiring NO edits to upstream `SharedInteractionSystem`. The custom `Events/BeforeInteractUsing.cs` was removed.
   `Handled=true` on lacking a skill → `RangedInteractDoBefore` returns true → `InteractUsingEvent`
   on the target isn't raised (application blocked). Picking up/carrying the item is NOT blocked.
+
+## Knowledge levels (`SkillKnowledge`, 2026-08)
+
+Maps a raw skill progress 0..1 into a named "knowledge type" — used both in the skills UI (see
+"Demonstration mode" below) and as the value type for every `NeededSkillsProgress` dictionary
+(`NeededSkillForInteract`, `NeededSkillForInteractUsing`, `NeededSkillForMelee`).
+
+- **`Content.Shared/_Respiral/Skill/SkillKnowledge.cs`** — `enum SkillKnowledgeLevel`
+  (`Vague`/`Basic`/`Understanding`/`Confident`/`Deep`/`Mastery`) + static `SkillKnowledge`:
+  `GetLevel(float)`, `GetMinProgress(level)` (inverse — the threshold a `NeededSkillsProgress` gate checks
+  against), `GetLevelName(...)` (localized). Bands: `<0.2` Vague, `<0.4` Basic, `<0.6` Understanding,
+  `<0.8` Confident, `<1.0` Deep, `>=1.0` Mastery. Locale keys
+  `skill-knowledge-{vague,basic,understanding,confident,deep,mastery}` in `ru-RU/_respiral/skill.ftl`
+  (skill.ftl is ru-only). Plain (non-`[Flags]`) enum — serializes in YAML by bare member name (e.g. `Mastery`),
+  same convention as any other simple engine enum (cf. `MobState`'s `Alive`/`Dead`/…).
+- **`SkillSystem.CheckRequiredSkillsProgress(EntityUid, Dictionary<ProtoId<SkillPrototype>,
+  SkillKnowledgeLevel>)`** — converts each required level via `GetMinProgress` and compares against
+  `GetSkillProgress`; same popup/NPC-skip semantics as before, only the dictionary value type changed
+  (was `float` progress 0..1 pre-2026-08).
+
+### Demonstration mode — evaluability gate
+- **`SkillInfo`** gained `bool Evaluable = true` (positional record-struct, mutable) — whether the
+  viewer may assess the skill. Networked (used only via the share EUI).
+- **Server `SkillShareSystem.BuildSkillList(target, viewer, targetComp)`** — both share paths use it.
+  Per skill `Evaluable = viewerProgress >= targetProgress` (viewer must know it at least as well as the
+  demonstrator, else the exact level is hidden). `viewer == null` → all evaluable (admin-ghost path).
+  A viewer without `SkillComponent` reads 0 for every skill → can't evaluate anything the target has > 0.
+- **Client `SkillsListWindow.SetSkills(..., bool demonstration = false)`**:
+  - `demonstration == false` (own skills, character-menu path) → right label shows the exact `N%` (unchanged).
+  - `demonstration == true` (share EUI, `SkillsListEui` passes it) → right label shows
+    `SkillKnowledge.GetLevelName(Progress)`; if `!Evaluable` the right label is blank, the description is
+    replaced by `skill-knowledge-cant-evaluate`, and the progress bar is forced full (real level not leaked).
 
 ## Literacy (MedievalLiteracy)
 
@@ -113,19 +167,9 @@ if the user has no `SkillComponent` at all — it's skipped, i.e. NPCs aren't bl
   gate). Replaced the two duplicated `"MedievalLiteracy"` literals.
 - The book `MedievalSkillBookLiteracy` (`book.yml`, icon `book5`, `LearnSkillWhenUsing` 0.01/use → 100 reads).
 - `MedievalPen` carries `NeededSkillForInteractUsing` → without enough literacy you can't write with the
-  pen (apply it on paper/anything). **As of 2026-07 it uses the progress-threshold field (see below):
-  `neededSkillsProgress: { MedievalLiteracy: 0.8 }`** — writing unlocks at 80% literacy, not full mastery.
-
-### `NeededSkillForInteractUsing` — progress-threshold gate
-- Single field `neededSkillsProgress: { SkillId: threshold }` (`required: true`, 2026-07) — requires
-  **progress ≥ threshold** per skill, via `SkillSystem.CheckRequiredSkillsProgress`. Full mastery is just
-  threshold `1.0`, so the old `neededSkills` list (which required ≥ 1.0 via `CheckRequiredSkills`) was
-  **removed as redundant** — the pen was the only user. Failing blocks the interaction (`args.Handled = true`),
-  shows popup `skill-need-skill-message`, and is skipped if the user has no `SkillComponent` (NPCs unaffected).
-  Examine (`skill-exm-needed-skills`) lists the gated skill names.
-- NOTE: the sibling component `NeededSkillForInteract` (machines) still uses `neededSkills: [ ... ]` +
-  `CheckRequiredSkills` (full mastery). That method stays — it's also used by `CanLearn`. Only the
-  `...InteractUsing` variant switched to thresholds.
+  pen (apply it on paper/anything): `neededSkillsProgress: { MedievalLiteracy: Deep }` (`Deep`'s min
+  progress is exactly 0.8 — same 80%-literacy threshold as the old float value, just re-expressed as an
+  enum level after the 2026-08 migration).
 
 ### Reading paper by literacy (character substitution, 2026-06)
 
@@ -216,7 +260,7 @@ Embed entities: `MedievalSkillBookLiteracy`, `MedievalPen`.
   (`Tool` quality `MedievalScore`); its **RCD was removed** (deleted the `UserInterface`
   `RcdUiKey`/`RCDMenuBoundUserInterface` + `ActivatableUI` blocks, and the `RCD` entry from
   `AddWearAfterUse.triggers`). Structures are built via the Tool quality on construction graphs.
-- **Skill gate:** `- type: NeededSkillForInteractUsing` with `neededSkillsProgress: { MedievalEngineering: 1 }`.
+- **Skill gate:** `- type: NeededSkillForInteractUsing` with `neededSkillsProgress: { MedievalEngineering: Mastery }`.
   Works because applying the hammer to a construction ghost/frame is an `InteractUsing`, which raises
   `BeforeRangedInteractEvent` on the used hammer BEFORE the target's `InteractUsingEvent` (construction).
   Gate handles it → build blocked; skipped for entities without `SkillComponent` (NPCs).
@@ -269,32 +313,6 @@ skills into real capabilities.
   locale `trade-appraisal-price` in `ru-RU/_respiral/trade.ftl`). Rationale: `ExaminedEvent` is directed
   at the examined target, so a component on the examiner can't receive it — the target checks the
   examiner instead (the approach the requester suggested).
-
-## Knowledge levels (`SkillKnowledge`, 2026-08)
-
-Maps a raw skill progress 0..1 into a named "knowledge type" — shown in the skills UI and intended
-as a reusable threshold for `NeedSkill` gates.
-
-- **`Content.Shared/_Respiral/Skill/SkillKnowledge.cs`** — `enum SkillKnowledgeLevel`
-  (`Vague`/`Basic`/`Understanding`/`Confident`/`Deep`/`Mastery`) + static `SkillKnowledge`:
-  `GetLevel(float)`, `GetMinProgress(level)` (inverse), `GetLevelName(...)` (localized). Bands:
-  `<0.2` Vague, `<0.4` Basic, `<0.6` Understanding, `<0.8` Confident, `<1.0` Deep, `>=1.0` Mastery.
-  Locale keys `skill-knowledge-{vague,basic,understanding,confident,deep,mastery}` in
-  `ru-RU/_respiral/skill.ftl` (skill.ftl is ru-only). `GetMinProgress` exists so a future
-  `NeedSkill` component can require a `SkillKnowledgeLevel` and convert it to a progress threshold.
-
-### Demonstration mode — evaluability gate
-- **`SkillInfo`** gained `bool Evaluable = true` (positional record-struct, mutable) — whether the
-  viewer may assess the skill. Networked (used only via the share EUI).
-- **Server `SkillShareSystem.BuildSkillList(target, viewer, targetComp)`** — both share paths use it.
-  Per skill `Evaluable = viewerProgress >= targetProgress` (viewer must know it at least as well as the
-  demonstrator, else the exact level is hidden). `viewer == null` → all evaluable (admin-ghost path).
-  A viewer without `SkillComponent` reads 0 for every skill → can't evaluate anything the target has > 0.
-- **Client `SkillsListWindow.SetSkills(..., bool demonstration = false)`**:
-  - `demonstration == false` (own skills, character-menu path) → right label shows the exact `N%` (unchanged).
-  - `demonstration == true` (share EUI, `SkillsListEui` passes it) → right label shows
-    `SkillKnowledge.GetLevelName(Progress)`; if `!Evaluable` the right label is blank, the description is
-    replaced by `skill-knowledge-cant-evaluate`, and the progress bar is forced full (real level not leaked).
 
 ## Bugfixes (2026-07)
 
