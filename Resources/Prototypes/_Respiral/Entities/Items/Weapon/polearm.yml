@@ -7,10 +7,13 @@
     sprite: _Respiral/Objects/Items/Weapon/two_polearm.rsi
     layers:
     - state: blade
-      color: "#8A8A8A"
       map: [ base ]
     - state: handle
       map: [ handle ]
+  - type: MaterialColorVisuals
+    layers:
+      base: MedievalProcessedIron
+    inhand: MedievalProcessedIron
   - type: MeleeWeapon
     damage:
       types:
@@ -28,11 +31,9 @@
       left:
       - state: inhand-left
         scale: 0.5, 0.5
-        color: "#8A8A8A"
       right:
       - state: inhand-right
         scale: 0.5, 0.5
-        color: "#8A8A8A"
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
@@ -60,9 +61,14 @@
     sprite: _Respiral/Objects/Items/Weapon/two_polearm.rsi
     layers:
     - state: blade
-      color: "#8B4513"
+      map: [ base ]
     - state: handle
-      color: "#8B4513"
+      map: [ handle ]
+  - type: MaterialColorVisuals
+    layers:
+      base: MedievalProcessedWood
+      handle: MedievalProcessedWood
+    inhand: MedievalProcessedWood
   - type: MeleeWeapon
     damage:
       types:
@@ -78,11 +84,9 @@
       left:
       - state: inhand-left
         scale: 0.5, 0.5
-        color: "#8B4513"
       right:
       - state: inhand-right
         scale: 0.5, 0.5
-        color: "#8B4513"
   - type: Damageable
     damageModifierSet: MedievalWood
   - type: Injurable
@@ -109,8 +113,12 @@
     sprite: _Respiral/Objects/Items/Weapon/two_polearm.rsi
     layers:
     - state: blade
-      color: "#B0C4DE"
+      map: [ base ]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      base: MedievalSteel
+    inhand: MedievalSteel
   - type: MeleeWeapon
     damage:
       types:
@@ -128,11 +136,9 @@
       left:
       - state: inhand-left
         scale: 0.5, 0.5
-        color: "#B0C4DE"
       right:
       - state: inhand-right
         scale: 0.5, 0.5
-        color: "#B0C4DE"
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable
@@ -159,8 +165,12 @@
     sprite: _Respiral/Objects/Items/Weapon/two_polearm.rsi
     layers:
     - state: blade
-      color: "#C0C0FF"
+      map: [ base ]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      base: MedievalProcessedSilver
+    inhand: MedievalProcessedSilver
   - type: MeleeWeapon
     damage:
       types:
@@ -179,11 +189,9 @@
       left:
       - state: inhand-left
         scale: 0.5, 0.5
-        color: "#C0C0FF"
       right:
       - state: inhand-right
         scale: 0.5, 0.5
-        color: "#C0C0FF"
   - type: Damageable
     damageModifierSet: MedievalSilver
   - type: Injurable
@@ -210,8 +218,12 @@
     sprite: _Respiral/Objects/Items/Weapon/two_polearm.rsi
     layers:
     - state: blade
-      color: "#9370DB"
+      map: [ base ]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      base: MedievalProcessedMithril
+    inhand: MedievalProcessedMithril
   - type: MeleeWeapon
     damage:
       types:
@@ -229,11 +241,9 @@
       left:
       - state: inhand-left
         scale: 0.5, 0.5
-        color: "#9370DB"
       right:
       - state: inhand-right
         scale: 0.5, 0.5
-        color: "#9370DB"
   - type: Damageable
     damageModifierSet: MedievalMithril
   - type: Injurable
@@ -260,8 +270,12 @@
     sprite: _Respiral/Objects/Items/Weapon/two_polearm.rsi
     layers:
     - state: blade
-      color: "#4B0000"
+      map: [ base ]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      base: MedievalProcessedAdamantine
+    inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
     damage:
       types:
@@ -279,11 +293,9 @@
       left:
       - state: inhand-left
         scale: 0.5, 0.5
-        color: "#4B0000"
       right:
       - state: inhand-right
         scale: 0.5, 0.5
-        color: "#4B0000"
   - type: Damageable
     damageModifierSet: MedievalAdamantine
   - type: Injurable

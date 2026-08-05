@@ -56,6 +56,29 @@ it in `Content.Shared`. (First draft put it in Shared to dodge this; renamed + m
   material's color never changes at runtime.
 - `Inhand` paints every in-hand layer with one material. For multi-material items where blade and
   handle differ in-hand, this component would need extending to a per-inhand-layer dict.
-- Only the example `MedievalAdamantineKnife` is migrated; other weapons still hardcode `color:`.
-  Migrate incrementally by mapping the layer + adding `MaterialColor`.
+
+## Migration status: `Entities/Items/Weapon/*` — DONE (2026-08)
+All 78 material-tinted weapon variants across sword/dagger/cleaver/mace/brass_knuckles/whip/
+eveningstar/halberd/polearm/spear/hide_dagger/knife now use `MaterialColorVisuals` instead of
+hardcoded `color:`. Only 6 distinct colors were ever used in this folder, one-to-one with 6
+materials (verified no entity mixed two colors):
+```
+#8A8A8A → MedievalProcessedIron      #C0C0FF → MedievalProcessedSilver
+#8B4513 → MedievalProcessedWood      #9370DB → MedievalProcessedMithril
+#B0C4DE → MedievalSteel              #4B0000 → MedievalProcessedAdamantine
+```
+Map-key convention kept per-file: `eveningstar.yml`/`halberd.yml`/`polearm.yml`/`spear.yml` use
+`base`/`handle` (matches their two-handed base prototypes' existing layer naming); everything else
+uses `blade`/`handle`. The `handle` layer is only in `Layers` when it was independently colored
+(the "Wood" variant of each weapon type colors handle to match blade; metal variants leave the
+handle uncolored/default).
+
+**Not migrated, left as-is:**
+- `base.yml` — abstract parent prototypes still carry a default `color: "#8A8A8A"` on their `blade`
+  layer, but it's dead: every concrete weapon fully redefines its own `Sprite.layers` (lists replace,
+  not merge, on inheritance — see [[skills]] Prototype Inheritance Rules), so the base color is never
+  rendered. Left untouched rather than cleaned up, to keep this migration YAML-only and low-risk.
+- `crafted.yml`, `magic.yml`, `MedievalPeltWhip`/`MedievalPeltWhip2` in `whip.yml` — never had a
+  `color:` override (stone-axe, magic swords, leather whips use their raw RSI art or a pelt tone
+  with no hex hardcode), so there was nothing to migrate.
 ```

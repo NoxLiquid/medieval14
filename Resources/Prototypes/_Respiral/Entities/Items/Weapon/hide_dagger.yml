@@ -7,8 +7,12 @@
     sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
     layers:
     - state: blade
-      color: "#8A8A8A"
+      map: [ blade ]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      blade: MedievalProcessedIron
+    inhand: MedievalProcessedIron
   - type: MeleeWeapon
     attackRate: 2
     angle: 0
@@ -22,10 +26,8 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#8A8A8A"
       right:
       - state: inhand-right
-        color: "#8A8A8A"
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 50
@@ -53,9 +55,14 @@
     sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
     layers:
     - state: blade
-      color: "#8B4513"
+      map: [ blade ]
     - state: handle
-      color: "#8B4513"
+      map: [ handle ]
+  - type: MaterialColorVisuals
+    layers:
+      blade: MedievalProcessedWood
+      handle: MedievalProcessedWood
+    inhand: MedievalProcessedWood
   - type: MeleeWeapon
     attackRate: 2
     angle: 0
@@ -69,10 +76,8 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#8B4513"
       right:
       - state: inhand-right
-        color: "#8B4513"
   - type: Damageable
     damageModifierSet: MedievalWood
   - type: Injurable
@@ -98,8 +103,12 @@
     sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
     layers:
     - state: blade
-      color: "#B0C4DE"
+      map: [ blade ]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      blade: MedievalSteel
+    inhand: MedievalSteel
   - type: MeleeWeapon
     attackRate: 2
     angle: 0
@@ -113,10 +122,8 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#B0C4DE"
       right:
       - state: inhand-right
-        color: "#B0C4DE"
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable
@@ -143,8 +150,12 @@
     sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
     layers:
     - state: blade
-      color: "#C0C0FF"
+      map: [ blade ]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      blade: MedievalProcessedSilver
+    inhand: MedievalProcessedSilver
   - type: MeleeWeapon
     attackRate: 2
     angle: 0
@@ -159,10 +170,8 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#C0C0FF"
       right:
       - state: inhand-right
-        color: "#C0C0FF"
   - type: Damageable
     damageModifierSet: MedievalSilver
   - type: Injurable
@@ -189,8 +198,12 @@
     sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
     layers:
     - state: blade
-      color: "#9370DB"
+      map: [ blade ]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      blade: MedievalProcessedMithril
+    inhand: MedievalProcessedMithril
   - type: MeleeWeapon
     attackRate: 2
     angle: 0
@@ -204,10 +217,8 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#9370DB"
       right:
       - state: inhand-right
-        color: "#9370DB"
   - type: Damageable
     damageModifierSet: MedievalMithril
   - type: Injurable
@@ -234,8 +245,12 @@
     sprite: _Respiral/Objects/Items/Weapon/hide_dagger.rsi
     layers:
     - state: blade
-      color: "#4B0000"
+      map: [ blade ]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      blade: MedievalProcessedAdamantine
+    inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
     attackRate: 2
     angle: 0
@@ -249,10 +264,8 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#4B0000"
       right:
       - state: inhand-right
-        color: "#4B0000"
   - type: Damageable
     damageModifierSet: MedievalAdamantine
   - type: Injurable
