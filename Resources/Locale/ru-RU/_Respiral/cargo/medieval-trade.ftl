@@ -79,8 +79,16 @@ medieval-trade-product-jeweler-detail-desc = Основная деталь дл�
 # Книги ремёсел
 medieval-trade-category-books = Книги ремёсел
 
-medieval-trade-product-book-blacksmithing = Книга: Основы кузнечного дела
+medieval-trade-product-book-blacksmithing = Книга: Кузнечное дело — том 1
 medieval-trade-product-book-blacksmithing-desc = Учебник по основам кузнечного ремесла.
+medieval-trade-product-book-blacksmithing-understanding = Книга: Кузнечное дело — том 2
+medieval-trade-product-book-blacksmithing-understanding-desc = Второй том кузнечного ремесла: доступен освоившим первый том.
+medieval-trade-product-book-blacksmithing-confident = Книга: Кузнечное дело — том 3
+medieval-trade-product-book-blacksmithing-confident-desc = Третий том кузнечного ремесла: доступен освоившим второй том.
+medieval-trade-product-book-blacksmithing-deep = Книга: Кузнечное дело — том 4
+medieval-trade-product-book-blacksmithing-deep-desc = Четвёртый том кузнечного ремесла: доступен освоившим третий том.
+medieval-trade-product-book-blacksmithing-mastery = Книга: Кузнечное дело — том 5
+medieval-trade-product-book-blacksmithing-mastery-desc = Пятый, последний том кузнечного ремесла: доступен освоившим четвёртый том.
 medieval-trade-product-book-woodprocessing = Книга: Обработка древесины
 medieval-trade-product-book-woodprocessing-desc = Учебник по обработке дерева и плотницкому делу.
 medieval-trade-product-book-alchem = Книга: Алхимия

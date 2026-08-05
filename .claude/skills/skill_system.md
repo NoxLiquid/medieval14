@@ -70,7 +70,7 @@ Modifiers stack multiplicatively.
 |---|---|---|---|
 | MedievalWoodProcessing | wood processing | MedievalSawmill, MedievalCarpenterTable | MedievalSkillBookWoodProcessing |
 | MedievalStoneProcessing | stone processing | MedievalQuarry | MedievalSkillBookStoneProcessing |
-| MedievalBasicBlacksmithing | blacksmithing | MedievalAnvil | MedievalSkillBookBasicBlacksmithing |
+| MedievalBasicBlacksmithing | blacksmithing | MedievalAnvil | MedievalSkillBookBasicBlacksmithing (+4 tiered volumes, see below) |
 | MedievalTailor | tailoring | MedievalSewing, MedievalLoom | MedievalSkillBookTailor |
 | MedievalAlchem | alchemy | MedievalAlchemTable | MedievalSkillBookAlchem |
 | MedievalJewelry | jewelry | MedievalJeweler | MedievalSkillBookJewelry |
@@ -144,8 +144,31 @@ each item is now an object, not a bare skill id).
 - **Why `RequiredLevel`+`MaxLevel` on the same skill:** models a tiered book series — "Volume 1"
   (`requiredLevel: Vague, maxLevel: Basic`) teaches a beginner up to Basic; "Volume 2"
   (`requiredLevel: Basic, maxLevel: Confident`) only works once you've already read Volume 1 to Basic,
-  and caps at Confident. No prototype uses tiers yet (all current books use the defaults, i.e. untiered
-  single-shot learning to Mastery) — this is a lever for future content, not a retrofit of existing books.
+  and caps at Confident.
+- **First tiered series (2026-08): the 5 `MedievalBasicBlacksmithing` books** in `book.yml`, one per
+  `SkillKnowledgeLevel` band (all bands are 0.2 wide, so `points: 0.01` per read = 20 reads/volume,
+  matching the existing per-use rate convention):
+
+  | Book id | Entity `name` | requiredLevel | maxLevel | Icon state |
+  |---|---|---|---|---|
+  | `MedievalSkillBookBasicBlacksmithing` (pre-existing id, kept for the trade-catalog reference) | "основы кузнечного дела" | — (Vague) | `Basic` | `anvil` |
+  | `MedievalSkillBookBlacksmithingUnderstanding` | "кузнечное дело понимание" | `Basic` | `Understanding` | `book7` |
+  | `MedievalSkillBookBlacksmithingConfident` | "Том 3" | `Understanding` | `Confident` | `book8` |
+  | `MedievalSkillBookBlacksmithingDeep` | "Том 4" | `Confident` | `Deep` | `book9` |
+  | `MedievalSkillBookBlacksmithingMastery` | "Том 5" | `Deep` | `Mastery` | `book10` |
+
+  Naming (per requester's explicit choice, 2026-08): the first two volumes keep a wordy name (no colon,
+  so no YAML quoting needed — a bare `name: кузнечное дело понимание` is a valid plain scalar); the last
+  three are named by their position in the physical reading order ("Том 3/4/5", continuing from the
+  conceptual "volumes 1–2" of Basic/Understanding), NOT by the order the three levels were mentioned in
+  chat — numbering must follow the prerequisite chain (Confident→Deep→Mastery) or the labels would
+  contradict the actual read order. All 5 are purchasable via matching `cargoProduct`s in
+  `Catalog/medieval_trade.yml` (`MedievalTradeBookBlacksmithing{,Understanding,Confident,Deep,Mastery}`,
+  escalating cost 1000→2000→3500→5500→8000; the shop display names for the last three also say
+  "Том 3/4/5" to match the item's own name), with name/desc locale in BOTH `ru-RU` and `en-US`
+  `cargo/medieval-trade.ftl` (`medieval-trade-product-book-blacksmithing{,-understanding,-confident,
+  -deep,-mastery}{,-desc}`). All other skill books remain untiered (single entry, defaults, learn straight
+  to Mastery) — this is a template for tiering other skills later, not applied elsewhere yet.
 - **`LearnSkillWhenUsingSystem.CanLearnEntry(uid, entry)`** — the gate used by both `OnUseInHand` (decides
   whether to even start the DoAfter) and `OnDoAfter` (decides whether to actually grant points, entry by
   entry — previously it granted ALL entries unconditionally once the DoAfter completed, even ones the user

@@ -79,8 +79,16 @@ medieval-trade-product-jeweler-detail-desc = Core part for assembling a jeweler 
 # Craft books
 medieval-trade-category-books = Craft Books
 
-medieval-trade-product-book-blacksmithing = Book: Basics of Blacksmithing
+medieval-trade-product-book-blacksmithing = Book: Blacksmithing — Volume 1
 medieval-trade-product-book-blacksmithing-desc = A textbook on the fundamentals of blacksmithing.
+medieval-trade-product-book-blacksmithing-understanding = Book: Blacksmithing — Volume 2
+medieval-trade-product-book-blacksmithing-understanding-desc = The second volume of blacksmithing: available to those who have mastered the first volume.
+medieval-trade-product-book-blacksmithing-confident = Book: Blacksmithing — Volume 3
+medieval-trade-product-book-blacksmithing-confident-desc = The third volume of blacksmithing: available to those who have mastered the second volume.
+medieval-trade-product-book-blacksmithing-deep = Book: Blacksmithing — Volume 4
+medieval-trade-product-book-blacksmithing-deep-desc = The fourth volume of blacksmithing: available to those who have mastered the third volume.
+medieval-trade-product-book-blacksmithing-mastery = Book: Blacksmithing — Volume 5
+medieval-trade-product-book-blacksmithing-mastery-desc = The fifth and final volume of blacksmithing: available to those who have mastered the fourth volume.
 medieval-trade-product-book-woodprocessing = Book: Wood Processing
 medieval-trade-product-book-woodprocessing-desc = A textbook on woodworking and carpentry.
 medieval-trade-product-book-alchem = Book: Alchemy

@@ -84,7 +84,7 @@
 - type: entity
   parent: MedievalSkillBookBase
   id: MedievalSkillBookBasicBlacksmithing
-  name: основы кузнечного дела
+  name: кузнечное дело: том 1
   components:
   - type: Sprite
     layers:
@@ -109,6 +109,139 @@
     skills:
     - skill: MedievalBasicBlacksmithing
       points: 0.01
+      maxLevel: Basic
+    sound:
+      collection: MedievalLearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookBlacksmithingUnderstanding
+  name: кузнечное дело: том 2
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: book7
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - skill: MedievalBasicBlacksmithing
+      points: 0.01
+      requiredLevel: Basic
+      maxLevel: Understanding
+    sound:
+      collection: MedievalLearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookBlacksmithingConfident
+  name: кузнечное дело: том 3
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: book8
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - skill: MedievalBasicBlacksmithing
+      points: 0.01
+      requiredLevel: Understanding
+      maxLevel: Confident
+    sound:
+      collection: MedievalLearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookBlacksmithingDeep
+  name: кузнечное дело: том 4
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: book9
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - skill: MedievalBasicBlacksmithing
+      points: 0.01
+      requiredLevel: Confident
+      maxLevel: Deep
+    sound:
+      collection: MedievalLearnBook
+
+- type: entity
+  parent: MedievalSkillBookBase
+  id: MedievalSkillBookBlacksmithingMastery
+  name: кузнечное дело: том 5
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Misc/books.rsi
+      state: paper
+    - sprite: Objects/Misc/books.rsi
+      state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - sprite: Objects/Misc/books.rsi
+      state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - sprite: _Respiral/Objects/Items/books.rsi
+      state: book10
+      map: [ "icon" ]
+    - sprite: Objects/Misc/books.rsi
+      state: overlay_null
+      map: [ "overlay" ]
+  - type: LearnSkillWhenUsing
+    duration: 2
+    skills:
+    - skill: MedievalBasicBlacksmithing
+      points: 0.01
+      requiredLevel: Deep
+      maxLevel: Mastery
     sound:
       collection: MedievalLearnBook
 
