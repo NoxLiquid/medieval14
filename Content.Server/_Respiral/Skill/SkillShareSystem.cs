@@ -111,17 +111,36 @@ public sealed partial class SkillShareSystem : EntitySystem
         if (!TryComp<SkillComponent>(target, out var skillComponent))
             return;
 
-        var skills = new List<SkillInfo>();
-        foreach (var skill in skillComponent.Skills)
-        {
-            var info = _skillSystem.GetSkillInfo(target, skill.Key);
-            if (info != null)
-                skills.Add(info.Value);
-        }
+        // Админ-призрак видит точные уровни всех навыков.
+        var skills = BuildSkillList(target, null, skillComponent);
 
         var targetName = MetaData(target).EntityName;
 
         _euiManager.OpenEui(new SkillsListEui(targetName, skills), viewerSession);
+    }
+
+    /// <summary>
+    ///     Собирает список навыков цели для показа смотрящему. Для каждого навыка <see cref="SkillInfo.Evaluable"/>
+    ///     истинно, только если смотрящий владеет навыком не хуже цели; иначе уровень скрывается.
+    ///     <paramref name="viewer"/> null — оценивать может всё (админ-призрак).
+    /// </summary>
+    private List<SkillInfo> BuildSkillList(EntityUid target, EntityUid? viewer, SkillComponent targetComp)
+    {
+        var skills = new List<SkillInfo>();
+        foreach (var (skillId, targetProgress) in targetComp.Skills)
+        {
+            var info = _skillSystem.GetSkillInfo(target, skillId, targetComp);
+            if (info == null)
+                continue;
+
+            var value = info.Value;
+            if (viewer != null)
+                value.Evaluable = _skillSystem.GetSkillProgress(viewer.Value, skillId) >= targetProgress;
+
+            skills.Add(value);
+        }
+
+        return skills;
     }
 
     public void HandleSkillShareResponse(EntityUid target, EntityUid requester, ICommonSession targetSession, bool accepted)
@@ -147,13 +166,8 @@ public sealed partial class SkillShareSystem : EntitySystem
         if (!TryComp<SkillComponent>(target, out var skillComponent))
             return;
 
-        var skills = new List<SkillInfo>();
-        foreach (var skill in skillComponent.Skills)
-        {
-            var info = _skillSystem.GetSkillInfo(target, skill.Key);
-            if (info != null)
-                skills.Add(info.Value);
-        }
+        // Запросивший видит уровень навыка, только если сам знает его не хуже цели.
+        var skills = BuildSkillList(target, requester, skillComponent);
 
         var targetName = MetaData(target).EntityName;
 

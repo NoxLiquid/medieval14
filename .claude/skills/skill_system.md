@@ -247,6 +247,32 @@ skills into real capabilities.
   at the examined target, so a component on the examiner can't receive it — the target checks the
   examiner instead (the approach the requester suggested).
 
+## Knowledge levels (`SkillKnowledge`, 2026-08)
+
+Maps a raw skill progress 0..1 into a named "knowledge type" — shown in the skills UI and intended
+as a reusable threshold for `NeedSkill` gates.
+
+- **`Content.Shared/_Respiral/Skill/SkillKnowledge.cs`** — `enum SkillKnowledgeLevel`
+  (`Vague`/`Basic`/`Understanding`/`Confident`/`Deep`/`Mastery`) + static `SkillKnowledge`:
+  `GetLevel(float)`, `GetMinProgress(level)` (inverse), `GetLevelName(...)` (localized). Bands:
+  `<0.2` Vague, `<0.4` Basic, `<0.6` Understanding, `<0.8` Confident, `<1.0` Deep, `>=1.0` Mastery.
+  Locale keys `skill-knowledge-{vague,basic,understanding,confident,deep,mastery}` in
+  `ru-RU/_respiral/skill.ftl` (skill.ftl is ru-only). `GetMinProgress` exists so a future
+  `NeedSkill` component can require a `SkillKnowledgeLevel` and convert it to a progress threshold.
+
+### Demonstration mode — evaluability gate
+- **`SkillInfo`** gained `bool Evaluable = true` (positional record-struct, mutable) — whether the
+  viewer may assess the skill. Networked (used only via the share EUI).
+- **Server `SkillShareSystem.BuildSkillList(target, viewer, targetComp)`** — both share paths use it.
+  Per skill `Evaluable = viewerProgress >= targetProgress` (viewer must know it at least as well as the
+  demonstrator, else the exact level is hidden). `viewer == null` → all evaluable (admin-ghost path).
+  A viewer without `SkillComponent` reads 0 for every skill → can't evaluate anything the target has > 0.
+- **Client `SkillsListWindow.SetSkills(..., bool demonstration = false)`**:
+  - `demonstration == false` (own skills, character-menu path) → right label shows the exact `N%` (unchanged).
+  - `demonstration == true` (share EUI, `SkillsListEui` passes it) → right label shows
+    `SkillKnowledge.GetLevelName(Progress)`; if `!Evaluable` the right label is blank, the description is
+    replaced by `skill-knowledge-cant-evaluate`, and the progress bar is forced full (real level not leaked).
+
 ## Bugfixes (2026-07)
 
 - **`AddSkillProgress` didn't network.** `SkillComponent.Skills` is an `AutoNetworkedField`, but

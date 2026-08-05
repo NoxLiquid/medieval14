@@ -22,7 +22,11 @@ public sealed partial class SkillsListWindow : DefaultWindow
         RobustXamlLoader.Load(this);
     }
 
-    public void SetSkills(List<SkillInfo> skills, string? targetName = null)
+    /// <param name="demonstration">
+    ///     true — режим демонстрации чужих навыков: вместо процента показывается тип знания,
+    ///     а неоценимые навыки скрываются.
+    /// </param>
+    public void SetSkills(List<SkillInfo> skills, string? targetName = null, bool demonstration = false)
     {
         SkillsContainer.RemoveAllChildren();
 
@@ -76,21 +80,35 @@ public sealed partial class SkillsListWindow : DefaultWindow
             conditionControl.ProgressTexture.SetSize = iconSize;
             conditionControl.ProgressTexture.Stretch = TextureRect.StretchMode.Scale;
             conditionControl.ProgressTexture.Texture = spriteSystem.Frame0(skill.Icon);
-            conditionControl.ProgressTexture.Progress = skill.Progress;
+            // В демонстрации неоценимого навыка не раскрываем реальный уровень, показываем полную полосу.
+            conditionControl.ProgressTexture.Progress = demonstration && !skill.Evaluable ? 1f : skill.Progress;
+
+            // Неоценимый навык: реального уровня нет — вместо описания показываем сообщение об этом.
+            var cantEvaluate = demonstration && !skill.Evaluable;
 
             var titleMessage = new FormattedMessage();
             var descriptionMessage = new FormattedMessage();
 
             titleMessage.AddText(skill.Name);
-            descriptionMessage.AddText(skill.Description);
+            descriptionMessage.AddText(cantEvaluate
+                ? Loc.GetString("skill-knowledge-cant-evaluate")
+                : skill.Description);
 
             conditionControl.Title.SetMessage(titleMessage);
             conditionControl.Description.SetMessage(descriptionMessage);
 
-            // Progress percentage label
+            // Свои навыки — точный процент; демонстрация — тип знания (для неоценимого метка пустая).
+            string knowledgeText;
+            if (!demonstration)
+                knowledgeText = $"{(int)(skill.Progress * 100)}%";
+            else if (cantEvaluate)
+                knowledgeText = string.Empty;
+            else
+                knowledgeText = SkillKnowledge.GetLevelName(skill.Progress);
+
             var progressLabel = new Label
             {
-                Text = $"{(int)(skill.Progress * 100)}%",
+                Text = knowledgeText,
                 StyleClasses = { StyleNano.StyleClassLabelSubText },
                 VerticalAlignment = VAlignment.Center,
                 HorizontalAlignment = HAlignment.Right,

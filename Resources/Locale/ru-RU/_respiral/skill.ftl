@@ -5,3 +5,12 @@ skill-canlearn-gained = Вы не можете получить эти знан�
 skill-character-button = Навыки
 skills-list-window-title = Навыки
 skills-list-no-skills = У вас пока нет изученных навыков.
+
+# Типы знания навыка (по прогрессу освоения)
+skill-knowledge-vague = слабое представление
+skill-knowledge-basic = есть понимание
+skill-knowledge-understanding = понимание
+skill-knowledge-confident = уверенное владение
+skill-knowledge-deep = глубокие знания
+skill-knowledge-mastery = мастерство
+skill-knowledge-cant-evaluate = Знания в этой области шире ваших — вы не в состоянии их оценить.
