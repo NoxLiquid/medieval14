@@ -130,8 +130,8 @@
     prototype: MedievalJeweler
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedIron: 200
-      MedievalProcessedGold: 100
+      MedievalProcessedWood: 200
+      MedievalSteel: 100
 
 - type: entity
   id: MedievalConnectingMagicBallDetail

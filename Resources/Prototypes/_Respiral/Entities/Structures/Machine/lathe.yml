@@ -302,7 +302,7 @@
   description: Изящный станок для огранки камней и создания ювелирных изделий. Основной инструмент ювелира.
   components:
   - type: Sprite
-    sprite: _Respiral/Structures/Machines/temp.rsi
+    sprite: _Respiral/Structures/Machines/jewelry.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -317,7 +317,7 @@
         - MedievalJewelerMaterialStorage
   - type: Lathe
     idleState: icon
-    runningState: icon
+    runningState: building
     defaultProductionAmount: 1
     staticPacks:
     - MedievalJeweler

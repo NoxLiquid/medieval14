@@ -96,7 +96,7 @@ tag `Medieval<Name>MaterialStorage`.
 | MedievalTannery | Tailor | processed pelt |
 | MedievalLoom | Tailor | cloth |
 | MedievalSewing | Tailor | clothes, bags, belts, bedsheets, carpets |
-| MedievalJeweler | Jewelry | ⚠️ **empty pack** (`recipes: []`) — non-functional |
+| MedievalJeweler | Jewelry | ⚠️ **empty pack** — sprite `jewelry.rsi`, detail wood+steel (Anvil), accepts raw/processed gold+silver & all 4 gems; no craft recipes yet |
 | MedievalPassportOffice | Bureaucracy | passport (consumes `MedievalPaper` material) |
 | MedievalAlchemTable | Alchem | ChemMaster UI (pills/bottles) |
 | MedievalHotplate | none | SolutionHeater 160/s |
@@ -105,6 +105,13 @@ tag `Medieval<Name>MaterialStorage`.
 
 Machine boards/details are `MachineBoard` entities in `Entities/Objects/Parts/production.yml`,
 crafted at CarpenterTable/Anvil (`MedievalCarpenterTableDetailRecipe` etc.).
+
+**⚠️ Lathe material-whitelist gotcha:** a `Lathe` auto-derives its accepted materials from its
+recipes (`LatheSystem.OnGetWhitelist` → overwrites `MaterialStorage.MaterialWhiteList` on MapInit).
+An **empty pack ⇒ empty material whitelist ⇒ the machine accepts NO material inserts**, regardless of
+the entity `Whitelist` tags. So `MedievalJeweler` (empty pack) won't accept gold/silver/gems until it
+has ≥1 recipe — the storage tags are scaffolding that activates once recipes exist. Setting
+`MaterialWhiteList` in YAML does not help (it's overwritten at init).
 
 ## Known gaps / balance notes
 

@@ -411,6 +411,14 @@
     MedievalProcessedWood: 400
 
 - type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalJewelerDetailRecipe
+  result: MedievalJewelerDetail
+  materials:
+    MedievalProcessedWood: 200
+    MedievalSteel: 100
+
+- type: latheRecipe
   parent: MedievalBaseToolsRecipe
   id: MedievalConstructionToolsRecipe
   result: MedievalHammer
