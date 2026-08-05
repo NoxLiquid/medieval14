@@ -9,7 +9,7 @@ namespace Content.Client.Lathe.UI;
 // лишь вызывает MeetsRecipeSkill (для недоступности) и GetRecipeSkillTooltip (для подсказки).
 public sealed partial class LatheMenu
 {
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
 
     /// <summary>
     ///     Хватает ли локальному игроку навыков для этого рецепта (нет требований — да).

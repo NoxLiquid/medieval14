@@ -12,9 +12,9 @@ namespace Content.Server._Respiral.UI;
 ///     Аналог <see cref="Content.Server.Administration.QuickDialogSystem"/>, но для простого выбора
 ///     да/нет через колбэки: вызываешь <see cref="OpenConfirmDialog"/> и обрабатываешь ответ в них.
 /// </summary>
-public sealed class ConfirmDialogSystem : EntitySystem
+public sealed partial class ConfirmDialogSystem : EntitySystem
 {
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
 
     /// <summary>Обработчики «да»/«нет» по идентификатору открытого окна.</summary>
     private readonly Dictionary<int, (Action Yes, Action No)> _openDialogs = new();

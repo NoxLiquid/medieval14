@@ -7,9 +7,9 @@ namespace Content.Client._Respiral.UI;
 ///     Клиентская часть окна подтверждения «Да/Нет»: открывает окно по запросу сервера
 ///     и отправляет обратно результат нажатия. Пара к серверному <c>ConfirmDialogSystem</c>.
 /// </summary>
-public sealed class ConfirmDialogSystem : EntitySystem
+public sealed partial class ConfirmDialogSystem : EntitySystem
 {
-    [Dependency] private readonly IClyde _clyde = default!;
+    [Dependency] private IClyde _clyde = default!;
 
     public override void Initialize()
     {
