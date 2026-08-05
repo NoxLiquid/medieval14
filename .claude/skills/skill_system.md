@@ -161,9 +161,32 @@ The paper text is displayed as "scribbles", more so the lower the READER's liter
   `_currentSkills.Count == 0` early-returns (both in the add-button handler and the press handler) were
   removed — with 0 skills the window opens showing `skills-list-no-skills`. `SkillsListWindow.SetSkills`
   already handles the empty list.
-- **Other players' skills** — via the `SkillComponent` verb (`SkillShareSystem`, server): sends a
-  share-request EUI to the target (accept → `SkillsListEui`); admin-ghost opens directly. The verb
-  early-returns when `User == Target`, so it is NOT the path for own skills (that's the character button).
+- **Other players' skills** — via the `SkillComponent` verb (`SkillShareSystem`, server): asks the target
+  a Yes/No via `ConfirmDialogSystem.OpenConfirmDialog` (see below); on "Yes" the server calls
+  `ShowSkillsTo(target, requester)` which re-checks distance and opens `SkillsListEui` for the requester.
+  Admin-ghost opens directly (`OpenSkillsDirectly`). The verb early-returns when `User == Target`, so it is
+  NOT the path for own skills (that's the character button). **The old per-use-case
+  `SkillShareRequestEui` (client+server) + `SkillShareRequestEuiState`/`SkillShareResponseMessage` were
+  removed** in favour of the shared dialog system.
+
+### Reusable Yes/No dialog — `ConfirmDialogSystem` (2026-08)
+Generic confirmation dialog modelled on upstream `QuickDialogSystem.OpenDialog`, but for a simple
+да/нет choice handled via callbacks (no bespoke EUI per feature). Lives in `_Respiral/UI`:
+- **Shared** `Content.Shared/_Respiral/UI/ConfirmDialogEvents.cs` — networked `ConfirmDialogOpenEvent`
+  (id, title, message, yesText, noText) + `ConfirmDialogResponseEvent` (id, confirmed).
+- **Server** `Content.Server/_Respiral/UI/ConfirmDialogSystem.cs` —
+  `OpenConfirmDialog(session, title, message, yesAction, noAction? = null, yesText? = null, noText? = null)`.
+  Tracks open dialogs by an incrementing id + per-`NetUserId` list (same bookkeeping as QuickDialog);
+  `OnResponse` invokes `yesAction`/`noAction` and disconnects on an unknown id; disconnect/zombie →
+  `noAction` for all the user's open dialogs. Default button captions from locale `confirm-dialog-{yes,no}`
+  (`ru-RU/_respiral/ui.ftl`).
+- **Client** `Content.Client/_Respiral/UI/ConfirmDialogSystem.cs` + `ConfirmDialogWindow.cs` — opens the
+  window on the open-event, raises the response on Yes/No; closing the window without a choice = No
+  (guarded by an `answered` flag so the explicit Yes/No close doesn't double-send).
+- **Usage pattern:** inject the server system, call `OpenConfirmDialog(...)` with a `yesAction` lambda.
+  Reuse this for any future да/нет prompt instead of a new EUI. skill-share locale keys
+  (`skill-share-verb-text`, `-verb-admin-text`, `-request-title`, `-request-message`) were also added to
+  `skill.ftl` (they were previously undefined → raw keys shown).
 
 ### Console command: setskill (2026-07, renamed from `addskill` 2026-08)
 

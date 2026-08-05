@@ -1,6 +1,7 @@
 using Content.Server.Administration.Managers;
 using Content.Server.EUI;
 using Content.Server.Mind;
+using Content.Server._Respiral.UI;
 using Content.Shared._Respiral.Skills;
 using Content.Shared._Respiral.Skills.Components;
 using Content.Shared.Ghost;
@@ -19,6 +20,7 @@ public sealed partial class SkillShareSystem : EntitySystem
     [Dependency] private MindSystem _mindSystem = default!;
     [Dependency] private SkillSystem _skillSystem = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private ConfirmDialogSystem _confirmDialog = default!;
 
     private const float MaxShareDistance = 3f;
 
@@ -100,7 +102,12 @@ public sealed partial class SkillShareSystem : EntitySystem
 
         var requesterName = MetaData(requester).EntityName;
 
-        _euiManager.OpenEui(new SkillShareRequestEui(target, requester, this, requesterName), targetSession);
+        // Спрашиваем цель — показать ли навыки; при «Да» открываем список запросившему.
+        _confirmDialog.OpenConfirmDialog(
+            targetSession,
+            Loc.GetString("skill-share-request-title"),
+            Loc.GetString("skill-share-request-message", ("name", requesterName)),
+            yesAction: () => ShowSkillsTo(target, requester));
     }
 
     private void OpenSkillsDirectly(EntityUid viewer, EntityUid target)
@@ -143,11 +150,12 @@ public sealed partial class SkillShareSystem : EntitySystem
         return skills;
     }
 
-    public void HandleSkillShareResponse(EntityUid target, EntityUid requester, ICommonSession targetSession, bool accepted)
+    /// <summary>
+    ///     Открывает список навыков <paramref name="target"/> для <paramref name="requester"/>
+    ///     после согласия цели. Дистанция перепроверяется — цель могла отойти за время диалога.
+    /// </summary>
+    private void ShowSkillsTo(EntityUid target, EntityUid requester)
     {
-        if (!accepted)
-            return;
-
         if (!Exists(requester))
             return;
 
