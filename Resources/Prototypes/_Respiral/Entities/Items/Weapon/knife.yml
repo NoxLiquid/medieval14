@@ -239,8 +239,12 @@
     sprite: _Respiral/Objects/Items/Weapon/knife.rsi
     layers:
     - state: blade
-      color: "#4B0000"
+      map: ["blade"]
     - state: handle
+  - type: MaterialColorVisuals
+    layers:
+      blade: MedievalProcessedAdamantine
+    inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
     attackRate: 1.2
     angle: 25
@@ -255,10 +259,8 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#4B0000"
       right:
       - state: inhand-right
-        color: "#4B0000"
   - type: Damageable
     damageModifierSet: MedievalAdamantine
   - type: Injurable

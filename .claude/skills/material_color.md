@@ -1,0 +1,61 @@
+# MaterialColor — tint sprites/in-hand from a material's color
+
+Single source of truth for material tint: the `color` field on a `type: material` prototype.
+Instead of hardcoding `color: "#4B0000"` in every weapon/tool sprite layer and in-hand visual,
+an entity carries `MaterialColor` and the client applies the material's color at spawn.
+
+## Why
+YAML anchors are single-file only and there is no cross-file constant system in Robust prototypes,
+so a color shared between `materials.yml` and entity files (e.g. `Weapon/*.yml`) can't be a YAML
+variable. Solved at runtime instead.
+
+## Pieces (client-only)
+- `Content.Client/_Respiral/Materials/MaterialColorVisualsComponent.cs`
+  - `Layers`: `Dictionary<string, ProtoId<MaterialPrototype>>` — sprite **LayerMap key** → material.
+  - `Inhand`: `ProtoId<MaterialPrototype>?` — material whose color paints **all** in-hand layers.
+- `Content.Client/_Respiral/Materials/MaterialColorSystem.cs` (client-only, visuals)
+
+### Why the name ends in `Visuals` (important framework rule)
+The component is purely client visual, so it lives in `Content.Client`. But the **server also parses
+every entity prototype**, so it sees `- type: MaterialColorVisuals` on the knife. Server-side unknown
+components are handled by `ComponentFactory.GetComponentAvailability`:
+- `Content.Server/Entry/EntryPoint.cs` calls `IgnoreMissingComponents("Visuals")` → an unregistered
+  component is silently `Ignore`d **only if its name ends with `Visuals`**; otherwise it's `Unknown`
+  and logs `Unknown component '...' in prototype!` for every prototype using it (spam; fails clean-load
+  tests).
+- `Content.Client/Entry/EntryPoint.cs` calls `IgnoreMissingComponents()` (empty postfix) → the client
+  ignores *any* unknown component (that's how server-only components don't break the client).
+
+⇒ **A client-only component referenced in shared prototypes MUST be named `…Visuals`.** Otherwise put
+it in `Content.Shared`. (First draft put it in Shared to dodge this; renamed + moved to Client instead.)
+  - On `ComponentStartup` (2-pass init guarantees `SpriteComponent` layer map is already built):
+    - for each `Layers` entry: `LayerMapTryGet(key, logMissing:false)` then `LayerSetColor(index, material.Color)`.
+    - if `Inhand` set: mutate every `ItemComponent.InhandVisuals[*]` layer's `.Color` (PrototypeLayerData
+      is a mutable class), then `SharedItemSystem.VisualsChanged` to refresh if already held.
+
+## Prototype usage (example: `MedievalAdamantineKnife`, `Weapon/knife.yml`)
+```yaml
+- type: Sprite
+  layers:
+  - state: blade
+    map: ["blade"]      # REQUIRED: the layer must be mapped so the dict key resolves
+  - state: handle
+- type: MaterialColorVisuals
+  layers:
+    blade: MedievalProcessedAdamantine
+  inhand: MedievalProcessedAdamantine
+- type: Item
+  inhandVisuals:
+    left:  [ { state: inhand-left } ]   # no color: — MaterialColor sets it
+    right: [ { state: inhand-right } ]
+```
+
+## Gotchas
+- The targeted sprite layer MUST have a `map:` key; unmapped layers are silently skipped.
+- Color is applied once at startup (static). It is NOT networked/appearance-driven — fine because a
+  material's color never changes at runtime.
+- `Inhand` paints every in-hand layer with one material. For multi-material items where blade and
+  handle differ in-hand, this component would need extending to a per-inhand-layer dict.
+- Only the example `MedievalAdamantineKnife` is migrated; other weapons still hardcode `color:`.
+  Migrate incrementally by mapping the layer + adding `MaterialColor`.
+```
