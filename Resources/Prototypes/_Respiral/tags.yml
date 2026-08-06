@@ -47,6 +47,9 @@
   id: MedievalWall
 
 - type: Tag
+  id: MedievalRoof
+
+- type: Tag
   id: MedievalDiagonal
 
 - type: Tag

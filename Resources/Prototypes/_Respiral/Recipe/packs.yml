@@ -88,6 +88,7 @@
   - MedievalQuarryDetailRecipe
   - MedievalJewelerDetailRecipe
   - MedievalConstructionToolsRecipe
+  - MedievalRoofHammerRecipe
   - MedievalDrinkMugWoodRecipe
   - MedievalDrinkMugIronRecipe
   - MedievalDrinkMugSteelRecipe
@@ -105,6 +106,7 @@
   - MedievalKeyRecipe
   - MedievalLockRecipe
   - MedievalConstructionToolsRecipe
+  - MedievalRoofHammerRecipe
   - MedievalBunchRecipe
   - MedievalScissorsRecipe
   - MedievalGoldCoinRecipe

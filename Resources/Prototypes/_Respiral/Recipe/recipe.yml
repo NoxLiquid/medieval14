@@ -490,6 +490,17 @@
     MedievalProcessedIron: 100
     MedievalProcessedWood: 100
 
+# Кровельный молот (RCD только для крыш), заряжается MedievalConstructionToolsAmmo как обычный RCD
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalRoofHammerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
+  result: MedievalRoofHammer
+  materials:
+    MedievalProcessedIron: 150
+    MedievalProcessedWood: 100
+
 - type: latheRecipe
   parent: MedievalBaseToolsRecipe
   id: MedievalKeyRecipe

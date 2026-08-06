@@ -27,6 +27,14 @@
   - type: SunShadowCast
   - type: WallMount
     arc: 360
+  # тег RCD-демонтаж нужны кровельному молоту (MedievalRoofHammer), чтобы отличать крыши от прочих построек
+  - type: Tag
+    tags:
+    - MedievalRoof
+  - type: RCDDeconstructable
+    cost: 4
+    delay: 4
+    fx: EffectRCDDeconstruct4
 
 - type: entity
   parent: MedievalBaseRoof
