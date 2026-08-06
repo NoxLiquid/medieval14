@@ -214,3 +214,8 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: AddWearAfterUse
+    triggers: [RCD]
+    damage:
+      types:
+        Structural: 5
