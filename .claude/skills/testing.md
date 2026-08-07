@@ -67,6 +67,13 @@ Assign the required status in branch protection to `respiral-test.yml`, the upst
   4. `KeyNotFoundException: ... 'ActionSpellFireball'` (2026-06) — the base fireball spell was renamed to
      `MedievalActionSpellFireball`, but `MedievalActionSpellWaterball` still had `parent: ActionSpellFireball`
      (missing the `Medieval` prefix). Fixed to `parent: MedievalActionSpellFireball`.
+  5. `ArgumentException: An item with the same key has already been added. Key: weather` (2026-08) —
+     `Tiles/floors.yml`, `MedievalFloorMyceliumLight`: two `weather: true` lines in one tile prototype
+     (YAML mapping, duplicate key). Crashes the whole file (no line/col in a useful place — the exception
+     surfaces at the YAML *parser* level, before prototype validation, so the error only names the file).
+     Fix: delete the duplicate line. To find more of these: any prototype editing tool/agent that
+     copy-paste-edits a block risks leaving a stray duplicate key — grep the file for the suspect key
+     and diff line counts per block.
 - After the crashes come essentially non-blocking but linter-failing sprite errors on CLIENT
   (`MultipleAssertException`): missing states in an RSI or deleted RSIs. E.g.
   `fire_blade/spectral_blade` looked for `blade/handle` (see combat.md), and `test.yml`

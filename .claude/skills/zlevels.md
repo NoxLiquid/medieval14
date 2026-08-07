@@ -49,3 +49,7 @@ Caveats:
 ### `Required properties not provided for` in Serilog logs
 **Cause:** `StationNameSetup.mapNameTemplate` contains placeholders `{0}`, `{1}` without setting a `nameGenerator`. The station name stays unformatted. When `StationSystem.AddGridToStation` logs (line 350), Serilog interprets `{0}` and `{1}` as named template parameters.
 **Solution:** Either remove the placeholders from `mapNameTemplate`, or add a `nameGenerator` to the prototype.
+
+### "File not found" for a map that visibly exists (2026-08)
+**Cause:** a new station map was created by copy-pasting `empty.yml`/`medieval_empty*.yml` as a template (e.g. `Edgehaven`) and only the `zMap` block's paths + ids were renamed — the `gameMap.mapPath`/`mapsBelow`/`mapsAbove`/`stations:` key/`StationNameSetup.mapNameTemplate` and the map files' own `BecomesStation.id`/`MetaData.name` were left as stale `Empty`/`/Maps/_Respiral/Empty/...` copies. The YAMLLinter catches the path mismatch (`File not found. (/Maps/_Respiral/Empty/medieval_edgehaven.yml)`); a mismatched `BecomesStation.id` vs. the `stations:` key would NOT be caught by the linter (both are valid strings) — check it manually.
+**Solution:** when cloning `empty.yml` for a new map, grep the new prototype + its 3 map files for the old map's name/`Empty` and rename every occurrence, not just the `zMap` block.

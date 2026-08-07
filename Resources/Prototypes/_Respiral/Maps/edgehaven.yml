@@ -1,18 +1,18 @@
 - type: gameMap
   id: MedievalEdgehaven
   mapName: 'Edgehaven' # Приют на Краю
-  mapPath: /Maps/_Respiral/Empty/medieval_edgehaven.yml
+  mapPath: /Maps/_Respiral/Edgehaven/medieval_edgehaven.yml
   randomRotation: false
   minPlayers: 0
   stations:
-    Empty:
+    Edgehaven:
       stationProto: MedievalStandardTerritory
       components:
         - type: CEStationZLevels
           mapsBelow:
-            - /Maps/_Respiral/Empty/medieval_edgehaven_below.yml
+            - /Maps/_Respiral/Edgehaven/medieval_edgehaven_below.yml
           mapsAbove:
-            - /Maps/_Respiral/Empty/medieval_edgehaven_above.yml
+            - /Maps/_Respiral/Edgehaven/medieval_edgehaven_above.yml
           zLevelsComponentOverrides:
             - type: LightCycle
               offset: 1200
@@ -46,7 +46,7 @@
                   Oxygen: 21.82478
                   Nitrogen: 82.10312
         - type: StationNameSetup
-          mapNameTemplate: 'Empty'
+          mapNameTemplate: 'Edgehaven'
         - type: StationJobs
           availableJobs:
             MedievalPilligrim: [ -1, -1 ]

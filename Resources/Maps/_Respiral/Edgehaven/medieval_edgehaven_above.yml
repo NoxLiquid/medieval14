@@ -19,10 +19,10 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Mapping MedievalEmpty [2]
+      name: Mapping MedievalEdgehaven [2]
     - type: Transform
     - type: BecomesStation
-      id: Empty
+      id: Edgehaven
     - type: Map
       mapPaused: True
     - type: GridTree

@@ -563,7 +563,6 @@
   heatCapacity: 10000
   weather: true
   sturdy: false
-  weather: true
   absorbent: true
 
 # Камень
