@@ -1,0 +1,192 @@
+- type: entity
+  parent: BaseItem
+  id: MedievalBandage
+  name: бинт
+  description: Плотная тканевая повязка, останавливающая кровотечение и стягивающая мелкие раны.
+  suffix: Средневековье, 5
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Item
+    size: Small
+    sprite: _Respiral/Objects/Specific/Medical/bandage.rsi
+    heldPrefix: bandage
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Medical/bandage.rsi
+    state: bandage_3
+    layers:
+    - state: bandage_3
+      map: [ "base" ]
+  - type: Healing
+    damageContainers:
+    - Biological
+    - MedievalBiological
+    damage:
+      types:
+        Slash: -6
+        Piercing: -6
+    bloodlossModifier: -10
+    delay: 2
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  - type: Stack
+    stackType: MedievalBandage
+    count: 5
+    baseLayer: base
+    layerStates:
+    - bandage
+    - bandage_2
+    - bandage_3
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 50
+
+- type: entity
+  parent: MedievalBandage
+  id: MedievalBandage1
+  suffix: Средневековье, 1
+  components:
+  - type: Sprite
+    state: bandage
+  - type: Stack
+    count: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 10
+
+- type: entity
+  parent: BaseHealingItem
+  id: MedievalOintment
+  name: мазь
+  description: Густая целебная мазь для лечения ожогов.
+  suffix: Средневековье, Full
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Medical/ointment.rsi
+    state: ointment
+  - type: Item
+    sprite: _Respiral/Objects/Specific/Medical/ointment.rsi
+    heldPrefix: ointment
+    storedSprite:
+      state: ointment-storage
+      sprite: _Respiral/Objects/Specific/Medical/ointment.rsi
+  - type: Healing
+    damageContainers:
+    - Biological
+    - MedievalBiological
+    damage:
+      types:
+        Heat: -5
+        Cold: -5
+    healingBeginSound:
+      path: "/Audio/Items/Medical/ointment_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/ointment_end.ogg"
+  - type: Stack
+    stackType: MedievalOintment
+    count: 10
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 30
+
+- type: entity
+  parent: MedievalOintment
+  id: MedievalOintment1
+  suffix: Средневековье, Single
+  components:
+  - type: Stack
+    count: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 3
+
+- type: entity
+  parent: BaseHealingItem
+  id: MedievalBrutepack
+  name: бинт для ушибов
+  description: Тонкая ткань, пропитанная травами для лечения ушибов. Слишком хрупкая, чтобы останавливать кровотечение.
+  suffix: Средневековье, Full
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Medical/bandage.rsi
+    state: herbbandage_3
+    layers:
+    - state: herbbandage_3
+      map: [ "base" ]
+  - type: Item
+    sprite: _Respiral/Objects/Specific/Medical/bandage.rsi
+    heldPrefix: herbbandage
+  - type: Healing
+    damageContainers:
+    - Biological
+    - MedievalBiological
+    damage:
+      types:
+        Blunt: -8
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  - type: Stack
+    stackType: MedievalBrutepack
+    count: 10
+    baseLayer: base
+    layerStates:
+    - herbbandage
+    - herbbandage_2
+    - herbbandage_3
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 30
+
+- type: entity
+  parent: MedievalBrutepack
+  id: MedievalBrutepack1
+  suffix: Средневековье, Single
+  components:
+  - type: Sprite
+    state: herbbandage
+  - type: Stack
+    count: 1
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 3
+
+- type: entity
+  parent: BaseSyringe
+  id: MedievalSyringe
+  name: шприц
+  description: Стеклянный шприц с иглой — набрать раствор или ввести его в рану.
+  suffix: Средневековье
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Specific/Chemistry/syringe.rsi
+    layers:
+    - state: syringe1
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+      visible: false
+    - state: base
+      map: [ "enum.SolutionContainerLayers.Base" ]
+  - type: Icon
+    sprite: _Respiral/Objects/Specific/Chemistry/syringe.rsi
+    state: base
+  - type: Item
+    size: Tiny
+    sprite: _Respiral/Objects/Specific/Chemistry/syringe.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: syringe
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalGlass: 30

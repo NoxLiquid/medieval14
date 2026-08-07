@@ -49,3 +49,7 @@
 - type: latheCategory
   id: MedievalBookCategory
   name: lathe-medieval-category-books
+
+- type: latheCategory
+  id: MedievalMedicalCategory
+  name: lathe-medieval-category-medical

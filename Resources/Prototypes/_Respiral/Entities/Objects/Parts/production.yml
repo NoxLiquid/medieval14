@@ -169,6 +169,17 @@
       MedievalProcessedWood: 300
 
 - type: entity
+  id: MedievalMedicalTableDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь медицинского стола
+  components:
+  - type: MachineBoard
+    prototype: MedievalMedicalTable
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300
+
+- type: entity
   id: MedievalPassportOfficeDetail
   parent: MedievalBaseMachineDetail
   name: деталь паспортного стола

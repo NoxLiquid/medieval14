@@ -10,6 +10,14 @@
   - MedievalPaperRecipe
 
 - type: latheRecipePack
+  id: MedievalMedicalTablePack
+  recipes:
+  - MedievalBandageRecipe
+  - MedievalOintmentRecipe
+  - MedievalBrutepackRecipe
+  - MedievalSyringeRecipe
+
+- type: latheRecipePack
   id: MedievalBookstandPack
   recipes:
   - MedievalSkillBookLiteracyRecipe
@@ -54,6 +62,7 @@
   - MedievalHotplateDetailRecipe
   - MedievalPassportOfficeDetailRecipe
   - MedievalBookstandDetailRecipe
+  - MedievalMedicalTableDetailRecipe
   - MedievalFloorTileItemWoodPatternRecipe
   - MedievalFloorTileItemWoodRecipe
   - MedievalFloorTileItemWoodLargeRecipe

@@ -403,3 +403,36 @@
       MedievalRawManaCrystal: 100
       MedievalProcessedIron: 4
       MedievalProcessedStone: 6
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalMedicalTable
+  name: медицинский стол
+  description: Рабочее место травника — здесь готовят повязки, мази и настойки.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/medical_table.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalMedicalTableDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalMedicalTableMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalMedicalTablePack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 404
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 4
+      MedievalProcessedStone: 6

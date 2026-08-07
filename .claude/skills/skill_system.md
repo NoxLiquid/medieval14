@@ -354,6 +354,45 @@ Maps a raw skill progress 0..1 into a named "knowledge type" — used both in th
     `SkillKnowledge.GetLevelName(Progress)`; if `!Evaluable` the right label is blank, the description is
     replaced by `skill-knowledge-cant-evaluate`, and the progress bar is forced full (real level not leaked).
 
+## Medical table (MedievalMedicalTable, 2026-08)
+
+Another lathe, same pattern as paperweight/bookstand. Crafts 4 items ported/placeholder-sprited from CP
+(`Entities/Objects/Medical/medical.yml`), all from `MedievalCloth` (bandage/ointment/brutepack, 50 each)
+except the syringe (`MedievalGlass`, 30) — gated by `MedievalAlchem: Basic` (`Recipe/medical.yml`,
+`MedievalBaseMedicalRecipe`). `MedievalAlchem` is the actual in-game "herbalist" skill — the `MedievalHerbalist`
+job (ru: "травник") grants it, NOT a dedicated literal "herbalist skill" (there isn't one; see the
+Crafting skills table above).
+
+- **`MedievalBandage`** — ported from CP's `CP14Gauze` (`_CP14/Entities/Objects/Specific/Medical/healing.yml`),
+  the plain "gauze" bandage (not the weaker `CP14HerbalBandage` variant — the requester asked for one
+  "бинт", singular). Sprite ported from CP's `medical.rsi` → `_Respiral/Objects/Specific/Medical/bandage.rsi`
+  (both bandage AND herbbandage states copied over for future use, only `bandage*` wired up). Stack of 5
+  with the CP 3-tier visual (`bandage`/`bandage_2`/`bandage_3` via `baseLayer`+`layerStates`, matching the
+  file's states 1:1).
+- **`MedievalOintment`/`MedievalBrutepack`** — "placeholder sprites" per requester's explicit instruction:
+  no CP equivalent exists (see the earlier "does CP have a bruise kit/ointment" answer — it doesn't, CP left
+  the vanilla items untouched), so the UPSTREAM vanilla `Ointment`/`Brutepack` sprites
+  (`Objects/Specific/Medical/medical.rsi`, cev-eris/tgstation, CC-BY-SA-3.0) were duplicated into dedicated
+  `_Respiral/Objects/Specific/Medical/{ointment,brutepack}.rsi` folders (only the states actually needed,
+  not the whole shared upstream medical.rsi — avoids a license clash in one meta.json, since bandage.rsi
+  and these are under different licenses/copyrights). Parent `BaseHealingItem` reused directly (abstract,
+  upstream) — same `Healing`/`Stack` shape as vanilla `Ointment`/`Brutepack`, just re-sprited + Russian
+  name/description + `MedievalPhysicalPriced`/`PhysicalComposition` swapped in for Respiral pricing.
+- **`MedievalSyringe`** — `parent: BaseSyringe` (upstream, `Entities/Objects/Specific/Chemistry/chemistry.yml`)
+  reused wholesale (Injector/ExaminableSolution/Spillable/TrashOnSolutionEmpty/Solution plumbing) — only
+  Sprite/Icon/Item/`SolutionContainerVisuals` overridden to point at the CP syringe sprite
+  (`_CP14/Objects/Specific/Alchemy/syringe.rsi` → `_Respiral/Objects/Specific/Chemistry/syringe.rsi`).
+  **Explicitly zeroed `inHandsMaxFillLevels`/`inHandsFillBaseName`** (upstream sets `3`/`-fill-`, expecting
+  per-fill-level in-hand sprites like `syringe1-fill-left` that don't exist in the CP sprite) — component
+  fields merge by inheritance (not fully replaced), so leaving them unset would silently look for missing
+  states. Static in-hand instead via `Item.inhandVisuals` → CP's plain `inhand-left`/`inhand-right`.
+- **Machine texture folder had a homoglyph typo**: the requester's tool generated `mediсal_table.rsi` with
+  a CYRILLIC "с" (U+0441) instead of Latin "c". Flagged first, then fixed on request: folder renamed to
+  `medical_table.rsi` and the entity's `Sprite:` path updated to match.
+- **Bootstrapping**: `MedievalMedicalTableDetail`/`MedievalMedicalTableDetailRecipe` — same as
+  Bookstand/PassportOffice, craftable at the `MedievalCarpenterTable` pack, `MedievalWoodProcessing: Mastery`,
+  300 wood (wooden furniture, not a blacksmithing product — unlike `MedievalPaperweightDetailRecipe`).
+
 ## Reading a skill book now requires literacy (2026-08)
 
 `LearnSkillWhenUsingComponent` gained `NeededSkillsProgress` (`Dictionary<ProtoId<SkillPrototype>,

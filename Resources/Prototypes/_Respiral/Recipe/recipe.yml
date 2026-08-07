@@ -2026,6 +2026,15 @@
   materials:
     MedievalProcessedWood: 300
 
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalMedicalTableDetailRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
+  result: MedievalMedicalTableDetail
+  materials:
+    MedievalProcessedWood: 300
+
 # Бюрократия
 
 # Деталь паспортного стола — из дерева, куётся на столе плотника

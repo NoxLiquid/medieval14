@@ -11,3 +11,4 @@ lathe-medieval-category-jewelry = Ювелирные изделия
 lathe-medieval-category-bureaucracy = Бюрократия
 lathe-medieval-category-paper = Бумага
 lathe-medieval-category-books = Книги
+lathe-medieval-category-medical = Медицина
