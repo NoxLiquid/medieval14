@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._Respiral.Placement;
 using Content.Shared._Respiral.CCCVar;
 using JetBrains.Annotations;
 using Robust.Client.Placement;
@@ -8,6 +9,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 using static Robust.Client.UserInterface.Controls.LineEdit;
@@ -21,8 +23,10 @@ public sealed partial class MedievalEntitySpawningUIController : UIController
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IPlacementManager _placement = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
+    [Dependency] private IClientNetManager _netManager = default!; // для MedievalRoofEraserHijack
 
     private EntitySpawnWindow? _window;
+    private Button? _roofEraseButton; // переключатель "крыши" рядом с EraseButton
     private readonly List<EntityPrototype> _shownEntities = new();
     private bool _init;
     private bool _prefixFilterEnabled;
@@ -71,6 +75,25 @@ public sealed partial class MedievalEntitySpawningUIController : UIController
 
         args.Button.Pressed = args.Pressed;
         _window.OverrideMenu.Disabled = args.Pressed;
+
+        // обычный ластик и "крыши" взаимоисключающие
+        if (_roofEraseButton != null)
+            _roofEraseButton.Pressed = false;
+    }
+
+    // переключатель "крыши": стирает только IsRoof-сущности на тайле клика
+    private void OnEntityRoofEraseToggled(ButtonToggledEventArgs args)
+    {
+        if (_window == null || _window.Disposed)
+            return;
+
+        _placement.Clear();
+        if (args.Pressed)
+            _placement.ToggleEraserHijacked(new MedievalRoofEraserHijack(EntityManager, _netManager));
+
+        args.Button.Pressed = args.Pressed;
+        _window.OverrideMenu.Disabled = args.Pressed;
+        _window.EraseButton.Pressed = false;
     }
 
     public void ToggleWindow()
@@ -115,6 +138,23 @@ public sealed partial class MedievalEntitySpawningUIController : UIController
         _window.ClearButton.OnPressed += OnEntityClearPressed;
         _window.PrototypeScrollContainer.OnScrolled += UpdateVisiblePrototypes;
         _window.OnResized += UpdateVisiblePrototypes;
+
+        // переключатель "крыши" сразу после штатной кнопки ластика.
+        // EntitySpawnWindow запечатан (sealed) в движке, поэтому кнопка добавляется в её
+        // контейнер программно, а не через XAML.
+        _roofEraseButton = new Button
+        {
+            Name = "MedievalRoofEraseButton",
+            ToggleMode = true,
+            Text = Loc.GetString("medieval-entity-spawn-window-roof-erase-button-text"),
+        };
+        _roofEraseButton.OnToggled += OnEntityRoofEraseToggled;
+        if (_window.EraseButton.Parent is { } eraseContainer)
+        {
+            eraseContainer.AddChild(_roofEraseButton);
+            _roofEraseButton.SetPositionInParent(_window.EraseButton.GetPositionInParent() + 1);
+        }
+
         BuildEntityList();
     }
 
@@ -145,6 +185,9 @@ public sealed partial class MedievalEntitySpawningUIController : UIController
 
         _window.EraseButton.Pressed = false;
         _window.OverrideMenu.Disabled = false;
+
+        if (_roofEraseButton != null)
+            _roofEraseButton.Pressed = false;
     }
 
     private void OnEntityOverrideSelected(OptionButton.ItemSelectedEventArgs args)

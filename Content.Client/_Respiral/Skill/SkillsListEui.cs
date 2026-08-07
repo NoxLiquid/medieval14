@@ -26,7 +26,7 @@ public sealed class SkillsListEui : BaseEui
     {
         if (state is SkillsListEuiState s)
         {
-            _window.SetSkills(s.Skills, s.TargetName);
+            _window.SetSkills(s.Skills, s.TargetName, demonstration: true);
         }
     }
 

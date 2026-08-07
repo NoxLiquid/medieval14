@@ -162,6 +162,7 @@
   - type: Tag
     tags:
     - MedievalSmelterMaterialStorage
+    - MedievalJewelerMaterialStorage
   - type: Sprite
     layers:
     - state: silver
@@ -200,6 +201,7 @@
   - type: Tag
     tags:
     - MedievalSmelterMaterialStorage
+    - MedievalJewelerMaterialStorage
   - type: Sprite
     layers:
     - state: gold

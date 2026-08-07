@@ -83,6 +83,31 @@ Stamp states must be in the **paper's** RSI (not the stamp's), because `PaperVis
 
 Folders inherit `BoxBase` (grid storage), filter by the `Document` tag. Medieval folders are single-piece sprites (not colormap + base like the originals).
 
+## Paper as a lathe material + Passport Office
+
+`MedievalBasePaper` carries `PhysicalComposition { MedievalPaper: 100 }` and the tag
+`MedievalPassportOfficeMaterialStorage`, so every paper/scroll/passport (Tag lists are *replaced*
+on inheritance, and no child redefines its own Tag) can be fed into the Passport Office as raw
+paper material.
+
+- **Material** `MedievalPaper` (`materials.yml`): `stackEntity: MedievalPaper` (the writable sheet;
+  it has no `Stack`, which is fine — sheet volume is read from that entity's composition = 100, and
+  material ejection spawns individual sheets via `SpawnMultipleAtPosition`, which no-ops the count on
+  non-stack entities). Loc `medieval-materials-paper` (materials.ftl). Different prototype *kind* from
+  the `MedievalPaper` entity, so the shared id does not collide (same trick as `MedievalCloth`).
+- **Machine** `MedievalPassportOffice` (`Structures/Machine/lathe.yml`, sprite
+  `_Respiral/Structures/Machines/passport_office.rsi`, states icon/inserting/building). Gated by
+  `NeededSkillForInteract: MedievalBureaucracy`. MaterialStorage whitelist tag
+  `MedievalPassportOfficeMaterialStorage`. Static pack `MedievalPassportOffice`.
+- **Board/detail** `MedievalPassportOfficeDetail` (wood, `Objects/Parts/production.yml`), recipe
+  `MedievalPassportOfficeDetailRecipe` crafted at the Carpenter Table.
+- **Passport recipe** `MedievalPassportRecipe` (result `MedievalPassport`, consumes `MedievalPaper: 100`),
+  category `MedievalBureaucracyCategory` (loc `lathe-medieval-category-bureaucracy`), base recipe
+  `MedievalBaseBureaucracyRecipe`.
+- **Skill** `MedievalBureaucracy` (`Skill/skill.yml`) — granted to `MedievalCitySteward` (progress 1);
+  only entities with the skill can use the office. No skill book yet (learn-by-book gap). See
+  [[professions]] and [[skill_system]].
+
 ## Files
 | Path | Contents |
 |---|---|

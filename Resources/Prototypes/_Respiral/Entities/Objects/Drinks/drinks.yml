@@ -206,11 +206,13 @@
     sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
     layers:
     - state: icon-0
-      color: "#8A8A8A"
-      map: ["enum.SolutionContainerLayers.Base"]
+      map: ["enum.SolutionContainerLayers.Base", "icon-0"]
     - state: icon-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      icon-0: MedievalProcessedIron
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 25
@@ -227,11 +229,13 @@
     sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
     layers:
     - state: icon-0
-      color: "#B0C4DE"
-      map: ["enum.SolutionContainerLayers.Base"]
+      map: ["enum.SolutionContainerLayers.Base", "icon-0"]
     - state: icon-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      icon-0: MedievalSteel
   - type: PhysicalComposition
     materialComposition:
       MedievalSteel: 25
@@ -246,11 +250,13 @@
     sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
     layers:
     - state: icon-0
-      color: "#C0C0FF"
-      map: ["enum.SolutionContainerLayers.Base"]
+      map: ["enum.SolutionContainerLayers.Base", "icon-0"]
     - state: icon-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      icon-0: MedievalProcessedSilver
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedSilver: 25
@@ -266,11 +272,13 @@
     sprite: _Respiral/Objects/Drinks/beer_mug_metall.rsi
     layers:
     - state: icon-0
-      color: "#FFD700"
-      map: ["enum.SolutionContainerLayers.Base"]
+      map: ["enum.SolutionContainerLayers.Base", "icon-0"]
     - state: icon-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      icon-0: MedievalProcessedGold
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedGold: 25
@@ -305,10 +313,13 @@
     - state: icon-0
       map: ["enum.SolutionContainerLayers.Base"]
     - state: metall
-      color: "#8A8A8A"
+      map: ["metall"]
     - state: icon-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      metall: MedievalProcessedIron
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 20
@@ -326,10 +337,13 @@
     - state: icon-0
       map: ["enum.SolutionContainerLayers.Base"]
     - state: metall
-      color: "#B0C4DE"
+      map: ["metall"]
     - state: icon-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      metall: MedievalSteel
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 20
@@ -347,10 +361,13 @@
     - state: icon-0
       map: ["enum.SolutionContainerLayers.Base"]
     - state: metall
-      color: "#C0C0FF"
+      map: ["metall"]
     - state: icon-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      metall: MedievalProcessedSilver
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 20
@@ -368,10 +385,13 @@
     - state: icon-0
       map: ["enum.SolutionContainerLayers.Base"]
     - state: metall
-      color: "#FFD700"
+      map: ["metall"]
     - state: icon-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      metall: MedievalProcessedGold
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 20
@@ -424,10 +444,13 @@
     sprite: _Respiral/Objects/Drinks/goblet.rsi
     layers:
     - state: iron_goblet
-      color: "#B0C4DE"
+      map: ["iron_goblet"]
     - state: fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      iron_goblet: MedievalSteel
   - type: PhysicalComposition
     materialComposition:
       MedievalSteel: 25
@@ -442,10 +465,13 @@
     sprite: _Respiral/Objects/Drinks/goblet.rsi
     layers:
     - state: iron_goblet
-      color: "#C0C0FF"
+      map: ["iron_goblet"]
     - state: fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: MaterialColorVisuals
+    layers:
+      iron_goblet: MedievalProcessedSilver
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedSilver: 25

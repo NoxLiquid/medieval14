@@ -37,8 +37,8 @@
       back:
       - state: equipped-BACKPACK
   - type: NeededSkillForMelee
-    neededSkills:
-    - MedievalOneSword
+    neededSkillsProgress:
+      MedievalOneSword: Mastery
     points:
     - MedievalOneSword: 0.01
     learnModifiers:

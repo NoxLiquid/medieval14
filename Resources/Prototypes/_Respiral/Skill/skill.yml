@@ -5,6 +5,12 @@
   pointsNeeded: 100
 
 - type: skill
+  id: MedievalEngineering
+  name: инженерия
+  description: Ремесло
+  pointsNeeded: 100
+
+- type: skill
   id: MedievalStoneProcessing
   name: обработка камня
   description: Ремесло
@@ -12,7 +18,7 @@
 
 - type: skill
   id: MedievalBasicBlacksmithing
-  name: основы кузнечного дела
+  name: кузнечное дело
   description: Ремесло
   pointsNeeded: 100
 
@@ -35,8 +41,24 @@
   pointsNeeded: 100
 
 - type: skill
+  id: MedievalTrading
+  name: торговое дело
+  description: Торговля
+  pointsNeeded: 100
+  # На полном освоении навыка торговец получает возможность оценивать стоимость товаров при осмотре.
+  grantComponents:
+    1:
+    - type: PriceAppraisal
+
+- type: skill
   id: MedievalLiteracy
   name: грамотность
+  description: Грамота
+  pointsNeeded: 100
+
+- type: skill
+  id: MedievalBureaucracy
+  name: бюрократия
   description: Грамота
   pointsNeeded: 100
 

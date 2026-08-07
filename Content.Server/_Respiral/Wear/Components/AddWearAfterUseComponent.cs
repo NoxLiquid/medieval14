@@ -33,4 +33,5 @@ public enum WearTrigger
     RCD = 1 << 4,
     Key = 1 << 5,
     KeyDuplicator = 1 << 6,
+    Tool = 1 << 7,
 }

@@ -145,7 +145,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -172,7 +171,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -199,7 +197,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -226,7 +223,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -253,7 +249,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -280,7 +275,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -307,7 +301,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -334,7 +327,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -361,7 +353,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -388,7 +379,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -415,7 +405,6 @@
   deconstructTools: [MedievalDigging]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
   heatCapacity: 10000
   weather: true
   absorbent: true
@@ -426,24 +415,153 @@
 - type: tile
   id: MedievalFloorSnow
   name: tiles-medieval-snow
-  sprite: /Textures/_Respiral/Tiles/Snow/grass.png
-  edgeSpritePriority: 1
+  sprite: /Textures/_Respiral/Tiles/Snow/snow.png
+  variants: 6
+  placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 20
   edgeSprites:
-    SouthEast: /Textures/_Respiral/Tiles/Snow/single_edge.png
-    NorthEast: /Textures/_Respiral/Tiles/Snow/single_edge.png
-    NorthWest: /Textures/_Respiral/Tiles/Snow/single_edge.png
-    SouthWest: /Textures/_Respiral/Tiles/Snow/single_edge.png
-    South: /Textures/_Respiral/Tiles/Snow/double_edge.png
-    East: /Textures/_Respiral/Tiles/Snow/double_edge.png
-    North: //Textures/_Respiral/Tiles/Snow/double_edge.png
-    West: /Textures/_Respiral/Tiles/Snow/double_edge.png
+    SouthEast: /Textures/_Respiral/Tiles/Snow/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/Snow/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/Snow/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/Snow/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/Snow/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/Snow/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/Snow/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/Snow/double_edge_W.png
+  baseTurf: MedievalFloorSnowDeep
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepSnow
+  itemDrop: MedievalFloorTileItemSnow
+  heatCapacity: 10000
+  weather: true
+  sturdy: false
+
+- type: tile
+  id: MedievalFloorSnowDeep
+  name: tiles-medieval-snow-deep
+  sprite: /Textures/_Respiral/Tiles/SnowDeep/snow.png
+  variants: 6
+  placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 19
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/SnowDeep/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/SnowDeep/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/SnowDeep/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/SnowDeep/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/SnowDeep/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/SnowDeep/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/SnowDeep/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/SnowDeep/double_edge_W.png
+  baseTurf: MedievalFloorSnowDeepDeep
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepSnow
+  itemDrop: MedievalFloorTileItemSnow
+  heatCapacity: 10000
+  weather: true
+  sturdy: false
+
+- type: tile
+  id: MedievalFloorSnowDeepDeep
+  name: tiles-medieval-snow-deep-deep
+  sprite: /Textures/_Respiral/Tiles/SnowDeepDeep/snow.png
+  variants: 6
+  placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 18
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/SnowDeepDeep/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/SnowDeepDeep/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/SnowDeepDeep/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/SnowDeepDeep/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/SnowDeepDeep/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/SnowDeepDeep/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/SnowDeepDeep/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/SnowDeepDeep/double_edge_W.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepSnow
+  itemDrop: MedievalFloorTileItemSnow
+  heatCapacity: 10000
+  weather: true
+  sturdy: false
+
+# Песок
+
+- type: tile
+  id: MedievalFloorSand
+  name: tiles-medieval-sand
+  sprite: /Textures/_Respiral/Tiles/Sand/sand.png
+  variants: 5
+  placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 21
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Sand/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/Sand/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/Sand/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/Sand/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/Sand/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/Sand/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/Sand/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/Sand/double_edge_W.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepAsteroid
+  # itemDrop:
+  heatCapacity: 10000
+  weather: true
+  sturdy: false
+
+# Мицелий
+
+- type: tile
+  id: MedievalFloorMycelium
+  name: tiles-medieval-mycelium
+  sprite: /Textures/_Respiral/Tiles/Mycelium/tile.png
+  variants: 12
+  placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 22
+  edgeSprites:
+    South: /Textures/_Respiral/Tiles/Mycelium/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/Mycelium/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/Mycelium/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/Mycelium/double_edge_W.png
   baseTurf: MedievalDirt
   isSubfloor: false
   deconstructTools: [ MedievalDigging ]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
+  # itemDrop:
   heatCapacity: 10000
+  weather: true
+  sturdy: false
+
+- type: tile
+  id: MedievalFloorMyceliumLight
+  name: tiles-medieval-mycelium-light
+  sprite: /Textures/_Respiral/Tiles/MyceliumLight/tile.png
+  variants: 12
+  placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 23
+  edgeSprites:
+    South: /Textures/_Respiral/Tiles/MyceliumLight/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/MyceliumLight/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/MyceliumLight/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/MyceliumLight/double_edge_W.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepGrass
+  # itemDrop:
+  heatCapacity: 10000
+  weather: true
   sturdy: false
   weather: true
   absorbent: true
@@ -609,7 +727,7 @@
   deconstructTools: [ MedievalDigging ]
   footstepSounds:
     collection: FootstepGrass
-  itemDrop: MedievalFloorTileItemGrass
+  itemDrop: MedievalFloorTileItemAsh
   heatCapacity: 10000
   sturdy: false
   weather: true

@@ -5,6 +5,7 @@
   description: Плотные шторы, скрывающие происходящее за ними.
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _Respiral/Structures/Furniture/curtains.rsi
     layers:
     - state: closed

@@ -25,9 +25,6 @@
     defaultProductionAmount: 1
     staticPacks:
     - MedievalSawmillPack
-  - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalWoodProcessing
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 404
@@ -61,9 +58,6 @@
     defaultProductionAmount: 1
     staticPacks:
     - MedievalQuarryPack
-  - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalStoneProcessing
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 404
@@ -97,9 +91,6 @@
     defaultProductionAmount: 1
     staticPacks:
     - MedievalCarpenterTable
-  - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalWoodProcessing
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 404
@@ -119,6 +110,10 @@
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: fire
+        map: ["enum.LatheVisualLayers.RunningUnlit"]
+        shader: unshaded
+        visible: false
       - state: inserting
         map: ["enum.MaterialStorageVisualLayers.Inserting"]
   - type: Machine
@@ -134,9 +129,6 @@
     defaultProductionAmount: 1
     staticPacks:
     - MedievalSmelter
-  - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalBasicBlacksmithing
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
@@ -150,6 +142,8 @@
   name: Наковальня
   description: Тяжёлая железная наковальня, используемая для ковки и обработки металла. Необходимый инструмент кузнеца для создания оружия, брони и инструментов.
   components:
+  - type: Transform
+    noRot: false
   - type: Sprite
     sprite: _Respiral/Structures/Machines/anvil.rsi
     layers:
@@ -170,9 +164,6 @@
     defaultProductionAmount: 1
     staticPacks:
     - MedievalAnvil
-  - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalBasicBlacksmithing
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
@@ -207,9 +198,6 @@
     defaultProductionAmount: 1
     staticPacks:
     - MedievalTannery
-  - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalTailor
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
@@ -243,9 +231,6 @@
     defaultProductionAmount: 1
     staticPacks:
     - MedievalLoom
-  - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalTailor
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 104
@@ -279,9 +264,6 @@
     defaultProductionAmount: 1
     staticPacks:
     - MedievalSewing
-  - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalTailor
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 4
@@ -296,7 +278,7 @@
   description: Изящный станок для огранки камней и создания ювелирных изделий. Основной инструмент ювелира.
   components:
   - type: Sprite
-    sprite: _Respiral/Structures/Machines/temp.rsi
+    sprite: _Respiral/Structures/Machines/jewelry.rsi
     layers:
       - state: icon
         map: ["enum.LatheVisualLayers.IsRunning"]
@@ -311,16 +293,146 @@
         - MedievalJewelerMaterialStorage
   - type: Lathe
     idleState: icon
-    runningState: icon
+    runningState: building
     defaultProductionAmount: 1
     staticPacks:
     - MedievalJeweler
-  - type: NeededSkillForInteract
-    neededSkills:
-    - MedievalJewelry
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedWood: 4
       MedievalRawManaCrystal: 100
       MedievalProcessedIron: 204
       MedievalProcessedGold: 104
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalPaperweight
+  name: бумажный пресс
+  description: Тяжёлый деревянный пресс для отжима и сушки бумажной массы из дерева.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/paperweight.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalPaperweightDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalPaperweightMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalPaperweightPack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 404
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 4
+      MedievalProcessedStone: 6
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalBookstand
+  name: стол писца
+  description: Конторка с чернильницей и стойкой для переплёта — здесь переписывают книги знаний.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/bookstand.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalBookstandDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalBookstandMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalBookstandPack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 404
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 4
+      MedievalProcessedStone: 6
+
+# Бюрократия
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalPassportOffice
+  name: паспортный стол
+  description: Деревянная конторка с чернильницей и печатями. Здесь оформляют паспорта из листов бумаги.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/passport_office.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalPassportOfficeDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalPassportOfficeMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalPassportOffice
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 404
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 4
+      MedievalProcessedStone: 6
+
+- type: entity
+  parent: MedievalBaseLathe
+  id: MedievalMedicalTable
+  name: медицинский стол
+  description: Рабочее место травника — здесь готовят повязки, мази и настойки.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/medical_table.rsi
+    layers:
+      - state: icon
+        map: ["enum.LatheVisualLayers.IsRunning"]
+      - state: inserting
+        map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Machine
+    board: MedievalMedicalTableDetail
+  - type: MaterialStorage
+    ignoreColor: true
+    whitelist:
+      tags:
+        - MedievalMedicalTableMaterialStorage
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    defaultProductionAmount: 1
+    staticPacks:
+    - MedievalMedicalTablePack
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 404
+      MedievalRawManaCrystal: 100
+      MedievalProcessedIron: 4
+      MedievalProcessedStone: 6

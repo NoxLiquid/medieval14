@@ -176,6 +176,22 @@
 
 - type: entity
   parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerTailor
+  name: портной
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalTailor
+
+- type: randomHumanoidSettings
+  id: MedievalTailor
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalTailorGear ]
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerCitizen
   name: горожанин
   suffix: Средневековье

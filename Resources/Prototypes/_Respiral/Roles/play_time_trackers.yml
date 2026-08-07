@@ -31,6 +31,9 @@
   id: JobMedievalHerbalist
 
 - type: playTimeTracker
+  id: JobMedievalTailor
+
+- type: playTimeTracker
   id: JobMedievalCitizen
 
 - type: playTimeTracker

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Generated https://www.pixellab.ai/ for Respiral proj.",
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "inserting"
+    },
+    {
+      "name": "building",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    }
+  ]
+}

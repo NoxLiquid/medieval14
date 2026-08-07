@@ -138,7 +138,8 @@ public sealed partial class LatheMenu : FancyWindow
         int idx = 0;
         foreach (var prototype in sortedRecipesToShow)
         {
-            var canProduce = _lathe.CanProduce(Entity, prototype, quantity, component: lathe);
+            // Respiral - недоступность рецепта при нехватке навыка
+            var canProduce = _lathe.CanProduce(Entity, prototype, quantity, component: lathe) && MeetsRecipeSkill(prototype);
             var tooltipFunction = () => GenerateTooltipText(prototype);
 
             if (idx >= oldChildCount)
@@ -216,6 +217,12 @@ public sealed partial class LatheMenu : FancyWindow
         var desc = _lathe.GetRecipeDescription(prototype);
         if (!string.IsNullOrWhiteSpace(desc))
             sb.AppendLine(Loc.GetString("lathe-menu-description-display", ("description", desc)));
+
+        // Respiral-Start - строка с требуемым навыком, если его не хватает
+        var skillReq = GetRecipeSkillTooltip(prototype);
+        if (skillReq != null)
+            sb.AppendLine(skillReq);
+        // Respiral-End 
 
         // Remove last newline
         if (sb.Length > 0)

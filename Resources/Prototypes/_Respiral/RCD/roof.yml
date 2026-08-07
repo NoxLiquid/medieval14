@@ -1,0 +1,50 @@
+- type: rcd
+  id: MedievalDeconstructRoof
+  name: respiral-rcd-roof-deconstruct
+  category: Main
+  sprite: /Textures/Interface/Radial/RCD/deconstruct.png
+  mode: Deconstruct
+  prototype: EffectRCDDeconstructPreview
+  rotation: Camera
+
+- type: rcd
+  id: MedievalConstructRoofWooden
+  name: respiral-rcd-roof-wooden
+  category: Main
+  sprite:
+    sprite: _Respiral/Structures/Roof/wooden.rsi
+    state: full
+  mode: ConstructObject
+  prototype: MedievalRoofWooden
+  cost: 3
+  delay: 2
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: MedievalConstructRoofBirch
+  name: respiral-rcd-roof-birch
+  category: Main
+  sprite:
+    sprite: _Respiral/Structures/Roof/birch.rsi
+    state: full
+  mode: ConstructObject
+  prototype: MedievalRoofBirch
+  cost: 3
+  delay: 2
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: MedievalConstructRoofStone
+  name: respiral-rcd-roof-stone
+  category: Main
+  sprite:
+    sprite: _Respiral/Structures/Roof/stone.rsi
+    state: full
+  mode: ConstructObject
+  prototype: MedievalRoofStone
+  cost: 4
+  delay: 3
+  rotation: Fixed
+  fx: EffectRCDConstruct3

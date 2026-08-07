@@ -4,6 +4,7 @@ using Content.Shared._Respiral.Skill.Events;
 using Content.Shared.Interaction;
 using Content.Shared.RCD.Systems;
 using Content.Shared.Tools.Components;
+using Content.Shared.Tools.Systems;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
 
@@ -20,6 +21,7 @@ public sealed partial class AddWearAfterUseSystem : EntitySystem
         SubscribeLocalEvent<AddWearAfterUseComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<AddWearAfterUseComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
         SubscribeLocalEvent<AddWearAfterUseComponent, TileToolDoAfterEvent>(OnToolTileComplete);
+        SubscribeLocalEvent<AddWearAfterUseComponent, ToolUsingFinishedEvent>(OnToolUsingFinished);
         SubscribeLocalEvent<AddWearAfterUseComponent, LearnDoAfterEvent>(OnLearnDoAfter);
         SubscribeLocalEvent<AddWearAfterUseComponent, RCDDoAfterEvent>(OnRCDDoAfter);
         SubscribeLocalEvent<AddWearAfterUseComponent, UseKeyDoAfterEvent>(OnUseKeyDoAfter);
@@ -59,6 +61,22 @@ public sealed partial class AddWearAfterUseSystem : EntitySystem
     private void OnToolTileComplete(EntityUid uid, AddWearAfterUseComponent component, TileToolDoAfterEvent args)
     {
         if ((component.Triggers & WearTrigger.TileTool) == 0)
+            return;
+
+        if (component.Whitelist != null && _whitelist.IsWhitelistFail(component.Whitelist, uid))
+            return;
+
+        if (TryComp<WearComponent>(uid, out var wearComp))
+            _wear.AddWear(uid, component.Damage, wearComp);
+    }
+
+    private void OnToolUsingFinished(EntityUid uid, AddWearAfterUseComponent component, ref ToolUsingFinishedEvent args)
+    {
+        // Прерванное использование инструмента (движение/урон) не должно изнашивать предмет.
+        if (args.Cancelled)
+            return;
+
+        if ((component.Triggers & WearTrigger.Tool) == 0)
             return;
 
         if (component.Whitelist != null && _whitelist.IsWhitelistFail(component.Whitelist, uid))

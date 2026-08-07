@@ -6,6 +6,12 @@
   startingGear: MedievalPilligrimGear
   icon: JobIconPassenger
   supervisors: job-supervisors-medieval-authority
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalFistFight: 1
 
 - type: startingGear
   id: MedievalPilligrimGear

@@ -9,39 +9,55 @@
 - type: latheRecipe
   parent: MedievalBaseCarpetRecipe
   id: MedievalCarpetRedRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalCarpetItemRed
 
 - type: latheRecipe
   parent: MedievalBaseCarpetRecipe
   id: MedievalCarpetBlackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalCarpetItemBlack
 
 - type: latheRecipe
   parent: MedievalBaseCarpetRecipe
   id: MedievalCarpetBlueRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalCarpetItemBlue
 
 - type: latheRecipe
   parent: MedievalBaseCarpetRecipe
   id: MedievalCarpetCyanRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalCarpetItemCyan
 
 - type: latheRecipe
   parent: MedievalBaseCarpetRecipe
   id: MedievalCarpetGreenRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalCarpetItemGreen
 
 - type: latheRecipe
   parent: MedievalBaseCarpetRecipe
   id: MedievalCarpetOrangeRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalCarpetItemOrange
 
 - type: latheRecipe
   parent: MedievalBaseCarpetRecipe
   id: MedievalCarpetPurpleRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalCarpetItemPurple
 
 - type: latheRecipe
   parent: MedievalBaseCarpetRecipe
   id: MedievalCarpetYellowRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalCarpetItemYellow

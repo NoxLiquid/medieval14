@@ -1,3 +1,4 @@
+using Content.Shared._Respiral.Skill;
 using Content.Shared._Respiral.Skill.Prototypes;
 using Robust.Shared.Prototypes;
 
@@ -7,8 +8,8 @@ namespace Content.Server._Respiral.Skill.Components;
 public sealed partial class NeededSkillForInteractComponent : Component
 {
     /// <summary>
-    ///     Требуемые навыки
+    ///     Требуемые навыки с минимальным уровнем знания.
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<SkillPrototype>> NeededSkills;
+    public Dictionary<ProtoId<SkillPrototype>, SkillKnowledgeLevel> NeededSkillsProgress = new();
 }

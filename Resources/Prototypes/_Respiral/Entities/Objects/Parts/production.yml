@@ -130,8 +130,8 @@
     prototype: MedievalJeweler
   - type: PhysicalComposition
     materialComposition:
-      MedievalProcessedIron: 200
-      MedievalProcessedGold: 100
+      MedievalProcessedWood: 200
+      MedievalSteel: 100
 
 - type: entity
   id: MedievalConnectingMagicBallDetail
@@ -144,3 +144,48 @@
     materialComposition:
       MedievalProcessedStone: 300
       MedievalRawManaCrystal: 200
+
+- type: entity
+  id: MedievalPaperweightDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь бумажного пресса
+  components:
+  - type: MachineBoard
+    prototype: MedievalPaperweight
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalProcessedIron: 200
+
+- type: entity
+  id: MedievalBookstandDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь стола писца
+  components:
+  - type: MachineBoard
+    prototype: MedievalBookstand
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300
+
+- type: entity
+  id: MedievalMedicalTableDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь медицинского стола
+  components:
+  - type: MachineBoard
+    prototype: MedievalMedicalTable
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300
+
+- type: entity
+  id: MedievalPassportOfficeDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь паспортного стола
+  components:
+  - type: MachineBoard
+    prototype: MedievalPassportOffice
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300

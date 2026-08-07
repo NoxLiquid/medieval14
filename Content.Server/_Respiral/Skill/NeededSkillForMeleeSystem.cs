@@ -1,9 +1,12 @@
 using Content.Server._Respiral.Skill.Components;
+using Content.Shared._Respiral.Skills;
+using Content.Shared._Respiral.Skills.Prototypes;
 using Content.Shared.Examine;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Respiral.Skill;
 
@@ -22,21 +25,29 @@ public sealed partial class NeededSkillForMeleeSystem : EntitySystem
 
     private void OnExamine(EntityUid uid, NeededSkillForMeleeComponent component, ExaminedEvent args)
     {
-        if (component.NeededSkills.Count == 0)
+        if (component.NeededSkillsProgress.Count == 0)
             return;
 
+        var skills = new List<ProtoId<SkillPrototype>>(component.NeededSkillsProgress.Keys);
+
         args.PushMarkup(Loc.GetString("skill-exm-needed-skills",
-            ("skills", _skillSystem.GetSkillNames(component.NeededSkills))));
+            ("skills", _skillSystem.GetSkillNames(skills))));
     }
 
     private void OnNeededSkillForMeleeHit(EntityUid uid, NeededSkillForMeleeComponent component, ref MeleeHitEvent args)
     {
-        // Урон
+        // Урон: за каждый навык владения оружием множитель растёт линейно к требуемому уровню
+        // и не превышает его — полный урон только при владении оружием не хуже требуемого уровня.
         var damage = args.BaseDamage;
 
-        foreach (var skill in component.NeededSkills)
+        foreach (var (skill, requiredLevel) in component.NeededSkillsProgress)
         {
-            damage *= _skillSystem.GetSkillProgress(args.User, skill);
+            var requiredProgress = SkillKnowledge.GetMinProgress(requiredLevel);
+            if (requiredProgress <= 0f)
+                continue; // Vague ничего не требует — множитель не снижаем
+
+            var actualProgress = _skillSystem.GetSkillProgress(args.User, skill);
+            damage *= Math.Min(requiredProgress, actualProgress / requiredProgress);
         }
 
         args.BonusDamage = damage;

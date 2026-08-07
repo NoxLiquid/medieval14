@@ -37,3 +37,19 @@
 - type: latheCategory
   id: MedievalJewelryCategory
   name: lathe-medieval-category-jewelry
+
+- type: latheCategory
+  id: MedievalBureaucracyCategory
+  name: lathe-medieval-category-bureaucracy
+
+- type: latheCategory
+  id: MedievalPaperCategory
+  name: lathe-medieval-category-paper
+
+- type: latheCategory
+  id: MedievalBookCategory
+  name: lathe-medieval-category-books
+
+- type: latheCategory
+  id: MedievalMedicalCategory
+  name: lathe-medieval-category-medical

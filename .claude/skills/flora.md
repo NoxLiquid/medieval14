@@ -6,7 +6,10 @@ Domain: static plant objects (trees, bushes), their prototypes and RSI sprites.
 
 - **Prototypes:** `Resources/Prototypes/_Respiral/Entities/Objects/RawMaterials/Flora/`
   - `base_flora.yml` — the abstract base `MedievalBaseTree`.
-  - `tree.yml` — trees (`MedievalTree`, `MedievalTreeLarge`, `MedievalTreeMini*`).
+  - `tree.yml` — trees (`MedievalTree`, `MedievalTreeLarge`, plus per-species prototypes `MedievalTreeFir1..6`,
+    `MedievalTreeBirch1..6`, `MedievalTreeSwamp1..5`, `MedievalTreeOak1..8`, each paired with a
+    `MedievalTreeDropXToY` abstract mixin that scales log yield, and a `MedievalTree<Species>RandomSpawner`
+    marker used from `biome_templates.yml`).
   - `bushs.yml` — bushes (`MedievalFlora*Kust*`).
 - **Sprites:** `Resources/Textures/_Respiral/Objects/Flora/*.rsi`.
 
@@ -79,23 +82,17 @@ The standard for trees/bushes: one `Sprite` with a layer `map: ["random"]` + a
       tree02: ""
 ```
 
-## Fantasy trees mini_trees.rsi (2026-06, by mars33_2.0 for Respiral)
+## Fantasy trees mini_trees.rsi — REMOVED (2026-07, upstream `new_trees` merge)
 
-The spriter sent the pack in `Textures/_Respiral/ФЭНТЕЗИ!!!/Объекты/Mini.rsi` (Cyrillic + `!!!` in the path,
-no `meta.json`, inconsistent PNG names). Integrated into the namespace:
-`Resources/Textures/_Respiral/Objects/Flora/mini_trees.rsi`, the old folder deleted.
+Was: 27 PNG, three color families (green/black/white, by mars33_2.0), one `RandomSprite` prototype per
+family (`MedievalTreeMini`, `MedievalTreeMiniBlack`, `MedievalTreeMiniWhite`), no biome/spawner bindings.
 
-- 27 PNG, three color families: **green** (10), **black** (8), **white** (9).
-- State names normalized to ASCII: `green01..green10`, `black01..black08`, `white01..white09`.
-- **Important about RSI size:** all states in one .rsi must share the same size. The original
-  green sprites were 192×**224**, black/white — 192×**256**. The green images were padded with transparent
-  pixels at the top up to 192×256 (content aligned to the bottom — the trunk stays at the bottom) so the whole
-  pack fits into a single RSI of size 192×256.
-- `meta.json`: `license: CC-BY-SA-3.0`, `copyright: Created by mars33_2.0 for ... Respiral`.
-
-Prototypes in `tree.yml` (parent `MedievalBaseTree`, one per family, RandomSprite per family):
-`MedievalTreeMini` (lush tree, green), `MedievalTreeMiniBlack` (black tree, black),
-`MedievalTreeMiniWhite` (white tree, white). No biome/spawner bindings yet.
+Superseded by the `flora_trees_{fir,birch,swamp,oak}.rsi` sprite packs + the per-species discrete
+prototypes in `tree.yml` (see above), which upstream wired into `biome_templates.yml` via the
+`RandomSpawner` markers. When merging `upstream/master` into `evaporation` (2026-07-31), `tree.yml` was
+taken entirely from upstream (this new architecture), and the now-unreferenced
+`Resources/Textures/_Respiral/Objects/Flora/mini_trees.rsi` folder was deleted as orphaned — nothing else
+in the repo referenced it.
 
 ## Importing a pack from a spriter — checklist
 

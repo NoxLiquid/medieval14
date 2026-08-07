@@ -19,6 +19,8 @@
   completetime: 10
   categories:
   - MedievalToolsCategory
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
 
 - type: latheRecipe
   abstract: true
@@ -58,6 +60,8 @@
   completetime: 10
   categories:
   - MedievalWeaponCategory
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
 
 - type: latheRecipe
   abstract: true
@@ -72,6 +76,8 @@
   completetime: 10
   categories:
   - MedievalMetalClothingCategory
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
 
 - type: latheRecipe
   abstract: true
@@ -80,11 +86,20 @@
   categories:
   - MedievalTailorClothingCategory
 
+- type: latheRecipe
+  abstract: true
+  id: MedievalBaseBureaucracyRecipe
+  completetime: 10
+  categories:
+  - MedievalBureaucracyCategory
+
 ## Пилорама
 
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalBoardRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalBoard1
   completetime: 10
   materials:
@@ -93,6 +108,8 @@
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalPartRodWoodRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalPartRodWood3
   completetime: 30
   materials:
@@ -205,6 +222,8 @@
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
   id: MedievalCarpenterTableDetailRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalCarpenterTableDetail
   materials:
     MedievalProcessedWood: 300
@@ -212,6 +231,8 @@
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
   id: MedievalAlchemTableDetailRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalAlchemTableDetail
   materials:
     MedievalProcessedWood: 400
@@ -219,6 +240,8 @@
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
   id: MedievalReagentGrinderDetailRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalReagentGrinderDetail
   materials:
     MedievalProcessedWood: 200
@@ -226,6 +249,8 @@
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
   id: MedievalHotplateDetailRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalHotplateDetail
   materials:
     MedievalProcessedWood: 100
@@ -233,71 +258,99 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodPatternRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodPattern5
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneRecipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStone
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemMarbleSmallBricksRecipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemMarbleSmallBricks
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemMarbleRecipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemMarble
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneBrickSmallCarvedRecipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneBrickSmallCarved
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneBrickSmallCarved2Recipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneBrickSmallCarved2
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneBrickSquareCarvedRecipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneBrickSquareCarved
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneBrickRecipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneBrick
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneTile1Recipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneTile1
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneTile2Recipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneTile2
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneTile3Recipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneTile3
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneTile4Recipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneTile4
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneTile5Recipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneTile5
 
 - type: latheRecipe
   parent: MedievalBaseStoneTileRecipe
   id: MedievalFloorTileItemStoneTile6Recipe
+  neededSkills:
+    MedievalStoneProcessing: Mastery
   result: MedievalFloorTileItemStoneTile6
 
 ## Плавильня
@@ -305,6 +358,8 @@
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalIronIngotRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronIngot1
   materials:
     MedievalRawIron: 200
@@ -313,6 +368,8 @@
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalSteelIngotRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelIngot1
   materials:
     MedievalRawIron: 300
@@ -321,6 +378,8 @@
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalSilverIngotRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverIngot1
   materials:
     MedievalRawSilver: 500
@@ -329,6 +388,8 @@
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalGoldIngotRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalGoldIngot1
   materials:
     MedievalRawGold: 500
@@ -337,6 +398,8 @@
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalMithrilIngotRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilIngot1
   materials:
     MedievalRawMithril: 300
@@ -345,6 +408,8 @@
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalAdamantineIngotRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineIngot1
   materials:
     MedievalRawAdamantine: 300
@@ -390,6 +455,8 @@
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
   id: MedievalSawmillDetailRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
   result: MedievalSawmillDetail
   materials:
     MedievalProcessedIron: 100
@@ -398,10 +465,22 @@
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
   id: MedievalQuarryDetailRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
   result: MedievalQuarryDetail
   materials:
     MedievalProcessedIron: 100
     MedievalProcessedWood: 400
+
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalJewelerDetailRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
+  result: MedievalJewelerDetail
+  materials:
+    MedievalProcessedWood: 200
+    MedievalSteel: 100
 
 - type: latheRecipe
   parent: MedievalBaseToolsRecipe
@@ -409,6 +488,17 @@
   result: MedievalHammer
   materials:
     MedievalProcessedIron: 100
+    MedievalProcessedWood: 100
+
+# Кровельный молот (RCD только для крыш), заряжается MedievalConstructionToolsAmmo как обычный RCD
+- type: latheRecipe
+  parent: MedievalBaseToolsRecipe
+  id: MedievalRoofHammerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
+  result: MedievalRoofHammer
+  materials:
+    MedievalProcessedIron: 150
     MedievalProcessedWood: 100
 
 - type: latheRecipe
@@ -477,6 +567,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalIronCandelabra1Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronCandelabra1
   materials:
     MedievalProcessedIron: 50
@@ -486,6 +578,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalSilverCandelabra1Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverCandelabra1
   materials:
     MedievalProcessedSilver: 50
@@ -495,6 +589,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalGoldCandelabra1Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalGoldCandelabra1
   materials:
     MedievalProcessedGold: 50
@@ -504,6 +600,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalIronCandelabra3Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronCandelabra3
   materials:
     MedievalProcessedIron: 75
@@ -513,6 +611,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalSilverCandelabra3Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverCandelabra3
   materials:
     MedievalProcessedSilver: 75
@@ -522,6 +622,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalGoldCandelabra3Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalGoldCandelabra3
   materials:
     MedievalProcessedGold: 50
@@ -531,6 +633,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalIronCandelabraMiniRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronCandelabraMini
   materials:
     MedievalProcessedIron: 25
@@ -540,6 +644,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalSilverCandelabraMiniRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverCandelabraMini
   materials:
     MedievalProcessedSilver: 25
@@ -549,6 +655,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalGoldCandelabraMiniRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalGoldCandelabraMini
   materials:
     MedievalProcessedGold: 25
@@ -558,6 +666,8 @@
 - type: latheRecipe
   parent: MedievalBaseLightingRecipe
   id: MedievalSimpleMetalTorchRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalSimpleMetalTorch
   materials:
     MedievalProcessedIron: 50
@@ -567,6 +677,8 @@
 - type: latheRecipe
   parent: MedievalMaterialProcessingRecipe
   id: MedievalHammerAmmoRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalConstructionToolsAmmo
   materials:
     MedievalProcessedWood: 100
@@ -576,6 +688,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronBrassKnucklesRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronBrassKnuckles
   materials:
     MedievalProcessedIron: 50
@@ -584,6 +698,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodBrassKnucklesRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodBrassKnuckles
   materials:
     MedievalProcessedWood: 100
@@ -591,6 +707,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelBrassKnucklesRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelBrassKnuckles
   materials:
     MedievalSteel: 50
@@ -599,6 +717,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverBrassKnucklesRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverBrassKnuckles
   materials:
     MedievalProcessedSilver: 50
@@ -607,6 +727,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilBrassKnucklesRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilBrassKnuckles
   materials:
     MedievalProcessedMithril: 50
@@ -615,6 +737,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineBrassKnucklesRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineBrassKnuckles
   materials:
     MedievalProcessedAdamantine: 50
@@ -623,6 +747,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronCleaverRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronCleaver
   materials:
     MedievalProcessedIron: 100
@@ -631,6 +757,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodCleaverRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodCleaver
   materials:
     MedievalProcessedWood: 100
@@ -638,6 +766,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelCleaverRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelCleaver
   materials:
     MedievalSteel: 100
@@ -646,6 +776,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverCleaverRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverCleaver
   materials:
     MedievalProcessedSilver: 100
@@ -654,6 +786,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilCleaverRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilCleaver
   materials:
     MedievalProcessedMithril: 100
@@ -662,6 +796,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineCleaverRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineCleaver
   materials:
     MedievalProcessedAdamantine: 100
@@ -669,6 +805,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronDagger
   materials:
     MedievalProcessedIron: 100
@@ -677,6 +815,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodDagger
   materials:
     MedievalProcessedWood: 100
@@ -684,6 +824,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelDagger
   materials:
     MedievalSteel: 100
@@ -692,6 +834,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverDagger
   materials:
     MedievalProcessedSilver: 100
@@ -700,6 +844,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilDagger
   materials:
     MedievalProcessedMithril: 100
@@ -708,6 +854,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineDagger
   materials:
     MedievalProcessedAdamantine: 100
@@ -716,6 +864,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronEveningstarRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronEveningstar
   materials:
     MedievalProcessedIron: 150
@@ -724,6 +874,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodEveningstarRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodEveningstar
   materials:
     MedievalProcessedWood: 200
@@ -731,6 +883,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelEveningstarRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelEveningstar
   materials:
     MedievalSteel: 100
@@ -739,6 +893,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverEveningstarRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverEveningstar
   materials:
     MedievalProcessedSilver: 100
@@ -747,6 +903,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilEveningstarRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilEveningstar
   materials:
     MedievalProcessedMithril: 100
@@ -755,6 +913,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineEveningstarRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineEveningstar
   materials:
     MedievalProcessedAdamantine: 100
@@ -763,6 +923,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronHalberdRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronHalberd
   materials:
     MedievalProcessedIron: 100
@@ -771,6 +933,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodHalberdRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodHalberd
   materials:
     MedievalProcessedWood: 300
@@ -778,6 +942,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelHalberdRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelHalberd
   materials:
     MedievalSteel: 100
@@ -786,6 +952,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverHalberdRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverHalberd
   materials:
     MedievalProcessedSilver: 100
@@ -794,6 +962,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilHalberdRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilHalberd
   materials:
     MedievalProcessedMithril: 100
@@ -802,6 +972,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineHalberdRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineHalberd
   materials:
     MedievalProcessedAdamantine: 100
@@ -810,6 +982,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronHideDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronHideDagger
   materials:
     MedievalProcessedIron: 50
@@ -818,6 +992,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodHideDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodHideDagger
   materials:
     MedievalProcessedWood: 100
@@ -825,6 +1001,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelHideDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelHideDagger
   materials:
     MedievalSteel: 50
@@ -833,6 +1011,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverHideDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverHideDagger
   materials:
     MedievalProcessedSilver: 50
@@ -841,6 +1021,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilHideDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilHideDagger
   materials:
     MedievalProcessedMithril: 50
@@ -849,6 +1031,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineHideDaggerRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineHideDagger
   materials:
     MedievalProcessedAdamantine: 50
@@ -857,6 +1041,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronKnifeRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronKnife
   materials:
     MedievalProcessedIron: 100
@@ -865,6 +1051,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodKnifeRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodKnife
   materials:
     MedievalProcessedWood: 100
@@ -872,6 +1060,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelKnifeRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelKnife
   materials:
     MedievalSteel: 100
@@ -880,6 +1070,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverKnifeRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverKnife
   materials:
     MedievalProcessedSilver: 100
@@ -888,6 +1080,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilKnifeRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilKnife
   materials:
     MedievalProcessedMithril: 100
@@ -896,6 +1090,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineKnifeRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineKnife
   materials:
     MedievalProcessedAdamantine: 100
@@ -904,6 +1100,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronMaceRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronMace
   materials:
     MedievalProcessedIron: 100
@@ -912,6 +1110,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodMaceRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodMace
   materials:
     MedievalProcessedWood: 200
@@ -919,6 +1119,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelMaceRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelMace
   materials:
     MedievalSteel: 100
@@ -927,6 +1129,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverMaceRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverMace
   materials:
     MedievalProcessedSilver: 100
@@ -935,6 +1139,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilMaceRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilMace
   materials:
     MedievalProcessedMithril: 100
@@ -943,6 +1149,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineMaceRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineMace
   materials:
     MedievalProcessedAdamantine: 100
@@ -951,6 +1159,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronPolearmRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronPolearm
   materials:
     MedievalProcessedIron: 100
@@ -959,6 +1169,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodPolearmRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodPolearm
   materials:
     MedievalProcessedWood: 300
@@ -966,6 +1178,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelPolearmRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelPolearm
   materials:
     MedievalSteel: 100
@@ -974,6 +1188,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverPolearmRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverPolearm
   materials:
     MedievalProcessedSilver: 100
@@ -982,6 +1198,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilPolearmRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilPolearm
   materials:
     MedievalProcessedMithril: 100
@@ -990,6 +1208,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantinePolearmRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantinePolearm
   materials:
     MedievalProcessedAdamantine: 100
@@ -998,6 +1218,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronSpearRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronSpear
   materials:
     MedievalProcessedIron: 50
@@ -1006,6 +1228,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodSpearRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodSpear
   materials:
     MedievalProcessedWood: 300
@@ -1013,6 +1237,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelSpearRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelSpear
   materials:
     MedievalSteel: 50
@@ -1021,6 +1247,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverSpearRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverSpear
   materials:
     MedievalProcessedSilver: 50
@@ -1029,6 +1257,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilSpearRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilSpear
   materials:
     MedievalProcessedMithril: 50
@@ -1037,6 +1267,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineSpearRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineSpear
   materials:
     MedievalProcessedAdamantine: 50
@@ -1045,6 +1277,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronSwordRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronSword
   materials:
     MedievalProcessedIron: 200
@@ -1053,6 +1287,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodSwordRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodSword
   materials:
     MedievalProcessedWood: 200
@@ -1060,6 +1296,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelSwordRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelSword
   materials:
     MedievalSteel: 150
@@ -1068,6 +1306,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverSwordRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverSword
   materials:
     MedievalProcessedSilver: 200
@@ -1076,6 +1316,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilSwordRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilSword
   materials:
     MedievalProcessedMithril: 200
@@ -1084,6 +1326,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineSwordRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineSword
   materials:
     MedievalProcessedAdamantine: 200
@@ -1092,6 +1336,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronSword2Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronSword2
   materials:
     MedievalProcessedIron: 200
@@ -1100,6 +1346,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodSword2Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodSword2
   materials:
     MedievalProcessedWood: 200
@@ -1107,6 +1355,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelSword2Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelSword2
   materials:
     MedievalSteel: 150
@@ -1115,6 +1365,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverSword2Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverSword2
   materials:
     MedievalProcessedSilver: 200
@@ -1123,6 +1375,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilSword2Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilSword2
   materials:
     MedievalProcessedMithril: 200
@@ -1131,14 +1385,40 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineSword2Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineSword2
   materials:
     MedievalProcessedAdamantine: 200
     MedievalProcessedWood: 100
 
+## Магическое оружие (см. Weapon/magic.yml)
+
+- type: latheRecipe
+  parent: MedievalBaseWeaponRecipe
+  id: MedievalFireBladeRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
+  result: MedievalFireBlade
+  materials:
+    MedievalProcessedAdamantine: 200
+    MedievalRawManaCrystal: 100
+
+- type: latheRecipe
+  parent: MedievalBaseWeaponRecipe
+  id: MedievalSpectralBladeRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
+  result: MedievalSpectralBlade
+  materials:
+    MedievalProcessedAdamantine: 200
+    MedievalRawManaCrystal: 100
+
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalPeltWhipRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalPeltWhip
   materials:
     MedievalProcessedPelt: 200
@@ -1146,6 +1426,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalPeltWhip2Recipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalPeltWhip2
   materials:
     MedievalProcessedPelt: 200
@@ -1154,6 +1436,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalIronWhipRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronWhip
   materials:
     MedievalProcessedIron: 200
@@ -1161,6 +1445,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalWoodWhipRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Vague
   result: MedievalWoodWhip
   materials:
     MedievalProcessedWood: 200
@@ -1168,6 +1454,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSteelWhipRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelWhip
   materials:
     MedievalSteel: 200
@@ -1175,6 +1463,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalSilverWhipRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverWhip
   materials:
     MedievalProcessedSilver: 200
@@ -1182,6 +1472,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalMithrilWhipRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilWhip
   materials:
     MedievalProcessedMithril: 200
@@ -1189,6 +1481,8 @@
 - type: latheRecipe
   parent: MedievalBaseWeaponRecipe
   id: MedievalAdamantineWhipRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineWhip
   materials:
     MedievalProcessedAdamantine: 200
@@ -1268,6 +1562,8 @@
 - type: latheRecipe
   parent: MedievalBaseDetailsRecipe
   id: MedievalSmelterDetailRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
   result: MedievalSmelterDetail
   materials:
     MedievalProcessedStone: 300
@@ -1277,6 +1573,8 @@
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalClothRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalCloth1
   materials:
     MedievalRawCloth: 100
@@ -1286,6 +1584,8 @@
 - type: latheRecipe
   parent: MedievalRawProcessingRecipe
   id: MedievalProcessedPeltRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalProcessedPelt1
   materials:
     MedievalPelt: 100
@@ -1295,6 +1595,8 @@
 - type: latheRecipe
   parent: MedievalMaterialProcessingRecipe
   id: MedievalComfortableBedsheetRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalComfortableBedsheet
   materials:
     MedievalCloth: 100
@@ -1302,6 +1604,8 @@
 - type: latheRecipe
   parent: MedievalMaterialProcessingRecipe
   id: MedievalLeatherBedsheetRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalLeatherBedsheet
   materials:
     MedievalProcessedPelt: 100
@@ -1309,6 +1613,8 @@
 - type: latheRecipe
   parent: MedievalMaterialProcessingRecipe
   id: MedievalSimpleBedsheetRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalSimpleBedsheet
   materials:
     MedievalCloth: 50
@@ -1316,6 +1622,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingInnerLongTunicRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingInnerLongTunic
   materials:
     MedievalCloth: 100
@@ -1323,6 +1631,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingBackBackpackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingBackBackpack
   materials:
     MedievalCloth: 100
@@ -1330,6 +1640,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingBackDuffelRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingBackDuffel
   materials:
     MedievalCloth: 100
@@ -1337,6 +1649,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingBackSatchelRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingBackSatchel
   materials:
     MedievalProcessedPelt: 100
@@ -1344,6 +1658,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingBeltLeatherRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingBeltLeather
   materials:
     MedievalProcessedPelt: 100
@@ -1351,6 +1667,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingBeltLeatherBlackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingBeltLeatherBlack
   materials:
     MedievalProcessedPelt: 100
@@ -1358,6 +1676,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingBeltLeatherRedRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingBeltLeatherRed
   materials:
     MedievalProcessedPelt: 100
@@ -1365,6 +1685,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingBeltRopeRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingBeltRope
   materials:
     MedievalCloth: 100
@@ -1372,6 +1694,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingHeadFeatherHatRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingHeadFeatherHat
   materials:
     MedievalCloth: 100
@@ -1379,6 +1703,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingMaskExecutionerRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingMaskExecutioner
   materials:
     MedievalCloth: 100
@@ -1386,6 +1712,8 @@
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingMaskPlagueDoctorRecipe
+  neededSkills:
+    MedievalTailor: Mastery
   result: MedievalClothingMaskPlagueDoctor
   materials:
     MedievalProcessedPelt: 100
@@ -1394,6 +1722,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWood5
   materials:
     MedievalProcessedWood: 50
@@ -1401,6 +1731,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodLargeRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodLarge5
   materials:
     MedievalProcessedWood: 50
@@ -1408,6 +1740,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodParquetRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodParquet5
   materials:
     MedievalProcessedWood: 50
@@ -1415,6 +1749,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodChessRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodChess5
   materials:
     MedievalProcessedWood: 50
@@ -1422,6 +1758,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodBrokenRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodBroken5
   materials:
     MedievalProcessedWood: 50
@@ -1429,6 +1767,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodLargeBrokenRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodLargeBroken5
   materials:
     MedievalProcessedWood: 50
@@ -1436,6 +1776,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodParquetBrokenRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodParquetBroken5
   materials:
     MedievalProcessedWood: 50
@@ -1443,6 +1785,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodChessBrokenRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodChessBroken5
   materials:
     MedievalProcessedWood: 50
@@ -1450,6 +1794,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodLightRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodLight5
   materials:
     MedievalProcessedWood: 50
@@ -1457,6 +1803,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodLargeLightRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodLargeLight5
   materials:
     MedievalProcessedWood: 50
@@ -1464,6 +1812,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodParquetLightRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodParquetLight5
   materials:
     MedievalProcessedWood: 50
@@ -1471,6 +1821,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodChessLightRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodChessLight5
   materials:
     MedievalProcessedWood: 50
@@ -1478,6 +1830,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodBrokenLightRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodBrokenLight5
   materials:
     MedievalProcessedWood: 50
@@ -1485,6 +1839,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodLargeBrokenLightRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodLargeBrokenLight5
   materials:
     MedievalProcessedWood: 50
@@ -1492,6 +1848,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodParquetBrokenLightRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodParquetBrokenLight5
   materials:
     MedievalProcessedWood: 50
@@ -1499,6 +1857,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodChessBrokenLightRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodChessBrokenLight5
   materials:
     MedievalProcessedWood: 50
@@ -1506,6 +1866,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodDarkRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodDark5
   materials:
     MedievalProcessedWood: 50
@@ -1513,6 +1875,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodLargeDarkRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodLargeDark5
   materials:
     MedievalProcessedWood: 50
@@ -1520,6 +1884,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodParquetDarkRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodParquetDark5
   materials:
     MedievalProcessedWood: 50
@@ -1527,6 +1893,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodChessDarkRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodChessDark5
   materials:
     MedievalProcessedWood: 50
@@ -1534,6 +1902,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodBrokenDarkRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodBrokenDark5
   materials:
     MedievalProcessedWood: 50
@@ -1541,6 +1911,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodLargeBrokenDarkRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodLargeBrokenDark5
   materials:
     MedievalProcessedWood: 50
@@ -1548,6 +1920,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodParquetBrokenDarkRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodParquetBrokenDark5
   materials:
     MedievalProcessedWood: 50
@@ -1555,6 +1929,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodChessBrokenDarkRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodChessBrokenDark5
   materials:
     MedievalProcessedWood: 50
@@ -1562,6 +1938,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodBlackRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodBlack5
   materials:
     MedievalProcessedWood: 50
@@ -1569,6 +1947,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodLargeBlackRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodLargeBlack5
   materials:
     MedievalProcessedWood: 50
@@ -1576,6 +1956,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodParquetBlackRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodParquetBlack5
   materials:
     MedievalProcessedWood: 50
@@ -1583,6 +1965,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodChessBlackRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodChessBlack5
   materials:
     MedievalProcessedWood: 50
@@ -1590,6 +1974,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodBrokenBlackRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodBrokenBlack5
   materials:
     MedievalProcessedWood: 50
@@ -1597,6 +1983,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodLargeBrokenBlackRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodLargeBrokenBlack5
   materials:
     MedievalProcessedWood: 50
@@ -1604,6 +1992,8 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodParquetBrokenBlackRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodParquetBrokenBlack5
   materials:
     MedievalProcessedWood: 50
@@ -1611,7 +2001,59 @@
 - type: latheRecipe
   parent: MedievalBaseTileRecipe
   id: MedievalFloorTileItemWoodChessBrokenBlackRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
   result: MedievalFloorTileItemWoodChessBrokenBlack5
   materials:
     MedievalProcessedWood: 50
+
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalPaperweightDetailRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
+  result: MedievalPaperweightDetail
+  materials:
+    MedievalProcessedWood: 200
+    MedievalProcessedIron: 200
+
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalBookstandDetailRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
+  result: MedievalBookstandDetail
+  materials:
+    MedievalProcessedWood: 300
+
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalMedicalTableDetailRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
+  result: MedievalMedicalTableDetail
+  materials:
+    MedievalProcessedWood: 300
+
+# Бюрократия
+
+# Деталь паспортного стола — из дерева, куётся на столе плотника
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalPassportOfficeDetailRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
+  result: MedievalPassportOfficeDetail
+  materials:
+    MedievalProcessedWood: 300
+
+# Оформление паспорта из листа бумаги
+- type: latheRecipe
+  parent: MedievalBaseBureaucracyRecipe
+  id: MedievalPassportRecipe
+  neededSkills:
+    MedievalBureaucracy: Mastery
+  result: MedievalPassport
+  materials:
+    MedievalPaper: 100
 

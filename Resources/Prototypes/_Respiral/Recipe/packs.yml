@@ -5,6 +5,35 @@
   - MedievalPartRodWoodRecipe
 
 - type: latheRecipePack
+  id: MedievalPaperweightPack
+  recipes:
+  - MedievalPaperRecipe
+
+- type: latheRecipePack
+  id: MedievalMedicalTablePack
+  recipes:
+  - MedievalBandageRecipe
+  - MedievalOintmentRecipe
+  - MedievalBrutepackRecipe
+  - MedievalSyringeRecipe
+
+- type: latheRecipePack
+  id: MedievalBookstandPack
+  recipes:
+  - MedievalSkillBookLiteracyRecipe
+  - MedievalSkillBookBasicBlacksmithingRecipe
+  - MedievalSkillBookBlacksmithingUnderstandingRecipe
+  - MedievalSkillBookBlacksmithingConfidentRecipe
+  - MedievalSkillBookBlacksmithingDeepRecipe
+  - MedievalSkillBookBlacksmithingMasteryRecipe
+  - MedievalSkillBookWoodProcessingRecipe
+  - MedievalSkillBookAlchemRecipe
+  - MedievalSkillBookStoneProcessingRecipe
+  - MedievalSkillBookTailorRecipe
+  - MedievalSkillBookJewelryRecipe
+  - MedievalSkillBookTradingRecipe
+
+- type: latheRecipePack
   id: MedievalQuarryPack
   recipes:
   - MedievalFloorTileItemStoneRecipe
@@ -31,6 +60,9 @@
   - MedievalAlchemTableDetailRecipe
   - MedievalReagentGrinderDetailRecipe
   - MedievalHotplateDetailRecipe
+  - MedievalPassportOfficeDetailRecipe
+  - MedievalBookstandDetailRecipe
+  - MedievalMedicalTableDetailRecipe
   - MedievalFloorTileItemWoodPatternRecipe
   - MedievalFloorTileItemWoodRecipe
   - MedievalFloorTileItemWoodLargeRecipe
@@ -85,7 +117,10 @@
   - MedievalHammerAmmoRecipe
   - MedievalSawmillDetailRecipe
   - MedievalQuarryDetailRecipe
+  - MedievalJewelerDetailRecipe
+  - MedievalPaperweightDetailRecipe
   - MedievalConstructionToolsRecipe
+  - MedievalRoofHammerRecipe
   - MedievalDrinkMugWoodRecipe
   - MedievalDrinkMugIronRecipe
   - MedievalDrinkMugSteelRecipe
@@ -103,6 +138,7 @@
   - MedievalKeyRecipe
   - MedievalLockRecipe
   - MedievalConstructionToolsRecipe
+  - MedievalRoofHammerRecipe
   - MedievalBunchRecipe
   - MedievalScissorsRecipe
   - MedievalGoldCoinRecipe
@@ -188,6 +224,9 @@
   - MedievalSteelBrassKnucklesRecipe
   - MedievalWoodBrassKnucklesRecipe
   - MedievalIronBrassKnucklesRecipe
+  # Магическое оружие (требует мастерства кузнечного дела)
+  - MedievalFireBladeRecipe
+  - MedievalSpectralBladeRecipe
   # Броня
   - MedievalClothingBeltChainRecipe
   - MedievalClothingBeltGoldRecipe
@@ -253,3 +292,8 @@
 - type: latheRecipePack
   id: MedievalJeweler
   recipes: []
+
+- type: latheRecipePack
+  id: MedievalPassportOffice
+  recipes:
+  - MedievalPassportRecipe

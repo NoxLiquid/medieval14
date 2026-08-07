@@ -93,9 +93,35 @@
   - type: ToolTileCompatible
 
 - type: entity
+  id: MedievalPliers
+  parent: BaseItem
+  name: клещи
+  suffix: Средневековье
+  description: Кузнечные клещи для удержания раскалённого металла.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Tools/pliers.rsi
+    state: icon
+  - type: Item
+    size: Small
+
+- type: entity
+  id: MedievalBellows
+  parent: BaseItem
+  name: кузнечные меха
+  suffix: Средневековье
+  description: Меха для нагнетания воздуха в кузнечный горн.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Tools/bellows.rsi
+    state: icon
+  - type: Item
+    size: Normal
+
+- type: entity
   id: MedievalHammer
   parent: BaseItem
-  name: строительные инструменты
+  name: строительный молот
   suffix: Средневековье
   description: Инструмент установки различных конструкций и приспособлений.
   components:
@@ -114,13 +140,6 @@
     materialComposition:
       MedievalProcessedIron: 100
       MedievalProcessedWood: 100
-  - type: UserInterface
-    interfaces:
-      enum.RcdUiKey.Key:
-        type: RCDMenuBoundUserInterface
-  - type: ActivatableUI
-    inHandsOnly: true
-    key: enum.RcdUiKey.Key
   - type: Wear
   - type: Damageable
     damageModifierSet: MedievalIron
@@ -135,7 +154,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: AddWearAfterUse
-    triggers: [RCD, MeleeHit]
+    triggers: [MeleeHit, Tool]
     damage:
       types:
         Structural: 5
@@ -144,3 +163,59 @@
       - MedievalScore
     useSound:
       path: /Audio/_Respiral/Hammer/sound_effects_hit_punch.ogg
+  - type: NeededSkillForInteractUsing
+    neededSkillsProgress:
+      MedievalEngineering: Mastery
+
+- type: entity
+  id: MedievalRoofHammer
+  parent: BaseItem
+  name: кровельный молот
+  suffix: Средневековье
+  description: Тяжёлый молот кровельщика, позволяющий быстро возводить и разбирать крыши.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/Tools/hammer.rsi
+    state: hammer1
+  - type: Item
+    size: Normal
+    heldPrefix: hammer1
+  - type: RCD
+    availablePrototypes:
+    - MedievalConstructRoofWooden
+    - MedievalConstructRoofBirch
+    - MedievalConstructRoofStone
+    - MedievalDeconstructRoof
+  - type: RCDRoofOnly
+  - type: LimitedCharges
+    maxCharges: 20
+  - type: UserInterface
+    interfaces:
+      enum.RcdUiKey.Key:
+        type: RCDMenuBoundUserInterface
+  - type: ActivatableUI
+    inHandsOnly: true
+    key: enum.RcdUiKey.Key
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+      MedievalProcessedWood: 100
+  - type: Wear
+  - type: Damageable
+    damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: AddWearAfterUse
+    triggers: [RCD]
+    damage:
+      types:
+        Structural: 5

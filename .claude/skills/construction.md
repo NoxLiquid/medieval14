@@ -153,6 +153,42 @@ RSI sprite states: `roof0`–`roof7` (4 directions each) + `full` (icon).
 Construction graph: `MedievalRoof` (`Construction/Graph/Structure/roof.yml`).
 Construction recipes: `Construction/roof.yml`.
 
+### Roof RCD ("roofing hammer", 2026-08)
+
+`MedievalRoofHammer` (`Entities/Items/Tools/tool.yml`, sprite `hammer.rsi` state `hammer1`, distinct from
+`MedievalHammer`/`hammer2` which is the plain melee construction hammer) is a stock SS14 `RCD` item
+(`Content.Shared/RCD`) scoped down to roofs only:
+
+- `RCDComponent.availablePrototypes` lists only roof-specific `rcd` prototypes
+  (`Resources/Prototypes/_Respiral/RCD/roof.yml`): `MedievalConstructRoofWooden/Birch/Stone`
+  (`ConstructObject`, `category: Main` — **must** be `Main`, any other category string not in the
+  hardcoded `PrototypesGroupingInfo` dict in `Content.Client/RCD/RCDMenuBoundUserInterface.cs` silently
+  drops the entry from the radial menu) and `MedievalDeconstructRoof` (`Deconstruct`).
+- Roofs (`MedievalBaseRoof`) got `- type: RCDDeconstructable` + `Tag: [MedievalRoof]`.
+- **The stock `RCDSystem.IsDeconstructionStillValid` only checks "does the target have
+  `RCDDeconstructableComponent`", not which RCD tool/prototype is doing the deconstructing** — any
+  `Deconstruct`-mode RCD can strip anything with that component (walls, windows, doors, cables, catwalks
+  all have it upstream). To keep the roof hammer roof-only, added a marker component
+  `RCDRoofOnlyComponent` (`Content.Shared/_Respiral/RCD/Components/`) + `RCDRoofOnlySystem`
+  (`Content.Shared/_Respiral/RCD/`) that subscribes to `DoAfterAttemptEvent<RCDDoAfterEvent>` on that
+  marker and cancels the operation (mode == Deconstruct only) unless the target has tag `MedievalRoof`
+  (and always rejects tile deconstruction, `target == null`). This runs *after* the do-after has already
+  started (no earlier hook exists in `RCDSystem.OnAfterInteract` for other systems to veto), so on an
+  invalid target the effect briefly flashes before being cancelled on the next tick — cosmetic only.
+- Charges: `LimitedCharges maxCharges: 20`, refilled by the existing `MedievalConstructionToolsAmmo`
+  stack (`Entities/Objects/ProcessedMaterials/production.yml`) — it already carried `RCDAmmo` (30 charges
+  flat, independent of stack count) and is consumed as a generic "tool ammo" material across dozens of
+  *hand* construction graphs (roofs, furniture, doors...), but no entity had `RCDComponent` before this,
+  so that component was previously dead code. Reusing it here ties that loose end together instead of
+  inventing a second ammo item.
+- Craftable via lathe: `MedievalRoofHammerRecipe` (`Recipe/recipe.yml`, needs
+  `MedievalBasicBlacksmithing: Mastery`), in packs `MedievalAnvil` and `MedievalSmelter`
+  (`Recipe/packs.yml`), next to `MedievalConstructionToolsRecipe`.
+- Known gap: roofs have no `Fixtures`/collision (`MedievalBaseRoof` sets `Physics canCollide: false`), so
+  the stock RCD "occupied tile" collision check can't block building two different roof materials on the
+  same tile (only exact-duplicate-prototype stacking is blocked, by the stock RCD "identical entity" rule).
+  Not fixed — out of scope, matches existing hand-construction behavior.
+
 ## Crafting items (objectType: Item) rather than structures
 
 Items can also be crafted via Construction (not only structures/lathe):

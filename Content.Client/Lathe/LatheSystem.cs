@@ -33,6 +33,10 @@ public sealed partial class LatheSystem : SharedLatheSystem
                 var state = isRunning ? component.RunningState : component.IdleState;
                 _sprite.LayerSetRsiState((uid, args.Sprite), runningLayer, state);
             }
+
+            // Respiral - слой неосвещённого пламени (например, у плавильни): виден только во время работы
+            if (_sprite.LayerMapTryGet((uid, args.Sprite), LatheVisualLayers.RunningUnlit, out var runningUnlitLayer, false))
+                _sprite.LayerSetVisible((uid, args.Sprite), runningUnlitLayer, isRunning);
         }
 
         if (_appearance.TryGetData<bool>(uid, PowerDeviceVisuals.Powered, out var powered, args.Component) &&
@@ -61,5 +65,6 @@ public sealed partial class LatheSystem : SharedLatheSystem
 
 public enum LatheVisualLayers : byte
 {
-    IsRunning
+    IsRunning,
+    RunningUnlit // Respiral - неосвещённый слой пламени, включается на время работы станка
 }

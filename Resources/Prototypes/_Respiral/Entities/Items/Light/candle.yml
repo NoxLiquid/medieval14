@@ -67,20 +67,22 @@
     sprite: _Respiral/Objects/Items/Light/candles.rsi
     layers:
     - state: candelabra_metal_1
-      color: "#8A8A8A"
+      map: ["candelabra_metal_1"]
     - state: candle1
     - state: candelabra1_on
       shader: unshaded
       visible: false
       map: [ "flame" ]
+  - type: MaterialColorVisuals
+    layers:
+      candelabra_metal_1: MedievalProcessedIron
+    inhand: MedievalProcessedIron
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#8A8A8A"
       right:
       - state: inhand-right
-        color: "#8A8A8A"
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 50
@@ -95,20 +97,22 @@
     sprite: _Respiral/Objects/Items/Light/candles.rsi
     layers:
     - state: candelabra_metal_1
-      color: "#C0C0FF"
+      map: ["candelabra_metal_1"]
     - state: candle1
     - state: candelabra1_on
       shader: unshaded
       visible: false
       map: [ "flame" ]
+  - type: MaterialColorVisuals
+    layers:
+      candelabra_metal_1: MedievalProcessedSilver
+    inhand: MedievalProcessedSilver
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#C0C0FF"
       right:
       - state: inhand-right
-        color: "#C0C0FF"
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedSilver: 50
@@ -123,20 +127,22 @@
     sprite: _Respiral/Objects/Items/Light/candles.rsi
     layers:
     - state: candelabra_metal_1
-      color: "#FFD700"
+      map: ["candelabra_metal_1"]
     - state: candle1
     - state: candelabra1_on
       shader: unshaded
       visible: false
       map: [ "flame" ]
+  - type: MaterialColorVisuals
+    layers:
+      candelabra_metal_1: MedievalProcessedGold
+    inhand: MedievalProcessedGold
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#FFD700"
       right:
       - state: inhand-right
-        color: "#FFD700"
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedGold: 50
@@ -151,20 +157,22 @@
     sprite: _Respiral/Objects/Items/Light/candles.rsi
     layers:
     - state: candelabra_metal_3
-      color: "#8A8A8A"
+      map: ["candelabra_metal_3"]
     - state: candle3
     - state: candelabra3_on
       shader: unshaded
       visible: false
       map: [ "flame" ]
+  - type: MaterialColorVisuals
+    layers:
+      candelabra_metal_3: MedievalProcessedIron
+    inhand: MedievalProcessedIron
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#8A8A8A"
       right:
       - state: inhand-right
-        color: "#8A8A8A"
   - type: Flammable
     firestacksOnIgnite: 4.5
     firestackFade: -0.007
@@ -184,20 +192,22 @@
   - type: Sprite
     layers:
     - state: candelabra_metal_3
-      color: "#C0C0FF"
+      map: ["candelabra_metal_3"]
     - state: candle3
     - state: candelabra3_on
       shader: unshaded
       visible: false
       map: [ "flame" ]
+  - type: MaterialColorVisuals
+    layers:
+      candelabra_metal_3: MedievalProcessedSilver
+    inhand: MedievalProcessedSilver
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#C0C0FF"
       right:
       - state: inhand-right
-        color: "#C0C0FF"
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedSilver: 75
@@ -211,20 +221,22 @@
   - type: Sprite
     layers:
     - state: candelabra_metal_3
-      color: "#FFD700"
+      map: ["candelabra_metal_3"]
     - state: candle3
     - state: candelabra3_on
       shader: unshaded
       visible: false
       map: [ "flame" ]
+  - type: MaterialColorVisuals
+    layers:
+      candelabra_metal_3: MedievalProcessedGold
+    inhand: MedievalProcessedGold
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#FFD700"
       right:
       - state: inhand-right
-        color: "#FFD700"
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedGold: 50
@@ -239,20 +251,22 @@
     sprite: _Respiral/Objects/Items/Light/candles.rsi
     layers:
     - state: candelabra_metal_mini
-      color: "#8A8A8A"
+      map: ["candelabra_metal_mini"]
     - state: candle_mini
     - state: candelabra_mini_on
       shader: unshaded
       visible: false
       map: [ "flame" ]
+  - type: MaterialColorVisuals
+    layers:
+      candelabra_metal_mini: MedievalProcessedIron
+    inhand: MedievalProcessedIron
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#8A8A8A"
       right:
       - state: inhand-right
-        color: "#8A8A8A"
   - type: Flammable
     firestacksOnIgnite: 2.0
     firestackFade: -0.015
@@ -272,20 +286,22 @@
   - type: Sprite
     layers:
     - state: candelabra_metal_mini
-      color: "#C0C0FF"
+      map: ["candelabra_metal_mini"]
     - state: candle_mini
     - state: candelabra_mini_on
       shader: unshaded
       visible: false
       map: [ "flame" ]
+  - type: MaterialColorVisuals
+    layers:
+      candelabra_metal_mini: MedievalProcessedSilver
+    inhand: MedievalProcessedSilver
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#C0C0FF"
       right:
       - state: inhand-right
-        color: "#C0C0FF"
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedSilver: 25
@@ -299,20 +315,22 @@
   - type: Sprite
     layers:
     - state: candelabra_metal_mini
-      color: "#FFD700"
+      map: ["candelabra_metal_mini"]
     - state: candle_mini
     - state: candelabra_mini_on
       shader: unshaded
       visible: false
       map: [ "flame" ]
+  - type: MaterialColorVisuals
+    layers:
+      candelabra_metal_mini: MedievalProcessedGold
+    inhand: MedievalProcessedGold
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#FFD700"
       right:
       - state: inhand-right
-        color: "#FFD700"
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedGold: 25

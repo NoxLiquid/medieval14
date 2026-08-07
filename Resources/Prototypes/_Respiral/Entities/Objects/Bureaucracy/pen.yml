@@ -18,7 +18,7 @@
     - Pen
   - type: NeededSkillForInteractUsing
     neededSkillsProgress:
-      MedievalLiteracy: 0.8
+      MedievalLiteracy: Deep
   - type: Fixtures
     fixtures:
       fix1:

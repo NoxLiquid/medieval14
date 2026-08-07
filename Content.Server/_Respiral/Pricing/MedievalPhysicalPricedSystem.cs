@@ -1,3 +1,4 @@
+using System;
 using Content.Server.Cargo.Systems;
 using Content.Server.Destructible;
 using Content.Server._Respiral.Pricing;
@@ -5,6 +6,8 @@ using Content.Server._Respiral.Pricing.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Examine;
+using Content.Shared._Respiral.Trade.Components;
 
 namespace Content.Server._Respiral.Pricing;
 
@@ -23,6 +26,7 @@ public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, PriceCalculationEvent>(OnPriceCalculation);
         SubscribeLocalEvent<MedievalPhysicalPricedComponent, GetPricedByCompositionEvent>(OnGetPricedByComposition);
         SubscribeLocalEvent<GetEstimatedPricedByCompositionEvent>(OnGetEstimatedPricedByComposition);
+        SubscribeLocalEvent<MedievalPhysicalPricedComponent, ExaminedEvent>(OnExamine);
     }
 
     // Разрешаем расчёт цены по составу для сущности с маркером
@@ -36,6 +40,16 @@ public sealed partial class MedievalPhysicalPricedSystem : EntitySystem
     {
         if (args.Prototype.Components.ContainsKey(Factory.GetComponentName<MedievalPhysicalPricedComponent>()))
             args.ByComposition = true;
+    }
+
+    // Цену видит только осматривающий, умеющий оценивать товары (PriceAppraisalComponent, выдаётся навыком).
+    private void OnExamine(Entity<MedievalPhysicalPricedComponent> ent, ref ExaminedEvent args)
+    {
+        if (!HasComp<PriceAppraisalComponent>(args.Examiner))
+            return;
+
+        var price = _pricing.GetPrice(ent.Owner);
+        args.PushMarkup(Loc.GetString("trade-appraisal-price", ("price", Math.Round(price))));
     }
 
     private void OnMapInit(Entity<MedievalPhysicalPricedComponent> ent, ref MapInitEvent args)

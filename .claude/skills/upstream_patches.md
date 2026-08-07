@@ -66,7 +66,10 @@ See also `localization.md`. Namertvo (const/static inside upstream types).
 `Content.Shared/Light/Components/ImplicitRoofComponent.cs` (`Disabled` field) + consumer
 `Content.Client/Light/RoofOverlay.cs`,
 `Content.Shared/Light/Components/LightCycleComponent.cs` (`Duration`, `InitialOffset`) + consumer
-`Content.Server/Light/EntitySystems/LightCycleSystem.cs`.
+`Content.Server/Light/EntitySystems/LightCycleSystem.cs`,
+`Content.Client/Lathe/LatheSystem.cs` (`LatheVisualLayers.RunningUnlit` enum member + a visibility
+toggle for that layer gated on `IsRunning`, for the power-free `MedievalSmelter` fire overlay — see
+`blacksmithing.md`).
 Namertvo — cannot extend an upstream static class or component from another assembly.
 
 ### D — Deep edits to upstream method bodies / signatures (~27)
@@ -100,7 +103,7 @@ All namertvo — control-flow, signatures, or overrides inside upstream types.
 | File | Hook | Extraction path |
 |---|---|---|
 | `Content.Server/Projectiles/ProjectileSystem.cs` | `_dirt.AddBloodDirtFromDamage` | upstream already raises `ProjectileHitEvent`; blood-dirt needs computed `damage`, so subscribe to `DamageChangedEvent` in a _Respiral system |
-| `Content.Shared/Tools/Systems/SharedToolSystem.cs` | `ToolUsingFinishedEvent` | **already an event**; subscriber already in `_Respiral` (durability). Only the `[ByRefEvent]` struct + `RaiseLocalEvent` (2 lines) stay upstream |
+| `Content.Shared/Tools/Systems/SharedToolSystem.cs` | `ToolUsingFinishedEvent` (`// Respiral-Wear`) | `[ByRefEvent]` struct (now carries `bool Cancelled`) + `RaiseLocalEvent(uid, ref …)` in `OnDoAfter` stay upstream. Subscriber is `AddWearAfterUseSystem` (`WearTrigger.Tool`, see [[skill_system.md]]) — adds tool-use wear (e.g. hammer building). The 3 residual lines can't leave upstream (raise site is inside the upstream method body) |
 | `Content.Client/Clothing/ClientClothingSystem.cs` | `DirtVisualsSystem` dirt layer | injected mid layer-build; verify a suitable equip/appearance event exists first |
 | `Content.Shared/Clothing/EntitySystems/SharedChameleonClothingSystem.cs` | dirt hook | subscribe to equip/appearance event |
 

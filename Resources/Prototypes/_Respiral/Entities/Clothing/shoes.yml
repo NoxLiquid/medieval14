@@ -1,7 +1,7 @@
 # Medieval shoes-slot clothing prototypes generated from _Respiral/Clothing/Shoes/*.rsi
 
 - type: entity
-  parent: MedievalBaseShoes
+  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
   id: MedievalClothingShoesBoots
   suffix: Средневековье
   name: сапоги
@@ -18,20 +18,12 @@
     damageModifierSet: MedievalPelt
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.98
-        Slash: 0.98
-        Piercing: 0.98
-        Heat: 0.98
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: MedievalBaseShoes
+  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
   id: MedievalClothingShoesHighBoots
   suffix: Средневековье
   name: ботфорты
@@ -48,20 +40,12 @@
     damageModifierSet: MedievalPelt
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.98
-        Slash: 0.98
-        Piercing: 0.98
-        Heat: 0.98
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: MedievalBaseShoes
+  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
   id: MedievalClothingShoesRichBoots
   suffix: Средневековье
   name: расшитые сапоги
@@ -78,20 +62,12 @@
     damageModifierSet: MedievalFlax
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.98
-        Slash: 0.98
-        Piercing: 0.98
-        Heat: 0.98
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
 
 - type: entity
-  parent: MedievalBaseShoes
+  parent: [ MedievalBaseShoes, MedievalArmorIronHeadOrLegs ]
   id: MedievalClothingShoesArmoredBoots
   suffix: Средневековье
   name: бронированные сапоги
@@ -108,20 +84,12 @@
     damageModifierSet: MedievalIron
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.92
-        Slash: 0.92
-        Piercing: 0.94
-        Heat: 0.9
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: MedievalBaseShoes
+  parent: [ MedievalBaseShoes, MedievalArmorSteelHeadOrLegs ]
   id: MedievalClothingShoesHeavyArmoredBoots
   suffix: Средневековье
   name: тяжёлые бронированные сапоги
@@ -138,14 +106,6 @@
     damageModifierSet: MedievalSteel
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.86
-        Slash: 0.86
-        Piercing: 0.9
-        Heat: 0.85
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalSteel: 100

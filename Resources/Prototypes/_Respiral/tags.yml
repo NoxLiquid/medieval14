@@ -35,6 +35,18 @@
   id: MedievalJewelerMaterialStorage
 
 - type: Tag
+  id: MedievalPassportOfficeMaterialStorage
+
+- type: Tag
+  id: MedievalPaperweightMaterialStorage
+
+- type: Tag
+  id: MedievalBookstandMaterialStorage
+
+- type: Tag
+  id: MedievalMedicalTableMaterialStorage
+
+- type: Tag
   id: MedievalGoat
 
 - type: Tag
@@ -42,6 +54,9 @@
 
 - type: Tag
   id: MedievalWall
+
+- type: Tag
+  id: MedievalRoof
 
 - type: Tag
   id: MedievalDiagonal

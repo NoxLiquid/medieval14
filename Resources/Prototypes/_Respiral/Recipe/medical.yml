@@ -1,0 +1,36 @@
+- type: latheRecipe
+  abstract: true
+  id: MedievalBaseMedicalRecipe
+  completetime: 10
+  categories:
+  - MedievalMedicalCategory
+  neededSkills:
+    MedievalAlchem: Basic
+
+- type: latheRecipe
+  parent: MedievalBaseMedicalRecipe
+  id: MedievalBandageRecipe
+  result: MedievalBandage
+  materials:
+    MedievalCloth: 50
+
+- type: latheRecipe
+  parent: MedievalBaseMedicalRecipe
+  id: MedievalOintmentRecipe
+  result: MedievalOintment
+  materials:
+    MedievalCloth: 50
+
+- type: latheRecipe
+  parent: MedievalBaseMedicalRecipe
+  id: MedievalBrutepackRecipe
+  result: MedievalBrutepack
+  materials:
+    MedievalCloth: 50
+
+- type: latheRecipe
+  parent: MedievalBaseMedicalRecipe
+  id: MedievalSyringeRecipe
+  result: MedievalSyringe
+  materials:
+    MedievalGlass: 30

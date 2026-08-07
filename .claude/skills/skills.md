@@ -13,8 +13,10 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `spell.md` | Spells (Action + form event) and elements (first-class), data-driven, ball as example |
 | `containers.md` | EntityStorage, barrels (Barrel), SolutionContainer on structures, visualizers |
 | `bureaucracy.md` | Paper, scrolls, folders, passport, stamps (medieval) |
+| `blacksmithing.md` | Forge/anvil crafting (planned); current stub prototypes (pliers, bellows, grindstone) |
 | `identity.md` | Entity recognition: heraldry, passport, Model B (binding by description). DESIGN, partially implemented |
 | `economy.md` | Coins, wallet, gemstones as materials |
+| `material_color.md` | `MaterialColor` component: tint sprite/in-hand layers from a material's `color` (single source of truth) |
 | `inventory.md` | Inventory slots, clothing visualization, sex-specific sprites |
 | `clothing.md` | Clothing prototypes (Medieval*), RSI state conventions, material→damage/composition, pack imports, profession starting gear |
 | `flora.md` | Trees and bushes, `MedievalBaseTree`, RandomSprite convention, flora sprite-pack imports |

@@ -1,6 +1,7 @@
 using Content.Server.Administration.Managers;
 using Content.Server.EUI;
 using Content.Server.Mind;
+using Content.Server._Respiral.UI;
 using Content.Shared._Respiral.Skill;
 using Content.Shared._Respiral.Skill.Components;
 using Content.Shared.Ghost;
@@ -19,6 +20,7 @@ public sealed partial class SkillShareSystem : EntitySystem
     [Dependency] private MindSystem _mindSystem = default!;
     [Dependency] private SkillSystem _skillSystem = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private ConfirmDialogSystem _confirmDialog = default!;
 
     private const float MaxShareDistance = 3f;
 
@@ -100,7 +102,12 @@ public sealed partial class SkillShareSystem : EntitySystem
 
         var requesterName = MetaData(requester).EntityName;
 
-        _euiManager.OpenEui(new SkillShareRequestEui(target, requester, this, requesterName), targetSession);
+        // Спрашиваем цель — показать ли навыки; при «Да» открываем список запросившему.
+        _confirmDialog.OpenConfirmDialog(
+            targetSession,
+            Loc.GetString("skill-share-request-title"),
+            Loc.GetString("skill-share-request-message", ("name", requesterName)),
+            yesAction: () => ShowSkillsTo(target, requester));
     }
 
     private void OpenSkillsDirectly(EntityUid viewer, EntityUid target)
@@ -111,24 +118,44 @@ public sealed partial class SkillShareSystem : EntitySystem
         if (!TryComp<SkillComponent>(target, out var skillComponent))
             return;
 
-        var skills = new List<SkillInfo>();
-        foreach (var skill in skillComponent.Skills)
-        {
-            var info = _skillSystem.GetSkillInfo(target, skill.Key);
-            if (info != null)
-                skills.Add(info.Value);
-        }
+        // Админ-призрак видит точные уровни всех навыков.
+        var skills = BuildSkillList(target, null, skillComponent);
 
         var targetName = MetaData(target).EntityName;
 
         _euiManager.OpenEui(new SkillsListEui(targetName, skills), viewerSession);
     }
 
-    public void HandleSkillShareResponse(EntityUid target, EntityUid requester, ICommonSession targetSession, bool accepted)
+    /// <summary>
+    ///     Собирает список навыков цели для показа смотрящему. Для каждого навыка <see cref="SkillInfo.Evaluable"/>
+    ///     истинно, только если смотрящий владеет навыком не хуже цели; иначе уровень скрывается.
+    ///     <paramref name="viewer"/> null — оценивать может всё (админ-призрак).
+    /// </summary>
+    private List<SkillInfo> BuildSkillList(EntityUid target, EntityUid? viewer, SkillComponent targetComp)
     {
-        if (!accepted)
-            return;
+        var skills = new List<SkillInfo>();
+        foreach (var (skillId, targetProgress) in targetComp.Skills)
+        {
+            var info = _skillSystem.GetSkillInfo(target, skillId, targetComp);
+            if (info == null)
+                continue;
 
+            var value = info.Value;
+            if (viewer != null)
+                value.Evaluable = _skillSystem.GetSkillProgress(viewer.Value, skillId) >= targetProgress;
+
+            skills.Add(value);
+        }
+
+        return skills;
+    }
+
+    /// <summary>
+    ///     Открывает список навыков <paramref name="target"/> для <paramref name="requester"/>
+    ///     после согласия цели. Дистанция перепроверяется — цель могла отойти за время диалога.
+    /// </summary>
+    private void ShowSkillsTo(EntityUid target, EntityUid requester)
+    {
         if (!Exists(requester))
             return;
 
@@ -147,13 +174,8 @@ public sealed partial class SkillShareSystem : EntitySystem
         if (!TryComp<SkillComponent>(target, out var skillComponent))
             return;
 
-        var skills = new List<SkillInfo>();
-        foreach (var skill in skillComponent.Skills)
-        {
-            var info = _skillSystem.GetSkillInfo(target, skill.Key);
-            if (info != null)
-                skills.Add(info.Value);
-        }
+        // Запросивший видит уровень навыка, только если сам знает его не хуже цели.
+        var skills = BuildSkillList(target, requester, skillComponent);
 
         var targetName = MetaData(target).EntityName;
 

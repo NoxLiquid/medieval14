@@ -1,7 +1,7 @@
 # Medieval mask-slot clothing prototypes generated from _Respiral/Clothing/Mask/*.rsi
 
 - type: entity
-  parent: MedievalBaseMask
+  parent: [ MedievalBaseMask, MedievalArmorClothOther ]
   id: MedievalClothingMaskExecutioner
   suffix: Средневековье
   name: колпак палача
@@ -18,20 +18,12 @@
     damageModifierSet: MedievalFlax
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
 
 - type: entity
-  parent: MedievalBaseMask
+  parent: [ MedievalBaseMask, MedievalArmorSilverOther ]
   id: MedievalClothingMaskGlasses
   suffix: Средневековье
   name: очки
@@ -45,20 +37,12 @@
     damageModifierSet: MedievalSilver
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.98
-        Slash: 0.98
-        Piercing: 0.98
-        Heat: 0.98
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedSilver: 100
 
 - type: entity
-  parent: MedievalBaseMask
+  parent: [ MedievalBaseMask, MedievalArmorClothOther ]
   id: MedievalClothingMaskPlagueDoctor
   suffix: Средневековье
   name: маска чумного доктора
@@ -75,14 +59,6 @@
     damageModifierSet: MedievalPelt
   - type: Injurable
     damageContainer: MedievalClothing
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.99
-        Slash: 0.99
-        Piercing: 0.99
-        Heat: 0.99
-        Structural: 1
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedPelt: 100

@@ -6,6 +6,13 @@
   startingGear: MedievalLordGear
   icon: JobIconCaptain
   supervisors: job-supervisors-medieval-none
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalLiteracy: 1
+        MedievalOneSword: 1
 
 - type: startingGear
   id: MedievalLordGear
@@ -22,6 +29,13 @@
   startingGear: MedievalKnightGear
   icon: JobIconWarden
   supervisors: job-supervisors-medieval-lord
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalOneSword: 1
+        MedievalAncientWeapons: 1
 
 - type: startingGear
   id: MedievalKnightGear
@@ -37,6 +51,13 @@
   startingGear: MedievalCityStewardGear
   icon: JobIconHeadOfPersonnel
   supervisors: job-supervisors-medieval-lord
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalLiteracy: 1
+        MedievalBureaucracy: 1
 
 - type: startingGear
   id: MedievalCityStewardGear
@@ -53,6 +74,13 @@
   startingGear: MedievalTreasurerGear
   icon: JobIconQuarterMaster
   supervisors: job-supervisors-medieval-lord
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skill
+      skills:
+        MedievalLiteracy: 1
+        MedievalJewelry: 1
 
 - type: startingGear
   id: MedievalTreasurerGear
