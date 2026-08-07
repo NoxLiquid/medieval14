@@ -502,6 +502,65 @@ The paper text is displayed as "scribbles", more so the lower the READER's liter
   NOT the path for own skills (that's the character button). **The old per-use-case
   `SkillShareRequestEui` (client+server) + `SkillShareRequestEuiState`/`SkillShareResponseMessage` were
   removed** in favour of the shared dialog system.
+  - **Verb category (2026-08 fix):** the regular player-facing verb (`skill-share-verb-text`) now sets
+    `Category = VerbCategory.Interaction` (the "Взаимодействия" group in the context menu, defined in
+    `Content.Shared/Verbs/VerbCategory.cs` — a Respiral addition, also used by
+    `InteractionActionSystem.CreateVerbFromAction`). Both `SkillShareSystem` verbs are plain `Verb`
+    (not `InteractionVerb`) subscribed via `GetVerbsEvent<Verb>`; without an explicit `Category` a `Verb`
+    shows uncategorized in the context menu's general/misc section. The admin-ghost verb
+    (`skill-share-verb-admin-text`) deliberately stays uncategorized (general section) — per requester,
+    that's the intended spot for ghost/admin-only tools, only the player-facing verb belongs under
+    Interactions.
+
+### Skills window redesign — `SkillEntryControl` card (2026-08)
+
+`Content.Client/_Respiral/Skill/SkillsListWindow.xaml` used to build each row by hand in the code-behind
+around the upstream `ObjectiveConditionsControl` (crew-objectives control, fixed `SetWidth="325"` title/
+description — didn't fit the window, no real progress bar, just an icon that fills like a gauge). Replaced
+with a dedicated `SkillEntryControl` (`Content.Client/_Respiral/Skill/SkillEntryControl.{xaml,xaml.cs}`):
+icon + bold wrapping title (`SetTitle`, `RichTextLabel` + `[bold]` markup tag — plain `Label` has NO
+word-wrap API, only `ClipText` which truncates) + wrapping description (`RichTextLabel`) + a real
+horizontal `ProgressBar` (`SetProgress`, colored via `ProgressColorSystem.GetProgressColor` same red→green
+scale as other progress indicators, `ForegroundStyleBoxOverride` with `SetContentMarginOverride` to keep
+the themed bar's proportions) + a percent/level label.
+
+**Card border (2026-08 follow-up):** switched from `StyleClasses="tooltipBox"` (9-slice texture, subtle
+built-in border) to an explicit `<PanelContainer.PanelOverride><gfx:StyleBoxFlat BackgroundColor="#25252A"
+BorderColor="#3B3E56" BorderThickness="1 1 1 1"/></PanelContainer.PanelOverride>` (`xmlns:gfx=
+"clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"`, same pattern as `StoreMenu.xaml`/
+`NewsArticleCard.xaml`) — a visible flat border, colors matching the existing Nano divider color
+(`#3B3E56`, see `NewsArticleCard.xaml`) on the same `BackgroundDark` fill (`#25252A`). `PanelOverride` as a
+property-element can coexist with normal child content in the same `PanelContainer` (verified against
+`StoreMenu.xaml`) — no need for a separate wrapper `Control`. Robust's `StyleBoxFlat` has no corner-radius
+property, so this is a plain rectangular border (consistent with the rest of the engine's UI, which doesn't
+do rounded corners).
+
+**Icon fills the row height (2026-08 follow-up):** `TextureRect Icon` no longer sets
+`VerticalAlignment="Top"`. In `BoxContainer.LayOutItems` (`Robust.Client.UserInterface.Controls.BoxContainer.cs`),
+every child in a horizontal box is `Arrange`d with the FULL cross-axis size of the row
+(`UIBox2(offset, 0, offset + size, finalSize.Y)`, `finalSize.Y` = the row's own final height) — this is
+unconditional, regardless of expand flags; only the MAIN axis (width, here) is affected by
+`HorizontalExpand`/measured desired size. So `VerticalExpand` was never needed for the icon to fill row
+height — the only thing suppressing it was the explicit `VerticalAlignment="Top"`, which made the control
+render at its own natural (small) height inside the tall arrange box instead of stretching (`Stretch` is
+`Control`'s default `VerticalAlignment`, see `Control.Layout.cs` `DefaultVAlignment`). Removing it, combined
+with `Stretch="Scale"` on the `TextureRect`, makes the icon image stretch to match whatever height the
+title+description+progress-bar column ends up being (grows with wrapped multi-line descriptions too) — a
+literal "icon height = row height", not just aspect-locked centering (`KeepAspectCentered` was considered
+and rejected: it would keep the icon small/centered instead of visibly filling the taller box). Width is
+still a fixed size set in code (`SkillsListWindow.xaml.cs`, `Math.Max(skill.IconSize, 48)`, bumped from 32)
+— width is the row's MAIN axis, unaffected by this cross-axis stretch behavior.
+
+**Text-wrap root cause (not obvious):** `ScrollContainer.HScrollEnabled` defaults to `true` in the engine
+(`Robust.Client.UserInterface.Controls.ScrollContainer`). When enabled, `MeasureOverride` passes
+`float.PositiveInfinity` as the X constraint to children — so `RichTextLabel`'s own wrap logic (which wraps
+at `availableSize.X` in its `MeasureOverride`) never triggers; text just grows arbitrarily wide instead of
+wrapping, forcing a horizontal scrollbar. Fix: `<ScrollContainer HScrollEnabled="False" ...>` in
+`SkillsListWindow.xaml` — with it off, `ArrangeOverride` gives children the container's REAL final width
+(`sWidth`), which also updates live as the window is resized (window `Resizable` isn't set → defaults to
+resizable via `DefaultWindow`) — this is what makes card sizing/wrapping responsive to window size, not any
+per-element size logic. Same fix applies to any other Respiral list window that reports clipped/overflowing
+text in a vertical `ScrollContainer`.
 
 ### Reusable Yes/No dialog — `ConfirmDialogSystem` (2026-08)
 Generic confirmation dialog modelled on upstream `QuickDialogSystem.OpenDialog`, but for a simple

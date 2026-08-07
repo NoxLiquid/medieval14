@@ -65,6 +65,7 @@ public sealed partial class SkillShareSystem : EntitySystem
             var verb = new Verb
             {
                 Text = Loc.GetString("skill-share-verb-text"),
+                Category = VerbCategory.Interaction,
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/information.svg.192dpi.png")),
                 Act = () => RequestSkillShare(user, target),
                 Priority = -1

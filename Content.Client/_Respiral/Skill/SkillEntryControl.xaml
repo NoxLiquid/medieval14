@@ -1,0 +1,20 @@
+<PanelContainer
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    HorizontalExpand="True">
+    <PanelContainer.PanelOverride>
+        <gfx:StyleBoxFlat BackgroundColor="#25252A" BorderColor="#3B3E56" BorderThickness="1 1 1 1"/>
+    </PanelContainer.PanelOverride>
+    <BoxContainer Orientation="Horizontal" Margin="10" SeparationOverride="10">
+        <TextureRect Name="Icon" Access="Public" Stretch="Scale"/>
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="4">
+            <BoxContainer Orientation="Horizontal">
+                <RichTextLabel Name="TitleLabel" Access="Public" HorizontalExpand="True"/>
+                <Label Name="ProgressLabel" Access="Public" StyleClasses="LabelSubText" MinWidth="50" HorizontalAlignment="Right" Margin="6 0 0 0"/>
+            </BoxContainer>
+            <RichTextLabel Name="DescriptionLabel" Access="Public" HorizontalExpand="True"/>
+            <ProgressBar Name="ProgressBarControl" Access="Public" MinValue="0" MaxValue="1" MinHeight="14" Margin="0 2 0 0"/>
+        </BoxContainer>
+    </BoxContainer>
+</PanelContainer>

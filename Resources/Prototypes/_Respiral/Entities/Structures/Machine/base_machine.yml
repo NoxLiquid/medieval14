@@ -13,6 +13,8 @@
     bodyType: Static
   - type: Transform
     noRot: true
+  - type: Sprite
+    drawdepth: Mobs
   - type: Fixtures
     fixtures:
       fix1:
