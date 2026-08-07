@@ -472,6 +472,80 @@
   weather: true
   sturdy: false
 
+# Песок
+
+- type: tile
+  id: MedievalFloorSand
+  name: tiles-medieval-sand
+  sprite: /Textures/_Respiral/Tiles/Sand/sand.png
+  variants: 5
+  placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 21
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/Sand/single_edge_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/Sand/single_edge_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/Sand/single_edge_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/Sand/single_edge_SW.png
+    South: /Textures/_Respiral/Tiles/Sand/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/Sand/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/Sand/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/Sand/double_edge_W.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepAsteroid
+  # itemDrop:
+  heatCapacity: 10000
+  weather: true
+  sturdy: false
+
+# Мицелий
+
+- type: tile
+  id: MedievalFloorMycelium
+  name: tiles-medieval-mycelium
+  sprite: /Textures/_Respiral/Tiles/Mycelium/tile.png
+  variants: 12
+  placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 22
+  edgeSprites:
+    South: /Textures/_Respiral/Tiles/Mycelium/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/Mycelium/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/Mycelium/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/Mycelium/double_edge_W.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepGrass
+  # itemDrop:
+  heatCapacity: 10000
+  weather: true
+  sturdy: false
+
+- type: tile
+  id: MedievalFloorMyceliumLight
+  name: tiles-medieval-mycelium-light
+  sprite: /Textures/_Respiral/Tiles/MyceliumLight/tile.png
+  variants: 12
+  placementVariants: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  edgeSpritePriority: 23
+  edgeSprites:
+    South: /Textures/_Respiral/Tiles/MyceliumLight/double_edge_S.png
+    East: /Textures/_Respiral/Tiles/MyceliumLight/double_edge_E.png
+    North: /Textures/_Respiral/Tiles/MyceliumLight/double_edge_N.png
+    West: /Textures/_Respiral/Tiles/MyceliumLight/double_edge_W.png
+  baseTurf: MedievalDirt
+  isSubfloor: false
+  deconstructTools: [ MedievalDigging ]
+  footstepSounds:
+    collection: FootstepGrass
+  # itemDrop:
+  heatCapacity: 10000
+  weather: true
+  sturdy: false
+
 # Камень
 
 - type: tile
