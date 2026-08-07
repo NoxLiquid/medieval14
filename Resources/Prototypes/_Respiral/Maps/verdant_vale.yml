@@ -1,7 +1,7 @@
 - type: gameMap
   id: MedievalVerdantVale
   mapName: 'VerdantVale'
-  mapPath: /Maps/_Respiral/medieval_verdant_vale.yml
+  mapPath: /Maps/_Respiral/VerdantVale/medieval_verdant_vale.yml
   randomRotation: false
   minPlayers: 0
   stations:
@@ -10,9 +10,9 @@
       components:
         - type: CEStationZLevels
           mapsBelow:
-            - /Maps/_Respiral/medieval_verdant_vale_below.yml
+            - /Maps/_Respiral/VerdantVale/medieval_verdant_vale_below.yml
           mapsAbove:
-            - /Maps/_Respiral/medieval_verdant_vale_above.yml
+            - /Maps/_Respiral/VerdantVale/medieval_verdant_vale_above.yml
           # Respiral: общие компоненты среды на всю z-сеть — раздаются на все уровни (above/core/below)
           zLevelsComponentOverrides:
             - type: LightCycle
@@ -62,6 +62,6 @@
 - type: zMap
   id: MedievalVerdantVale
   maps:
-    - /Maps/_Respiral/medieval_verdant_vale_above.yml
-    - /Maps/_Respiral/medieval_verdant_vale.yml
-    - /Maps/_Respiral/medieval_verdant_vale_below.yml
+    - /Maps/_Respiral/VerdantVale/medieval_verdant_vale_above.yml
+    - /Maps/_Respiral/VerdantVale/medieval_verdant_vale.yml
+    - /Maps/_Respiral/VerdantVale/medieval_verdant_vale_below.yml

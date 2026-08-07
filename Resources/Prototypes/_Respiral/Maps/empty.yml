@@ -1,0 +1,63 @@
+- type: gameMap
+  id: MedievalEmpty
+  mapName: 'Empty'
+  mapPath: /Maps/_Respiral/Empty/medieval_empty.yml
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    Empty:
+      stationProto: MedievalStandardTerritory
+      components:
+        - type: CEStationZLevels
+          mapsBelow:
+            - /Maps/_Respiral/Empty/medieval_empty_below.yml
+          mapsAbove:
+            - /Maps/_Respiral/Empty/medieval_empty_above.yml
+          # Respiral: общие компоненты среды на всю z-сеть — раздаются на все уровни (above/core/below)
+          zLevelsComponentOverrides:
+            - type: LightCycle
+              offset: 1200
+            - type: MapLight
+              ambientLightColor: '#D8B059FF'
+            - type: SunShadow
+            - type: SunShadowCycle
+              directions:
+              - direction: 0,3
+              - alpha: 0.5
+                direction: -3,-0.1
+                ratio: 0.25
+              - alpha: 0.8
+                direction: 0,-3
+                ratio: 0.5
+              - alpha: 0.5
+                direction: 3,-0.1
+                ratio: 0.75
+            - type: Gravity
+              gravityShakeSound: !type:SoundPathSpecifier
+                path: /Audio/Effects/alert.ogg
+              inherent: True
+              enabled: True
+            - type: MapAtmosphere
+              space: False
+              mixture:
+                volume: 2500
+                immutable: True
+                temperature: 293.15
+                moles:
+                  Oxygen: 21.82478
+                  Nitrogen: 82.10312
+        - type: StationNameSetup
+          mapNameTemplate: 'Empty'
+        - type: StationJobs
+          availableJobs:
+            MedievalPilligrim: [ -1, -1 ]
+        - type: Gravity
+          enabled: true
+        - type: CEAutoGridGravity
+
+- type: zMap
+  id: MedievalEmpty
+  maps:
+    - /Maps/_Respiral/Empty/medieval_empty_above.yml
+    - /Maps/_Respiral/Empty/medieval_empty.yml
+    - /Maps/_Respiral/Empty/medieval_empty_below.yml

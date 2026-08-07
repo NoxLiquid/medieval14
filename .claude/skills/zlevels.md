@@ -27,6 +27,14 @@ Instead of putting a map-scoped component (e.g. `LightCycle`, day/night) on ever
 
 Example — VerdantVale shares its whole surface environment via `verdant_vale.yml` → `CEStationZLevels.zLevelsComponentOverrides`: `LightCycle`, `MapLight`, `SunShadow`, `SunShadowCycle`, `Gravity`, `MapAtmosphere`. These were removed from the three map files (`medieval_verdant_vale{,_above,_below}.yml`) so there is a single source of truth.
 
+## Map file layout
+
+`Resources/Maps/_Respiral/` is split into one subfolder per map (e.g. `VerdantVale/`, `Empty/`), each holding its 3 z-level files (`<name>{,_above,_below}.yml`). `mapPath`/`mapsBelow`/`mapsAbove`/`zMap.maps` in the matching `Resources/Prototypes/_Respiral/Maps/<name>.yml` must reference the subfolder path. `RespiralMapTest` (`GameDataScrounger.FilesInDirectoryInVfs`) walks the directory recursively, so subfolders don't break map-loadable coverage.
+
+## MedievalEmpty — blank 3-level template
+
+`Resources/Prototypes/_Respiral/Maps/empty.yml` (`gameMap`/`zMap` id `MedievalEmpty`) is a blank mapping canvas mirroring VerdantVale's component wiring 1:1 (`CEStationZLevels` + identical `zLevelsComponentOverrides`, `StationNameSetup`, `StationJobs: MedievalPilligrim`, `Gravity`, `CEAutoGridGravity`) but with empty grids (`MapGrid.chunks: {}`, empty `tilemap`, no `Roof.data`, no built entities). Maps: `Resources/Maps/_Respiral/Empty/medieval_empty{,_above,_below}.yml`. Only the core map (`[1]`) carries `MapPrecipitation` and the 3 spawn points (`SpawnPointLatejoin`/`SpawnPointMedievalPilligrim`/`SpawnPointObserver`, all at the origin) — above/below have none, matching VerdantVale. `above` carries `Parallax: MedievalBlack` (per-map, never shared), `below` doesn't. Verified loadable via the YAMLLinter (`dotnet run --project Content.YAMLLinter -c Tools`).
+
 What to share vs keep per-map:
 - **Share** (identical/global across levels): `LightCycle`, `SunShadow`/`SunShadowCycle` (global sun), `Gravity`, `MapAtmosphere`. Env-look components like `MapLight` can be shared **only if all levels should look the same** — sharing forces the same ambient onto every level (e.g. an underground level goes bright). Here below is treated as an open/surface level, so `MapLight` is shared.
 - **Never share** (per-map data): `Roof` (its `data:` is that level's own roof tilemap), `Parallax` (per-level sky), `MapGrid`/`Map`/`Transform` (per-entity), `MapPrecipitation` (single network-wide driver — put on one map only).
