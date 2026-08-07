@@ -13,7 +13,7 @@
             - /Maps/_Respiral/Empty/medieval_empty_below.yml
           mapsAbove:
             - /Maps/_Respiral/Empty/medieval_empty_above.yml
-          # Respiral: общие компоненты среды на всю z-сеть — раздаются на все уровни (above/core/below)
+          # общие компоненты среды на всю z-сеть — раздаются на все уровни (above/core/below)
           zLevelsComponentOverrides:
             - type: LightCycle
               offset: 1200
