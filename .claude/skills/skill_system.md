@@ -320,6 +320,38 @@ Maps a raw skill progress 0..1 into a named "knowledge type" — used both in th
     `SkillKnowledge.GetLevelName(Progress)`; if `!Evaluable` the right label is blank, the description is
     replaced by `skill-knowledge-cant-evaluate`, and the progress bar is forced full (real level not leaked).
 
+## Paper press + scribe's desk (MedievalPaperweight / MedievalBookstand, 2026-08)
+
+Two new lathes, following the standard "Pattern for creating a new machine" above:
+
+- **`MedievalPaperweight`** (`Structures/Machine/lathe.yml`) — consumes `MedievalProcessedWood` (100),
+  produces `MedievalPaper` (`Recipe/paperweight.yml`, `MedievalPaperRecipe`). No skill gate — anyone can
+  press paper. Tag `MedievalPaperweightMaterialStorage` added onto `MedievalBoard`
+  (`Entities/Objects/ProcessedMaterials/production.yml`) so boards/wood feed the press.
+- **`MedievalBookstand`** ("стол писца") — consumes `MedievalPaper` (300) to write any of the 11 skill
+  books from `Skill/book.yml` (`Recipe/bookstand.yml`). Tag `MedievalBookstandMaterialStorage` added onto
+  `MedievalBasePaper` (`Entities/Objects/Bureaucracy/paper.yml`) so any paper-based item feeds it.
+- **Per-book `neededSkills`** (dict-merge inheritance, see "Prototype Inheritance Rules"): the abstract
+  `MedievalBaseBookstandRecipe` sets `MedievalLiteracy: Understanding` once; each concrete recipe adds
+  only ITS subject skill, at the level the book teaches UP TO (you must already know the material to
+  write it down) — e.g. the 5 tiered blacksmithing volumes require `Basic/Understanding/Confident/Deep/
+  Mastery` respectively, matching each volume's own `maxLevel` in `book.yml`. The literacy primer
+  (`MedievalSkillBookLiteracyRecipe`) overrides the inherited literacy key down to `Vague` (no real gate,
+  see [[skill_system.md]] "Knowledge levels") — otherwise writing the FIRST literacy primer would need
+  literacy itself.
+- **"A lot of time"** (requester's phrase) — `completetime` starts at 600s (10 min) for untiered books,
+  scaling up per blacksmithing volume (600/750/900/1050/1200) to mirror the skill-level climb; the literacy
+  primer is shorter (300s) as the introductory book.
+- **Bootstrapping the machines**: `MedievalPaperweightDetail`/`MedievalBookstandDetail`
+  (`Objects/Parts/production.yml`, `MachineBoard` prototype = the lathe id).
+  `MedievalBookstandDetailRecipe` is craftable at the `MedievalCarpenterTable`
+  (`neededSkills: { MedievalWoodProcessing: Mastery }`, 300 wood) — same pattern as
+  `MedievalPassportOfficeDetailRecipe`. `MedievalPaperweightDetailRecipe` (requester follow-up) is instead
+  forged on the `MedievalAnvil` pack (`neededSkills: { MedievalBasicBlacksmithing: Mastery }`, 200 wood +
+  200 iron) — matching the other machine-detail recipes on that pack (`MedievalSawmillDetailRecipe`,
+  `MedievalQuarryDetailRecipe`, `MedievalJewelerDetailRecipe`), which are all blacksmithing-gated
+  regardless of the target machine's own trade.
+
 ## Literacy (MedievalLiteracy)
 
 - The `MedievalLiteracy` skill (`skill.yml`, `pointsNeeded: 100`, mastery = progress ≥ 1.0).

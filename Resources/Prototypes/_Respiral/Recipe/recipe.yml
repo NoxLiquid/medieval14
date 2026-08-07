@@ -2007,6 +2007,25 @@
   materials:
     MedievalProcessedWood: 50
 
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalPaperweightDetailRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
+  result: MedievalPaperweightDetail
+  materials:
+    MedievalProcessedWood: 200
+    MedievalProcessedIron: 200
+
+- type: latheRecipe
+  parent: MedievalBaseDetailsRecipe
+  id: MedievalBookstandDetailRecipe
+  neededSkills:
+    MedievalWoodProcessing: Mastery
+  result: MedievalBookstandDetail
+  materials:
+    MedievalProcessedWood: 300
+
 # Бюрократия
 
 # Деталь паспортного стола — из дерева, куётся на столе плотника

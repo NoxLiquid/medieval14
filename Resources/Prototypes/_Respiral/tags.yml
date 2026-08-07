@@ -38,6 +38,12 @@
   id: MedievalPassportOfficeMaterialStorage
 
 - type: Tag
+  id: MedievalPaperweightMaterialStorage
+
+- type: Tag
+  id: MedievalBookstandMaterialStorage
+
+- type: Tag
   id: MedievalGoat
 
 - type: Tag

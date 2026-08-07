@@ -1,0 +1,13 @@
+- type: latheRecipe
+  abstract: true
+  id: MedievalBasePaperRecipe
+  completetime: 5
+  categories:
+  - MedievalPaperCategory
+  materials:
+    MedievalProcessedWood: 10
+
+- type: latheRecipe
+  parent: MedievalBasePaperRecipe
+  id: MedievalPaperRecipe
+  result: MedievalPaper

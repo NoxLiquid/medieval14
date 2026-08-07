@@ -9,3 +9,5 @@ lathe-medieval-category-metal-clothing = Одежда из металла
 lathe-medieval-category-tailor-clothing = Одежда
 lathe-medieval-category-jewelry = Ювелирные изделия
 lathe-medieval-category-bureaucracy = Бюрократия
+lathe-medieval-category-paper = Бумага
+lathe-medieval-category-books = Книги

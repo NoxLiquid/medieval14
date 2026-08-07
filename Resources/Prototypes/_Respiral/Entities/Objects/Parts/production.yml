@@ -146,6 +146,29 @@
       MedievalRawManaCrystal: 200
 
 - type: entity
+  id: MedievalPaperweightDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь бумажного пресса
+  components:
+  - type: MachineBoard
+    prototype: MedievalPaperweight
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 200
+      MedievalProcessedIron: 200
+
+- type: entity
+  id: MedievalBookstandDetail
+  parent: MedievalBaseMachineDetail
+  name: деталь стола писца
+  components:
+  - type: MachineBoard
+    prototype: MedievalBookstand
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedWood: 300
+
+- type: entity
   id: MedievalPassportOfficeDetail
   parent: MedievalBaseMachineDetail
   name: деталь паспортного стола

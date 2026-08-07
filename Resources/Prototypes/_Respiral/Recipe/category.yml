@@ -41,3 +41,11 @@
 - type: latheCategory
   id: MedievalBureaucracyCategory
   name: lathe-medieval-category-bureaucracy
+
+- type: latheCategory
+  id: MedievalPaperCategory
+  name: lathe-medieval-category-paper
+
+- type: latheCategory
+  id: MedievalBookCategory
+  name: lathe-medieval-category-books

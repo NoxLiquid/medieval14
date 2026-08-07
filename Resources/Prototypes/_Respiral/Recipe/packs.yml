@@ -5,6 +5,27 @@
   - MedievalPartRodWoodRecipe
 
 - type: latheRecipePack
+  id: MedievalPaperweightPack
+  recipes:
+  - MedievalPaperRecipe
+
+- type: latheRecipePack
+  id: MedievalBookstandPack
+  recipes:
+  - MedievalSkillBookLiteracyRecipe
+  - MedievalSkillBookBasicBlacksmithingRecipe
+  - MedievalSkillBookBlacksmithingUnderstandingRecipe
+  - MedievalSkillBookBlacksmithingConfidentRecipe
+  - MedievalSkillBookBlacksmithingDeepRecipe
+  - MedievalSkillBookBlacksmithingMasteryRecipe
+  - MedievalSkillBookWoodProcessingRecipe
+  - MedievalSkillBookAlchemRecipe
+  - MedievalSkillBookStoneProcessingRecipe
+  - MedievalSkillBookTailorRecipe
+  - MedievalSkillBookJewelryRecipe
+  - MedievalSkillBookTradingRecipe
+
+- type: latheRecipePack
   id: MedievalQuarryPack
   recipes:
   - MedievalFloorTileItemStoneRecipe
@@ -32,6 +53,7 @@
   - MedievalReagentGrinderDetailRecipe
   - MedievalHotplateDetailRecipe
   - MedievalPassportOfficeDetailRecipe
+  - MedievalBookstandDetailRecipe
   - MedievalFloorTileItemWoodPatternRecipe
   - MedievalFloorTileItemWoodRecipe
   - MedievalFloorTileItemWoodLargeRecipe
@@ -87,6 +109,7 @@
   - MedievalSawmillDetailRecipe
   - MedievalQuarryDetailRecipe
   - MedievalJewelerDetailRecipe
+  - MedievalPaperweightDetailRecipe
   - MedievalConstructionToolsRecipe
   - MedievalRoofHammerRecipe
   - MedievalDrinkMugWoodRecipe

@@ -1,0 +1,99 @@
+- type: latheRecipe
+  abstract: true
+  id: MedievalBaseBookstandRecipe
+  completetime: 600
+  categories:
+  - MedievalBookCategory
+  materials:
+    MedievalPaper: 300
+  neededSkills:
+    MedievalLiteracy: Understanding
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookLiteracyRecipe
+  completetime: 300
+  neededSkills:
+    MedievalLiteracy: Vague
+  result: MedievalSkillBookLiteracy
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookBasicBlacksmithingRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Basic
+  result: MedievalSkillBookBasicBlacksmithing
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookBlacksmithingUnderstandingRecipe
+  completetime: 750
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
+  result: MedievalSkillBookBlacksmithingUnderstanding
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookBlacksmithingConfidentRecipe
+  completetime: 900
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
+  result: MedievalSkillBookBlacksmithingConfident
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookBlacksmithingDeepRecipe
+  completetime: 1050
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
+  result: MedievalSkillBookBlacksmithingDeep
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookBlacksmithingMasteryRecipe
+  completetime: 1200
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
+  result: MedievalSkillBookBlacksmithingMastery
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookWoodProcessingRecipe
+  neededSkills:
+    MedievalWoodProcessing: Understanding
+  result: MedievalSkillBookWoodProcessing
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookAlchemRecipe
+  neededSkills:
+    MedievalAlchem: Understanding
+  result: MedievalSkillBookAlchem
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookStoneProcessingRecipe
+  neededSkills:
+    MedievalStoneProcessing: Understanding
+  result: MedievalSkillBookStoneProcessing
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookTailorRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalSkillBookTailor
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookJewelryRecipe
+  neededSkills:
+    MedievalJewelry: Understanding
+  result: MedievalSkillBookJewelry
+
+- type: latheRecipe
+  parent: MedievalBaseBookstandRecipe
+  id: MedievalSkillBookTradingRecipe
+  neededSkills:
+    MedievalTrading: Understanding
+  result: MedievalSkillBookTrading

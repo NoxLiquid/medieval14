@@ -6,15 +6,12 @@
   id: MedievalBasePaper
   abstract: true
   components:
-  - type: MedievalPhysicalPriced
   - type: Sprite
     sprite: _Respiral/Objects/Items/Bureaucracy/paper.rsi
-  - type: PhysicalComposition
-    materialComposition:
-      MedievalPaper: 100
   - type: Tag
     tags:
     - MedievalPassportOfficeMaterialStorage
+    - MedievalBookstandMaterialStorage
 
 # Бумага (записываемая)
 - type: entity
@@ -45,6 +42,10 @@
       enum.PaperUiKey.Key:
         type: PaperBoundUserInterface
   - type: PaperVisuals
+  - type: MedievalPhysicalPriced
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalPaper: 10
 
 # Бумага с текстом (для маппинга)
 - type: entity
