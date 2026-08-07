@@ -1,0 +1,45 @@
+meta:
+  format: 7
+  category: Map
+  engineVersion: 272.0.0
+  forkId: ""
+  forkVersion: ""
+  time: 08/08/2026 00:00:00
+  entityCount: 1
+maps:
+- 1
+grids:
+- 1
+orphans: []
+nullspace: []
+tilemap: {}
+entities:
+- proto: ""
+  entities:
+  - uid: 1
+    components:
+    - type: MetaData
+      name: Mapping MedievalEmpty [2]
+    - type: Transform
+    - type: BecomesStation
+      id: Empty
+    - type: Map
+      mapPaused: True
+    - type: GridTree
+    - type: Broadphase
+    - type: OccluderTree
+    - type: MapGrid
+      chunks: {}
+    - type: SpreaderGrid
+    - type: GridPathfinding
+    - type: DecalGrid
+      chunkCollection:
+        version: 2
+        nodes: []
+    - type: Parallax
+      parallax: MedievalBlack
+    - type: Roof
+    - type: RadiationGridResistance
+    - type: ExplosionAirtightGrid
+    - type: NavMap
+...
