@@ -1,6 +1,6 @@
 using Content.Server._Respiral.Skill.Components;
-using Content.Shared._Respiral.Skills;
-using Content.Shared._Respiral.Skills.Prototypes;
+using Content.Shared._Respiral.Skill;
+using Content.Shared._Respiral.Skill.Prototypes;
 using Content.Shared.Examine;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;

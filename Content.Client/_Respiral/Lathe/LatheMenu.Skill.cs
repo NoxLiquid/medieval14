@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Content.Shared._Respiral.Skills;
+using Content.Shared._Respiral.Skill;
 using Content.Shared.Research.Prototypes;
 using Robust.Client.Player;
 

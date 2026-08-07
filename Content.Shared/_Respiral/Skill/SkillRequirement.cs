@@ -1,8 +1,8 @@
-using Content.Shared._Respiral.Skills.Components;
-using Content.Shared._Respiral.Skills.Prototypes;
+using Content.Shared._Respiral.Skill.Components;
+using Content.Shared._Respiral.Skill.Prototypes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Respiral.Skills;
+namespace Content.Shared._Respiral.Skill;
 
 /// <summary>
 ///     Общая проверка требований к навыкам по уровню знания (<see cref="SkillKnowledgeLevel"/>).

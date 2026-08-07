@@ -1,6 +1,6 @@
 using Robust.Shared.Localization;
 
-namespace Content.Shared._Respiral.Skills;
+namespace Content.Shared._Respiral.Skill;
 
 /// <summary>
 ///     Тип (уровень) знания навыка, зависящий от прогресса освоения 0..1.

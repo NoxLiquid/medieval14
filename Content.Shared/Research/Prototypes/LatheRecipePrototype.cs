@@ -1,5 +1,5 @@
-using Content.Shared._Respiral.Skills; // Respiral
-using Content.Shared._Respiral.Skills.Prototypes; // Respiral
+using Content.Shared._Respiral.Skill; // Respiral
+using Content.Shared._Respiral.Skill.Prototypes; // Respiral
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Lathe.Prototypes;
