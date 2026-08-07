@@ -31,15 +31,22 @@ public sealed partial class LearnSkillWhenUsingSystem : EntitySystem
 
     private void OnExamine(EntityUid uid, LearnSkillWhenUsingComponent component, ExaminedEvent args)
     {
-        if (component.Skills.Count == 0)
-            return;
+        if (component.Skills.Count > 0)
+        {
+            var skills = new List<ProtoId<SkillPrototype>>();
+            foreach (var entry in component.Skills)
+                skills.Add(entry.Skill);
 
-        var skills = new List<ProtoId<SkillPrototype>>();
-        foreach (var entry in component.Skills)
-            skills.Add(entry.Skill);
+            args.PushMarkup(Loc.GetString("skill-exm-learn-skills",
+                ("skills", _skillSystem.GetSkillNames(skills))));
+        }
 
-        args.PushMarkup(Loc.GetString("skill-exm-learn-skills",
-            ("skills", _skillSystem.GetSkillNames(skills))));
+        if (component.NeededSkillsProgress.Count > 0)
+        {
+            var needed = new List<ProtoId<SkillPrototype>>(component.NeededSkillsProgress.Keys);
+            args.PushMarkup(Loc.GetString("skill-exm-needed-skills",
+                ("skills", _skillSystem.GetSkillNames(needed))));
+        }
     }
 
     /// <summary>
@@ -63,6 +70,12 @@ public sealed partial class LearnSkillWhenUsingSystem : EntitySystem
     {
         if (args.Handled)
             return;
+
+        if (!_skillSystem.CheckRequiredSkillsProgress(args.User, component.NeededSkillsProgress))
+        {
+            args.Handled = true;
+            return;
+        }
 
         // if (component.LanguagesWhitelist != null &&
         //     component.LanguagesWhitelist.Count > 0)

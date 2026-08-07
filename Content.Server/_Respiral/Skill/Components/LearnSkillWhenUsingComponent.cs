@@ -25,6 +25,12 @@ public sealed partial class LearnSkillWhenUsingComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public SoundSpecifier? Sound = default!;
 
+    /// <summary>
+    ///     Навыки, необходимые, чтобы вообще начать изучение по этому предмету. Пустой словарь — гейта нет.
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<SkillPrototype>, SkillKnowledgeLevel> NeededSkillsProgress = new();
+
     // /// <summary>
     // ///     Список языков, на которых можно изучать навыки из этой книги
     // /// </summary>

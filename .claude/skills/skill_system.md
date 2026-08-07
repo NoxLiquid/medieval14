@@ -354,6 +354,27 @@ Maps a raw skill progress 0..1 into a named "knowledge type" — used both in th
     `SkillKnowledge.GetLevelName(Progress)`; if `!Evaluable` the right label is blank, the description is
     replaced by `skill-knowledge-cant-evaluate`, and the progress bar is forced full (real level not leaked).
 
+## Reading a skill book now requires literacy (2026-08)
+
+`LearnSkillWhenUsingComponent` gained `NeededSkillsProgress` (`Dictionary<ProtoId<SkillPrototype>,
+SkillKnowledgeLevel>`, default empty = no gate) — mirrors `NeededSkillForInteract{,Using}`'s field of the
+same name/shape and reuses `SkillSystem.CheckRequiredSkillsProgress` (same popup/NPC-skip semantics).
+Checked in `LearnSkillWhenUsingSystem.OnUseInHand` BEFORE the DoAfter starts (`args.Handled = true` +
+`return` on failure — no popup double-fire, `CheckRequiredSkillsProgress` shows its own). `OnExamine` also
+appends the "needed skills" markup line (`skill-exm-needed-skills`, same locale key `NeededSkillForInteract`
+uses) alongside the existing "teaches" line, when the dict isn't empty.
+
+Why a NEW field instead of reusing `NeededSkillForInteract`/`InteractUsing`: those gate
+`BeforeInteractionActivate`+`InteractHandEvent` / `BeforeRangedInteractEvent` respectively — neither fires
+on `UseInHandEvent` (the actual event `OnUseInHand` subscribes to, i.e. activating the book from the
+hotbar/hand). Attaching either existing component to a book would be a silent no-op.
+
+**Content applied (`Skill/book.yml`):** all 11 non-literacy skill books get
+`neededSkillsProgress: { MedievalLiteracy: Basic }` (reading requires SOME literacy — lower bar than the
+`Understanding` the bookstand recipes require to WRITE one, see below: reading is easier than writing).
+`MedievalSkillBookLiteracy` (the primer) is deliberately left with an EMPTY dict (field omitted → default)
+— it's how literacy is bootstrapped from zero, so it can't itself require literacy.
+
 ## Paper press + scribe's desk (MedievalPaperweight / MedievalBookstand, 2026-08)
 
 Two new lathes, following the standard "Pattern for creating a new machine" above:
