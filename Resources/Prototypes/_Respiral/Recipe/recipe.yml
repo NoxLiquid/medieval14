@@ -359,7 +359,7 @@
   parent: MedievalRawProcessingRecipe
   id: MedievalIronIngotRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronIngot1
   materials:
     MedievalRawIron: 200
@@ -369,7 +369,7 @@
   parent: MedievalRawProcessingRecipe
   id: MedievalSteelIngotRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSteelIngot1
   materials:
     MedievalRawIron: 300
@@ -379,7 +379,7 @@
   parent: MedievalRawProcessingRecipe
   id: MedievalSilverIngotRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverIngot1
   materials:
     MedievalRawSilver: 500
@@ -389,7 +389,7 @@
   parent: MedievalRawProcessingRecipe
   id: MedievalGoldIngotRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Confident
   result: MedievalGoldIngot1
   materials:
     MedievalRawGold: 500
@@ -399,7 +399,7 @@
   parent: MedievalRawProcessingRecipe
   id: MedievalMithrilIngotRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Confident
   result: MedievalMithrilIngot1
   materials:
     MedievalRawMithril: 300
@@ -409,7 +409,7 @@
   parent: MedievalRawProcessingRecipe
   id: MedievalAdamantineIngotRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Deep
   result: MedievalAdamantineIngot1
   materials:
     MedievalRawAdamantine: 300
@@ -495,7 +495,7 @@
   parent: MedievalBaseToolsRecipe
   id: MedievalRoofHammerRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Basic
   result: MedievalRoofHammer
   materials:
     MedievalProcessedIron: 150
@@ -568,7 +568,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalIronCandelabra1Recipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronCandelabra1
   materials:
     MedievalProcessedIron: 50
@@ -579,7 +579,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalSilverCandelabra1Recipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverCandelabra1
   materials:
     MedievalProcessedSilver: 50
@@ -590,7 +590,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalGoldCandelabra1Recipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Confident
   result: MedievalGoldCandelabra1
   materials:
     MedievalProcessedGold: 50
@@ -601,7 +601,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalIronCandelabra3Recipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronCandelabra3
   materials:
     MedievalProcessedIron: 75
@@ -612,7 +612,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalSilverCandelabra3Recipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverCandelabra3
   materials:
     MedievalProcessedSilver: 75
@@ -623,7 +623,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalGoldCandelabra3Recipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Confident
   result: MedievalGoldCandelabra3
   materials:
     MedievalProcessedGold: 50
@@ -634,7 +634,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalIronCandelabraMiniRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Basic
   result: MedievalIronCandelabraMini
   materials:
     MedievalProcessedIron: 25
@@ -645,7 +645,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalSilverCandelabraMiniRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Understanding
   result: MedievalSilverCandelabraMini
   materials:
     MedievalProcessedSilver: 25
@@ -656,7 +656,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalGoldCandelabraMiniRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Confident
   result: MedievalGoldCandelabraMini
   materials:
     MedievalProcessedGold: 25
@@ -667,7 +667,7 @@
   parent: MedievalBaseLightingRecipe
   id: MedievalSimpleMetalTorchRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Basic
   result: MedievalSimpleMetalTorch
   materials:
     MedievalProcessedIron: 50
@@ -678,7 +678,7 @@
   parent: MedievalMaterialProcessingRecipe
   id: MedievalHammerAmmoRecipe
   neededSkills:
-    MedievalBasicBlacksmithing: Mastery
+    MedievalBasicBlacksmithing: Basic
   result: MedievalConstructionToolsAmmo
   materials:
     MedievalProcessedWood: 100

@@ -11,7 +11,7 @@
     components:
     - type: Skill
       skills:
-        MedievalBasicBlacksmithing: 1
+        MedievalBasicBlacksmithing: 0.5
 
 - type: startingGear
   id: MedievalBlacksmithGear

@@ -276,6 +276,40 @@ recipe (`MedievalSmelterDetailRecipe`) isn't in any pack (orphaned/dead content)
 wins, and it's the semantically correct call — it's a **wood** mug regardless of which machine also
 happens to offer it).
 
+### Flat-Mastery placeholder walked back per material/complexity (2026-08, requester follow-up)
+
+The bulk pass above stamped a flat `Mastery` on ~40 non-weapon recipes as a coarse placeholder — the
+requester objected on the same logic already used for weapons (a hammer and a magic sword shouldn't need
+the same mastery), so these were retiered instead of left at the placeholder:
+
+- **Ingots** (`MedievalRawProcessingRecipe` children, smelter) — retiered by material using the SAME table
+  as weapons (see "Per-material weapon tiers" above): Iron→`Basic`, Steel/Silver→`Understanding`,
+  Gold→`Confident` (price 39.32, closer to Mithril's 43.02 than Silver's 17.87 — same tiebreaker rule),
+  Mithril→`Confident`, Adamantine→`Deep`. Smelting ore into a basic ingot is arguably the most
+  FOUNDATIONAL blacksmithing act, so it shouldn't gate above the equivalent-material weapon.
+- **Candelabras** (`MedievalBaseLightingRecipe` children: `*Candelabra{1,3,Mini}`) + `MedievalSimpleMetalTorchRecipe`
+  — retiered by material: Iron→`Basic`, Silver→`Understanding`, Gold→`Confident` (torch is iron-only→`Basic`).
+- **`MedievalRoofHammerRecipe`/`MedievalHammerAmmoRecipe`** — simple tools/ammo, dropped to `Basic` (in line
+  with the other `MedievalBaseToolsRecipe` children like keys/locks/scissors, which already inherited
+  `Basic` untouched and were never part of the placeholder pass).
+- **Left at `Mastery` on purpose**: the 5 machine-detail recipes (`MedievalSawmillDetailRecipe`,
+  `MedievalQuarryDetailRecipe`, `MedievalJewelerDetailRecipe`, `MedievalSmelterDetailRecipe`,
+  `MedievalPaperweightDetailRecipe`) — building a whole machine from scratch is a genuinely top-tier feat,
+  distinct from forging a single item, so no per-material argument applies. `MedievalFireBladeRecipe`/
+  `MedievalSpectralBladeRecipe` (magic weapons) also stay `Mastery` — that's the `Magic` row of the
+  weapon-tier table, unrelated to this placeholder issue.
+
+### Blacksmith job starting skill lowered (2026-08, same follow-up)
+
+`Roles/Jobs/Craftsman/city.yml`, `MedievalBlacksmith` job: `MedievalBasicBlacksmithing` starting progress
+`1` (full Mastery on spawn) → `0.5` (mid-`Understanding`). Rationale: skill books are tiered (5 volumes to
+reach Mastery, see "tiered book learning" above) — a starting character having Mastery for free made the
+whole tomes-and-progression system pointless for the one job built around this skill. `0.5` leaves a
+professional blacksmith competent out of the gate (Basic/Understanding-tier: iron, most weapons and
+tools) while `Confident`+ (Mithril, Gold, Adamantine, magic) still requires reading the higher-tier tomes
+in-game. Every other Craftsman job in the same file also starts its trade skill at `1` — untouched here,
+out of scope for this request (only blacksmith was named).
+
 **⚠️ Inheritance pitfall hit and fixed while doing this:** the bulk pass initially checked only the raw
 per-recipe YAML for an existing `neededSkills` key, missing that `MedievalBaseToolsRecipe` (`Basic`) and
 `MedievalBaseMetalClothingRecipe` (`Confident`) already supply one **by inheritance** (dict-merge from the
