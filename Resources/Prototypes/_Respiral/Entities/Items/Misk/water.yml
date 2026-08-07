@@ -3,7 +3,54 @@
   name: вода
   parent: FloorWaterEntity
   components:
+  - type: Sprite
+    sprite: _Respiral/Tiles/Water/water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: full
+  - type: Icon
+    sprite: _Respiral/Tiles/Water/water.rsi
+    state: full
+  - type: IconSmooth
+    key: MedievalWater
+    additionalKeys:
+    - MedievalWall
+    base: water
   - type: TileEntityEffect
     effects:
     - !type:Extinguish
     - !type:WashDirt
+
+- type: entity
+  id: MedievalFloorWaterEntityDeep
+  name: глубокая вода
+  parent: MedievalFloorWaterEntity
+  components:
+  - type: Sprite
+    color: "#ffffffdd"
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.2
+    sprintSpeedModifier: 0.2
+  - type: DamageContacts
+    damage:
+      types:
+        Asphyxiation: 2.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 30
+        mask:
+        - ItemMask
