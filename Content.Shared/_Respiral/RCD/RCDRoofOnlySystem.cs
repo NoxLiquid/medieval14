@@ -13,11 +13,11 @@ namespace Content.Shared._Respiral.RCD;
 /// запрещает демонтаж всего, кроме сущностей с тегом MedievalRoof, и демонтаж плитки пола.
 /// Постройка ограничивается на уровне availablePrototypes самого RCD-компонента.
 /// </summary>
-public sealed class RCDRoofOnlySystem : EntitySystem
+public sealed partial class RCDRoofOnlySystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     private static readonly ProtoId<TagPrototype> RoofTag = "MedievalRoof";
 
