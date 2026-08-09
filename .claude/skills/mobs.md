@@ -118,6 +118,44 @@ mount and multiplies the mount's own `MovementSpeedModifierComponent` speed by `
 default) while ridden — **the mount itself needs an explicit `MovementSpeedModifier` component**, or the
 speed boost silently no-ops (`TryComp` fails and the handler returns early).
 
+**`MountableComponent.needsSaddle` (bool, default false):** when true, mounting is refused unless the
+mount has an item in its `"saddle"` inventory slot (`SharedMountSystem.SaddleSlot` const). `MedievalMobHorse`
+sets `needsSaddle: true`. Two non-obvious implementation points:
+1. The check MUST be in a `<MountableComponent, StrapAttemptEvent>` handler, NOT in `StrappedEvent`.
+   `StrapAttemptEvent` (`Content.Shared/Buckle/Components/BuckleComponent.cs:81`, raised from
+   `CanBuckle`/`SharedBuckleSystem.Buckle.cs:324` **before** the buckle is established, cancellable via
+   `args.Cancelled`) is the only place you can veto mounting. A first attempt put the check in
+   `StrappedEvent` and called `_buckle.TryUnbuckle` — that **silently failed**: `TryUnbuckle` is blocked by
+   `BuckleComponent.Delay` (0.25s, you literally just buckled this same tick), so the rider ended up
+   "seated but can't control" — matching a user bug report ("I can still mount without a saddle but can't
+   move it"). Precedent for the correct pattern: `Content.Shared/Foldable/FoldableSystem.cs:54`
+   (`OnStrapAttempt` → `args.Cancelled = true` when folded). Popup on refusal via
+   `_popup.PopupEntity(Loc.GetString("mount-needs-saddle", ...), mount, user)` — note `PopupEntity`, NOT the
+   deprecated `PopupClient` (locale: `Resources/Locale/{en-US,ru-RU}/_Respiral/mount.ftl`).
+2. **Pull-then-mount crash — MUST cancel the mount, not auto-stop the pull.** If the rider is *pulling*
+   the mount (you drag the horse over, then hop on) there's a physics pull-joint between the two. `Buckle`
+   relays the rider's joints onto the mount (`SharedBuckleSystem.Buckle.cs:373` `_joints.SetRelay(buckle,
+   strap)`), setting `rider.JointComponent.Relay = mount`. A rider↔mount joint coexisting with that relay is
+   an illegal self-joint, asserted in TWO places: server-side `SharedJointSystem.Relay.cs:139` AND — the one
+   that actually kept crashing — client-side `SharedJointSystem.cs:149` (`AssertNotEqual(jointComponentA
+   .Relay, bUid)`) reached via `JointSystem.HandleComponentState` during `ClientGameStateManager
+   .ResetPredictedEntities` (prediction rollback re-applying a networked `JointComponent` state; the handler
+   sets `Relay` at line 23 THEN re-adds joints at line 89, so any state where both exist trips it).
+   **First (wrong) fix attempt: `_pulling.TryStopPull` in `OnStrapAttempt` then let the buckle proceed.**
+   That fixed the server assert but NOT the client one — even though `RemoveJoint` clears the joint dict
+   synchronously, prediction rollback still reconstructs a state with joint+relay coexisting, because you
+   can't guarantee no networked/replayed tick has both. **Correct fix: `OnStrapAttempt` outright cancels
+   the mount (`args.Cancelled = true` + `mount-stop-pulling` popup) whenever a pull links rider↔mount
+   either direction** (`IsPullLinked` helper checking `PullableComponent.Puller` both ways). If the buckle
+   never happens, `SetRelay` never runs, `rider.Relay` never becomes the mount → no illegal state can exist
+   on server or client, period. UX cost: player must release the horse (their pull keybind) before
+   mounting — acceptable and clear via the popup. Note this is only a hazard at *mount time*: you can't pull
+   a mount you're already buckled to (`SharedBuckleSystem` `OnPullAttempt` cancels it), a ridden mount is an
+   asleep NPC that won't initiate pulls, and a third party pulling the horse creates a thirdparty↔mount
+   joint that doesn't involve `rider.Relay` so it's harmless. General lesson: joint + relay conflicts can't
+   be dodged by careful same-tick ordering because client prediction rollback re-applies old networked
+   states — the only robust cure is to never let the conflicting combination be established in the first place.
+
 **Saddle slot — deliberately NOT `ItemSlots`/`EntityStorage`, uses the standard Inventory+Clothing system:**
 first attempt used `ItemSlotsComponent` + a custom `EntitySystem` bridging slot-fill to appearance data
 (see [[containers]] "EntityStorage as single-item slot" for why `ItemSlots` needs a code bridge — it

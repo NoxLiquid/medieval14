@@ -17,9 +17,6 @@ public sealed partial class MountableComponent : Component
     [DataField]
     public bool ControlMovement = true;
 
-    /// <summary>
-    /// If true, the mount can only be ridden while it has an item in its "saddle" inventory slot
-    /// </summary>
     [DataField]
     public bool NeedsSaddle;
 }
