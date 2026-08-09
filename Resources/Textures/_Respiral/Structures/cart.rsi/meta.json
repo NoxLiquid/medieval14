@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Author waives all copyright claims to this work",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "cart",
+            "directions": 4
+        },
+        {
+            "name": "cart_empty",
+            "directions": 4
+        }
+    ]
+}

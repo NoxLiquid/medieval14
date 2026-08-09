@@ -53,3 +53,24 @@ Caveats:
 ### "File not found" for a map that visibly exists (2026-08)
 **Cause:** a new station map was created by copy-pasting `empty.yml`/`medieval_empty*.yml` as a template (e.g. `Edgehaven`) and only the `zMap` block's paths + ids were renamed — the `gameMap.mapPath`/`mapsBelow`/`mapsAbove`/`stations:` key/`StationNameSetup.mapNameTemplate` and the map files' own `BecomesStation.id`/`MetaData.name` were left as stale `Empty`/`/Maps/_Respiral/Empty/...` copies. The YAMLLinter catches the path mismatch (`File not found. (/Maps/_Respiral/Empty/medieval_edgehaven.yml)`); a mismatched `BecomesStation.id` vs. the `stations:` key would NOT be caught by the linter (both are valid strings) — check it manually.
 **Solution:** when cloning `empty.yml` for a new map, grep the new prototype + its 3 map files for the old map's name/`Empty` and rename every occurrence, not just the `zMap` block.
+
+### Z-level travel disables a vanilla `RelativeRotation` reset — bites mounted riding (2026-08)
+**Where:** `Content.Shared/_CE/ZLevels/Core/EntitySystems/CESharedZLevelsSystem.Movement.cs`, block
+`// Respiral-ZLeveling-Edit-start/end`. Upstream `SharedMoverController.Input.cs` (`OnInputParentChange`)
+normally resets `InputMoverComponent.RelativeRotation`/`TargetRelativeRotation` to `Angle.Zero` whenever
+`oldMapId != mapId` (i.e. on any cross-map teleport) — that reset is commented out here for Z-level
+travel, so `RelativeRotation` instead falls through to the grid-changed cardinal-snap logic
+(`SharedMoverController.Input.cs:211-228`), which can legitimately end up nonzero depending on the
+old/new grid's relative world rotation.
+
+Normally this is invisible (a player just corrects their own facing without noticing). It became a real
+bug for [[mobs]]'s horse mount: once a player becomes a movement-relay *source* (`SetRelay`, used for
+riding), `HandleMobMovement`'s relay branch (`SharedMoverController.cs:132-166`) returns before ever
+reaching `TryUpdateRelative` again — so `RelativeRotation` freezes at whatever it was the instant relaying
+started, and that frozen (possibly nonzero, courtesy of the disabled Z-level reset above) value gets
+copied onto the mount every frame, permanently skewing `wishDir`→world-space conversion. Symptom: "the
+horse moves in a direction unrelated to my keys after mounting." Fixed **in the upstream file** (marked
+`// Respiral-Start/End`, `SharedMoverController.cs:132-143`): the relay-source branch now also calls
+`TryUpdateRelative` on itself every tick (same `LerpTarget` gating as the normal, non-relay path), so its
+`RelativeRotation` stays live instead of freezing at ride-start. See [[mobs]] "Mounts & saddle slot" for
+the full riding feature and the sibling misprediction/AI bugs found alongside this one.

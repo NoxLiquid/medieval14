@@ -73,6 +73,45 @@ Current layout (Respiral):
 To rearrange a slot in the hotbar — change its `slotGroup` and/or its position among the slot
 definitions in `human_inventory_template.yml`, not `uiWindowPos`.
 
+## Non-humanoid wearable slots (e.g. horse saddle) — reuse a SlotFlags bit + blacklist it on human
+
+`SlotFlags` (`Content.Shared/Inventory/SlotFlags.cs`) is a hardcoded `[Flags]` enum with every bit
+already claimed by the human template (`HEAD, EYES, EARS, MASK, OUTERCLOTHING, INNERCLOTHING, NECK,
+BACK, BELT, GLOVES, IDCARD, POCKET, LEGS, FEET, SUITSTORAGE`) — there is no "free" flag, and it's C#
+code to add a new one. The vanilla answer (already used by `pet_inventory_template.yml`,
+`hamster_inventory_template.yml`, `monkey_inventory_template.yml`, etc.) is to give a non-humanoid mob
+its own tiny `inventoryTemplate` whose slot(s) **reuse an existing `SlotFlags` bit**, and rely on
+`whitelist`/`blacklist` (both plain `EntityWhitelist`, `tags:`/`components:`) at the **slot definition**
+level to stop cross-compatibility — e.g. `pet_inventory_template.yml`'s `mask`/`head`/`eyes` slots all
+`whitelist: tags: [PetWearable]`, and `human_inventory_template.yml`'s own `back` slot already
+`blacklist: tags: [PetOnly]` (so a human can't wear a pet carrier as a backpack).
+
+Respiral's horse saddle follows the exact same recipe (`Resources/Prototypes/_Respiral/InventoryTemplates/horse_inventory_template.yml`):
+```yaml
+- type: inventoryTemplate
+  id: medievalHorse
+  slots:
+  - name: saddle
+    slotFlags: BACK        # reused bit, matched against the item's Clothing.slots
+    whitelist:
+      tags: [MedievalSaddle]
+```
+Reusing `BACK` alone would let a human equip the saddle in their own `back` slot (same flag bit, no
+inherent species check) — closed by adding the saddle's tag to the **human** template's existing `back`
+slot blacklist (`Resources/Prototypes/InventoryTemplates/human_inventory_template.yml`, inside the
+pre-existing `# Respiral-Start` block around that slot):
+```yaml
+- name: back
+  ...
+  blacklist:
+    tags:
+    - PetOnly
+    - MedievalSaddle
+```
+`Clothing.Slots` on the item (`slots: [BACK]`, case-insensitive vs the enum) is the OTHER half of the
+match — an item is equippable into a slot iff `(item.Clothing.Slots & slotDef.slotFlags) != 0` AND it
+passes that slot's whitelist/blacklist. See [[mobs]] "Mounts & saddle slot" for the full horse writeup.
+
 ## Known Gaps
 
 - Pants slot uses `uniform` placeholder texture — needs dedicated `pants.png` icons for all UI themes

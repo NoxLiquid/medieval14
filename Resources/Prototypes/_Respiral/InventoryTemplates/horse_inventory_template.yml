@@ -1,0 +1,12 @@
+- type: inventoryTemplate
+  id: medievalHorse
+  slots:
+  - name: saddle
+    slotTexture: back
+    slotFlags: BACK
+    uiWindowPos: 0,0
+    strippingWindowPos: 0,0
+    displayName: Saddle
+    whitelist:
+      tags:
+      - MedievalSaddle

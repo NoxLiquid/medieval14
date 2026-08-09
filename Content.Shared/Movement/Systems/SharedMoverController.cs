@@ -135,6 +135,17 @@ public abstract partial class SharedMoverController : VirtualController
             if (!MoverQuery.TryComp(relay.RelayEntity, out var relayTargetMover))
                 return;
 
+            // Respiral-Start - у relay-источника (наездник) без этого RelativeEntity/RelativeRotation
+            // замораживаются на момент посадки (return ниже никогда не даёт дойти до TryUpdateRelative),
+            // и этот "застывший" угол копируется на маунт каждый кадр. На большинстве карт безобидно
+            // (угол = 0), но при смене Z-уровня сброс RelativeRotation в ноль у нас отключен
+            // (CESharedZLevelsSystem.Movement.cs) - тогда конь ехал в сторону, отличную от нажатых клавиш
+            if (XformQuery.TryComp(uid, out var relaySourceXform) && mover.LerpTarget < Timing.CurTime)
+            {
+                TryUpdateRelative(uid, mover, relaySourceXform);
+            }
+            // Respiral-End
+
             // Always lerp rotation so relay entities aren't cooked.
             LerpRotation(uid, mover, frameTime);
             var dirtied = false;

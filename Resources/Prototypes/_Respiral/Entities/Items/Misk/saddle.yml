@@ -1,0 +1,30 @@
+- type: entity
+  parent: BaseItem
+  id: MedievalSaddle
+  name: седло
+  description: Кожаное седло с тканевой подкладкой. Годится только для верховых животных.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/col.rsi
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Clothing
+    slots:
+    - BACK
+    clothingVisuals:
+      saddle:
+      - state: harness
+        sprite: _Respiral/Mobs/Flora/mount.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+      MedievalCloth: 50
+  - type: Damageable
+    damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - MedievalSaddle

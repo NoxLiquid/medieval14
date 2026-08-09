@@ -261,6 +261,7 @@
 - type: latheRecipePack
   id: MedievalSewing
   recipes:
+  - MedievalSaddleRecipe
   - MedievalComfortableBedsheetRecipe
   - MedievalLeatherBedsheetRecipe
   - MedievalSimpleBedsheetRecipe

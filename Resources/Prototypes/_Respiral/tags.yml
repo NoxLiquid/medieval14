@@ -23,6 +23,12 @@
   id: MedievalKey
 
 - type: Tag
+  id: MedievalSaddle
+
+- type: Tag
+  id: MedievalHorse
+
+- type: Tag
   id: MedievalTanneryMaterialStorage
 
 - type: Tag

@@ -1,0 +1,51 @@
+- type: entity
+  parent: BaseStructureDynamic
+  id: MedievalCart
+  name: повозка
+  description: Деревянная повозка на колёсах. Слишком тяжела, чтобы человек мог легко сдвинуть её с места в одиночку.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
+    sprite: _Respiral/Structures/cart.rsi
+    layers:
+    - state: cart_empty
+      map: ["base"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.9,-0.9,0.9,0.9"
+        density: 900
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: EntityStorage
+    capacity: 60
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.HasContents:
+        base:
+          True: { state: cart }
+          False: { state: cart_empty }
+  - type: Damageable
+    damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy

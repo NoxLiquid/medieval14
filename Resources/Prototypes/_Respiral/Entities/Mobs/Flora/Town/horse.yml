@@ -1,0 +1,84 @@
+- type: entity
+  name: лошадь
+  parent: [ MedievalFloraMobBase, BaseMobRuminant, StripableInventoryBase ]
+  id: MedievalMobHorse
+  description: Крупное и сильное животное. Если её оседлать, можно быстро передвигаться по округе или впрячь в повозку.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    scale: 1.2, 1.2
+    sprite: _Respiral/Mobs/Flora/mount.rsi
+    state: alive
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 5.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 700
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      300: Dead
+  - type: Strap
+    position: Stand
+    modifyBuckleDrawDepth: false
+    buckleOffset: "0,-0.15"
+  - type: Mountable
+  - type: Inventory
+    speciesId: horse
+    templateId: medievalHorse
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - MedievalHorse
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - MedievalHorse
+    offspring:
+    - id: MedievalMobHorse
+  - type: ReproductivePartner
+  - type: ExaminableHunger
+  - type: Butcherable
+    spawned:
+    - id: MedievalPelt
+      amount: 4
+  - type: Grammar
+    attributes:
+      gender: female
+  - type: InteractionPopup
+    successChance: 0.6
+    interactDelay: 2
+    interactSuccessString: petting-success-soft-floofy
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+  - type: Perishable
+    molsPerSecondPerUnitMass: 0.0015
+  - type: MobPrice
+    price: 6000
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 350
+  - type: NpcFactionMember
+    factions:
+    - MedievalTownPeople
+  - type: NPCRetaliation
+    attackMemoryLength: 5
+  - type: FactionException
+  - type: HTN
+    rootTask:
+      task: RuminantHostileCompound

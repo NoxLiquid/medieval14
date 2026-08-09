@@ -45,6 +45,72 @@ stateBaseOpen: barrel_open
 ### Collision
 Crates use `CrateMask`, not `MachineMask`.
 
+### Using EntityStorage (capacity:1 + whitelist) as a single-item "slot" — gotcha
+
+`StorageVisuals.HasContents` (bool) is set automatically with zero custom code
+(`SharedEntityStorageSystem.ModifyComponents`, `Content.Shared/Storage/EntitySystems/SharedEntityStorageSystem.cs:497`),
+but it is ONLY refreshed from `OpenStorage()`/`CloseStorage()` — not on every container mutation.
+
+**Critical gotcha — leaving `open: true` does NOT give free-form insertion.**
+`Insert()` (line 301-321) branches on `component.Open`:
+- if `Open == true` → `TransformSystem.DropNextTo(toInsert, container)` — item is just dropped on the
+  floor next to the entity, it is **not** added to `Contents`, `HasContents` stays false, `MapInit`/whitelist
+  are never consulted for it.
+- if `Open == false` → actually inserts into the `Contents` container.
+
+The only code path that populates `Contents` is `CloseStorage()` (`SharedEntityStorageSystem.cs:249-299`):
+on close, it does an `EntityLookupSystem` scan within `EnteringRange` of `EnteringOffset` around the
+storage, and for each nearby entity passing `CanInsert` (whitelist/blacklist/size/capacity) calls
+`AddToContents` → `Insert`. So the real UX is: open the "slot", place the item within ~`EnteringRange`
+(default 0.18) of the entity, then close it (click again / verb) — items don't teleport-insert on drop or
+drag-and-drop directly onto a closed storage; there is no `InteractUsing`/drag-drop handler wired up in
+`SharedEntityStorageSystem`/`Content.Server/Storage/EntitySystems/EntityStorageSystem.cs`.
+
+**`capacity: 1` blocks a second item cleanly.** `CanInsert` (line 353) checks
+`Contents.ContainedEntities.Count >= Capacity` and the `CloseStorage` scan loop also `break`s once
+capacity is reached (line 287) — so at most one item is ever swept in per close, and any further
+`Insert`/`AddToContents` call from other code returns false while full.
+
+**Whitelist by tag:** `EntityStorageComponent.Whitelist` is a standard `EntityWhitelist`
+(`Content.Shared/Whitelist/EntityWhitelist.cs`) — supports `tags: [ ... ]` (`List<ProtoId<TagPrototype>>`)
+or `components: [ ... ]`, fully YAML-driven, no code needed. Default whitelist (if unset) is
+`components: [MobState, Item]` — override it explicitly if you want a pure-tag slot.
+
+**Bottom line:** a single-item "accessory slot" built purely from `EntityStorageComponent` works with
+zero C#, but it inherits the crate/locker open-place-close interaction model — it is not a instant
+"drop item here" slot unless you also write a custom insert path (e.g. subscribe `InteractUsingEvent`
+and call `EntityStorageSystem.Insert`/`AddToContents` directly), which WOULD require custom C#.
+
+## Cart (MedievalCart) — EntityStorage HasContents used for real
+
+`Resources/Prototypes/_Respiral/Entities/Structures/cart.yml`. Sprite: `_Respiral/Structures/cart.rsi`
+(`cart`/`cart_empty`, 4 directions each). Parent `BaseStructureDynamic` (dynamic body, `Pullable`,
+`Anchorable` — the standard "heavy movable prop" base, also used by crates). No `EntityStorageVisuals`
+(no `Door` layer at all — open/closed has no dedicated art here, only contents-vs-empty does):
+```yaml
+- type: EntityStorage
+  capacity: 60
+- type: GenericVisualizer
+  visuals:
+    enum.StorageVisuals.HasContents:
+      base:
+        True: { state: cart }
+        False: { state: cart_empty }
+```
+Confirms the "EntityStorage as single-item slot" gotcha above in reverse: for a genuine multi-item
+container (not a 1-slot equipment stand) the open→place-nearby→close interaction model IS the desired
+crate-like UX, so `HasContents` needs zero code here — it's the correct tool, unlike for the horse's
+saddle (single accessory slot, wanted instant equip → used Inventory/Clothing instead, see [[inventory]]
+and [[mobs]]).
+
+`density: 900` on the `Fixtures` (bounds sized for the 64×64/2-tile sprite, `-0.9,-0.9,0.9,0.9`) is the
+"hard for one human to drag" lever — this repo has no explicit strength/mass gate on `Pullable`, so a
+heavy `Dynamic` body just resists acceleration harder under Robust's normal physics (higher mass, same
+pull force ⇒ slower actual movement). For reference, other _Respiral dynamic (non-static) fixtures range
+~50-250 density; 900 is deliberately an outlier to make it feel like the heaviest common pullable prop.
+`WoodDestroyHeavy` sound collection (`Resources/Prototypes/SoundCollections/destruction.yml`) matches
+other big wooden structures (`barricades.yml`, `girder.yml`, `door.yml`) on `Destructible`.
+
 ## Barrel — hybrid EntityStorage + SolutionContainer
 
 `BarrelComponent` (marker) — `Content.Shared/_Respiral/Barrel/`.

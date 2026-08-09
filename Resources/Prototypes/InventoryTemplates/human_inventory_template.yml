@@ -114,6 +114,7 @@
       blacklist:
         tags:
         - PetOnly
+        - MedievalSaddle # Respiral-Mount
     - name: belt
       slotTexture: belt
       fullTextureName: template_small

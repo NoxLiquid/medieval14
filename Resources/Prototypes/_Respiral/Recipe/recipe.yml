@@ -1612,6 +1612,16 @@
 
 - type: latheRecipe
   parent: MedievalMaterialProcessingRecipe
+  id: MedievalSaddleRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalSaddle
+  materials:
+    MedievalProcessedPelt: 100
+    MedievalCloth: 50
+
+- type: latheRecipe
+  parent: MedievalMaterialProcessingRecipe
   id: MedievalSimpleBedsheetRecipe
   neededSkills:
     MedievalTailor: Mastery
