@@ -2,6 +2,9 @@
   id: MedievalRawMaterial
 
 - type: Tag
+  id: MedievalRopeBindable
+
+- type: Tag
   id: MedievalSmelterMaterialStorage
 
 - type: Tag

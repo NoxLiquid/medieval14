@@ -41,7 +41,10 @@ public sealed partial class PullerComponent : Component
     /// <summary>
     /// Does this entity need hands to be able to pull something?
     /// </summary>
-    [DataField, AutoNetworkedField]
+    // Respiral-Start - allow other systems to write NeedsHands (rope ties handless entities as pullers,
+    // see Content.Server/_Respiral/Rope/RopeSystem.cs); benign config bool, mirrors NextThrow's override
+    [DataField, AutoNetworkedField, Access(Other = AccessPermissions.ReadWriteExecute)]
+    // Respiral-End
     public bool NeedsHands = true;
 
     /// <summary>

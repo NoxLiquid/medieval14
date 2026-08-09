@@ -262,6 +262,7 @@
   id: MedievalSewing
   recipes:
   - MedievalSaddleRecipe
+  - MedievalRopeRecipe
   - MedievalComfortableBedsheetRecipe
   - MedievalLeatherBedsheetRecipe
   - MedievalSimpleBedsheetRecipe

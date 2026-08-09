@@ -1594,6 +1594,15 @@
 
 - type: latheRecipe
   parent: MedievalMaterialProcessingRecipe
+  id: MedievalRopeRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalRope
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalMaterialProcessingRecipe
   id: MedievalComfortableBedsheetRecipe
   neededSkills:
     MedievalTailor: Mastery

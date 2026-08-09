@@ -22,7 +22,9 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `flora.md` | Trees and bushes, `MedievalBaseTree`, RandomSprite convention, flora sprite-pack imports |
 | `skill_system.md` | Skill system, NeededSkillForMelee, learning modifiers |
 | `professions.md` | Roles map: departments/jobs ↔ skills ↔ machines (lathes), starting gear, gaps |
-| `mobs.md` | NPCs, monsters, factions, base mob prototypes |
+| `mobs.md` | NPCs, monsters, factions, base mob prototypes; mount/saddle/riding system |
+| `rope.md` | Rope item: tie two entities together (pull + JointVisuals line), untie verb |
+| `hitch.md` | Hitch a cart to a horse: pull to follow + copy horse rotation to face movement; attach/detach verbs |
 | `trade_console.md` | Trade system: ordering via CargoOrderConsole, delivery via CargoPallet (Buy/Sell), selling via CargoPalletConsole |
 | `communications.md` | Connecting magic ball (medieval communications console) |
 | `disposal.md` | Power-free disposal, link between disposal pipes and tiles |

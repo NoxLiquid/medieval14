@@ -19,7 +19,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.45
+          radius: 0.5
         density: 700
         mask:
         - MobMask
@@ -36,6 +36,7 @@
     buckleOffset: "0,-0.15"
   - type: Mountable
     needsSaddle: true
+  - type: Hitchable
   - type: Inventory
     speciesId: horse
     templateId: medievalHorse
@@ -43,6 +44,7 @@
     tags:
     - DoorBumpOpener
     - MedievalHorse
+    - MedievalRopeBindable
   - type: Reproductive
     partnerWhitelist:
       tags:

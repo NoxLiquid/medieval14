@@ -2,9 +2,9 @@ using Content.Shared._Respiral.Mount;
 using Content.Shared._Respiral.Mount.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Shared.Map;
 
 namespace Content.Client._Respiral.Mount;
+
 public sealed partial class MountSystem : SharedMountSystem
 {
     [Dependency] private SpriteSystem _sprite = default!;

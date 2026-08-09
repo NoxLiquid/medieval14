@@ -1,0 +1,20 @@
+- type: entity
+  parent: BaseItem
+  id: MedievalRope
+  name: верёвка
+  description: Прочная верёвка из плотно свитой ткани.
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Objects/Items/rope.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: Rope
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: Inorganic
