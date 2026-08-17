@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Client._Respiral.Inhand; // Respiral
 using Content.Shared.Hands;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
@@ -14,6 +15,9 @@ public sealed partial class ItemSystem : SharedItemSystem
 {
     [Dependency] private IResourceCache _resCache = default!;
     [Dependency] private SpriteSystem _sprite = default!;
+    // Respiral-Start
+    [Dependency] private MedievalIconInhandSystem _iconInhand = default!;
+    // Respiral-End
 
     public override void Initialize()
     {
@@ -60,7 +64,9 @@ public sealed partial class ItemSystem : SharedItemSystem
         {
             // get defaults
             if (!TryGetDefaultVisuals(uid, item, defaultKey, out layers))
-                return;
+                // Respiral-Start: нет inhand-спрайта — используем иконку предмета в масштабе 0.3
+                layers = new();
+                // Respiral-End
         }
 
         // Respiral-Start: примените параметр HeldPrefix к явным визуальным состояниям в руках (например, при wielded  оружия).
@@ -80,6 +86,11 @@ public sealed partial class ItemSystem : SharedItemSystem
 
             args.Layers.Add((key, layer));
         }
+
+        // Respiral-Start: если inhand-слоёв не оказалось — подставляем иконку предмета
+        if (args.Layers.Count == 0)
+            _iconInhand.BuildFallback(uid, args);
+        // Respiral-End
     }
 
     // Respiral-Start
