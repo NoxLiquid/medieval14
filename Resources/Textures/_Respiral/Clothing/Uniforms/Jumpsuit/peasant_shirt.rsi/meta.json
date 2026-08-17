@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created for Space Station 14 project Respiral",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        { "name": "icon" },
+        { "name": "equipped-INNERCLOTHING", "directions": 4 },
+        { "name": "inhand-left", "directions": 4 },
+        { "name": "inhand-right", "directions": 4 },
+        { "name": "collar-icon" },
+        { "name": "collar-equipped-INNERCLOTHING", "directions": 4 },
+        { "name": "collar-inhand-left", "directions": 4 },
+        { "name": "collar-inhand-right", "directions": 4 }
+    ]
+}

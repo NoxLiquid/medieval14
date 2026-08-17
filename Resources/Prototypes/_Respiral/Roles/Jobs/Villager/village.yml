@@ -39,7 +39,9 @@
   id: MedievalFarmerGear
   equipment:
     head: MedievalClothingHeadHood
-    pants: MedievalClothingLegsLeather
+    jumpsuit: MedievalClothingInnerPeasantShirtLinen
+    pants: MedievalClothingLegsPeasantOlive
+    shoes: MedievalClothingShoesPeasantBoots
 
 - type: job
   id: MedievalPeasant
@@ -60,4 +62,6 @@
   id: MedievalPeasantGear
   equipment:
     head: MedievalClothingHeadHood
-    pants: MedievalClothingLegsLeather
+    jumpsuit: MedievalClothingInnerPeasantShirtBrown
+    pants: MedievalClothingLegsPeasantBrown
+    shoes: MedievalClothingShoesPeasantBoots

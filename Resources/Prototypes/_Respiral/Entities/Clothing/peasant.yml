@@ -1,0 +1,398 @@
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  id: MedievalClothingInnerPeasantShirtBrown
+  suffix: Средневековье
+  name: коричневая рубаха
+  description: Простая тканевая рубаха с воротником. Обычная одежда простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    layers:
+    - state: icon
+      color: "#6B4F3A"
+    - state: collar-icon
+      color: "#D9C9A8"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#6B4F3A"
+      - state: collar-inhand-left
+        color: "#D9C9A8"
+      right:
+      - state: inhand-right
+        color: "#6B4F3A"
+      - state: collar-inhand-right
+        color: "#D9C9A8"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#6B4F3A"
+      - state: collar-equipped-INNERCLOTHING
+        color: "#D9C9A8"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  id: MedievalClothingInnerPeasantShirtLinen
+  suffix: Средневековье
+  name: небелёная рубаха
+  description: Простая тканевая рубаха с воротником. Обычная одежда простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    layers:
+    - state: icon
+      color: "#C2B280"
+    - state: collar-icon
+      color: "#8A6F4A"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#C2B280"
+      - state: collar-inhand-left
+        color: "#8A6F4A"
+      right:
+      - state: inhand-right
+        color: "#C2B280"
+      - state: collar-inhand-right
+        color: "#8A6F4A"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#C2B280"
+      - state: collar-equipped-INNERCLOTHING
+        color: "#8A6F4A"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  id: MedievalClothingInnerPeasantShirtOlive
+  suffix: Средневековье
+  name: оливковая рубаха
+  description: Простая тканевая рубаха с воротником. Обычная одежда простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    layers:
+    - state: icon
+      color: "#6B6A3A"
+    - state: collar-icon
+      color: "#CABF8F"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#6B6A3A"
+      - state: collar-inhand-left
+        color: "#CABF8F"
+      right:
+      - state: inhand-right
+        color: "#6B6A3A"
+      - state: collar-inhand-right
+        color: "#CABF8F"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#6B6A3A"
+      - state: collar-equipped-INNERCLOTHING
+        color: "#CABF8F"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  id: MedievalClothingInnerPeasantShirtBlue
+  suffix: Средневековье
+  name: серо-синяя рубаха
+  description: Простая тканевая рубаха с воротником. Обычная одежда простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    layers:
+    - state: icon
+      color: "#5B6B7A"
+    - state: collar-icon
+      color: "#D7D2C4"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5B6B7A"
+      - state: collar-inhand-left
+        color: "#D7D2C4"
+      right:
+      - state: inhand-right
+        color: "#5B6B7A"
+      - state: collar-inhand-right
+        color: "#D7D2C4"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#5B6B7A"
+      - state: collar-equipped-INNERCLOTHING
+        color: "#D7D2C4"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  id: MedievalClothingInnerPeasantShirtRusset
+  suffix: Средневековье
+  name: бордовая рубаха
+  description: Простая тканевая рубаха с воротником. Обычная одежда простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    layers:
+    - state: icon
+      color: "#7A3B34"
+    - state: collar-icon
+      color: "#CBB78F"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#7A3B34"
+      - state: collar-inhand-left
+        color: "#CBB78F"
+      right:
+      - state: inhand-right
+        color: "#7A3B34"
+      - state: collar-inhand-right
+        color: "#CBB78F"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#7A3B34"
+      - state: collar-equipped-INNERCLOTHING
+        color: "#CBB78F"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingLegsPeasantBrown
+  suffix: Средневековье
+  name: коричневые штаны
+  description: Простые тканевые штаны простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/peasant_pants.rsi
+    state: icon
+    color: "#5C4634"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5C4634"
+      right:
+      - state: inhand-right
+        color: "#5C4634"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/peasant_pants.rsi
+    clothingVisuals:
+      pants:
+      - state: equipped-LEGS
+        color: "#5C4634"
+      pants-Male:
+      - state: equipped-LEGS
+        color: "#5C4634"
+      pants-Female:
+      - state: equipped-LEGS-female
+        color: "#5C4634"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingLegsPeasantGrey
+  suffix: Средневековье
+  name: серые штаны
+  description: Простые тканевые штаны простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/peasant_pants.rsi
+    state: icon
+    color: "#55534D"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#55534D"
+      right:
+      - state: inhand-right
+        color: "#55534D"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/peasant_pants.rsi
+    clothingVisuals:
+      pants:
+      - state: equipped-LEGS
+        color: "#55534D"
+      pants-Male:
+      - state: equipped-LEGS
+        color: "#55534D"
+      pants-Female:
+      - state: equipped-LEGS-female
+        color: "#55534D"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingLegsPeasantOlive
+  suffix: Средневековье
+  name: тёмно-оливковые штаны
+  description: Простые тканевые штаны простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/peasant_pants.rsi
+    state: icon
+    color: "#5A5738"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5A5738"
+      right:
+      - state: inhand-right
+        color: "#5A5738"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/peasant_pants.rsi
+    clothingVisuals:
+      pants:
+      - state: equipped-LEGS
+        color: "#5A5738"
+      pants-Male:
+      - state: equipped-LEGS
+        color: "#5A5738"
+      pants-Female:
+      - state: equipped-LEGS-female
+        color: "#5A5738"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingShoesPeasantBoots
+  suffix: Средневековье
+  name: кожаные башмаки
+  description: Простые кожаные башмаки простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/peasant_boots.rsi
+    state: icon
+    color: "#5A3F28"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5A3F28"
+      right:
+      - state: inhand-right
+        color: "#5A3F28"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/peasant_boots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#5A3F28"
+      shoes-Male:
+      - state: equipped-FEET
+        color: "#5A3F28"
+  - type: Damageable
+    damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingShoesPeasantBootsDark
+  suffix: Средневековье
+  name: тёмные башмаки
+  description: Простые кожаные башмаки простолюдина.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Shoes/peasant_boots.rsi
+    state: icon
+    color: "#3B2C1F"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3B2C1F"
+      right:
+      - state: inhand-right
+        color: "#3B2C1F"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Shoes/peasant_boots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#3B2C1F"
+      shoes-Male:
+      - state: equipped-FEET
+        color: "#3B2C1F"
+  - type: Damageable
+    damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100

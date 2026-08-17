@@ -1,0 +1,94 @@
+# Peasant clothing recipes — sewing machine (MedievalSewing pack). Low skill tier.
+
+# Shirts (cloth)
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerPeasantShirtBrownRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingInnerPeasantShirtBrown
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerPeasantShirtLinenRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingInnerPeasantShirtLinen
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerPeasantShirtOliveRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingInnerPeasantShirtOlive
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerPeasantShirtBlueRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingInnerPeasantShirtBlue
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerPeasantShirtRussetRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingInnerPeasantShirtRusset
+  materials:
+    MedievalCloth: 100
+
+# Pants (cloth)
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingLegsPeasantBrownRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingLegsPeasantBrown
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingLegsPeasantGreyRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingLegsPeasantGrey
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingLegsPeasantOliveRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingLegsPeasantOlive
+  materials:
+    MedievalCloth: 100
+
+# Boots (leather)
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingShoesPeasantBootsRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingShoesPeasantBoots
+  materials:
+    MedievalProcessedPelt: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingShoesPeasantBootsDarkRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingShoesPeasantBootsDark
+  materials:
+    MedievalProcessedPelt: 100

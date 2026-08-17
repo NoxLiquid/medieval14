@@ -284,6 +284,16 @@
   - MedievalWallpaperBankRecipe
   - MedievalWallpaperBank2Recipe
   - MedievalClothingInnerLongTunicRecipe
+  - MedievalClothingInnerPeasantShirtBrownRecipe
+  - MedievalClothingInnerPeasantShirtLinenRecipe
+  - MedievalClothingInnerPeasantShirtOliveRecipe
+  - MedievalClothingInnerPeasantShirtBlueRecipe
+  - MedievalClothingInnerPeasantShirtRussetRecipe
+  - MedievalClothingLegsPeasantBrownRecipe
+  - MedievalClothingLegsPeasantGreyRecipe
+  - MedievalClothingLegsPeasantOliveRecipe
+  - MedievalClothingShoesPeasantBootsRecipe
+  - MedievalClothingShoesPeasantBootsDarkRecipe
   - MedievalClothingBackBackpackRecipe
   - MedievalClothingBackDuffelRecipe
   - MedievalClothingBackSatchelRecipe

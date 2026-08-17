@@ -15,6 +15,24 @@ Domain: clothing (Respiral medieval clothing), its prototypes, RSI sprites, and 
 - **Prototypes:** `Resources/Prototypes/_Respiral/Entities/Clothing/`
   - `base.yml` — abstract bases `MedievalBase*` (Outer, Inner, Head, Neck, Gloves, Pants, Shoes, …)
   - `outer/armor.yml`, `legs.yml`, `shoes.yml`, `head.yml`, `neck.yml`, `gloves.yml`, `inner.yml`
+  - `peasant.yml` — commoner set (shirts w/ collar, cloth pants, leather boots), themed file (not slot-split)
+
+## Grayscale + per-layer tint (color variants without extra sprites)
+Commissioned grayscale sprites are recolored per prototype via `color:` (multiply). Realistic muted
+palette — see `peasant.yml`. Two ways:
+- **Single-layer piece** (pants/boots): tint the item icon with component-level `Sprite.color`, then
+  repeat the hex on each `Clothing.clothingVisuals` layer and each `Item.inhandVisuals` entry.
+- **Two-tone piece** (shirt + collar): shirt body and collar are separate STATES in one RSI
+  (`peasant_shirt.rsi`: `equipped-INNERCLOTHING` + `collar-equipped-INNERCLOTHING`, plus `icon`/`collar-icon`,
+  `inhand-*`/`collar-inhand-*`). Cannot use component-level color (would tint both the same); instead give
+  each of Sprite/Clothing/Item **two layers**, each with its own `color:`. This yields colored shirts with
+  a contrasting collar from ONE grayscale RSI.
+
+## Sprite export gotcha: pants exported as INNERCLOTHING
+Artists sometimes export legs garments as `equipped-INNERCLOTHING`. The `pants` slot needs
+`equipped-LEGS` (+ `equipped-LEGS-female`). Rename the file to `equipped-LEGS.png` and duplicate it as
+`equipped-LEGS-female.png` (base `MedievalBasePants` references the female state). Frame size is 32 (icon
+= one 32px frame; equipped/inhand = 2×2 grids of 32px = 4 directions in a 64×64 png).
 - **Starting gear:** `Resources/Prototypes/_Respiral/Roles/Jobs/*.yml` (`type: startingGear`)
 
 ## Base prototypes and their sprite states

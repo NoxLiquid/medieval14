@@ -313,6 +313,79 @@
           collection: WoodDestroyHeavy
 
 - type: entity
+  id: MedievalWoodenSupport
+  parent: BaseStructure
+  suffix: Средневековье
+  name: деревянная опора
+  description: Придаёт уверенности, что камень не свалится тебе на голову.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: PlacementReplacement
+    key: walls
+  - type: Tag
+    tags:
+    - Wooden
+  - type: SpriteFade
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Decoration/mines.rsi
+    state: support
+  - type: Damageable
+    damageModifierSet: MedievalWood
+  - type: Injurable
+    damageContainer: MedievalInorganic
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.5,0.1,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+
+- type: entity
+  id: MedievalWoodenSupportBeam
+  parent: MedievalWoodenSupport
+  suffix: Средневековье
+  name: деревянная опорная балка
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Decoration/mines.rsi
+    state: support_beams
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+
+- type: entity
   parent: MedievalBaseStoneWall
   id: MedievalWallBrickStoneOld
   suffix: Средневековье
