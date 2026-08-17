@@ -31,6 +31,16 @@ palette — see `peasant.yml`. Two ways:
   each of Sprite/Clothing/Item **two layers**, each with its own `color:`. This yields colored shirts with
   a contrasting collar from ONE grayscale RSI.
 
+## Sprite tools (`Tools/_Respiral/`)
+- `grayscale_rsi.py <path...>` — PNGs (file or .rsi dir, recursive) → Rec.709-luma grayscale in place,
+  alpha preserved. Preps colored art for the tint convention above. Multiply-tint only darkens, so very
+  dark source art stays dark.
+- `split_color_layers.py [--out DIR] [--hue-tol DEG] [--sat-thresh S] <path...>` — splits a sprite into
+  per-colour-group layer PNGs (e.g. mantle → blue body / white trim / gold trim). Chromatic colours are
+  single-link chained by hue tolerance; low-sat colours bucketed white/grey/black. Colours pooled across
+  all inputs so icon + equipped-* split into matching layers. Output `<stem>_<name>.png`; names are hue
+  bins (golden ~40° → `orange`). Layers can then become separately-tintable clothing layers.
+
 ## Sprite export gotcha: pants exported as INNERCLOTHING
 Artists sometimes export legs garments as `equipped-INNERCLOTHING`. The `pants` slot needs
 `equipped-LEGS` (+ `equipped-LEGS-female`). Rename the file to `equipped-LEGS.png` and duplicate it as

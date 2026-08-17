@@ -1,0 +1,92 @@
+# Mantle recipes — sewing machine (MedievalSewing pack).
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckMantleCrimsonRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckMantleCrimson
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckMantleEmeraldRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckMantleEmerald
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckMantleAzureRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckMantleAzure
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckMantleVioletRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckMantleViolet
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckMantleCharcoalRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckMantleCharcoal
+  materials:
+    MedievalCloth: 100
+
+# Shoulder mantles
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckShoulderMantleCrimsonRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckShoulderMantleCrimson
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckShoulderMantleEmeraldRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckShoulderMantleEmerald
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckShoulderMantleAzureRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckShoulderMantleAzure
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckShoulderMantleVioletRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckShoulderMantleViolet
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckShoulderMantleCharcoalRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingNeckShoulderMantleCharcoal
+  materials:
+    MedievalCloth: 100

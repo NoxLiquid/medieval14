@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "made by emisse for ss14; split into layers and grayscaled for Respiral",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        { "name": "icon-body" },
+        { "name": "icon-accent" },
+        { "name": "equipped-NECK-body", "directions": 4 },
+        { "name": "equipped-NECK-accent", "directions": 4 }
+    ]
+}

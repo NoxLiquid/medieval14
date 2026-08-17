@@ -294,6 +294,16 @@
   - MedievalClothingLegsPeasantOliveRecipe
   - MedievalClothingShoesPeasantBootsRecipe
   - MedievalClothingShoesPeasantBootsDarkRecipe
+  - MedievalClothingNeckMantleCrimsonRecipe
+  - MedievalClothingNeckMantleEmeraldRecipe
+  - MedievalClothingNeckMantleAzureRecipe
+  - MedievalClothingNeckMantleVioletRecipe
+  - MedievalClothingNeckMantleCharcoalRecipe
+  - MedievalClothingNeckShoulderMantleCrimsonRecipe
+  - MedievalClothingNeckShoulderMantleEmeraldRecipe
+  - MedievalClothingNeckShoulderMantleAzureRecipe
+  - MedievalClothingNeckShoulderMantleVioletRecipe
+  - MedievalClothingNeckShoulderMantleCharcoalRecipe
   - MedievalClothingBackBackpackRecipe
   - MedievalClothingBackDuffelRecipe
   - MedievalClothingBackSatchelRecipe

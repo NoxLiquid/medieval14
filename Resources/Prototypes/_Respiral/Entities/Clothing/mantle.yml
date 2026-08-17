@@ -1,0 +1,363 @@
+# Neck mantles. One grayscale RSI (mantle.rsi) split into 3 tintable layers:
+# body (recolored per variant) + fur trim + gold trim (both fixed across variants).
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckMantleCrimson
+  suffix: Средневековье
+  name: багряная мантия
+  description: Богатая мантия с меховой опушкой и золотой отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#7A2E2E"
+    - state: icon-trim
+      color: "#EDE7DC"
+    - state: icon-gold
+      color: "#C9A24B"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#7A2E2E"
+      - state: equipped-NECK-trim
+        color: "#EDE7DC"
+      - state: equipped-NECK-gold
+        color: "#C9A24B"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckMantleEmerald
+  suffix: Средневековье
+  name: изумрудная мантия
+  description: Богатая мантия с меховой опушкой и золотой отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#2F5233"
+    - state: icon-trim
+      color: "#EDE7DC"
+    - state: icon-gold
+      color: "#C9A24B"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#2F5233"
+      - state: equipped-NECK-trim
+        color: "#EDE7DC"
+      - state: equipped-NECK-gold
+        color: "#C9A24B"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckMantleAzure
+  suffix: Средневековье
+  name: лазурная мантия
+  description: Богатая мантия с меховой опушкой и золотой отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#2E3E7A"
+    - state: icon-trim
+      color: "#EDE7DC"
+    - state: icon-gold
+      color: "#C9A24B"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#2E3E7A"
+      - state: equipped-NECK-trim
+        color: "#EDE7DC"
+      - state: equipped-NECK-gold
+        color: "#C9A24B"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckMantleViolet
+  suffix: Средневековье
+  name: пурпурная мантия
+  description: Богатая мантия с меховой опушкой и золотой отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#4A2E5A"
+    - state: icon-trim
+      color: "#EDE7DC"
+    - state: icon-gold
+      color: "#C9A24B"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#4A2E5A"
+      - state: equipped-NECK-trim
+        color: "#EDE7DC"
+      - state: equipped-NECK-gold
+        color: "#C9A24B"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckMantleCharcoal
+  suffix: Средневековье
+  name: тёмная мантия
+  description: Богатая мантия с меховой опушкой и золотой отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#2E2E33"
+    - state: icon-trim
+      color: "#EDE7DC"
+    - state: icon-gold
+      color: "#C9A24B"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#2E2E33"
+      - state: equipped-NECK-trim
+        color: "#EDE7DC"
+      - state: equipped-NECK-gold
+        color: "#C9A24B"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+# === Shoulder mantle (hosmantle.rsi) — body + accent, 2 tintable layers ===
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckShoulderMantleCrimson
+  suffix: Средневековье
+  name: багряная наплечная мантия
+  description: Наплечная мантия с контрастной отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#7A2E2E"
+    - state: icon-accent
+      color: "#A8863E"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#7A2E2E"
+      - state: equipped-NECK-accent
+        color: "#A8863E"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckShoulderMantleEmerald
+  suffix: Средневековье
+  name: изумрудная наплечная мантия
+  description: Наплечная мантия с контрастной отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#2F5233"
+    - state: icon-accent
+      color: "#A8863E"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#2F5233"
+      - state: equipped-NECK-accent
+        color: "#A8863E"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckShoulderMantleAzure
+  suffix: Средневековье
+  name: лазурная наплечная мантия
+  description: Наплечная мантия с контрастной отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#2E3E7A"
+    - state: icon-accent
+      color: "#A8863E"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#2E3E7A"
+      - state: equipped-NECK-accent
+        color: "#A8863E"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckShoulderMantleViolet
+  suffix: Средневековье
+  name: пурпурная наплечная мантия
+  description: Наплечная мантия с контрастной отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#4A2E5A"
+    - state: icon-accent
+      color: "#A8863E"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#4A2E5A"
+      - state: equipped-NECK-accent
+        color: "#A8863E"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckShoulderMantleCharcoal
+  suffix: Средневековье
+  name: тёмная наплечная мантия
+  description: Наплечная мантия с контрастной отделкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    layers:
+    - state: icon-body
+      color: "#2E2E33"
+    - state: icon-accent
+      color: "#A8863E"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/Mantles/shoulder_mantle.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-body
+        color: "#2E2E33"
+      - state: equipped-NECK-accent
+        color: "#A8863E"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
