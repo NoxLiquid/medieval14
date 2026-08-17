@@ -7,7 +7,7 @@
 ### Key fields
 | Field | Default | Description |
 |---|---|---|
-| `airtight` | `true` | Airtightness: if `true` — traps the air, a person suffocates |
+| `airtight` | `true` | Airtightness: if `true` — traps the air, a person suffocates. Wardrobes/closets a player climbs into (e.g. `MedievalWardrobeCarved`, `MedievalWardrobeIron`) MUST set `airtight: false`, otherwise the sealed occupant takes pressure/suffocation damage |
 | `open` | `false` | Open/closed state |
 | `capacity` | 30 | Max number of items |
 

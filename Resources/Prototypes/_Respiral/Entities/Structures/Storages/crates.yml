@@ -6,6 +6,7 @@
   name: сундук
   description: Большой контейнер.
   components:
+  - type: SpriteFade
   - type: MedievalPhysicalPriced
   - type: Animateable
   - type: Construction
@@ -18,6 +19,7 @@
     state: base
   - type: Sprite
     noRot: true
+    drawdepth: Mobs
     sprite: _Respiral/Structures/Storages/Crates/crate1.rsi
     layers:
     - state: base
@@ -248,9 +250,22 @@
   name: железный шкафчик
   description: Тяжёлый шкаф из железа. Хранит вещи надёжнее, чем многие стражи.
   components:
+  - type: EntityStorage
+    airtight: false
   - type: Construction
     graph: MedievalCrate
     node: wardrobeIron
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0,0.4,0.6"
+        density: 50
+        mask:
+        - CrateMask
+        layer:
+        - MachineLayer
   - type: Sprite
     sprite: _Respiral/Structures/Storages/Crates/vault.rsi
     layers:
@@ -292,9 +307,22 @@
   name: деревянный шкаф
   description: Шкаф с резными узорами. Когда-то принадлежал богатой семье.
   components:
+  - type: EntityStorage
+    airtight: false
   - type: Construction
     graph: MedievalCrate
     node: wardrobeCarved
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,0,0.4,0.6"
+        density: 50
+        mask:
+        - CrateMask
+        layer:
+        - MachineLayer
   - type: Sprite
     sprite: _Respiral/Structures/Storages/Crates/wood_cupboard.rsi
     layers:

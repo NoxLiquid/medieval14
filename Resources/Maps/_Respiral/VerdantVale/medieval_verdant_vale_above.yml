@@ -1831,7 +1831,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -100.5,-29.5
       parent: 1
-- proto: MedievalFilingCabinet3
+- proto: MedievalFilingCabinet
   entities:
   - uid: 243
     components:

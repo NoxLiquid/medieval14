@@ -306,10 +306,10 @@
 # Шкафы 🗄️
 
 - type: construction
-  id: MedievalFilingCabinet1
+  id: MedievalFilingCabinet
   graph: MedievalCabinet
   startNode: start
-  targetNode: filingCabinet1
+  targetNode: filingCabinet
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -319,36 +319,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: MedievalFilingCabinet2
+  id: MedievalFilingCabinetIron
   graph: MedievalCabinet
   startNode: start
-  targetNode: filingCabinet2
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalFilingCabinet3
-  graph: MedievalCabinet
-  startNode: start
-  targetNode: filingCabinet3
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: MedievalFilingCabinet4
-  graph: MedievalCabinet
-  startNode: start
-  targetNode: filingCabinet4
+  targetNode: filingCabinetIron
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter

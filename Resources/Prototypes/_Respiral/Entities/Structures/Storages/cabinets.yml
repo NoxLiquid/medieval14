@@ -56,16 +56,20 @@
 
 - type: entity
   parent: MedievalBaseFilingCabinet
-  id: MedievalFilingCabinet1
+  id: MedievalFilingCabinet
+  name: деревянный шкаф
+  description: Деревянный шкаф для хранения вещей.
   components:
-  - type: Storage
-    maxItemSize: Small
   - type: Sprite
-    state: cabinet1
+    sprite: _Respiral/Structures/Storages/wood_cabinet.rsi
+    state: icon
     layers:
-    - state: cabinet1
-    - state: cabinet1-open
+    - state: icon
+    - state: icon-open
       map: ["openLayer"]
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/wood_cabinet.rsi
+    state: icon
   - type: PhysicalComposition # нужно rcd 1
     materialComposition:
       MedievalProcessedWood: 100
@@ -73,69 +77,42 @@
       MedievalProcessedIron: 3
   - type: Construction
     graph: MedievalCabinet
-    node: filingCabinet1
+    node: filingCabinet
 
 - type: entity
   parent: MedievalBaseFilingCabinet
-  id: MedievalFilingCabinet2
+  id: MedievalFilingCabinetIron
+  name: железный шкаф
+  description: Прочный железный шкаф для хранения вещей.
   components:
   - type: Sprite
-    state: cabinet2
+    sprite: _Respiral/Structures/Storages/iron_cabinet.rsi
+    state: icon
     layers:
-    - state: cabinet2
-    - state: cabinet2-open
+    - state: icon
+    - state: icon-open
       map: ["openLayer"]
+  - type: Icon
+    sprite: _Respiral/Structures/Storages/iron_cabinet.rsi
+    state: icon
+  - type: Damageable
+    damageModifierSet: MedievalIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 800
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
   - type: PhysicalComposition # нужно rcd 1
     materialComposition:
-      MedievalProcessedWood: 100
+      MedievalProcessedWood: 20
       MedievalProcessedStone: 6
-      MedievalProcessedIron: 3
+      MedievalProcessedIron: 100
   - type: Construction
     graph: MedievalCabinet
-    node: filingCabinet2
-
-- type: entity
-  parent: MedievalBaseFilingCabinet
-  id: MedievalFilingCabinet3
-  components:
-  - type: Storage
-    grid:
-    - 0,0,9,9
-    maxItemSize: Normal
-  - type: Sprite
-    state: cabinet3
-    layers:
-    - state: cabinet3
-    - state: cabinet3-open
-      map: ["openLayer"]
-  - type: PhysicalComposition # нужно rcd 1
-    materialComposition:
-      MedievalProcessedWood: 100
-      MedievalProcessedStone: 6
-      MedievalProcessedIron: 3
-  - type: Construction
-    graph: MedievalCabinet
-    node: filingCabinet3
-
-- type: entity
-  parent: MedievalBaseFilingCabinet
-  id: MedievalFilingCabinet4
-  components:
-  - type: Storage
-    grid:
-    - 0,0,2,9
-    maxItemSize: Small
-  - type: Sprite
-    state: cabinet4
-    layers:
-    - state: cabinet4
-    - state: cabinet4-open
-      map: ["openLayer"]
-  - type: PhysicalComposition # нужно rcd 1
-    materialComposition:
-      MedievalProcessedWood: 100
-      MedievalProcessedStone: 6
-      MedievalProcessedIron: 3
-  - type: Construction
-    graph: MedievalCabinet
-    node: filingCabinet4
+    node: filingCabinetIron
