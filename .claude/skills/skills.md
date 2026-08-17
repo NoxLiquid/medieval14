@@ -28,6 +28,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `trade_console.md` | Trade system: ordering via CargoOrderConsole, delivery via CargoPallet (Buy/Sell), selling via CargoPalletConsole |
 | `communications.md` | Connecting magic ball (medieval communications console) |
 | `disposal.md` | Power-free disposal, link between disposal pipes and tiles |
+| `tiles.md` | Floor/tile prototypes, wood plank variants (Dead/Birch/Swamp/Dark/Burned), base+child pattern |
 | `biomes.md` | Biomes, procedural map generation, layers, markers, Gateway |
 | `zlevels.md` | Z-levels (vertical maps), CEZLevelsSystem, ZNetwork |
 | `localization.md` | Localization (FTL), syncing ru-RU with en-US, parity of variables and message IDs |

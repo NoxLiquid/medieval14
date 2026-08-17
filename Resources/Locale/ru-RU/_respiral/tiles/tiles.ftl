@@ -63,3 +63,7 @@ tiles-wood-dark-broken = сломанный деревянный пол из т�
 tiles-wood-dark-large-broken = сломанный большой деревянный пол из тёмного дерева
 tiles-wood-dark-parquet-broken = сломанный паркетный деревянный пол из тёмного дерева
 tiles-wood-dark-chess-broken = сломанный узорчатый деревянный пол из тёмного дерева
+tiles-wood-burned = сгоревший деревянный пол
+tiles-wood-large-burned = сгоревший большой деревянный пол
+tiles-wood-parquet-burned = сгоревший паркетный деревянный пол
+tiles-wood-chess-burned = сгоревший узорчатый деревянный пол

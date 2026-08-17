@@ -1421,3 +1421,52 @@
   weather: true
   absorbent: true
 
+## Burned wood floors
+- type: tile
+  id: MedievalBurnedWoodPlanksBase
+  abstract: true
+  baseTurf: MedievalLattice
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  heatCapacity: 10000
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_Respiral/Tiles/WoodPlanks/Burned/single_edge_burned_SE.png
+    NorthEast: /Textures/_Respiral/Tiles/WoodPlanks/Burned/single_edge_burned_NE.png
+    NorthWest: /Textures/_Respiral/Tiles/WoodPlanks/Burned/single_edge_burned_NW.png
+    SouthWest: /Textures/_Respiral/Tiles/WoodPlanks/Burned/single_edge_burned_SW.png
+    South: /Textures/_Respiral/Tiles/WoodPlanks/Burned/double_edge_burned_S.png
+    East: /Textures/_Respiral/Tiles/WoodPlanks/Burned/double_edge_burned_E.png
+    North: /Textures/_Respiral/Tiles/WoodPlanks/Burned/double_edge_burned_N.png
+    West: /Textures/_Respiral/Tiles/WoodPlanks/Burned/double_edge_burned_W.png
+  weather: true
+  absorbent: true
+
+- type: tile
+  parent: MedievalBurnedWoodPlanksBase
+  id: MedievalFloorWoodBurned
+  name: tiles-wood-burned
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/Burned/woodplanks_burned.png
+
+- type: tile
+  parent: MedievalBurnedWoodPlanksBase
+  id: MedievalFloorWoodLargeBurned
+  name: tiles-wood-large-burned
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/Burned/woodplanks_big_burned.png
+
+- type: tile
+  parent: MedievalBurnedWoodPlanksBase
+  id: MedievalFloorWoodParquetBurned
+  name: tiles-wood-parquet-burned
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/Burned/woodplanks_cruciform_burned.png
+
+- type: tile
+  parent: MedievalBurnedWoodPlanksBase
+  id: MedievalFloorWoodChessBurned
+  name: tiles-wood-chess-burned
+  sprite: /Textures/_Respiral/Tiles/WoodPlanks/Burned/woodplanks_stairways_burned.png
+

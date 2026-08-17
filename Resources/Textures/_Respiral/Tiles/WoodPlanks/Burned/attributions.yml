@@ -1,0 +1,16 @@
+- files:
+  - double_edge_burned_E.png
+  - double_edge_burned_N.png
+  - double_edge_burned_S.png
+  - double_edge_burned_W.png
+  - single_edge_burned_NE.png
+  - single_edge_burned_NW.png
+  - single_edge_burned_SE.png
+  - single_edge_burned_SW.png
+  - woodplanks_burned.png
+  - woodplanks_big_burned.png
+  - woodplanks_cruciform_burned.png
+  - woodplanks_stairways_burned.png
+  license: "CC-BY-SA-3.0"
+  copyright: "tgstation, Wood tiles are new tg tiles, sprited by Meowstushka and full resprited by Jaraten and Shelkarian, burned variant by crystall-punk-14"
+  source: "https://github.com/tgstation/tgstation"
