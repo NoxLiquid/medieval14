@@ -1,5 +1,4 @@
 using Content.Shared.Hands.Components;
-using Robust.Shared.Maths;
 
 namespace Content.Client._Respiral.Inhand;
 

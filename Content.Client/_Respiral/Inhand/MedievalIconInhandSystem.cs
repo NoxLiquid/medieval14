@@ -4,14 +4,13 @@ using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Item;
 using Robust.Client.GameObjects;
-using Robust.Shared.Maths;
 
 namespace Content.Client._Respiral.Inhand;
 
-public sealed class MedievalIconInhandSystem : EntitySystem
+public sealed partial class MedievalIconInhandSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
 
     private const string Prefix = "medieval-iconinhand";
     private static readonly Vector2 IconScale = new(0.5f, 0.5f);
