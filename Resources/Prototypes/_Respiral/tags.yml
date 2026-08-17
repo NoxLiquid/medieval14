@@ -78,3 +78,30 @@
 
 - type: Tag
   id: MedievalSilverCoin
+
+- type: Tag
+  id: MedievalWallpaperRed
+
+- type: Tag
+  id: MedievalWallpaperBlack
+
+- type: Tag
+  id: MedievalWallpaperGreen
+
+- type: Tag
+  id: MedievalWallpaperPurple
+
+- type: Tag
+  id: MedievalWallpaperWhite
+
+- type: Tag
+  id: MedievalWallpaperWhite2
+
+- type: Tag
+  id: MedievalWallpaperYellow
+
+- type: Tag
+  id: MedievalWallpaperBank
+
+- type: Tag
+  id: MedievalWallpaperBank2

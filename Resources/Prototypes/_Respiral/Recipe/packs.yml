@@ -274,6 +274,15 @@
   - MedievalCarpetOrangeRecipe
   - MedievalCarpetPurpleRecipe
   - MedievalCarpetYellowRecipe
+  - MedievalWallpaperRedRecipe
+  - MedievalWallpaperBlackRecipe
+  - MedievalWallpaperGreenRecipe
+  - MedievalWallpaperPurpleRecipe
+  - MedievalWallpaperWhiteRecipe
+  - MedievalWallpaperWhite2Recipe
+  - MedievalWallpaperYellowRecipe
+  - MedievalWallpaperBankRecipe
+  - MedievalWallpaperBank2Recipe
   - MedievalClothingInnerLongTunicRecipe
   - MedievalClothingBackBackpackRecipe
   - MedievalClothingBackDuffelRecipe

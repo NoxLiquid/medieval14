@@ -1,0 +1,197 @@
+# Граф поклейки обоев на стену. Расходует рулон обоев (крафтится на швейном станке).
+# Направление выбирается поворотом призрака постройки.
+- type: constructionGraph
+  id: MedievalWallpaper
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: red
+      steps:
+      - tag: MedievalWallpaperRed
+        name: рулон обоев «бордо»
+        icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: red }
+        doAfter: 1
+    - to: black
+      steps:
+      - tag: MedievalWallpaperBlack
+        name: рулон обоев «чёрные чернила»
+        icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: black }
+        doAfter: 1
+    - to: green
+      steps:
+      - tag: MedievalWallpaperGreen
+        name: рулон обоев «зелёный узор»
+        icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: green }
+        doAfter: 1
+    - to: purple
+      steps:
+      - tag: MedievalWallpaperPurple
+        name: рулон обоев «пурпурное величие»
+        icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: purple }
+        doAfter: 1
+    - to: white
+      steps:
+      - tag: MedievalWallpaperWhite
+        name: рулон обоев «цветы на белом»
+        icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: white }
+        doAfter: 1
+    - to: white2
+      steps:
+      - tag: MedievalWallpaperWhite2
+        name: рулон обоев «чистый белый»
+        icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: white2 }
+        doAfter: 1
+    - to: yellow
+      steps:
+      - tag: MedievalWallpaperYellow
+        name: рулон обоев «солнечный ритм»
+        icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: yellow }
+        doAfter: 1
+    - to: bank
+      steps:
+      - tag: MedievalWallpaperBank
+        name: рулон обоев «банкирская добропорядочность»
+        icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: bank }
+        doAfter: 1
+    - to: bank2
+      steps:
+      - tag: MedievalWallpaperBank2
+        name: рулон обоев «банкирское богатство»
+        icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: bank2 }
+        doAfter: 1
+
+  - node: red
+    entity: MedievalWallpaperRed
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalWallpaperItemRed
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: black
+    entity: MedievalWallpaperBlack
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalWallpaperItemBlack
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: green
+    entity: MedievalWallpaperGreen
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalWallpaperItemGreen
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: purple
+    entity: MedievalWallpaperPurple
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalWallpaperItemPurple
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: white
+    entity: MedievalWallpaperWhite
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalWallpaperItemWhite
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: white2
+    entity: MedievalWallpaperWhite2
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalWallpaperItemWhite2
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: yellow
+    entity: MedievalWallpaperYellow
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalWallpaperItemYellow
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: bank
+    entity: MedievalWallpaperBank
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalWallpaperItemBank
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: bank2
+    entity: MedievalWallpaperBank2
+    edges:
+    - to: start
+      conditions:
+      - !type:MinHealthPercent
+        value: 90
+      completed:
+      - !type:GivePrototype
+        prototype: MedievalWallpaperItemBank2
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 1

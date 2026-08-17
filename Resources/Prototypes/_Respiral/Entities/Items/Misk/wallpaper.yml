@@ -1,0 +1,115 @@
+- type: entity
+  id: MedievalWallpaperItemBase
+  parent: BaseItem
+  name: рулон обоев
+  description: Свёрнутые бумажные обои. Их можно наклеить на стену через меню строительства.
+  abstract: true
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/icons.rsi
+  - type: Item
+    sprite: _Respiral/Structures/Wallpaper/icons.rsi
+    size: Normal
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  id: MedievalWallpaperItemRed
+  parent: MedievalWallpaperItemBase
+  name: рулон обоев «бордо»
+  components:
+  - type: Sprite
+    state: red
+  - type: Tag
+    tags:
+    - MedievalWallpaperRed
+
+- type: entity
+  id: MedievalWallpaperItemBlack
+  parent: MedievalWallpaperItemBase
+  name: рулон обоев «чёрные чернила»
+  components:
+  - type: Sprite
+    state: black
+  - type: Tag
+    tags:
+    - MedievalWallpaperBlack
+
+- type: entity
+  id: MedievalWallpaperItemGreen
+  parent: MedievalWallpaperItemBase
+  name: рулон обоев «зелёный узор»
+  components:
+  - type: Sprite
+    state: green
+  - type: Tag
+    tags:
+    - MedievalWallpaperGreen
+
+- type: entity
+  id: MedievalWallpaperItemPurple
+  parent: MedievalWallpaperItemBase
+  name: рулон обоев «пурпурное величие»
+  components:
+  - type: Sprite
+    state: purple
+  - type: Tag
+    tags:
+    - MedievalWallpaperPurple
+
+- type: entity
+  id: MedievalWallpaperItemWhite
+  parent: MedievalWallpaperItemBase
+  name: рулон обоев «цветы на белом»
+  components:
+  - type: Sprite
+    state: white
+  - type: Tag
+    tags:
+    - MedievalWallpaperWhite
+
+- type: entity
+  id: MedievalWallpaperItemWhite2
+  parent: MedievalWallpaperItemBase
+  name: рулон обоев «чистый белый»
+  components:
+  - type: Sprite
+    state: white2
+  - type: Tag
+    tags:
+    - MedievalWallpaperWhite2
+
+- type: entity
+  id: MedievalWallpaperItemYellow
+  parent: MedievalWallpaperItemBase
+  name: рулон обоев «солнечный ритм»
+  components:
+  - type: Sprite
+    state: yellow
+  - type: Tag
+    tags:
+    - MedievalWallpaperYellow
+
+- type: entity
+  id: MedievalWallpaperItemBank
+  parent: MedievalWallpaperItemBase
+  name: рулон обоев «банкирская добропорядочность»
+  components:
+  - type: Sprite
+    state: bank
+  - type: Tag
+    tags:
+    - MedievalWallpaperBank
+
+- type: entity
+  id: MedievalWallpaperItemBank2
+  parent: MedievalWallpaperItemBase
+  name: рулон обоев «банкирское богатство»
+  components:
+  - type: Sprite
+    state: bank2
+  - type: Tag
+    tags:
+    - MedievalWallpaperBank2

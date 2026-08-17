@@ -1,0 +1,70 @@
+- type: latheRecipe
+  abstract: true
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalBaseWallpaperRecipe
+  completetime: 1
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseWallpaperRecipe
+  id: MedievalWallpaperRedRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalWallpaperItemRed
+
+- type: latheRecipe
+  parent: MedievalBaseWallpaperRecipe
+  id: MedievalWallpaperBlackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalWallpaperItemBlack
+
+- type: latheRecipe
+  parent: MedievalBaseWallpaperRecipe
+  id: MedievalWallpaperGreenRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalWallpaperItemGreen
+
+- type: latheRecipe
+  parent: MedievalBaseWallpaperRecipe
+  id: MedievalWallpaperPurpleRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalWallpaperItemPurple
+
+- type: latheRecipe
+  parent: MedievalBaseWallpaperRecipe
+  id: MedievalWallpaperWhiteRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalWallpaperItemWhite
+
+- type: latheRecipe
+  parent: MedievalBaseWallpaperRecipe
+  id: MedievalWallpaperWhite2Recipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalWallpaperItemWhite2
+
+- type: latheRecipe
+  parent: MedievalBaseWallpaperRecipe
+  id: MedievalWallpaperYellowRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalWallpaperItemYellow
+
+- type: latheRecipe
+  parent: MedievalBaseWallpaperRecipe
+  id: MedievalWallpaperBankRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalWallpaperItemBank
+
+- type: latheRecipe
+  parent: MedievalBaseWallpaperRecipe
+  id: MedievalWallpaperBank2Recipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalWallpaperItemBank2

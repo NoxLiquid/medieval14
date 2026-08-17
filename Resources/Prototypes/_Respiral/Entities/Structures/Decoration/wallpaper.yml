@@ -1,0 +1,153 @@
+- type: entity
+  id: MedievalWallpaperBase
+  parent: BaseStructure
+  name: обои
+  description: Тонкие бумажные обои, наклеенные на стену.
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    drawdepth: Walls
+    layers:
+    - state: bottom
+    - state: top
+    - state: left
+    - state: right
+  - type: Icon
+    state: bottom
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    canCollide: false
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: TrayScanReveal
+
+- type: entity
+  id: MedievalWallpaperRed
+  parent: MedievalWallpaperBase
+  name: обои «бордо»
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_red.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_red.rsi
+  - type: Construction
+    graph: MedievalWallpaper
+    node: red
+
+- type: entity
+  id: MedievalWallpaperBlack
+  parent: MedievalWallpaperBase
+  name: обои «чёрные чернила»
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_black.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_black.rsi
+  - type: Construction
+    graph: MedievalWallpaper
+    node: black
+
+- type: entity
+  id: MedievalWallpaperGreen
+  parent: MedievalWallpaperBase
+  name: обои «зелёный узор»
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_green.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_green.rsi
+  - type: Construction
+    graph: MedievalWallpaper
+    node: green
+
+- type: entity
+  id: MedievalWallpaperPurple
+  parent: MedievalWallpaperBase
+  name: обои «пурпурное величие»
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_purple.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_purple.rsi
+  - type: Construction
+    graph: MedievalWallpaper
+    node: purple
+
+- type: entity
+  id: MedievalWallpaperWhite
+  parent: MedievalWallpaperBase
+  name: обои «цветы на белом»
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_white.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_white.rsi
+  - type: Construction
+    graph: MedievalWallpaper
+    node: white
+
+- type: entity
+  id: MedievalWallpaperWhite2
+  parent: MedievalWallpaperBase
+  name: обои «чистый белый»
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_white2.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_white2.rsi
+  - type: Construction
+    graph: MedievalWallpaper
+    node: white2
+
+- type: entity
+  id: MedievalWallpaperYellow
+  parent: MedievalWallpaperBase
+  name: обои «солнечный ритм»
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_yellow.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_yellow.rsi
+  - type: Construction
+    graph: MedievalWallpaper
+    node: yellow
+
+- type: entity
+  id: MedievalWallpaperBank
+  parent: MedievalWallpaperBase
+  name: обои «банкирская добропорядочность»
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_bank.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_bank.rsi
+  - type: Construction
+    graph: MedievalWallpaper
+    node: bank
+
+- type: entity
+  id: MedievalWallpaperBank2
+  parent: MedievalWallpaperBase
+  name: обои «банкирское богатство»
+  components:
+  - type: Sprite
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_bank2.rsi
+  - type: Icon
+    sprite: _Respiral/Structures/Wallpaper/wallpaper_bank2.rsi
+  - type: Construction
+    graph: MedievalWallpaper
+    node: bank2
