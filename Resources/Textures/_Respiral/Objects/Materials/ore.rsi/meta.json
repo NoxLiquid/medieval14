@@ -7,7 +7,7 @@
     "y": 32
   },
   "states": [
-	  {
+    {
       "name": "adamantine"
     },
     {
@@ -22,7 +22,7 @@
     {
       "name": "coal3"
     },
-	  {
+    {
       "name": "iron"
     },
     {
@@ -31,7 +31,7 @@
     {
       "name": "iron3"
     },
-	{
+    {
       "name": "stone"
     },
     {
@@ -40,7 +40,7 @@
     {
       "name": "stone3"
     },
-	{
+    {
       "name": "silver"
     },
     {
@@ -49,7 +49,7 @@
     {
       "name": "silver3"
     },
-	{
+    {
       "name": "gold"
     },
     {
@@ -58,10 +58,10 @@
     {
       "name": "gold3"
     },
-	{
+    {
       "name": "mithril"
     },
-	{
+    {
       "name": "stone-inhand-left",
       "directions": 4
     },
@@ -69,7 +69,7 @@
       "name": "stone-inhand-right",
       "directions": 4
     },
-	  {
+    {
       "name": "coal-inhand-left",
       "directions": 4
     },
@@ -77,7 +77,7 @@
       "name": "coal-inhand-right",
       "directions": 4
     },
-	  {
+    {
       "name": "iron-inhand-left",
       "directions": 4
     },
@@ -86,14 +86,6 @@
       "directions": 4
     },
     {
-      "name": "quartz-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "quartz-inhand-right",
-      "directions": 4
-    },
-	  {
       "name": "silver-inhand-left",
       "directions": 4
     },
@@ -101,7 +93,7 @@
       "name": "silver-inhand-right",
       "directions": 4
     },
-	{
+    {
       "name": "gold-inhand-left",
       "directions": 4
     },
@@ -109,7 +101,7 @@
       "name": "gold-inhand-right",
       "directions": 4
     },
-	{
+    {
       "name": "mithril-inhand-left",
       "directions": 4
     },

@@ -9,6 +9,13 @@ state — vanilla would show nothing), it synthesises one from the item's own ic
 The item's whole layered icon is copied (each visible `ISpriteLayer`: state + rsi + color + scale*IconScale),
 so multi-layer tinted icons (e.g. mantles) reproduce correctly in hand.
 
+**Opt an item into the icon fallback:** give it empty in-hand visuals — `Item.inhandVisuals: { left: [], right: [] }`.
+Empty lists REPLACE any inherited/prefixed inhand states, so the resolved layers are 0 → fallback fires.
+Use this to (a) replace an inhand sprite with the icon, or (b) fix items whose `inhandVisuals` points at
+non-existent RSI states (shows the red "Error" placeholder in hand). Examples: `MedievalQuartzOre`
+(had real `quartz-inhand-*` states — removed + PNGs deleted from `ore.rsi`), `MedievalAdamantineOre`
+(referenced missing `adamantine-inhand-*` → Error).
+
 ## Offset toward the hand
 The icon is shifted to the hand via `LayerSetOffset` per hand + facing (constants `HandOffsetSide` 0.28,
 `HandOffsetForward` 0.30, `HandOffsetY` -0.05, world units). Set in `ApplyOrder` (runs with visibility on

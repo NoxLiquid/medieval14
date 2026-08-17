@@ -281,10 +281,8 @@
       MedievalRawAdamantine: 100
   - type: Item
     inhandVisuals:
-      left:
-      - state: adamantine-inhand-left
-      right:
-      - state: adamantine-inhand-right
+      left: []
+      right: []
 
 - type: entity
   id: MedievalAdamantineOre1
@@ -378,10 +376,8 @@
       MedievalRawQuartz: 100
   - type: Item
     inhandVisuals:
-      left:
-      - state: quartz-inhand-left
-      right:
-      - state: quartz-inhand-right
+      left: []
+      right: []
 
 - type: entity
   id: MedievalQuartzOre1

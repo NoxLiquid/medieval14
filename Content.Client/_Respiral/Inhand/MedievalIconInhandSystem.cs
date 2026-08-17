@@ -4,6 +4,7 @@ using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Item;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 
 namespace Content.Client._Respiral.Inhand;
 
@@ -11,6 +12,7 @@ public sealed partial class MedievalIconInhandSystem : EntitySystem
 {
     [Dependency] private SpriteSystem _sprite = default!;
     [Dependency] private SharedTransformSystem _xform = default!;
+    [Dependency] private IEyeManager _eye = default!;
 
     private const string Prefix = "medieval-iconinhand";
     private static readonly Vector2 IconScale = new(0.5f, 0.5f);
@@ -140,7 +142,7 @@ public sealed partial class MedievalIconInhandSystem : EntitySystem
 
     private void ApplyOrder(EntityUid holder, SpriteComponent sprite, MedievalIconInhandComponent comp)
     {
-        var dir = _xform.GetWorldRotation(holder).GetCardinalDir();
+        var dir = GetFacing(holder);
         if (dir == comp.LastDirection)
             return;
 
@@ -167,6 +169,29 @@ public sealed partial class MedievalIconInhandSystem : EntitySystem
                 _sprite.LayerSetOffset((holder, sprite), ui, offset);
             }
         }
+    }
+
+    private Direction GetFacing(EntityUid holder)
+    {
+        var angle = _xform.GetWorldRotation(holder);
+        if (_eye.CurrentEye is { } eye)
+            angle += eye.Rotation;
+        return Dir4Biased(angle);
+    }
+
+    private static Direction Dir4Biased(Angle angle)
+    {
+        var theta = angle.Reduced().FlipPositive().Theta;
+        var mod = (Math.Floor(theta / MathHelper.PiOver2) % 2) - 0.5;
+        var modTheta = theta + mod * SpriteComponent.DirectionBias;
+
+        return ((int)Math.Round(modTheta / MathHelper.PiOver2) % 4) switch
+        {
+            0 => Direction.South,
+            1 => Direction.East,
+            2 => Direction.North,
+            _ => Direction.West,
+        };
     }
 
     private static Vector2 HandOffset(HandLocation location, Direction dir)
