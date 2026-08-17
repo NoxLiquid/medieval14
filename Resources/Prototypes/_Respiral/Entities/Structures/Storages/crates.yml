@@ -252,9 +252,19 @@
     graph: MedievalCrate
     node: wardrobeIron
   - type: Sprite
-    sprite: _Respiral/Structures/Storages/Crates/wardrobe2.rsi
+    sprite: _Respiral/Structures/Storages/Crates/vault.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
   - type: Icon
-    sprite: _Respiral/Structures/Storages/Crates/wardrobe2.rsi
+    sprite: _Respiral/Structures/Storages/Crates/vault.rsi
+    state: base
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorOpen: base_open
+    stateDoorClosed: base_door
   - type: Damageable
     damageModifierSet: MedievalIron
   - type: Injurable
@@ -286,9 +296,19 @@
     graph: MedievalCrate
     node: wardrobeCarved
   - type: Sprite
-    sprite: _Respiral/Structures/Storages/Crates/wardrobe3.rsi
+    sprite: _Respiral/Structures/Storages/Crates/wood_cupboard.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
   - type: Icon
-    sprite: _Respiral/Structures/Storages/Crates/wardrobe3.rsi
+    sprite: _Respiral/Structures/Storages/Crates/wood_cupboard.rsi
+    state: icon
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorOpen: base_open
+    stateDoorClosed: base_door
   - type: Destructible
     thresholds:
     - trigger:
