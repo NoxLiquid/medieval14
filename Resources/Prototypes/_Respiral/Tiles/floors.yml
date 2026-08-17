@@ -974,8 +974,8 @@
 - type: tile
   id: MedievalDeadWoodPlanksBase
   abstract: true
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1002,8 +1002,8 @@
   id: MedievalFloorWood
   name: tiles-wood-dead
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks.png
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWood
 
 - type: tile
@@ -1011,8 +1011,8 @@
   id: MedievalFloorWoodLarge
   name: tiles-wood-dead-large
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_big.png
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLarge
   weather: true
   absorbent: true
@@ -1022,8 +1022,8 @@
   id: MedievalFloorWoodParquet
   name: tiles-wood-dead-parquet
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_cruciform.png
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquet
   weather: true
   absorbent: true
@@ -1033,8 +1033,8 @@
   id: MedievalFloorWoodChess
   name: tiles-wood-dead-chess
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DeadWood/dead_woodplanks_stairways.png
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChess
   weather: true
   absorbent: true
@@ -1086,8 +1086,8 @@
 - type: tile
   id: MedievalBirchWoodPlanksBase
   abstract: true
-  variants: 12
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1114,8 +1114,8 @@
   id: MedievalFloorWoodLight
   name: tiles-wood-birch
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks.png
-  variants: 12
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLight
 
 - type: tile
@@ -1123,8 +1123,8 @@
   id: MedievalFloorWoodLargeLight
   name: tiles-wood-birch-large
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_big.png
-  variants: 12
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeLight
   weather: true
   absorbent: true
@@ -1134,8 +1134,8 @@
   id: MedievalFloorWoodParquetLight
   name: tiles-wood-birch-parquet
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_cruciform.png
-  variants: 12
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetLight
   weather: true
   absorbent: true
@@ -1145,8 +1145,8 @@
   id: MedievalFloorWoodChessLight
   name: tiles-wood-birch-chess
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/BirchWood/birch_woodplanks_stairways.png
-  variants: 12
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChessLight
   weather: true
   absorbent: true
@@ -1310,8 +1310,8 @@
 - type: tile
   id: MedievalDarkWoodPlanksBase
   abstract: true
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1338,8 +1338,8 @@
   id: MedievalFloorWoodBlack
   name: tiles-wood-dark
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks.png
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodBlack
   weather: true
   absorbent: true
@@ -1349,8 +1349,8 @@
   id: MedievalFloorWoodLargeBlack
   name: tiles-wood-dark-large
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_big.png
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodLargeBlack
   weather: true
   absorbent: true
@@ -1360,8 +1360,8 @@
   id: MedievalFloorWoodParquetBlack
   name: tiles-wood-dark-parquet
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_cruciform.png
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodParquetBlack
   weather: true
   absorbent: true
@@ -1371,8 +1371,8 @@
   id: MedievalFloorWoodChessBlack
   name: tiles-wood-dark-chess
   sprite: /Textures/_Respiral/Tiles/WoodPlanks/DarkWood/dark_woodplanks_stairways.png
-  variants: 8
-  placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+  variants: 4
+  placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   itemDrop: MedievalFloorTileItemWoodChessBlack
   weather: true
   absorbent: true
