@@ -1,0 +1,58 @@
+# Refugee/settler clothing from commissioned (already-colored) sprites. No crafts.
+# Fragile: low Destructible threshold — these worn rags break easily.
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  id: MedievalClothingInnerRefugeeShirt
+  suffix: Средневековье
+  name: сшитая майка
+  description: Кое-как залатанная майка переселенца. Готова расползтись по швам от любой встряски.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/refugee_shirt.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/refugee_shirt.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 50
+
+- type: entity
+  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingLegsRefugeePants
+  suffix: Средневековье
+  name: рваные штаны
+  description: Изодранные штаны переселенца. Держатся на честном слове.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/refugee_pants.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/refugee_pants.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 50
