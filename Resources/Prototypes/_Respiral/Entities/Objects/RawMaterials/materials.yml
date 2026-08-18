@@ -10,7 +10,7 @@
   id: MedievalRawStone
   stackEntity: MedievalStoneOre1
   name: medieval-raw-materials-stone
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-chunk
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: stone }
   color: "#808080"   # серый, камень
   price: 0.19
@@ -19,7 +19,7 @@
   id: MedievalRawCoal
   stackEntity: MedievalCoalOre1
   name: medieval-raw-materials-coal
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-chunk
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ore.rsi, state: coal }
   color: "#2F4F4F"   # тёмный серо-чёрный, уголь
   price: 0.76
@@ -73,7 +73,7 @@
   id: MedievalRawManaCrystal
   stackEntity: MedievalManaCrystal1
   name: medieval-raw-materials-crystal-mana
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-crystal
   icon: { sprite: /Textures/_Respiral/Objects/Materials/crystal.rsi, state: mana }
   color: "#47f8ff"
   price: 3.07
@@ -82,7 +82,7 @@
   id: MedievalPelt
   stackEntity: MedievalPelt1
   name: medieval-raw-materials-pelt
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-hide
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: pelt1 }
   color: "#643932"
   price: 5
@@ -91,7 +91,7 @@
   id: MedievalRawCloth
   stackEntity: FoodMedievalFlax1
   name: medieval-raw-materials-cloth
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-cloth
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: cloth1 }
   color: "#949494"
   price: 0.02
@@ -109,7 +109,7 @@
   id: MedievalRawEmerald
   stackEntity: MedievalEmeraldGem1
   name: medieval-raw-materials-emerald
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-gem
   icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: emerald1 }
   color: "#50C878"
   price: 8
@@ -118,7 +118,7 @@
   id: MedievalRawSapphire
   stackEntity: MedievalSapphireGem1
   name: medieval-raw-materials-sapphire
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-gem
   icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: sapphire1 }
   color: "#0F52BA"
   price: 9
@@ -127,7 +127,7 @@
   id: MedievalRawRuby
   stackEntity: MedievalRubyGem1
   name: medieval-raw-materials-ruby
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-gem
   icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: ruby1 }
   color: "#E0115F"
   price: 10
@@ -136,7 +136,7 @@
   id: MedievalRawTopaz
   stackEntity: MedievalTopazGem1
   name: medieval-raw-materials-topaz
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-gem
   icon: { sprite: /Textures/_Respiral/Objects/Items/Economy/jewelry.rsi, state: topaz1 }
   color: "#FFC87C"
   price: 11

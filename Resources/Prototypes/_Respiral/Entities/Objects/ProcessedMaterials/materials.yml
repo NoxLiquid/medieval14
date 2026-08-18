@@ -2,6 +2,7 @@
   id: MedievalProcessedWood
   stackEntity: MedievalBoard1
   name: medieval-processed-materials-wood
+  unit: medieval-materials-unit-board
   color: "#8B4513"
   icon: { sprite:  _Respiral/Objects/Materials/board.rsi, state: board }
   price: 1.41
@@ -10,7 +11,7 @@
   id: MedievalProcessedIron
   stackEntity: MedievalIronIngot1
   name: medieval-processed-materials-iron
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-ingot
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: iron }
   color: "#8A8A8A"   # серебристо-серый, железо
   price: 4.43
@@ -19,7 +20,7 @@
   id: MedievalSteel
   stackEntity: MedievalSteelIngot1
   name: medieval-materials-steel
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-ingot
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: steel }
   color: "#B0C4DE"   # серебристо-серый, железо
   price: 10.76
@@ -28,7 +29,7 @@
   id: MedievalProcessedSilver
   stackEntity: MedievalSilverIngot1
   name: medieval-processed-materials-silver
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-ingot
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: silver }
   color: "#C0C0FF"   # светло-серебристо-голубой, серебро
   price: 17.87
@@ -37,7 +38,7 @@
   id: MedievalProcessedGold
   stackEntity: MedievalGoldIngot1
   name: medieval-processed-materials-gold
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-ingot
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: gold }
   color: "#FFD700"   # золотой, золото
   price: 39.32
@@ -46,7 +47,7 @@
   id: MedievalProcessedMithril
   stackEntity: MedievalMithrilIngot1
   name: medieval-processed-materials-mithril
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-ingot
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: mithril }
   color: "#9370DB"   # средний фиолетовый (medium purple)
   price: 43.02
@@ -55,7 +56,7 @@
   id: MedievalProcessedAdamantine
   stackEntity: MedievalAdamantineIngot1
   name: medieval-processed-materials-adamantine
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-ingot
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: adamantine }
   color: "#4B0000"
   price: 75.47
@@ -64,7 +65,7 @@
   id: MedievalProcessedStone
   stackEntity: MedievalProcessedStone1
   name: medieval-processed-materials-stone
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-chunk
   icon: { sprite: /Textures/_Respiral/Objects/Materials/stone.rsi, state: stone }
   color: "#808080"   # серый, камень
   price: 0.88
@@ -73,6 +74,7 @@
   id: MedievalCloth
   stackEntity: MedievalCloth1
   name: medieval-processed-materials-cloth
+  unit: medieval-materials-unit-cloth
   color: "#949494"
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: cloth4 }
   price: 2
@@ -81,7 +83,7 @@
   id: MedievalProcessedPelt
   stackEntity: MedievalProcessedPelt1
   name: medieval-processed-materials-pelt
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-chunk
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: procPelt3 }
   color: "#643932"
   price: 10
@@ -90,7 +92,7 @@
   id: MedievalGlass
   stackEntity: MedievalGlass1
   name: medieval-processed-materials-glass
-  unit: materials-unit-chunk
+  unit: medieval-materials-unit-sheet
   icon: { sprite: /Textures/Objects/Materials/Sheets/glass.rsi, state: glass }
   color: "#bbe7d2"
   price: 17

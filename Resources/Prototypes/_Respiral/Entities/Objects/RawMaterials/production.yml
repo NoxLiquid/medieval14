@@ -299,6 +299,9 @@
   components:
   - type: Stack
     stackType: MedievalManaCrystal
+  - type: Tag
+    tags:
+    - MedievalAnvilMaterialStorage
   - type: Sprite
     layers:
     - state: mana

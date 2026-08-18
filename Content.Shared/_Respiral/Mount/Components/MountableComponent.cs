@@ -19,4 +19,10 @@ public sealed partial class MountableComponent : Component
 
     [DataField]
     public bool NeedsSaddle;
+
+    [DataField]
+    public TimeSpan MountDelay = TimeSpan.FromSeconds(2);
+
+    [DataField]
+    public TimeSpan DismountOthersDelay = TimeSpan.FromSeconds(2);
 }

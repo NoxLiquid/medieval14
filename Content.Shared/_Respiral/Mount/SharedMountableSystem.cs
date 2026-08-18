@@ -2,6 +2,7 @@ using Content.Shared._Respiral.Mount.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
+using Content.Shared.DoAfter;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
@@ -12,6 +13,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Standing;
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Respiral.Mount;
 
@@ -27,6 +29,10 @@ public abstract partial class SharedMountSystem : EntitySystem
     [Dependency] private MovementSpeedModifierSystem _movement = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private StandingStateSystem _standing = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+
+    private readonly HashSet<(EntityUid Rider, EntityUid Mount)> _approvedMounts = new();
+    private readonly HashSet<(EntityUid Rider, EntityUid Mount)> _approvedDismounts = new();
 
     public override void Initialize()
     {
@@ -36,19 +42,21 @@ public abstract partial class SharedMountSystem : EntitySystem
 
         SubscribeLocalEvent<RiderComponent, UpdateCanMoveEvent>(OnRiderCanMove, after: new[] { typeof(SharedBuckleSystem) });
         SubscribeLocalEvent<RiderComponent, PreventCollideEvent>(OnRiderPreventCollide);
+        SubscribeLocalEvent<RiderComponent, UnbuckleAttemptEvent>(OnUnbuckleAttempt);
 
         SubscribeLocalEvent<MountableComponent, StrapAttemptEvent>(OnStrapAttempt);
         SubscribeLocalEvent<MountableComponent, DownAttemptEvent>(OnDownAttempt);
         SubscribeLocalEvent<MountableComponent, StrappedEvent>(OnStrapped);
         SubscribeLocalEvent<MountableComponent, UnstrappedEvent>(OnUnstrapped);
         SubscribeLocalEvent<MountableComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<MountableComponent, MountDoAfterEvent>(OnMountDoAfter);
+        SubscribeLocalEvent<MountableComponent, DismountDoAfterEvent>(OnDismountDoAfter);
     }
 
     private void OnStrapAttempt(Entity<MountableComponent> ent, ref StrapAttemptEvent args)
     {
         var rider = args.Buckle.Owner;
 
-        // Refuse to mount a saddle-required mount that has no saddle equipped.
         if (ent.Comp.NeedsSaddle && !_inventory.TryGetSlotEntity(ent.Owner, SaddleSlot, out _))
         {
             args.Cancelled = true;
@@ -62,7 +70,69 @@ public abstract partial class SharedMountSystem : EntitySystem
             args.Cancelled = true;
             if (args.Popup && args.User is { } pullUser)
                 _popup.PopupEntity(Loc.GetString("mount-stop-pulling", ("mount", ent.Owner)), ent.Owner, pullUser);
+            return;
         }
+
+        if (_approvedMounts.Remove((rider, ent.Owner)))
+            return;
+
+        if (args.User is not { } user || user != rider || ent.Comp.MountDelay <= TimeSpan.Zero)
+            return;
+
+        args.Cancelled = true;
+
+        var doAfter = new DoAfterArgs(EntityManager, user, ent.Comp.MountDelay, new MountDoAfterEvent(), ent.Owner, target: ent.Owner, used: ent.Owner)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            CancelDuplicate = true,
+        };
+        _doAfter.TryStartDoAfter(doAfter);
+    }
+
+    private void OnUnbuckleAttempt(Entity<RiderComponent> ent, ref UnbuckleAttemptEvent args)
+    {
+        if (_approvedDismounts.Remove((ent.Owner, args.Strap.Owner)))
+            return;
+
+        if (args.User is not { } user || user == ent.Owner)
+            return;
+
+        if (!TryComp<MountableComponent>(args.Strap.Owner, out var mountable) || mountable.DismountOthersDelay <= TimeSpan.Zero)
+            return;
+
+        args.Cancelled = true;
+
+        var doAfter = new DoAfterArgs(EntityManager, user, mountable.DismountOthersDelay, new DismountDoAfterEvent(), args.Strap.Owner, target: ent.Owner, used: args.Strap.Owner)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            CancelDuplicate = true,
+        };
+        _doAfter.TryStartDoAfter(doAfter);
+    }
+
+    private void OnMountDoAfter(Entity<MountableComponent> ent, ref MountDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        var user = args.Args.User;
+        _approvedMounts.Add((user, ent.Owner));
+        _buckle.TryBuckle(user, user, ent.Owner);
+        _approvedMounts.Remove((user, ent.Owner));
+        args.Handled = true;
+    }
+
+    private void OnDismountDoAfter(Entity<MountableComponent> ent, ref DismountDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled || args.Args.Target is not { } rider)
+            return;
+
+        _approvedDismounts.Add((rider, ent.Owner));
+        _buckle.TryUnbuckle(rider, args.Args.User);
+        _approvedDismounts.Remove((rider, ent.Owner));
+        args.Handled = true;
     }
 
     private bool IsPullLinked(EntityUid rider, EntityUid mount)
@@ -180,4 +250,14 @@ public abstract partial class SharedMountSystem : EntitySystem
             ent.Comp.ControlMovement = true;
         }
     }
+}
+
+[Serializable, NetSerializable]
+public sealed partial class MountDoAfterEvent : SimpleDoAfterEvent
+{
+}
+
+[Serializable, NetSerializable]
+public sealed partial class DismountDoAfterEvent : SimpleDoAfterEvent
+{
 }

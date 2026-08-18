@@ -62,3 +62,13 @@ The helper terms (`ion-storm-you`, `ion-storm-the-job`, `ion-storm-adjective-thi
 
 New messages that were absent in ru and were added: `ion-storm-law-who-dagd`
 and the `ion-law-error-*` block (fallback strings in case law generation fails).
+
+## Material `unit` strings (lathe requirement display)
+The lathe shows `{sheets} {unit} {name}` where `unit = Loc.GetString(material.Unit)` (LatheMenu.xaml.cs:194,
+**no `$amount` passed** → can't pluralize per count without a C# change). Bug found 2026-08: many Respiral
+materials reused upstream `materials-unit-chunk` whose ru string is literally `куски руды` ("chunks of ore"),
+so e.g. tanned leather rendered as "1 куски руды дублёная кожа". Fix: Respiral unit keys in
+`_respiral/materials/materials.ftl` (`medieval-materials-unit-{ingot,chunk,cloth,board,sheet,crystal,hide,gem}`)
+assigned per material in `Entities/Objects/{Processed,Raw}Materials/materials.yml`. Real ore metals keep
+upstream `materials-unit-chunk` (куски руды is correct for them). Nominative plural (matches upstream `листы`
+style); true `1 слиток / 2 слитка` agreement would need passing amount into the loc call (upstream edit).

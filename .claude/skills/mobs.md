@@ -156,6 +156,18 @@ sets `needsSaddle: true`. Two non-obvious implementation points:
    be dodged by careful same-tick ordering because client prediction rollback re-applies old networked
    states — the only robust cure is to never let the conflicting combination be established in the first place.
 
+**Mount/dismount do-afters (`MountableComponent.MountDelay` / `DismountOthersDelay`, both 2s):**
+Gated via the SAME attempt events as the saddle check — `StrapAttemptEvent` (mount) and
+`UnbuckleAttemptEvent` on `RiderComponent` (dismount). Pattern: on a player-initiated attempt, `args.Cancelled = true`
++ start a `DoAfterArgs`; the do-after completion handler re-issues `TryBuckle`/`TryUnbuckle`. Because that
+re-issue synchronously re-raises the same attempt event, it must skip the gate instead of looping — done via
+per-operation approval sets `_approvedMounts`/`_approvedDismounts` (`HashSet<(EntityUid rider, EntityUid mount)>`):
+handler `Add`s the pair, calls Try*, then `Remove`s; the attempt gate does `if (set.Remove((rider, mount))) return;`.
+**Not a shared `bool`** — a global flag on the singleton system would also bypass an unrelated nested mount that
+fires synchronously inside `TryBuckle`; keying by the exact (rider, mount) pair scopes the bypass to one operation.
+Only self-mount (`user == rider`) and dismount-**others** (`user != rider`) get a delay; buckling others already has
+the vanilla drag-drop do-after (`StrapComponent.BuckleDoafterTime`), and self-dismount stays instant.
+
 **Saddle slot — deliberately NOT `ItemSlots`/`EntityStorage`, uses the standard Inventory+Clothing system:**
 first attempt used `ItemSlotsComponent` + a custom `EntitySystem` bridging slot-fill to appearance data
 (see [[containers]] "EntityStorage as single-item slot" for why `ItemSlots` needs a code bridge — it

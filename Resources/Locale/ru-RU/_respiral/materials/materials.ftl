@@ -29,3 +29,13 @@ medieval-processed-materials-cloth = ткань
 medieval-processed-materials-pelt = дублёная кожа
 medieval-processed-materials-glass = стекло
 medieval-materials-paper = бумага
+
+# Units (counting words shown in the lathe next to the amount)
+medieval-materials-unit-ingot = слитки
+medieval-materials-unit-chunk = куски
+medieval-materials-unit-cloth = отрезы
+medieval-materials-unit-board = доски
+medieval-materials-unit-sheet = листы
+medieval-materials-unit-crystal = кристаллы
+medieval-materials-unit-hide = шкуры
+medieval-materials-unit-gem = камни

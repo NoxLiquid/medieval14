@@ -179,19 +179,19 @@
     - state: icon
       color: "#7A3B34"
     - state: collar-icon
-      color: "#CBB78F"
+      color: "#FA8072"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
         color: "#7A3B34"
       - state: collar-inhand-left
-        color: "#CBB78F"
+        color: "#FA8072"
       right:
       - state: inhand-right
         color: "#7A3B34"
       - state: collar-inhand-right
-        color: "#CBB78F"
+        color: "#FA8072"
   - type: Clothing
     sprite: _Respiral/Clothing/Uniforms/Jumpsuit/peasant_shirt.rsi
     clothingVisuals:
