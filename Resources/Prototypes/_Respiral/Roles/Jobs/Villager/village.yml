@@ -29,6 +29,22 @@
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
 
+
+- type: job
+  id: MedievalForester
+  name: job-name-medieval-forester
+  description: job-description-medieval-forester
+  playTimeTracker: JobMedievalForester
+  startingGear: MedievalForesterGear
+  icon: JobIconBotanist
+  supervisors: job-supervisors-medieval-elder
+
+- type: startingGear
+  id: MedievalForesterGear
+  equipment:
+    head: MedievalClothingHeadHood
+    pants: MedievalClothingLegsLeather
+
 - type: job
   id: MedievalPeasant
   name: job-name-medieval-peasant

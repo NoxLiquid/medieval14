@@ -1,5 +1,5 @@
-job-name-pilligrim = переселенец
-job-description-pilligrim = Путник из другого региона.
+job-name-refugee = беженец
+job-description-refugee = Беженец из другого региона.
 job-name-medieval-lord = лорд
 job-description-medieval-lord = Правьте землями, раздавайте поручения и удерживайте порядок среди подданных.
 job-name-medieval-knight = рыцарь
@@ -12,6 +12,8 @@ job-name-medieval-blacksmith = кузнец
 job-description-medieval-blacksmith = Куйте инструменты, оружие и полезные детали для нужд поселения.
 job-name-medieval-carpenter = плотник
 job-description-medieval-carpenter = Заготавливайте дерево, собирайте конструкции и поддерживайте хозяйство материалами.
+job-name-medieval-forester = лесник
+job-description-medieval-forester = Следите за лесопосадками, выращивайте деревья, следите за лесными пожарами.
 job-name-medieval-mason = каменщик
 job-description-medieval-mason = Обрабатывайте камень, возводите укрепления и помогайте строить долговечные сооружения.
 job-name-medieval-engineer = инженер

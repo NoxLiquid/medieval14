@@ -23,6 +23,7 @@
   icon: JobIconStationEngineer
   supervisors: job-supervisors-medieval-steward
 
+
 - type: startingGear
   id: MedievalCarpenterGear
   equipment:

@@ -15,10 +15,10 @@ Content split across `src/professions/{overview,design-plan}.md` and `src/depart
 | MedievalNobles | Lord, Knight, CitySteward, Treasurer |
 | MedievalCraftsman | Blacksmith, Carpenter, Mason, Engineer, Innkeeper, Herbalist, Citizen, Merchant, Guard |
 | MedievalVillager | Elder, Farmer, Peasant |
-| MedievalCommoner (weight -10) | Pilligrim |
+| MedievalCommoner (weight -10) | Refugee |
 
 Supervisor chain: Lord → Knight/CitySteward/Treasurer/Elder; CitySteward → all craftsmen;
-Elder → Farmer/Peasant; authority → Pilligrim.
+Elder → Farmer/Peasant; authority → Refugee.
 
 ## Jobs = starting gear only
 

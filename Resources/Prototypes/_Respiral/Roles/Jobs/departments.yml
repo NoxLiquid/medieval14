@@ -17,7 +17,7 @@
   color: "#6F4F28"
   weight: -10
   roles:
-  - MedievalPilligrim
+  - MedievalRefugee
 
 - type: department
   id: MedievalCraftsman
@@ -35,6 +35,7 @@
   - MedievalCitizen
   - MedievalMerchant
   - MedievalGuard
+  - MedievalForester
 
 - type: department
   id: MedievalVillager

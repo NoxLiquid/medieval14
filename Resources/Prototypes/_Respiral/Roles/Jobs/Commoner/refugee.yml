@@ -1,0 +1,15 @@
+- type: job
+  id: MedievalRefugee
+  name: job-name-refugee
+  description: job-description-refugee
+  playTimeTracker: JobMedievalRefugee
+  startingGear: MedievalRefugeeGear
+  icon: JobIconPassenger
+  supervisors: job-supervisors-medieval-authority
+
+- type: startingGear
+  id: MedievalRefugeeGear
+  equipment:
+    head: MedievalClothingHeadHood
+    pants: MedievalClothingLegsLeather
+
