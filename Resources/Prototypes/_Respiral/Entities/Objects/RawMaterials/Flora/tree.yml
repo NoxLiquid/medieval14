@@ -183,7 +183,17 @@
   suffix: Дерево 4
   components:
   - type: Sprite
+    offset: 0.06,3.03
     state: tree01
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeFirBase, MedievalTreeDrop1To2]
@@ -192,7 +202,17 @@
   suffix: Дерево 5
   components:
   - type: Sprite
+    offset: -0.05,3.11
     state: tree02
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.21,-0.21,0.21,0.21"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeFirBase, MedievalTreeDrop2To4]
@@ -201,7 +221,17 @@
   suffix: Дерево 3
   components:
   - type: Sprite
+    offset: 0.05,3.03
     state: tree03
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeFirBase, MedievalTreeDrop3To4]
@@ -210,7 +240,17 @@
   suffix: Дерево 1
   components:
   - type: Sprite
+    offset: -0.04,3.05
     state: tree04
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.24,-0.24,0.24,0.24"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeFirBase, MedievalTreeDrop2To4]
@@ -219,7 +259,17 @@
   suffix: Дерево 2
   components:
   - type: Sprite
+    offset: 0.07,3.03
     state: tree05
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeFirBase, MedievalTreeDrop1To2]
@@ -228,7 +278,17 @@
   suffix: Дерево 6
   components:
   - type: Sprite
+    offset: 0.02,3.14
     state: tree06
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.20,-0.20,0.20,0.20"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: MedievalBaseTree
@@ -247,7 +307,17 @@
   suffix: Дерево 5
   components:
   - type: Sprite
+    offset: -0.04,2.59
     state: tree01
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.23,-0.23,0.23,0.23"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeBirchBase, MedievalTreeDrop1To2]
@@ -256,7 +326,17 @@
   suffix: Дерево 6
   components:
   - type: Sprite
+    offset: 0.04,2.59
     state: tree02
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.22,-0.22,0.22,0.22"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
@@ -265,7 +345,17 @@
   suffix: Дерево 1
   components:
   - type: Sprite
+    offset: 0.09,2.59
     state: tree03
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.24,-0.24,0.24,0.24"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
@@ -274,7 +364,17 @@
   suffix: Дерево 2
   components:
   - type: Sprite
+    offset: -0.09,2.59
     state: tree04
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
@@ -283,7 +383,17 @@
   suffix: Дерево 3
   components:
   - type: Sprite
+    offset: -0.02,2.59
     state: tree05
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.23,-0.23,0.23,0.23"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeBirchBase, MedievalTreeDrop2To3]
@@ -292,7 +402,17 @@
   suffix: Дерево 4
   components:
   - type: Sprite
+    offset: 0.04,2.59
     state: tree06
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.21,-0.21,0.21,0.21"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: MedievalBaseTree
@@ -311,7 +431,17 @@
   suffix: Дерево 2
   components:
   - type: Sprite
+    offset: 0.01,1.36
     state: tree01
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.34,-0.34,0.34,0.34"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeSwampBase, MedievalTreeDrop1To2]
@@ -320,7 +450,17 @@
   suffix: Дерево 1
   components:
   - type: Sprite
+    offset: 0.01,1.36
     state: tree02
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.34,-0.34,0.34,0.34"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeSwampBase, MedievalTreeDrop1]
@@ -329,7 +469,17 @@
   suffix: Дерево 3
   components:
   - type: Sprite
+    offset: -0.03,1.71
     state: tree03
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.26,-0.26,0.26,0.26"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeSwampBase, MedievalTreeDrop1]
@@ -338,7 +488,17 @@
   suffix: Дерево 4
   components:
   - type: Sprite
+    offset: 0.07,1.72
     state: tree04
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.36,-0.36,0.36,0.36"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeSwampBase, MedievalTreeDrop1]
@@ -347,7 +507,17 @@
   suffix: Дерево 5
   components:
   - type: Sprite
+    offset: -0.05,1.71
     state: tree05
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.36,-0.36,0.36,0.36"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: MedievalBaseTree
@@ -366,7 +536,17 @@
   suffix: Дерево 7
   components:
   - type: Sprite
+    offset: 0.10,2.62
     state: tree01
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.28,-0.28,0.28,0.28"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeOakBase, MedievalTreeDrop2To3]
@@ -375,7 +555,17 @@
   suffix: Дерево 4
   components:
   - type: Sprite
+    offset: -0.07,2.59
     state: tree02
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.32,-0.32,0.32,0.32"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeOakBase, MedievalTreeDrop2]
@@ -384,7 +574,17 @@
   suffix: Дерево 6
   components:
   - type: Sprite
+    offset: 0.02,2.59
     state: tree03
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.29,-0.29,0.29,0.29"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeOakBase, MedievalTreeDrop2To3]
@@ -393,7 +593,17 @@
   suffix: Дерево 3
   components:
   - type: Sprite
+    offset: -0.17,2.61
     state: tree04
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.34,-0.34,0.34,0.34"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeOakBase, MedievalTreeDrop1To2]
@@ -402,7 +612,17 @@
   suffix: Дерево 8
   components:
   - type: Sprite
+    offset: 0.09,2.62
     state: tree05
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.34,-0.34,0.34,0.34"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeOakBase, MedievalTreeDrop2]
@@ -411,7 +631,17 @@
   suffix: Дерево 5
   components:
   - type: Sprite
+    offset: 0.07,2.59
     state: tree06
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.32,-0.32,0.32,0.32"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeOakBase, MedievalTreeDrop4]
@@ -420,7 +650,17 @@
   suffix: Дерево 1
   components:
   - type: Sprite
+    offset: 0.02,2.59
     state: tree07
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.40,-0.40,0.40,0.40"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: [MedievalTreeOakBase, MedievalTreeDrop2To3]
@@ -429,7 +669,17 @@
   suffix: Дерево 2
   components:
   - type: Sprite
+    offset: -0.11,2.59
     state: tree08
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.34,-0.34,0.34,0.34"
+        density: 2000
+        layer:
+        - WallLayer
 
 - type: entity
   parent: MarkerBase
