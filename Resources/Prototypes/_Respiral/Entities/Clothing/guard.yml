@@ -1,0 +1,157 @@
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  id: MedievalClothingInnerGuardGambesonCheckered
+  suffix: Средневековье
+  name: клетчатый гамбезон стражника
+  description: Плотный стёганый гамбезон городской стражи с чёрно-красным клетчатым узором.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/guard_gambeson.rsi
+    layers:
+    - state: icon
+      color: "#3E3838"
+    - state: checkered-icon
+      color: "#9E2A2A"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3E3838"
+      - state: checkered-inhand-left
+        color: "#9E2A2A"
+      right:
+      - state: inhand-right
+        color: "#3E3838"
+      - state: checkered-inhand-right
+        color: "#9E2A2A"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/guard_gambeson.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#3E3838"
+      - state: checkered-equipped-INNERCLOTHING
+        color: "#9E2A2A"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  id: MedievalClothingInnerGuardGambesonStriped
+  suffix: Средневековье
+  name: полосатый гамбезон стражника
+  description: Плотный стёганый гамбезон городской стражи с чёрно-красными полосами.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/guard_gambeson.rsi
+    layers:
+    - state: icon
+      color: "#3E3838"
+    - state: striped-icon
+      color: "#9E2A2A"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3E3838"
+      - state: striped-inhand-left
+        color: "#9E2A2A"
+      right:
+      - state: inhand-right
+        color: "#3E3838"
+      - state: striped-inhand-right
+        color: "#9E2A2A"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Jumpsuit/guard_gambeson.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#3E3838"
+      - state: striped-equipped-INNERCLOTHING
+        color: "#9E2A2A"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBasePants, MedievalArmorClothHeadOrLegs ]
+  id: MedievalClothingLegsGuardPants
+  suffix: Средневековье
+  name: штаны стражника
+  description: Чёрные стёганые штаны городской стражи с белым тканевым гульфиком.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/guard_pants.rsi
+    state: icon
+    color: "#3E3838"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/guard_pants.rsi
+    clothingVisuals:
+      pants:
+      - state: equipped-LEGS
+        color: "#3E3838"
+      - state: codpiece-equipped-LEGS
+        color: "#C7C3B8"
+      pants-Male:
+      - state: equipped-LEGS
+        color: "#3E3838"
+      - state: codpiece-equipped-LEGS
+        color: "#C7C3B8"
+      pants-Female:
+      - state: equipped-LEGS-female
+        color: "#3E3838"
+      - state: codpiece-equipped-LEGS-female
+        color: "#C7C3B8"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseGloves, MedievalArmorClothOther ]
+  id: MedievalClothingHandsGuardMittens
+  suffix: Средневековье
+  name: стёганые варежки стражника
+  description: Тёплые стёганые варежки городской стражи.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Hands/guard_mittens.rsi
+    state: icon
+    color: "#3E3838"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3E3838"
+      right:
+      - state: inhand-right
+        color: "#3E3838"
+  - type: Clothing
+    sprite: _Respiral/Clothing/Hands/guard_mittens.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#3E3838"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 25

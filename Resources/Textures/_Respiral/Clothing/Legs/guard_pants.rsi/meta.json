@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created for Space Station 14 project Respiral",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-LEGS",
+            "directions": 4
+        },
+        {
+            "name": "equipped-LEGS-female",
+            "directions": 4
+        },
+        {
+            "name": "codpiece-icon"
+        },
+        {
+            "name": "codpiece-equipped-LEGS",
+            "directions": 4
+        },
+        {
+            "name": "codpiece-equipped-LEGS-female",
+            "directions": 4
+        }
+    ]
+}

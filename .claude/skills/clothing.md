@@ -188,6 +188,43 @@ Currently female art exists only on 9 items of the new pack: 4 pants, 2 outer ar
 All 18 roles in `Roles/Jobs/{Nobles,Craftsman,Villager,Commoner}` are filled (Lord/Knight/Steward/
 Treasurer, blacksmiths + guard + merchant + townsfolk, elder/farmer/peasant, pilgrim).
 
+## Guard clothing pack (2026-08)
+
+`Entities/Clothing/guard.yml` — city-guard set, black-red livery from grayscale multi-layer art
+(`Textures/_Respiral/Clothing/{Uniforms/Jumpsuit/guard_gambeson,Legs/guard_pants,Hands/guard_mittens}.rsi`).
+Colors: body/black `#3E3838`, pattern/red `#9E2A2A`, codpiece linen `#C7C3B8`.
+- **Gambeson** (jumpsuit) — one RSI, two prototypes (`...GuardGambesonCheckered` / `...Striped`): a shared
+  grayscale body (`equipped-INNERCLOTHING`/`icon`/`inhand-*`) + a per-pattern overlay layer
+  (`{checkered,striped}-equipped-INNERCLOTHING` etc). Two-tone: body tinted black, pattern tinted red on
+  each of Sprite/Clothing/Item. `icon` state was extracted from the equipped south frame (source had no icon).
+- **Pants** (`...LegsGuardPants`) — body + codpiece two-tone. Source exported as `equipped-INNERCLOTHING` →
+  renamed `equipped-LEGS`, duplicated to `equipped-LEGS-female` (+ codpiece female) so the base
+  `pants-Female` key resolves. Must override all three `pants`/`pants-Male`/`pants-Female` keys (base defines
+  each) so males also get the codpiece layer. Icon = body only (`state: icon`); the codpiece source icon is
+  oversized so it's kept off the inventory icon, shown only when worn. No inhand art → `inhandVisuals:
+  {left: [], right: []}` (icon fallback, see [[inhand_icon]]).
+- **Mittens** (`...HandsGuardMittens`) — single-layer, `image.png` → `equipped-HAND`, tinted black.
+- Armor via mixins ([[clothing]] armor rule): gambeson `MedievalArmorClothBody`, pants
+  `MedievalArmorClothHeadOrLegs`, mittens `MedievalArmorClothOther`. Cloth (`MedievalFlax`/`MedievalCloth`).
+- Recipes: `Recipe/guard_clothing.yml` (`MedievalBaseTailorClothingRecipe`, `MedievalTailor: Understanding`),
+  registered in the `MedievalSewing` pack. `MedievalGuardGear` (city.yml) issues guard pants + mittens +
+  chainmail + helmet.
+- **Lobby loadout choice (checkered vs striped gambeson):** `_Respiral/Loadouts/guard.yml` — two `loadout`
+  prototypes (`MedievalGuardGambeson{Checkered,Striped}`, each `equipment: {jumpsuit: <gambeson>}`), a
+  `loadoutGroup MedievalGuardGambeson` (defaults MinLimit/MaxLimit = 1 → mandatory single pick, first =
+  checkered), and a `roleLoadout` **`JobMedievalGuard`** (id = `"Job"` + jobId, see
+  `Content.Shared/Clothing/LoadoutSystem.cs:GetJobPrototype`). The character-editor loadout tab shows the
+  group for the guard job.
+  - **The jumpsuit slot is deliberately absent from the player `MedievalGuardGear`** — a loadout can't swap a
+    slot that startingGear already filled: `EquipStartingGear` uses `TryEquip(..., force: true)`, and force
+    still fails on an *occupied* slot (container full), so the loadout item would just drop on the floor.
+    Upstream jobs (e.g. QM) omit the customizable slot from startingGear for the same reason; the loadout
+    group provides it (its MinLimit-1 default = checkered).
+  - **NPCs don't get loadout customization** (RandomHumanoidSpawner → `EquipStartingGear` only, no
+    `roleLoadout`). So `MedievalGuardGearNPC` (`parent: MedievalGuardGear`, adds `jumpsuit: ...Checkered` —
+    `Equipment` is a merged dict) exists for the guard random spawner (`spawners.yml` `MedievalGuard`
+    settings point at it), giving NPC guards the checkered gambeson.
+
 ## Clothing-set cleanup (2026-06)
 
 The `Clothing/Sets/` folder was a temporary staging area (per-profession copies of sprites). The user

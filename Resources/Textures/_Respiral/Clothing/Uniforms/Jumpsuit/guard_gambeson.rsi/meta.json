@@ -1,0 +1,56 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created for Space Station 14 project Respiral",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-INNERCLOTHING",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "checkered-icon"
+        },
+        {
+            "name": "checkered-equipped-INNERCLOTHING",
+            "directions": 4
+        },
+        {
+            "name": "checkered-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "checkered-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "striped-icon"
+        },
+        {
+            "name": "striped-equipped-INNERCLOTHING",
+            "directions": 4
+        },
+        {
+            "name": "striped-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "striped-inhand-right",
+            "directions": 4
+        }
+    ]
+}

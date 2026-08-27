@@ -1,0 +1,21 @@
+- type: loadout
+  id: MedievalGuardGambesonCheckered
+  equipment:
+    jumpsuit: MedievalClothingInnerGuardGambesonCheckered
+
+- type: loadout
+  id: MedievalGuardGambesonStriped
+  equipment:
+    jumpsuit: MedievalClothingInnerGuardGambesonStriped
+
+- type: loadoutGroup
+  id: MedievalGuardGambeson
+  name: loadout-group-medieval-guard-gambeson
+  loadouts:
+  - MedievalGuardGambesonCheckered
+  - MedievalGuardGambesonStriped
+
+- type: roleLoadout
+  id: JobMedievalGuard
+  groups:
+  - MedievalGuardGambeson

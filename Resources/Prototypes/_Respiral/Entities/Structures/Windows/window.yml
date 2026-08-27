@@ -23,7 +23,6 @@
     tags:
     - ForceFixRotations
     - Window
-    - MedievalWall
   - type: Sprite
     drawdepth: Mobs
   - type: SpriteFade
@@ -83,7 +82,6 @@
     tags:
     - ForceFixRotations
     - Window
-    - MedievalWall
   - type: Sprite
     drawdepth: Mobs
   - type: SpriteFade

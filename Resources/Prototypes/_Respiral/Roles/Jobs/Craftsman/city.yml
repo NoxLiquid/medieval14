@@ -213,4 +213,11 @@
   equipment:
     outerClothing: MedievalClothingOuterArmorIronChainmail
     head: MedievalClothingHeadHelmet
-    pants: MedievalClothingLegsArmored
+    gloves: MedievalClothingHandsGuardMittens
+    pants: MedievalClothingLegsGuardPants
+
+- type: startingGear
+  id: MedievalGuardGearNPC
+  parent: MedievalGuardGear
+  equipment:
+    jumpsuit: MedievalClothingInnerGuardGambesonCheckered

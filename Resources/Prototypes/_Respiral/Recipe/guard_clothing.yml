@@ -1,0 +1,35 @@
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerGuardGambesonCheckeredRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingInnerGuardGambesonCheckered
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerGuardGambesonStripedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingInnerGuardGambesonStriped
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingLegsGuardPantsRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingLegsGuardPants
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHandsGuardMittensRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHandsGuardMittens
+  materials:
+    MedievalCloth: 25

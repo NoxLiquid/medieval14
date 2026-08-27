@@ -27,7 +27,6 @@
     tags:
     - ForceFixRotations
     - Window
-    - MedievalWall
   - type: InteractionOutline
   - type: SpriteFade
   - type: Sprite

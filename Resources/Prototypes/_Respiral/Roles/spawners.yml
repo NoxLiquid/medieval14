@@ -236,7 +236,7 @@
   components:
   - type: RandomHumanoidAppearance
   - type: Loadout
-    prototypes: [ MedievalGuardGear ]
+    prototypes: [ MedievalGuardGearNPC ]
 
 
 
