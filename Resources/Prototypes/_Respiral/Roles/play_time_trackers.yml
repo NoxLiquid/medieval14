@@ -52,6 +52,9 @@
   id: JobMedievalPeasant
 
 - type: playTimeTracker
-  id: JobMedievalPilligrim
+  id: JobMedievalRefugee
+
+- type: playTimeTracker
+  id: JobMedievalForester
 
 # Commoner

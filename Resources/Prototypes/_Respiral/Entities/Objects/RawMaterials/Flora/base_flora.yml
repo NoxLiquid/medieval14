@@ -47,7 +47,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
+          bounds: "-0.25,-0.80,0.25,-0.35"
         density: 2000
         layer:
         - WallLayer

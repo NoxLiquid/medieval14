@@ -1,0 +1,120 @@
+# Respiral - мраморные декали
+
+- type: decal
+  id: MedievalMarbleBox
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_box
+
+- type: decal
+  id: MedievalMarbleCornerNe
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_corner_ne
+
+- type: decal
+  id: MedievalMarbleCornerSe
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_corner_se
+
+- type: decal
+  id: MedievalMarbleCornerNw
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_corner_nw
+
+- type: decal
+  id: MedievalMarbleCornerSw
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_corner_sw
+
+- type: decal
+  id: MedievalMarbleEndN
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_end_n
+
+- type: decal
+  id: MedievalMarbleEndE
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_end_e
+
+- type: decal
+  id: MedievalMarbleEndS
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_end_s
+
+- type: decal
+  id: MedievalMarbleEndW
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_end_w
+
+- type: decal
+  id: MedievalMarbleLineN
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_line_n
+
+- type: decal
+  id: MedievalMarbleLineE
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_line_e
+
+- type: decal
+  id: MedievalMarbleLineS
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_line_s
+
+- type: decal
+  id: MedievalMarbleLineW
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_line_w
+
+- type: decal
+  id: MedievalMarbleInnerNe
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_inner_ne
+
+- type: decal
+  id: MedievalMarbleInnerSe
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_inner_se
+
+- type: decal
+  id: MedievalMarbleInnerNw
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_inner_nw
+
+- type: decal
+  id: MedievalMarbleInnerSw
+  tags: ["medieval", "markings"]
+  sprite:
+    sprite: _Respiral/Decals/marble.rsi
+    state: marble_inner_sw

@@ -53,7 +53,7 @@ entities:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
-- proto: SpawnPointMedievalPilligrim
+- proto: SpawnPointMedievalRefugee
   entities:
   - uid: 3
     components:

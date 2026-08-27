@@ -232,10 +232,8 @@
     inhandVisuals:
       left:
       - state: inhand-left
-        scale: 0.5, 0.5
       right:
       - state: inhand-right
-        scale: 0.5, 0.5
   - type: Damageable
     damageModifierSet: MedievalMithril
   - type: Injurable

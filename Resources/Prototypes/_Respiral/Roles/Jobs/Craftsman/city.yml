@@ -35,6 +35,7 @@
       skills:
         MedievalWoodProcessing: 1
 
+
 - type: startingGear
   id: MedievalCarpenterGear
   equipment:

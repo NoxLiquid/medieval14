@@ -84,6 +84,19 @@
       - state: green
       - state: engineer
 
+
+- type: entity
+  id: SpawnPointMedievalForester
+  parent: SpawnPointJobBase
+  name: лесник
+  components:
+  - type: SpawnPoint
+    job_id: MedievalForester
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
 - type: entity
   id: SpawnPointMedievalEngineer
   parent: SpawnPointJobBase
@@ -193,12 +206,12 @@
       - state: passenger
 
 - type: entity
-  id: SpawnPointMedievalPilligrim
+  id: SpawnPointMedievalRefugee
   parent: SpawnPointJobBase
-  name: переселенец
+  name: беженец
   components:
   - type: SpawnPoint
-    job_id: MedievalPilligrim
+    job_id: MedievalRefugee
   - type: Sprite
     layers:
       - state: green

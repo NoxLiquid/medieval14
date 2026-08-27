@@ -238,6 +238,24 @@
   - type: Loadout
     prototypes: [ MedievalGuardGear ]
 
+
+
+- type: entity
+  parent: MedievalBaseHumanoidSpawner
+  id: MedievalRandomHumanoidSpawnerForester
+  name: лесник
+  suffix: Средневековье
+  components:
+  - type: RandomHumanoidSpawner
+    settings: MedievalForester
+
+- type: randomHumanoidSettings
+  id: MedievalForester
+  components:
+  - type: RandomHumanoidAppearance
+  - type: Loadout
+    prototypes: [ MedievalForesterGear ]
+
 # === Деревенские (Villager) ===
 
 - type: entity
@@ -292,16 +310,16 @@
 
 - type: entity
   parent: MedievalBaseHumanoidSpawner
-  id: MedievalRandomHumanoidSpawnerPilligrim
-  name: пилигрим
+  id: MedievalRandomHumanoidSpawnerRefugee
+  name: беженец
   suffix: Средневековье
   components:
   - type: RandomHumanoidSpawner
-    settings: MedievalPilligrim
+    settings: MedievalRefugee
 
 - type: randomHumanoidSettings
-  id: MedievalPilligrim
+  id: MedievalRefugee
   components:
   - type: RandomHumanoidAppearance
   - type: Loadout
-    prototypes: [ MedievalPilligrimGear ]
+    prototypes: [ MedievalRefugeeGear ]

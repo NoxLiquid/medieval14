@@ -13916,7 +13916,7 @@ entities:
       parent: 1
       pos: -0.5,-0.5
       anchored: False
-- proto: SpawnPointMedievalPilligrim
+- proto: SpawnPointMedievalRefugee
   entities:
   - uid: 2573
     components:

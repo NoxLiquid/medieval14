@@ -1,9 +1,9 @@
 - type: job
-  id: MedievalPilligrim
-  name: job-name-pilligrim
-  description: job-description-pilligrim
-  playTimeTracker: JobMedievalPilligrim
-  startingGear: MedievalPilligrimGear
+  id: MedievalRefugee
+  name: job-name-refugee
+  description: job-description-refugee
+  playTimeTracker: JobMedievalRefugee
+  startingGear: MedievalRefugeeGear
   icon: JobIconPassenger
   supervisors: job-supervisors-medieval-authority
   special:
@@ -14,10 +14,9 @@
         MedievalFistFight: 1
 
 - type: startingGear
-  id: MedievalPilligrimGear
+  id: MedievalRefugeeGear
   equipment:
     head: MedievalClothingHeadHood
     jumpsuit: MedievalClothingInnerPeasantShirtRusset
     pants: MedievalClothingLegsPeasantGrey
     shoes: MedievalClothingShoesPeasantBoots
-

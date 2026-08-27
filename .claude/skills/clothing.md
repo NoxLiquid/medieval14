@@ -18,7 +18,7 @@ Domain: clothing (Respiral medieval clothing), its prototypes, RSI sprites, and 
   - `peasant.yml` — commoner set (shirts w/ collar, cloth pants, leather boots), themed file (not slot-split)
   - `refugee.yml` — refugee/settler rags (already-colored sprites, no tint, no craft). **Fragile**: override
     `Destructible` with a low `damage` threshold (~25 vs base 100) so the garment breaks easily. No matching
-    role/starting-gear yet (closest role: Pilligrim) — items only.
+    role/starting-gear yet (closest role: Refugee) — items only.
 
 ## Grayscale + per-layer tint (color variants without extra sprites)
 Commissioned grayscale sprites are recolored per prototype via `color:` (multiply). Realistic muted

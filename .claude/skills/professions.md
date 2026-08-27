@@ -15,10 +15,10 @@ Content split across `src/professions/{overview,design-plan}.md` and `src/depart
 | MedievalNobles | Lord, Knight, CitySteward, Treasurer |
 | MedievalCraftsman | Blacksmith, Carpenter, Mason, Engineer, Innkeeper, Herbalist, Tailor, Citizen, Merchant, Guard |
 | MedievalVillager | Elder, Farmer, Peasant |
-| MedievalCommoner (weight -10) | Pilligrim |
+| MedievalCommoner (weight -10) | Refugee |
 
 Supervisor chain: Lord → Knight/CitySteward/Treasurer/Elder; CitySteward → all craftsmen;
-Elder → Farmer/Peasant; authority → Pilligrim.
+Elder → Farmer/Peasant; authority → Refugee.
 
 ## Jobs = starting gear + starting skills (2026-08)
 
@@ -47,9 +47,9 @@ YAML-set values network to the client on spawn automatically.
 | Lord | Literacy + OneSword |
 | Knight | OneSword + AncientWeapons |
 | Treasurer | Literacy + Jewelry |
-| Citizen, Peasant, Farmer, Pilligrim | FistFight (commoner default — no craft skill fits the role) |
+| Citizen, Peasant, Farmer, Refugee | FistFight (commoner default — no craft skill fits the role) |
 
-Files: `Roles/Jobs/{Craftsman/city,Nobles/nobles,Villager/village,Commoner/pilligrim}.yml`.
+Files: `Roles/Jobs/{Craftsman/city,Nobles/nobles,Villager/village,Commoner/refugee}.yml`.
 NPC spawner variants don't get a `SkillComponent` (they use the job's gear loadout, not `special`),
 so NPCs still bypass skill gates by design.
 
@@ -120,7 +120,7 @@ has ≥1 recipe — the storage tags are scaffolding that activates once recipes
    anyone learn any craft from zero — starting skills just give professionals a head start at mastery.
 2. **MedievalJeweler empty pack** + no Jeweler job in any department (skill exists, role doesn't) —
    Treasurer now carries `MedievalJewelry`, but the Jeweler machine's pack is still empty.
-3. Commoner roles (Citizen, Peasant, Farmer, Pilligrim) have no craft skill that fits → all given
+3. Commoner roles (Citizen, Peasant, Farmer, Refugee) have no craft skill that fits → all given
    `MedievalFistFight` as a placeholder. Farmer has no farming skill in `skill.yml` at all.
 4. Combat skills have no training books (melee-only); `MedievalAncientWeapons` name typo ("древкое").
 5. Alchemy only partially gated (Table gated; Grinder + Hotplate open to all).
