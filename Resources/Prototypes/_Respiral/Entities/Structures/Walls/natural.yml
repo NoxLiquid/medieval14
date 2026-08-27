@@ -4,6 +4,8 @@
   abstract: true
   suffix: Средневековье
   components:
+  - type: Tag
+    tags: []
   - type: Sprite
     drawdepth: Mobs
   - type: SpriteFade
@@ -67,8 +69,6 @@
     sprite: _Respiral/Structures/Walls/Natural/cave_stone_strong.rsi
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/cave_stone_strong.rsi
-  - type: Tag
-    tags: []
   - type: Damageable
     damageModifierSet: MedievalStone
   - type: Injurable
@@ -723,8 +723,6 @@
     sprite: _Respiral/Structures/Walls/Natural/quartz.rsi
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/quartz.rsi
-  - type: Tag
-    tags: []
   - type: Damageable
     damageModifierSet: MedievalQuartz
   - type: Injurable
@@ -759,8 +757,6 @@
     sprite: _Respiral/Structures/Walls/Natural/dirt_wall.rsi
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/dirt_wall.rsi
-  - type: Tag
-    tags: []
   - type: Damageable
     damageModifierSet: MedievalDirt
   - type: Injurable
@@ -792,8 +788,6 @@
     sprite: _Respiral/Structures/Walls/Natural/leaf.rsi
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/leaf.rsi
-  - type: Tag
-    tags: []
   - type: Damageable
     damageModifierSet: MedievalGrass
   - type: Injurable
@@ -823,8 +817,6 @@
     sprite: _Respiral/Structures/Walls/Natural/snow_wall.rsi
   - type: Icon
     sprite: _Respiral/Structures/Walls/Natural/snow_wall.rsi
-  - type: Tag
-    tags: []
   - type: Damageable
     damageModifierSet: MedievalSnow
   - type: Injurable
