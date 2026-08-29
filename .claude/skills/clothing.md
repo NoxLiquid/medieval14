@@ -256,8 +256,10 @@ Second removal pass (old base clothing): sprites + prototypes + recipes removed 
 `MedievalClothingInnerSimpleShirt/TrimmedShirt/PeasantRags` (shirt/shirt2/peasant-rags). The
 corresponding `shoes:`/`jumpsuit:` lines were cleaned out of all roles.
 - The **shoes** slot is now covered only by the new `MedievalClothingShoesBoots/HighBoots/RichBoots`.
-- The **jumpsuit** slot: `MedievalClothingInnerLongTunic` + Elite variants remain
-  (`EliteCloth/EliteHalf/EliteManjete/EliteMetal`).
+- Third removal pass (2026-08): `MedievalClothingInnerLongTunic` and the whole Elite family
+  (`EliteCloth/EliteHalf/EliteManjete/EliteMetal`) were deleted along with `inner.yml`, the
+  `MedievalClothingInnerLongTunicRecipe` (recipe.yml + packs.yml), and all `jumpsuit:` lines
+  referencing them in village.yml / nobles.yml. The **jumpsuit** slot now has no Respiral inner-clothing prototypes.
 - ALL professions are currently **without footwear** (and many without jumpsuit) — starting gear awaits reassignment
   to surviving/new prototypes.
 

@@ -1640,15 +1640,6 @@
 
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingInnerLongTunicRecipe
-  neededSkills:
-    MedievalTailor: Mastery
-  result: MedievalClothingInnerLongTunic
-  materials:
-    MedievalCloth: 100
-
-- type: latheRecipe
-  parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingBackBackpackRecipe
   neededSkills:
     MedievalTailor: Mastery

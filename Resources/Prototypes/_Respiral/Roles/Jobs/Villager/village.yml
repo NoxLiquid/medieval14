@@ -16,7 +16,6 @@
 - type: startingGear
   id: MedievalElderGear
   equipment:
-    jumpsuit: MedievalClothingInnerLongTunic
     head: MedievalClothingHeadHood
     pants: MedievalClothingLegsLeather
 

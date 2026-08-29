@@ -91,8 +91,11 @@
   components:
   - type: Sprite
     sprite: _Respiral/Clothing/Legs/guard_pants.rsi
-    state: icon
-    color: "#3E3838"
+    layers:
+    - state: icon
+      color: "#3E3838"
+    - state: codpiece-icon
+      color: "#C7C3B8"
   - type: Item
     inhandVisuals:
       left: []
