@@ -149,37 +149,19 @@ Before creating prototypes, **normalize**:
 - `equiped-*` → `equipped-*` (double p), `equiped_LEGS`/`equiped_PANTS` → `equipped-LEGS`.
 - Rewrite `meta.json.states` for the actual slot (not the leftover template `equipped-OUTERCLOTHING`).
 - Remove service `База.txt` files from the .rsi (an .rsi should contain only `meta.json` + png).
-- `-female` sprites are wired in via sex-specific `clothingVisuals` keys (see below).
+## Female rendering — REMOVED (2026-08)
 
-## Female rendering (sex-specific sprites)
+The sex-specific `clothingVisuals` prefix logic was **removed** as unnecessary. What was deleted:
+- The `Respiral-Start/End` block in `Content.Client/Clothing/ClientClothingSystem.cs` `OnGetVisuals`
+  (the `{slot}-{Sex}` / `{slot}-{SpeciesId}-{Sex}` lookup chain). It's back to plain upstream:
+  species lookup `{slot}-{SpeciesId}` → generic `{slot}` → auto-generated default.
+- All `{slot}-Male` / `{slot}-Female` keys (with `equipped-*-female` states) from `base.yml`
+  (`MedievalBasePants`, `MedievalBaseShoes`) and every per-item override (`guard.yml`, `neck.yml`,
+  `peasant.yml`, `shoes.yml`). Every clothing now has only the single unisex `{slot}` key.
 
-The client (`Content.Client/Clothing/ClientClothingSystem.cs`, block `Respiral-Start`) picks the
-`clothingVisuals` layer via a chain (`{slot}` = **inventory slot name**, not the state suffix):
-1. `{slot}-{SpeciesId}-{Sex}` → 2. `{slot}-{SpeciesId}` → 3. `{slot}-{Sex}` (e.g. `outerClothing-Female`)
-→ 4. generic `{slot}` → 5. auto-generated default from RSI (`equipped-{TemporarySlotMap[slot]}`, species only, **no** sex).
-
-So a female sprite = key `{slot}-Female` with state `equipped-<SUFFIX>-female`, added **only**
-if the corresponding `-female` PNG actually exists in the .rsi (otherwise the layer references a nonexistent state).
-
-| Slot (inventory name) | Female key | Female state |
-|---|---|---|
-| jumpsuit | `jumpsuit-Female` | `equipped-INNERCLOTHING-female` |
-| outerClothing | `outerClothing-Female` | `equipped-OUTERCLOTHING-female` |
-| head | `head-Female` | `equipped-HELMET-female` |
-| neck | `neck-Female` | `equipped-NECK-female` |
-| gloves | `gloves-Female` | `equipped-HAND-female` |
-| pants | `pants-Female` | `equipped-LEGS-female` |
-| shoes | `shoes-Female` | `equipped-FEET-female` |
-
-**Base bug (fixed):** `MedievalBasePants`/`MedievalBaseShoes` in `base.yml` had keys
-`jumpsuit*` instead of `pants*`/`shoes*` — they never matched (slot `pants`/`shoes`), rendering went
-through the default generator, and female sprites were ignored. The Pants base was switched to `pants`/`pants-Female`
-(all 4 pants have female art), the Shoes base — to `shoes`/`shoes-Male` (female only on some footwear → its
-`shoes-Female` key is added per-item). If an item has a female PNG — add `{slot}-Female`
-to its `clothingVisuals`. If not — do nothing, the unisex sprite is drawn for both sexes (that's normal).
-
-Currently female art exists only on 9 items of the new pack: 4 pants, 2 outer armors
-(Light/Normal), 2 boots (high/rich), the lord's cloak. The rest of the clothing has no female sprites.
+Do **not** reintroduce `{slot}-Male`/`{slot}-Female` clothingVisuals keys. Unisex `equipped-*` only.
+(The upstream `femaleDisplacements` on the species `Inventory` — e.g. `Body/Species/human.yml`,
+`state: jumpsuit-female` — is a **different**, still-active feature for female body-shape displacement maps; leave it.)
 
 ## Starting gear
 
@@ -198,10 +180,9 @@ Colors: body/black `#3E3838`, pattern/red `#9E2A2A`, codpiece linen `#C7C3B8`.
   (`{checkered,striped}-equipped-INNERCLOTHING` etc). Two-tone: body tinted black, pattern tinted red on
   each of Sprite/Clothing/Item. `icon` state was extracted from the equipped south frame (source had no icon).
 - **Pants** (`...LegsGuardPants`) — body + codpiece two-tone. Source exported as `equipped-INNERCLOTHING` →
-  renamed `equipped-LEGS`, duplicated to `equipped-LEGS-female` (+ codpiece female) so the base
-  `pants-Female` key resolves. Must override all three `pants`/`pants-Male`/`pants-Female` keys (base defines
-  each) so males also get the codpiece layer. Icon = body only (`state: icon`); the codpiece source icon is
-  oversized so it's kept off the inventory icon, shown only when worn. No inhand art → `inhandVisuals:
+  renamed `equipped-LEGS`. Single unisex `pants` key with two layers (body `equipped-LEGS` +
+  codpiece `codpiece-equipped-LEGS`). Icon now uses two Sprite layers (`icon` + `codpiece-icon`) so the
+  codpiece shows on the inventory icon too. No inhand art → `inhandVisuals:
   {left: [], right: []}` (icon fallback, see [[inhand_icon]]).
 - **Mittens** (`...HandsGuardMittens`) — single-layer, `image.png` → `equipped-HAND`, tinted black.
 - Armor via mixins ([[clothing]] armor rule): gambeson `MedievalArmorClothBody`, pants
@@ -285,3 +266,64 @@ Crafting recipes added (all three metallic, parent `MedievalBaseMetalClothingRec
 the item's `PhysicalComposition`. Registered in the anvil pack `Recipe/packs.yml`
 (next to `MedievalClothingShoesChainRecipe`/`MedievalClothingHandsChainGlovesRecipe`) — otherwise
 the recipe won't appear in the machine (packs are static, not category-based).
+
+## Dresses (2026-08)
+
+Six `outerClothing` dresses in `Entities/Clothing/outer/dress.yml`, from Twilight-Fortress
+`OuterClothing/Dress/*.rsi` (CC-BY-SA-3.0): `emerald`, `sapphire`, `scarlet`, `white`,
+`grayscale`, `grayscale2`. Prototypes: `MedievalClothingOuterDressEmerald/Sapphire/Scarlet/White/Gray/Simple`
+(Gray = grayscale, Simple = grayscale2). Parent `[ MedievalBaseOuterClothing, MedievalArmorClothBody ]`,
+cloth (`MedievalCloth: 100`), `damageModifierSet: MedievalFlax`.
+
+Each .rsi has only `icon` + `equipped-OUTERCLOTHING` (no `inhand-*`). Since the base
+`MedievalBaseOuterClothing` sets `Item.inhandVisuals` to `inhand-left/right`, each dress
+**overrides `Item.inhandVisuals` to use `state: icon`** for both hands so the in-hand sprite renders.
+This is the go-to pattern when an imported RSI lacks in-hand states.
+
+Tailor recipes `MedievalClothingOuterDress*Recipe` (parent `MedievalBaseTailorClothingRecipe`,
+`MedievalTailor: Confident`): coloured dresses cost `MedievalCloth: 150`, gray/simple `100`.
+Registered in the `MedievalTailor` pack in `Recipe/packs.yml` (above the mantle recipes).
+
+## Tailoring skill tiers & Royalty (2026-08)
+
+`SkillKnowledgeLevel` ladder (`Content.Shared/_Respiral/Skill/SkillKnowledge.cs`):
+Vague → Basic → Understanding → Confident → Deep → **Mastery** (Mastery is the ceiling, progress ≥ 1.0).
+Tiers in use for `MedievalTailor`: `Understanding` (peasant/guard clothing, bookstand),
+`Confident` (dresses), `Mastery` (Royalty, mantles, wallpaper/carpets/decor).
+
+**Rule:** Royalty clothing must require a **higher** tailoring skill than ordinary garments. Mastery is the
+cap → Royalty = `Mastery`; ordinary fancy clothing (dresses) = `Confident` so the gap is real.
+
+Royalty prototypes in `Entities/Clothing/royalty.yml` (Twilight-Fortress, CC-BY-SA-3.0):
+- `MedievalClothingOuterRoyalCassock` (`OuterClothing/Royalty/cassock.rsi`) — outerClothing, cloth 200.
+- `MedievalClothingOuterRoyalDress` (`OuterClothing/Royalty/dress.rsi`) — outerClothing, cloth 200.
+- `MedievalClothingOuterRoyalCoat` (`OuterClothing/Royalty/long_shirt.rsi`) — outerClothing, cloth 200.
+- `MedievalClothingInnerRoyalShirt` (`Uniforms/Royalty/shirt.rsi`) — jumpsuit, cloth 150.
+
+Each .rsi has `icon`/`colored-icon` + `equipped-*`/`colored-equipped-*`. Prototypes use the fixed-colour
+`icon`/`equipped-*` states (the `colored-*` tintable variants are left unused — no colour spec). No inhand
+states → `Item.inhandVisuals` overridden to `state: icon` (see [[inhand_icon]]). All cloth
+(`MedievalArmorClothBody`, `MedievalFlax`). Recipes `MedievalClothingOuter/InnerRoyal*Recipe`
+(`MedievalTailor: Mastery`) in the `MedievalTailor` pack.
+
+## Material armor set (2026-08)
+
+Four `outerClothing` armors appended to `Entities/Clothing/outer/armor.yml` (Twilight-Fortress, CC-BY-SA-3.0).
+Per user: **no armor mixins** — parent is plain `MedievalBaseOuterClothing`, protection expressed only via a
+suitable `damageModifierSet`. Skill scales with material (steel > leather > cloth); crafts use **multiple materials**.
+
+| Prototype | RSI | damageModifierSet | Recipe skill (`MedievalBasicBlacksmithing`) | Materials |
+|---|---|---|---|---|
+| `MedievalClothingOuterArmorQuiltedGambeson` | quilted_gambeson | `MedievalFlax` | Understanding | Cloth 200 + Pelt 50 |
+| `MedievalClothingOuterArmorLeatherJacket` | leather_jacket | `MedievalPelt` | Confident | Pelt 150 + Cloth 50 |
+| `MedievalClothingOuterArmorPlate` | plate_armor | `MedievalSteel` | Deep | Steel 150 + Pelt 50 |
+| `MedievalClothingOuterArmorPlateLeather` | plate_armor_leather_jacket | `MedievalSteel` | Mastery | Steel 150 + Pelt 100 |
+
+Recipes parent `MedievalBaseMetalClothingRecipe` (category `MedievalMetalClothingCategory` — note
+`MedievalMaterialArmorCategory` from `MedievalBaseArmorRecipe` is **undefined** in `category.yml`, so it's unused),
+each overriding `neededSkills` for its tier. Registered in the **`MedievalAnvil`** pack (`# Броня` section),
+so all four are crafted at the anvil like the rest of the armor. `plate_armor.rsi` **has** `inhand-left/right`
+(no `Item` override); the other three lack inhand states → `inhandVisuals` set to `state: icon`.
+
+Not yet prototyped: `Head/Hoods/{chainmail,chainmail_closed,cloth,quilted,quilted_closed}`, `Neck/chef_coat`,
+`Tabards/*` (Tabards explicitly deferred by the user).

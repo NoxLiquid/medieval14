@@ -18,3 +18,102 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorQuiltedGambeson
+  suffix: Средневековье
+  name: стёганый гамбезон
+  description: Толстый стёганый поддоспешник из простёганной ткани.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Armor/quilted_gambeson.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Armor/quilted_gambeson.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorLeatherJacket
+  suffix: Средневековье
+  name: кожаный доспех
+  description: Прочная кожаная куртка, защищающая от скользящих ударов.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Armor/leather_jacket.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Armor/leather_jacket.rsi
+  - type: Damageable
+    damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorPlate
+  suffix: Средневековье
+  name: латный доспех
+  description: Кованый стальной доспех, укрывающий торс от тяжёлых ударов.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor.rsi
+  - type: Damageable
+    damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 100
+
+- type: entity
+  parent: MedievalBaseOuterClothing
+  id: MedievalClothingOuterArmorPlateLeather
+  suffix: Средневековье
+  name: латы с поддоспешником
+  description: Стальные латы поверх кожаной куртки — надёжная защита рыцаря.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor_leather_jacket.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor_leather_jacket.rsi
+  - type: Damageable
+    damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 100
+      MedievalProcessedPelt: 50

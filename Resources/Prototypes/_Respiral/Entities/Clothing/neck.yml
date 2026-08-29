@@ -11,9 +11,6 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Neck/lord_cape.rsi
-    clothingVisuals:
-      neck-Female:
-      - state: equipped-NECK-female
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable

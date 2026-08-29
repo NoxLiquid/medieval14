@@ -1,0 +1,155 @@
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  id: MedievalClothingOuterDressEmerald
+  suffix: Средневековье
+  name: изумрудное платье
+  description: Элегантное платье глубокого изумрудного оттенка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Dress/emerald.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Dress/emerald.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  id: MedievalClothingOuterDressSapphire
+  suffix: Средневековье
+  name: сапфировое платье
+  description: Элегантное платье насыщенного сапфирового цвета.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Dress/sapphire.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Dress/sapphire.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  id: MedievalClothingOuterDressScarlet
+  suffix: Средневековье
+  name: алое платье
+  description: Яркое платье алого цвета.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Dress/scarlet.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Dress/scarlet.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  id: MedievalClothingOuterDressWhite
+  suffix: Средневековье
+  name: белое платье
+  description: Простое белое платье.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Dress/white.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Dress/white.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  id: MedievalClothingOuterDressGray
+  suffix: Средневековье
+  name: серое платье
+  description: Простое серое платье из некрашеной ткани.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Dress/grayscale.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Dress/grayscale.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  id: MedievalClothingOuterDressSimple
+  suffix: Средневековье
+  name: простое платье
+  description: Скромное платье простого покроя.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Dress/grayscale2.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Dress/grayscale2.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100

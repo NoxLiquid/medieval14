@@ -238,6 +238,10 @@
   - MedievalClothingShoesArmoredBootsRecipe
   - MedievalClothingShoesHeavyArmoredBootsRecipe
   - MedievalClothingHandsHeavyArmoredRecipe
+  - MedievalClothingOuterArmorQuiltedGambesonRecipe
+  - MedievalClothingOuterArmorLeatherJacketRecipe
+  - MedievalClothingOuterArmorPlateRecipe
+  - MedievalClothingOuterArmorPlateLeatherRecipe
 
 - type: latheRecipePack
   id: MedievalAnvilCandel
@@ -297,6 +301,16 @@
   - MedievalClothingHandsGuardMittensRecipe
   - MedievalClothingShoesPeasantBootsRecipe
   - MedievalClothingShoesPeasantBootsDarkRecipe
+  - MedievalClothingOuterRoyalCassockRecipe
+  - MedievalClothingOuterRoyalDressRecipe
+  - MedievalClothingOuterRoyalCoatRecipe
+  - MedievalClothingInnerRoyalShirtRecipe
+  - MedievalClothingOuterDressEmeraldRecipe
+  - MedievalClothingOuterDressSapphireRecipe
+  - MedievalClothingOuterDressScarletRecipe
+  - MedievalClothingOuterDressWhiteRecipe
+  - MedievalClothingOuterDressGrayRecipe
+  - MedievalClothingOuterDressSimpleRecipe
   - MedievalClothingNeckMantleCrimsonRecipe
   - MedievalClothingNeckMantleEmeraldRecipe
   - MedievalClothingNeckMantleAzureRecipe

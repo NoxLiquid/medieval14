@@ -1,0 +1,103 @@
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  id: MedievalClothingOuterRoyalCassock
+  suffix: Средневековье
+  name: королевская сутана
+  description: Длинная церемониальная сутана благородного покроя.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/cassock.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/cassock.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  id: MedievalClothingOuterRoyalDress
+  suffix: Средневековье
+  name: королевское платье
+  description: Роскошное платье с золотой отделкой, достойное особ голубой крови.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  id: MedievalClothingOuterRoyalCoat
+  suffix: Средневековье
+  name: королевский кафтан
+  description: Длинный парадный кафтан с богатой вышивкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  id: MedievalClothingInnerRoyalShirt
+  suffix: Средневековье
+  name: королевская рубаха
+  description: Богато расшитая парадная рубаха придворного.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: icon
+      right:
+      - state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 150

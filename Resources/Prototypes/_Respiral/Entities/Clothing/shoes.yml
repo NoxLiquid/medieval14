@@ -11,9 +11,6 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable
@@ -33,9 +30,6 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/high_boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable
@@ -55,9 +49,6 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/rich_boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -77,9 +68,6 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/armored_boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
   - type: Damageable
     damageModifierSet: MedievalIron
   - type: Injurable
@@ -99,9 +87,6 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/heavy_armored_boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable

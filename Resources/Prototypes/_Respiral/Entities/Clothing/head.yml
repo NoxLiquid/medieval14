@@ -82,10 +82,10 @@
   name: простой капюшон
   components:
   - type: Sprite
-    sprite: _Respiral/Clothing/Head/Hats/simple_hood.rsi
+    sprite: _Respiral/Clothing/Head/Hoods/simple_hood.rsi
     state: icon
   - type: Clothing
-    sprite: _Respiral/Clothing/Head/Hats/simple_hood.rsi
+    sprite: _Respiral/Clothing/Head/Hoods/simple_hood.rsi
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable

@@ -264,10 +264,6 @@
     clothingVisuals:
       pants:
       - state: equipped-LEGS
-      pants-Male:
-      - state: equipped-LEGS
-      pants-Female:
-      - state: equipped-LEGS-female
 
 # === BASE SHOES ===
 - type: entity
@@ -287,8 +283,6 @@
     slots: [feet]
     clothingVisuals:
       shoes:
-      - state: equipped-FEET
-      shoes-Male:
       - state: equipped-FEET
 
 # === BASE ID ===
