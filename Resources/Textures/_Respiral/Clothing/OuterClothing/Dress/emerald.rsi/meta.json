@@ -15,6 +15,13 @@
         {
             "name":  "equipped-OUTERCLOTHING",
             "directions":  4
+        },
+        {
+            "name":  "colored_icon"
+        },
+        {
+            "name":  "colored_equipped-OUTERCLOTHING",
+            "directions":  4
         }
     ]
 }

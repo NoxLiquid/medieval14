@@ -163,6 +163,29 @@ Do **not** reintroduce `{slot}-Male`/`{slot}-Female` clothingVisuals keys. Unise
 (The upstream `femaleDisplacements` on the species `Inventory` — e.g. `Body/Species/human.yml`,
 `state: jumpsuit-female` — is a **different**, still-active feature for female body-shape displacement maps; leave it.)
 
+## Hand-layer draw order (mostly upstream; `belt` moved below hands)
+
+Humanoid sprite layer order lives in upstream `Resources/Prototypes/Body/species_appearance.yml`
+(`BaseSpeciesLayers`); the Respiral species (`AppearanceMedievalHuman/...`) inherit it via
+`BaseSpeciesAppearance`. Draw order is set by where the slot "bookmark" sits in that list
+(`ClientClothingSystem.RenderEquipment` inserts each equipped layer right after the layer whose key == slot name).
+
+`LHand`/`RHand` sit **below** `outerClothing` (and `jumpsuit` sits below the hands). Consequence: long sleeves
+on an `equipped-OUTERCLOTHING` sprite (e.g. `MedievalClothingOuterDressScarlet`) cover the hands on east/west,
+while inner clothing (`MedievalClothingInnerRoyalShirt`) never hides them.
+
+We experimented with moving `LHand`/`RHand` above `outerClothing` (and `gloves` above the hands) to fix the dress,
+but **reverted** it. The correct fix for a garment whose sleeves hide the hands is a **sprite edit** (make the
+wrist/hand area transparent on the E/W `equipped-*` frames), not a global layer-order change.
+
+**Exception — `belt` moved below the hands (2026-08, Respiral-Start/End marker):** upstream draws `belt` in
+the "More equipment" group *above* `LHand`/`RHand`, so the medieval waist belts (`Belt/*.rsi`
+`equipped-BELT`) rendered on top of the hands/arms that hang at the waist. Moved the `- map: [ "belt" ]`
+entry to just **before** `LHand`/`RHand` (right after `LFoot`/`RFoot`) so hands draw over the belt. Belt
+stays below `outerClothing` (a coat still covers it); belt vs `gloves`/`shoes` is irrelevant (different body
+regions). Unlike the dress-sleeve case, moving a single waist-slot layer is a localized, physically-correct
+z-fix — not the global hand reorder we reverted.
+
 ## Starting gear
 
 `type: startingGear` with an `equipment:` block where the key is the slot (`jumpsuit`, `outerClothing`, `head`,
@@ -179,7 +202,11 @@ Colors: body/black `#3E3838`, pattern/red `#9E2A2A`, codpiece linen `#C7C3B8`.
   grayscale body (`equipped-INNERCLOTHING`/`icon`/`inhand-*`) + a per-pattern overlay layer
   (`{checkered,striped}-equipped-INNERCLOTHING` etc). Two-tone: body tinted black, pattern tinted red on
   each of Sprite/Clothing/Item. `icon` state was extracted from the equipped south frame (source had no icon).
-- **Pants** (`...LegsGuardPants`) — body + codpiece two-tone. Source exported as `equipped-INNERCLOTHING` →
+- **Pants** (`...LegsGuardPants`, display name renamed to `добротные штаны` 2026-08) — body + codpiece two-tone.
+  **Colour variants (2026-08):** `...LegsGuardPants{Red,Black,Violet}` tint the body layer (`icon`/`equipped-LEGS`)
+  to Red `#A11E2B` / Black `#4E4A55` / Violet `#4A2E5A` (same trio as the royal shirt), keeping the linen
+  codpiece `#C7C3B8`. Recipes `...Red/Black/VioletRecipe` (`MedievalTailor: Understanding`, cloth 100) in
+  `guard_clothing.yml`, registered in the `MedievalTailor` pack. Source exported as `equipped-INNERCLOTHING` →
   renamed `equipped-LEGS`. Single unisex `pants` key with two layers (body `equipped-LEGS` +
   codpiece `codpiece-equipped-LEGS`). Icon now uses two Sprite layers (`icon` + `codpiece-icon`) so the
   codpiece shows on the inventory icon too. No inhand art → `inhandVisuals:
@@ -269,20 +296,53 @@ the recipe won't appear in the machine (packs are static, not category-based).
 
 ## Dresses (2026-08)
 
-Six `outerClothing` dresses in `Entities/Clothing/outer/dress.yml`, from Twilight-Fortress
-`OuterClothing/Dress/*.rsi` (CC-BY-SA-3.0): `emerald`, `sapphire`, `scarlet`, `white`,
-`grayscale`, `grayscale2`. Prototypes: `MedievalClothingOuterDressEmerald/Sapphire/Scarlet/White/Gray/Simple`
-(Gray = grayscale, Simple = grayscale2). Parent `[ MedievalBaseOuterClothing, MedievalArmorClothBody ]`,
-cloth (`MedievalCloth: 100`), `damageModifierSet: MedievalFlax`.
+Four `outerClothing` dresses in `Entities/Clothing/outer/dress.yml`, from Twilight-Fortress
+`OuterClothing/Dress/*.rsi` (CC-BY-SA-3.0): `emerald`, `sapphire`, `scarlet`, `grayscale`.
+Prototypes: `MedievalClothingOuterDressEmerald/Sapphire/Scarlet/Gray` (Gray = grayscale). Parent
+`[ MedievalBaseOuterClothing, MedievalArmorClothBody ]`, cloth (`MedievalCloth: 100`), `damageModifierSet: MedievalFlax`.
+(`white`/`grayscale2` RSIs were later deleted → their `...DressWhite`/`...DressSimple` prototypes + recipes removed.)
 
-Each .rsi has only `icon` + `equipped-OUTERCLOTHING` (no `inhand-*`). Since the base
-`MedievalBaseOuterClothing` sets `Item.inhandVisuals` to `inhand-left/right`, each dress
-**overrides `Item.inhandVisuals` to use `state: icon`** for both hands so the in-hand sprite renders.
-This is the go-to pattern when an imported RSI lacks in-hand states.
+All lack `inhand-*` → each **overrides `Item.inhandVisuals` to empty lists `{ left: [], right: [] }`**
+(go-to pattern for RSIs without in-hand states — see [[inhand_icon]]).
 
-Tailor recipes `MedievalClothingOuterDress*Recipe` (parent `MedievalBaseTailorClothingRecipe`,
-`MedievalTailor: Confident`): coloured dresses cost `MedievalCloth: 150`, gray/simple `100`.
-Registered in the `MedievalTailor` pack in `Recipe/packs.yml` (above the mantle recipes).
+**Do NOT use `state: icon` for the in-hand override.** `state: icon` renders the full 32×32 icon in hand
+at scale 1.0 → the held item looks far too big ("scale isn't reduced"). Empty lists resolve to 0 in-hand
+layers, which fires the client icon-fallback ([[inhand_icon]]) that synthesises the held sprite from the
+item's icon at **IconScale 0.5** (and reproduces multi-layer tinted icons like emerald/scarlet correctly).
+Fixed 2026-08 across `outer/dress.yml`, `royalty.yml`, `outer/armor.yml` — all were `state: icon`.
+
+**Full audit + sweep (2026-08):** a prototype is only correct if EITHER its RSI actually has `inhand-left`
++`inhand-right` states (then it uses the inherited base ref) OR it overrides `inhandVisuals` to empty lists.
+Any clothing that inherits the base `inhand-*` reference but whose RSI lacks those states shows the red
+"Error" placeholder / oversized icon in hand. Audited every prototype under `Entities/Clothing` against its
+RSI `meta.json`; the ones missing inhand art got the empty-list override: `back.yml` (backpack/duffel/satchel),
+`belt.yml` (all 7 belts), `gloves.yml` (HeavyArmored), `head.yml` (crown/feather/helmet/heavy_helmet),
+`mask.yml` (executioner/glasses/plague_doctor), `shoes.yml` (armored_boots/heavy_armored_boots). Left as-is:
+pieces whose RSI already has real `inhand-*` (boots/high_boots/rich_boots, smith gloves, hood, trader hat,
+armored legs, iron chainmail, plate armor, peasant/guard sets — the last two override to their own inhand states).
+To re-audit after adding clothing: for each prototype, compare its `sprite:` RSI's states to
+`inhand-left`/`inhand-right`; if absent and no override → add `inhandVisuals: { left: [], right: [] }`.
+
+**Tintable layers (emerald & scarlet):** these two RSIs gained a second, grayscale `colored_icon` /
+`colored_equipped-OUTERCLOTHING` state meant to be recoloured — the SAME dress in grayscale, so tinting it
+fully recolours the garment. Two ways it's used:
+- **Base + overlay** (original emerald/scarlet prototypes): render base `icon`/`equipped-OUTERCLOTHING`
+  untinted, then `colored_*` on top with a `color:` (emerald `#2E7D4F`, scarlet `#C41E3A`).
+- **Colored layer only** (added variants, 2026-08): a NEW prototype rendering ONLY the grayscale `colored_*`
+  state with a fresh `color:` → a fully recoloured dress from one RSI. Added `MedievalClothingOuterDressPink`
+  (emerald.rsi, `#C6567A`) and `MedievalClothingOuterDressOrange` (scarlet.rsi, `#D2691E`). The original
+  emerald/scarlet prototypes were kept unchanged.
+
+`MedievalClothingOuterDressGray` was **recoloured to violet** (`#4A2E5A`): `grayscale.rsi` has only the
+grayscale base (`icon`/`equipped-OUTERCLOTHING`, no `colored_*`), so it's tinted directly on the single
+layer in `Sprite` + `Clothing.clothingVisuals`. Name is now `фиолетовое платье` (id kept `...Gray`).
+sapphire stays single-layer untinted (pre-colored art). `Item.inhandVisuals` is empty on all → the icon
+fallback copies the tinted icon layers into the hand at IconScale 0.5 (see the in-hand override note above
+and [[inhand_icon]]). If a colored layer is opaque and hides base detail, swap layer order or drop the base.
+
+Tailor recipes `MedievalClothingOuterDress{Emerald,Sapphire,Scarlet,Gray,Pink,Orange}Recipe` (parent
+`MedievalBaseTailorClothingRecipe`, `MedievalTailor: Confident`): coloured dresses cost `MedievalCloth: 150`,
+gray `100`. Registered in the `MedievalTailor` pack in `Recipe/packs.yml` (above the mantle recipes).
 
 ## Tailoring skill tiers & Royalty (2026-08)
 
@@ -300,11 +360,30 @@ Royalty prototypes in `Entities/Clothing/royalty.yml` (Twilight-Fortress, CC-BY-
 - `MedievalClothingOuterRoyalCoat` (`OuterClothing/Royalty/long_shirt.rsi`) — outerClothing, cloth 200.
 - `MedievalClothingInnerRoyalShirt` (`Uniforms/Royalty/shirt.rsi`) — jumpsuit, cloth 150.
 
-Each .rsi has `icon`/`colored-icon` + `equipped-*`/`colored-equipped-*`. Prototypes use the fixed-colour
-`icon`/`equipped-*` states (the `colored-*` tintable variants are left unused — no colour spec). No inhand
-states → `Item.inhandVisuals` overridden to `state: icon` (see [[inhand_icon]]). All cloth
+**Display names renamed `королевск*` → `дворянск*` (noble, 2026-08)** for Dress/Coat/InnerShirt
+(`дворянское платье` / `дворянский кафтан` / `дворянская рубаха`). **Cassock keeps `королевская`.** IDs unchanged.
+
+Each .rsi has `icon`/`colored-icon` + `equipped-*`/`colored-equipped-*` (hyphen naming — dresses use
+underscore `colored_*`). The base prototypes use the fixed-colour `icon`/`equipped-*` states. No inhand
+states → `Item.inhandVisuals` overridden to empty lists `{ left: [], right: [] }` (see [[inhand_icon]]). All cloth
 (`MedievalArmorClothBody`, `MedievalFlax`). Recipes `MedievalClothingOuter/InnerRoyal*Recipe`
 (`MedievalTailor: Mastery`) in the `MedievalTailor` pack.
+
+**Royalty colour variants (2026-08):** Red/Black/Violet trios added for the shirt, dress AND coat, each
+**base `icon` + `colored-icon` tinted overlay** (and `equipped-*` + `colored-equipped-*` tinted). Colours:
+Red `#A11E2B`, Black `#4E4A55` (see black note below), Violet `#4A2E5A` (matches the mantle
+`MedievalClothingNeckMantleViolet` body purple). Originals kept.
+- `MedievalClothingInnerRoyalShirt{Red,Black,Violet}` (jumpsuit, cloth 150)
+- `MedievalClothingOuterRoyalDress{Red,Black,Violet}` (outerClothing, cloth 200)
+- `MedievalClothingOuterRoyalCoat{Red,Black,Violet}` (outerClothing, cloth 200)
+Recipes `...{Shirt,Dress,Coat}{Red,Black,Violet}Recipe` (`MedievalTailor: Mastery`) in the `MedievalTailor` pack.
+(The `colored-*` state is the same garment in grayscale → the overlay recolours it; this is the base+overlay
+form, unlike the plain dresses `Pink`/`Orange` which use the colored layer alone.)
+
+**Clothing black tint = `#4E4A55` (not `#2A2A2E`), 2026-08:** per user "не слишком чёрный" — pure-black
+multiply tints read as flat black on the grayscale sprites, so the shared black for all colour variants
+(royal shirt/dress/coat + guard pants) is a dark slate charcoal `#4E4A55`. Reuse this hex for any new black
+variant rather than a near-black.
 
 ## Material armor set (2026-08)
 
@@ -323,7 +402,39 @@ Recipes parent `MedievalBaseMetalClothingRecipe` (category `MedievalMetalClothin
 `MedievalMaterialArmorCategory` from `MedievalBaseArmorRecipe` is **undefined** in `category.yml`, so it's unused),
 each overriding `neededSkills` for its tier. Registered in the **`MedievalAnvil`** pack (`# Броня` section),
 so all four are crafted at the anvil like the rest of the armor. `plate_armor.rsi` **has** `inhand-left/right`
-(no `Item` override); the other three lack inhand states → `inhandVisuals` set to `state: icon`.
+(no `Item` override); the other three lack inhand states → `inhandVisuals` set to empty lists
+`{ left: [], right: [] }` (icon fallback, see [[inhand_icon]]).
 
-Not yet prototyped: `Head/Hoods/{chainmail,chainmail_closed,cloth,quilted,quilted_closed}`, `Neck/chef_coat`,
-`Tabards/*` (Tabards explicitly deferred by the user).
+**Hoods prototyped (2026-08):** `Head/Hoods/{cloth,quilted,quilted_closed,chainmail,chainmail_closed}` →
+`MedievalClothingHeadHood{Cloth,Quilted,QuiltedClosed,Chainmail,ChainmailClosed}` in `head.yml` (head slot,
+parent `MedievalBaseHead` + armor mixin). cloth/quilted are cloth (`MedievalArmorClothHeadFeet`, `MedievalFlax`,
+`MedievalCloth: 100`); chainmail are iron (`MedievalArmorIronHeadFeet`, `MedievalIron`, `MedievalProcessedIron:
+100`). RSIs have only `icon`+`equipped-HELMET` (no inhand) → empty `Item.inhandVisuals` (icon fallback). Recipes:
+cloth/quilted `MedievalTailor: Understanding` (Tailor pack), chainmail `MedievalBaseMetalClothingRecipe` (Anvil
+pack). `simple_hood.rsi` already had `MedievalClothingHeadHood` (has real inhand art, no override).
+
+## Storage clothing (work coat, 2026-08)
+
+`MedievalClothingNeckWorkCoat` (`рабочий халат`, `Neck/work_coat.rsi`, neck slot, `neck.yml`) is the first
+**wearable storage** garment. Storage component set mirrors upstream `ClothingOuterStorageBase`
+(`Clothing/OuterClothing/base_clothingouter.yml`):
+```yaml
+  - type: Storage
+    grid:
+    - 0,0,3,2          # x0..3 × y0..2 = 4×3 = 12 cells
+    maxItemSize: Normal  # medieval tools (Hammer/Pickaxe/Shovel) are size Normal — Small would NOT fit them
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+```
+Key gotcha: `maxItemSize` must be **≥ the item you want to hold**. The user wanted tools inside, and every
+`Entities/Items/Tools/tool.yml` tool is `Item.size: Normal`, so `maxItemSize: Normal` (not `Small`). RSI has
+only `icon`+`equipped-NECK` (no inhand) → empty `Item.inhandVisuals`. Recipe `MedievalClothingNeckWorkCoatRecipe`
+(`MedievalTailor: Understanding`, cloth 150) in `mantle.yml`, registered in the neck-recipes pack.
+
+Not yet prototyped: `Neck/chef_coat`, `Tabards/*` (Tabards explicitly deferred by the user).

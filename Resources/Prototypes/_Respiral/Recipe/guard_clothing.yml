@@ -27,6 +27,33 @@
 
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingLegsGuardPantsRedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingLegsGuardPantsRed
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingLegsGuardPantsBlackRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingLegsGuardPantsBlack
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingLegsGuardPantsVioletRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingLegsGuardPantsViolet
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingHandsGuardMittensRecipe
   neededSkills:
     MedievalTailor: Understanding

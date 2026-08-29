@@ -11,6 +11,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/chain.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalIron
   - type: Injurable
@@ -30,6 +34,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/gold.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalGold
   - type: Injurable
@@ -49,6 +57,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/leather.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable
@@ -68,6 +80,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/leather_black.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable
@@ -87,6 +103,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/leather_red.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable
@@ -106,6 +126,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/rope.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -125,6 +149,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Belt/silver.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalSilver
   - type: Injurable

@@ -1531,6 +1531,20 @@
 
 - type: latheRecipe
   parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingHeadHoodChainmailRecipe
+  result: MedievalClothingHeadHoodChainmail
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingHeadHoodChainmailClosedRecipe
+  result: MedievalClothingHeadHoodChainmailClosed
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
   id: MedievalClothingMaskGlassesRecipe
   result: MedievalClothingMaskGlasses
   materials:
@@ -1689,6 +1703,60 @@
 
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalDressRedRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalDressRed
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalDressBlackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalDressBlack
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalDressVioletRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalDressViolet
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalCoatRedRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalCoatRed
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalCoatBlackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalCoatBlack
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalCoatVioletRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalCoatViolet
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingOuterRoyalDressRecipe
   neededSkills:
     MedievalTailor: Mastery
@@ -1711,6 +1779,33 @@
   neededSkills:
     MedievalTailor: Mastery
   result: MedievalClothingInnerRoyalShirt
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerRoyalShirtRedRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingInnerRoyalShirtRed
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerRoyalShirtBlackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingInnerRoyalShirtBlack
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerRoyalShirtVioletRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingInnerRoyalShirtViolet
   materials:
     MedievalCloth: 150
 
@@ -1743,15 +1838,6 @@
 
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingOuterDressWhiteRecipe
-  neededSkills:
-    MedievalTailor: Confident
-  result: MedievalClothingOuterDressWhite
-  materials:
-    MedievalCloth: 150
-
-- type: latheRecipe
-  parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingOuterDressGrayRecipe
   neededSkills:
     MedievalTailor: Confident
@@ -1761,12 +1847,21 @@
 
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingOuterDressSimpleRecipe
+  id: MedievalClothingOuterDressPinkRecipe
   neededSkills:
     MedievalTailor: Confident
-  result: MedievalClothingOuterDressSimple
+  result: MedievalClothingOuterDressPink
   materials:
-    MedievalCloth: 100
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterDressOrangeRecipe
+  neededSkills:
+    MedievalTailor: Confident
+  result: MedievalClothingOuterDressOrange
+  materials:
+    MedievalCloth: 150
 
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
@@ -1837,6 +1932,33 @@
   neededSkills:
     MedievalTailor: Mastery
   result: MedievalClothingHeadFeatherHat
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodClothRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodCloth
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuilted
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedClosedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedClosed
   materials:
     MedievalCloth: 100
 

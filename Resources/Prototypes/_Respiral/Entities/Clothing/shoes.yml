@@ -68,6 +68,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/armored_boots.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalIron
   - type: Injurable
@@ -87,6 +91,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/heavy_armored_boots.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable

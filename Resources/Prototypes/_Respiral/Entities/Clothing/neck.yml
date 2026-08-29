@@ -18,3 +18,40 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckWorkCoat
+  suffix: Средневековье
+  name: рабочий халат
+  description: Прочный рабочий халат с нашитыми карманами для инструментов и мелочей.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/work_coat.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/work_coat.rsi
+  - type: Item
+    size: Normal
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Storage
+    grid:
+    - 0,0,3,2
+    maxItemSize: Normal
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100

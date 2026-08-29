@@ -31,10 +31,8 @@
     state: icon
   - type: Item
     inhandVisuals:
-      left:
-      - state: icon
-      right:
-      - state: icon
+      left: []
+      right: []
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/Armor/quilted_gambeson.rsi
   - type: Damageable
@@ -57,10 +55,8 @@
     state: icon
   - type: Item
     inhandVisuals:
-      left:
-      - state: icon
-      right:
-      - state: icon
+      left: []
+      right: []
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/Armor/leather_jacket.rsi
   - type: Damageable
@@ -103,10 +99,8 @@
     state: icon
   - type: Item
     inhandVisuals:
-      left:
-      - state: icon
-      right:
-      - state: icon
+      left: []
+      right: []
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor_leather_jacket.rsi
   - type: Damageable

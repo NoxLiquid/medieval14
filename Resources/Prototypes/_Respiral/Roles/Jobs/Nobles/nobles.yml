@@ -17,8 +17,17 @@
 - type: startingGear
   id: MedievalLordGear
   equipment:
-    neck: MedievalClothingNeckLordCape
-    head: MedievalClothingHeadCrown
+    neck: MedievalClothingNeckMantleViolet
+    shoes: MedievalClothingShoesRichBoots
+    pants: MedievalClothingLegsGuardPantsViolet
+    jumpsuit: MedievalClothingInnerRoyalShirtViolet
+    belt: MedievalClothingBeltSilver
+
+- type: startingGear
+  id: MedievalLordGearNPC
+  parent: MedievalLordGear
+  equipment:
+    outerClothing: MedievalClothingOuterRoyalCoatViolet
 
 - type: job
   id: MedievalKnight

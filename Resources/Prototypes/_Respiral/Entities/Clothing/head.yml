@@ -11,6 +11,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Head/Hats/crown.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalGold
   - type: Injurable
@@ -30,6 +34,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Head/Hats/feather.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -49,6 +57,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Head/Helmets/heavy_helmet.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable
@@ -68,6 +80,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Head/Helmets/helmet.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalIron
   - type: Injurable
@@ -93,6 +109,126 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingHeadHoodCloth
+  suffix: Средневековье
+  name: тканевый капюшон
+  description: Простой капюшон из плотной ткани, укрывающий голову от непогоды.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/cloth.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/cloth.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingHeadHoodQuilted
+  suffix: Средневековье
+  name: стёганый капюшон
+  description: Тёплый стёганый капюшон, набитый мягкой подкладкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/quilted.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/quilted.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingHeadHoodQuiltedClosed
+  suffix: Средневековье
+  name: закрытый стёганый капюшон
+  description: Стёганый капюшон, закрывающий лицо и оставляющий лишь узкую прорезь.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/quilted_closed.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/quilted_closed.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorIronHeadFeet ]
+  id: MedievalClothingHeadHoodChainmail
+  suffix: Средневековье
+  name: кольчужный капюшон
+  description: Кольчужный капюшон из мелких железных колец, защищающий голову и шею.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/chainmail.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/chainmail.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Damageable
+    damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorIronHeadFeet ]
+  id: MedievalClothingHeadHoodChainmailClosed
+  suffix: Средневековье
+  name: закрытый кольчужный капюшон
+  description: Кольчужный капюшон с бармицей, прикрывающей лицо и горло.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/chainmail_closed.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/chainmail_closed.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Damageable
+    damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 100
 
 - type: entity
   parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]

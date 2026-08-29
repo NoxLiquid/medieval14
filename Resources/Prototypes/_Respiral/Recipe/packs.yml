@@ -234,6 +234,8 @@
   - MedievalClothingHeadCrownRecipe
   - MedievalClothingHeadHeavyHelmetRecipe
   - MedievalClothingHeadHelmetRecipe
+  - MedievalClothingHeadHoodChainmailRecipe
+  - MedievalClothingHeadHoodChainmailClosedRecipe
   - MedievalClothingMaskGlassesRecipe
   - MedievalClothingShoesArmoredBootsRecipe
   - MedievalClothingShoesHeavyArmoredBootsRecipe
@@ -298,19 +300,31 @@
   - MedievalClothingInnerGuardGambesonCheckeredRecipe
   - MedievalClothingInnerGuardGambesonStripedRecipe
   - MedievalClothingLegsGuardPantsRecipe
+  - MedievalClothingLegsGuardPantsRedRecipe
+  - MedievalClothingLegsGuardPantsBlackRecipe
+  - MedievalClothingLegsGuardPantsVioletRecipe
   - MedievalClothingHandsGuardMittensRecipe
   - MedievalClothingShoesPeasantBootsRecipe
   - MedievalClothingShoesPeasantBootsDarkRecipe
   - MedievalClothingOuterRoyalCassockRecipe
   - MedievalClothingOuterRoyalDressRecipe
+  - MedievalClothingOuterRoyalDressRedRecipe
+  - MedievalClothingOuterRoyalDressBlackRecipe
+  - MedievalClothingOuterRoyalDressVioletRecipe
   - MedievalClothingOuterRoyalCoatRecipe
+  - MedievalClothingOuterRoyalCoatRedRecipe
+  - MedievalClothingOuterRoyalCoatBlackRecipe
+  - MedievalClothingOuterRoyalCoatVioletRecipe
   - MedievalClothingInnerRoyalShirtRecipe
+  - MedievalClothingInnerRoyalShirtRedRecipe
+  - MedievalClothingInnerRoyalShirtBlackRecipe
+  - MedievalClothingInnerRoyalShirtVioletRecipe
   - MedievalClothingOuterDressEmeraldRecipe
   - MedievalClothingOuterDressSapphireRecipe
   - MedievalClothingOuterDressScarletRecipe
-  - MedievalClothingOuterDressWhiteRecipe
   - MedievalClothingOuterDressGrayRecipe
-  - MedievalClothingOuterDressSimpleRecipe
+  - MedievalClothingOuterDressPinkRecipe
+  - MedievalClothingOuterDressOrangeRecipe
   - MedievalClothingNeckMantleCrimsonRecipe
   - MedievalClothingNeckMantleEmeraldRecipe
   - MedievalClothingNeckMantleAzureRecipe
@@ -321,6 +335,7 @@
   - MedievalClothingNeckShoulderMantleAzureRecipe
   - MedievalClothingNeckShoulderMantleVioletRecipe
   - MedievalClothingNeckShoulderMantleCharcoalRecipe
+  - MedievalClothingNeckWorkCoatRecipe
   - MedievalClothingBackBackpackRecipe
   - MedievalClothingBackDuffelRecipe
   - MedievalClothingBackSatchelRecipe
@@ -329,6 +344,9 @@
   - MedievalClothingBeltLeatherRedRecipe
   - MedievalClothingBeltRopeRecipe
   - MedievalClothingHeadFeatherHatRecipe
+  - MedievalClothingHeadHoodClothRecipe
+  - MedievalClothingHeadHoodQuiltedRecipe
+  - MedievalClothingHeadHoodQuiltedClosedRecipe
   - MedievalClothingMaskExecutionerRecipe
   - MedievalClothingMaskPlagueDoctorRecipe
 

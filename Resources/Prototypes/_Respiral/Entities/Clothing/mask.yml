@@ -14,6 +14,10 @@
   # Respiral - колпак палача полностью скрывает лицо: окружающие не узнают носителя в лицо
   - type: IdentityBlocker
     coverage: FULL
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -33,6 +37,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Mask/glasses.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalSilver
   - type: Injurable
@@ -55,6 +63,10 @@
   # Respiral - маска чумного доктора полностью скрывает лицо: окружающие не узнают носителя в лицо
   - type: IdentityBlocker
     coverage: FULL
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable

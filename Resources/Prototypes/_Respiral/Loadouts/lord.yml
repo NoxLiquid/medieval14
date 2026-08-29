@@ -1,0 +1,21 @@
+- type: loadout
+  id: MedievalLordOuterCoatViolet
+  equipment:
+    outerClothing: MedievalClothingOuterRoyalCoatViolet
+
+- type: loadout
+  id: MedievalLordOuterDressViolet
+  equipment:
+    outerClothing: MedievalClothingOuterRoyalDressViolet
+
+- type: loadoutGroup
+  id: MedievalLordOuter
+  name: loadout-group-medieval-lord-outer
+  loadouts:
+  - MedievalLordOuterCoatViolet
+  - MedievalLordOuterDressViolet
+
+- type: roleLoadout
+  id: JobMedievalLord
+  groups:
+  - MedievalLordOuter

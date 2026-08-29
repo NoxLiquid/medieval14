@@ -53,6 +53,29 @@ Files: `Roles/Jobs/{Craftsman/city,Nobles/nobles,Villager/village,Commoner/refug
 NPC spawner variants don't get a `SkillComponent` (they use the job's gear loadout, not `special`),
 so NPCs still bypass skill gates by design.
 
+### Lord → Baron rename + full gear + outerClothing loadout (2026-08)
+
+**Display renamed `лорд` → `барон`** in `Locale/…/job/job.ftl` (`job-name-medieval-lord`,
+`job-supervisors-medieval-lord`, and the knight description's "Служите барону") and the NPC spawner
+`name:` in `spawners.yml`. **All prototype ids kept** (`MedievalLord`, `MedievalLordGear`,
+`job-name-medieval-lord`, `MedievalClothingNeckLordCape`, …) to avoid churn — only the RU strings changed.
+
+`MedievalLordGear` (player) now: neck `NeckMantleViolet` (the purple mantle — replaced the old
+`NeckLordCape`; crown `HeadCrown` **removed**), shoes `ShoesRichBoots`,
+pants `LegsGuardPantsViolet`, jumpsuit `InnerRoyalShirtViolet`, belt `BeltSilver`. **outerClothing is
+deliberately omitted** so the loadout can fill it (same rule as the guard gambeson — `EquipStartingGear`
+force-equip fails on an occupied slot; see [[clothing]] guard loadout note).
+
+**outerClothing = player loadout choice** (`Loadouts/lord.yml`): two `loadout` prototypes
+`MedievalLordOuter{CoatViolet,DressViolet}` → `loadoutGroup MedievalLordOuter` (name
+`loadout-group-medieval-lord-outer`, defaults MinLimit/MaxLimit 1 → mandatory single pick, first =
+coat) → `roleLoadout JobMedievalLord` (id = `"Job"`+jobId). Group loc in
+`Locale/…/loadouts/lord.ftl`.
+
+**NPC variant** `MedievalLordGearNPC` (`parent: MedievalLordGear`, adds `outerClothing:
+…RoyalCoatViolet`) — NPCs don't get loadouts, so the spawner `randomHumanoidSettings MedievalLord`
+points its `Loadout.prototypes` at the NPC gear (mirrors `MedievalGuardGearNPC`).
+
 ### Adding a new job — the 5 coordinated files (Tailor added 2026-08)
 
 `MedievalTailor` (портной, owns the `MedievalTailor` skill → Tannery/Loom/Sewing) was added as the

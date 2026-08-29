@@ -12,6 +12,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Back/backpack.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -32,6 +36,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Back/duffel.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -52,6 +60,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Back/satchel.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable

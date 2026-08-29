@@ -30,6 +30,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Hands/heavy_armored.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable
