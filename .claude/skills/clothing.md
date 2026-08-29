@@ -453,4 +453,5 @@ only `icon`+`equipped-NECK` (no inhand) → empty `Item.inhandVisuals`. Recipe `
 garment (NO storage — unlike the work coat), same base+empty-inhand pattern, recipe `…ChefCoatRecipe`
 (`MedievalTailor: Understanding`, cloth 100). Issued to the Innkeeper (replaced the work coat there).
 
-Not yet prototyped: `Tabards/*` (Tabards explicitly deferred by the user).
+Tabards (`Tabards/*`) now have an attach-to-armor system — see [[tabard]]. First pass: the Crow Kingdom
+tabard + a flag on the 5 armor pieces; more houses not prototyped yet.

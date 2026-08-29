@@ -40,6 +40,11 @@
 >   `MedievalClothingHeadHoodQuiltedClosed` (+ `Red/Brown/Grey` colour variants) and
 >   `MedievalClothingHeadHoodChainmailClosed`. The OPEN hoods (`…HoodQuilted`, `…HoodCloth`, `…HoodChainmail`,
 >   `…HeadHood`) do NOT block identity (face visible). So blockers in _Respiral = 2 masks + 5 closed hoods.
+> - **Tabard affiliation (2026-08):** worn armor with an attached house tabard also sets `PresumedJob`
+>   (affiliation, like livery) via `MedievalTabardIdentitySystem` — a SECOND source besides
+>   `MedievalCredentialComponent.Affiliation`. It subscribes `ModifyPresumedIdentityEvent` on
+>   **`InventoryComponent`** (≠ this system's `IdentityComponent` handler, so no duplicate subscription) and
+>   reads the tabard's cached affiliation. See [[tabard]].
 > - **Guidebook:** root tab `Medieval` + child tab `MedievalIdentity`
 >   (`Prototypes/_Respiral/Guidebook/guidebook.yml`, XML in `ServerInfo/Guidebook/_Respiral/`,
 >   names in `Locale/{ru-RU,en-US}/_Respiral/guidebook.ftl`). The guide describes phase 1 + a section

@@ -11,6 +11,7 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/Armor/iron_chainmail.rsi
+  - type: MedievalTabardAttachable
   - type: Damageable
     damageModifierSet: MedievalIron
   - type: Injurable
@@ -35,6 +36,7 @@
       right: []
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/Armor/quilted_gambeson.rsi
+  - type: MedievalTabardAttachable
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -59,6 +61,7 @@
       right: []
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/Armor/leather_jacket.rsi
+  - type: MedievalTabardAttachable
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable
@@ -79,6 +82,7 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor.rsi
+  - type: MedievalTabardAttachable
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable
@@ -103,6 +107,7 @@
       right: []
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor_leather_jacket.rsi
+  - type: MedievalTabardAttachable
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable
