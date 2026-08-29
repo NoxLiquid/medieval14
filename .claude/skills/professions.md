@@ -22,9 +22,26 @@ Elder → Farmer/Peasant; authority → Refugee.
 
 ## Jobs = starting gear + starting skills (2026-08)
 
-Each `type: job` references a `startingGear` that grants clothing (mostly hood + leather pants).
-Spawners (`Roles/spawners.yml`) create `RandomHumanoidSpawner` + `Loadout` NPC variants of every
-job (suffix "Средневековье").
+Each `type: job` references a `startingGear` that grants clothing. Spawners (`Roles/spawners.yml`) create
+`RandomHumanoidSpawner` + `Loadout` NPC variants of every job (suffix "Спавнер, Средневековье").
+
+**Full starting outfits assigned (2026-08).** Every job now gets a complete themed outfit (jumpsuit + pants +
+shoes minimum, plus role items). Footwear slot key is **`shoes`** (not `feet`). Summary:
+- **Nobles** — Baron: royal shirt/pants/silver belt/rich boots + violet mantle + outerClothing loadout (coat/dress).
+  Knight: royal shirt + iron chainmail + armored legs/boots + heavy gloves + helmet + leather belt.
+  CitySteward: black royal shirt+coat, feather hat, high boots, black belt. Treasurer: red royal shirt+coat,
+  leather pants, rich boots, gold belt.
+- **Craftsman** — Blacksmith/Carpenter/Mason/Engineer: peasant shirt + smith gloves + **work coat (neck,
+  storage apron)** + hood + boots. Innkeeper: peasant shirt + **chef coat (neck)** + boots. Herbalist/Tailor: peasant
+  shirt + peasant boots (+ satchel / work coat). Citizen: plain peasant set. Merchant: trader hat + high boots
+  + red belt + satchel. Guard: **quilted gambeson (outerClothing)** + helmet + guard pants/mittens + boots +
+  black belt (jumpsuit gambeson via loadout, NPC via `MedievalGuardGearNPC`).
+- **Villager** — Elder: peasant set + charcoal shoulder mantle. Farmer/Forester: olive peasant set + rope belt
+  (+ satchel). Peasant: brown peasant set.
+- **Commoner** — Refugee: dedicated fragile `Inner/LegsRefugee*` items + dark peasant boots.
+
+Rule when assigning: keep each job's pre-existing signature item (hood/helmet/trader hat/gloves), fill the
+empty slots. The peasant-shirt/pants/boots colour variants give per-job variety from shared RSIs.
 
 **Starting skills** are granted on spawn via `special: - !type:AddComponentSpecial` adding
 `- type: Skill` (`SkillComponent`, `skills: { SkillId: progress }`). All at progress `1` (full

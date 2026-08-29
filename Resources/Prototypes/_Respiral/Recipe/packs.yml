@@ -336,6 +336,7 @@
   - MedievalClothingNeckShoulderMantleVioletRecipe
   - MedievalClothingNeckShoulderMantleCharcoalRecipe
   - MedievalClothingNeckWorkCoatRecipe
+  - MedievalClothingNeckChefCoatRecipe
   - MedievalClothingBackBackpackRecipe
   - MedievalClothingBackDuffelRecipe
   - MedievalClothingBackSatchelRecipe
@@ -347,6 +348,12 @@
   - MedievalClothingHeadHoodClothRecipe
   - MedievalClothingHeadHoodQuiltedRecipe
   - MedievalClothingHeadHoodQuiltedClosedRecipe
+  - MedievalClothingHeadHoodQuiltedRedRecipe
+  - MedievalClothingHeadHoodQuiltedBrownRecipe
+  - MedievalClothingHeadHoodQuiltedGreyRecipe
+  - MedievalClothingHeadHoodQuiltedClosedRedRecipe
+  - MedievalClothingHeadHoodQuiltedClosedBrownRecipe
+  - MedievalClothingHeadHoodQuiltedClosedGreyRecipe
   - MedievalClothingMaskExecutionerRecipe
   - MedievalClothingMaskPlagueDoctorRecipe
 

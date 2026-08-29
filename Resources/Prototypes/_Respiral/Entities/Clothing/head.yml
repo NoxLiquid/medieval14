@@ -174,6 +174,194 @@
     inhandVisuals:
       left: []
       right: []
+  - type: IdentityBlocker
+    coverage: FULL
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingHeadHoodQuiltedRed
+  suffix: Средневековье
+  name: красный стёганый капюшон
+  description: Тёплый стёганый капюшон красный расцветки.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/quilted.rsi
+    layers:
+    - state: icon
+      color: "#9E2A2A"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/quilted.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#9E2A2A"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingHeadHoodQuiltedBrown
+  suffix: Средневековье
+  name: коричневый стёганый капюшон
+  description: Тёплый стёганый капюшон коричневый расцветки.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/quilted.rsi
+    layers:
+    - state: icon
+      color: "#6B4A2E"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/quilted.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#6B4A2E"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingHeadHoodQuiltedGrey
+  suffix: Средневековье
+  name: серый стёганый капюшон
+  description: Тёплый стёганый капюшон серый расцветки.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/quilted.rsi
+    layers:
+    - state: icon
+      color: "#45414A"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/quilted.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#45414A"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingHeadHoodQuiltedClosedRed
+  suffix: Средневековье
+  name: красный закрытый стёганый капюшон
+  description: Тёплый стёганый капюшон красный расцветки.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/quilted_closed.rsi
+    layers:
+    - state: icon
+      color: "#9E2A2A"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/quilted_closed.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#9E2A2A"
+  - type: IdentityBlocker
+    coverage: FULL
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingHeadHoodQuiltedClosedBrown
+  suffix: Средневековье
+  name: коричневый закрытый стёганый капюшон
+  description: Тёплый стёганый капюшон коричневый расцветки.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/quilted_closed.rsi
+    layers:
+    - state: icon
+      color: "#6B4A2E"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/quilted_closed.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#6B4A2E"
+  - type: IdentityBlocker
+    coverage: FULL
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingHeadHoodQuiltedClosedGrey
+  suffix: Средневековье
+  name: серый закрытый стёганый капюшон
+  description: Тёплый стёганый капюшон серый расцветки.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Head/Hoods/quilted_closed.rsi
+    layers:
+    - state: icon
+      color: "#45414A"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Head/Hoods/quilted_closed.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#45414A"
+  - type: IdentityBlocker
+    coverage: FULL
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -222,6 +410,8 @@
     inhandVisuals:
       left: []
       right: []
+  - type: IdentityBlocker
+    coverage: FULL
   - type: Damageable
     damageModifierSet: MedievalIron
   - type: Injurable

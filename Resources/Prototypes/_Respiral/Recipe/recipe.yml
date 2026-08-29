@@ -1964,6 +1964,60 @@
 
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedRedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedRed
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedBrownRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedBrown
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedGreyRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedGrey
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedClosedRedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedClosedRed
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedClosedBrownRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedClosedBrown
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedClosedGreyRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedClosedGrey
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
   id: MedievalClothingMaskExecutionerRecipe
   neededSkills:
     MedievalTailor: Mastery

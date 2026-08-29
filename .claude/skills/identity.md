@@ -35,7 +35,11 @@
 >   The marker component is in Shared (like `PaperVisualizerComponent`) so the server doesn't choke on an unknown component.
 > - **In-game reachability:** added `IdentityBlocker: FULL` to `MedievalClothingMaskExecutioner`
 >   and `MedievalClothingMaskPlagueDoctor` (mask.yml) — WITHOUT them there's nothing to hide the face with and the whole
->   mechanism is dead (PresumedName only kicks in with a hidden face). There are no other named blockers in _Respiral.
+>   mechanism is dead (PresumedName only kicks in with a hidden face).
+>   **(2026-08) The face-covering "closed" hoods also carry `IdentityBlocker: FULL`** (head.yml):
+>   `MedievalClothingHeadHoodQuiltedClosed` (+ `Red/Brown/Grey` colour variants) and
+>   `MedievalClothingHeadHoodChainmailClosed`. The OPEN hoods (`…HoodQuilted`, `…HoodCloth`, `…HoodChainmail`,
+>   `…HeadHood`) do NOT block identity (face visible). So blockers in _Respiral = 2 masks + 5 closed hoods.
 > - **Guidebook:** root tab `Medieval` + child tab `MedievalIdentity`
 >   (`Prototypes/_Respiral/Guidebook/guidebook.yml`, XML in `ServerInfo/Guidebook/_Respiral/`,
 >   names in `Locale/{ru-RU,en-US}/_Respiral/guidebook.ftl`). The guide describes phase 1 + a section

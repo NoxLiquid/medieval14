@@ -55,3 +55,27 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  id: MedievalClothingNeckChefCoat
+  suffix: Средневековье
+  name: халат шефа
+  description: Белый халат повара с двубортной застёжкой, опрятный и практичный.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/chef_coat.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/chef_coat.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100

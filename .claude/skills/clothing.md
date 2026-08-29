@@ -268,8 +268,8 @@ corresponding `shoes:`/`jumpsuit:` lines were cleaned out of all roles.
   (`EliteCloth/EliteHalf/EliteManjete/EliteMetal`) were deleted along with `inner.yml`, the
   `MedievalClothingInnerLongTunicRecipe` (recipe.yml + packs.yml), and all `jumpsuit:` lines
   referencing them in village.yml / nobles.yml. The **jumpsuit** slot now has no Respiral inner-clothing prototypes.
-- ALL professions are currently **without footwear** (and many without jumpsuit) — starting gear awaits reassignment
-  to surviving/new prototypes.
+- ~~ALL professions without footwear~~ **RESOLVED (2026-08):** every job got a full themed outfit
+  (jumpsuit + pants + `shoes` + role items). See [[professions]] "Full starting outfits assigned".
 
 ## New armored-clothing pack (2026-06)
 
@@ -413,6 +413,18 @@ parent `MedievalBaseHead` + armor mixin). cloth/quilted are cloth (`MedievalArmo
 cloth/quilted `MedievalTailor: Understanding` (Tailor pack), chainmail `MedievalBaseMetalClothingRecipe` (Anvil
 pack). `simple_hood.rsi` already had `MedievalClothingHeadHood` (has real inhand art, no override).
 
+**Quilted-hood colour variants (2026-08):** `quilted.rsi`/`quilted_closed.rsi` are grayscale → tint the single
+`icon`/`equipped-HELMET` layer with `color:` (same as the Gray dress). Added `…HoodQuilted{Red,Brown,Grey}` and
+`…HoodQuiltedClosed{Red,Brown,Grey}` — Red `#9E2A2A` (matches the guard gambeson pattern red), Brown `#6B4A2E`,
+Grey `#45414A`; grayscale bases kept as undyed. Recipes (`MedievalTailor: Understanding`, cloth 100) in the
+Tailor pack. **The Guard now wears `MedievalClothingHeadHoodQuiltedRed` instead of the helmet** (matches the
+guard's red livery).
+
+**Closed hoods hide identity (2026-08):** the face-covering "closed" hoods carry `- type: IdentityBlocker` /
+`coverage: FULL` (like the executioner/plague masks) → wearer shows as anonymous ("Unknown") until a passport
+is presented. Applies to `…HoodQuiltedClosed` (+Red/Brown/Grey) and `…HoodChainmailClosed`; the OPEN hoods do
+NOT block. See [[identity]].
+
 ## Storage clothing (work coat, 2026-08)
 
 `MedievalClothingNeckWorkCoat` (`рабочий халат`, `Neck/work_coat.rsi`, neck slot, `neck.yml`) is the first
@@ -437,4 +449,8 @@ Key gotcha: `maxItemSize` must be **≥ the item you want to hold**. The user wa
 only `icon`+`equipped-NECK` (no inhand) → empty `Item.inhandVisuals`. Recipe `MedievalClothingNeckWorkCoatRecipe`
 (`MedievalTailor: Understanding`, cloth 150) in `mantle.yml`, registered in the neck-recipes pack.
 
-Not yet prototyped: `Neck/chef_coat`, `Tabards/*` (Tabards explicitly deferred by the user).
+`MedievalClothingNeckChefCoat` (`халат шефа`, `Neck/chef_coat.rsi`, neck slot, 2026-08) is a plain neck
+garment (NO storage — unlike the work coat), same base+empty-inhand pattern, recipe `…ChefCoatRecipe`
+(`MedievalTailor: Understanding`, cloth 100). Issued to the Innkeeper (replaced the work coat there).
+
+Not yet prototyped: `Tabards/*` (Tabards explicitly deferred by the user).
