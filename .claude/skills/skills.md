@@ -33,6 +33,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `inhand_icon.md` | Client in-hand fallback: items with no inhand sprite show 0.3 icon in hand, over/under body per hand+facing |
 | `tabard.md` | Attach a house tabard onto armor (flag component + container), equipped/icon sprite overlay, DoAfter attach + detach verb |
 | `materials_balance.md` | Material-derived durability/armor/damage: per-material stats on MaterialPrototype, formulas from PhysicalComposition, phased rollout |
+| `respawn.md` | Ghost respawn 15-min timer + red/green ghost-HUD button (zero-upstream widget), reset on returning to a living body |
 | `biomes.md` | Biomes, procedural map generation, layers, markers, Gateway |
 | `zlevels.md` | Z-levels (vertical maps), CEZLevelsSystem, ZNetwork |
 | `localization.md` | Localization (FTL), syncing ru-RU with en-US, parity of variables and message IDs |
