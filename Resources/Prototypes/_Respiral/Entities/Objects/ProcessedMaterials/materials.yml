@@ -8,6 +8,7 @@
   price: 1.41
   medievalDurability: 1.5
   medievalDamageFactor: 0.25
+  medievalWeaponDamageType: Blunt
   medievalProtection:
     Blunt: 0.08
     Slash: 0.08
@@ -56,6 +57,8 @@
   price: 17.87
   medievalDurability: 2.0
   medievalDamageFactor: 1.0
+  medievalWeaponBonusDamage:
+    Holy: 1.0
   medievalProtection:
     Blunt: 0.1
     Slash: 0.1

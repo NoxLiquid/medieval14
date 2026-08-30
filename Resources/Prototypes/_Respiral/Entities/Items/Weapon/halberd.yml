@@ -15,17 +15,6 @@
       base: MedievalProcessedIron
     inhand: MedievalProcessedIron
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 4.17
-        Slash: 4.16
-        Piercing: 4.17
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Blunt: 4.17
-        Slash: 4.16
-        Piercing: 4.17
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -74,13 +63,6 @@
       handle: MedievalProcessedWood
     inhand: MedievalProcessedWood
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 3.16
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Blunt: 12.64
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -126,17 +108,6 @@
       base: MedievalSteel
     inhand: MedievalSteel
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 5.32
-        Slash: 5.34
-        Piercing: 5.32
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Blunt: 4.26
-        Slash: 4.27
-        Piercing: 4.26
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -182,19 +153,6 @@
       base: MedievalProcessedSilver
     inhand: MedievalProcessedSilver
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 8.33
-        Slash: 8.34
-        Piercing: 8.33
-        Holy: 25
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Blunt: 8.33
-        Slash: 8.34
-        Piercing: 8.33
-        Holy: 25.0
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -240,17 +198,6 @@
       base: MedievalProcessedMithril
     inhand: MedievalProcessedMithril
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 6
-        Slash: 6
-        Piercing: 6
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Blunt: 4.0
-        Slash: 4.0
-        Piercing: 4.0
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -296,17 +243,6 @@
       base: MedievalProcessedAdamantine
     inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 7.33
-        Slash: 7.33
-        Piercing: 7.33
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Blunt: 4.19
-        Slash: 4.19
-        Piercing: 4.19
   - type: IncreaseDamageOnWield
     damage:
       types:

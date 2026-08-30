@@ -18,8 +18,22 @@ public sealed partial class MaterialPrototype
     public Dictionary<string, float> MedievalProtection = new();
 
     /// <summary>
-    /// Множитель урона оружия. Итоговый урон = базовый (железный эталон) × max(damageFactor) по составу.
+    /// Множитель урона оружия. Итоговый урон = базовый (железный эталон) × damageFactor основного материала.
     /// </summary>
     [DataField]
     public float MedievalDamageFactor = 1f;
+
+    /// <summary>
+    /// Если задан — оружие из этого материала наносит урон ТОЛЬКО этого типа (базовый урон сворачивается
+    /// в один тип). Напр. дерево → Blunt.
+    /// </summary>
+    [DataField]
+    public string? MedievalWeaponDamageType;
+
+    /// <summary>
+    /// Бонусные типы урона от материала как доля от суммарного базового урона (× damageFactor).
+    /// Напр. серебро → { Holy: 1.0 } (добавляет Holy, равный базовому урону).
+    /// </summary>
+    [DataField]
+    public Dictionary<string, float> MedievalWeaponBonusDamage = new();
 }

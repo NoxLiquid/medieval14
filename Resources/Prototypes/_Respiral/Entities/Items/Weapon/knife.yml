@@ -1,5 +1,5 @@
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseKnife
   id: MedievalIronKnife
   name: железный нож
   components:
@@ -14,20 +14,11 @@
       blade: MedievalProcessedIron
     inhand: MedievalProcessedIron
   - type: MeleeWeapon
-    damage:
-      types:
-        Piercing: 6
-        Slash: 4
     attackRate: 1.2
     angle: 25
     range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Piercing: 6.0
-        Slash: 4.0
   - type: Item
     inhandVisuals:
       left:
@@ -53,7 +44,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseKnife
   id: MedievalWoodKnife
   name: деревянный нож
   components:
@@ -70,18 +61,11 @@
       handle: MedievalProcessedWood
     inhand: MedievalProcessedWood
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 2.5
     attackRate: 1.2
     angle: 25
     range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Blunt: 10.0
   - type: Item
     inhandVisuals:
       left:
@@ -106,7 +90,7 @@
 
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseKnife
   id: MedievalSteelKnife
   name: стальной нож
   components:
@@ -121,20 +105,11 @@
       blade: MedievalSteel
     inhand: MedievalSteel
   - type: MeleeWeapon
-    damage:
-      types:
-        Piercing: 8
-        Slash: 4.5
     attackRate: 1.2
     angle: 25
     range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Piercing: 6.4
-        Slash: 3.6
   - type: Item
     inhandVisuals:
       left:
@@ -159,7 +134,7 @@
       MedievalProcessedWood: 50
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseKnife
   id: MedievalSilverKnife
   name: серебрянный нож
   components:
@@ -174,22 +149,11 @@
       blade: MedievalProcessedSilver
     inhand: MedievalProcessedSilver
   - type: MeleeWeapon
-    damage:
-      types:
-        Piercing: 6
-        Slash: 4
-        Holy: 10
     attackRate: 1.2
     angle: 25
     range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Piercing: 6.0
-        Slash: 4.0
-        Holy: 10.0
   - type: Item
     inhandVisuals:
       left:
@@ -214,7 +178,7 @@
       MedievalProcessedWood: 50
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseKnife
   id: MedievalMithrilKnife
   name: мифриловый нож
   components:
@@ -229,20 +193,11 @@
       blade: MedievalProcessedMithril
     inhand: MedievalProcessedMithril
   - type: MeleeWeapon
-    damage:
-      types:
-        Piercing: 10.0
-        Slash: 5.0
     attackRate: 1.2
     angle: 25
     range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Piercing: 6.67
-        Slash: 3.33
   - type: Item
     inhandVisuals:
       left:
@@ -267,7 +222,7 @@
       MedievalProcessedWood: 50
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseKnife
   id: MedievalAdamantineKnife
   name: адамантитовый нож
   components:
@@ -282,20 +237,11 @@
       blade: MedievalProcessedAdamantine
     inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
-    damage:
-      types:
-        Piercing: 14
-        Slash: 3.5
     attackRate: 1.2
     angle: 25
     range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Piercing: 8.0
-        Slash: 2.0
   - type: Item
     inhandVisuals:
       left:

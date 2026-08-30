@@ -71,15 +71,25 @@ MapInit takes effect immediately (no caching).
   {BaseDamage}` (iron-baseline, per weapon) + derivation in `MedievalMaterialStatsSystem.ApplyWeaponDamage`
   (server, MapInit): `MeleeWeapon.Damage = BaseDamage × max(damageFactor over composition)`. **`max` (not weighted
   average)** so the wood handle (0.25) doesn't dilute a metal blade. Migration (84 weapons, `Weapon/*.yml`):
-  set each weapon's `BaseDamage = orig ÷ maxFactor` (preserving the damage *type*, so wood=Blunt,
-  silver=+Holy, fire/spectral blades keep Heat/Cold). **`MeleeWeapon.Damage` is a REQUIRED DataField** — it
-  CANNOT be removed (prototype load throws `RequiredFieldNotMappedException`), so the inline
-  `MeleeWeapon.damage` stays (= the original final value) as the load-time value; the system OVERWRITES it at
-  MapInit with `BaseDamage × maxFactor` (identity now, composition-driven if materials later change). Self-check:
-  `base × factor` reproduces all 84 originals exactly (identity migration, no balance change). **Pre-existing
-  quirks preserved, not fixed:** some archetypes were internally inconsistent (e.g. WoodMace 10 > IronMace 6.67 →
-  wood base 40; knife/eveningstar/polearm steel≠iron×1.25) — the migration keeps current values; rebalance later
-  by editing `BaseDamage`/factors, not per-material numbers.
+  **Refactored to base-prototype model (per user):** `MedievalWeaponDamage {BaseDamage}` (iron-baseline) lives
+  on the archetype **BASE prototypes** (`Weapon/base.yml`), not per-concrete. Materials also carry
+  `MedievalWeaponDamageType` (wood→`Blunt`, collapses base to one type) and `MedievalWeaponBonusDamage`
+  (silver→`{Holy:1.0}`, adds a type = fraction of base total). Derivation picks the **primary material**
+  (highest `damageFactor` = the blade, not the wood handle): `Damage = BaseDamage × factor`, collapsed to the
+  material's `WeaponDamageType` if set, plus its `WeaponBonusDamage`.
+  - **`MeleeWeapon.Damage` is a REQUIRED DataField** — cannot be removed (load throws
+    `RequiredFieldNotMappedException`); it stays on the BASE (placeholder = iron-baseline) so every concrete
+    resolves it via inheritance, and the system OVERWRITES it at MapInit. Verified: all weapons resolve damage
+    through inheritance.
+  - **Concretes declare only composition** (+sprite/color); they inherit `MeleeWeapon.damage` +
+    `MedievalWeaponDamage` from the base. Extra bases for distinct profiles: `MedievalBaseSword2` (Slash 17,
+    attackRate 0.9), `MedievalBaseKnife` (Piercing 6+Slash 4), `MedievalBaseHideDagger` (Piercing 6). 78
+    concretes stripped/reparented. **6 edge cases keep their own `MedievalWeaponDamage`** (override the base):
+    `FireBlade`/`SpectralBlade` (Heat/Cold), `StoneAxe`/`HandmadeSpear` (crafted), `PeltWhip`/`PeltWhip2`.
+  - **Values NORMALIZED (accepted balance change):** damage now = base × factor, so old bespoke tuning is
+    dropped — steel/mithril/adamantine knife/eveningstar/polearm/halberd lose their drift; **wood mace 10→5**;
+    **silver halberd/polearm/spear/mace** lose extra physical, now iron-base + Holy(=base total). Sword/dagger/
+    cleaver/whip metal tiers unchanged. Rebalance by editing one archetype `BaseDamage` or a material factor.
 
 ## Verify
 `dotnet build` clean. In-game: spawn iron vs adamantine sword, damage them equally → adamantine survives far

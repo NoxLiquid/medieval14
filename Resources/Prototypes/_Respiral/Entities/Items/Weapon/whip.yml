@@ -73,15 +73,8 @@
       blade: MedievalProcessedIron
     inhand: MedievalProcessedIron
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 14
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Slash: 14.0
   - type: Item
     inhandVisuals:
       left:
@@ -118,15 +111,8 @@
       handle: MedievalProcessedWood
     inhand: MedievalProcessedWood
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 3.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Blunt: 14.0
   - type: Item
     inhandVisuals:
       left:
@@ -165,15 +151,8 @@
       blade: MedievalSteel
     inhand: MedievalSteel
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 17.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Slash: 14.0
   - type: Item
     inhandVisuals:
       left:
@@ -212,17 +191,8 @@
       blade: MedievalProcessedSilver
     inhand: MedievalProcessedSilver
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 14
-        Holy: 14
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Slash: 14.0
-        Holy: 14.0
   - type: Item
     inhandVisuals:
       left:
@@ -261,15 +231,8 @@
       blade: MedievalProcessedMithril
     inhand: MedievalProcessedMithril
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 21
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Slash: 14.0
   - type: Item
     inhandVisuals:
       left:
@@ -308,15 +271,8 @@
       blade: MedievalProcessedAdamantine
     inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 24.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: MedievalWeaponDamage
-    baseDamage:
-      types:
-        Slash: 14.0
   - type: Item
     inhandVisuals:
       left:

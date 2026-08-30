@@ -2,6 +2,7 @@ using Content.Server.Destructible;
 using Content.Server.Destructible.Thresholds;
 using Content.Server.Destructible.Thresholds.Behaviors;
 using Content.Shared._Respiral.Materials;
+using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.Destructible.Thresholds.Triggers;
 using Content.Shared.FixedPoint;
@@ -33,8 +34,9 @@ public sealed partial class MedievalMaterialStatsSystem : EntitySystem
     }
 
     /// <summary>
-    /// Урон оружия = базовый (железный эталон) × max(damageFactor) по материалам состава.
-    /// Тип урона берётся из BaseDamage, поэтому дерево (Blunt) и серебро (+Holy) сохраняются.
+    /// Урон оружия выводится из базового (железный эталон) урона и ОСНОВНОГО материала (с наибольшим
+    /// damageFactor — это клинок/боёк, а не деревянная рукоять): итог = base × factor, с опциональной
+    /// сменой типа (дерево → Blunt) и бонусом (серебро → +Holy) от основного материала.
     /// </summary>
     private void ApplyWeaponDamage(Entity<PhysicalCompositionComponent> ent)
     {
@@ -42,17 +44,39 @@ public sealed partial class MedievalMaterialStatsSystem : EntitySystem
             || !TryComp<MeleeWeaponComponent>(ent, out var melee))
             return;
 
+        MaterialPrototype? primary = null;
         var factor = 0f;
         foreach (var (materialId, _) in ent.Comp.MaterialComposition)
         {
-            if (_proto.TryIndex<MaterialPrototype>(materialId, out var material))
-                factor = MathF.Max(factor, material.MedievalDamageFactor);
+            if (_proto.TryIndex<MaterialPrototype>(materialId, out var material) && material.MedievalDamageFactor > factor)
+            {
+                primary = material;
+                factor = material.MedievalDamageFactor;
+            }
         }
 
-        if (factor <= 0f)
+        if (primary == null || factor <= 0f)
             return;
 
-        melee.Damage = weapon.BaseDamage * factor;
+        var baseTotal = 0f;
+        foreach (var value in weapon.BaseDamage.DamageDict.Values)
+            baseTotal += value.Float();
+
+        var result = new DamageSpecifier();
+
+        if (!string.IsNullOrEmpty(primary.MedievalWeaponDamageType))
+            result.DamageDict[primary.MedievalWeaponDamageType] = FixedPoint2.New(baseTotal * factor);
+        else
+            foreach (var (type, value) in weapon.BaseDamage.DamageDict)
+                result.DamageDict[type] = value * factor;
+
+        foreach (var (type, fraction) in primary.MedievalWeaponBonusDamage)
+        {
+            var add = FixedPoint2.New(baseTotal * factor * fraction);
+            result.DamageDict[type] = result.DamageDict.TryGetValue(type, out var current) ? current + add : add;
+        }
+
+        melee.Damage = result;
         Dirty(ent.Owner, melee);
     }
 
