@@ -9,7 +9,6 @@
     "states": [
         { "name": "icon" },
         { "name": "equipped-LEGS", "directions": 4 },
-        { "name": "equipped-LEGS-female", "directions": 4 },
         { "name": "inhand-left", "directions": 4 },
         { "name": "inhand-right", "directions": 4 }
     ]

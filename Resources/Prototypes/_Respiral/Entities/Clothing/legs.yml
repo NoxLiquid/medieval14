@@ -21,6 +21,30 @@
 
 - type: entity
   parent: [ MedievalBasePants, MedievalArmorMaterial ]
+  id: MedievalClothingLegsChainmail
+  suffix: Средневековье
+  name: кольчужные штаны
+  description: Штаны из плотно сплетённых железных колец, прикрывающие ноги от порезов.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/chainmail.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/chainmail.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Damageable
+    damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 150
+
+- type: entity
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsLeather
   suffix: Средневековье
   name: кожаные штаны

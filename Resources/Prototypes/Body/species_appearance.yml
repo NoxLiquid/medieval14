@@ -29,9 +29,6 @@
     # Extremities
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    # Respiral-Start - пояс под руками (кисти/руки свисают поверх пояса на талии)
-    - map: [ "belt" ]
-    # Respiral-End
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
 
@@ -45,6 +42,9 @@
     - map: [ "eyes" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    # Respiral-Start - пояс поверх верхней одежды (ремень стягивает плащ/доспех)
+    - map: [ "belt" ]
+    # Respiral-End
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "suitstorage" ]

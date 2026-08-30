@@ -1559,6 +1559,13 @@
 
 - type: latheRecipe
   parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingLegsChainmailRecipe
+  result: MedievalClothingLegsChainmail
+  materials:
+    MedievalProcessedIron: 150
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
   id: MedievalClothingShoesHeavyArmoredBootsRecipe
   result: MedievalClothingShoesHeavyArmoredBoots
   materials:

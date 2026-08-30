@@ -171,7 +171,7 @@ Do **not** reintroduce `{slot}-Male`/`{slot}-Female` clothingVisuals keys. Unise
 (The upstream `femaleDisplacements` on the species `Inventory` — e.g. `Body/Species/human.yml`,
 `state: jumpsuit-female` — is a **different**, still-active feature for female body-shape displacement maps; leave it.)
 
-## Hand-layer draw order (mostly upstream; `belt` moved below hands)
+## Hand-layer draw order (mostly upstream; `belt` moved above `outerClothing`)
 
 Humanoid sprite layer order lives in upstream `Resources/Prototypes/Body/species_appearance.yml`
 (`BaseSpeciesLayers`); the Respiral species (`AppearanceMedievalHuman/...`) inherit it via
@@ -186,13 +186,12 @@ We experimented with moving `LHand`/`RHand` above `outerClothing` (and `gloves` 
 but **reverted** it. The correct fix for a garment whose sleeves hide the hands is a **sprite edit** (make the
 wrist/hand area transparent on the E/W `equipped-*` frames), not a global layer-order change.
 
-**Exception — `belt` moved below the hands (2026-08, Respiral-Start/End marker):** upstream draws `belt` in
-the "More equipment" group *above* `LHand`/`RHand`, so the medieval waist belts (`Belt/*.rsi`
-`equipped-BELT`) rendered on top of the hands/arms that hang at the waist. Moved the `- map: [ "belt" ]`
-entry to just **before** `LHand`/`RHand` (right after `LFoot`/`RFoot`) so hands draw over the belt. Belt
-stays below `outerClothing` (a coat still covers it); belt vs `gloves`/`shoes` is irrelevant (different body
-regions). Unlike the dress-sleeve case, moving a single waist-slot layer is a localized, physically-correct
-z-fix — not the global hand reorder we reverted.
+**`belt` moved above `outerClothing` (2026-08, Respiral-Start/End marker):** the `- map: [ "belt" ]` entry now
+sits just **after** `outerClothing` (before `back`), so a waist belt (`Belt/*.rsi` `equipped-BELT`) renders
+**on top of** the outer coat/armor — a sword/utility belt cinches the outer garment. This supersedes the
+earlier "belt below the hands" placement: because `outerClothing` draws above `LHand`/`RHand`, putting the
+belt above `outerClothing` necessarily puts it above the hands too (both are the same waist-slot trade-off).
+`back` (backpack) and `neck` (cloak/mantle) still draw over the belt, which is physically correct.
 
 ## Starting gear
 

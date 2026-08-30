@@ -1,5 +1,6 @@
 using Content.Shared._Respiral.Tabard;
 using Content.Shared._Respiral.Tabard.Components;
+using Content.Shared.Containers;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
@@ -31,6 +32,40 @@ public sealed partial class MedievalTabardSystem : EntitySystem
         SubscribeLocalEvent<MedievalTabardComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<MedievalTabardComponent, MedievalTabardDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<MedievalTabardAttachableComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
+        SubscribeLocalEvent<MedievalTabardAttachableComponent, ComponentInit>(OnAttachableInit);
+        SubscribeLocalEvent<MedievalTabardAttachableComponent, MapInitEvent>(OnAttachableMapInit,
+            after: [typeof(ContainerFillSystem)]);
+    }
+
+    // Контейнер под табард создаём заранее (на init), чтобы ContainerFill мог вложить табард на спавне.
+    private void OnAttachableInit(Entity<MedievalTabardAttachableComponent> ent, ref ComponentInit args)
+    {
+        _container.EnsureContainer<ContainerSlot>(ent.Owner, MedievalTabardAttachableComponent.ContainerId);
+    }
+
+    // Табард, вложенный на спавне (через ContainerFill), — снимаем с него кэш отрисовки/аффилиации.
+    private void OnAttachableMapInit(Entity<MedievalTabardAttachableComponent> ent, ref MapInitEvent args)
+    {
+        if (ent.Comp.RsiPath != null)
+            return;
+
+        if (!_container.TryGetContainer(ent.Owner, MedievalTabardAttachableComponent.ContainerId, out var container)
+            || container is not ContainerSlot { ContainedEntity: { } tabard }
+            || !TryComp<MedievalTabardComponent>(tabard, out var tabardComp))
+            return;
+
+        SetTabardVisuals(ent, tabardComp);
+        RefreshWearer(ent.Owner);
+    }
+
+    // Общий перенос характеристик табарда в сетевой кэш флаг-компонента.
+    private void SetTabardVisuals(Entity<MedievalTabardAttachableComponent> ent, MedievalTabardComponent tabard)
+    {
+        ent.Comp.RsiPath = tabard.Rsi.ToString();
+        ent.Comp.EquippedState = tabard.EquippedState;
+        ent.Comp.IconState = tabard.IconState;
+        ent.Comp.Affiliation = tabard.Affiliation?.Id;
+        Dirty(ent);
     }
 
     private void OnAfterInteract(Entity<MedievalTabardComponent> ent, ref AfterInteractEvent args)
@@ -75,11 +110,7 @@ public sealed partial class MedievalTabardSystem : EntitySystem
         if (!_container.Insert(ent.Owner, slot))
             return;
 
-        attachable.RsiPath = ent.Comp.Rsi.ToString();
-        attachable.EquippedState = ent.Comp.EquippedState;
-        attachable.IconState = ent.Comp.IconState;
-        attachable.Affiliation = ent.Comp.Affiliation?.Id;
-        Dirty(target, attachable);
+        SetTabardVisuals((target, attachable), ent.Comp);
         RefreshWearer(target);
 
         _popup.PopupEntity(Loc.GetString("medieval-tabard-attached"), target, args.User);

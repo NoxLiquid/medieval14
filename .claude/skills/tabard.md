@@ -25,7 +25,17 @@ One tabard: **Королевство ворона** (`crow_faction.rsi`). NpcFac
   base). Handles `AfterInteractEvent` (tabard→clothing, starts DoAfter), `MedievalTabardDoAfterEvent` (insert
   into container + fill the visual cache + `Dirty`), `GetVerbsEvent<Verb>` (detach: `Remove` +
   `_hands.PickupOrDrop` + clear cache). DoAfter/verb/container are all fine server-side; visuals sync via the
-  networked cache.
+  networked cache. Attach/spawn both funnel through one helper `SetTabardVisuals(ent, tabardComp)`.
+- **Spawn-with-tabard (livery, 2026-08)** — same server system:
+  - `ComponentInit` → `EnsureContainer<ContainerSlot>(tabard-slot)` so the slot exists **before** MapInit
+    (upstream `ContainerFill` uses `TryGetContainer`, it does NOT create the container).
+  - `MapInit` (`after: [typeof(ContainerFillSystem)]`) → if the `tabard-slot` holds a `MedievalTabardComponent`,
+    `SetTabardVisuals` from it + refresh wearer. So a piece spawned with a tabard already inside renders the
+    overlay/affiliation with **no manual attach**, and the tabard is a **real removable item** (detach verb works).
+  - Livery variants in `armor.yml` (`MedievalClothingOuterArmor{QuiltedGambeson,IronChainmail}Crow`,
+    `HideSpawnMenu`) just add `- type: ContainerFill { containers: { tabard-slot: [ MedievalTabardCrowKingdom ] } }`
+    on top of the plain armor (which already carries the `MedievalTabardAttachable` flag). Given to guard/knight
+    starting gear. **Do not** set the visual cache in YAML — it's `[ViewVariables]`, filled only at runtime.
 - **Client visuals** `Content.Client/_Respiral/Tabard/MedievalTabardVisualsSystem.cs`:
   - equipped overlay — subscribes `GetEquipmentVisualsEvent` **on its own `MedievalTabardAttachableComponent`**
     with `after: [typeof(ClothingSystem)]`, appends `PrototypeLayerData { RsiPath, State = EquippedState }`

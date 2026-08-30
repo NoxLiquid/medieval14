@@ -32,6 +32,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `wallpaper.md` | Wall wallpapers: item→SpawnAfterInteract→structure (carpet-style), drawdepth Walls + SpriteFade, sewn on MedievalSewing lathe |
 | `inhand_icon.md` | Client in-hand fallback: items with no inhand sprite show 0.3 icon in hand, over/under body per hand+facing |
 | `tabard.md` | Attach a house tabard onto armor (flag component + container), equipped/icon sprite overlay, DoAfter attach + detach verb |
+| `lock.md` | Medieval key/lock system: `MedievalKeyComponent`, use-DoAfter lock/unlock, use-sound handle stored on the component + stopped on cancel |
 | `materials_balance.md` | Material-derived durability/armor/damage: per-material stats on MaterialPrototype, formulas from PhysicalComposition, phased rollout |
 | `respawn.md` | Ghost respawn 15-min timer + red/green ghost-HUD button (zero-upstream widget), reset on returning to a living body |
 | `biomes.md` | Biomes, procedural map generation, layers, markers, Gateway |

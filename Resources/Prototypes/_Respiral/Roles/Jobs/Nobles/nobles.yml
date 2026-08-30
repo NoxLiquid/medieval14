@@ -48,10 +48,10 @@
 - type: startingGear
   id: MedievalKnightGear
   equipment:
-    head: MedievalClothingHeadHelmet
+    head: MedievalClothingHeadHeavyHelmet
     jumpsuit: MedievalClothingInnerRoyalShirt
-    outerClothing: MedievalClothingOuterArmorIronChainmail
-    pants: MedievalClothingLegsArmored
+    outerClothing: MedievalClothingOuterArmorIronChainmailCrow
+    pants: MedievalClothingLegsChainmail
     gloves: MedievalClothingHandsHeavyArmored
     shoes: MedievalClothingShoesArmoredBoots
     belt: MedievalClothingBeltLeather

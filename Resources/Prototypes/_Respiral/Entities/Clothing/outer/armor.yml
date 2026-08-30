@@ -116,3 +116,24 @@
     materialComposition:
       MedievalSteel: 100
       MedievalProcessedPelt: 50
+
+# Варианты со снаряжённым табардом Королевства ворона (для стартового гира стражи/рыцаря).
+- type: entity
+  parent: MedievalClothingOuterArmorQuiltedGambeson
+  id: MedievalClothingOuterArmorQuiltedGambesonCrow
+  suffix: Королевство ворона
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ContainerFill
+    containers:
+      tabard-slot: [ MedievalTabardCrowKingdom ]
+
+- type: entity
+  parent: MedievalClothingOuterArmorIronChainmail
+  id: MedievalClothingOuterArmorIronChainmailCrow
+  suffix: Королевство ворона
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ContainerFill
+    containers:
+      tabard-slot: [ MedievalTabardCrowKingdom ]

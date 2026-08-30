@@ -241,7 +241,7 @@
 - type: startingGear
   id: MedievalGuardGear
   equipment:
-    outerClothing: MedievalClothingOuterArmorQuiltedGambeson
+    outerClothing: MedievalClothingOuterArmorQuiltedGambesonCrow
     head: MedievalClothingHeadHoodQuiltedRed
     gloves: MedievalClothingHandsGuardMittens
     pants: MedievalClothingLegsGuardPants
