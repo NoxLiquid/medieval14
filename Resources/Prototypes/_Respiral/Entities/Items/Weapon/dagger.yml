@@ -19,6 +19,10 @@
         Piercing: 8
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 8.0
   - type: Item
     inhandVisuals:
       left:
@@ -66,6 +70,10 @@
         Blunt: 2
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 8.0
   - type: Item
     inhandVisuals:
       left:
@@ -110,6 +118,10 @@
         Piercing: 10
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 8.0
   - type: Item
     inhandVisuals:
       left:
@@ -155,6 +167,11 @@
         Holy: 8
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 8.0
+        Holy: 8.0
   - type: Item
     inhandVisuals:
       left:
@@ -199,6 +216,10 @@
         Piercing: 12
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 8.0
   - type: Item
     inhandVisuals:
       left:
@@ -243,6 +264,10 @@
         Piercing: 14
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 8.0
   - type: Item
     inhandVisuals:
       left:

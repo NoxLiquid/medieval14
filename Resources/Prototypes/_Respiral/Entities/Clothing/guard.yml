@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerGuardGambesonCheckered
   suffix: Средневековье
   name: клетчатая добротная стёганая рубаха
@@ -41,7 +41,7 @@
       MedievalCloth: 200
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerGuardGambesonStriped
   suffix: Средневековье
   name: полосатая добротная стёганая рубаха
@@ -83,7 +83,7 @@
       MedievalCloth: 200
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadOrLegs ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsGuardPants
   suffix: Средневековье
   name: добротные штаны
@@ -117,7 +117,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadOrLegs ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsGuardPantsRed
   suffix: Средневековье
   name: красные добротные штаны
@@ -151,7 +151,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadOrLegs ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsGuardPantsBlack
   suffix: Средневековье
   name: чёрные добротные штаны
@@ -185,7 +185,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadOrLegs ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsGuardPantsViolet
   suffix: Средневековье
   name: фиолетовые добротные штаны
@@ -219,7 +219,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseGloves, MedievalArmorClothOther ]
+  parent: [ MedievalBaseGloves, MedievalArmorMaterial ]
   id: MedievalClothingHandsGuardMittens
   suffix: Средневековье
   name: стёганые варежки стражника

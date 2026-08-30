@@ -2,7 +2,7 @@
 # Fragile: low Destructible threshold — these worn rags break easily.
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerRefugeeShirt
   suffix: Средневековье
   name: сшитая майка
@@ -30,7 +30,7 @@
       MedievalCloth: 50
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsRefugeePants
   suffix: Средневековье
   name: рваные штаны

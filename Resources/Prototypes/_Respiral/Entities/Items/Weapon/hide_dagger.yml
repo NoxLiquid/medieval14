@@ -14,14 +14,18 @@
       blade: MedievalProcessedIron
     inhand: MedievalProcessedIron
   - type: MeleeWeapon
-    attackRate: 2
-    angle: 0
-    range: 1.5
     damage:
       types:
         Piercing: 6
+    attackRate: 2
+    angle: 0
+    range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 6.0
   - type: Item
     inhandVisuals:
       left:
@@ -64,14 +68,18 @@
       handle: MedievalProcessedWood
     inhand: MedievalProcessedWood
   - type: MeleeWeapon
-    attackRate: 2
-    angle: 0
-    range: 1.5
     damage:
       types:
         Blunt: 1.5
+    attackRate: 2
+    angle: 0
+    range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 6.0
   - type: Item
     inhandVisuals:
       left:
@@ -110,14 +118,18 @@
       blade: MedievalSteel
     inhand: MedievalSteel
   - type: MeleeWeapon
-    attackRate: 2
-    angle: 0
-    range: 1.5
     damage:
       types:
         Piercing: 7.5
+    attackRate: 2
+    angle: 0
+    range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 6.0
   - type: Item
     inhandVisuals:
       left:
@@ -157,15 +169,20 @@
       blade: MedievalProcessedSilver
     inhand: MedievalProcessedSilver
   - type: MeleeWeapon
-    attackRate: 2
-    angle: 0
-    range: 1.5
     damage:
       types:
         Piercing: 6
         Holy: 6
+    attackRate: 2
+    angle: 0
+    range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 6.0
+        Holy: 6.0
   - type: Item
     inhandVisuals:
       left:
@@ -205,14 +222,18 @@
       blade: MedievalProcessedMithril
     inhand: MedievalProcessedMithril
   - type: MeleeWeapon
-    attackRate: 2
-    angle: 0
-    range: 1.5
     damage:
       types:
         Piercing: 9
+    attackRate: 2
+    angle: 0
+    range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 6.0
   - type: Item
     inhandVisuals:
       left:
@@ -252,14 +273,18 @@
       blade: MedievalProcessedAdamantine
     inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
-    attackRate: 2
-    angle: 0
-    range: 1.5
     damage:
       types:
         Piercing: 10.5
+    attackRate: 2
+    angle: 0
+    range: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 6.0
   - type: Item
     inhandVisuals:
       left:

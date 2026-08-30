@@ -1,7 +1,7 @@
 # Medieval belt-slot clothing prototypes generated from _Respiral/Clothing/Belt/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseBelt, MedievalArmorIronOther ]
+  parent: [ MedievalBaseBelt, MedievalArmorMaterial ]
   id: MedievalClothingBeltChain
   suffix: Средневековье
   name: цепной пояс
@@ -24,7 +24,7 @@
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: [ MedievalBaseBelt, MedievalArmorGoldOther ]
+  parent: [ MedievalBaseBelt, MedievalArmorMaterial ]
   id: MedievalClothingBeltGold
   suffix: Средневековье
   name: золотой пояс
@@ -47,7 +47,7 @@
       MedievalProcessedGold: 100
 
 - type: entity
-  parent: [ MedievalBaseBelt, MedievalArmorClothOther ]
+  parent: [ MedievalBaseBelt, MedievalArmorMaterial ]
   id: MedievalClothingBeltLeather
   suffix: Средневековье
   name: кожаный пояс
@@ -70,7 +70,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseBelt, MedievalArmorClothOther ]
+  parent: [ MedievalBaseBelt, MedievalArmorMaterial ]
   id: MedievalClothingBeltLeatherBlack
   suffix: Средневековье
   name: чёрный кожаный пояс
@@ -93,7 +93,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseBelt, MedievalArmorClothOther ]
+  parent: [ MedievalBaseBelt, MedievalArmorMaterial ]
   id: MedievalClothingBeltLeatherRed
   suffix: Средневековье
   name: красный кожаный пояс
@@ -116,7 +116,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseBelt, MedievalArmorClothOther ]
+  parent: [ MedievalBaseBelt, MedievalArmorMaterial ]
   id: MedievalClothingBeltRope
   suffix: Средневековье
   name: верёвочный пояс
@@ -139,7 +139,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseBelt, MedievalArmorSilverOther ]
+  parent: [ MedievalBaseBelt, MedievalArmorMaterial ]
   id: MedievalClothingBeltSilver
   suffix: Средневековье
   name: серебряный пояс

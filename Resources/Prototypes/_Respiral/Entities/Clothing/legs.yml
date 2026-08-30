@@ -1,7 +1,7 @@
 # Medieval legs-slot (pants) clothing prototypes generated from _Respiral/Clothing/Legs/*.rsi
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorIronHeadOrLegs ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsArmored
   suffix: Средневековье
   name: укреплённые штаны
@@ -20,7 +20,7 @@
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsLeather
   suffix: Средневековье
   name: кожаные штаны
@@ -39,7 +39,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsSimple
   suffix: Средневековье
   name: простые штаны

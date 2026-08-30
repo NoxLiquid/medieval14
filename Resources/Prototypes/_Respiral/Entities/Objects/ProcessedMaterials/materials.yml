@@ -6,6 +6,13 @@
   color: "#8B4513"
   icon: { sprite:  _Respiral/Objects/Materials/board.rsi, state: board }
   price: 1.41
+  medievalDurability: 1.5
+  medievalDamageFactor: 0.25
+  medievalProtection:
+    Blunt: 0.08
+    Slash: 0.08
+    Piercing: 0.06
+    Heat: 0.02
 
 - type: material
   id: MedievalProcessedIron
@@ -15,6 +22,13 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: iron }
   color: "#8A8A8A"   # серебристо-серый, железо
   price: 4.43
+  medievalDurability: 2.5
+  medievalDamageFactor: 1.0
+  medievalProtection:
+    Blunt: 0.22
+    Slash: 0.22
+    Piercing: 0.12
+    Heat: 0.25
 
 - type: material
   id: MedievalSteel
@@ -24,6 +38,13 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: steel }
   color: "#B0C4DE"   # серебристо-серый, железо
   price: 10.76
+  medievalDurability: 3.5
+  medievalDamageFactor: 1.25
+  medievalProtection:
+    Blunt: 0.27
+    Slash: 0.27
+    Piercing: 0.17
+    Heat: 0.4
 
 - type: material
   id: MedievalProcessedSilver
@@ -33,6 +54,13 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: silver }
   color: "#C0C0FF"   # светло-серебристо-голубой, серебро
   price: 17.87
+  medievalDurability: 2.0
+  medievalDamageFactor: 1.0
+  medievalProtection:
+    Blunt: 0.1
+    Slash: 0.1
+    Piercing: 0.05
+    Heat: 0.25
 
 - type: material
   id: MedievalProcessedGold
@@ -42,6 +70,13 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: gold }
   color: "#FFD700"   # золотой, золото
   price: 39.32
+  medievalDurability: 1.8
+  medievalDamageFactor: 0.9
+  medievalProtection:
+    Blunt: 0.15
+    Slash: 0.15
+    Piercing: 0.1
+    Heat: 0.3
 
 - type: material
   id: MedievalProcessedMithril
@@ -51,6 +86,13 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: mithril }
   color: "#9370DB"   # средний фиолетовый (medium purple)
   price: 43.02
+  medievalDurability: 5.0
+  medievalDamageFactor: 1.5
+  medievalProtection:
+    Blunt: 0.32
+    Slash: 0.32
+    Piercing: 0.25
+    Heat: 0.4
 
 - type: material
   id: MedievalProcessedAdamantine
@@ -60,6 +102,13 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/ingot.rsi, state: adamantine }
   color: "#4B0000"
   price: 75.47
+  medievalDurability: 8.0
+  medievalDamageFactor: 1.75
+  medievalProtection:
+    Blunt: 0.42
+    Slash: 0.42
+    Piercing: 0.35
+    Heat: 0.45
 
 - type: material
   id: MedievalProcessedStone
@@ -69,6 +118,13 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/stone.rsi, state: stone }
   color: "#808080"   # серый, камень
   price: 0.88
+  medievalDurability: 2.0
+  medievalDamageFactor: 0.6
+  medievalProtection:
+    Blunt: 0.2
+    Slash: 0.2
+    Piercing: 0.12
+    Heat: 0.1
 
 - type: material
   id: MedievalCloth
@@ -78,6 +134,12 @@
   color: "#949494"
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: cloth4 }
   price: 2
+  medievalDurability: 1.0
+  medievalProtection:
+    Blunt: 0.1
+    Slash: 0.1
+    Piercing: 0.1
+    Heat: 0.04
 
 - type: material
   id: MedievalProcessedPelt
@@ -87,6 +149,12 @@
   icon: { sprite: /Textures/_Respiral/Objects/Materials/misk.rsi, state: procPelt3 }
   color: "#643932"
   price: 10
+  medievalDurability: 1.5
+  medievalProtection:
+    Blunt: 0.14
+    Slash: 0.14
+    Piercing: 0.1
+    Heat: 0.08
 
 - type: material
   id: MedievalGlass
@@ -96,6 +164,13 @@
   icon: { sprite: /Textures/Objects/Materials/Sheets/glass.rsi, state: glass }
   color: "#bbe7d2"
   price: 17
+  medievalDurability: 0.8
+  medievalDamageFactor: 0.8
+  medievalProtection:
+    Blunt: 0.05
+    Slash: 0.05
+    Piercing: 0.03
+    Heat: 0.02
 
 - type: material
   id: MedievalPaper
@@ -104,3 +179,4 @@
   color: "#bbb19e"
   icon: { sprite: /Textures/_Respiral/Objects/Items/Bureaucracy/paper.rsi, state: paper }
   price: 0.5
+  medievalDurability: 0.2

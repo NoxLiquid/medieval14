@@ -20,6 +20,12 @@
         Blunt: 3.67
         Slash: 3.66
         Piercing: 3.67
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 3.67
+        Slash: 3.66
+        Piercing: 3.67
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -71,6 +77,10 @@
     damage:
       types:
         Blunt: 2.25
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 9.0
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -121,6 +131,12 @@
         Blunt: 4.92
         Slash: 4.92
         Piercing: 4.91
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 3.94
+        Slash: 3.94
+        Piercing: 3.93
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -172,6 +188,13 @@
         Slash: 3.66
         Piercing: 3.67
         Holy: 11
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 3.67
+        Slash: 3.66
+        Piercing: 3.67
+        Holy: 11.0
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -223,6 +246,12 @@
         Blunt: 5.5
         Slash: 5.5
         Piercing: 5.5
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 3.67
+        Slash: 3.67
+        Piercing: 3.67
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -270,9 +299,15 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 6
-        Slash: 6
-        Piercing: 6
+        Blunt: 6.0
+        Slash: 6.0
+        Piercing: 6.0
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 3.43
+        Slash: 3.43
+        Piercing: 3.43
   - type: IncreaseDamageOnWield
     damage:
       types:

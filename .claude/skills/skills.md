@@ -32,6 +32,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `wallpaper.md` | Wall wallpapers: item→SpawnAfterInteract→structure (carpet-style), drawdepth Walls + SpriteFade, sewn on MedievalSewing lathe |
 | `inhand_icon.md` | Client in-hand fallback: items with no inhand sprite show 0.3 icon in hand, over/under body per hand+facing |
 | `tabard.md` | Attach a house tabard onto armor (flag component + container), equipped/icon sprite overlay, DoAfter attach + detach verb |
+| `materials_balance.md` | Material-derived durability/armor/damage: per-material stats on MaterialPrototype, formulas from PhysicalComposition, phased rollout |
 | `biomes.md` | Biomes, procedural map generation, layers, markers, Gateway |
 | `zlevels.md` | Z-levels (vertical maps), CEZLevelsSystem, ZNetwork |
 | `localization.md` | Localization (FTL), syncing ru-RU with en-US, parity of variables and message IDs |

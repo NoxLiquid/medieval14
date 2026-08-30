@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterDressEmerald
   suffix: Средневековье
   name: изумрудное платье
@@ -31,7 +31,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterDressSapphire
   suffix: Средневековье
   name: сапфировое платье
@@ -55,7 +55,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterDressScarlet
   suffix: Средневековье
   name: алое платье
@@ -87,7 +87,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterDressGray
   suffix: Средневековье
   name: фиолетовое платье
@@ -117,7 +117,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterDressPink
   suffix: Средневековье
   name: розовое платье
@@ -147,7 +147,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseOuterClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterDressOrange
   suffix: Средневековье
   name: оранжевое платье

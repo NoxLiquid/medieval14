@@ -1,7 +1,7 @@
 # Medieval head-slot clothing prototypes generated from _Respiral/Clothing/Head/**/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorGoldHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadCrown
   suffix: Средневековье
   name: корона
@@ -24,7 +24,7 @@
       MedievalProcessedGold: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadFeatherHat
   suffix: Средневековье
   name: шляпа с пером
@@ -47,7 +47,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorSteelHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHeavyHelmet
   suffix: Средневековье
   name: тяжёлый шлем
@@ -70,7 +70,7 @@
       MedievalSteel: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorIronHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHelmet
   suffix: Средневековье
   name: шлем
@@ -92,7 +92,7 @@
     materialComposition:
       MedievalProcessedIron: 100
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHood
   suffix: Средневековье
   name: простой капюшон
@@ -111,7 +111,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodCloth
   suffix: Средневековье
   name: тканевый капюшон
@@ -135,7 +135,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodQuilted
   suffix: Средневековье
   name: стёганый капюшон
@@ -159,7 +159,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodQuiltedClosed
   suffix: Средневековье
   name: закрытый стёганый капюшон
@@ -185,7 +185,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodQuiltedRed
   suffix: Средневековье
   name: красный стёганый капюшон
@@ -215,7 +215,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodQuiltedBrown
   suffix: Средневековье
   name: коричневый стёганый капюшон
@@ -245,7 +245,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodQuiltedGrey
   suffix: Средневековье
   name: серый стёганый капюшон
@@ -275,7 +275,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodQuiltedClosedRed
   suffix: Средневековье
   name: красный закрытый стёганый капюшон
@@ -307,7 +307,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodQuiltedClosedBrown
   suffix: Средневековье
   name: коричневый закрытый стёганый капюшон
@@ -339,7 +339,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodQuiltedClosedGrey
   suffix: Средневековье
   name: серый закрытый стёганый капюшон
@@ -371,7 +371,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorIronHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodChainmail
   suffix: Средневековье
   name: кольчужный капюшон
@@ -395,7 +395,7 @@
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorIronHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadHoodChainmailClosed
   suffix: Средневековье
   name: закрытый кольчужный капюшон
@@ -421,7 +421,7 @@
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: [ MedievalBaseHead, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseHead, MedievalArmorMaterial ]
   id: MedievalClothingHeadTraderHat
   suffix: Средневековье
   name: шляпа торговца

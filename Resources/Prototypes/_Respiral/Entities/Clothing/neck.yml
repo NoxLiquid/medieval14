@@ -1,7 +1,7 @@
 # Medieval neck-slot clothing prototypes generated from _Respiral/Clothing/Neck/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckLordCape
   suffix: Средневековье
   name: плащ лорда
@@ -20,7 +20,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckWorkCoat
   suffix: Средневековье
   name: рабочий халат
@@ -57,7 +57,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckChefCoat
   suffix: Средневековье
   name: халат шефа

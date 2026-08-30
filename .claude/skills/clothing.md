@@ -80,7 +80,15 @@ The standard component set of a clothing prototype (see any existing file): `Spr
 `Clothing` (same sprite) + `Damageable` + `Injurable: MedievalClothing` + **armor via inherited parent**
 (see below) + `PhysicalComposition`. Armor — lower coefficients = more protection.
 
-## Armor protection = inherited, NOT inline (2026-08 refactor)
+## Armor protection = DERIVED from material composition (2026-08, supersedes the 28-abstract scheme)
+
+**Current:** armor coefficients are computed from `PhysicalComposition × material.MedievalProtection` (NO body-region
+factor) by `MedievalArmorSystem` (own `MedievalArmorComponent`, replaces upstream `ArmorComponent`, zero upstream
+edits). Clothing-armor inherits a **single marker `MedievalArmorMaterial`** (`base_material.yml`); material AND
+protection strength come from its composition (amount × stat). See [[materials_balance]] for the formula/values.
+The section below describes the PREVIOUS (now-removed) 28-abstract scheme — kept for history.
+
+## (HISTORY) Armor protection = inherited, NOT inline (2026-08 refactor)
 
 **Do not hand-write `Armor.modifiers.coefficients` on clothing anymore.** The single source of the
 protection numbers is `Entities/Clothing/base_material.yml`: 28 `abstract: true` entity prototypes

@@ -1,7 +1,7 @@
 # Medieval armor prototypes generated from _Respiral/Clothing/OuterClothing/Armor/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseOuterClothing, MedievalArmorIronBody ]
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterArmorIronChainmail
   suffix: Средневековье
   name: железная кольчуга
@@ -21,7 +21,7 @@
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: MedievalBaseOuterClothing
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterArmorQuiltedGambeson
   suffix: Средневековье
   name: стёганый гамбезон
@@ -46,7 +46,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: MedievalBaseOuterClothing
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterArmorLeatherJacket
   suffix: Средневековье
   name: кожаный доспех
@@ -71,7 +71,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: MedievalBaseOuterClothing
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterArmorPlate
   suffix: Средневековье
   name: латный доспех
@@ -92,7 +92,7 @@
       MedievalSteel: 100
 
 - type: entity
-  parent: MedievalBaseOuterClothing
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterArmorPlateLeather
   suffix: Средневековье
   name: латы с поддоспешником

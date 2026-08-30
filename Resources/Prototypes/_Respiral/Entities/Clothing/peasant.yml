@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtBrown
   suffix: Средневековье
   name: коричневая рубаха
@@ -41,7 +41,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtLinen
   suffix: Средневековье
   name: небелёная рубаха
@@ -83,7 +83,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtOlive
   suffix: Средневековье
   name: оливковая рубаха
@@ -125,7 +125,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtBlue
   suffix: Средневековье
   name: серо-синяя рубаха
@@ -167,7 +167,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtRusset
   suffix: Средневековье
   name: бордовая рубаха
@@ -209,7 +209,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsPeasantBrown
   suffix: Средневековье
   name: коричневые штаны
@@ -242,7 +242,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsPeasantGrey
   suffix: Средневековье
   name: серые штаны
@@ -275,7 +275,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsPeasantOlive
   suffix: Средневековье
   name: тёмно-оливковые штаны
@@ -308,7 +308,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesPeasantBoots
   suffix: Средневековье
   name: кожаные башмаки
@@ -341,7 +341,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesPeasantBootsDark
   suffix: Средневековье
   name: тёмные башмаки

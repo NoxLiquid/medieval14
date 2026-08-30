@@ -1,7 +1,7 @@
 # Medieval shoes-slot clothing prototypes generated from _Respiral/Clothing/Shoes/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesBoots
   suffix: Средневековье
   name: сапоги
@@ -20,7 +20,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesHighBoots
   suffix: Средневековье
   name: ботфорты
@@ -39,7 +39,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesRichBoots
   suffix: Средневековье
   name: расшитые сапоги
@@ -58,7 +58,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorIronHeadOrLegs ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesArmoredBoots
   suffix: Средневековье
   name: бронированные сапоги
@@ -81,7 +81,7 @@
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorSteelHeadOrLegs ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesHeavyArmoredBoots
   suffix: Средневековье
   name: тяжёлые бронированные сапоги

@@ -1,7 +1,7 @@
 # Medieval mask-slot clothing prototypes generated from _Respiral/Clothing/Mask/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseMask, MedievalArmorClothOther ]
+  parent: [ MedievalBaseMask, MedievalArmorMaterial ]
   id: MedievalClothingMaskExecutioner
   suffix: Средневековье
   name: колпак палача
@@ -27,7 +27,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseMask, MedievalArmorSilverOther ]
+  parent: [ MedievalBaseMask, MedievalArmorMaterial ]
   id: MedievalClothingMaskGlasses
   suffix: Средневековье
   name: очки
@@ -50,7 +50,7 @@
       MedievalProcessedSilver: 100
 
 - type: entity
-  parent: [ MedievalBaseMask, MedievalArmorClothOther ]
+  parent: [ MedievalBaseMask, MedievalArmorMaterial ]
   id: MedievalClothingMaskPlagueDoctor
   suffix: Средневековье
   name: маска чумного доктора

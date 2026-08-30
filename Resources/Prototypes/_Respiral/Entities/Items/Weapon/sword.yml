@@ -19,6 +19,10 @@
         Slash: 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -61,6 +65,10 @@
         Blunt: 3.75
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -104,6 +112,10 @@
         Slash: 18.75
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -149,6 +161,11 @@
         Holy: 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
+        Holy: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -193,6 +210,10 @@
         Slash: 22.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -237,6 +258,10 @@
         Slash: 26.25
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -279,12 +304,16 @@
       blade: MedievalProcessedIron
     inhand: MedievalProcessedIron
   - type: MeleeWeapon
-    attackRate: 0.9
     damage:
       types:
         Slash: 17
+    attackRate: 0.9
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 17.0
   - type: Item
     inhandVisuals:
       left:
@@ -322,12 +351,16 @@
       handle: MedievalProcessedWood
     inhand: MedievalProcessedWood
   - type: MeleeWeapon
-    attackRate: 0.9
     damage:
       types:
         Blunt: 4.25
+    attackRate: 0.9
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 17.0
   - type: Item
     inhandVisuals:
       left:
@@ -366,12 +399,16 @@
       blade: MedievalSteel
     inhand: MedievalSteel
   - type: MeleeWeapon
-    attackRate: 0.9
     damage:
       types:
         Slash: 21.25
+    attackRate: 0.9
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 17.0
   - type: Item
     inhandVisuals:
       left:
@@ -411,13 +448,18 @@
       blade: MedievalProcessedSilver
     inhand: MedievalProcessedSilver
   - type: MeleeWeapon
-    attackRate: 0.9
     damage:
       types:
         Slash: 17
         Holy: 17
+    attackRate: 0.9
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 17.0
+        Holy: 17.0
   - type: Item
     inhandVisuals:
       left:
@@ -457,12 +499,16 @@
       blade: MedievalProcessedMithril
     inhand: MedievalProcessedMithril
   - type: MeleeWeapon
-    attackRate: 0.9
     damage:
       types:
         Slash: 25.5
+    attackRate: 0.9
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 17.0
   - type: Item
     inhandVisuals:
       left:
@@ -502,12 +548,16 @@
       blade: MedievalProcessedAdamantine
     inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
-    attackRate: 0.9
     damage:
       types:
         Slash: 29.75
+    attackRate: 0.9
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 17.0
   - type: Item
     inhandVisuals:
       left:

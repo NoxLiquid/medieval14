@@ -19,6 +19,10 @@
         Slash: 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -61,6 +65,10 @@
         Blunt: 3.75
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Blunt: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -104,6 +112,10 @@
         Slash: 18.75
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -149,6 +161,11 @@
         Holy: 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
+        Holy: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -193,6 +210,10 @@
         Slash: 22.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
   - type: Item
     inhandVisuals:
       left:
@@ -237,6 +258,10 @@
         Slash: 26.25
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 15.0
   - type: Item
     inhandVisuals:
       left:
