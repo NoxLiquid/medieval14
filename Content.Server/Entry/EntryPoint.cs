@@ -20,6 +20,7 @@ using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
+using Content.Server._Corvax.TTS;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
@@ -73,6 +74,9 @@ namespace Content.Server.Entry
         [Dependency] private PlayTimeTrackingManager _playTimeTracking = default!;
         [Dependency] private PlayerRateLimitManager _rateLimit = default!;
         [Dependency] private RulesManager _rules = default!;
+        // Respiral-Start Corvax-TTS
+        [Dependency] private TTSManager _ttsManager = default!;
+        // Respiral-End
         [Dependency] private ServerApi _serverApi = default!;
         [Dependency] private ServerInfoManager _serverInfo = default!;
         [Dependency] private ServerUpdateManager _updateManager = default!;
@@ -133,6 +137,9 @@ namespace Content.Server.Entry
             _watchlistWebhookManager.Initialize();
             _job.Initialize();
             _rateLimit.Initialize();
+            // Respiral-Start Corvax-TTS
+            _ttsManager.Initialize();
+            // Respiral-End
         }
 
         public override void PostInit()

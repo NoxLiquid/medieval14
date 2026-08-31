@@ -20,6 +20,7 @@ using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
+using Content.Server._Corvax.TTS;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
@@ -71,6 +72,9 @@ internal static class ServerContentIoC
         deps.Register<JobWhitelistManager>();
         deps.Register<PlayerRateLimitManager>();
         deps.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
+        // Respiral-Start Corvax-TTS
+        deps.Register<TTSManager>();
+        // Respiral-End
         deps.Register<MappingManager>();
         deps.Register<IWatchlistWebhookManager, WatchlistWebhookManager>();
         deps.Register<ConnectionManager>();

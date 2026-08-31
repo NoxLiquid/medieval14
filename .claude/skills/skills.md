@@ -27,6 +27,7 @@ This file is the entry point for the `.claude/skills/` knowledge base.
 | `hitch.md` | Hitch a cart to a horse: pull to follow + copy horse rotation to face movement; attach/detach verbs |
 | `trade_console.md` | Trade system: ordering via CargoOrderConsole, delivery via CargoPallet (Buy/Sell), selling via CargoPalletConsole |
 | `communications.md` | Connecting magic ball (medieval communications console) |
+| `tts.md` | Text-to-speech: Corvax port in `_Corvax` ns, Silero service at `D:\TTS`, sex-based voice auto-assign, deferred lobby picker |
 | `disposal.md` | Power-free disposal, link between disposal pipes and tiles |
 | `tiles.md` | Floor/tile prototypes, wood plank variants (Dead/Birch/Swamp/Dark/Burned), base+child pattern |
 | `wallpaper.md` | Wall wallpapers: item→SpawnAfterInteract→structure (carpet-style), drawdepth Walls + SpriteFade, sewn on MedievalSewing lathe |
