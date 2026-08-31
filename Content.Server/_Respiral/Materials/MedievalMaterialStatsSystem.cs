@@ -18,7 +18,7 @@ namespace Content.Server._Respiral.Materials;
 /// </summary>
 public sealed partial class MedievalMaterialStatsSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {

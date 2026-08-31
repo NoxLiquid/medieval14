@@ -16,11 +16,11 @@ namespace Content.Server._Respiral.Respawn;
 /// Таймер респавна для призраков. Таймер сбрасывается, если игрок вернулся в живое тело
 /// (<see cref="MobState.Alive"/>).
 /// </summary>
-public sealed class MedievalRespawnSystem : EntitySystem
+public sealed partial class MedievalRespawnSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly GameTicker _ticker = default!;
-    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private StationSystem _station = default!;
 
     private static readonly TimeSpan RespawnDelay = TimeSpan.FromMinutes(15);
 

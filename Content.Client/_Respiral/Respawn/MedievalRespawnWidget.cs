@@ -5,12 +5,12 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._Respiral.Respawn;
 
-public sealed class MedievalRespawnWidget : UIWidget
+public sealed partial class MedievalRespawnWidget : UIWidget
 {
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly IPlayerManager _players = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IEntityNetworkManager _net = default!;
+    [Dependency] private IEntityManager _entMan = default!;
+    [Dependency] private IPlayerManager _players = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IEntityNetworkManager _net = default!;
 
     private static readonly Color Waiting = Color.FromHex("#8B2E2E");
     private static readonly Color Ready = Color.FromHex("#2E8B3E");
