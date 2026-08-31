@@ -6,10 +6,10 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Corvax.TTS;
 
-public sealed class TTSVoiceAssignSystem : EntitySystem
+public sealed partial class TTSVoiceAssignSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     private readonly Dictionary<Sex, List<string>> _voicesBySex = new();
     private readonly List<string> _allVoices = new();

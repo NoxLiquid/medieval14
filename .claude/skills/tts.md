@@ -78,7 +78,24 @@ Add these to [[upstream_patches.md]] when auditing merges.
 ## Enabling
 
 Server config (`server_config.toml` or cvars): `tts.enabled = true`,
-`tts.api_url = http://127.0.0.1:5000/tts`, `tts.api_token = <shared secret>`.
+`tts.api_url = http://127.0.0.1:5001/tts`, `tts.api_token = <shared secret>`.
+
+## Deployment (home server) — verified 2026-08-31
+
+Service installed **from the public repo** `https://github.com/NoxLiquid/TTS.git`:
+`git clone` into `/home/ivan/TTS`, then `docker compose up -d --build` (docker needs
+`sudo`; ivan not in docker group). Container `respiral-tts`, `restart: unless-stopped`,
+bound to `127.0.0.1:${TTS_HOST_PORT}`.
+
+- **Port 5000 is taken by `SS14.Watchdog`** on this host → TTS host port moved to **5001**
+  via server-local `/home/ivan/TTS/.env` (`TTS_HOST_PORT=5001`). Compose port is
+  `127.0.0.1:${TTS_HOST_PORT:-5000}:5000`.
+- Verified: `/health` = ok, `/tts` returns a valid `OggS` stream.
+- Dockerfile pins `PIP_DEFAULT_TIMEOUT=120` + `PIP_RETRIES=10` (pypi.org was flaky from
+  the server during build).
+- The live game server does NOT yet run the game-side TTS build — enabling in-game
+  requires publishing the `ss14-respiral` changes (commit → GitHub Actions Publish → CDN →
+  watchdog update) and setting the `tts.*` cvars in the instance `config.toml`.
 
 ## Known limitations / deferred (Phase 2, NOT implemented)
 
