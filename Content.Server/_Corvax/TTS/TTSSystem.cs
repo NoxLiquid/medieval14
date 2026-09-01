@@ -61,7 +61,7 @@ public sealed partial class TTSSystem : EntitySystem
     private async void OnRequestPreviewTTS(RequestPreviewTTSEvent ev, EntitySessionEventArgs args)
     {
         if (!_isEnabled ||
-            !_prototypeManager.TryIndex<TTSVoicePrototype>(ev.VoiceId, out var protoVoice))
+            !_prototypeManager.TryIndex(ev.VoiceId, out var protoVoice))
             return;
 
         if (HandleRateLimit(args.SenderSession) != RateLimitStatus.Allowed)
@@ -87,7 +87,7 @@ public sealed partial class TTSSystem : EntitySystem
         RaiseLocalEvent(uid, voiceEv);
         voiceId = voiceEv.VoiceId;
 
-        if (!_prototypeManager.TryIndex<TTSVoicePrototype>(voiceId, out var protoVoice))
+        if (!_prototypeManager.TryIndex(voiceId, out var protoVoice))
             return;
 
         if (args.ObfuscatedMessage != null)
@@ -101,26 +101,20 @@ public sealed partial class TTSSystem : EntitySystem
 
     private async void HandleSay(EntityUid uid, string message, string speaker)
     {
-        var soundData = await GenerateTTS(message, speaker);
-        if (soundData is null) return;
-        RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)), Filter.Pvs(uid));
+        // обычная речь: всем в PVS, позиционно от говорящего
+        await PlayTTS(message, speaker, Filter.Pvs(uid), GetNetEntity(uid));
     }
 
     private async void HandleWhisper(EntityUid uid, string message, string obfMessage, string speaker)
     {
-        var fullSoundData = await GenerateTTS(message, speaker, true);
-        if (fullSoundData is null) return;
-
-        var obfSoundData = await GenerateTTS(obfMessage, speaker, true);
-        if (obfSoundData is null) return;
-
-        var fullTtsEvent = new PlayTTSEvent(fullSoundData, GetNetEntity(uid), true);
-        var obfTtsEvent = new PlayTTSEvent(obfSoundData, GetNetEntity(uid), true);
+        // делим слушателей по дистанции: близкие слышат чётко, дальние приглушённо
+        var source = GetNetEntity(uid);
+        var clear = Filter.Empty();
+        var muffled = Filter.Empty();
 
         var xformQuery = GetEntityQuery<TransformComponent>();
         var sourcePos = _xforms.GetWorldPosition(xformQuery.GetComponent(uid), xformQuery);
-        var receptions = Filter.Pvs(uid).Recipients;
-        foreach (var session in receptions)
+        foreach (var session in Filter.Pvs(uid).Recipients)
         {
             if (!session.AttachedEntity.HasValue) continue;
             var xform = xformQuery.GetComponent(session.AttachedEntity.Value);
@@ -128,8 +122,18 @@ public sealed partial class TTSSystem : EntitySystem
             if (distance > ChatSystem.VoiceRange)
                 continue;
 
-            RaiseNetworkEvent(distance > ChatSystem.WhisperClearRange ? obfTtsEvent : fullTtsEvent, session);
+            if (distance > ChatSystem.WhisperClearRange)
+                muffled.AddPlayer(session);
+            else
+                clear.AddPlayer(session);
         }
+
+        // если есть кому слушать
+        if (clear.Count > 0)
+            await PlayTTS(message, speaker, clear, source, isWhisper: true);
+
+        if (muffled.Count > 0)
+            await PlayTTS(obfMessage, speaker, muffled, source, isWhisper: true);
     }
 
     private async Task<byte[]?> GenerateTTS(string text, string speaker, bool isWhisper = false)

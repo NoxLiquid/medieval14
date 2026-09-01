@@ -35,12 +35,30 @@ Server (`Content.Server/_Corvax/TTS/`):
 - `TTSManager.cs` — IoC manager, HTTP client + in-memory LRU cache. Registered in
   `ServerContentIoC` and `.Initialize()`d in `EntryPoint`.
 - `TTSSystem.cs` — subscribes `EntitySpokeEvent` (say/whisper), `TransformSpeechEvent`
-  (strips `+`), `RequestPreviewTTSEvent`. Whisper picks obfuscated vs clear audio per
-  distance (`ChatSystem.VoiceRange` / `WhisperClearRange`). Max message 200 chars.
+  (strips `+`), `RequestPreviewTTSEvent`. Max message 200 chars. `HandleSay`/`HandleWhisper`
+  now route through the `TTSSystem.Filter.cs` `PlayTTS(...)` API instead of building
+  `PlayTTSEvent` themselves: say → `PlayTTS(msg, speaker, Filter.Pvs(uid), sourceUid)`;
+  whisper partitions PVS recipients by distance into a clear filter (≤`WhisperClearRange`)
+  and a muffled filter (≤`VoiceRange`) and calls `PlayTTS` per non-empty group (skips synth
+  when a group is empty).
 - `TTSSystem.SSML.cs` — wraps text in `<speak><prosody rate/pitch>`.
 - `TTSSystem.Sanitize.cs` — cyrillic normalization, latin→cyr translit, abbreviation
   expansion, number→words.
 - `TTSSystem.RateLimit.cs` — per-player limit via `PlayerRateLimitManager` (key `TTS`).
+- `TTSSystem.Filter.cs` — **Respiral-specific**, reusable public API for playing TTS to an
+  arbitrary `Filter` (announcements, radio, any group broadcast), independent of the
+  per-entity say/whisper path. Two overloads:
+  `PlayTTS(string text, ProtoId<TTSVoicePrototype> voiceId, Filter filter, NetEntity? sourceUid = null, bool isWhisper = false)`
+  and a lower-level one taking a raw Silero `speaker` string. Generates audio via the shared
+  `GenerateTTS`, then `RaiseNetworkEvent(new PlayTTSEvent(soundData, sourceUid, isWhisper), filter)`.
+  `sourceUid` set → client plays positional (anchored to the entity); null → global
+  (`_audio.PlayGlobal`). No rate limit / no `MaxMessageChars` cap (server-initiated, caller's
+  responsibility). No-op when `tts.enabled` is false. Callers: `HandleSay`/`HandleWhisper`
+  in `TTSSystem.cs` now use it; also available for future announcement/radio voicing.
+  Ported *idea* from the DeadSpace fork
+  (`dead-space-14 Content.Server/Corvax/TTS/TTSSystem.cs` `HandleAnnounce/HandleRadio`) but
+  written fresh: DeadSpace's version is coupled to a `LanguageSystem`/lexicon + `RadioSpokeEvent`/
+  `AnnounceSpokeEvent`/`EntitySpokeToEntityEvent`, **none of which exist in this fork**.
 - `TTSVoiceAssignSystem.cs` — **Respiral-specific**, replaces the lobby voice picker:
   assigns a random `ttsVoice` matching the entity's `Sex` on `PlayerSpawnCompleteEvent`
   (players, uses `ev.Profile.Sex`) and `TTSComponent MapInit` (humanoid NPCs, uses
@@ -96,6 +114,38 @@ bound to `127.0.0.1:${TTS_HOST_PORT}`.
 - The live game server does NOT yet run the game-side TTS build — enabling in-game
   requires publishing the `ss14-respiral` changes (commit → GitHub Actions Publish → CDN →
   watchdog update) and setting the `tts.*` cvars in the instance `config.toml`.
+
+## Live server status — verified 2026-09-01
+
+The full pipeline is live end-to-end on the home server:
+
+- **Build deployed**: Publish → CDN → watchdog Manifest update pulled the TTS build.
+  Instance `bin/` (updated 2026-09-01 08:54) contains `Resources/Prototypes/_Corvax/TTS/
+  voices.yml` and the TTS types in `Content.Server.dll` / `Content.Shared.dll`. Game server
+  runs engine build `282.0.0.0`.
+- **TTS enabled in game config**: appended `[tts]` to
+  `/opt/ss14-watchdog/instances/main/config.toml` (owned by `ss14`; edit needs `sudo` as
+  `ivan`). A `.bak.<ts>` backup is left beside it. Values:
+  ```toml
+  [tts]
+  enabled = true
+  api_url = "http://127.0.0.1:5001/tts"
+  api_token = "respiral-tts"
+  ```
+- **Service is tokenless**: `/home/ivan/TTS/.env` sets only `TTS_HOST_PORT=5001` (no
+  `TTS_API_TOKEN`), so the service does NOT validate the token — the `api_token` above is a
+  placeholder and any value works. Service binds `127.0.0.1:5001` only. To harden later, set
+  `TTS_API_TOKEN` in `.env`, `docker compose up -d` (recreate), and match `api_token` in
+  `config.toml`.
+- **Restart**: game server restarted via watchdog REST API
+  `POST http://127.0.0.1:5000/instances/main/restart`, **HTTP Basic** auth
+  username=`main` (instance key) / password=`<instance ApiToken>`. Came back clean, round
+  incremented, no `unknown cvar` warning for `tts.*` (cvars recognized), no startup errors.
+- **Not verifiable server-side**: actual in-game voice playback needs a connected player;
+  the whole server path (valid config, accepted cvars, reachable service) is confirmed.
+- **Access**: SSH to home is via VPS `85.198.69.124` (root/pw) as jump host →
+  `ivan@10.8.0.2` (WireGuard) with key `HOST/secrets/id_nox_admin`. `ivan` is in `sudo` but
+  NOT in the `docker` group (docker needs `sudo`).
 
 ## Known limitations / deferred (Phase 2, NOT implemented)
 
