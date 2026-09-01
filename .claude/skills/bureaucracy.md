@@ -79,6 +79,11 @@ layers:
 
 Stamp states must be in the **paper's** RSI (not the stamp's), because `PaperVisualizerSystem` changes the state of the `PaperVisualLayers.Stamp` layer.
 
+## Faxable
+
+`MedievalPaper` carries `FaxableObject` so it can be inserted into / sent through a
+`MedievalTeleportTable` (the reskinned fax). See [[round_goal]].
+
 ## Folders (Storage)
 
 Folders inherit `BoxBase` (grid storage), filter by the `Document` tag. Medieval folders are single-piece sprites (not colormap + base like the originals).

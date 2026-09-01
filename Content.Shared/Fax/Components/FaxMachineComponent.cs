@@ -119,7 +119,9 @@ public sealed partial class FaxMachineComponent : Component
     /// <summary>
     /// How long the printing animation will play
     /// </summary>
-    [ViewVariables]
+    // Respiral - сделано [DataField], чтобы стол телепортации мог синхронизировать
+    // длительность анимации со звуком прибытия
+    [DataField]
     public float PrintingTime = 2.3f;
 
     /// <summary>

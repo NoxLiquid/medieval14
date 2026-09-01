@@ -1,0 +1,68 @@
+# Respiral - стол телепортации (средневековый аналог факса капитана)
+
+- type: entity
+  id: MedievalTeleportTable
+  parent: MedievalBaseMachine
+  name: стол телепортации
+  description: Магический стол, на который из дальних земель переносятся запечатанные послания.
+  suffix: Средневековье
+  components:
+  - type: MedievalPhysicalPriced
+  - type: Appearance
+  - type: Sprite
+    sprite: _Respiral/Structures/Machines/teleport_table.rsi
+    drawdepth: SmallObjects
+    layers:
+    - state: icon
+      map: [ "enum.FaxMachineVisuals.VisualState" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.FaxMachineVisuals.VisualState:
+        enum.FaxMachineVisuals.VisualState:
+          Printing: { state: teleporting }
+          Normal: { state: icon }
+  - type: ActivatableUI
+    key: enum.FaxUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.FaxUiKey.Key:
+        type: FaxBoundUi
+  - type: FaxMachine
+    name: стол телепортации
+    printPaperId: MedievalPaper
+    printingTime: 2.16
+    printSound:
+      path: /Audio/Effects/teleport_arrival.ogg
+    sendSound:
+      path: /Audio/Effects/teleport_departure.ogg
+    paperSlot:
+      insertSound: /Audio/Effects/teleport_departure.ogg
+      ejectSound: /Audio/Machines/tray_eject.ogg
+      whitelist:
+        components:
+          - FaxableObject
+      blacklist:
+        components:
+          - CargoSlip
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      Paper: !type:ContainerSlot
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: Fax
+    transmitFrequencyId: Fax
+  - type: Transform
+    anchored: true
+  - type: Pullable
+
+# Стол в палате Виконта: на него приходит свиток с целью раунда
+- type: entity
+  id: MedievalTeleportTableViscount
+  parent: MedievalTeleportTable
+  suffix: Средневековье, цель раунда
+  components:
+  - type: FaxMachine
+    name: стол телепортации Виконта
+    printPaperId: MedievalPaper
+  - type: MedievalRoundGoalReceiver

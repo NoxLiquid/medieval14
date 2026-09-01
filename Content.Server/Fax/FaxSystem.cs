@@ -90,10 +90,11 @@ public sealed partial class FaxSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<FaxMachineComponent, ApcPowerReceiverComponent>();
-        while (query.MoveNext(out var uid, out var fax, out var receiver))
+        // Respiral - средневековый стол телепортации работает без энергии
+        var query = EntityQueryEnumerator<FaxMachineComponent>();
+        while (query.MoveNext(out var uid, out var fax))
         {
-            if (!receiver.Powered)
+            if (TryComp<ApcPowerReceiverComponent>(uid, out var receiver) && !receiver.Powered)
                 continue;
 
             ProcessPrintingAnimation(uid, frameTime, fax);

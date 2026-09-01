@@ -87,6 +87,12 @@ Namertvo — cannot extend an upstream static class or component from another as
   See `identity.md`.
 - **Chat** (1): `Content.Server/Chat/Systems/ChatSystem.cs` — `SendMessageToOne` is an `override`
   of the abstract base → can only live in the class.
+- **Fax** (2): `Content.Server/Fax/FaxSystem.cs` `Update()` — query relaxed from
+  `<FaxMachineComponent, ApcPowerReceiverComponent>` to `<FaxMachineComponent>` with a
+  conditional `TryComp<ApcPowerReceiverComponent>` power check, so the powerless medieval
+  `MedievalTeleportTable` animates/prints. `Content.Shared/Fax/Components/FaxMachineComponent.cs` —
+  `PrintingTime` changed from `[ViewVariables]` to `[DataField]` so the teleport table can set
+  `printingTime` to the arrival-sound length. See `round_goal.md`.
 - **Pricing** (2): `Content.Server/Cargo/Systems/PricingSystem.cs`, `Armor/ArmorSystem.cs`
   (branch on `PhysicalComposition` / `MedievalPhysicalPricedComponent`). See `economy.md`.
 - **UI / misc** (7): `Content.Client/Items/Systems/ItemSystem.cs` (HeldPrefix),

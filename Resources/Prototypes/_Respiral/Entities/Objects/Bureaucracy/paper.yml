@@ -34,6 +34,7 @@
       visible: false
   - type: Paper
   - type: PaperLabelType
+  - type: FaxableObject
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
     requiresComplex: false

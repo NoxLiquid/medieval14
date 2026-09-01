@@ -1,0 +1,33 @@
+# Respiral - цели раунда, приходящие свитком на стол телепортации Виконта
+
+- type: medievalRoundGoal
+  id: MedievalRoundGoalShrine
+  text: medieval-round-goal-shrine
+
+- type: medievalRoundGoal
+  id: MedievalRoundGoalHarvest
+  text: medieval-round-goal-harvest
+
+- type: medievalRoundGoal
+  id: MedievalRoundGoalPalisade
+  text: medieval-round-goal-palisade
+
+- type: medievalRoundGoal
+  id: MedievalRoundGoalForge
+  text: medieval-round-goal-forge
+
+- type: medievalRoundGoal
+  id: MedievalRoundGoalPlague
+  text: medieval-round-goal-plague
+
+- type: medievalRoundGoal
+  id: MedievalRoundGoalPilgrims
+  text: medieval-round-goal-pilgrims
+
+- type: medievalRoundGoal
+  id: MedievalRoundGoalTribute
+  text: medieval-round-goal-tribute
+
+- type: medievalRoundGoal
+  id: MedievalRoundGoalUndead
+  text: medieval-round-goal-undead
