@@ -19,6 +19,13 @@ public sealed partial class TTSVoicePrototype : IPrototype
     [DataField("speaker", required: true)]
     public string Speaker { get; private set; } = string.Empty;
 
+    // Respiral: SSML-prosody поверх спикера — даёт разные голоса из одной модели
+    [DataField("pitch")]
+    public string Pitch { get; private set; } = string.Empty;
+
+    [DataField("rate")]
+    public string Rate { get; private set; } = string.Empty;
+
     [DataField("roundStart")]
     public bool RoundStart { get; private set; } = true;
 }

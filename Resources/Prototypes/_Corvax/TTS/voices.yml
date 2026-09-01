@@ -27,3 +27,108 @@
   name: tts-voice-xenia
   sex: Female
   speaker: xenia
+
+# Respiral: prosody-варианты тех же 5 спикеров
+
+- type: ttsVoice
+  id: AidarLow
+  name: tts-voice-aidar-low
+  sex: Male
+  speaker: aidar
+  pitch: low
+
+- type: ttsVoice
+  id: AidarHigh
+  name: tts-voice-aidar-high
+  sex: Male
+  speaker: aidar
+  pitch: high
+
+- type: ttsVoice
+  id: EugeneLow
+  name: tts-voice-eugene-low
+  sex: Male
+  speaker: eugene
+  pitch: low
+
+- type: ttsVoice
+  id: EugeneHigh
+  name: tts-voice-eugene-high
+  sex: Male
+  speaker: eugene
+  pitch: high
+
+- type: ttsVoice
+  id: EugeneSlow
+  name: tts-voice-eugene-slow
+  sex: Male
+  speaker: eugene
+  pitch: low
+  rate: slow
+
+- type: ttsVoice
+  id: KseniyaLow
+  name: tts-voice-kseniya-low
+  sex: Female
+  speaker: kseniya
+  pitch: low
+
+- type: ttsVoice
+  id: KseniyaHigh
+  name: tts-voice-kseniya-high
+  sex: Female
+  speaker: kseniya
+  pitch: high
+
+- type: ttsVoice
+  id: BayaLow
+  name: tts-voice-baya-low
+  sex: Female
+  speaker: baya
+  pitch: low
+
+- type: ttsVoice
+  id: BayaHigh
+  name: tts-voice-baya-high
+  sex: Female
+  speaker: baya
+  pitch: high
+
+- type: ttsVoice
+  id: XeniaHigh
+  name: tts-voice-xenia-high
+  sex: Female
+  speaker: xenia
+  pitch: high
+
+- type: ttsVoice
+  id: XeniaSlow
+  name: tts-voice-xenia-slow
+  sex: Female
+  speaker: xenia
+  rate: slow
+
+# Respiral: голоса движка Piper
+- type: ttsVoice
+  id: Irina
+  name: tts-voice-irina
+  sex: Female
+  speaker: irina
+
+- type: ttsVoice
+  id: Denis
+  name: tts-voice-denis
+  sex: Male
+  speaker: denis
+
+- type: ttsVoice
+  id: Dmitri
+  name: tts-voice-dmitri
+  sex: Male
+  speaker: dmitri
+
+- type: ttsVoice
+  id: Ruslan
+  name: tts-voice-ruslan
+  sex: Male
+  speaker: ruslan

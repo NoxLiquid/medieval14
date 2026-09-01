@@ -7,9 +7,14 @@ upstream Corvax reference.
 
 ## Two halves
 
-1. **External synth service** — lives OUTSIDE this repo at `D:\TTS` (Dockerized FastAPI +
-   Silero `v4_ru`, CPU-only). Speaks the Corvax HTTP/JSON protocol. Not part of the game
-   build. See that repo's `README.md`.
+1. **External synth service** — lives OUTSIDE this repo (`NoxLiquid/TTS`, Dockerized FastAPI,
+   CPU-only). **Multi-engine** (`app/registry.py` routes by `speaker`): **Silero** `v4_ru`
+   (5 speakers + `random`, supports SSML prosody) **+ Piper** (Russian voices `irina`,`denis`,
+   `dmitri`,`ruslan` — separate ONNX models, distinct timbres, **no SSML** — the service
+   strips tags). Unknown speaker → default (`eugene`/Silero). Both engines load in every
+   worker (Piper voices lazy-load on first use). Speaks the Corvax HTTP/JSON protocol
+   unchanged. See that repo's `README.md`. Adding Piper needed **no game-code change** — only
+   new `ttsVoice` prototypes whose `speaker` is a Piper voice id.
 2. **Game integration** — this document. Sends chat text to the service over HTTP and plays
    the returned OGG in-world.
 
@@ -97,8 +102,24 @@ to an in-memory `MemoryContentRoot` under `/TTS`, plays via `AudioSystem`
 (entity-positional or global for preview). Volume from `tts.volume`.
 
 Resources:
-- `Prototypes/_Corvax/TTS/voices.yml` — 5 Silero `v4_ru` voices: `Aidar`/`Eugene` (Male),
-  `Kseniya`/`Baya`/`Xenia` (Female). Add more only if the service's model exposes them.
+- `Prototypes/_Corvax/TTS/voices.yml` — 16 voices over the model's **5 real Silero `v4_ru`
+  speakers** (`aidar`,`baya`,`kseniya`,`xenia`,`eugene` — the model exposes only these +
+  `random`, all used). The extra 11 are **prosody variants**: same speaker with SSML
+  `pitch`/`rate` (`low`/`high`, `slow`) → distinct-sounding voices from one already-loaded
+  model, so **zero extra service load** (synth cost is per-phrase, unaffected by voice count).
+  Only a NEW model would add RAM (~300–500 MB/worker); Silero ru models all share the same 5
+  speakers, so prosody variants are the only no-load way to expand the roster.
+- **Piper voices** (4): `Irina` (Female), `Denis`/`Dmitri`/`Ruslan` (Male) — `speaker` = the
+  Piper voice id, no `pitch`/`rate` (Piper ignores SSML). Total voices.yml = **20** (5 Silero
+  base + 11 Silero prosody variants + 4 Piper). Reach the live game only after a Publish; the
+  service already serves them (verified: valid OggS for Silero + Piper).
+- **Per-voice prosody** (Silero only): `TTSVoicePrototype` has `pitch`/`rate` datafields (empty = default).
+  Threaded speaker→`ToSsmlText(text, pitch, rate, isWhisper)` in `TTSSystem.SSML.cs` (replaces
+  the old `SoundTraits` enum): non-whisper defaults `rate=fast`; whisper forces `pitch=x-low`.
+  `GenerateTTS(text, speaker, pitch, rate, isWhisper)` and both `PlayTTS` overloads carry
+  pitch/rate; `HandleSay`/`HandleWhisper` take the resolved `TTSVoicePrototype`. Verified live:
+  Silero honours the prosody (distinct audio; invalid values degrade via the service's
+  strip-tags fallback).
 - `Locale/{en-US,ru-RU}/_corvax/tts.ftl` — `tts-rate-limited` + voice names.
 
 ## Upstream hooks (marked `// Respiral-Start Corvax-TTS` … `// Respiral-End`)

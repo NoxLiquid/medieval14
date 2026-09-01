@@ -68,7 +68,7 @@ public sealed partial class TTSSystem : EntitySystem
             return;
 
         var previewText = _rng.Pick(_sampleText);
-        var soundData = await GenerateTTS(previewText, protoVoice.Speaker);
+        var soundData = await GenerateTTS(previewText, protoVoice.Speaker, protoVoice.Pitch, protoVoice.Rate);
         if (soundData is null)
             return;
 
@@ -92,20 +92,20 @@ public sealed partial class TTSSystem : EntitySystem
 
         if (args.ObfuscatedMessage != null)
         {
-            HandleWhisper(uid, args.Message, args.ObfuscatedMessage, protoVoice.Speaker);
+            HandleWhisper(uid, args.Message, args.ObfuscatedMessage, protoVoice);
             return;
         }
 
-        HandleSay(uid, args.Message, protoVoice.Speaker);
+        HandleSay(uid, args.Message, protoVoice);
     }
 
-    private async void HandleSay(EntityUid uid, string message, string speaker)
+    private async void HandleSay(EntityUid uid, string message, TTSVoicePrototype voice)
     {
         // обычная речь: всем в PVS, позиционно от говорящего
-        await PlayTTS(message, speaker, Filter.Pvs(uid), GetNetEntity(uid));
+        await PlayTTS(message, voice.Speaker, Filter.Pvs(uid), GetNetEntity(uid), pitch: voice.Pitch, rate: voice.Rate);
     }
 
-    private async void HandleWhisper(EntityUid uid, string message, string obfMessage, string speaker)
+    private async void HandleWhisper(EntityUid uid, string message, string obfMessage, TTSVoicePrototype voice)
     {
         // делим слушателей по дистанции: близкие слышат чётко, дальние приглушённо
         var source = GetNetEntity(uid);
@@ -130,23 +130,20 @@ public sealed partial class TTSSystem : EntitySystem
 
         // если есть кому слушать
         if (clear.Count > 0)
-            await PlayTTS(message, speaker, clear, source, isWhisper: true);
+            await PlayTTS(message, voice.Speaker, clear, source, isWhisper: true, pitch: voice.Pitch, rate: voice.Rate);
 
         if (muffled.Count > 0)
-            await PlayTTS(obfMessage, speaker, muffled, source, isWhisper: true);
+            await PlayTTS(obfMessage, voice.Speaker, muffled, source, isWhisper: true, pitch: voice.Pitch, rate: voice.Rate);
     }
 
-    private async Task<byte[]?> GenerateTTS(string text, string speaker, bool isWhisper = false)
+    private async Task<byte[]?> GenerateTTS(string text, string speaker, string pitch = "", string rate = "", bool isWhisper = false)
     {
         var textSanitized = Sanitize(text);
         if (textSanitized == "") return null;
         if (char.IsLetter(textSanitized[^1]))
             textSanitized += ".";
 
-        var ssmlTraits = SoundTraits.RateFast;
-        if (isWhisper)
-            ssmlTraits = SoundTraits.PitchVerylow;
-        var textSsml = ToSsmlText(textSanitized, ssmlTraits);
+        var textSsml = ToSsmlText(textSanitized, pitch, rate, isWhisper);
 
         return await _ttsManager.ConvertTextToSpeech(speaker, textSsml);
     }

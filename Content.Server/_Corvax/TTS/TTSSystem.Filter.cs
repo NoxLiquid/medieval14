@@ -25,23 +25,25 @@ public sealed partial class TTSSystem
         if (!_prototypeManager.TryIndex(voiceId, out var protoVoice))
             return;
 
-        await PlayTTS(text, protoVoice.Speaker, filter, sourceUid, isWhisper);
+        await PlayTTS(text, protoVoice.Speaker, filter, sourceUid, isWhisper, protoVoice.Pitch, protoVoice.Rate);
     }
 
     /// <summary>
-    ///     Низкоуровневый вариант: принимает id спикера Silero напрямую.
+    ///     Низкоуровневый вариант: принимает id спикера Silero и prosody напрямую.
     /// </summary>
     public async Task PlayTTS(
         string text,
         string speaker,
         Filter filter,
         NetEntity? sourceUid = null,
-        bool isWhisper = false)
+        bool isWhisper = false,
+        string pitch = "",
+        string rate = "")
     {
         if (!_isEnabled)
             return;
 
-        var soundData = await GenerateTTS(text, speaker, isWhisper);
+        var soundData = await GenerateTTS(text, speaker, pitch, rate, isWhisper);
         if (soundData is null)
             return;
 

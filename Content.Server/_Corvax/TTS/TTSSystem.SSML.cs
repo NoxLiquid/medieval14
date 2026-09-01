@@ -2,21 +2,17 @@ namespace Content.Server._Corvax.TTS;
 
 public sealed partial class TTSSystem
 {
-    private string ToSsmlText(string text, SoundTraits traits = SoundTraits.None)
+    // Respiral: собираем SSML с per-voice pitch/rate. Шёпот принудительно понижает тон.
+    private string ToSsmlText(string text, string pitch, string rate, bool isWhisper)
     {
-        var result = text;
-        if (traits.HasFlag(SoundTraits.RateFast))
-            result = $"<prosody rate=\"fast\">{result}</prosody>";
-        if (traits.HasFlag(SoundTraits.PitchVerylow))
-            result = $"<prosody pitch=\"x-low\">{result}</prosody>";
-        return $"<speak>{result}</speak>";
-    }
+        var p = isWhisper ? "x-low" : pitch;                         // шёпот — низкий тон поверх голоса
+        var r = isWhisper ? rate : (string.IsNullOrEmpty(rate) ? "fast" : rate); // обычная речь — быстрее по умолчанию
 
-    [Flags]
-    private enum SoundTraits : ushort
-    {
-        None = 0,
-        RateFast = 1 << 0,
-        PitchVerylow = 1 << 1,
+        var result = text;
+        if (!string.IsNullOrEmpty(r))
+            result = $"<prosody rate=\"{r}\">{result}</prosody>";
+        if (!string.IsNullOrEmpty(p))
+            result = $"<prosody pitch=\"{p}\">{result}</prosody>";
+        return $"<speak>{result}</speak>";
     }
 }
