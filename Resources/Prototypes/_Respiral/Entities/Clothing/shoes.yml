@@ -1,7 +1,7 @@
 # Medieval shoes-slot clothing prototypes generated from _Respiral/Clothing/Shoes/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesBoots
   suffix: Средневековье
   name: сапоги
@@ -11,9 +11,6 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable
@@ -23,7 +20,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesHighBoots
   suffix: Средневековье
   name: ботфорты
@@ -33,9 +30,6 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/high_boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable
@@ -45,7 +39,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesRichBoots
   suffix: Средневековье
   name: расшитые сапоги
@@ -55,9 +49,6 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/rich_boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -67,7 +58,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorIronHeadOrLegs ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesArmoredBoots
   suffix: Средневековье
   name: бронированные сапоги
@@ -77,9 +68,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/armored_boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalIron
   - type: Injurable
@@ -89,7 +81,7 @@
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorSteelHeadOrLegs ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesHeavyArmoredBoots
   suffix: Средневековье
   name: тяжёлые бронированные сапоги
@@ -99,9 +91,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Shoes/heavy_armored_boots.rsi
-    clothingVisuals:
-      shoes-Female:
-      - state: equipped-FEET-female
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable

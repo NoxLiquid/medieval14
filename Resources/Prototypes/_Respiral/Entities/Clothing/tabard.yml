@@ -1,0 +1,18 @@
+# Табарды — накидки с гербом дома, крепятся поверх брони (см. .claude/skills/tabard.md).
+- type: entity
+  parent: MedievalBaseClothing
+  id: MedievalTabardCrowKingdom
+  suffix: Средневековье
+  name: табард Королевства ворона
+  description: Полотняная накидка с гербом Королевства ворона. Крепится поверх брони как знак дома.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Tabards/crow_faction.rsi
+    state: icon
+  - type: MedievalTabard
+    rsi: _Respiral/Clothing/Tabards/crow_faction.rsi
+    house: HouseSealCrown
+    affiliation: medieval-tabard-affiliation-crow
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100

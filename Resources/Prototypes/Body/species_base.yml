@@ -170,6 +170,9 @@
   id: BaseSpeciesMobOrganic
   save: false
   components:
+  # Respiral-Start Corvax-TTS
+  - type: TTS
+  # Respiral-End
   - type: Hunger
   - type: Thirst
   - type: Barotrauma

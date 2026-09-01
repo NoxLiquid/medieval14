@@ -1,7 +1,7 @@
 # Medieval gloves-slot clothing prototypes generated from _Respiral/Clothing/Hands/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseGloves, MedievalArmorClothOther ]
+  parent: [ MedievalBaseGloves, MedievalArmorMaterial ]
   id: MedievalClothingHandsSmithGloves
   suffix: Средневековье
   name: перчатки ремесленника
@@ -20,7 +20,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseGloves, MedievalArmorSteelHeadOrLegs ]
+  parent: [ MedievalBaseGloves, MedievalArmorMaterial ]
   id: MedievalClothingHandsHeavyArmored
   suffix: Средневековье
   name: тяжёлые бронированные перчатки
@@ -30,6 +30,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Hands/heavy_armored.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalSteel
   - type: Injurable

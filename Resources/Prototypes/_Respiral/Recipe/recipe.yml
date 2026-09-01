@@ -1531,6 +1531,20 @@
 
 - type: latheRecipe
   parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingHeadHoodChainmailRecipe
+  result: MedievalClothingHeadHoodChainmail
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingHeadHoodChainmailClosedRecipe
+  result: MedievalClothingHeadHoodChainmailClosed
+  materials:
+    MedievalProcessedIron: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
   id: MedievalClothingMaskGlassesRecipe
   result: MedievalClothingMaskGlasses
   materials:
@@ -1545,6 +1559,13 @@
 
 - type: latheRecipe
   parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingLegsChainmailRecipe
+  result: MedievalClothingLegsChainmail
+  materials:
+    MedievalProcessedIron: 150
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
   id: MedievalClothingShoesHeavyArmoredBootsRecipe
   result: MedievalClothingShoesHeavyArmoredBoots
   materials:
@@ -1556,6 +1577,46 @@
   result: MedievalClothingHandsHeavyArmored
   materials:
     MedievalSteel: 100
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorQuiltedGambesonRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Understanding
+  result: MedievalClothingOuterArmorQuiltedGambeson
+  materials:
+    MedievalCloth: 200
+    MedievalProcessedPelt: 50
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorLeatherJacketRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Confident
+  result: MedievalClothingOuterArmorLeatherJacket
+  materials:
+    MedievalProcessedPelt: 150
+    MedievalCloth: 50
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorPlateRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Deep
+  result: MedievalClothingOuterArmorPlate
+  materials:
+    MedievalSteel: 150
+    MedievalProcessedPelt: 50
+
+- type: latheRecipe
+  parent: MedievalBaseMetalClothingRecipe
+  id: MedievalClothingOuterArmorPlateLeatherRecipe
+  neededSkills:
+    MedievalBasicBlacksmithing: Mastery
+  result: MedievalClothingOuterArmorPlateLeather
+  materials:
+    MedievalSteel: 150
+    MedievalProcessedPelt: 100
 
 # Плавильня
 
@@ -1640,12 +1701,174 @@
 
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
-  id: MedievalClothingInnerLongTunicRecipe
+  id: MedievalClothingOuterRoyalCassockRecipe
   neededSkills:
     MedievalTailor: Mastery
-  result: MedievalClothingInnerLongTunic
+  result: MedievalClothingOuterRoyalCassock
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalDressRedRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalDressRed
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalDressBlackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalDressBlack
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalDressVioletRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalDressViolet
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalCoatRedRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalCoatRed
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalCoatBlackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalCoatBlack
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalCoatVioletRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalCoatViolet
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalDressRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalDress
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterRoyalCoatRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingOuterRoyalCoat
+  materials:
+    MedievalCloth: 200
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerRoyalShirtRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingInnerRoyalShirt
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerRoyalShirtRedRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingInnerRoyalShirtRed
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerRoyalShirtBlackRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingInnerRoyalShirtBlack
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingInnerRoyalShirtVioletRecipe
+  neededSkills:
+    MedievalTailor: Mastery
+  result: MedievalClothingInnerRoyalShirtViolet
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterDressEmeraldRecipe
+  neededSkills:
+    MedievalTailor: Confident
+  result: MedievalClothingOuterDressEmerald
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterDressSapphireRecipe
+  neededSkills:
+    MedievalTailor: Confident
+  result: MedievalClothingOuterDressSapphire
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterDressScarletRecipe
+  neededSkills:
+    MedievalTailor: Confident
+  result: MedievalClothingOuterDressScarlet
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterDressGrayRecipe
+  neededSkills:
+    MedievalTailor: Confident
+  result: MedievalClothingOuterDressGray
   materials:
     MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterDressPinkRecipe
+  neededSkills:
+    MedievalTailor: Confident
+  result: MedievalClothingOuterDressPink
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingOuterDressOrangeRecipe
+  neededSkills:
+    MedievalTailor: Confident
+  result: MedievalClothingOuterDressOrange
+  materials:
+    MedievalCloth: 150
 
 - type: latheRecipe
   parent: MedievalBaseTailorClothingRecipe
@@ -1716,6 +1939,87 @@
   neededSkills:
     MedievalTailor: Mastery
   result: MedievalClothingHeadFeatherHat
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodClothRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodCloth
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuilted
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedClosedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedClosed
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedRedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedRed
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedBrownRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedBrown
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedGreyRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedGrey
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedClosedRedRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedClosedRed
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedClosedBrownRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedClosedBrown
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingHeadHoodQuiltedClosedGreyRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingHeadHoodQuiltedClosedGrey
   materials:
     MedievalCloth: 100
 

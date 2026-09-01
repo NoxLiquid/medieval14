@@ -17,9 +17,17 @@
 - type: startingGear
   id: MedievalLordGear
   equipment:
-    jumpsuit: MedievalClothingInnerEliteManjete
-    neck: MedievalClothingNeckLordCape
-    head: MedievalClothingHeadCrown
+    neck: MedievalClothingNeckMantleViolet
+    shoes: MedievalClothingShoesRichBoots
+    pants: MedievalClothingLegsGuardPantsViolet
+    jumpsuit: MedievalClothingInnerRoyalShirtViolet
+    belt: MedievalClothingBeltSilver
+
+- type: startingGear
+  id: MedievalLordGearNPC
+  parent: MedievalLordGear
+  equipment:
+    outerClothing: MedievalClothingOuterRoyalCoatViolet
 
 - type: job
   id: MedievalKnight
@@ -40,8 +48,13 @@
 - type: startingGear
   id: MedievalKnightGear
   equipment:
-    jumpsuit: MedievalClothingInnerEliteMetal
-    head: MedievalClothingHeadHelmet
+    head: MedievalClothingHeadHeavyHelmet
+    jumpsuit: MedievalClothingInnerRoyalShirt
+    outerClothing: MedievalClothingOuterArmorIronChainmailCrow
+    pants: MedievalClothingLegsChainmail
+    gloves: MedievalClothingHandsHeavyArmored
+    shoes: MedievalClothingShoesArmoredBoots
+    belt: MedievalClothingBeltLeather
 
 - type: job
   id: MedievalCitySteward
@@ -62,9 +75,12 @@
 - type: startingGear
   id: MedievalCityStewardGear
   equipment:
-    jumpsuit: MedievalClothingInnerEliteCloth
     head: MedievalClothingHeadFeatherHat
+    jumpsuit: MedievalClothingInnerRoyalShirtBlack
+    outerClothing: MedievalClothingOuterRoyalCoatBlack
     pants: MedievalClothingLegsLeather
+    shoes: MedievalClothingShoesHighBoots
+    belt: MedievalClothingBeltLeatherBlack
 
 - type: job
   id: MedievalTreasurer
@@ -85,5 +101,8 @@
 - type: startingGear
   id: MedievalTreasurerGear
   equipment:
-    jumpsuit: MedievalClothingInnerEliteHalf
+    jumpsuit: MedievalClothingInnerRoyalShirtRed
+    outerClothing: MedievalClothingOuterRoyalCoatRed
     pants: MedievalClothingLegsLeather
+    shoes: MedievalClothingShoesRichBoots
+    belt: MedievalClothingBeltGold

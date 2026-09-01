@@ -16,10 +16,15 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 24
-        Heat: 12
+        Slash: 23.99
+        Heat: 12.01
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 13.71
+        Heat: 6.86
   - type: PointLight
     color: "#E25822"
     radius: 2.5
@@ -61,10 +66,15 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 24
-        Cold: 12
+        Slash: 23.99
+        Cold: 12.01
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Slash: 13.71
+        Cold: 6.86
   - type: PointLight
     color: "#47F8FF"
     radius: 2.5

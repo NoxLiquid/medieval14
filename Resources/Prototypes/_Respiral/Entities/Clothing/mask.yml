@@ -1,7 +1,7 @@
 # Medieval mask-slot clothing prototypes generated from _Respiral/Clothing/Mask/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseMask, MedievalArmorClothOther ]
+  parent: [ MedievalBaseMask, MedievalArmorMaterial ]
   id: MedievalClothingMaskExecutioner
   suffix: Средневековье
   name: колпак палача
@@ -14,6 +14,10 @@
   # Respiral - колпак палача полностью скрывает лицо: окружающие не узнают носителя в лицо
   - type: IdentityBlocker
     coverage: FULL
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -23,7 +27,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseMask, MedievalArmorSilverOther ]
+  parent: [ MedievalBaseMask, MedievalArmorMaterial ]
   id: MedievalClothingMaskGlasses
   suffix: Средневековье
   name: очки
@@ -33,6 +37,10 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Mask/glasses.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalSilver
   - type: Injurable
@@ -42,7 +50,7 @@
       MedievalProcessedSilver: 100
 
 - type: entity
-  parent: [ MedievalBaseMask, MedievalArmorClothOther ]
+  parent: [ MedievalBaseMask, MedievalArmorMaterial ]
   id: MedievalClothingMaskPlagueDoctor
   suffix: Средневековье
   name: маска чумного доктора
@@ -55,6 +63,10 @@
   # Respiral - маска чумного доктора полностью скрывает лицо: окружающие не узнают носителя в лицо
   - type: IdentityBlocker
     coverage: FULL
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable

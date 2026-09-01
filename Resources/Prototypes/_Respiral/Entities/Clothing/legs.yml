@@ -1,7 +1,7 @@
 # Medieval legs-slot (pants) clothing prototypes generated from _Respiral/Clothing/Legs/*.rsi
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorIronHeadOrLegs ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsArmored
   suffix: Средневековье
   name: укреплённые штаны
@@ -20,7 +20,31 @@
       MedievalProcessedIron: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
+  id: MedievalClothingLegsChainmail
+  suffix: Средневековье
+  name: кольчужные штаны
+  description: Штаны из плотно сплетённых железных колец, прикрывающие ноги от порезов.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/chainmail.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/chainmail.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Damageable
+    damageModifierSet: MedievalIron
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedIron: 150
+
+- type: entity
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsLeather
   suffix: Средневековье
   name: кожаные штаны
@@ -39,7 +63,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsSimple
   suffix: Средневековье
   name: простые штаны

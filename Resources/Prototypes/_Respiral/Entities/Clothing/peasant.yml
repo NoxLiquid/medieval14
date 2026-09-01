@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtBrown
   suffix: Средневековье
   name: коричневая рубаха
@@ -41,7 +41,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtLinen
   suffix: Средневековье
   name: небелёная рубаха
@@ -83,7 +83,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtOlive
   suffix: Средневековье
   name: оливковая рубаха
@@ -125,7 +125,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtBlue
   suffix: Средневековье
   name: серо-синяя рубаха
@@ -167,7 +167,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerPeasantShirtRusset
   suffix: Средневековье
   name: бордовая рубаха
@@ -209,7 +209,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsPeasantBrown
   suffix: Средневековье
   name: коричневые штаны
@@ -233,12 +233,6 @@
       pants:
       - state: equipped-LEGS
         color: "#5C4634"
-      pants-Male:
-      - state: equipped-LEGS
-        color: "#5C4634"
-      pants-Female:
-      - state: equipped-LEGS-female
-        color: "#5C4634"
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -248,7 +242,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsPeasantGrey
   suffix: Средневековье
   name: серые штаны
@@ -272,12 +266,6 @@
       pants:
       - state: equipped-LEGS
         color: "#55534D"
-      pants-Male:
-      - state: equipped-LEGS
-        color: "#55534D"
-      pants-Female:
-      - state: equipped-LEGS-female
-        color: "#55534D"
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -287,7 +275,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsPeasantOlive
   suffix: Средневековье
   name: тёмно-оливковые штаны
@@ -311,12 +299,6 @@
       pants:
       - state: equipped-LEGS
         color: "#5A5738"
-      pants-Male:
-      - state: equipped-LEGS
-        color: "#5A5738"
-      pants-Female:
-      - state: equipped-LEGS-female
-        color: "#5A5738"
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable
@@ -326,7 +308,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesPeasantBoots
   suffix: Средневековье
   name: кожаные башмаки
@@ -350,9 +332,6 @@
       shoes:
       - state: equipped-FEET
         color: "#5A3F28"
-      shoes-Male:
-      - state: equipped-FEET
-        color: "#5A3F28"
   - type: Damageable
     damageModifierSet: MedievalPelt
   - type: Injurable
@@ -362,7 +341,7 @@
       MedievalProcessedPelt: 100
 
 - type: entity
-  parent: [ MedievalBaseShoes, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseShoes, MedievalArmorMaterial ]
   id: MedievalClothingShoesPeasantBootsDark
   suffix: Средневековье
   name: тёмные башмаки
@@ -384,9 +363,6 @@
     sprite: _Respiral/Clothing/Shoes/peasant_boots.rsi
     clothingVisuals:
       shoes:
-      - state: equipped-FEET
-        color: "#3B2C1F"
-      shoes-Male:
       - state: equipped-FEET
         color: "#3B2C1F"
   - type: Damageable

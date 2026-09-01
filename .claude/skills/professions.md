@@ -22,9 +22,26 @@ Elder → Farmer/Peasant; authority → Refugee.
 
 ## Jobs = starting gear + starting skills (2026-08)
 
-Each `type: job` references a `startingGear` that grants clothing (mostly hood + leather pants).
-Spawners (`Roles/spawners.yml`) create `RandomHumanoidSpawner` + `Loadout` NPC variants of every
-job (suffix "Средневековье").
+Each `type: job` references a `startingGear` that grants clothing. Spawners (`Roles/spawners.yml`) create
+`RandomHumanoidSpawner` + `Loadout` NPC variants of every job (suffix "Спавнер, Средневековье").
+
+**Full starting outfits assigned (2026-08).** Every job now gets a complete themed outfit (jumpsuit + pants +
+shoes minimum, plus role items). Footwear slot key is **`shoes`** (not `feet`). Summary:
+- **Nobles** — Baron: royal shirt/pants/silver belt/rich boots + violet mantle + outerClothing loadout (coat/dress).
+  Knight: royal shirt + iron chainmail + armored legs/boots + heavy gloves + helmet + leather belt.
+  CitySteward: black royal shirt+coat, feather hat, high boots, black belt. Treasurer: red royal shirt+coat,
+  leather pants, rich boots, gold belt.
+- **Craftsman** — Blacksmith/Carpenter/Mason/Engineer: peasant shirt + smith gloves + **work coat (neck,
+  storage apron)** + hood + boots. Innkeeper: peasant shirt + **chef coat (neck)** + boots. Herbalist/Tailor: peasant
+  shirt + peasant boots (+ satchel / work coat). Citizen: plain peasant set. Merchant: trader hat + high boots
+  + red belt + satchel. Guard: **quilted gambeson (outerClothing)** + helmet + guard pants/mittens + boots +
+  black belt (jumpsuit gambeson via loadout, NPC via `MedievalGuardGearNPC`).
+- **Villager** — Elder: peasant set + charcoal shoulder mantle. Farmer/Forester: olive peasant set + rope belt
+  (+ satchel). Peasant: brown peasant set.
+- **Commoner** — Refugee: dedicated fragile `Inner/LegsRefugee*` items + dark peasant boots.
+
+Rule when assigning: keep each job's pre-existing signature item (hood/helmet/trader hat/gloves), fill the
+empty slots. The peasant-shirt/pants/boots colour variants give per-job variety from shared RSIs.
 
 **Starting skills** are granted on spawn via `special: - !type:AddComponentSpecial` adding
 `- type: Skill` (`SkillComponent`, `skills: { SkillId: progress }`). All at progress `1` (full
@@ -52,6 +69,29 @@ YAML-set values network to the client on spawn automatically.
 Files: `Roles/Jobs/{Craftsman/city,Nobles/nobles,Villager/village,Commoner/refugee}.yml`.
 NPC spawner variants don't get a `SkillComponent` (they use the job's gear loadout, not `special`),
 so NPCs still bypass skill gates by design.
+
+### Lord → Baron rename + full gear + outerClothing loadout (2026-08)
+
+**Display renamed `лорд` → `барон`** in `Locale/…/job/job.ftl` (`job-name-medieval-lord`,
+`job-supervisors-medieval-lord`, and the knight description's "Служите барону") and the NPC spawner
+`name:` in `spawners.yml`. **All prototype ids kept** (`MedievalLord`, `MedievalLordGear`,
+`job-name-medieval-lord`, `MedievalClothingNeckLordCape`, …) to avoid churn — only the RU strings changed.
+
+`MedievalLordGear` (player) now: neck `NeckMantleViolet` (the purple mantle — replaced the old
+`NeckLordCape`; crown `HeadCrown` **removed**), shoes `ShoesRichBoots`,
+pants `LegsGuardPantsViolet`, jumpsuit `InnerRoyalShirtViolet`, belt `BeltSilver`. **outerClothing is
+deliberately omitted** so the loadout can fill it (same rule as the guard gambeson — `EquipStartingGear`
+force-equip fails on an occupied slot; see [[clothing]] guard loadout note).
+
+**outerClothing = player loadout choice** (`Loadouts/lord.yml`): two `loadout` prototypes
+`MedievalLordOuter{CoatViolet,DressViolet}` → `loadoutGroup MedievalLordOuter` (name
+`loadout-group-medieval-lord-outer`, defaults MinLimit/MaxLimit 1 → mandatory single pick, first =
+coat) → `roleLoadout JobMedievalLord` (id = `"Job"`+jobId). Group loc in
+`Locale/…/loadouts/lord.ftl`.
+
+**NPC variant** `MedievalLordGearNPC` (`parent: MedievalLordGear`, adds `outerClothing:
+…RoyalCoatViolet`) — NPCs don't get loadouts, so the spawner `randomHumanoidSettings MedievalLord`
+points its `Loadout.prototypes` at the NPC gear (mirrors `MedievalGuardGearNPC`).
 
 ### Adding a new job — the 5 coordinated files (Tailor added 2026-08)
 

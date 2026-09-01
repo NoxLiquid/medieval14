@@ -41,16 +41,18 @@ public sealed partial class MedievalKeySystem : EntitySystem
                 return;
         }
 
-        if (component.UseSound != null)
-            component.Sound = _audio.PlayPvs(component.UseSound, Transform(target).Coordinates)?.Entity;
+        component.Sound = _audio.Stop(component.Sound);
 
-        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.UseDuration, new UseKeyDoAfterEvent(), uid, target: target, used: uid)
+        if (!_doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.UseDuration, new UseKeyDoAfterEvent(), uid, target: target, used: uid)
         {
             BreakOnDamage = true,
             BreakOnMove = true,
             DistanceThreshold = 2f
-        });
+        }))
+            return;
 
+        if (component.UseSound != null)
+            component.Sound = _audio.PlayPvs(component.UseSound, Transform(target).Coordinates)?.Entity;
     }
 
     private void OnDoAfter(EntityUid uid, MedievalKeyComponent component, UseKeyDoAfterEvent args)

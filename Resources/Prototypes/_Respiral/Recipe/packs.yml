@@ -234,10 +234,17 @@
   - MedievalClothingHeadCrownRecipe
   - MedievalClothingHeadHeavyHelmetRecipe
   - MedievalClothingHeadHelmetRecipe
+  - MedievalClothingHeadHoodChainmailRecipe
+  - MedievalClothingHeadHoodChainmailClosedRecipe
   - MedievalClothingMaskGlassesRecipe
   - MedievalClothingShoesArmoredBootsRecipe
+  - MedievalClothingLegsChainmailRecipe
   - MedievalClothingShoesHeavyArmoredBootsRecipe
   - MedievalClothingHandsHeavyArmoredRecipe
+  - MedievalClothingOuterArmorQuiltedGambesonRecipe
+  - MedievalClothingOuterArmorLeatherJacketRecipe
+  - MedievalClothingOuterArmorPlateRecipe
+  - MedievalClothingOuterArmorPlateLeatherRecipe
 
 - type: latheRecipePack
   id: MedievalAnvilCandel
@@ -283,7 +290,6 @@
   - MedievalWallpaperYellowRecipe
   - MedievalWallpaperBankRecipe
   - MedievalWallpaperBank2Recipe
-  - MedievalClothingInnerLongTunicRecipe
   - MedievalClothingInnerPeasantShirtBrownRecipe
   - MedievalClothingInnerPeasantShirtLinenRecipe
   - MedievalClothingInnerPeasantShirtOliveRecipe
@@ -295,9 +301,31 @@
   - MedievalClothingInnerGuardGambesonCheckeredRecipe
   - MedievalClothingInnerGuardGambesonStripedRecipe
   - MedievalClothingLegsGuardPantsRecipe
+  - MedievalClothingLegsGuardPantsRedRecipe
+  - MedievalClothingLegsGuardPantsBlackRecipe
+  - MedievalClothingLegsGuardPantsVioletRecipe
   - MedievalClothingHandsGuardMittensRecipe
   - MedievalClothingShoesPeasantBootsRecipe
   - MedievalClothingShoesPeasantBootsDarkRecipe
+  - MedievalClothingOuterRoyalCassockRecipe
+  - MedievalClothingOuterRoyalDressRecipe
+  - MedievalClothingOuterRoyalDressRedRecipe
+  - MedievalClothingOuterRoyalDressBlackRecipe
+  - MedievalClothingOuterRoyalDressVioletRecipe
+  - MedievalClothingOuterRoyalCoatRecipe
+  - MedievalClothingOuterRoyalCoatRedRecipe
+  - MedievalClothingOuterRoyalCoatBlackRecipe
+  - MedievalClothingOuterRoyalCoatVioletRecipe
+  - MedievalClothingInnerRoyalShirtRecipe
+  - MedievalClothingInnerRoyalShirtRedRecipe
+  - MedievalClothingInnerRoyalShirtBlackRecipe
+  - MedievalClothingInnerRoyalShirtVioletRecipe
+  - MedievalClothingOuterDressEmeraldRecipe
+  - MedievalClothingOuterDressSapphireRecipe
+  - MedievalClothingOuterDressScarletRecipe
+  - MedievalClothingOuterDressGrayRecipe
+  - MedievalClothingOuterDressPinkRecipe
+  - MedievalClothingOuterDressOrangeRecipe
   - MedievalClothingNeckMantleCrimsonRecipe
   - MedievalClothingNeckMantleEmeraldRecipe
   - MedievalClothingNeckMantleAzureRecipe
@@ -308,6 +336,9 @@
   - MedievalClothingNeckShoulderMantleAzureRecipe
   - MedievalClothingNeckShoulderMantleVioletRecipe
   - MedievalClothingNeckShoulderMantleCharcoalRecipe
+  - MedievalClothingNeckWorkCoatRecipe
+  - MedievalClothingNeckChefCoatRecipe
+  - MedievalTabardCrowKingdomRecipe
   - MedievalClothingBackBackpackRecipe
   - MedievalClothingBackDuffelRecipe
   - MedievalClothingBackSatchelRecipe
@@ -316,6 +347,15 @@
   - MedievalClothingBeltLeatherRedRecipe
   - MedievalClothingBeltRopeRecipe
   - MedievalClothingHeadFeatherHatRecipe
+  - MedievalClothingHeadHoodClothRecipe
+  - MedievalClothingHeadHoodQuiltedRecipe
+  - MedievalClothingHeadHoodQuiltedClosedRecipe
+  - MedievalClothingHeadHoodQuiltedRedRecipe
+  - MedievalClothingHeadHoodQuiltedBrownRecipe
+  - MedievalClothingHeadHoodQuiltedGreyRecipe
+  - MedievalClothingHeadHoodQuiltedClosedRedRecipe
+  - MedievalClothingHeadHoodQuiltedClosedBrownRecipe
+  - MedievalClothingHeadHoodQuiltedClosedGreyRecipe
   - MedievalClothingMaskExecutionerRecipe
   - MedievalClothingMaskPlagueDoctorRecipe
 

@@ -12,14 +12,19 @@
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 4.0
+        Slash: 2.0
     attackRate: 1
     angle: 50
     range: 1.5
     wideAnimationRotation: -135
-    damage:
+  - type: MedievalWeaponDamage
+    baseDamage:
       types:
-        Blunt: 4
-        Slash: 2
+        Blunt: 6.67
+        Slash: 3.33
   - type: Sprite
     sprite: _Respiral/Objects/Items/Weapon/stone_axe.rsi
     state: icon
@@ -88,6 +93,11 @@
       types:
         Piercing: 2.5
         Blunt: 0.5
+  - type: MedievalWeaponDamage
+    baseDamage:
+      types:
+        Piercing: 4.17
+        Blunt: 0.83
   - type: IncreaseDamageOnWield
     damage:
       types:

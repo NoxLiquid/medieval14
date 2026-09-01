@@ -1,7 +1,7 @@
 # Medieval armor prototypes generated from _Respiral/Clothing/OuterClothing/Armor/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseOuterClothing, MedievalArmorIronBody ]
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
   id: MedievalClothingOuterArmorIronChainmail
   suffix: Средневековье
   name: железная кольчуга
@@ -11,6 +11,7 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/OuterClothing/Armor/iron_chainmail.rsi
+  - type: MedievalTabardAttachable
   - type: Damageable
     damageModifierSet: MedievalIron
   - type: Injurable
@@ -18,3 +19,121 @@
   - type: PhysicalComposition
     materialComposition:
       MedievalProcessedIron: 100
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterArmorQuiltedGambeson
+  suffix: Средневековье
+  name: стёганый гамбезон
+  description: Толстый стёганый поддоспешник из простёганной ткани.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Armor/quilted_gambeson.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Armor/quilted_gambeson.rsi
+  - type: MedievalTabardAttachable
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterArmorLeatherJacket
+  suffix: Средневековье
+  name: кожаный доспех
+  description: Прочная кожаная куртка, защищающая от скользящих ударов.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Armor/leather_jacket.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Armor/leather_jacket.rsi
+  - type: MedievalTabardAttachable
+  - type: Damageable
+    damageModifierSet: MedievalPelt
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalProcessedPelt: 100
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterArmorPlate
+  suffix: Средневековье
+  name: латный доспех
+  description: Кованый стальной доспех, укрывающий торс от тяжёлых ударов.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor.rsi
+  - type: MedievalTabardAttachable
+  - type: Damageable
+    damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 100
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterArmorPlateLeather
+  suffix: Средневековье
+  name: латы с поддоспешником
+  description: Стальные латы поверх кожаной куртки — надёжная защита рыцаря.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor_leather_jacket.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Armor/plate_armor_leather_jacket.rsi
+  - type: MedievalTabardAttachable
+  - type: Damageable
+    damageModifierSet: MedievalSteel
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalSteel: 100
+      MedievalProcessedPelt: 50
+
+# Варианты со снаряжённым табардом Королевства ворона (для стартового гира стражи/рыцаря).
+- type: entity
+  parent: MedievalClothingOuterArmorQuiltedGambeson
+  id: MedievalClothingOuterArmorQuiltedGambesonCrow
+  suffix: Королевство ворона
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ContainerFill
+    containers:
+      tabard-slot: [ MedievalTabardCrowKingdom ]
+
+- type: entity
+  parent: MedievalClothingOuterArmorIronChainmail
+  id: MedievalClothingOuterArmorIronChainmailCrow
+  suffix: Королевство ворона
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ContainerFill
+    containers:
+      tabard-slot: [ MedievalTabardCrowKingdom ]

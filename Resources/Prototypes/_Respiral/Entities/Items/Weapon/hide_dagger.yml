@@ -1,5 +1,5 @@
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseHideDagger
   id: MedievalIronHideDagger
   name: железный скрытый клинок
   components:
@@ -17,9 +17,6 @@
     attackRate: 2
     angle: 0
     range: 1.5
-    damage:
-      types:
-        Piercing: 6
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -47,7 +44,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseHideDagger
   id: MedievalWoodHideDagger
   name: деревянный скрытый клинок
   components:
@@ -67,9 +64,6 @@
     attackRate: 2
     angle: 0
     range: 1.5
-    damage:
-      types:
-        Blunt: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -95,7 +89,7 @@
       MedievalProcessedWood: 100
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseHideDagger
   id: MedievalSteelHideDagger
   name: стальной скрытый клинок
   components:
@@ -113,9 +107,6 @@
     attackRate: 2
     angle: 0
     range: 1.5
-    damage:
-      types:
-        Piercing: 7.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -142,7 +133,7 @@
       MedievalProcessedWood: 50
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseHideDagger
   id: MedievalSilverHideDagger
   name: серебрянный скрытый клинок
   components:
@@ -160,10 +151,6 @@
     attackRate: 2
     angle: 0
     range: 1.5
-    damage:
-      types:
-        Piercing: 6
-        Holy: 6
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -190,7 +177,7 @@
       MedievalProcessedWood: 50
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseHideDagger
   id: MedievalMithrilHideDagger
   name: мифриловый скрытый клинок
   components:
@@ -208,9 +195,6 @@
     attackRate: 2
     angle: 0
     range: 1.5
-    damage:
-      types:
-        Piercing: 9
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -237,7 +221,7 @@
       MedievalProcessedWood: 50
 
 - type: entity
-  parent: MedievalBaseDagger
+  parent: MedievalBaseHideDagger
   id: MedievalAdamantineHideDagger
   name: адамантитовый скрытый клинок
   components:
@@ -255,9 +239,6 @@
     attackRate: 2
     angle: 0
     range: 1.5
-    damage:
-      types:
-        Piercing: 10.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item

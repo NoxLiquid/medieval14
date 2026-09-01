@@ -1,0 +1,383 @@
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterRoyalCassock
+  suffix: Средневековье
+  name: королевская сутана
+  description: Длинная церемониальная сутана благородного покроя.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/cassock.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/cassock.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterRoyalDress
+  suffix: Средневековье
+  name: дворянское платье
+  description: Роскошное платье с золотой отделкой, достойное особ голубой крови.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterRoyalDressRed
+  suffix: Средневековье
+  name: красное дворянское платье
+  description: Роскошное дворянское платье насыщенного красного оттенка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+    layers:
+    - state: icon
+    - state: colored-icon
+      color: "#A11E2B"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: colored-equipped-OUTERCLOTHING
+        color: "#A11E2B"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterRoyalDressBlack
+  suffix: Средневековье
+  name: чёрное дворянское платье
+  description: Роскошное дворянское платье глубокого чёрного оттенка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+    layers:
+    - state: icon
+    - state: colored-icon
+      color: "#4E4A55"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: colored-equipped-OUTERCLOTHING
+        color: "#4E4A55"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterRoyalDressViolet
+  suffix: Средневековье
+  name: фиолетовое дворянское платье
+  description: Роскошное дворянское платье насыщенного фиолетового оттенка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+    layers:
+    - state: icon
+    - state: colored-icon
+      color: "#4A2E5A"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/dress.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: colored-equipped-OUTERCLOTHING
+        color: "#4A2E5A"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterRoyalCoat
+  suffix: Средневековье
+  name: дворянский кафтан
+  description: Длинный парадный кафтан с богатой вышивкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterRoyalCoatRed
+  suffix: Средневековье
+  name: красный дворянский кафтан
+  description: Длинный парадный кафтан насыщенного красного оттенка с богатой вышивкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+    layers:
+    - state: icon
+    - state: colored-icon
+      color: "#A11E2B"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: colored-equipped-OUTERCLOTHING
+        color: "#A11E2B"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterRoyalCoatBlack
+  suffix: Средневековье
+  name: чёрный дворянский кафтан
+  description: Длинный парадный кафтан глубокого чёрного оттенка с богатой вышивкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+    layers:
+    - state: icon
+    - state: colored-icon
+      color: "#4E4A55"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: colored-equipped-OUTERCLOTHING
+        color: "#4E4A55"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseOuterClothing, MedievalArmorMaterial ]
+  id: MedievalClothingOuterRoyalCoatViolet
+  suffix: Средневековье
+  name: фиолетовый дворянский кафтан
+  description: Длинный парадный кафтан насыщенного фиолетового оттенка с богатой вышивкой.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+    layers:
+    - state: icon
+    - state: colored-icon
+      color: "#4A2E5A"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/OuterClothing/Royalty/long_shirt.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: colored-equipped-OUTERCLOTHING
+        color: "#4A2E5A"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 200
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
+  id: MedievalClothingInnerRoyalShirt
+  suffix: Средневековье
+  name: дворянская рубаха
+  description: Богато расшитая парадная рубаха придворного.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 150
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
+  id: MedievalClothingInnerRoyalShirtRed
+  suffix: Средневековье
+  name: красная дворянская рубаха
+  description: Богато расшитая парадная рубаха придворного насыщенного красного оттенка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+    layers:
+    - state: icon
+    - state: colored-icon
+      color: "#A11E2B"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+      - state: colored-equipped-INNERCLOTHING
+        color: "#A11E2B"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 150
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
+  id: MedievalClothingInnerRoyalShirtBlack
+  suffix: Средневековье
+  name: чёрная дворянская рубаха
+  description: Богато расшитая парадная рубаха придворного глубокого чёрного оттенка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+    layers:
+    - state: icon
+    - state: colored-icon
+      color: "#4E4A55"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+      - state: colored-equipped-INNERCLOTHING
+        color: "#4E4A55"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 150
+
+- type: entity
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
+  id: MedievalClothingInnerRoyalShirtViolet
+  suffix: Средневековье
+  name: фиолетовая дворянская рубаха
+  description: Богато расшитая парадная рубаха придворного насыщенного фиолетового оттенка.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+    layers:
+    - state: icon
+    - state: colored-icon
+      color: "#4A2E5A"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Uniforms/Royalty/shirt.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+      - state: colored-equipped-INNERCLOTHING
+        color: "#4A2E5A"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 150

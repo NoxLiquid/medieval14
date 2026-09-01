@@ -90,3 +90,30 @@
   result: MedievalClothingNeckShoulderMantleCharcoal
   materials:
     MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckWorkCoatRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingNeckWorkCoat
+  materials:
+    MedievalCloth: 150
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalClothingNeckChefCoatRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalClothingNeckChefCoat
+  materials:
+    MedievalCloth: 100
+
+- type: latheRecipe
+  parent: MedievalBaseTailorClothingRecipe
+  id: MedievalTabardCrowKingdomRecipe
+  neededSkills:
+    MedievalTailor: Understanding
+  result: MedievalTabardCrowKingdom
+  materials:
+    MedievalCloth: 100

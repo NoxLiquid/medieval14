@@ -15,8 +15,8 @@
 - type: entity
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerLord
-  name: лорд
-  suffix: Средневековье
+  name: барон
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalLord
@@ -26,13 +26,13 @@
   components:
   - type: RandomHumanoidAppearance
   - type: Loadout
-    prototypes: [ MedievalLordGear ]
+    prototypes: [ MedievalLordGearNPC ]
 
 - type: entity
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerKnight
   name: рыцарь
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalKnight
@@ -48,7 +48,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerCitySteward
   name: управляющий
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalCitySteward
@@ -64,7 +64,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerTreasurer
   name: казначей
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalTreasurer
@@ -82,7 +82,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerBlacksmith
   name: кузнец
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalBlacksmith
@@ -98,7 +98,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerCarpenter
   name: плотник
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalCarpenter
@@ -114,7 +114,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerMason
   name: каменщик
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalMason
@@ -130,7 +130,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerEngineer
   name: инженер
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalEngineer
@@ -146,7 +146,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerInnkeeper
   name: трактирщик
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalInnkeeper
@@ -162,7 +162,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerHerbalist
   name: травник
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalHerbalist
@@ -178,7 +178,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerTailor
   name: портной
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalTailor
@@ -194,7 +194,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerCitizen
   name: горожанин
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalCitizen
@@ -210,7 +210,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerMerchant
   name: торговец
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalMerchant
@@ -226,7 +226,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerGuard
   name: стражник
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalGuard
@@ -244,7 +244,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerForester
   name: лесник
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalForester
@@ -262,7 +262,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerElder
   name: старейшина
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalElder
@@ -278,7 +278,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerFarmer
   name: фермер
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalFarmer
@@ -294,7 +294,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerPeasant
   name: крестьянин
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalPeasant
@@ -312,7 +312,7 @@
   parent: MedievalBaseHumanoidSpawner
   id: MedievalRandomHumanoidSpawnerRefugee
   name: беженец
-  suffix: Средневековье
+  suffix: Спавнер, Средневековье
   components:
   - type: RandomHumanoidSpawner
     settings: MedievalRefugee

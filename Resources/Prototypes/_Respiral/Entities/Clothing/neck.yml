@@ -1,7 +1,7 @@
 # Medieval neck-slot clothing prototypes generated from _Respiral/Clothing/Neck/*.rsi
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckLordCape
   suffix: Средневековье
   name: плащ лорда
@@ -11,9 +11,67 @@
     state: icon
   - type: Clothing
     sprite: _Respiral/Clothing/Neck/lord_cape.rsi
-    clothingVisuals:
-      neck-Female:
-      - state: equipped-NECK-female
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
+  id: MedievalClothingNeckWorkCoat
+  suffix: Средневековье
+  name: рабочий халат
+  description: Прочный рабочий халат с нашитыми карманами для инструментов и мелочей.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/work_coat.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/work_coat.rsi
+  - type: Item
+    size: Normal
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Storage
+    grid:
+    - 0,0,3,2
+    maxItemSize: Normal
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
+  id: MedievalClothingNeckChefCoat
+  suffix: Средневековье
+  name: халат шефа
+  description: Белый халат повара с двубортной застёжкой, опрятный и практичный.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Neck/chef_coat.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Respiral/Clothing/Neck/chef_coat.rsi
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
   - type: Damageable
     damageModifierSet: MedievalFlax
   - type: Injurable

@@ -14,11 +14,6 @@
       blade: MedievalProcessedIron
     inhand: MedievalProcessedIron
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 6.67
-        Slash: 6.66
-        Piercing: 6.67
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -63,9 +58,6 @@
       handle: MedievalProcessedWood
     inhand: MedievalProcessedWood
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 10
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -106,11 +98,6 @@
       blade: MedievalSteel
     inhand: MedievalSteel
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 8.33
-        Slash: 8.34
-        Piercing: 8.33
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -152,12 +139,6 @@
       blade: MedievalProcessedSilver
     inhand: MedievalProcessedSilver
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 6.67
-        Slash: 6.66
-        Piercing: 6.67
-        Holy: 20
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -199,11 +180,6 @@
       blade: MedievalProcessedMithril
     inhand: MedievalProcessedMithril
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 10
-        Slash: 10
-        Piercing: 10
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -245,11 +221,6 @@
       blade: MedievalProcessedAdamantine
     inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 11.67
-        Slash: 11.66
-        Piercing: 11.67
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item

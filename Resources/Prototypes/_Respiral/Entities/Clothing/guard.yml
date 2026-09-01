@@ -1,9 +1,9 @@
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerGuardGambesonCheckered
   suffix: Средневековье
-  name: клетчатый гамбезон стражника
-  description: Плотный стёганый гамбезон городской стражи с чёрно-красным клетчатым узором.
+  name: клетчатая добротная стёганая рубаха
+  description: Плотная стёганая рубаха с чёрно-красным клетчатым узором.
   components:
   - type: Sprite
     sprite: _Respiral/Clothing/Uniforms/Jumpsuit/guard_gambeson.rsi
@@ -41,11 +41,11 @@
       MedievalCloth: 200
 
 - type: entity
-  parent: [ MedievalBaseInnerClothing, MedievalArmorClothBody ]
+  parent: [ MedievalBaseInnerClothing, MedievalArmorMaterial ]
   id: MedievalClothingInnerGuardGambesonStriped
   suffix: Средневековье
-  name: полосатый гамбезон стражника
-  description: Плотный стёганый гамбезон городской стражи с чёрно-красными полосами.
+  name: полосатая добротная стёганая рубаха
+  description: Плотная стёганая рубаха с чёрно-красными полосами.
   components:
   - type: Sprite
     sprite: _Respiral/Clothing/Uniforms/Jumpsuit/guard_gambeson.rsi
@@ -83,16 +83,19 @@
       MedievalCloth: 200
 
 - type: entity
-  parent: [ MedievalBasePants, MedievalArmorClothHeadOrLegs ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
   id: MedievalClothingLegsGuardPants
   suffix: Средневековье
-  name: штаны стражника
+  name: добротные штаны
   description: Чёрные стёганые штаны городской стражи с белым тканевым гульфиком.
   components:
   - type: Sprite
     sprite: _Respiral/Clothing/Legs/guard_pants.rsi
-    state: icon
-    color: "#3E3838"
+    layers:
+    - state: icon
+      color: "#3E3838"
+    - state: codpiece-icon
+      color: "#C7C3B8"
   - type: Item
     inhandVisuals:
       left: []
@@ -105,15 +108,39 @@
         color: "#3E3838"
       - state: codpiece-equipped-LEGS
         color: "#C7C3B8"
-      pants-Male:
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
+  id: MedievalClothingLegsGuardPantsRed
+  suffix: Средневековье
+  name: красные добротные штаны
+  description: Стёганые штаны насыщенного красного оттенка с белым тканевым гульфиком.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/guard_pants.rsi
+    layers:
+    - state: icon
+      color: "#A11E2B"
+    - state: codpiece-icon
+      color: "#C7C3B8"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/guard_pants.rsi
+    clothingVisuals:
+      pants:
       - state: equipped-LEGS
-        color: "#3E3838"
+        color: "#A11E2B"
       - state: codpiece-equipped-LEGS
-        color: "#C7C3B8"
-      pants-Female:
-      - state: equipped-LEGS-female
-        color: "#3E3838"
-      - state: codpiece-equipped-LEGS-female
         color: "#C7C3B8"
   - type: Damageable
     damageModifierSet: MedievalFlax
@@ -124,7 +151,75 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseGloves, MedievalArmorClothOther ]
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
+  id: MedievalClothingLegsGuardPantsBlack
+  suffix: Средневековье
+  name: чёрные добротные штаны
+  description: Стёганые штаны глубокого чёрного оттенка с белым тканевым гульфиком.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/guard_pants.rsi
+    layers:
+    - state: icon
+      color: "#4E4A55"
+    - state: codpiece-icon
+      color: "#C7C3B8"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/guard_pants.rsi
+    clothingVisuals:
+      pants:
+      - state: equipped-LEGS
+        color: "#4E4A55"
+      - state: codpiece-equipped-LEGS
+        color: "#C7C3B8"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBasePants, MedievalArmorMaterial ]
+  id: MedievalClothingLegsGuardPantsViolet
+  suffix: Средневековье
+  name: фиолетовые добротные штаны
+  description: Стёганые штаны насыщенного фиолетового оттенка с белым тканевым гульфиком.
+  components:
+  - type: Sprite
+    sprite: _Respiral/Clothing/Legs/guard_pants.rsi
+    layers:
+    - state: icon
+      color: "#4A2E5A"
+    - state: codpiece-icon
+      color: "#C7C3B8"
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+  - type: Clothing
+    sprite: _Respiral/Clothing/Legs/guard_pants.rsi
+    clothingVisuals:
+      pants:
+      - state: equipped-LEGS
+        color: "#4A2E5A"
+      - state: codpiece-equipped-LEGS
+        color: "#C7C3B8"
+  - type: Damageable
+    damageModifierSet: MedievalFlax
+  - type: Injurable
+    damageContainer: MedievalClothing
+  - type: PhysicalComposition
+    materialComposition:
+      MedievalCloth: 100
+
+- type: entity
+  parent: [ MedievalBaseGloves, MedievalArmorMaterial ]
   id: MedievalClothingHandsGuardMittens
   suffix: Средневековье
   name: стёганые варежки стражника

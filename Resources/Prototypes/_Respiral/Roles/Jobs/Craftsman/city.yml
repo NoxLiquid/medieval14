@@ -18,7 +18,11 @@
   equipment:
     gloves: MedievalClothingHandsSmithGloves
     head: MedievalClothingHeadHood
+    jumpsuit: MedievalClothingInnerPeasantShirtBrown
+    neck: MedievalClothingNeckWorkCoat
     pants: MedievalClothingLegsLeather
+    shoes: MedievalClothingShoesBoots
+    belt: MedievalClothingBeltLeather
 
 - type: job
   id: MedievalCarpenter
@@ -41,7 +45,10 @@
   equipment:
     gloves: MedievalClothingHandsSmithGloves
     head: MedievalClothingHeadHood
-    pants: MedievalClothingLegsLeather
+    jumpsuit: MedievalClothingInnerPeasantShirtOlive
+    neck: MedievalClothingNeckWorkCoat
+    pants: MedievalClothingLegsPeasantBrown
+    shoes: MedievalClothingShoesBoots
 
 - type: job
   id: MedievalMason
@@ -63,7 +70,10 @@
   equipment:
     gloves: MedievalClothingHandsSmithGloves
     head: MedievalClothingHeadHood
-    pants: MedievalClothingLegsLeather
+    jumpsuit: MedievalClothingInnerPeasantShirtLinen
+    neck: MedievalClothingNeckWorkCoat
+    pants: MedievalClothingLegsSimple
+    shoes: MedievalClothingShoesBoots
 
 - type: job
   id: MedievalEngineer
@@ -85,7 +95,11 @@
   equipment:
     gloves: MedievalClothingHandsSmithGloves
     head: MedievalClothingHeadHood
+    jumpsuit: MedievalClothingInnerPeasantShirtBlue
+    neck: MedievalClothingNeckWorkCoat
     pants: MedievalClothingLegsLeather
+    shoes: MedievalClothingShoesBoots
+    belt: MedievalClothingBeltLeather
 
 - type: job
   id: MedievalInnkeeper
@@ -105,7 +119,11 @@
 - type: startingGear
   id: MedievalInnkeeperGear
   equipment:
+    jumpsuit: MedievalClothingInnerPeasantShirtRusset
+    neck: MedievalClothingNeckChefCoat
     pants: MedievalClothingLegsLeather
+    shoes: MedievalClothingShoesBoots
+    belt: MedievalClothingBeltLeather
 
 - type: job
   id: MedievalHerbalist
@@ -126,7 +144,10 @@
   id: MedievalHerbalistGear
   equipment:
     head: MedievalClothingHeadHood
-    pants: MedievalClothingLegsLeather
+    jumpsuit: MedievalClothingInnerPeasantShirtOlive
+    pants: MedievalClothingLegsPeasantOlive
+    shoes: MedievalClothingShoesPeasantBoots
+    back: MedievalClothingBackSatchel
 
 - type: job
   id: MedievalTailor
@@ -147,7 +168,10 @@
   id: MedievalTailorGear
   equipment:
     head: MedievalClothingHeadHood
-    pants: MedievalClothingLegsLeather
+    jumpsuit: MedievalClothingInnerPeasantShirtLinen
+    neck: MedievalClothingNeckWorkCoat
+    pants: MedievalClothingLegsPeasantGrey
+    shoes: MedievalClothingShoesPeasantBoots
 
 - type: job
   id: MedievalCitizen
@@ -168,7 +192,9 @@
   id: MedievalCitizenGear
   equipment:
     head: MedievalClothingHeadHood
-    pants: MedievalClothingLegsLeather
+    jumpsuit: MedievalClothingInnerPeasantShirtBlue
+    pants: MedievalClothingLegsPeasantBrown
+    shoes: MedievalClothingShoesPeasantBoots
 
 - type: job
   id: MedievalMerchant
@@ -190,7 +216,11 @@
   id: MedievalMerchantGear
   equipment:
     head: MedievalClothingHeadTraderHat
+    jumpsuit: MedievalClothingInnerPeasantShirtRusset
     pants: MedievalClothingLegsLeather
+    shoes: MedievalClothingShoesHighBoots
+    belt: MedievalClothingBeltLeatherRed
+    back: MedievalClothingBackSatchel
 
 - type: job
   id: MedievalGuard
@@ -211,10 +241,12 @@
 - type: startingGear
   id: MedievalGuardGear
   equipment:
-    outerClothing: MedievalClothingOuterArmorIronChainmail
-    head: MedievalClothingHeadHelmet
+    outerClothing: MedievalClothingOuterArmorQuiltedGambesonCrow
+    head: MedievalClothingHeadHoodQuiltedRed
     gloves: MedievalClothingHandsGuardMittens
     pants: MedievalClothingLegsGuardPants
+    shoes: MedievalClothingShoesBoots
+    belt: MedievalClothingBeltLeatherBlack
 
 - type: startingGear
   id: MedievalGuardGearNPC

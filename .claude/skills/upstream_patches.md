@@ -115,6 +115,15 @@ All namertvo — control-flow, signatures, or overrides inside upstream types.
 
 Even here 1-3 residual lines remain upstream unless the engine already raises a fitting event.
 
+### TTS (Corvax port) — 3 hooks, tag `Corvax-TTS`
+
+- `Content.Server/Entry/EntryPoint.cs` — `[Dependency] TTSManager` + `_ttsManager.Initialize()`.
+- `Content.Server/IoC/ServerContentIoC.cs` — `deps.Register<TTSManager>()`.
+- `Resources/Prototypes/Body/species_base.yml` — `- type: TTS` on `BaseSpeciesMobOrganic`.
+
+All three are additive (new lines only), wrapped in `// Respiral-Start Corvax-TTS` /
+`# Respiral-Start Corvax-TTS` … `-End`. See [[tts.md]].
+
 ## Marker conventions in use
 
 - `// Respiral-Start` / `// Respiral-End` (or `-start` / `-end`) — wraps a multi-line block.

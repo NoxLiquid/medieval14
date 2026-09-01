@@ -14,9 +14,6 @@
       blade: MedievalProcessedIron
     inhand: MedievalProcessedIron
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -56,9 +53,6 @@
       handle: MedievalProcessedWood
     inhand: MedievalProcessedWood
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 3.75
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -99,9 +93,6 @@
       blade: MedievalSteel
     inhand: MedievalSteel
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 18.75
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -143,10 +134,6 @@
       blade: MedievalProcessedSilver
     inhand: MedievalProcessedSilver
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 15
-        Holy: 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -188,9 +175,6 @@
       blade: MedievalProcessedMithril
     inhand: MedievalProcessedMithril
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 22.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -232,9 +216,6 @@
       blade: MedievalProcessedAdamantine
     inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 26.25
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -264,7 +245,7 @@
 # Меч 2
 
 - type: entity
-  parent: MedievalBaseSword
+  parent: MedievalBaseSword2
   id: MedievalIronSword2
   name: железный меч
   components:
@@ -280,9 +261,6 @@
     inhand: MedievalProcessedIron
   - type: MeleeWeapon
     attackRate: 0.9
-    damage:
-      types:
-        Slash: 17
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -305,7 +283,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: MedievalBaseSword
+  parent: MedievalBaseSword2
   id: MedievalWoodSword2
   name: деревянный меч
   components:
@@ -323,9 +301,6 @@
     inhand: MedievalProcessedWood
   - type: MeleeWeapon
     attackRate: 0.9
-    damage:
-      types:
-        Blunt: 4.25
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -351,7 +326,7 @@
       MedievalProcessedWood: 200
 
 - type: entity
-  parent: MedievalBaseSword
+  parent: MedievalBaseSword2
   id: MedievalSteelSword2
   name: стальной меч
   components:
@@ -367,9 +342,6 @@
     inhand: MedievalSteel
   - type: MeleeWeapon
     attackRate: 0.9
-    damage:
-      types:
-        Slash: 21.25
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -396,7 +368,7 @@
       MedievalProcessedWood: 100
 
 - type: entity
-  parent: MedievalBaseSword
+  parent: MedievalBaseSword2
   id: MedievalSilverSword2
   name: серебрянный меч
   components:
@@ -412,10 +384,6 @@
     inhand: MedievalProcessedSilver
   - type: MeleeWeapon
     attackRate: 0.9
-    damage:
-      types:
-        Slash: 17
-        Holy: 17
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -442,7 +410,7 @@
       MedievalProcessedWood: 100
 
 - type: entity
-  parent: MedievalBaseSword
+  parent: MedievalBaseSword2
   id: MedievalMithrilSword2
   name: мифриловый меч
   components:
@@ -458,9 +426,6 @@
     inhand: MedievalProcessedMithril
   - type: MeleeWeapon
     attackRate: 0.9
-    damage:
-      types:
-        Slash: 25.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item
@@ -487,7 +452,7 @@
       MedievalProcessedWood: 100
 
 - type: entity
-  parent: MedievalBaseSword
+  parent: MedievalBaseSword2
   id: MedievalAdamantineSword2
   name: адамантитовый меч
   components:
@@ -503,9 +468,6 @@
     inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
     attackRate: 0.9
-    damage:
-      types:
-        Slash: 29.75
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Item

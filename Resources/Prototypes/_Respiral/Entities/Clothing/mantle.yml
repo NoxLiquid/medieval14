@@ -2,7 +2,7 @@
 # body (recolored per variant) + fur trim + gold trim (both fixed across variants).
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckMantleCrimson
   suffix: Средневековье
   name: багряная мантия
@@ -40,7 +40,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckMantleEmerald
   suffix: Средневековье
   name: изумрудная мантия
@@ -78,7 +78,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckMantleAzure
   suffix: Средневековье
   name: лазурная мантия
@@ -116,7 +116,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckMantleViolet
   suffix: Средневековье
   name: пурпурная мантия
@@ -154,7 +154,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckMantleCharcoal
   suffix: Средневековье
   name: тёмная мантия
@@ -193,7 +193,7 @@
 
 # === Shoulder mantle (hosmantle.rsi) — body + accent, 2 tintable layers ===
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckShoulderMantleCrimson
   suffix: Средневековье
   name: багряная наплечная мантия
@@ -227,7 +227,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckShoulderMantleEmerald
   suffix: Средневековье
   name: изумрудная наплечная мантия
@@ -261,7 +261,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckShoulderMantleAzure
   suffix: Средневековье
   name: лазурная наплечная мантия
@@ -295,7 +295,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckShoulderMantleViolet
   suffix: Средневековье
   name: пурпурная наплечная мантия
@@ -329,7 +329,7 @@
       MedievalCloth: 100
 
 - type: entity
-  parent: [ MedievalBaseNeck, MedievalArmorClothHeadFeet ]
+  parent: [ MedievalBaseNeck, MedievalArmorMaterial ]
   id: MedievalClothingNeckShoulderMantleCharcoal
   suffix: Средневековье
   name: тёмная наплечная мантия

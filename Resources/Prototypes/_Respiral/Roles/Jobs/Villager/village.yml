@@ -16,9 +16,11 @@
 - type: startingGear
   id: MedievalElderGear
   equipment:
-    jumpsuit: MedievalClothingInnerLongTunic
     head: MedievalClothingHeadHood
-    pants: MedievalClothingLegsLeather
+    jumpsuit: MedievalClothingInnerPeasantShirtBrown
+    neck: MedievalClothingNeckShoulderMantleCharcoal
+    pants: MedievalClothingLegsPeasantBrown
+    shoes: MedievalClothingShoesPeasantBoots
 
 - type: job
   id: MedievalFarmer
@@ -42,6 +44,7 @@
     jumpsuit: MedievalClothingInnerPeasantShirtLinen
     pants: MedievalClothingLegsPeasantOlive
     shoes: MedievalClothingShoesPeasantBoots
+    belt: MedievalClothingBeltRope
 
 
 - type: job
@@ -57,7 +60,11 @@
   id: MedievalForesterGear
   equipment:
     head: MedievalClothingHeadHood
-    pants: MedievalClothingLegsLeather
+    jumpsuit: MedievalClothingInnerPeasantShirtOlive
+    pants: MedievalClothingLegsPeasantOlive
+    shoes: MedievalClothingShoesPeasantBoots
+    belt: MedievalClothingBeltRope
+    back: MedievalClothingBackSatchel
 
 - type: job
   id: MedievalPeasant

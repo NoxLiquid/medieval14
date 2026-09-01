@@ -15,18 +15,10 @@
             "directions": 4
         },
         {
-            "name": "equipped-LEGS-female",
-            "directions": 4
-        },
-        {
             "name": "codpiece-icon"
         },
         {
             "name": "codpiece-equipped-LEGS",
-            "directions": 4
-        },
-        {
-            "name": "codpiece-equipped-LEGS-female",
             "directions": 4
         }
     ]

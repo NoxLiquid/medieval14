@@ -15,11 +15,6 @@
       base: MedievalProcessedIron
     inhand: MedievalProcessedIron
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 3.17
-        Slash: 3.16
-        Piercing: 3.17
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -70,9 +65,6 @@
       handle: MedievalProcessedWood
     inhand: MedievalProcessedWood
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 2.7
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -120,11 +112,6 @@
       base: MedievalSteel
     inhand: MedievalSteel
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 4.33
-        Slash: 4.34
-        Piercing: 4.33
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -172,12 +159,6 @@
       base: MedievalProcessedSilver
     inhand: MedievalProcessedSilver
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 6.33
-        Slash: 6.34
-        Piercing: 6.33
-        Holy: 19
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -225,11 +206,6 @@
       base: MedievalProcessedMithril
     inhand: MedievalProcessedMithril
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 5
-        Slash: 5
-        Piercing: 5
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -277,11 +253,6 @@
       base: MedievalProcessedAdamantine
     inhand: MedievalProcessedAdamantine
   - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 5.67
-        Slash: 5.66
-        Piercing: 5.67
   - type: IncreaseDamageOnWield
     damage:
       types:

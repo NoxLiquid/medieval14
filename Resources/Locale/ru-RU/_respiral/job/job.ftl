@@ -1,9 +1,9 @@
 job-name-refugee = беженец
 job-description-refugee = Беженец из другого региона.
-job-name-medieval-lord = лорд
+job-name-medieval-lord = барон
 job-description-medieval-lord = Правьте землями, раздавайте поручения и удерживайте порядок среди подданных.
 job-name-medieval-knight = рыцарь
-job-description-medieval-knight = Служите лорду, защищайте владения и демонстрируйте воинскую дисциплину.
+job-description-medieval-knight = Служите барону, защищайте владения и демонстрируйте воинскую дисциплину.
 job-name-medieval-city-steward = управляющий городом
 job-description-medieval-city-steward = Руководите городскими делами, распределяйте работу и следите за ремесленниками.
 job-name-medieval-treasurer = казначей
@@ -38,7 +38,7 @@ job-name-medieval-peasant = крестьянин
 job-description-medieval-peasant = Работайте на земле, выполняйте простые поручения и помогайте деревне выстоять.
 
 job-supervisors-medieval-none = никому
-job-supervisors-medieval-lord = лорду
+job-supervisors-medieval-lord = барону
 job-supervisors-medieval-steward = управляющему городом
 job-supervisors-medieval-elder = старосте
 job-supervisors-medieval-authority = местной власти

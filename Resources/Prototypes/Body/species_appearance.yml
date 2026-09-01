@@ -40,9 +40,11 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    # Respiral-Start - пояс поверх верхней одежды (ремень стягивает плащ/доспех)
+    - map: [ "belt" ]
+    # Respiral-End
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "suitstorage" ]

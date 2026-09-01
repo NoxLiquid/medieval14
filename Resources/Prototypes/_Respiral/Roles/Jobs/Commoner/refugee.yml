@@ -17,6 +17,6 @@
   id: MedievalRefugeeGear
   equipment:
     head: MedievalClothingHeadHood
-    jumpsuit: MedievalClothingInnerPeasantShirtRusset
-    pants: MedievalClothingLegsPeasantGrey
-    shoes: MedievalClothingShoesPeasantBoots
+    jumpsuit: MedievalClothingInnerRefugeeShirt
+    pants: MedievalClothingLegsRefugeePants
+    shoes: MedievalClothingShoesPeasantBootsDark
