@@ -23,6 +23,8 @@ namespace Content.Shared.Administration
             public string Announcer = default!;
             public string Announcement = default!;
             public AdminAnnounceType AnnounceType;
+            // Respiral: id выбранного TTSVoicePrototype (null — не озвучивать)
+            public string? Voice;
         }
     }
 }

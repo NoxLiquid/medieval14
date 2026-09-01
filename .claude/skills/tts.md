@@ -74,6 +74,24 @@ Server (`Content.Server/_Corvax/TTS/`):
   (players, uses `ev.Profile.Sex`) and `TTSComponent MapInit` (humanoid NPCs, uses
   `HumanoidProfileComponent.Sex`).
 
+Admin announcement voice picker (**Respiral**, upstream files edited inline):
+- `Content.Client/Administration/UI/AdminAnnounceWindow.xaml{,.cs}` — adds a `VoiceSearch`
+  `LineEdit` + `VoiceList` `ItemList` under the announcement text: lists every
+  `TTSVoicePrototype` by localized `Name` (sorted, case-insensitive substring search),
+  single-select. A **"No voice"** item (`admin-announce-voice-none`, metadata null) is always
+  first and unfiltered; selecting it sets `SelectedVoice = null` (no TTS) and it's the default.
+  `SelectedVoice` (prototype id, nullable) survives filtering; re-selected visually on
+  repopulate via `Item.Selected` (item-level event only, no list-event recursion). XAML wraps
+  the added controls in `<!-- Respiral-TTS-Start/End -->` markers.
+- `Content.Client/Administration/UI/AdminMenuWindowEui.cs` — sends `Voice = _window.SelectedVoice`.
+- `Content.Shared/Administration/AdminAnnounceEuiState.cs` — `DoAnnounce.Voice` (`string?`).
+- `Content.Server/Administration/UI/AdminAnnounceEui.cs` — resolves `TTSSystem`, and after
+  dispatch calls `PlayTTS(text, new ProtoId<TTSVoicePrototype>(voice), Filter.Broadcast())`
+  when a voice is picked. **Must** wrap the id in `ProtoId` explicitly — otherwise the
+  `(string text, string speaker, …)` overload wins and the id is misread as a Silero speaker.
+  No voice picked → announcement text only, no TTS. Loc keys `admin-announce-voice-*` in
+  `Locale/{en-US,ru-RU}/administration/ui/admin-announce-window.ftl`.
+
 Client (`Content.Client/_Corvax/TTS/TTSSystem.cs`): receives `PlayTTSEvent`, writes OGG
 to an in-memory `MemoryContentRoot` under `/TTS`, plays via `AudioSystem`
 (entity-positional or global for preview). Volume from `tts.volume`.
