@@ -59,6 +59,16 @@ Server (`Content.Server/_Corvax/TTS/`):
   (`dead-space-14 Content.Server/Corvax/TTS/TTSSystem.cs` `HandleAnnounce/HandleRadio`) but
   written fresh: DeadSpace's version is coupled to a `LanguageSystem`/lexicon + `RadioSpokeEvent`/
   `AnnounceSpokeEvent`/`EntitySpokeToEntityEvent`, **none of which exist in this fork**.
+- `TTSAnnounceSystem.cs` — **Respiral-specific**, voices communications-console announcements.
+  Subscribes the upstream `CommunicationConsoleAnnouncementEvent` (ByRefEvent, raised in
+  `Content.Server/Communications/CommunicationsConsoleSystem.cs` with the sanitized text
+  *before* the "sent by" suffix) and calls `TTSSystem.PlayTTS(text, voiceId, filter)`.
+  Voice = the **sender's** voice (from their `TTSComponent`, run through
+  `TransformSpeakerVoiceEvent` for voice masks); if the sender has no voice, the announcement
+  is **not** voiced (no fallback). Audience: `comp.Global` → `Filter.Broadcast()`, else
+  `StationSystem.GetInOwningStation(consoleUid)`; skips synth when the filter is empty. No
+  upstream file edits — subscribes to an event upstream already raises. TTS plays immediately
+  (overlaps the announcement chime; DeadSpace delays its announce TTS ~6s — not done here).
 - `TTSVoiceAssignSystem.cs` — **Respiral-specific**, replaces the lobby voice picker:
   assigns a random `ttsVoice` matching the entity's `Sex` on `PlayerSpawnCompleteEvent`
   (players, uses `ev.Profile.Sex`) and `TTSComponent MapInit` (humanoid NPCs, uses
