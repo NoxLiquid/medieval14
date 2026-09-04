@@ -1,134 +1,580 @@
-- type: ttsVoice
-  id: Aidar
-  name: tts-voice-aidar
-  sex: Male
-  speaker: aidar
 
 - type: ttsVoice
-  id: Eugene
-  name: tts-voice-eugene
-  sex: Male
-  speaker: eugene
-
-- type: ttsVoice
-  id: Kseniya
-  name: tts-voice-kseniya
+  id: Aigul
+  name: tts-voice-aigul
   sex: Female
-  speaker: kseniya
+  speaker: ru_aigul
 
 - type: ttsVoice
-  id: Baya
-  name: tts-voice-baya
+  id: AigulLow
+  name: tts-voice-aigul-low
   sex: Female
-  speaker: baya
-
-- type: ttsVoice
-  id: Xenia
-  name: tts-voice-xenia
-  sex: Female
-  speaker: xenia
-
-# Respiral: prosody-варианты тех же 5 спикеров
-
-- type: ttsVoice
-  id: AidarLow
-  name: tts-voice-aidar-low
-  sex: Male
-  speaker: aidar
+  speaker: ru_aigul
   pitch: low
 
 - type: ttsVoice
-  id: AidarHigh
-  name: tts-voice-aidar-high
-  sex: Male
-  speaker: aidar
+  id: AigulHigh
+  name: tts-voice-aigul-high
+  sex: Female
+  speaker: ru_aigul
   pitch: high
 
 - type: ttsVoice
-  id: EugeneLow
-  name: tts-voice-eugene-low
-  sex: Male
-  speaker: eugene
+  id: Albina
+  name: tts-voice-albina
+  sex: Female
+  speaker: ru_albina
+
+- type: ttsVoice
+  id: AlbinaLow
+  name: tts-voice-albina-low
+  sex: Female
+  speaker: ru_albina
   pitch: low
 
 - type: ttsVoice
-  id: EugeneHigh
-  name: tts-voice-eugene-high
-  sex: Male
-  speaker: eugene
+  id: AlbinaHigh
+  name: tts-voice-albina-high
+  sex: Female
+  speaker: ru_albina
   pitch: high
 
 - type: ttsVoice
-  id: EugeneSlow
-  name: tts-voice-eugene-slow
+  id: Alexandr
+  name: tts-voice-alexandr
   sex: Male
-  speaker: eugene
-  pitch: low
-  rate: slow
+  speaker: ru_alexandr
 
 - type: ttsVoice
-  id: KseniyaLow
-  name: tts-voice-kseniya-low
-  sex: Female
-  speaker: kseniya
+  id: AlexandrLow
+  name: tts-voice-alexandr-low
+  sex: Male
+  speaker: ru_alexandr
   pitch: low
 
 - type: ttsVoice
-  id: KseniyaHigh
-  name: tts-voice-kseniya-high
-  sex: Female
-  speaker: kseniya
+  id: AlexandrHigh
+  name: tts-voice-alexandr-high
+  sex: Male
+  speaker: ru_alexandr
   pitch: high
 
 - type: ttsVoice
-  id: BayaLow
-  name: tts-voice-baya-low
+  id: Alfia
+  name: tts-voice-alfia
   sex: Female
-  speaker: baya
+  speaker: ru_alfia
+
+- type: ttsVoice
+  id: AlfiaLow
+  name: tts-voice-alfia-low
+  sex: Female
+  speaker: ru_alfia
   pitch: low
 
 - type: ttsVoice
-  id: BayaHigh
-  name: tts-voice-baya-high
+  id: AlfiaHigh
+  name: tts-voice-alfia-high
   sex: Female
-  speaker: baya
+  speaker: ru_alfia
   pitch: high
 
 - type: ttsVoice
-  id: XeniaHigh
-  name: tts-voice-xenia-high
+  id: Alfia2
+  name: tts-voice-alfia2
   sex: Female
-  speaker: xenia
+  speaker: ru_alfia2
+
+- type: ttsVoice
+  id: Alfia2Low
+  name: tts-voice-alfia2-low
+  sex: Female
+  speaker: ru_alfia2
+  pitch: low
+
+- type: ttsVoice
+  id: Alfia2High
+  name: tts-voice-alfia2-high
+  sex: Female
+  speaker: ru_alfia2
   pitch: high
 
 - type: ttsVoice
-  id: XeniaSlow
-  name: tts-voice-xenia-slow
+  id: Bogdan
+  name: tts-voice-bogdan
+  sex: Male
+  speaker: ru_bogdan
+
+- type: ttsVoice
+  id: BogdanLow
+  name: tts-voice-bogdan-low
+  sex: Male
+  speaker: ru_bogdan
+  pitch: low
+
+- type: ttsVoice
+  id: BogdanHigh
+  name: tts-voice-bogdan-high
+  sex: Male
+  speaker: ru_bogdan
+  pitch: high
+
+- type: ttsVoice
+  id: Dmitriy
+  name: tts-voice-dmitriy
+  sex: Male
+  speaker: ru_dmitriy
+
+- type: ttsVoice
+  id: DmitriyLow
+  name: tts-voice-dmitriy-low
+  sex: Male
+  speaker: ru_dmitriy
+  pitch: low
+
+- type: ttsVoice
+  id: DmitriyHigh
+  name: tts-voice-dmitriy-high
+  sex: Male
+  speaker: ru_dmitriy
+  pitch: high
+
+- type: ttsVoice
+  id: Ekaterina
+  name: tts-voice-ekaterina
   sex: Female
-  speaker: xenia
-  rate: slow
+  speaker: ru_ekaterina
 
-# Respiral: голоса движка Piper
 - type: ttsVoice
-  id: Irina
-  name: tts-voice-irina
+  id: EkaterinaLow
+  name: tts-voice-ekaterina-low
   sex: Female
-  speaker: irina
+  speaker: ru_ekaterina
+  pitch: low
 
 - type: ttsVoice
-  id: Denis
-  name: tts-voice-denis
-  sex: Male
-  speaker: denis
+  id: EkaterinaHigh
+  name: tts-voice-ekaterina-high
+  sex: Female
+  speaker: ru_ekaterina
+  pitch: high
 
 - type: ttsVoice
-  id: Dmitri
-  name: tts-voice-dmitri
-  sex: Male
-  speaker: dmitri
+  id: Vika
+  name: tts-voice-vika
+  sex: Female
+  speaker: ru_vika
 
 - type: ttsVoice
-  id: Ruslan
-  name: tts-voice-ruslan
+  id: VikaLow
+  name: tts-voice-vika-low
+  sex: Female
+  speaker: ru_vika
+  pitch: low
+
+- type: ttsVoice
+  id: VikaHigh
+  name: tts-voice-vika-high
+  sex: Female
+  speaker: ru_vika
+  pitch: high
+
+- type: ttsVoice
+  id: Gamat
+  name: tts-voice-gamat
   sex: Male
-  speaker: ruslan
+  speaker: ru_gamat
+
+- type: ttsVoice
+  id: GamatLow
+  name: tts-voice-gamat-low
+  sex: Male
+  speaker: ru_gamat
+  pitch: low
+
+- type: ttsVoice
+  id: GamatHigh
+  name: tts-voice-gamat-high
+  sex: Male
+  speaker: ru_gamat
+  pitch: high
+
+- type: ttsVoice
+  id: Igor
+  name: tts-voice-igor
+  sex: Male
+  speaker: ru_igor
+
+- type: ttsVoice
+  id: IgorLow
+  name: tts-voice-igor-low
+  sex: Male
+  speaker: ru_igor
+  pitch: low
+
+- type: ttsVoice
+  id: IgorHigh
+  name: tts-voice-igor-high
+  sex: Male
+  speaker: ru_igor
+  pitch: high
+
+- type: ttsVoice
+  id: Karina
+  name: tts-voice-karina
+  sex: Female
+  speaker: ru_karina
+
+- type: ttsVoice
+  id: KarinaLow
+  name: tts-voice-karina-low
+  sex: Female
+  speaker: ru_karina
+  pitch: low
+
+- type: ttsVoice
+  id: KarinaHigh
+  name: tts-voice-karina-high
+  sex: Female
+  speaker: ru_karina
+  pitch: high
+
+- type: ttsVoice
+  id: Kejilgan
+  name: tts-voice-kejilgan
+  sex: Male  # пол? — сверить по сэмплу
+  speaker: ru_kejilgan
+
+- type: ttsVoice
+  id: KejilganLow
+  name: tts-voice-kejilgan-low
+  sex: Male
+  speaker: ru_kejilgan
+  pitch: low
+
+- type: ttsVoice
+  id: KejilganHigh
+  name: tts-voice-kejilgan-high
+  sex: Male
+  speaker: ru_kejilgan
+  pitch: high
+
+- type: ttsVoice
+  id: Kermen
+  name: tts-voice-kermen
+  sex: Female  # пол? — сверить по сэмплу
+  speaker: ru_kermen
+
+- type: ttsVoice
+  id: KermenLow
+  name: tts-voice-kermen-low
+  sex: Female
+  speaker: ru_kermen
+  pitch: low
+
+- type: ttsVoice
+  id: KermenHigh
+  name: tts-voice-kermen-high
+  sex: Female
+  speaker: ru_kermen
+  pitch: high
+
+- type: ttsVoice
+  id: Marat
+  name: tts-voice-marat
+  sex: Male
+  speaker: ru_marat
+
+- type: ttsVoice
+  id: MaratLow
+  name: tts-voice-marat-low
+  sex: Male
+  speaker: ru_marat
+  pitch: low
+
+- type: ttsVoice
+  id: MaratHigh
+  name: tts-voice-marat-high
+  sex: Male
+  speaker: ru_marat
+  pitch: high
+
+- type: ttsVoice
+  id: Miyau
+  name: tts-voice-miyau
+  sex: Female  # пол? — сверить по сэмплу
+  speaker: ru_miyau
+
+- type: ttsVoice
+  id: MiyauLow
+  name: tts-voice-miyau-low
+  sex: Female
+  speaker: ru_miyau
+  pitch: low
+
+- type: ttsVoice
+  id: MiyauHigh
+  name: tts-voice-miyau-high
+  sex: Female
+  speaker: ru_miyau
+  pitch: high
+
+- type: ttsVoice
+  id: Nurgul
+  name: tts-voice-nurgul
+  sex: Female
+  speaker: ru_nurgul
+
+- type: ttsVoice
+  id: NurgulLow
+  name: tts-voice-nurgul-low
+  sex: Female
+  speaker: ru_nurgul
+  pitch: low
+
+- type: ttsVoice
+  id: NurgulHigh
+  name: tts-voice-nurgul-high
+  sex: Female
+  speaker: ru_nurgul
+  pitch: high
+
+- type: ttsVoice
+  id: Oksana
+  name: tts-voice-oksana
+  sex: Female
+  speaker: ru_oksana
+
+- type: ttsVoice
+  id: OksanaLow
+  name: tts-voice-oksana-low
+  sex: Female
+  speaker: ru_oksana
+  pitch: low
+
+- type: ttsVoice
+  id: OksanaHigh
+  name: tts-voice-oksana-high
+  sex: Female
+  speaker: ru_oksana
+  pitch: high
+
+- type: ttsVoice
+  id: Onaoy
+  name: tts-voice-onaoy
+  sex: Female  # пол? — сверить по сэмплу
+  speaker: ru_onaoy
+
+- type: ttsVoice
+  id: OnaoyLow
+  name: tts-voice-onaoy-low
+  sex: Female
+  speaker: ru_onaoy
+  pitch: low
+
+- type: ttsVoice
+  id: OnaoyHigh
+  name: tts-voice-onaoy-high
+  sex: Female
+  speaker: ru_onaoy
+  pitch: high
+
+- type: ttsVoice
+  id: Ramilia
+  name: tts-voice-ramilia
+  sex: Female
+  speaker: ru_ramilia
+
+- type: ttsVoice
+  id: RamiliaLow
+  name: tts-voice-ramilia-low
+  sex: Female
+  speaker: ru_ramilia
+  pitch: low
+
+- type: ttsVoice
+  id: RamiliaHigh
+  name: tts-voice-ramilia-high
+  sex: Female
+  speaker: ru_ramilia
+  pitch: high
+
+- type: ttsVoice
+  id: Roman
+  name: tts-voice-roman
+  sex: Male
+  speaker: ru_roman
+
+- type: ttsVoice
+  id: RomanLow
+  name: tts-voice-roman-low
+  sex: Male
+  speaker: ru_roman
+  pitch: low
+
+- type: ttsVoice
+  id: RomanHigh
+  name: tts-voice-roman-high
+  sex: Male
+  speaker: ru_roman
+  pitch: high
+
+- type: ttsVoice
+  id: Safarhuja
+  name: tts-voice-safarhuja
+  sex: Male
+  speaker: ru_safarhuja
+
+- type: ttsVoice
+  id: SafarhujaLow
+  name: tts-voice-safarhuja-low
+  sex: Male
+  speaker: ru_safarhuja
+  pitch: low
+
+- type: ttsVoice
+  id: SafarhujaHigh
+  name: tts-voice-safarhuja-high
+  sex: Male
+  speaker: ru_safarhuja
+  pitch: high
+
+- type: ttsVoice
+  id: Saida
+  name: tts-voice-saida
+  sex: Female
+  speaker: ru_saida
+
+- type: ttsVoice
+  id: SaidaLow
+  name: tts-voice-saida-low
+  sex: Female
+  speaker: ru_saida
+  pitch: low
+
+- type: ttsVoice
+  id: SaidaHigh
+  name: tts-voice-saida-high
+  sex: Female
+  speaker: ru_saida
+  pitch: high
+
+- type: ttsVoice
+  id: Sibday
+  name: tts-voice-sibday
+  sex: Male  # пол? — сверить по сэмплу
+  speaker: ru_sibday
+
+- type: ttsVoice
+  id: SibdayLow
+  name: tts-voice-sibday-low
+  sex: Male
+  speaker: ru_sibday
+  pitch: low
+
+- type: ttsVoice
+  id: SibdayHigh
+  name: tts-voice-sibday-high
+  sex: Male
+  speaker: ru_sibday
+  pitch: high
+
+- type: ttsVoice
+  id: Zara
+  name: tts-voice-zara
+  sex: Female
+  speaker: ru_zara
+
+- type: ttsVoice
+  id: ZaraLow
+  name: tts-voice-zara-low
+  sex: Female
+  speaker: ru_zara
+  pitch: low
+
+- type: ttsVoice
+  id: ZaraHigh
+  name: tts-voice-zara-high
+  sex: Female
+  speaker: ru_zara
+  pitch: high
+
+- type: ttsVoice
+  id: Zhadyra
+  name: tts-voice-zhadyra
+  sex: Female
+  speaker: ru_zhadyra
+
+- type: ttsVoice
+  id: ZhadyraLow
+  name: tts-voice-zhadyra-low
+  sex: Female
+  speaker: ru_zhadyra
+  pitch: low
+
+- type: ttsVoice
+  id: ZhadyraHigh
+  name: tts-voice-zhadyra-high
+  sex: Female
+  speaker: ru_zhadyra
+  pitch: high
+
+- type: ttsVoice
+  id: Zhazira
+  name: tts-voice-zhazira
+  sex: Female
+  speaker: ru_zhazira
+
+- type: ttsVoice
+  id: ZhaziraLow
+  name: tts-voice-zhazira-low
+  sex: Female
+  speaker: ru_zhazira
+  pitch: low
+
+- type: ttsVoice
+  id: ZhaziraHigh
+  name: tts-voice-zhazira-high
+  sex: Female
+  speaker: ru_zhazira
+  pitch: high
+
+- type: ttsVoice
+  id: Zinaida
+  name: tts-voice-zinaida
+  sex: Female
+  speaker: ru_zinaida
+
+- type: ttsVoice
+  id: ZinaidaLow
+  name: tts-voice-zinaida-low
+  sex: Female
+  speaker: ru_zinaida
+  pitch: low
+
+- type: ttsVoice
+  id: ZinaidaHigh
+  name: tts-voice-zinaida-high
+  sex: Female
+  speaker: ru_zinaida
+  pitch: high
+
+- type: ttsVoice
+  id: Eduard
+  name: tts-voice-eduard
+  sex: Male
+  speaker: ru_eduard
+
+- type: ttsVoice
+  id: EduardLow
+  name: tts-voice-eduard-low
+  sex: Male
+  speaker: ru_eduard
+  pitch: low
+
+- type: ttsVoice
+  id: EduardHigh
+  name: tts-voice-eduard-high
+  sex: Male
+  speaker: ru_eduard
+  pitch: high
