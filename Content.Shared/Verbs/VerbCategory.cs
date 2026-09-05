@@ -91,5 +91,7 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory Interaction = // Respiral-Interactions
             new("verb-categories-interaction", "/Textures/Interface/VerbIcons/group.svg.192dpi.png"); // Respiral-Interactions
+        public static readonly VerbCategory Metabolizers =
+            new("verb-categories-select-target", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
     }
 }
