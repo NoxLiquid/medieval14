@@ -5,7 +5,10 @@ a tree of entries, each pointing at a `<Document>` markup file.
 
 ## Where things live
 - **Entry prototypes:** `Resources/Prototypes/_Respiral/Guidebook/guidebook.yml` (`- type: guideEntry`).
-- **Content files:** `Resources/ServerInfo/Guidebook/_Respiral/*.xml`.
+- **Content files:** `Resources/ServerInfo/Guidebook/_Respiral/<Branch>/*.xml` — organized into per-branch
+  subfolders (`Identity/`, `Skills/`, `Combat/`, `Crafting/`, `World/`); the root `Medieval.xml` stays at
+  the top level. A `guideEntry`'s `text:` path must match the file's subfolder. Nothing but `guidebook.yml`
+  references these paths, so moving a file = update its `text:` line only.
 - **Entry names (loc):** `Resources/Locale/{ru-RU,en-US}/_Respiral/guidebook.ftl` — key = the entry's
   `name:` field (e.g. `guide-entry-medieval-combat`). Both languages must be kept in parity.
 
@@ -21,11 +24,26 @@ Medieval (Средневековье)
 ├─ MedievalIdentity      — Identity.xml
 ├─ MedievalSkills        — Skills.xml
 │  └─ MedievalSkillsLiteracy — SkillsLiteracy.xml
-└─ MedievalCombat        — Combat.xml   (ветка «Бой, здоровье и возрождение», added 2026-09-05)
-   ├─ MedievalCombatDamage — CombatDamage.xml
-   ├─ MedievalArmor        — Armor.xml
-   └─ MedievalDeathRespawn — DeathRespawn.xml
+├─ MedievalCombat        — Combat.xml   (ветка «Бой, здоровье и возрождение», added 2026-09-05)
+│  ├─ MedievalCombatDamage — CombatDamage.xml
+│  ├─ MedievalArmor        — Armor.xml
+│  └─ MedievalDeathRespawn — DeathRespawn.xml
+├─ MedievalCrafting      — Crafting.xml (ветка «Ремёсла и материалы», added 2026-09-05)
+│  ├─ MedievalMaterials    — Materials.xml   (материалы, тиры, прочность/износ)
+│  ├─ MedievalStations     — Stations.xml    (лейт-верстаки: переработка vs изготовление)
+│  ├─ MedievalBuilding     — Building.xml    (строительство: меню OpenCraftingMenu + призраки)
+│  └─ MedievalTailoring    — Tailoring.xml   (дубильня→ткацкий→швейный)
+└─ MedievalWorld         — World.xml    (ветка «Мир и хозяйство», added 2026-09-05)
+   ├─ MedievalFlora        — Flora.xml          (лес/рубка→брёвна, сбор, охота)
+   ├─ MedievalRiding       — Riding.xml         (седло, повозка-hitch, верёвка-rope)
+   ├─ MedievalLocks        — Locks.xml          (замок/ключ/отмычка/дубликат, «Под замком»)
+   ├─ MedievalTrading      — Trade.xml          (монеты, кошель, торговые знаки-pallet)
+   └─ MedievalTidings      — Communications.xml (магический шар + указ виконта)
 ```
+
+Content files are stored per-branch on disk (`Combat/`, `Crafting/`, `World/`, `Identity/`, `Skills/`;
+`Medieval.xml` at root) — done 2026-09-05. `guidebook.yml` is still a single file. The `children:` tree
+is the logical clustering; don't add mid-level super-nodes (extra clicks for ~6 branches).
 
 ## `<Document>` markup
 Outer must be well-formed XML (validate: `python3 -c "import xml.etree.ElementTree as ET; ET.parse(p)"`).

@@ -10,29 +10,31 @@
   - MedievalIdentity
   - MedievalSkills
   - MedievalCombat
+  - MedievalCrafting
+  - MedievalWorld
 
 - type: guideEntry
   id: MedievalIdentity
   name: guide-entry-medieval-identity
-  text: "/ServerInfo/Guidebook/_Respiral/Identity.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Identity/Identity.xml"
 
 - type: guideEntry
   id: MedievalSkills
   name: guide-entry-medieval-skills
-  text: "/ServerInfo/Guidebook/_Respiral/Skills.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Skills/Skills.xml"
   children:
   - MedievalSkillsLiteracy
 
 - type: guideEntry
   id: MedievalSkillsLiteracy
   name: guide-entry-medieval-skills-literacy
-  text: "/ServerInfo/Guidebook/_Respiral/SkillsLiteracy.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Skills/SkillsLiteracy.xml"
 
 # Ветка «Бой, здоровье и возрождение»
 - type: guideEntry
   id: MedievalCombat
   name: guide-entry-medieval-combat
-  text: "/ServerInfo/Guidebook/_Respiral/Combat.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Combat/Combat.xml"
   children:
   - MedievalCombatDamage
   - MedievalArmor
@@ -41,14 +43,82 @@
 - type: guideEntry
   id: MedievalCombatDamage
   name: guide-entry-medieval-combat-damage
-  text: "/ServerInfo/Guidebook/_Respiral/CombatDamage.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Combat/CombatDamage.xml"
 
 - type: guideEntry
   id: MedievalArmor
   name: guide-entry-medieval-armor
-  text: "/ServerInfo/Guidebook/_Respiral/Armor.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Combat/Armor.xml"
 
 - type: guideEntry
   id: MedievalDeathRespawn
   name: guide-entry-medieval-death-respawn
-  text: "/ServerInfo/Guidebook/_Respiral/DeathRespawn.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Combat/DeathRespawn.xml"
+
+# Ветка «Ремёсла и материалы»
+- type: guideEntry
+  id: MedievalCrafting
+  name: guide-entry-medieval-crafting
+  text: "/ServerInfo/Guidebook/_Respiral/Crafting/Crafting.xml"
+  children:
+  - MedievalMaterials
+  - MedievalStations
+  - MedievalBuilding
+  - MedievalTailoring
+
+- type: guideEntry
+  id: MedievalMaterials
+  name: guide-entry-medieval-materials
+  text: "/ServerInfo/Guidebook/_Respiral/Crafting/Materials.xml"
+
+- type: guideEntry
+  id: MedievalStations
+  name: guide-entry-medieval-stations
+  text: "/ServerInfo/Guidebook/_Respiral/Crafting/Stations.xml"
+
+- type: guideEntry
+  id: MedievalBuilding
+  name: guide-entry-medieval-building
+  text: "/ServerInfo/Guidebook/_Respiral/Crafting/Building.xml"
+
+- type: guideEntry
+  id: MedievalTailoring
+  name: guide-entry-medieval-tailoring
+  text: "/ServerInfo/Guidebook/_Respiral/Crafting/Tailoring.xml"
+
+# Ветка «Мир и хозяйство»
+- type: guideEntry
+  id: MedievalWorld
+  name: guide-entry-medieval-world
+  text: "/ServerInfo/Guidebook/_Respiral/World/World.xml"
+  children:
+  - MedievalFlora
+  - MedievalRiding
+  - MedievalLocks
+  - MedievalTrading
+  - MedievalTidings
+
+- type: guideEntry
+  id: MedievalFlora
+  name: guide-entry-medieval-flora
+  text: "/ServerInfo/Guidebook/_Respiral/World/Flora.xml"
+
+- type: guideEntry
+  id: MedievalRiding
+  name: guide-entry-medieval-riding
+  text: "/ServerInfo/Guidebook/_Respiral/World/Riding.xml"
+
+- type: guideEntry
+  id: MedievalLocks
+  name: guide-entry-medieval-locks
+  text: "/ServerInfo/Guidebook/_Respiral/World/Locks.xml"
+
+- type: guideEntry
+  id: MedievalTrading
+  name: guide-entry-medieval-trading
+  text: "/ServerInfo/Guidebook/_Respiral/World/Trade.xml"
+
+- type: guideEntry
+  id: MedievalTidings
+  name: guide-entry-medieval-tidings
+  text: "/ServerInfo/Guidebook/_Respiral/World/Communications.xml"
