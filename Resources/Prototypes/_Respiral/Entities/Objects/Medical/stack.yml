@@ -1,0 +1,21 @@
+# Stack prototypes for medieval medical items (referenced by `- type: Stack stackType:` in medical.yml).
+- type: stack
+  id: MedievalBandage
+  name: stack-medieval-bandage
+  icon: { sprite: /Textures/_Respiral/Objects/Specific/Medical/bandage.rsi, state: bandage }
+  spawn: MedievalBandage1
+  maxCount: 5
+
+- type: stack
+  id: MedievalOintment
+  name: stack-medieval-ointment
+  icon: { sprite: /Textures/_Respiral/Objects/Specific/Medical/ointment.rsi, state: ointment }
+  spawn: MedievalOintment1
+  maxCount: 10
+
+- type: stack
+  id: MedievalBrutepack
+  name: stack-medieval-brutepack
+  icon: { sprite: /Textures/_Respiral/Objects/Specific/Medical/bandage.rsi, state: herbbandage }
+  spawn: MedievalBrutepack1
+  maxCount: 10

@@ -1,24 +1,6 @@
-# ZLevels dust VFX — extracted from CrystallEdge _CE (ZCollapse / falling dust).
+# ZLevels dust tile VFX — from CrystallEdge _CE (ZCollapse impact dust).
+# (CEDustEffect already exists in _Respiral/ZLevels/effects.yml — not re-added here.)
 # `ForkFiltered` category dropped (not defined in this fork).
-- type: entity
-  id: CEDustEffect
-  name: dust effect
-  suffix: VFX
-  save: false
-  components:
-  - type: Sprite
-    sprite: _CE/Effects/dust.rsi
-    drawdepth: Items
-    layers:
-    - state: dust
-  - type: Physics
-    canCollide: false
-  - type: Tag
-    tags:
-      - HideContextMenu
-  - type: TimedDespawn
-    lifetime: 0.5
-
 - type: entity
   id: CEDustTileEffect
   name: dust effect

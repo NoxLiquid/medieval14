@@ -56,7 +56,7 @@ public sealed partial class TTSVoiceAssignSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, TTSComponent component, MapInitEvent args)
     {
-        if (!string.IsNullOrEmpty(component.VoicePrototypeId.Id))
+        if (!string.IsNullOrEmpty(component.VoicePrototypeId?.Id))
             return;
 
         if (!TryComp<HumanoidProfileComponent>(uid, out var humanoid))

@@ -118,3 +118,7 @@ stack-medieval-floor-wood-dark-broken = сломанный деревянный 
 stack-medieval-floor-wood-dark-large-broken = сломанный большой деревянный пол из тёмного дерева
 stack-medieval-floor-wood-dark-parquet-broken = сломанный паркетный деревянный пол из тёмного дерева
 stack-medieval-floor-wood-dark-chess-broken = сломанный узорчатый деревянный пол из тёмного дерева
+
+stack-medieval-bandage = бинт
+stack-medieval-ointment = мазь
+stack-medieval-brutepack = травяная повязка

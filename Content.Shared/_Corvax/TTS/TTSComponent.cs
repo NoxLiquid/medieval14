@@ -7,5 +7,5 @@ public sealed partial class TTSComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("voice")]
-    public ProtoId<TTSVoicePrototype> VoicePrototypeId { get; set; }
+    public ProtoId<TTSVoicePrototype>? VoicePrototypeId { get; set; } // Respiral: nullable — empty = auto-assign by sex (TTSVoiceAssignSystem); fixes non-nullable-null serialization error
 }

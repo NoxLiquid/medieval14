@@ -1,0 +1,9 @@
+construction-step-medieval-wallpaper-red = рулон обоев «бордо»
+construction-step-medieval-wallpaper-black = рулон обоев «чёрные чернила»
+construction-step-medieval-wallpaper-green = рулон обоев «зелёный узор»
+construction-step-medieval-wallpaper-purple = рулон обоев «пурпурное величие»
+construction-step-medieval-wallpaper-white = рулон обоев «цветы на белом»
+construction-step-medieval-wallpaper-white2 = рулон обоев «чистый белый»
+construction-step-medieval-wallpaper-yellow = рулон обоев «солнечный ритм»
+construction-step-medieval-wallpaper-bank = рулон обоев «банкирская добропорядочность»
+construction-step-medieval-wallpaper-bank2 = рулон обоев «банкирское богатство»

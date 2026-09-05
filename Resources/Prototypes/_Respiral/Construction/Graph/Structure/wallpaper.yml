@@ -9,55 +9,55 @@
     - to: red
       steps:
       - tag: MedievalWallpaperRed
-        name: рулон обоев «бордо»
+        name: construction-step-medieval-wallpaper-red
         icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: red }
         doAfter: 1
     - to: black
       steps:
       - tag: MedievalWallpaperBlack
-        name: рулон обоев «чёрные чернила»
+        name: construction-step-medieval-wallpaper-black
         icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: black }
         doAfter: 1
     - to: green
       steps:
       - tag: MedievalWallpaperGreen
-        name: рулон обоев «зелёный узор»
+        name: construction-step-medieval-wallpaper-green
         icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: green }
         doAfter: 1
     - to: purple
       steps:
       - tag: MedievalWallpaperPurple
-        name: рулон обоев «пурпурное величие»
+        name: construction-step-medieval-wallpaper-purple
         icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: purple }
         doAfter: 1
     - to: white
       steps:
       - tag: MedievalWallpaperWhite
-        name: рулон обоев «цветы на белом»
+        name: construction-step-medieval-wallpaper-white
         icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: white }
         doAfter: 1
     - to: white2
       steps:
       - tag: MedievalWallpaperWhite2
-        name: рулон обоев «чистый белый»
+        name: construction-step-medieval-wallpaper-white2
         icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: white2 }
         doAfter: 1
     - to: yellow
       steps:
       - tag: MedievalWallpaperYellow
-        name: рулон обоев «солнечный ритм»
+        name: construction-step-medieval-wallpaper-yellow
         icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: yellow }
         doAfter: 1
     - to: bank
       steps:
       - tag: MedievalWallpaperBank
-        name: рулон обоев «банкирская добропорядочность»
+        name: construction-step-medieval-wallpaper-bank
         icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: bank }
         doAfter: 1
     - to: bank2
       steps:
       - tag: MedievalWallpaperBank2
-        name: рулон обоев «банкирское богатство»
+        name: construction-step-medieval-wallpaper-bank2
         icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: bank2 }
         doAfter: 1
 

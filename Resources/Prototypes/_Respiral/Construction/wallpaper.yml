@@ -2,8 +2,6 @@
 # чтобы выбрать сторону стены — направление берётся из спрайта.
 - type: construction
   id: MedievalWallpaperRed
-  name: обои «бордо»
-  description: Тонкие бумажные обои, наклеенные на стену.
   graph: MedievalWallpaper
   startNode: start
   targetNode: red
@@ -11,12 +9,9 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: red }
 
 - type: construction
   id: MedievalWallpaperBlack
-  name: обои «чёрные чернила»
-  description: Тонкие бумажные обои, наклеенные на стену.
   graph: MedievalWallpaper
   startNode: start
   targetNode: black
@@ -24,12 +19,9 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: black }
 
 - type: construction
   id: MedievalWallpaperGreen
-  name: обои «зелёный узор»
-  description: Тонкие бумажные обои, наклеенные на стену.
   graph: MedievalWallpaper
   startNode: start
   targetNode: green
@@ -37,12 +29,9 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: green }
 
 - type: construction
   id: MedievalWallpaperPurple
-  name: обои «пурпурное величие»
-  description: Тонкие бумажные обои, наклеенные на стену.
   graph: MedievalWallpaper
   startNode: start
   targetNode: purple
@@ -50,12 +39,9 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: purple }
 
 - type: construction
   id: MedievalWallpaperWhite
-  name: обои «цветы на белом»
-  description: Тонкие бумажные обои, наклеенные на стену.
   graph: MedievalWallpaper
   startNode: start
   targetNode: white
@@ -63,12 +49,9 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: white }
 
 - type: construction
   id: MedievalWallpaperWhite2
-  name: обои «чистый белый»
-  description: Тонкие бумажные обои, наклеенные на стену.
   graph: MedievalWallpaper
   startNode: start
   targetNode: white2
@@ -76,12 +59,9 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: white2 }
 
 - type: construction
   id: MedievalWallpaperYellow
-  name: обои «солнечный ритм»
-  description: Тонкие бумажные обои, наклеенные на стену.
   graph: MedievalWallpaper
   startNode: start
   targetNode: yellow
@@ -89,12 +69,9 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: yellow }
 
 - type: construction
   id: MedievalWallpaperBank
-  name: обои «банкирская добропорядочность»
-  description: Тонкие бумажные обои, наклеенные на стену.
   graph: MedievalWallpaper
   startNode: start
   targetNode: bank
@@ -102,12 +79,9 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: bank }
 
 - type: construction
   id: MedievalWallpaperBank2
-  name: обои «банкирское богатство»
-  description: Тонкие бумажные обои, наклеенные на стену.
   graph: MedievalWallpaper
   startNode: start
   targetNode: bank2
@@ -115,4 +89,3 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon: { sprite: _Respiral/Structures/Wallpaper/icons.rsi, state: bank2 }

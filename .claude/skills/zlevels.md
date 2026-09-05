@@ -122,3 +122,10 @@ all Respiral maps (verdant_vale/edgehaven/empty × their z-levels) load cleanly 
 ZLevels components. Harness starts fine despite the 24 pre-existing lint errors ⇒ they're lint-level,
 not load-blocking. Migration validated. (Full `dotnet test Content.IntegrationTests` would surface the
 24 pre-existing failures — unrelated to ZLevels.)
+
+### Linter cleanup (2026-09-05) — pre-existing errors fixed
+After the port, `Content.YAMLLinter` had 24 pre-existing (non-migration) errors. All fixed → **0 errors**:
+- **TTS `voice`** (~14): `TTSComponent.VoicePrototypeId` made nullable (`ProtoId<TTSVoicePrototype>?`) — empty = auto-assign by sex; updated usages in TTSSystem/TTSAnnounceSystem/TTSVoiceAssignSystem (`?.Id`, explicit `TryIndex<TTSVoicePrototype>`).
+- **Medical** (6): added missing `type: stack` protos (`MedievalBandage/Ointment/Brutepack` → spawn the `*1` entities) in `Objects/Medical/stack.yml` + `stacks.ftl` loc; fixed invalid `ointment-storage` RSI state → `ointment`.
+- **Wallpaper** (~11): `type: construction` `name`/`description` are `LocId` and it has no `icon` field → removed those literal fields (recipe name derives from the target entity); graph-step names restored as loc ids (`construction/wallpaper.ftl`, ru+en).
+- Also fixed a dup: my brought `CEDustEffect` collided with the pre-existing one in `_Respiral/ZLevels/effects.yml` — dropped mine, kept only the new `CEDustTileEffect`.

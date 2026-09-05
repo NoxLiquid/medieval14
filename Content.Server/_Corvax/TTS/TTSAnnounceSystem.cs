@@ -37,12 +37,15 @@ public sealed partial class TTSAnnounceSystem : EntitySystem
     private ProtoId<TTSVoicePrototype>? ResolveSenderVoice(EntityUid? sender)
     {
         if (sender is not { } uid ||
-            !TryComp<TTSComponent>(uid, out var tts) ||
-            string.IsNullOrEmpty(tts.VoicePrototypeId))
+            !TryComp<TTSComponent>(uid, out var tts))
+            return null;
+
+        var voiceId = tts.VoicePrototypeId?.Id;
+        if (string.IsNullOrEmpty(voiceId))
             return null;
 
         // учитываем маску голоса
-        var voiceEv = new TransformSpeakerVoiceEvent(uid, tts.VoicePrototypeId);
+        var voiceEv = new TransformSpeakerVoiceEvent(uid, voiceId);
         RaiseLocalEvent(uid, voiceEv);
         return voiceEv.VoiceId;
     }

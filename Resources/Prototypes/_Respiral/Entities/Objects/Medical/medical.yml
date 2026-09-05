@@ -70,7 +70,7 @@
     sprite: _Respiral/Objects/Specific/Medical/ointment.rsi
     heldPrefix: ointment
     storedSprite:
-      state: ointment-storage
+      state: ointment
       sprite: _Respiral/Objects/Specific/Medical/ointment.rsi
   - type: Healing
     damageContainers:

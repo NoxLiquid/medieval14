@@ -77,7 +77,7 @@ public sealed partial class TTSSystem : EntitySystem
 
     private void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
     {
-        var voiceId = component.VoicePrototypeId;
+        var voiceId = component.VoicePrototypeId?.Id;
         if (!_isEnabled ||
             args.Message.Length > MaxMessageChars ||
             string.IsNullOrEmpty(voiceId))
@@ -87,7 +87,7 @@ public sealed partial class TTSSystem : EntitySystem
         RaiseLocalEvent(uid, voiceEv);
         voiceId = voiceEv.VoiceId;
 
-        if (!_prototypeManager.TryIndex(voiceId, out var protoVoice))
+        if (!_prototypeManager.TryIndex<TTSVoicePrototype>(voiceId, out var protoVoice))
             return;
 
         if (args.ObfuscatedMessage != null)

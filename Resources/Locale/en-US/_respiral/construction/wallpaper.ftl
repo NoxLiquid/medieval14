@@ -1,0 +1,9 @@
+construction-step-medieval-wallpaper-red = burgundy wallpaper roll
+construction-step-medieval-wallpaper-black = black-ink wallpaper roll
+construction-step-medieval-wallpaper-green = green-pattern wallpaper roll
+construction-step-medieval-wallpaper-purple = purple-majesty wallpaper roll
+construction-step-medieval-wallpaper-white = flowers-on-white wallpaper roll
+construction-step-medieval-wallpaper-white2 = pure-white wallpaper roll
+construction-step-medieval-wallpaper-yellow = sunny-rhythm wallpaper roll
+construction-step-medieval-wallpaper-bank = banker's-decency wallpaper roll
+construction-step-medieval-wallpaper-bank2 = banker's-wealth wallpaper roll
