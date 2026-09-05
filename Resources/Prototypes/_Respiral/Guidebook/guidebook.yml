@@ -9,6 +9,7 @@
   children:
   - MedievalIdentity
   - MedievalSkills
+  - MedievalCombat
 
 - type: guideEntry
   id: MedievalIdentity
@@ -26,3 +27,28 @@
   id: MedievalSkillsLiteracy
   name: guide-entry-medieval-skills-literacy
   text: "/ServerInfo/Guidebook/_Respiral/SkillsLiteracy.xml"
+
+# Ветка «Бой, здоровье и возрождение»
+- type: guideEntry
+  id: MedievalCombat
+  name: guide-entry-medieval-combat
+  text: "/ServerInfo/Guidebook/_Respiral/Combat.xml"
+  children:
+  - MedievalCombatDamage
+  - MedievalArmor
+  - MedievalDeathRespawn
+
+- type: guideEntry
+  id: MedievalCombatDamage
+  name: guide-entry-medieval-combat-damage
+  text: "/ServerInfo/Guidebook/_Respiral/CombatDamage.xml"
+
+- type: guideEntry
+  id: MedievalArmor
+  name: guide-entry-medieval-armor
+  text: "/ServerInfo/Guidebook/_Respiral/Armor.xml"
+
+- type: guideEntry
+  id: MedievalDeathRespawn
+  name: guide-entry-medieval-death-respawn
+  text: "/ServerInfo/Guidebook/_Respiral/DeathRespawn.xml"
