@@ -1,8 +1,3 @@
-/*
- * This file is sublicensed under MIT License
- * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
- */
-
 using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared.Climbing.Components;
 using Robust.Shared.Physics;
@@ -24,6 +19,9 @@ public sealed class CEZLevelClimbingSystem : EntitySystem
 
     private void OnPreventCollide(Entity<CEZPhysicsComponent> ent, ref PreventCollideEvent args)
     {
+        if (ent.Comp.Disabled)
+            return;
+
         if (!TryComp<PhysicsComponent>(ent, out var physics) || physics.BodyStatus != BodyStatus.InAir)
             return;
 

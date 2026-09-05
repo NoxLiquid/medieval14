@@ -20,11 +20,12 @@ namespace Content.Shared._CE.ZLevels.Damage;
 public sealed partial class CEZLevelDamageSystem : EntitySystem
 {
     [Dependency] private SharedStunSystem _stun = default!;
-    [Dependency] private DamageableSystem _damage = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private IConfigurationManager _config = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public float BaseFallingDamage { get; private set; }
     public float BaseFallingOtherDamage { get; private set; }
@@ -48,12 +49,16 @@ public sealed partial class CEZLevelDamageSystem : EntitySystem
 
     private void OnFallDamage(Entity<PhysicsComponent> ent, ref CEZLevelHitEvent args)
     {
+        if (!_proto.Resolve(PhysicalDamageType, out var damageType))
+            return;
+
         var damageModifier = 1f;
         var stunModifier = 1f;
 
         var damageToOtherEv = new CEZFallingOnTargetDamageCalculateEvent(args.ImpactPower);
         RaiseLocalEvent(ent, damageToOtherEv);
-        var otherDamage = damageToOtherEv.DamageMultiplier * BaseFallingOtherDamage * args.ImpactPower * args.ImpactPower;
+        var otherDamage = damageToOtherEv.DamageMultiplier * BaseFallingOtherDamage * args.ImpactPower *
+                          args.ImpactPower;
         var otherStun = damageToOtherEv.StunMultiplier * BaseFallingOtherStunTime * args.ImpactPower * args.ImpactPower;
 
         // Calculate damage modifiers for the falling entity
@@ -91,8 +96,8 @@ public sealed partial class CEZLevelDamageSystem : EntitySystem
                 _stun.TryKnockdown(victim, TimeSpan.FromSeconds(otherStun));
             if (otherDamage > 0)
             {
-                var otherDmgSpec = new DamageSpecifier() { DamageDict = { { PhysicalDamageType, (int)otherDamage } } };
-                _damage.TryChangeDamage(victim, otherDmgSpec, origin: ent);
+                var otherDmgSpec = new DamageSpecifier(damageType, otherDamage);
+                _damageable.ChangeDamage(victim, otherDmgSpec);
             }
         }
 
@@ -102,8 +107,8 @@ public sealed partial class CEZLevelDamageSystem : EntitySystem
         var damageAmount = args.ImpactPower * args.ImpactPower * BaseFallingDamage * damageModifier;
         if (damageAmount > 0)
         {
-            var selfDmgSpec = new DamageSpecifier() { DamageDict = { { PhysicalDamageType, (int)damageAmount } } };
-            _damage.TryChangeDamage(ent.Owner, selfDmgSpec);
+            var selfDmgSpec = new DamageSpecifier(damageType, damageAmount);
+            _damageable.ChangeDamage(ent.Owner, selfDmgSpec);
         }
 
         var knockdownTime = MathF.Min(args.ImpactPower * args.ImpactPower * BaseFallingStunTime * stunModifier, 5f);

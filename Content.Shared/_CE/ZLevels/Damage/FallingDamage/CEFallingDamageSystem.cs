@@ -9,8 +9,7 @@ namespace Content.Shared._CE.ZLevels.Damage.FallingDamage;
 
 public sealed partial class CEFallingDamageSystem : EntitySystem
 {
-    [Dependency] private DamageableSystem _damage = default!;
-
+    [Dependency] private DamageableSystem _damageable = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -20,8 +19,6 @@ public sealed partial class CEFallingDamageSystem : EntitySystem
 
     private void OnFallOnMe(Entity<CEFallingDamageComponent> ent, ref CEZFellOnMeEvent args)
     {
-        EntityUid? source = null;
-
-        _damage.TryChangeDamage(args.Fallen, ent.Comp.Damage * args.Speed, origin: source);
+        _damageable.TryChangeDamage(args.Fallen, ent.Comp.Damage * args.Speed);
     }
 }

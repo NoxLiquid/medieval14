@@ -23,7 +23,7 @@ public sealed partial class CEZLevelsSystem
     [Dependency] private ViewSubscriberSystem _viewSubscriber = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
 
-    private readonly EntProtoId _zEyeProto = "ZLevelEye";
+    private readonly EntProtoId _zEyeProto = "CEZLevelEye";
 
     private readonly TimeSpan _zLevelViewerUpdateRate = TimeSpan.FromSeconds(1f);
     private TimeSpan _nextZLevelViewerUpdate = TimeSpan.Zero;
@@ -37,7 +37,26 @@ public sealed partial class CEZLevelsSystem
         SubscribeLocalEvent<CEZLevelViewerComponent, ComponentRemove>(OnCompRemove);
 
         SubscribeLocalEvent<CEZLevelViewerComponent, MapUidChangedEvent>(OnViewerMapUidChanged);
-        SubscribeLocalEvent<CEZPhysicsComponent, CEZLevelFallMapEvent>(OnZLevelFall);
+
+        SubscribeLocalEvent<CEZMapNetworkComponent, CEZLevelMapNetworkUpdatedEvent>(OnMapNetworkUpdated);
+    }
+
+    /// <summary>
+    /// A viewer's eye stack is built from the maps surrounding it, so it goes stale the moment
+    /// the network gains or loses a level. Rebuild it for everyone inside that network.
+    /// </summary>
+    private void OnMapNetworkUpdated(Entity<CEZMapNetworkComponent> ent, ref CEZLevelMapNetworkUpdatedEvent args)
+    {
+        var query = EntityQueryEnumerator<CEZLevelViewerComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var viewer, out var xform))
+        {
+            if (xform.MapUid is not { } mapUid ||
+                !TryComp<CEZMapComponent>(mapUid, out var zMap) ||
+                zMap.NetworkUid != ent.Owner)
+                continue;
+
+            UpdateViewer((uid, viewer));
+        }
     }
 
     private void UpdateView(float frameTime)
@@ -49,9 +68,14 @@ public sealed partial class CEZLevelsSystem
         var query = EntityQueryEnumerator<CEZLevelViewerComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var viewer, out var xform))
         {
+            var worldPosition = _transform.GetWorldPosition(xform);
+
             foreach (var eye in viewer.Eyes)
             {
-                _transform.SetWorldPosition(eye, _transform.GetWorldPosition(xform));
+                if (TerminatingOrDeleted(eye))
+                    continue;
+
+                _transform.SetWorldPosition(eye, worldPosition);
             }
         }
     }
@@ -94,7 +118,8 @@ public sealed partial class CEZLevelsSystem
         var eyes = ent.Comp.Eyes;
         foreach (var eye in ent.Comp.Eyes)
         {
-            QueueDel(eye);
+            if (!TerminatingOrDeleted(eye))
+                QueueDel(eye);
         }
         eyes.Clear();
 
@@ -121,21 +146,17 @@ public sealed partial class CEZLevelsSystem
             eyes.Add(newEye);
         }
 
-        // We constantly load the upper z-level for the client so that you can quickly look up and climb stairs without PVS lag.
-        if (TryMapUp(map.Value, out var aboveMapUid))
+        // We constantly load the upper z-levels for the client so that you can quickly look up and climb stairs without PVS lag.
+        for (var i = 1; i <= MaxZLevelsAboveRendering; i++)
         {
-            var newEye = SpawnAtPosition(_zEyeProto, new EntityCoordinates(aboveMapUid, globalPos));
+            if (!TryMapOffset(map.Value, i, out var mapUidAbove))
+                break;
+
+            var newEye = SpawnAtPosition(_zEyeProto, new EntityCoordinates(mapUidAbove, globalPos));
 
             Transform(newEye).GridTraversal = false;
             _viewSubscriber.AddViewSubscriber(newEye, actor.PlayerSession);
             eyes.Add(newEye);
         }
-    }
-
-    private void OnZLevelFall(Entity<CEZPhysicsComponent> ent, ref CEZLevelFallMapEvent args)
-    {
-        //A dirty trick: we call PredictedPopup on the falling entity on SERVER.
-        //This means that the one who is falling does not see the popup itself, but everyone around them does. This is what we need.
-        _popup.PopupPredictedCoordinates(Loc.GetString("ce-zlevel-falling-popup", ("name", Identity.Name(ent, EntityManager))), Transform(ent).Coordinates, ent);
     }
 }

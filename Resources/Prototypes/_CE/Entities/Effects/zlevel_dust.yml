@@ -1,0 +1,36 @@
+# ZLevels dust VFX — extracted from CrystallEdge _CE (ZCollapse / falling dust).
+# `ForkFiltered` category dropped (not defined in this fork).
+- type: entity
+  id: CEDustEffect
+  name: dust effect
+  suffix: VFX
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CE/Effects/dust.rsi
+    drawdepth: Items
+    layers:
+    - state: dust
+  - type: Physics
+    canCollide: false
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: TimedDespawn
+    lifetime: 0.5
+
+- type: entity
+  id: CEDustTileEffect
+  name: dust effect
+  description: A burst of dust upon impact.
+  suffix: VFX
+  components:
+  - type: Transform
+  - type: Sprite
+    sprite: _CE/Effects/TileEffects/dust.rsi
+    snapCardinals: true
+    layers:
+    - state: effect
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 2.2

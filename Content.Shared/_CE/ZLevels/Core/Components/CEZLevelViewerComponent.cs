@@ -28,7 +28,7 @@ public sealed partial class CEZLevelViewerComponent : Component
     #region Actions
 
     [DataField]
-    public EntProtoId ActionId = "ActionToggleLookUp";
+    public EntProtoId ActionId = "CEActionToggleLookUp";
 
     [DataField, AutoNetworkedField]
     public EntityUid? ActionEntity;

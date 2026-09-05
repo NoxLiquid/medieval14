@@ -22,7 +22,7 @@ public sealed partial class CEZLevelBlurOverlay : Overlay
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
-    private readonly ProtoId<ShaderPrototype> _zBlurShader = "ZBlur";
+    private readonly ProtoId<ShaderPrototype> _zBlurShader = "CEZBlur";
 
     public CEZLevelBlurOverlay()
     {

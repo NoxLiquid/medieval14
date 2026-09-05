@@ -23,7 +23,7 @@ public sealed partial class ScalingViewport
     [Dependency] private ITileDefinitionManager _tile = default!;
 
     private CEClientZLevelsSystem? _zLevels;
-    private SharedMapSystem? _map;
+    private SharedMapSystem? _mapSystem;
 
     private EntityQuery<TransformComponent>? _xformQuery;
     private EntityQuery<MapComponent>? _mapQuery;
@@ -68,17 +68,17 @@ public sealed partial class ScalingViewport
         var mapCoordsBottomLeft = new MapCoordinates(new Vector2(minX, minY), mapId);
         var mapCoordsTopRight = new MapCoordinates(new Vector2(maxX, maxY), mapId);
 
-        if (_map is null || !_map.TryFindGridAt(mapUid, mapCoordsBottomLeft.Position, out var gridUid, out var grid))
+        if (_mapSystem is null || !_mapSystem.TryFindGridAt(mapUid, mapCoordsBottomLeft.Position, out var gridUid, out var grid))
             return true;
 
-        var tileBottomLeft = _map.TileIndicesFor(gridUid, grid, mapCoordsBottomLeft);
-        var tileTopRight = _map.TileIndicesFor(gridUid, grid, mapCoordsTopRight);
+        var tileBottomLeft = _mapSystem.TileIndicesFor(gridUid, grid, mapCoordsBottomLeft);
+        var tileTopRight = _mapSystem.TileIndicesFor(gridUid, grid, mapCoordsTopRight);
 
         for (var x = tileBottomLeft.X - 1; x <= tileTopRight.X + 1; x++)
         {
             for (var y = tileBottomLeft.Y - 1; y <= tileTopRight.Y + 1; y++)
             {
-                var tile = _map.GetTileRef(gridUid, grid, new Vector2i(x, y));
+                var tile = _mapSystem.GetTileRef(gridUid, grid, new Vector2i(x, y));
                 var tileDef = (ContentTileDefinition)_tile[tile.Tile.TypeId];
                 if (tileDef.Transparent || tile.Tile.IsEmpty)
                     return true;
@@ -101,7 +101,7 @@ public sealed partial class ScalingViewport
 
         // Cache systems and components
         _zLevels ??= _entityManager.System<CEClientZLevelsSystem>();
-        _map ??= _entityManager.System<SharedMapSystem>();
+        _mapSystem ??= _entityManager.System<SharedMapSystem>();
 
         if (_player.LocalEntity is null)
             return;
@@ -115,7 +115,9 @@ public sealed partial class ScalingViewport
         if (playerXform.MapUid is null)
             return;
 
-        var lookUp = zLevelViewer.LookUp ? 1 : 0;
+        var lookUp = 0;
+        if (zLevelViewer.LookUp)
+            lookUp = _zLevels.GetVisibleZLevelsAbove(_player.LocalEntity.Value, playerXform.MapUid);
 
         var lowestDepth = 0;
         for (var i = 0; i >= -CESharedZLevelsSystem.MaxZLevelsBelowRendering; i--)

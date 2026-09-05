@@ -16,13 +16,13 @@ namespace Content.Shared._CE.ZLevels.Ghost;
 public sealed partial class CEZLevelGhostMoverComponent : Component
 {
     [DataField]
-    public EntProtoId UpActionProto = "ActionZLevelUp";
+    public EntProtoId UpActionProto = "CEActionZLevelUp";
 
     [DataField, AutoNetworkedField]
     public EntityUid? ZLevelUpActionEntity;
 
     [DataField]
-    public EntProtoId DownActionProto = "ActionZLevelDown";
+    public EntProtoId DownActionProto = "CEActionZLevelDown";
 
     [DataField, AutoNetworkedField]
     public EntityUid? ZLevelDownActionEntity;
