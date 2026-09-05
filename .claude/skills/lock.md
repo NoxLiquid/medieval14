@@ -37,3 +37,17 @@ General rule: any DoAfter that plays a looping/long sound must (a) play it only 
 (b) store the audio `EntityUid?` and stop it in the DoAfter handler for **both** the cancelled and completed
 branches. Note DoAfter cancellation *does* raise the event (`InternalCancel` → `RaiseDoAfterEvents` with
 `Cancelled = true`), so the handler is the right place to clean up.
+
+## LockExamine — «Под замком.» при осмотре (wired 2026-09-05)
+
+`LockExamineComponent` (пустой маркер, `Content.Server/_Respiral/Lock/`). Обработчик `OnExamine` в
+`MedievalLockSystem` при осмотре объекта смотрит слот `lock-container`: если внутри есть замок —
+добавляет в тултип строку `medieval-lock-attached` («Под замком.»).
+
+Навешан на две базы (наследуется всеми запираемыми):
+- `MedievalBaseLockableDoor` (`Entities/Structures/Doors/base_door.yml`) → все двери
+  (`MedievalWoodenDoor`/…/`MedievalIronWindowedDoor` → `MedievalBaseInstantDoor` →
+  `MedievalBaseLockableDoor`), включая все варианты из `locked_door.yml`.
+- `MedievalBaseLockableCrate` (`Entities/Structures/Storages/crates.yml`) → все `MedievalChest*`.
+
+Ранее лежал мёртвым (0 прототипов) — см. [[dead_code_cleanup]].

@@ -462,3 +462,23 @@ garment (NO storage — unlike the work coat), same base+empty-inhand pattern, r
 
 Tabards (`Tabards/*`) now have an attach-to-armor system — see [[tabard]]. First pass: the Crow Kingdom
 tabard + a flag on the 5 armor pieces; more houses not prototyped yet.
+
+## Wear distribution — clothing durability from wearer damage (wired 2026-09-05)
+
+`WearComponent` + `Damageable` + `Destructible` on `MedievalBaseClothing` give every Medieval
+garment durability (breaks/destroys via Destructible thresholds; `WearSystem` shows remaining
+durability on examine, plays wear sound). The distributor that feeds damage into worn clothing is
+`ClothingDamageDistributionComponent` (server, `_Respiral/Wear/`):
+
+- Attached on `BaseSpeciesMob` (`Resources/Prototypes/Body/species_base.yml`, Respiral block next to
+  `OfferGiver`) → all playable humanoids (human/dwarf/goblin/elf).
+- On `BeforeDamageChangedEvent`, `clothCount = totalDamage / DamageThreshold` (default 10); picks
+  `clothCount` random worn items (from slots head/outerClothing/neck/gloves/shoes/jumpsuit/underwearb)
+  that have `WearComponent` and applies the wearer's **full** `DamageSpecifier` to each via
+  `WearSystem.AddWear` → `TryChangeDamage`.
+- ⚠️ Balance note: applies the wearer's full incoming damage to each picked item, `clothCount` times —
+  a single large hit can shred clothing fast. Tune `DamageThreshold`/scale the applied damage if too
+  harsh. Behavior left as-authored on wiring.
+
+`ContainerDamageDistributionComponent` (same dir) is intentionally KEPT but NOT wired — reserved for
+future machine wear (durability from the quality of parts inside). See [[dead_code_cleanup]].

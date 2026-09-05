@@ -157,6 +157,7 @@
   # Respiral-Start
   - type: OfferGiver # Offer
   - type: InteractionActions # Interactions
+  - type: ClothingDamageDistribution # Wear - износ надетой одежды при получении урона
   # Respiral-End
 
 - type: entity

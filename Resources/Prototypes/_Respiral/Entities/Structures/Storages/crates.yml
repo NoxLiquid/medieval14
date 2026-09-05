@@ -102,6 +102,7 @@
       paper_label: !type:ContainerSlot
       lock-container: !type:ContainerSlot
   - type: MedievalLockable
+  - type: LockExamine
 
 - type: entity
   parent: MedievalBaseLockableCrate
