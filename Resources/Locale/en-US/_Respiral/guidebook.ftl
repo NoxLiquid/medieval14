@@ -19,3 +19,6 @@ guide-entry-medieval-riding = Riding and Harness
 guide-entry-medieval-locks = Locks and Keys
 guide-entry-medieval-trading = Trade and Coin
 guide-entry-medieval-tidings = Tidings and Decrees
+guide-entry-medieval-society = Character and Society
+guide-entry-medieval-professions = Professions and Roles
+guide-entry-medieval-bureaucracy = Papers and Seals

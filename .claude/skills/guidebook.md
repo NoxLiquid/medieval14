@@ -21,9 +21,12 @@ a tree of entries, each pointing at a `<Document>` markup file.
 ### Current tree (under `Medieval`)
 ```
 Medieval (Средневековье)
-├─ MedievalIdentity      — Identity.xml
-├─ MedievalSkills        — Skills.xml
-│  └─ MedievalSkillsLiteracy — SkillsLiteracy.xml
+├─ MedievalSociety       — Society/Society.xml (ветка «Персонаж и общество», added 2026-09-05)
+│  ├─ MedievalIdentity        — Society/Identity.xml
+│  ├─ MedievalSkills          — Society/Skills.xml
+│  │  └─ MedievalSkillsLiteracy — Society/SkillsLiteracy.xml
+│  ├─ MedievalProfessions     — Society/Professions.xml (сословия, стартовое снаряжение+навык)
+│  └─ MedievalBureaucracy     — Society/Bureaucracy.xml  (бумага, печати, паспорт/канцелярия)
 ├─ MedievalCombat        — Combat.xml   (ветка «Бой, здоровье и возрождение», added 2026-09-05)
 │  ├─ MedievalCombatDamage — CombatDamage.xml
 │  ├─ MedievalArmor        — Armor.xml
@@ -41,8 +44,9 @@ Medieval (Средневековье)
    └─ MedievalTidings      — Communications.xml (магический шар + указ виконта)
 ```
 
-Content files are stored per-branch on disk (`Combat/`, `Crafting/`, `World/`, `Identity/`, `Skills/`;
-`Medieval.xml` at root) — done 2026-09-05. `guidebook.yml` is still a single file. The `children:` tree
+Content files are stored per-branch on disk (`Society/`, `Combat/`, `Crafting/`, `World/`;
+`Medieval.xml` at root) — done 2026-09-05. Identity + Skills now live under `Society/` (were their own
+top-level tabs; regrouped into the «Персонаж и общество» cluster). `guidebook.yml` is still a single file. The `children:` tree
 is the logical clustering; don't add mid-level super-nodes (extra clicks for ~6 branches).
 
 ## `<Document>` markup
@@ -54,6 +58,10 @@ Inside, mix of Markdown + RichText tags:
 - `<GuideEntityEmbed Entity="EntityProtoId" Caption="…"/>` — shows an entity sprite+name. **The
   EntityProtoId must exist** or the doc fails to load — verify every id before shipping. Wrap rows of
   embeds in `<Box>…</Box>`.
+
+## Status (2026-09-05)
+Built: Персонаж и общество, Бой/здоровье/возрождение, Ремёсла и материалы, Мир и хозяйство (22 entries).
+**Магия — отложена** по решению пользователя: механика сырая/не доделана, гайд писать рано.
 
 ## Content roadmap (proposed, from `.claude/skills/` domains)
 Persona/society (Identity✅, Skills✅, Professions, Bureaucracy) · Combat/health/rebirth✅ · Crafting &

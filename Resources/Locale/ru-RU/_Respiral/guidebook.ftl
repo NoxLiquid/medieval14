@@ -19,3 +19,6 @@ guide-entry-medieval-riding = Верховая езда и упряжь
 guide-entry-medieval-locks = Замки и ключи
 guide-entry-medieval-trading = Торговля и деньги
 guide-entry-medieval-tidings = Связь и вести
+guide-entry-medieval-society = Персонаж и общество
+guide-entry-medieval-professions = Профессии и роли
+guide-entry-medieval-bureaucracy = Бумаги и печати

@@ -1,0 +1,34 @@
+<Document>
+# Бумаги и печати
+
+Слово, скреплённое печатью, весит больше устного. Указы, счета, пропуска — всё держится на бумаге и оттиске.
+
+## Письмо
+
+Обычную [bold]бумагу[/bold] можно взять в руку и [bold]написать на ней[/bold] — приказ, письмо, счёт. Написанное остаётся при листе и читается любым, кто возьмёт его в руки (грамоте, впрочем, ещё надо выучиться — см. [textlink="Навыки" link="MedievalSkills"/]).
+
+<Box>
+  <GuideEntityEmbed Entity="MedievalPaper" Caption="бумага"/>
+</Box>
+
+## Печати
+
+[bold]Печать[/bold] придаёт бумаге вес. Приложите её к листу — на нём останется оттиск, а при осмотре будет видно, чьей печатью он скреплён. В ходу разные оттиски: нейтральная (казна, дом), [color=green]одобрено[/color] и [color=red]отказано[/color].
+
+<Box>
+  <GuideEntityEmbed Entity="MedievalStampBank" Caption="печать"/>
+  <GuideEntityEmbed Entity="MedievalStampApproved" Caption="одобрено"/>
+  <GuideEntityEmbed Entity="MedievalStampDenied" Caption="отказано"/>
+</Box>
+
+## Паспорт и канцелярия
+
+[bold]Паспорт[/bold] — главный документ, удостоверяющий личность (о том, зачем он нужен, — в разделе [textlink="Идентификация" link="MedievalIdentity"/]). Выправляют паспорта в [bold]паспортном столе[/bold] из бумаги; работать за ним может лишь тот, кто владеет [bold]канцелярией[/bold] — обычно городской управитель.
+
+<Box>
+  <GuideEntityEmbed Entity="MedievalPassport" Caption="паспорт"/>
+  <GuideEntityEmbed Entity="MedievalPassportOffice" Caption="паспортный стол"/>
+</Box>
+
+[italic]Бумагу можно отправить через магический стол переноса — см. [textlink="Связь и вести" link="MedievalTidings"/].[/italic]
+</Document>

@@ -7,28 +7,48 @@
   priority: -10
   text: "/ServerInfo/Guidebook/_Respiral/Medieval.xml"
   children:
-  - MedievalIdentity
-  - MedievalSkills
+  - MedievalSociety
   - MedievalCombat
   - MedievalCrafting
   - MedievalWorld
 
+# Ветка «Персонаж и общество»
+- type: guideEntry
+  id: MedievalSociety
+  name: guide-entry-medieval-society
+  text: "/ServerInfo/Guidebook/_Respiral/Society/Society.xml"
+  children:
+  - MedievalIdentity
+  - MedievalSkills
+  - MedievalProfessions
+  - MedievalBureaucracy
+
 - type: guideEntry
   id: MedievalIdentity
   name: guide-entry-medieval-identity
-  text: "/ServerInfo/Guidebook/_Respiral/Identity/Identity.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Society/Identity.xml"
 
 - type: guideEntry
   id: MedievalSkills
   name: guide-entry-medieval-skills
-  text: "/ServerInfo/Guidebook/_Respiral/Skills/Skills.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Society/Skills.xml"
   children:
   - MedievalSkillsLiteracy
 
 - type: guideEntry
   id: MedievalSkillsLiteracy
   name: guide-entry-medieval-skills-literacy
-  text: "/ServerInfo/Guidebook/_Respiral/Skills/SkillsLiteracy.xml"
+  text: "/ServerInfo/Guidebook/_Respiral/Society/SkillsLiteracy.xml"
+
+- type: guideEntry
+  id: MedievalProfessions
+  name: guide-entry-medieval-professions
+  text: "/ServerInfo/Guidebook/_Respiral/Society/Professions.xml"
+
+- type: guideEntry
+  id: MedievalBureaucracy
+  name: guide-entry-medieval-bureaucracy
+  text: "/ServerInfo/Guidebook/_Respiral/Society/Bureaucracy.xml"
 
 # Ветка «Бой, здоровье и возрождение»
 - type: guideEntry
