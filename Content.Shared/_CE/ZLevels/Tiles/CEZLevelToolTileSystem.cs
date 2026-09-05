@@ -84,7 +84,7 @@ public sealed partial class CEZLevelToolTileSystem : EntitySystem
         var tileRef = _map.GetTileRef(gridUid, grid, tileIndices);
         var tileDef = (ContentTileDefinition)_tileDefManager[tileRef.Tile.TypeId];
 
-        if (!tileDef.DeconstructTools.ContainsAny(tool.Qualities)) // Respiral: ContainsAny (no engine Overlaps); prototype as receiver to keep Read-only access to ToolComponent (RA0002)
+        if (!tileDef.DeconstructTools.Overlaps(tool.Qualities)) // Respiral: prototype as receiver keeps Read-only access to ToolComponent (RA0002)
         {
             // Telegraph which tool is required, same as ToolTileCompatibleComponent's floor variant.
             var toolNames = new List<string>();
@@ -144,7 +144,7 @@ public sealed partial class CEZLevelToolTileSystem : EntitySystem
             return;
 
         var tileDef = (ContentTileDefinition)_tileDefManager[tileRef.Tile.TypeId];
-        if (!tileDef.DeconstructTools.ContainsAny(tool.Qualities)) // Respiral: ContainsAny (no engine Overlaps); prototype as receiver to keep Read-only access to ToolComponent (RA0002)
+        if (!tileDef.DeconstructTools.Overlaps(tool.Qualities)) // Respiral: prototype as receiver keeps Read-only access to ToolComponent (RA0002)
             return;
 
         // don't do this on the client or else the tile entity spawn mispredicts and looks horrible

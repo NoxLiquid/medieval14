@@ -16,22 +16,12 @@
     damageModifierSet: MobFlora
   - type: Injurable
     damageContainer: MedievalBiological
-  - type: Hunger
-    thresholds:
-      Overfed: 100
-      Okay: 50
-      Peckish: 25
-      Starving: 10
-      Dead: 0
-    baseDecayRate: 0.00926
-  - type: Thirst
-    thresholds:
-      OverHydrated: 200
-      Okay: 150
-      Thirsty: 100
-      Parched: 50
-      Dead: 0
-    baseDecayRate: 0.04
+  - type: Satiation # Respiral: upstream merged Hunger/Thirst into Satiation (custom thresholds dropped, re-tune via satiation prototypes if needed)
+    satiations:
+      Hunger:
+        prototype: NormalSatiationHunger
+      Thirst:
+        prototype: NormalSatiationThirst
   - type: StatusEffects
     allowed:
     - Electrocution

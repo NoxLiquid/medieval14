@@ -5,6 +5,7 @@ using Content.Server._Respiral.UI;
 using Content.Shared._Respiral.Skill;
 using Content.Shared._Respiral.Skill.Components;
 using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Verbs;
 using Robust.Server.Player;
 using Robust.Shared.Player;

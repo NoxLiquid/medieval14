@@ -136,4 +136,18 @@ public sealed partial class ContentTileDefinition : IPrototype, IInheritingProto
     {
         TileId = id;
     }
+
+    // Respiral-start
+    /// <summary>
+    /// Used for lightning calculation through zlevels
+    /// </summary>
+    [DataField]
+    public bool Transparent;
+
+    /// <summary>
+    /// может ли тайл впитывать жидкости
+    /// </summary>
+    [DataField]
+    public bool Absorbent;
+    // Respiral-end
 }

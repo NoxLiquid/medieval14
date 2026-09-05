@@ -115,7 +115,7 @@ internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
             if (pressed)
                 _placementManager.Clear();
 
-            _placementManager.ToggleEraserHijacked(new ConstructionPlacementHijack(_constructionSystem, null));
+            _placementManager.ToggleEraserHijacked(new ConstructionPlacementHijack(null));
             _constructionView.EraseButtonPressed = pressed;
         };
 
@@ -463,7 +463,7 @@ internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
                     IsTile = false,
                     PlacementOption = _selected.PlacementMode
                 },
-                new ConstructionPlacementHijack(_constructionSystem, _selected));
+                new ConstructionPlacementHijack(_selected));
 
             UpdateGhostPlacement();
         }
@@ -494,7 +494,7 @@ internal sealed partial class MedievalConstructionMenuPresenter : IDisposable
                 IsTile = false,
                 PlacementOption = _selected.PlacementMode,
             },
-            new ConstructionPlacementHijack(constructSystem, _selected));
+            new ConstructionPlacementHijack(_selected));
 
         _constructionView.BuildButtonPressed = true;
     }

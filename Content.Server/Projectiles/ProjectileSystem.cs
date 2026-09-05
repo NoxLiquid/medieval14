@@ -63,7 +63,8 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
 
         if (_damageableSystem.TryChangeDamage((target, damageableComponent), ev.Damage, out var damage, component.IgnoreResistances, origin: component.Shooter))
         {
-            _dirt.AddBloodDirtFromDamage(target, component.Shooter.Value, damage, true); // Respiral-Dirtable
+            if (component.Shooter is { } bloodShooter) // Respiral-Dirtable
+                _dirt.AddBloodDirtFromDamage(target, bloodShooter, damage, true);
 
             if (!Deleted(target))
             {

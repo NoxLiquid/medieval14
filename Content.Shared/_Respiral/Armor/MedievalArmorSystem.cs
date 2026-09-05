@@ -105,7 +105,7 @@ public sealed partial class MedievalArmorSystem : EntitySystem
         foreach (var coefficient in modifiers.Coefficients)
         {
             msg.PushNewline();
-            var type = Loc.GetString("armor-damage-type-" + coefficient.Key.ToLower());
+            var type = Loc.GetString("armor-damage-type-" + coefficient.Key.ToString().ToLower()); // Respiral: Key is ProtoId now, force string before ToLower
             msg.AddMarkupOrThrow(Loc.GetString("armor-coefficient-value",
                 ("type", type),
                 ("value", MathF.Round((1f - coefficient.Value) * 100, 1))));

@@ -1,7 +1,7 @@
 using System.Numerics;
 using Content.Server.Destructible;
 using Content.Server.Destructible.Thresholds.Behaviors;
-using Content.Server.Forensics;
+using Content.Shared.Forensics.Components;
 using Content.Shared.Prototypes;
 using Content.Shared.Stacks;
 using Content.Shared.Storage;

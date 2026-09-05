@@ -29,5 +29,19 @@ namespace Content.Server._Respiral.Destructible
 
             return false;
         }
+
+        // Respiral: IThresholdTrigger gained IComparable/IEquatable upstream
+        public int CompareTo(IThresholdTrigger? other)
+        {
+            if (other is RepeatDamageTrigger trigger)
+                return Step.CompareTo(trigger.Step);
+
+            return 0;
+        }
+
+        public bool Equals(IThresholdTrigger? other)
+        {
+            return other is RepeatDamageTrigger trigger && trigger.Step == Step;
+        }
     }
 }

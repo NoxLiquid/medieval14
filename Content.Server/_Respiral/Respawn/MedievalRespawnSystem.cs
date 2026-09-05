@@ -3,6 +3,7 @@ using Content.Server.Station.Systems;
 using Content.Shared._Respiral.Respawn;
 using Content.Shared.GameTicking;
 using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Network;
