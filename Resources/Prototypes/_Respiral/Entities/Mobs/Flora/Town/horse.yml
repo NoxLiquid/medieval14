@@ -1,6 +1,6 @@
 - type: entity
   name: лошадь
-  parent: [ MedievalFloraMobBase, BaseMobRuminant, StripableInventoryBase ]
+  parent: [ MedievalFloraMobBase, BaseMobRuminant, StripableInventoryBase, BaseExaminableHunger ]
   id: MedievalMobHorse
   description: Крупное и сильное животное. Если её оседлать, можно быстро передвигаться по округе или впрячь в повозку.
   components:
@@ -52,7 +52,6 @@
     offspring:
     - id: MedievalMobHorse
   - type: ReproductivePartner
-  - type: ExaminableHunger
   - type: Butcherable
     spawned:
     - id: MedievalPelt

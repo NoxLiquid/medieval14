@@ -1,6 +1,6 @@
 - type: entity
   name: курица
-  parent: MedievalBaseHerbivore
+  parent: [ MedievalBaseHerbivore, BaseExaminableHunger ]
   id: MedievalMobChicken
   description: Милая курочка. Она бродит по округе, клюя землю и изредка кудахчет, глядя вам прямо в глаза. Кажется, она не прочь, если вы погладите её.
   components:
@@ -80,7 +80,6 @@
   # - type: EggLayer
   #   eggSpawn:
   #   - id: FoodEgg
-  - type: ExaminableHunger
   - type: MobPrice
     price: 500
   - type: ReplacementAccent

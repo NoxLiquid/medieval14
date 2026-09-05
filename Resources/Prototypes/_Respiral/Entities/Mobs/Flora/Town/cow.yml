@@ -1,6 +1,6 @@
 - type: entity
   name: корова
-  parent: [ MedievalFloraMobBase, BaseMobRuminant ]
+  parent: [ MedievalFloraMobBase, BaseMobRuminant, BaseExaminableHunger ]
   id: MedievalMobCow
   abstract: true
   description: Милая коровка. Она бродит по округе, жуя траву и изредка мычит, глядя вам прямо в глаза. Кажется, она не прочь, если вы погладите её.
@@ -45,11 +45,11 @@
   - type: SolutionManager
     solutions:
     - MedievalSolutionUdderCow
-  - type: Udder
-    reagentId: Milk
-    quantityPerUpdate: 25
-    growthDelay: 30
-  - type: ExaminableHunger
+  - type: HarvestableSolution
+    solutionName: udder
+    verbText: udder-system-verb-milk
+    emptyMessage: udder-system-dry
+    successMessage: udder-system-success
   - type: Butcherable
     spawned:
     - id: MedievalPelt
@@ -92,3 +92,12 @@
       reagents:
       - ReagentId: Milk
         Quantity: 30
+  - type: SatiationProduction
+    producer: Parent
+    delay: 30
+    minimumSatiationThreshold: Peckish
+  - type: SolutionProducer
+    generated:
+      reagents:
+      - ReagentId: Milk
+        Quantity: 25

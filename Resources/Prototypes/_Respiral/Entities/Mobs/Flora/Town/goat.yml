@@ -1,6 +1,6 @@
 - type: entity
   name: коза
-  parent: MedievalBaseHerbivore
+  parent: [ MedievalBaseHerbivore, BaseExaminableHunger ]
   id: MedievalMobGoat
   description: Эта коза известна своей упрямостью и способностью лазать по самым крутым поверхностям. Она может быть дружелюбной, если к ней подойти с правильным настроем, но не стоит недооценивать её способность внезапно начать блеять и убегать от вас.
   components:
@@ -46,12 +46,18 @@
     solutions:
     - MedievalSolutionUdderGoat
     - MedievalSolutionWoolGoat
-  - type: Udder
-    reagentId: MilkGoat
-    quantityPerUpdate: 25
-    growthDelay: 20
-  - type: ExaminableHunger
-  - type: Wooly
+  - type: HarvestableSolution
+    solutionName: udder
+    verbText: udder-system-verb-milk
+    emptyMessage: udder-system-dry
+    successMessage: udder-system-success
+  - type: Shearable
+    targetSolutionName: wool
+    shearedProductId: MedievalCloth1
+    solutionPerProduct: 2.5
+    toolQuality: Shearing
+    shearableMarkupText: sheep-shearable-examine-markup
+    unShearableMarkupText: sheep-not-shearable-examine-markup
   - type: Edible
     destroyOnEmpty: false
     solution: wool
@@ -102,9 +108,18 @@
       reagents:
       - ReagentId: MilkGoat
         Quantity: 30
+  - type: SatiationProduction
+    producer: Parent
+    delay: 20
+    minimumSatiationThreshold: Peckish
+  - type: SolutionProducer
+    generated:
+      reagents:
+      - ReagentId: MilkGoat
+        Quantity: 25
 
 - type: entity
-  parent: SolutionLarge
+  parent: SolutionWool
   id: MedievalSolutionWoolGoat
   categories: [ HideSpawnMenu ]
   components:

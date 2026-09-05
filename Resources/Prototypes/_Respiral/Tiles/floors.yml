@@ -44,7 +44,7 @@
 - type: tile
   id: MedievalCaveDrought
   name: tiles-cave-drought
-  sprite: /Textures/Tiles/cavedrought.png
+  sprite: /Textures/_Respiral/Tiles/Cave/cavedrought.png # Respiral: 8-variant texture restored to _Respiral (upstream removed /Textures/Tiles/cavedrought.png)
   variants: 8
   placementVariants:
   - 1.0
@@ -98,7 +98,7 @@
 - type: tile
   id: MedievalFloorPlanetDirt
   name: tiles-dirt-planet-floor
-  sprite: /Textures/Tiles/Planet/dirt.rsi/dirt.png
+  sprite: /Textures/_Respiral/Tiles/PlanetDirt/dirt.png
   variants: 4
   placementVariants:
   - 1.0
@@ -783,7 +783,7 @@
 - type: tile
   id: MedievalFloorStone2
   name: tiles-cave
-  sprite: /Textures/Tiles/cave.png
+  sprite: /Textures/_Respiral/Tiles/Cave/cave_multi.png # Respiral: 7-variant texture restored to _Respiral (upstream removed /Textures/Tiles/cave.png)
   variants: 7
   placementVariants:
   - 1.0
@@ -949,7 +949,7 @@
 - type: tile
   id: MedievalFloorWoodTile2
   name: tiles-wood2
-  sprite: /Textures/Tiles/wood_tile.png
+  sprite: /Textures/_Respiral/Tiles/WoodOld/wood_tile.png
   variants: 4
   placementVariants:
   - 1.0
@@ -971,7 +971,7 @@
 - type: tile
   id: MedievalFloorBrokenWood
   name: tiles-wood3
-  sprite: /Textures/Tiles/wood_broken.png
+  sprite: /Textures/_Respiral/Tiles/WoodOld/wood_broken.png
   variants: 7
   placementVariants:
   - 1.0
@@ -997,7 +997,7 @@
 - type: tile
   id: MedievalDeadWoodPlanksBase
   abstract: true
-  variants: 4
+  variants: 1
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false
@@ -1109,7 +1109,7 @@
 - type: tile
   id: MedievalBirchWoodPlanksBase
   abstract: true
-  variants: 4
+  variants: 1
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false
@@ -1219,7 +1219,7 @@
 - type: tile
   id: MedievalSwampWoodPlanksBase
   abstract: true
-  variants: 12
+  variants: 1
   placementVariants: [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false
@@ -1333,7 +1333,7 @@
 - type: tile
   id: MedievalDarkWoodPlanksBase
   abstract: true
-  variants: 4
+  variants: 1
   placementVariants: [ 1.0, 1.0, 1.0, 1.0 ]
   baseTurf: MedievalLattice
   isSubfloor: false

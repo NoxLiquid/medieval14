@@ -9,7 +9,8 @@
   metabolisms:
     Digestion:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.5
         - !type:HealthChange
           damage:
@@ -35,7 +36,8 @@
   metabolisms:
     Digestion:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.3
         - !type:HealthChange
           damage:
@@ -61,7 +63,8 @@
   metabolisms:
     Digestion:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.4
         - !type:HealthChange
           damage:
@@ -87,7 +90,8 @@
   metabolisms:
     Bloodstream:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.5
         - !type:HealthChange
           damage:
@@ -116,7 +120,8 @@
   metabolisms:
     Digestion:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.4
         - !type:AdjustReagent
           reagent: CapsaicinOil
@@ -141,7 +146,8 @@
   metabolisms:
     Bloodstream:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.4
         - !type:HealthChange
           damage:
@@ -176,7 +182,8 @@
           key: ForcedSleep
           component: ForcedSleeping
           type: Add
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.5
         - !type:HealthChange
           conditions:
@@ -198,7 +205,8 @@
   metabolisms:
     Digestion:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.2
         - !type:HealthChange
           damage:
@@ -224,7 +232,8 @@
   metabolisms:
     Digestion:
       effects:
-        - !type:SatiateThirst
+        - !type:Satiate
+          satiationType: Thirst
           factor: -1
         - !type:HealthChange
           conditions:
@@ -246,7 +255,8 @@
   metabolisms:
     Digestion:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.2
         - !type:Jitter
           probability: 0.05
@@ -270,7 +280,8 @@
   metabolisms:
     Bloodstream:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.4
         - !type:HealthChange
           damage:
@@ -297,7 +308,8 @@
   metabolisms:
     Digestion:
       effects:
-        - !type:SatiateHunger
+        - !type:Satiate
+          satiationType: Hunger
           factor: 0.3
         - !type:HealthChange
           damage:
@@ -323,7 +335,8 @@
   metabolisms:
     Digestion:
       effects:
-        - !type:SatiateThirst
+        - !type:Satiate
+          satiationType: Thirst
           factor: 1
         - !type:HealthChange
           conditions:
