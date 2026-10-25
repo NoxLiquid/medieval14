@@ -126,7 +126,6 @@ public sealed partial class CEZCollapseSystem : EntitySystem
         _jobQueue.Process();
         CollectFinishedJobs();
         ProcessPendingCollapses();
-        PushDirtySnapshots();
     }
 
     private void OnRoundCleanup(RoundRestartCleanupEvent ev)
@@ -525,8 +524,6 @@ public sealed partial class CEZCollapseSystem : EntitySystem
             {
                 comp.Stability[tile] = value;
             }
-
-            _debugDirtyGrids.Add(gridUid);
         }
     }
 
